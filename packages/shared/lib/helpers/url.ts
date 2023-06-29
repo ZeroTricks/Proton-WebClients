@@ -184,6 +184,10 @@ export const getSecondLevelDomain = (hostname: string) => {
 };
 
 export const getRelativeApiHostname = (hostname: string) => {
+    // use <appname>-api.proton.me
+    // this fixes unresolvable calls to
+    // 127-api.0.0.1 or yourdomain-api.yourtld
+    return `mail-api.proton.me`;
     const idx = hostname.indexOf('.');
     const first = hostname.slice(0, idx);
     const second = hostname.slice(idx + 1);
