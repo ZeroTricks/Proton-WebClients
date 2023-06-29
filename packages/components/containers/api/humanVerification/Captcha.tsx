@@ -50,6 +50,42 @@ const Captcha = ({ token, theme, onSubmit }: Props) => {
         };
 
         window.addEventListener('message', handleMessage, false);
+
+        const popup = window.open(src);
+        popup?.addEventListener('message', ({data: {token}}) => {
+            if(!token)
+                return;
+            console.log(token);
+            onSubmit(token)
+        },
+        false);
+
+        // pass data.token from captcha
+
+        /*
+            // execute in captcha tab before solving captcha:
+            window.addEventListener('message', ({data: {token}}) => {
+                if(!token)
+                    return;
+                const code = `//Run in main tab devtools:
+                    \nwindow.dispatchEvent(new MessageEvent("message", {
+                        origin: '${window.origin}'.replace(/^https?:/, location.protocol),
+                        source: $('iframe').contentWindow ,
+                        data: {
+                            type: 'pm_captcha',
+                            token: "${token}"
+                        }
+                    }))`;
+                console.log(code);
+                alert(code);
+                },
+            false);
+        */
+
+        // alternative:
+        // window.addEventListener('message', ({data: {token}}) => token && console.log(`Run in login tab:\nsubmitCaptcha("${token}")` ), false);
+        // (window as any).submitCaptcha = onSubmit;
+
         return () => {
             window.removeEventListener('message', handleMessage, false);
         };
