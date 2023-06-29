@@ -1,0 +1,45 @@
+version: '3' 
+
+services:
+
+  proton-dev:
+    image: node:18
+    # image: node:18-alpine
+    # build:
+    #   context: ./
+    #   dockerfile: Dockerfile-drive-dev
+    
+    ports:
+     - '80:8080'
+    volumes:
+     - ./:/proton
+    working_dir: /proton
+    # command: /bin/bash
+    # yarn should be available in node:18 docker image
+    # command: yarn install
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    # extra_hosts:
+      # - ":"
+    deploy:
+      resources:
+        reservations:
+          memory: 4G
+        limits:
+          memory: 6G
+
+    user: "node"
+    environment:
+      - NODE_ENV:development
+
+  proton-drive-dev:
+    extends:
+      service: proton-dev
+    container_name: proton-drive-dev
+    command: yarn workspace proton-drive start
+
+  proton-mail-dev:
+    extends:
+      service: proton-dev
+    container_name: proton-mail-dev
+    command: yarn workspace proton-mail start
