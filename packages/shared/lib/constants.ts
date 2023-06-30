@@ -953,7 +953,7 @@ export const USER_SCOPES = {
     DRIVE: 68719476736,
 };
 
-export const DOH_DOMAINS = ['.compute.amazonaws.com'];
+export const DOH_DOMAINS = ['.compute.amazonaws.com', '127.0.0.1'];
 
 export const PROTON_DOMAINS = [
     'protonmail.com',
