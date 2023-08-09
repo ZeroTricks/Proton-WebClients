@@ -42,7 +42,7 @@
         "Demana un nou codi"
       ],
       "Resend code": [
-        "Reenvia codi"
+        "Reenvia el codi"
       ],
       "Search countries": [
         "Cerca països"
@@ -125,7 +125,7 @@
         "Bahames"
       ],
       "Bahrain": [
-        "Bahrain"
+        "Bahrein"
       ],
       "Bangladesh": [
         "Bangladesh"
@@ -161,7 +161,7 @@
         "Bòsnia i Hercegovina"
       ],
       "Botswana": [
-        "Botswana"
+        "Botsuana"
       ],
       "Bouvet Island": [
         "Illa Bouvet"
@@ -173,7 +173,7 @@
         "Territori Britànic de l'Oceà Índic"
       ],
       "Brunei Darussalam": [
-        "Brunei Darussalam"
+        "Brunei"
       ],
       "Bulgaria": [
         "Bulgària"
@@ -224,7 +224,7 @@
         "Les Comores"
       ],
       "Congo": [
-        "Congo"
+        "República del Congo"
       ],
       "Congo, Democratic Republic of the": [
         "Congo, República Democràtica del"
@@ -257,7 +257,7 @@
         "Dinamarca"
       ],
       "Djibouti": [
-        "Djibouti"
+        "Gibuti"
       ],
       "Dominica": [
         "Dominica"
@@ -272,7 +272,7 @@
         "Egipte"
       ],
       "El Salvador": [
-        "El Salvador"
+        "el Salvador"
       ],
       "Equatorial Guinea": [
         "Guinea Equatorial"
@@ -359,10 +359,10 @@
         "Guinea"
       ],
       "Guinea-Bissau": [
-        "Guinea-Bissau"
+        "Guinea Bissau"
       ],
       "Guyana": [
-        "Guyana"
+        "Guaiana"
       ],
       "Haiti": [
         "Haití"
@@ -425,7 +425,7 @@
         "Jordània"
       ],
       "Kazakhstan": [
-        "Kazakhstan"
+        "Casaquistan"
       ],
       "Kenya": [
         "Kènia"
@@ -437,7 +437,7 @@
         "Kosovo"
       ],
       "Kuwait": [
-        "Kuwait"
+        "Al-Kuwait"
       ],
       "Kyrgyzstan": [
         "Kirguizstan"
@@ -530,13 +530,13 @@
         "Moçambic"
       ],
       "Myanmar": [
-        "Myanmar"
+        "Mianmar"
       ],
       "Namibia": [
         "Namíbia"
       ],
       "Nauru": [
-        "Nauru"
+        "Naüru"
       ],
       "Nepal": [
         "Nepal"
@@ -581,7 +581,7 @@
         "Oman"
       ],
       "Pakistan": [
-        "Pakistan"
+        "Paquiistan"
       ],
       "Palau": [
         "Palau"
@@ -638,10 +638,10 @@
         "Santa Helena"
       ],
       "Saint Kitts and Nevis": [
-        "Illa de Sant Christopher i Nevis"
+        "Saint Kitts i Nevis"
       ],
       "Saint Lucia": [
-        "Saint Lucia"
+        "Santa Llúcia"
       ],
       "Saint Martin (French Part)": [
         "Saint Martin (Part Francesa)"
@@ -737,7 +737,7 @@
         "Taiwan"
       ],
       "Tajikistan": [
-        "Tadjikistan"
+        "Tatgiquistan"
       ],
       "Tanzania": [
         "Tanzània"
@@ -746,7 +746,7 @@
         "Tailàndia"
       ],
       "Timor-Leste": [
-        "Timor-Leste"
+        "Timor Oriental"
       ],
       "Togo": [
         "Togo"
@@ -770,10 +770,10 @@
         "Turquia"
       ],
       "Turkmenistan": [
-        "Turkmenistan"
+        "Turcmenistan"
       ],
       "Turks and Caicos Islands": [
-        "Illes Turks i Caicos"
+        "Illes de Turks i Caicos"
       ],
       "Tuvalu": [
         "Tuvalu"
@@ -800,7 +800,7 @@
         "Uruguai"
       ],
       "Uzbekistan": [
-        "Uzbekistan"
+        "Usbequistan"
       ],
       "Vanuatu": [
         "Vanuatu"
@@ -849,7 +849,7 @@
         "Introduïu 6 dígits"
       ],
       "Invalid verification code": [
-        "Codi de verificació no vàlid"
+        "El codi de verificació no és vàlid."
       ],
       "Not a valid number": [
         "Número no vàlid"
@@ -861,7 +861,7 @@
         "S'ha esgotat el temps d'espera"
       ],
       "The email addresses do not match": [
-        "Les adreces de correu electrònic no coincideixen"
+        "Les adreces de correu electrònic no coincideixen."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Aquest camp excedeix el màxim de ${ maximumLength } caràcters."
@@ -879,10 +879,10 @@
         "Error desconegut"
       ],
       "Username must begin with a letter or digit": [
-        "El nom d'usuari ha de començar amb una lletra o un dígit"
+        "El nom d'usuari ha de començar amb una lletra o un dígit."
       ],
       "Username must end with a letter or digit": [
-        "El nom d'usuari ha d'acabar amb una lletra o un dígit"
+        "El nom d'usuari ha d'acabar amb una lletra o un dígit."
       ]
     },
     "Error message": {
@@ -893,7 +893,7 @@
         "Refresqueu la pàgina o proveu de nou més tard."
       ],
       "Something went wrong": [
-        "S'ha produït un error."
+        "Alguna cosa ha anat malament."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "No hem pogut carregar aquesta pàgina. Refresqueu la pàgina o comproveu la vostra connexió a Internet."
@@ -906,7 +906,7 @@
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Inseriu una clau de seguretat associada al vostre compte ${ BRAND_NAME }."
+        "Inseriu una clau de seguretat enllaçada al vostre compte ${ BRAND_NAME }."
       ],
       "Security key": [
         "Clau de seguretat"
@@ -919,10 +919,10 @@
     },
     "Font face option": {
       "System default": [
-        "Predeterminat del sistema"
+        "Valor per defecte del sistema"
       ],
-      "Theme default": [
-        "Tema per defecte"
+      "Theme font": [
+        "Tipus de lletra del tema"
       ]
     },
     "Font size option": {
@@ -967,7 +967,7 @@
         "Codi de país"
       ],
       "Each code can only be used once": [
-        "Cada codi només es pot utilitzar una vegada"
+        "Cada codi només es pot utilitzar una vegada."
       ],
       "Enter the code from your authenticator app": [
         "Introduïu el codi de la vostra aplicació d'autenticació"
@@ -997,7 +997,7 @@
         "Carregant"
       ],
       "No results found": [
-        "No s'han trobat resultats."
+        "No s'ha trobat cap resultat."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servidors inaccessibles. Torneu a provar-ho en uns minuts"
@@ -1091,13 +1091,13 @@
         "Verificació humana"
       ],
       "Invalid verification code": [
-        "Codi de verificació no vàlid"
+        "El codi de verificació no és vàlid."
       ],
       "Request new code": [
-        "Demanar un codi nou"
+        "Demana un codi nou"
       ],
       "Sign in with 2FA": [
-        "Inicia la sessió amb dos factors"
+        "Inicia la sessió amb autenticació de dos factors (A2F)"
       ]
     },
     "Validation": {
@@ -1106,8 +1106,8 @@
         "La contrasenya ha de tenir com a mínim ${ length } caràcters"
       ],
       "Try a shorter username (${ n } character max)": [
-        "Intenteu un nom d'usuari més curt (${ n } caràcter màx.)",
-        "Intenteu un nom d'usuari més curt (${ n } caràcters màx.)"
+        "Proveu amb un nom d'usuari més curt (${ n } caràcter màx.)",
+        "Proveu amb un nom d'usuari més curt (${ n } caràcters màx.)"
       ]
     }
   }

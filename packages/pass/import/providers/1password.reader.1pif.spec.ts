@@ -1,6 +1,7 @@
 import fs from 'fs';
 
 import type { ItemImportIntent } from '@proton/pass/types';
+import { CardType } from '@proton/pass/types/protobuf/item-v1';
 
 import type { ImportPayload } from '../types';
 import { read1Password1PifData } from './1password.reader.1pif';
@@ -20,11 +21,10 @@ describe('Import 1password 1pif', () => {
 
     it('should correctly parse items', () => {
         const [vaultData] = payload.vaults;
-        expect(vaultData.items.length).toEqual(7);
+        expect(vaultData.items.length).toEqual(8);
 
         expect(payload.vaults.length).toEqual(1);
-        expect(vaultData.type).toEqual('new');
-        expect(vaultData.type === 'new' && vaultData.vaultName).not.toBeUndefined();
+        expect(vaultData.name).not.toBeUndefined();
 
         const { items } = vaultData;
 
@@ -35,7 +35,7 @@ describe('Import 1password 1pif', () => {
         expect(loginItem1.metadata.note).toEqual('Item notes');
         expect(loginItem1.content.username).toEqual('somewhere');
         expect(loginItem1.content.password).toEqual('somepassword with " in it');
-        expect(loginItem1.content.urls[0]).toEqual('https://slashdot.org');
+        expect(loginItem1.content.urls[0]).toEqual('https://slashdot.org/');
         expect(loginItem1.content.urls.length).toEqual(1);
 
         /* Note item */
@@ -100,7 +100,7 @@ describe('Import 1password 1pif', () => {
         expect(loginItemMultiTOTP.content).toEqual({
             username: 'john@wick.com',
             password: 'password',
-            urls: ['http://localhost:7777'],
+            urls: ['http://localhost:7777/dashboard/'],
             totpUri: '',
         });
         expect(loginItemMultiTOTP.trashed).toEqual(false);
@@ -143,7 +143,7 @@ describe('Import 1password 1pif', () => {
         expect(specialCharItem.content).toEqual({
             username: 'somewhere',
             password: 'somepassword with " in it',
-            urls: ['https://slashdot.org'],
+            urls: ['https://slashdot.org/'],
             totpUri: '',
         });
 
@@ -163,5 +163,21 @@ describe('Import 1password 1pif', () => {
         });
         expect(autofillItem.trashed).toEqual(false);
         expect(autofillItem.extraFields).toEqual([]);
+
+        /* Credit Card item */
+        const creditCardItemName = 'Credit Card item with note';
+        const creditCardItem = items.find(
+            (item) => item.metadata.name === creditCardItemName
+        ) as ItemImportIntent<'creditCard'>;
+        expect(creditCardItem.type).toEqual('creditCard');
+        expect(creditCardItem.metadata.note).toEqual('this is credit card item note');
+        expect(creditCardItem.content).toEqual({
+            cardType: CardType.Unspecified,
+            cardholderName: 'A B',
+            expirationDate: '012025',
+            number: '4242333342423333',
+            pin: '',
+            verificationNumber: '123',
+        });
     });
 });

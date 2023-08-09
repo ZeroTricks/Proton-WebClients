@@ -1,16 +1,15 @@
 import type { Reducer } from 'redux';
 
-import type { Feature } from '@proton/components/containers';
 import type { MaybeNull, PassPlanResponse } from '@proton/pass/types';
 import { EventActions } from '@proton/pass/types';
 import type { PassFeature } from '@proton/pass/types/api/features';
 import { fullMerge, merge, objectDelete, partialMerge } from '@proton/pass/utils/object';
 import type { Address, User } from '@proton/shared/lib/interfaces';
 
-import { bootSuccess, serverEvent, setUserFeatures, setUserPlan } from '../actions';
+import { bootSuccess, setUserFeatures, setUserPlan, userEvent } from '../actions';
 
 export type AddressState = { [addressId: string]: Address };
-export type UserFeatureState = Partial<Record<PassFeature, Feature>> & { requestedAt?: number };
+export type UserFeatureState = Partial<Record<PassFeature, boolean>> & { requestedAt?: number };
 export type UserPlanState = PassPlanResponse & { requestedAt?: number };
 
 export type UserState = {
@@ -34,8 +33,8 @@ const reducer: Reducer<UserState> = (state = initialState, action) => {
         });
     }
 
-    if (serverEvent.match(action) && action.payload.event.type === 'user') {
-        const { Addresses = [], User, EventID } = action.payload.event;
+    if (userEvent.match(action)) {
+        const { Addresses = [], User, EventID } = action.payload;
 
         return {
             ...(User ? partialMerge(state, { user: User }) : state),
@@ -49,7 +48,11 @@ const reducer: Reducer<UserState> = (state = initialState, action) => {
     }
 
     if (setUserPlan.match(action)) return partialMerge(state, { plan: action.payload });
-    if (setUserFeatures.match(action)) return partialMerge(state, { features: action.payload });
+
+    if (setUserFeatures.match(action)) {
+        state.features = null; /* wipe all features before merge */
+        return partialMerge(state, { features: action.payload });
+    }
 
     return state;
 };

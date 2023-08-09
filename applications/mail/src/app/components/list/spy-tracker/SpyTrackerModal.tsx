@@ -1,5 +1,3 @@
-import { useMemo } from 'react';
-
 import { c, msgid } from 'ttag';
 
 import { Href } from '@proton/atoms';
@@ -30,11 +28,6 @@ interface Props extends ModalProps {
 const SpyTrackerModal = ({ message, ...rest }: Props) => {
     const { numberOfImageTrackers, imageTrackerText, imageTrackers } = useMessageTrackers(message);
 
-    const modalDescription = useMemo(() => {
-        return c('Info')
-            .t`You can read this email without revealing your interactions, location, or device to advertisers.`;
-    }, [numberOfImageTrackers]);
-
     const getHeaderContent = (tracker: Tracker) => {
         return (
             <div className="flex flex-align-items-center">
@@ -54,17 +47,18 @@ const SpyTrackerModal = ({ message, ...rest }: Props) => {
     };
 
     const learnMoreLink = (
-        <Href href={emailTrackerProtectionURL} data-testid="spyTrackerModal:learnmore">{c('Info').t`Learn more`}</Href>
+        <Href href={emailTrackerProtectionURL} data-testid="trackersModal:learn-more">{c('Info').t`Learn more`}</Href>
     );
 
     return (
         <ModalTwo data-testid="spyTrackerModal:trackers" {...rest}>
-            <ModalTwoHeader title={imageTrackerText} />
+            <ModalTwoHeader title={imageTrackerText} data-testid="trackersModal:title" />
             <ModalTwoContent>
                 <div className="border rounded-lg mb-4 p-4 flex flex-nowrap flex-align-items-center">
                     <img src={trackersImg} alt={imageTrackerText} className="flex-item-noshrink" />
-                    <p className="color-weak flex-item-fluid pl-4 my-0">
-                        {modalDescription}
+                    <p className="color-weak flex-item-fluid pl-4 my-0" data-testid="trackersModal:description">
+                        {c('Info')
+                            .t`We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.`}
                         <br />
                         <span>{learnMoreLink}</span>
                     </p>

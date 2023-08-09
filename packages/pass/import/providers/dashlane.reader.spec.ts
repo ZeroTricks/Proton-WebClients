@@ -23,8 +23,7 @@ describe('Import Dashlane ZIP', () => {
         expect(vaultData.items.length).toEqual(11);
 
         expect(payload.vaults.length).toEqual(1);
-        expect(vaultData.type).toEqual('new');
-        expect(vaultData.type === 'new' && vaultData.vaultName).not.toBeUndefined();
+        expect(vaultData.name).not.toBeUndefined();
 
         const { items } = vaultData;
 
@@ -41,7 +40,15 @@ describe('Import Dashlane ZIP', () => {
             'otpauth://totp/login%20with%202fa%20scanned%20from%20qr%20code?secret=RL3FRZ5V3EBM7T4ZMGJWGO43MQSTTMIT&algorithm=SHA1&digits=6&period=30'
         );
         expect(loginItem1.trashed).toEqual(false);
-        expect(loginItem1.extraFields).toEqual([]);
+        expect(loginItem1.extraFields).toEqual([
+            {
+                fieldName: 'username1',
+                type: 'text',
+                data: {
+                    content: 'john2',
+                },
+            },
+        ]);
 
         /* Login item with multiple lines */
         const loginItem2 = items[1] as ItemImportIntent<'login'>;
@@ -91,7 +98,7 @@ describe('Import Dashlane ZIP', () => {
         expect(loginItem5.content.username).toEqual('');
         expect(loginItem5.content.password).toEqual('');
         expect(loginItem5.content.urls.length).toEqual(1);
-        expect(loginItem5.content.urls[0]).toEqual('https://example.com');
+        expect(loginItem5.content.urls[0]).toEqual('https://example.com/');
         expect(loginItem5.content.totpUri).toEqual('');
         expect(loginItem5.trashed).toEqual(false);
         expect(loginItem5.extraFields).toEqual([]);
@@ -105,7 +112,7 @@ describe('Import Dashlane ZIP', () => {
         expect(loginItem6.content.username).toEqual('test@example.com');
         expect(loginItem6.content.password).toEqual('ndnndc');
         expect(loginItem6.content.urls.length).toEqual(1);
-        expect(loginItem6.content.urls[0]).toEqual('https://test');
+        expect(loginItem6.content.urls[0]).toEqual('https://test/');
         expect(loginItem6.content.totpUri).toEqual('');
         expect(loginItem6.trashed).toEqual(false);
         expect(loginItem6.extraFields).toEqual([]);
@@ -119,7 +126,7 @@ describe('Import Dashlane ZIP', () => {
         expect(loginItem7.content.username).toEqual('john');
         expect(loginItem7.content.password).toEqual('password,"comma"');
         expect(loginItem7.content.urls.length).toEqual(1);
-        expect(loginItem7.content.urls[0]).toEqual('https://example.com');
+        expect(loginItem7.content.urls[0]).toEqual('https://example.com/comma,');
         expect(loginItem7.content.totpUri).toEqual('');
         expect(loginItem7.trashed).toEqual(false);
         expect(loginItem7.extraFields).toEqual([]);

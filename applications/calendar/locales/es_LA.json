@@ -141,6 +141,9 @@
       "Continue with Google": [
         "Continuar con Google"
       ],
+      "Copy email address": [
+        "Copiar dirección de correo"
+      ],
       "Copy email to clipboard": [
         "Copiar correo al portapapeles"
       ],
@@ -158,6 +161,9 @@
       ],
       "Create event": [
         "Crear evento"
+      ],
+      "Create new contact": [
+        "Crear contacto nuevo"
       ],
       "Customize": [
         "Personalizar"
@@ -567,7 +573,7 @@
         "Usar código de autenticación"
       ],
       "Use for sending": [
-        "Usar para enviar"
+        "Usar para el envío"
       ],
       "Use recovery code": [
         "Usar código de recuperación"
@@ -580,6 +586,9 @@
       ],
       "View": [
         "Ver"
+      ],
+      "View contact details": [
+        "Ver datos del contacto"
       ],
       "View invoice": [
         "Ver factura"
@@ -2156,6 +2165,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. También puede comprobar nuestra ${ statusPageLink }"
+      ],
       "${ list } doesn't have a valid email address": [
         "${ list } no tiene una dirección de correo válida",
         "${ list } no tiene una dirección de correo válida"
@@ -2215,7 +2227,7 @@
         "Firma del contacto no verificada"
       ],
       "Decryption error: Decryption of this event's content failed.": [
-        "Error de descifrado: falló el descifrado del contenido de este evento."
+        "Error de descifrado: no se pudo descifrar el contenido de este evento."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Deseleccione al menos ${ calendarsToFixCount } calendario",
@@ -2387,7 +2399,7 @@
         "Firma no verificada"
       ],
       "Signature verification failed": [
-        "Falló la verificación de la firma"
+        "Error en la verificación de la firma"
       ],
       "Some contacts could not be deleted": [
         "Algunos contactos no se pudieron eliminar"
@@ -2415,6 +2427,9 @@
       ],
       "Start time must be before end time": [
         "La hora inicial debe ser antes de la hora final"
+      ],
+      "status page": [
+        "página de estado"
       ],
       "The address might be misspelled": [
         "La dirección podría estar mal escrita"
@@ -2538,7 +2553,7 @@
     },
     "Error importing contact": {
       "Encryption failed": [
-        "Falló el cifrado"
+        "Error en el cifrado"
       ],
       "vCard versions < 3.0 not supported": [
         "Versiones vCard menores a 3.0 no compatibles"
@@ -2590,7 +2605,7 @@
         "Elemento"
       ],
       "Encryption failed": [
-        "Falló el cifrado"
+        "Error en el cifrado"
       ],
       "End time out of bounds": [
         "Hora final fuera de límites"
@@ -2599,7 +2614,7 @@
         "Evento"
       ],
       "Event validation failed": [
-        "Falló la validación del evento"
+        "Error en la validación del evento"
       ],
       "Floating times not supported": [
         "Tiempos flotantes no compatibles"
@@ -3005,8 +3020,8 @@
       "System default": [
         "Del sistema"
       ],
-      "Theme default": [
-        "Tema por defecto"
+      "Theme font": [
+        "Fuente del tema"
       ]
     },
     "Font size option": {
@@ -3473,6 +3488,9 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Cualquier persona con este enlace puede ver si usted está libre u ocupado en su calendario. No pueden ver detalles de eventos, como título, ubicación o participantes."
       ],
+      "Are you sure you want to discard your import?": [
+        "¿En verdad desea descartar su importación?"
+      ],
       "Attention required": [
         "Atención requerida"
       ],
@@ -3747,6 +3765,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Tome en cuenta que este proceso puede tardar algún tiempo dependiendo del tamaño de su libreta de direcciones."
+      ],
+      "Please provide a name and an email address for creating a group.": [
+        "Proporcione un nombre y una dirección de correo para crear un grupo."
       ],
       "Please remove the duplicates and try again.": [
         "Elimine los duplicados y vuelva a intentarlo."
@@ -4031,9 +4052,6 @@
       "Your files will be encrypted and then saved": [
         "Sus archivos serán cifrados y luego guardados"
       ],
-      "Your import will not be processed.": [
-        "Su importación no será procesada."
-      ],
       "Your login information will not be saved after the import is completed.": [
         "La información de inicio de sesión no se guardará una vez finalizada la importación."
       ],
@@ -4127,11 +4145,6 @@
       ],
       "Trusted": [
         "Confiada"
-      ]
-    },
-    "Key transparency details button": {
-      "Click here for more details.": [
-        "Haga clic aquí para obtener más información."
       ]
     },
     "Knowledge base link label": {
@@ -4505,7 +4518,7 @@
         "Para añadir un calendario nuevo, elimine uno existente."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Para añadir un calendario nuevo, elimine otro o actualice su plan de ${ BRAND_NAME } a un plan de pago de ${ MAIL_SHORT_APP_NAME }."
+        "Para añadir un calendario nuevo, elimine otro o mejore su plan de ${ BRAND_NAME } a un plan de pago de ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
         "Ha alcanzado el número máximo de calendarios disponibles en su plan."
@@ -4620,14 +4633,14 @@
       ]
     },
     "Modal action": {
-      "Close": [
-        "Cerrar"
+      "Cancel": [
+        "Cancelar"
       ],
       "Manage calendars": [
         "Gestionar calendarios"
       ],
       "Upgrade": [
-        "Actualizar"
+        "Mejorar"
       ]
     },
     "Modal for received invitation to share calendar; text": {
@@ -4832,7 +4845,7 @@
     },
     "new_plans: Action": {
       "Upgrade now": [
-        "Actualizar ahora"
+        "Mejorar ahora"
       ]
     },
     "new_plans: action": {
@@ -4904,6 +4917,9 @@
       ],
       "Calendar added": [
         "Calendario añadido"
+      ],
+      "Calendar updated": [
+        "Calendario actualizado"
       ]
     },
     "Notification in share calendar modal": {
@@ -5082,9 +5098,6 @@
         "Seleccionar un tema"
       ],
       "Set up your organization": [
-        "Configure su organización"
-      ],
-      "Set up your organization testing": [
         "Configure su organización"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
@@ -5382,8 +5395,8 @@
       ]
     },
     "Shared calendar; Info about calendar owner": {
-      "Created by ${ ownerName }": [
-        "Creado por ${ ownerName }"
+      "Shared by ${ ownerName }": [
+        "Compartido por ${ ownerName }"
       ]
     },
     "Side panel spotlight": {
@@ -5493,7 +5506,7 @@
         "VPN premium"
       ],
       "Secure cloud storage": [
-        "Almacenamiento en la nube seguro"
+        "Almacenamiento seguro en la nube"
       ],
       "Secure streaming": [
         "Transmisión segura"
@@ -5669,7 +5682,7 @@
         "Notas de la versión"
       ],
       "Upgrade storage": [
-        "Mejorar almacenamiento"
+        "Aumentar el almacenamiento"
       ],
       "Your current storage:": [
         "Su almacenamiento actual:"
@@ -5686,19 +5699,6 @@
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
         "Aprenda cómo obtener un enlace de calendario privado."
-      ]
-    },
-    "Subscribed calendar extension warning": {
-      "By using this link, Google will make the calendar you are subscribing to public": [
-        "Al usar este enlace, Google hará público el calendario al que se suscribe"
-      ],
-      "This link might be wrong": [
-        "Este enlace puede ser erróneo"
-      ]
-    },
-    "Subscribed calendar URL length warning": {
-      "URL is too long": [
-        "La URL es demasiado larga"
       ]
     },
     "Success": {
@@ -6183,8 +6183,8 @@
         "Verificación humana"
       ],
       "Import as simple event?": [
-        "¿Importar como evento simple?",
-        "¿Importar como eventos simples?"
+        "¿Importar como evento sin detalles?",
+        "¿Importar como eventos sin detalles?"
       ],
       "Import contacts": [
         "Importar contactos"
@@ -6522,9 +6522,6 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } transferirá tanta información posible, comenzando con sus mensajes más recientes."
       ],
-      "Are you sure you want to discard your import?": [
-        "¿En verdad desea descartar su importación?"
-      ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "¿En verdad desea eliminar permanentemente ${ count } grupo de contactos?",
         "¿En verdad desea eliminar permanentemente ${ count } grupos de contactos?"
@@ -6564,10 +6561,10 @@
         "Los ajustes de fecha y hora en su dispositivo están desactualizados. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
-        "Falló el descifrado del contenido cifrado."
+        "Error en el descifrado del contenido cifrado."
       ],
       "The verification of the contact details' signature failed.": [
-        "Falló la verificación de la firma de los datos del contacto."
+        "Error en la verificación de la firma de los datos del contacto."
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Esta acción es irreversible. Ingrese la palabra ${ boldDanger } en el campo para continuar."

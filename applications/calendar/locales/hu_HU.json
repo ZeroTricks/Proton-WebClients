@@ -159,6 +159,9 @@
       "Create event": [
         "Esemény létrehozása"
       ],
+      "Create new contact": [
+        "Új névjegy létrehozása"
+      ],
       "Customize": [
         "Testreszabás"
       ],
@@ -580,6 +583,9 @@
       ],
       "View": [
         "Megtekintés"
+      ],
+      "View contact details": [
+        "Névjegy részletei"
       ],
       "View invoice": [
         "Számla megtekintése"
@@ -2156,6 +2162,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Továbbá meglátogathatja a ${ statusPageLink } oldalunkat"
+      ],
       "${ list } doesn't have a valid email address": [
         "${ list } nem tartalmaz egy érvényes e-mail címet",
         "Néhány névjegy nem tartalmaz egy érvényes e-mail címet: ${ list }"
@@ -2415,6 +2424,9 @@
       ],
       "Start time must be before end time": [
         "A kezdés idejének meg kell előznie a befejezés idejét"
+      ],
+      "status page": [
+        "állapot lap"
       ],
       "The address might be misspelled": [
         "Lehetséges, hogy a cím el van írva"
@@ -3005,8 +3017,8 @@
       "System default": [
         "Rendszer alapértelmezett"
       ],
-      "Theme default": [
-        "Alapértelmezett téma"
+      "Theme font": [
+        "Téma betűtípus"
       ]
     },
     "Font size option": {
@@ -3745,6 +3757,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Ez a folyamat eltarthat egy ideig, a névjegyzék méretétől függően."
       ],
+      "Please provide a name and an email address for creating a group.": [
+        "Csoport létrehozásához adjon meg egy nevet és egy e-mail címet."
+      ],
       "Please remove the duplicates and try again.": [
         "Kérjük, távolítsa el az ismétlődéseket és próbálja újra!"
       ],
@@ -4027,9 +4042,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "A fájlok titkosításra majd pedig mentésre kerülnek"
-      ],
-      "Your import will not be processed.": [
-        "Az importálás nem lesz feldolgozva."
       ],
       "Your login information will not be saved after the import is completed.": [
         "A bejelentkezési adatok az importálás befejezése után nem kerülnek tárolásra."
@@ -4612,9 +4624,6 @@
       ]
     },
     "Modal action": {
-      "Close": [
-        "Bezárás"
-      ],
       "Manage calendars": [
         "Naptárak kezelése"
       ],
@@ -4896,6 +4905,9 @@
       ],
       "Calendar added": [
         "Naptár hozzáadva"
+      ],
+      "Calendar updated": [
+        "A naptár frissült"
       ]
     },
     "Notification in share calendar modal": {
@@ -5075,9 +5087,6 @@
       ],
       "Set up your organization": [
         "Állítsa be a szervezet adatait"
-      ],
-      "Set up your organization testing": [
-        "A szervezetének beállítása"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Használja az alkalmazás választót a bal felső sarokban, hogy hozzáférjen az összes ${ BRAND_NAME } szolgáltatáshoz: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } és ${ DRIVE_SHORT_APP_NAME }."
@@ -5374,8 +5383,8 @@
       ]
     },
     "Shared calendar; Info about calendar owner": {
-      "Created by ${ ownerName }": [
-        "Létrehozta: ${ ownerName }"
+      "Shared by ${ ownerName }": [
+        "${ ownerName } által megosztva"
       ]
     },
     "Side panel spotlight": {
@@ -5677,19 +5686,6 @@
         "Olvassa el hogyan kaphat személyes naptár hivatkozást."
       ]
     },
-    "Subscribed calendar extension warning": {
-      "By using this link, Google will make the calendar you are subscribing to public": [
-        "Ezzel a hivatkozással, a Google nyilvánossá fogja tenni azt a naptárat amelyre fel van iratkozva"
-      ],
-      "This link might be wrong": [
-        "Ez a hivatkozás valószínűleg hibás"
-      ]
-    },
-    "Subscribed calendar URL length warning": {
-      "URL is too long": [
-        "Az URL túl hosszú"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } névjegy azonosnak tűnik.",
@@ -5839,6 +5835,50 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Visszajelzés elküldve"
+      ]
+    },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "1 év"
+      ],
+      "2 years": [
+        "2 év"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "Prémium tárhely"
+      ],
+      "Premium Mail and Calendar": [
+        "Prémium levelezés és naptár"
+      ],
+      "Premium Password Manager": [
+        "Prémium jelszókezelő"
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Jelszókezelő"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Tartalmaz 1 darab egyéni e-mail tartománynevet,10 darab e-mail címet, 10 darab hide-my-email álnevet, naptár megosztást és egyebeket"
+      ]
+    },
+    "summer2023:Footer": {
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "A kedvezmények a standard havi árakon alapulnak. Ez az ajánlat csak az első alkalommal előfizetők számára érhető el."
+      ]
+    },
+    "summer2023:Info": {
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Közösségi finanszírozásunk kilenc éves jubileumát ünnepeljük!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "${ BRAND_NAME } jubileumi kiárusítás"
       ]
     },
     "Table header": {
@@ -6446,9 +6486,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "A ${ BRAND_NAME } annyi adatot áttölt, amennyi lehetséges, a legfrissebb üzenetekkel kezdve."
-      ],
-      "Are you sure you want to discard your import?": [
-        "Biztos, hogy elveti az importálást?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Biztos, hogy véglegesen töröl ${ count } névjegy csoportot?",

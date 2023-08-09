@@ -1946,6 +1946,9 @@
       "\"${ name }\" already exists": [
         "\"${ name }\" уже существует"
       ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Вы можете также проверить нашу ${ statusPageLink }"
+      ],
       "A group with this name already exists": [
         "Группа с таким именем уже существует"
       ],
@@ -2155,6 +2158,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Что-то пошло не так, ${ refresh }, чтобы продолжить. Если вы всё ещё видите сообщение об ошибке, свяжитесь с нашей ${ supportTeam }."
+      ],
+      "status page": [
+        "страница статуса"
       ],
       "The email addresses do not match": [
         "Адреса электронной почты не совпадают"
@@ -2732,8 +2738,8 @@
       "System default": [
         "Системный по умолчанию"
       ],
-      "Theme default": [
-        "Из темы по умолчанию"
+      "Theme font": [
+        "Шрифт темы"
       ]
     },
     "Font size option": {
@@ -3523,6 +3529,9 @@
       "Enter the credentials of the email account you want to import from.": [
         "Введите учетные данные аккаунта электронной почты, из которого вы хотите импортировать данные."
       ],
+      "Enter the device name to confirm removal.": [
+        "Введите имя устройства, чтобы подтвердить удаление."
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введите код подтверждения, отправленный на ${ destinationText }."
       ],
@@ -4036,8 +4045,8 @@
         "Это удалит ссылки и лишит доступа к вашим файлам или папкам всех, у кого есть ссылки.",
         "Это удалит ссылки и лишит доступа к вашим файлам или папкам всех, у кого есть ссылки."
       ],
-      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected.": [
-        "Это приведет к удалению из ${ DRIVE_APP_NAME } синхронизированного устройства ${ deviceName }. Локальные файлы на устройстве не будут затронуты."
+      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
+        "Это удалит синхронизированное устройство ${ deviceName } из ${ DRIVE_APP_NAME } и остановит синхронизацию папок, которые вы добавили в «Мои компьютеры»."
       ],
       "This will replace the existing file with the folder": [
         "Это заменит существующий файл на папку"
@@ -4248,9 +4257,6 @@
       ],
       "Your files will be encrypted and then saved.": [
         "Ваши файлы будут зашифрованы, а затем сохранены."
-      ],
-      "Your import will not be processed.": [
-        "Ваш импорт не будет обработан."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Ваши данные для входа не будут сохранены после завершения импорта."
@@ -4823,6 +4829,9 @@
       ]
     },
     "Link": {
+      "${ DRIVE_APP_NAME } Windows app": [
+        "Приложение ${ DRIVE_APP_NAME } для Windows"
+      ],
       "clearing your browser cache": [
         "очистка кеша браузера"
       ],
@@ -4837,6 +4846,9 @@
       ],
       "Request an invite": [
         "Запросить приглашение"
+      ],
+      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
+        "Бесшовно синхронизируйте файлы и папки своего компьютера с ${ DRIVE_APP_NAME }."
       ],
       "Shared": [
         "В общем доступе"
@@ -5302,9 +5314,6 @@
         "Выберите тему"
       ],
       "Set up your organization": [
-        "Настройка организации"
-      ],
-      "Set up your organization testing": [
         "Настройка организации"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
@@ -6676,9 +6685,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } передаст как можно больше данных, начиная с ваших последних сообщений."
-      ],
-      "Are you sure you want to discard your import?": [
-        "Вы уверены, что хотите сбросить импорт?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Вы уверены, что хотите навсегда удалить ${ count } группу контактов?",

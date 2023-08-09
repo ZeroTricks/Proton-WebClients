@@ -141,6 +141,9 @@
       "Continue with Google": [
         "Продолжить с Google"
       ],
+      "Copy email address": [
+        "Копировать адрес электронной почты"
+      ],
       "Copy email to clipboard": [
         "Скопировать адрес электронной почты в буфер обмена"
       ],
@@ -158,6 +161,9 @@
       ],
       "Create event": [
         "Создать событие"
+      ],
+      "Create new contact": [
+        "Создать новый контакт"
       ],
       "Customize": [
         "Настроить"
@@ -584,6 +590,9 @@
       ],
       "View": [
         "Посмотреть"
+      ],
+      "View contact details": [
+        "Просмотреть контактную информацию"
       ],
       "View invoice": [
         "Посмотреть счет"
@@ -2178,6 +2187,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Вы можете также проверить нашу ${ statusPageLink }"
+      ],
       "${ list } doesn't have a valid email address": [
         "У ${ list } нет действительного адреса электронной почты",
         "У ${ list } нет действительных адресов электронной почты",
@@ -2459,6 +2471,9 @@
       ],
       "Start time must be before end time": [
         "Время начала должно быть раньше времени окончания"
+      ],
+      "status page": [
+        "страница статуса"
       ],
       "The address might be misspelled": [
         "Возможно, адрес указан неверно"
@@ -3063,8 +3078,8 @@
       "System default": [
         "Системный по умолчанию"
       ],
-      "Theme default": [
-        "Из темы по умолчанию"
+      "Theme font": [
+        "Шрифт темы"
       ]
     },
     "Font size option": {
@@ -4151,9 +4166,6 @@
       "Your files will be encrypted and then saved": [
         "Ваши файлы будут зашифрованы и затем сохранены"
       ],
-      "Your import will not be processed.": [
-        "Ваш импорт не будет обработан."
-      ],
       "Your login information will not be saved after the import is completed.": [
         "Ваши данные для входа не будут сохранены после завершения импорта."
       ],
@@ -4749,8 +4761,8 @@
       ]
     },
     "Modal action": {
-      "Close": [
-        "Закрыть"
+      "Cancel": [
+        "Отменить"
       ],
       "Manage calendars": [
         "Управление календарями"
@@ -5039,6 +5051,9 @@
       ],
       "Calendar added": [
         "Календарь добавлен"
+      ],
+      "Calendar updated": [
+        "Календарь обновлен"
       ]
     },
     "Notification in share calendar modal": {
@@ -5259,9 +5274,6 @@
         "Выберите тему"
       ],
       "Set up your organization": [
-        "Настройка организации"
-      ],
-      "Set up your organization testing": [
         "Настройка организации"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
@@ -5575,8 +5587,8 @@
       ]
     },
     "Shared calendar; Info about calendar owner": {
-      "Created by ${ ownerName }": [
-        "Создано ${ ownerName }"
+      "Shared by ${ ownerName }": [
+        "Доступ предоставил ${ ownerName }"
       ]
     },
     "Side panel spotlight": {
@@ -5888,19 +5900,6 @@
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
         "Узнайте как создать приватную ссылку на календарь."
-      ]
-    },
-    "Subscribed calendar extension warning": {
-      "By using this link, Google will make the calendar you are subscribing to public": [
-        "Используя эту ссылку, Google сделает публичным календарь, на который вы подписываетесь"
-      ],
-      "This link might be wrong": [
-        "Ссылка может быть нерабочей"
-      ]
-    },
-    "Subscribed calendar URL length warning": {
-      "URL is too long": [
-        "URL слишком длинный"
       ]
     },
     "Success": {
@@ -6755,9 +6754,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } передаст как можно больше данных, начиная с ваших последних сообщений."
-      ],
-      "Are you sure you want to discard your import?": [
-        "Вы уверены, что хотите сбросить импорт?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Вы уверены, что хотите навсегда удалить ${ count } группу контактов?",

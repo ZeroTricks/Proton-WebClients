@@ -5,8 +5,10 @@ import type { ExtensionEndpoint } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
+import type { SessionLockCheckResult } from '../../../auth';
 import { settingsEdit, unlockSession } from '../requests';
 import withCacheBlock from '../with-cache-block';
+import withCallback, { type ActionCallback } from '../with-callback';
 import withNotification from '../with-notification';
 import withRequest from '../with-request';
 
@@ -15,8 +17,10 @@ export const signoutSuccess = createAction('signout success', (payload: { soft: 
     withCacheBlock({ payload })
 );
 
-export const sessionLockImmediate = createAction('immediate session lock', () => withCacheBlock({ payload: {} }));
+export const sessionLock = createAction('session lock', () => withCacheBlock({ payload: {} }));
+export const extendLock = createAction('extend lock', () => withCacheBlock({ payload: {} }));
 export const offlineLock = createAction('offline lock');
+export const syncLock = createAction('sync lock', (payload: SessionLockCheckResult) => withCacheBlock({ payload }));
 
 export const sessionLockEnableIntent = createAction('enable session lock', (payload: { pin: string; ttl: number }) =>
     pipe(
@@ -92,26 +96,34 @@ export const sessionLockDisableSuccess = createAction('disable session lock succ
     )({ payload: {} })
 );
 
-export const sessionUnlockIntent = createAction('unlock session lock', (payload: { pin: string }) =>
-    pipe(
-        withCacheBlock,
-        withRequest({
-            id: unlockSession,
-            type: 'start',
-        })
-    )({ payload })
+export const sessionUnlockIntent = createAction(
+    'unlock session lock',
+    (
+        payload: { pin: string },
+        callback?: ActionCallback<ReturnType<typeof sessionUnlockSuccess> | ReturnType<typeof sessionUnlockFailure>>
+    ) =>
+        pipe(
+            withCacheBlock,
+            withCallback(callback),
+            withRequest({
+                id: unlockSession,
+                type: 'start',
+            })
+        )({ payload })
 );
 
-export const sessionUnlockFailure = createAction('unlock session lock failure', (error: unknown) =>
-    pipe(
-        withCacheBlock,
-        withRequest({ id: unlockSession, type: 'failure' }),
-        withNotification({
-            type: 'error',
-            text: c('Error').t`Failed to unlock`,
-            error,
-        })
-    )({ payload: {}, error })
+export const sessionUnlockFailure = createAction(
+    'unlock session lock failure',
+    (error: unknown, payload: { error: string; canRetry: boolean }) =>
+        pipe(
+            withCacheBlock,
+            withRequest({ id: unlockSession, type: 'failure' }),
+            withNotification({
+                type: 'error',
+                text: payload.error,
+                error,
+            })
+        )({ payload, error })
 );
 
 export const sessionUnlockSuccess = createAction('unlock session lock success', (payload: { storageToken: string }) =>

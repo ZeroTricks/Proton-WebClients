@@ -9,7 +9,8 @@ import {
     ModalTwoHeader,
     useSettingsLink,
 } from '@proton/components/components';
-import { useApi, useCache, useConfig, useEventManager, useLoading, useNotifications } from '@proton/components/hooks';
+import { useApi, useCache, useConfig, useEventManager, useNotifications } from '@proton/components/hooks';
+import { useLoading } from '@proton/hooks';
 import { acceptInvitation, rejectInvitation } from '@proton/shared/lib/api/user';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
@@ -50,7 +51,7 @@ const PendingInvitationModal = ({ invite, ...modalProps }: Props) => {
             text: c('familyOffer_2023:Family plan').t`You have successfully joined the Family plan`,
         });
         if (protonConfig.APP_NAME === APPS.PROTONACCOUNT) {
-            cache.delete(OrganizationModel.key); //Force refresh the organization since it's not present in the event manager
+            cache.delete(OrganizationModel.key); // Force refresh the organization since it's not present in the event manager
             goToSettings('/account-password', APPS.PROTONACCOUNT);
         }
     };

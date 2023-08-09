@@ -1940,6 +1940,9 @@
       "\"${ name }\" already exists": [
         "\"${ name }\" bestaat reeds"
       ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. U kunt ook onze ${ statusPageLink } bekijken"
+      ],
       "A group with this name already exists": [
         "Er bestaat al een groep met deze naam"
       ],
@@ -2137,6 +2140,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Er ging iets mis, gelieve ${ refresh } om door te gaan. Als u dit foutbericht nog steeds ziet, neem dan contact op met onze ${ supportTeam }."
+      ],
+      "status page": [
+        "status pagina"
       ],
       "The email addresses do not match": [
         "De e-mailadressen komen niet overeen"
@@ -2702,8 +2708,8 @@
       "System default": [
         "Systeem standaard"
       ],
-      "Theme default": [
-        "Thema standaard"
+      "Theme font": [
+        "Thema lettertype"
       ]
     },
     "Font size option": {
@@ -3415,6 +3421,9 @@
       "Enter the credentials of the email account you want to import from.": [
         "Voer de inloggegevens in van het e-mailaccount waarvan u wilt importeren."
       ],
+      "Enter the device name to confirm removal.": [
+        "Voer de apparaatnaam in om de verwijdering te bevestigen."
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Vul de verificatiecode in die naar ${ destinationText } verzonden is."
       ],
@@ -3721,6 +3730,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Houd er rekening mee dat dit proces enige tijd in beslag kan nemen, afhankelijk van de grootte van uw adresboek."
       ],
+      "Please provide a name and an email address for creating a group.": [
+        "Voorzie een naam en een email adres voor het aanmaken van een groep"
+      ],
       "Please select the folders you would like to import:": [
         "Selecteer de mappen die u wilt importeren:"
       ],
@@ -3860,6 +3872,9 @@
       "Sync folders from your computer": [
         "Mappen synchroniseren met uw computer"
       ],
+      "Sync folders with ease using our desktop app, ensuring your files are always up to date and accessible from anywhere.": [
+        "Synchroniseer eenvoudig mappen met onze desktop-app, zodat uw bestanden altijd up-to-date en overal toegankelijk zijn."
+      ],
       "Temporarily unavailable. Please check back later.": [
         "Tijdelijk onbeschikbaar. Probeer later opnieuw."
       ],
@@ -3915,8 +3930,8 @@
         "Dit zal de link verwijderen en de toegang tot uw bestand of map voor iedereen met de link verwijderen.",
         "Dit zal de links verwijderen en de toegang tot uw bestanden en mappen voor iedereen met de links verwijderen."
       ],
-      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected.": [
-        "Dit verwijdert het gesynchroniseerde apparaat ${ deviceName } van ${ DRIVE_APP_NAME }. Lokale bestanden op het apparaat blijven onaangeroerd."
+      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
+        "Hiermee wordt het gesynchroniseerde apparaat ${ deviceName } verwijderd van ${ DRIVE_APP_NAME } en worden de mappen die u aan Mijn computers hebt toegevoegd, niet meer gesynchroniseerd."
       ],
       "This will replace the existing file with the folder": [
         "Dit zal het bestaande bestand vervangen door de map"
@@ -4127,9 +4142,6 @@
       ],
       "Your files will be encrypted and then saved.": [
         "Uw bestanden worden versleuteld en vervolgens opgeslagen."
-      ],
-      "Your import will not be processed.": [
-        "Uw import zal niet worden verwerkt."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Uw inloginformatie zal niet worden opgeslagen nadat de import is voltooid."
@@ -4696,6 +4708,9 @@
       ]
     },
     "Link": {
+      "${ DRIVE_APP_NAME } Windows app": [
+        "${ DRIVE_APP_NAME } Windows-app"
+      ],
       "clearing your browser cache": [
         "browsercache legen"
       ],
@@ -4710,6 +4725,9 @@
       ],
       "Request an invite": [
         "Uitnodiging aanvragen"
+      ],
+      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
+        "Synchroniseer naadloos bestanden en mappen tussen uw computer en ${ DRIVE_APP_NAME }."
       ],
       "Shared": [
         "Gedeeld"
@@ -5129,9 +5147,6 @@
       "Set up your organization": [
         "Stel uw organisatie in"
       ],
-      "Set up your organization testing": [
-        "Stel uw organisatie in"
-      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Gebruik de app-kiezer linksboven voor de toegang tot alle ${ BRAND_NAME }-diensten: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } en ${ DRIVE_SHORT_APP_NAME }."
       ]
@@ -5251,6 +5266,11 @@
     "Placeholder for contact group name": {
       "Name": [
         "Naam"
+      ]
+    },
+    "Platform": {
+      "Windows": [
+        "Windows"
       ]
     },
     "Progress bar description": {
@@ -5675,6 +5695,9 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium Drive": [
+        "Premium Drive"
+      ],
       "Premium Mail and Calendar": [
         "Premium Mail en Calendar"
       ],
@@ -6433,9 +6456,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } zal zo veel mogelijk gegevens overdragen, te beginnen met uw meest recente berichten."
-      ],
-      "Are you sure you want to discard your import?": [
-        "Weet u zeker dat u uw import wilt verwijderen?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Weet u zeker dat u ${ count } contactgroep permanent wilt verwijderen?",

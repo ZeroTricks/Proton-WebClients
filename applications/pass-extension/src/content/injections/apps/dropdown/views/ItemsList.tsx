@@ -1,14 +1,18 @@
 import type { VFC } from 'react';
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import type { SafeLoginItem } from '@proton/pass/types';
+import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
+import { createTelemetryEvent } from '@proton/pass/telemetry/events';
+import { type SafeLoginItem, WorkerMessageType } from '@proton/pass/types';
+import { PassIconStatus } from '@proton/pass/types/data/pass-icon';
+import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { truthy } from '@proton/pass/utils/fp';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { navigateToUpgrade } from '../../../../../shared/components/upgrade/UpgradeButton';
-import type { IFrameMessage } from '../../../../types';
+import type { IFrameCloseOptions, IFrameMessage } from '../../../../types';
 import { IFrameMessageType } from '../../../../types';
 import { useIFrameContext } from '../../context/IFrameContextProvider';
 import { DropdownItem } from '../components/DropdownItem';
@@ -17,11 +21,26 @@ import { DropdownItemsList } from '../components/DropdownItemsList';
 type Props = {
     items: SafeLoginItem[];
     needsUpgrade: boolean;
+    visible?: boolean;
+    onClose?: (options?: IFrameCloseOptions) => void;
     onMessage?: (message: IFrameMessage) => void;
 };
 
-export const ItemsList: VFC<Props> = ({ items, needsUpgrade, onMessage }) => {
+export const ItemsList: VFC<Props> = ({ items, needsUpgrade, visible, onMessage, onClose }) => {
     const { settings } = useIFrameContext();
+
+    useEffect(() => {
+        if (visible) {
+            void sendMessage(
+                contentScriptMessage({
+                    type: WorkerMessageType.TELEMETRY_EVENT,
+                    payload: {
+                        event: createTelemetryEvent(TelemetryEventName.AutofillDisplay, {}, { location: 'source' }),
+                    },
+                })
+            );
+        }
+    }, [visible]);
 
     const dropdownItems = useMemo(
         () =>
@@ -39,18 +58,26 @@ export const ItemsList: VFC<Props> = ({ items, needsUpgrade, onMessage }) => {
                         autogrow
                     />
                 ),
-                ...items.map((item) => (
+                ...items.map(({ shareId, itemId, username, name, url }) => (
                     <DropdownItem
-                        key={item.itemId}
-                        title={item.name}
-                        subTitle={item.username}
-                        url={settings.loadDomainImages ? item.url : undefined}
+                        key={itemId}
+                        title={name}
+                        subTitle={username}
+                        url={settings.loadDomainImages ? url : undefined}
                         icon="user"
                         onClick={() =>
-                            onMessage?.({
-                                type: IFrameMessageType.DROPDOWN_AUTOFILL_LOGIN,
-                                payload: { item },
-                            })
+                            sendMessage.onSuccess(
+                                contentScriptMessage({
+                                    type: WorkerMessageType.AUTOFILL_SELECT,
+                                    payload: { shareId, itemId },
+                                }),
+                                ({ username, password }) => {
+                                    onMessage?.({
+                                        type: IFrameMessageType.DROPDOWN_AUTOFILL_LOGIN,
+                                        payload: { username, password },
+                                    });
+                                }
+                            )
                         }
                     />
                 )),
@@ -58,5 +85,14 @@ export const ItemsList: VFC<Props> = ({ items, needsUpgrade, onMessage }) => {
         [items, needsUpgrade, onMessage]
     );
 
-    return <DropdownItemsList>{dropdownItems}</DropdownItemsList>;
+    return dropdownItems.length > 0 ? (
+        <DropdownItemsList>{dropdownItems}</DropdownItemsList>
+    ) : (
+        <DropdownItem
+            icon={PassIconStatus.ACTIVE}
+            onClick={() => onClose?.()}
+            title={PASS_APP_NAME}
+            subTitle={c('Info').t`No login found`}
+        />
+    );
 };

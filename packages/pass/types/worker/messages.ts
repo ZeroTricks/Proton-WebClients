@@ -3,7 +3,7 @@ import type { Tabs } from 'webextension-polyfill';
 
 import type { ResumedSessionResult } from '@proton/pass/auth';
 import type { ExportRequestPayload } from '@proton/pass/export/types';
-import type { AliasState } from '@proton/pass/store';
+import type { AliasOptions } from '@proton/pass/store';
 import type { Notification } from '@proton/pass/store/actions/with-notification';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { ExtensionForkResultPayload } from '@proton/shared/lib/authentication/sessionForking';
@@ -16,7 +16,7 @@ import type { TelemetryEvent } from '../data/telemetry';
 import type { Maybe, MaybeNull } from '../utils';
 import type { AutosavePayload, WithAutoSavePromptOptions } from './autosave';
 import type { SafeLoginItem } from './data';
-import type { FormEntry, NewFormEntry, PromptedFormEntry } from './form';
+import type { FormEntry, FormEntryPrompt, NewFormEntry } from './form';
 import type { OnboardingMessage } from './onboarding';
 import type { OtpCode, OtpRequest } from './otp';
 import type { TabId } from './runtime';
@@ -56,7 +56,9 @@ export enum WorkerMessageType {
     AUTOFILL_QUERY = 'AUTOFILL_QUERY',
     AUTOFILL_SELECT = 'AUTOFILL_SELECT',
     AUTOFILL_SYNC = 'AUTOFILL_SYNC',
+    AUTOFILL_OTP_CHECK = 'AUTOFILL_OTP_CHECK',
     AUTOSAVE_REQUEST = 'AUTOSAVE_REQUEST',
+    UNLOCK_REQUEST = 'UNLOCK_REQUEST',
     ALIAS_OPTIONS = 'ALIAS_OPTIONS',
     ALIAS_CREATE = 'ALIAS_CREATE',
     OTP_CODE_GENERATE = 'OTP_CODE_GENERATE',
@@ -76,6 +78,7 @@ export enum WorkerMessageType {
     SETTINGS_UPDATE = 'SETTINGS_UPDATE',
     PERMISSIONS_UPDATE = 'PERMISSIONS_UPDATE',
     IMPORT_PROGRESS = 'IMPORT_PROGRESS',
+    ACTIVITY_PROBE = 'ACTIVITY_PROBE',
 }
 
 /* messages for communication with account */
@@ -98,7 +101,9 @@ export type NotificationMessage = WithPayload<WorkerMessageType.NOTIFICATION, { 
 export type AutofillQueryMessage = { type: WorkerMessageType.AUTOFILL_QUERY };
 export type AutofillSyncMessage = WithPayload<WorkerMessageType.AUTOFILL_SYNC, { count: number }>;
 export type AutofillSelectMessage = WithPayload<WorkerMessageType.AUTOFILL_SELECT, SelectedItem>;
+export type AutofillOTPCheckMessage = { type: WorkerMessageType.AUTOFILL_OTP_CHECK };
 export type AutoSaveRequestMessage = WithPayload<WorkerMessageType.AUTOSAVE_REQUEST, AutosavePayload>;
+export type UnlockRequestMessage = WithPayload<WorkerMessageType.UNLOCK_REQUEST, { pin: string }>;
 export type FormEntryStageMessage = WithPayload<WorkerMessageType.FORM_ENTRY_STAGE, NewFormEntry & { reason: string }>;
 export type FormEntryStashMessage = WithPayload<WorkerMessageType.FORM_ENTRY_STASH, { reason: string }>;
 export type FormEntryCommitMessage = WithPayload<WorkerMessageType.FORM_ENTRY_COMMIT, { reason: string }>;
@@ -122,6 +127,7 @@ export type LogRequestMessage = { type: WorkerMessageType.LOG_REQUEST };
 export type SettingsUpdateMessage = WithPayload<WorkerMessageType.SETTINGS_UPDATE, ProxiedSettings>;
 export type PermissionsUpdateMessage = WithPayload<WorkerMessageType.PERMISSIONS_UPDATE, { check: boolean }>;
 export type ImportProgressMessage = WithPayload<WorkerMessageType.IMPORT_PROGRESS, { progress: number }>;
+export type ActivityProbeMessage = { type: WorkerMessageType.ACTIVITY_PROBE };
 
 export type WorkerMessage =
     | StoreActionMessage
@@ -142,7 +148,9 @@ export type WorkerMessage =
     | AutofillQueryMessage
     | AutofillSelectMessage
     | AutofillSyncMessage
+    | AutofillOTPCheckMessage
     | AutoSaveRequestMessage
+    | UnlockRequestMessage
     | OTPCodeGenerateMessage
     | FormEntryStageMessage
     | FormEntryStashMessage
@@ -166,12 +174,14 @@ export type WorkerMessage =
     | LogRequestMessage
     | SettingsUpdateMessage
     | PermissionsUpdateMessage
-    | ImportProgressMessage;
+    | ImportProgressMessage
+    | ActivityProbeMessage;
 
 export type WorkerMessageWithSender<T extends WorkerMessage = WorkerMessage> = T & { sender: ExtensionEndpoint };
 export type MessageFailure = { type: 'error'; error: string; payload?: string };
 export type MessageSuccess<T> = T extends { [key: string]: any } ? T & { type: 'success' } : { type: 'success' };
 export type MaybeMessage<T> = MessageSuccess<T> | MessageFailure;
+export type Outcome<T = {}, F = {}> = ({ ok: true } & T) | ({ ok: false; error: MaybeNull<string> } & F);
 
 type WorkerMessageResponseMap = {
     [WorkerMessageType.WORKER_WAKEUP]: WorkerState & { settings: ProxiedSettings };
@@ -181,12 +191,15 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.RESOLVE_EXTENSION_KEY]: { key: string };
     [WorkerMessageType.ACCOUNT_FORK]: { payload: ExtensionForkResultPayload };
     [WorkerMessageType.FORM_ENTRY_REQUEST]: { submission: Maybe<WithAutoSavePromptOptions<FormEntry>> };
-    [WorkerMessageType.FORM_ENTRY_COMMIT]: { committed: Maybe<PromptedFormEntry> };
+    [WorkerMessageType.FORM_ENTRY_COMMIT]: { committed: Maybe<FormEntryPrompt> };
     [WorkerMessageType.FORM_ENTRY_STAGE]: { staged: FormEntry };
     [WorkerMessageType.AUTOFILL_QUERY]: { items: SafeLoginItem[]; needsUpgrade: boolean };
     [WorkerMessageType.AUTOFILL_SELECT]: { username: string; password: string };
+    [WorkerMessageType.AUTOFILL_OTP_CHECK]: { shouldPrompt: false } | ({ shouldPrompt: true } & SelectedItem);
+    [WorkerMessageType.ALIAS_CREATE]: Outcome;
+    [WorkerMessageType.UNLOCK_REQUEST]: Outcome<{}, { canRetry: boolean }>;
     [WorkerMessageType.OTP_CODE_GENERATE]: OtpCode;
-    [WorkerMessageType.ALIAS_OPTIONS]: { options: AliasState['aliasOptions']; needsUpgrade: boolean };
+    [WorkerMessageType.ALIAS_OPTIONS]: Outcome<{ options: AliasOptions; needsUpgrade: boolean }>;
     [WorkerMessageType.EXPORT_REQUEST]: { data: string };
     [WorkerMessageType.EXPORT_DECRYPT]: { data: string };
     [WorkerMessageType.ONBOARDING_REQUEST]: { message?: OnboardingMessage };

@@ -131,7 +131,7 @@
         "Cerrar transferencias"
       ],
       "Collapse": [
-        "Contraer"
+        "Minimizar"
       ],
       "Collapse folder": [
         "Contraer carpeta"
@@ -412,7 +412,7 @@
         "Mover a la papelera"
       ],
       "New": [
-        "Nueva"
+        "Nuevo"
       ],
       "New message": [
         "Mensaje nuevo"
@@ -652,7 +652,7 @@
         "Probarlo gratis"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
-        "Intente guardar de nuevo. El guardado falló debido a: ${ saveError }"
+        "Error al guardar debido a: ${ saveError }. Intente guardar de nuevo."
       ],
       "Undo": [
         "Deshacer"
@@ -700,7 +700,7 @@
         "Usar código de autenticación"
       ],
       "Use for sending": [
-        "Usar para enviar"
+        "Usar para el envío"
       ],
       "Use recovery code": [
         "Usar código de recuperación"
@@ -1940,6 +1940,9 @@
       "\"${ name }\" already exists": [
         "\"${ name }\" ya existe"
       ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. También puede comprobar nuestra ${ statusPageLink }"
+      ],
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre"
       ],
@@ -2106,13 +2109,13 @@
         "Tiempo de espera agotado"
       ],
       "Search failed": [
-        "Falló la búsqueda"
+        "Error en la búsqueda"
       ],
       "Signature not verified": [
         "Firma no verificada"
       ],
       "Signature verification failed": [
-        "Falló la verificación de la firma"
+        "Error en la verificación de la firma"
       ],
       "Some contacts could not be deleted": [
         "Algunos contactos no se pudieron eliminar"
@@ -2137,6 +2140,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Hubo un problema. ${ refresh } para continuar. Si aún ve este mensaje de error, contacte a nuestro ${ supportTeam }."
+      ],
+      "status page": [
+        "página de estado"
       ],
       "The email addresses do not match": [
         "Las direcciónes de correo electrónico no son las mismas"
@@ -2261,7 +2267,7 @@
     },
     "Error importing contact": {
       "Encryption failed": [
-        "Falló el cifrado"
+        "Error en el cifrado"
       ],
       "vCard versions < 3.0 not supported": [
         "Versiones vCard menores a 3.0 no compatibles"
@@ -2313,7 +2319,7 @@
         "Elemento"
       ],
       "Encryption failed": [
-        "Falló el cifrado"
+        "Error en el cifrado"
       ],
       "End time out of bounds": [
         "Hora final fuera de límites"
@@ -2322,7 +2328,7 @@
         "Evento"
       ],
       "Event validation failed": [
-        "Falló la validación del evento"
+        "Error en la validación del evento"
       ],
       "Floating times not supported": [
         "Tiempos flotantes no compatibles"
@@ -2702,8 +2708,8 @@
       "System default": [
         "Del sistema"
       ],
-      "Theme default": [
-        "Tema por defecto"
+      "Theme font": [
+        "Fuente del tema"
       ]
     },
     "Font size option": {
@@ -3101,8 +3107,8 @@
         "${ doneUploadsCount } cargados"
       ],
       "${ errorCount } failed": [
-        "${ errorCount } fallida",
-        "${ errorCount } fallidas"
+        "${ errorCount } error",
+        "${ errorCount } errores"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: imagen de tamaño completo"
@@ -3218,8 +3224,11 @@
       "Are you sure you want to discard your changes?": [
         "¿Está seguro que desea descartar los cambios?"
       ],
+      "Are you sure you want to discard your import?": [
+        "¿En verdad desea descartar su importación?"
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
-        "¿Está seguro que desea vaciar la papelera y eliminar permanentemente todos los elementos?"
+        "¿En verdad desea vaciar la papelera y eliminar permanentemente todos los elementos?"
       ],
       "Are you sure you want to permanently delete": [
         "¿En verdad desea eliminar permanentemente"
@@ -3359,7 +3368,7 @@
         "Descarga cancelada"
       ],
       "Download failed": [
-        "Descarga fallida"
+        "Error de descarga"
       ],
       "Download failed due to ${ error }": [
         "Error en la descarga debido a ${ error }"
@@ -3415,6 +3424,9 @@
       "Enter the credentials of the email account you want to import from.": [
         "Ingrese las credenciales de la cuenta de correo electrónico desde la que desea importar."
       ],
+      "Enter the device name to confirm removal.": [
+        "Ingrese el nombre del dispositivo para confirmar la eliminación."
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Ingrese el código de verificación que fue enviado a ${ destinationText }."
       ],
@@ -3435,7 +3447,7 @@
         "Tiempo restante estimado..."
       ],
       "Failed": [
-        "Fallido"
+        "Error"
       ],
       "Failed to generate a secure link. The reason is: ${ error }": [
         "Error al generar un enlace seguro. Motivo: ${ error }"
@@ -3562,7 +3574,7 @@
         "Conexión a internet restaurada."
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
-        "Parece ser que recientemente ha intentado subir ${ uploadName }. Si la carga falló, ${ replaceFile }. Si la carta está en proceso, reemplazarla cancelará la carga en curso."
+        "Parece ser que recientemente ha intentado subir ${ uploadName }. Si no se pudo cargar, ${ replaceFile }. Si la carta está en proceso, reemplazarla cancelará la carga en curso."
       ],
       "Items in the trash will stay here until you delete them permanently": [
         "Los elementos de la papelera permanecerán aquí hasta que los borre permanentemente"
@@ -3720,6 +3732,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Tome en cuenta que este proceso puede tardar algún tiempo dependiendo del tamaño de su libreta de direcciones."
+      ],
+      "Please provide a name and an email address for creating a group.": [
+        "Proporcione un nombre y una dirección de correo para crear un grupo."
       ],
       "Please select the folders you would like to import:": [
         "Seleccione las carpetas que desea importar:"
@@ -3918,8 +3933,8 @@
         "Esto eliminará el enlace y removerá el acceso a su archivo o carpeta para cualquier persona que tenga el enlace.",
         "Esto eliminará los enlaces y removerá el acceso a sus archivos o carpetas para cualquier persona que tenga los enlaces."
       ],
-      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected.": [
-        "Esto elimina de ${ DRIVE_APP_NAME } el dispositivo sincronizado ${ deviceName }. Los archivos locales en el dispositivo no se verán afectados."
+      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
+        "Esto eliminará el dispositivo sincronizado ${ deviceName } de ${ DRIVE_APP_NAME } y detendrá la sincronización de carpetas añadidas a Dispositivos."
       ],
       "This will replace the existing file with the folder": [
         "Esto reemplazará el archivo existente con la carpeta"
@@ -4131,9 +4146,6 @@
       "Your files will be encrypted and then saved.": [
         "Sus archivos serán cifrados y luego guardados."
       ],
-      "Your import will not be processed.": [
-        "Su importación no será procesada."
-      ],
       "Your login information will not be saved after the import is completed.": [
         "La información de inicio de sesión no se guardará una vez finalizada la importación."
       ],
@@ -4199,11 +4211,6 @@
       ],
       "Trusted": [
         "Confiada"
-      ]
-    },
-    "Key transparency details button": {
-      "Click here for more details.": [
-        "Haga clic aquí para obtener más información."
       ]
     },
     "Label": {
@@ -4697,13 +4704,16 @@
         "Para añadir un calendario nuevo, elimine uno existente."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Para añadir un calendario nuevo, elimine otro o actualice su plan de ${ BRAND_NAME } a un plan de pago de ${ MAIL_SHORT_APP_NAME }."
+        "Para añadir un calendario nuevo, elimine otro o mejore su plan de ${ BRAND_NAME } a un plan de pago de ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
         "Ha alcanzado el número máximo de calendarios disponibles en su plan."
       ]
     },
     "Link": {
+      "${ DRIVE_APP_NAME } Windows app": [
+        "App de ${ DRIVE_APP_NAME } para Windows"
+      ],
       "clearing your browser cache": [
         "vaciar la caché del navegador"
       ],
@@ -4718,6 +4728,9 @@
       ],
       "Request an invite": [
         "Solicitar una invitación"
+      ],
+      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
+        "Sincronice fácilmente archivos y carpetas entre su computadora y ${ DRIVE_APP_NAME }."
       ],
       "Shared": [
         "Compartido"
@@ -4825,7 +4838,7 @@
     },
     "new_plans: Action": {
       "Upgrade now": [
-        "Actualizar ahora"
+        "Mejorar ahora"
       ]
     },
     "new_plans: action": {
@@ -4897,7 +4910,7 @@
         "Error al eliminar \"${ name }\" permanentemente de la papelera"
       ],
       "\"${ name }\" failed to be moved": [
-        "No se pudo mover \"${ name }\""
+        "Error al mover \"${ name }\""
       ],
       "\"${ name }\" failed to be moved to trash": [
         "Error al mover \"${ name }\" a la papelera"
@@ -4909,7 +4922,7 @@
         "Error al guardar \"${ name }\""
       ],
       "\"${ name }\" moved to trash": [
-        "\"${ name }\" movido a la papelera"
+        "\"${ name }\" fue movido a la papelera."
       ],
       "\"${ name }\" restored from trash": [
         "\"${ name }\" restaurado de la papelera"
@@ -5135,9 +5148,6 @@
         "Seleccionar un tema"
       ],
       "Set up your organization": [
-        "Configure su organización"
-      ],
-      "Set up your organization testing": [
         "Configure su organización"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
@@ -5433,7 +5443,7 @@
         "VPN premium"
       ],
       "Secure cloud storage": [
-        "Almacenamiento en la nube seguro"
+        "Almacenamiento seguro en la nube"
       ],
       "Secure streaming": [
         "Transmisión segura"
@@ -5609,7 +5619,7 @@
         "Notas de la versión"
       ],
       "Upgrade storage": [
-        "Mejorar almacenamiento"
+        "Aumentar el almacenamiento"
       ],
       "Your current storage:": [
         "Su almacenamiento actual:"
@@ -5840,16 +5850,16 @@
         "${ emailsCount } direcciones de correo"
       ],
       "${ numberOfFailedTransfer.total } failed download": [
-        "${ numberOfFailedTransfer.total } descarga fallida",
-        "${ numberOfFailedTransfer.total } descargas fallidas"
+        "${ numberOfFailedTransfer.total } error de descarga",
+        "${ numberOfFailedTransfer.total } errores de descarga"
       ],
       "${ numberOfFailedTransfer.total } failed transfer": [
-        "${ numberOfFailedTransfer.total } transferencia fallida",
-        "${ numberOfFailedTransfer.total } transferencias fallidas"
+        "${ numberOfFailedTransfer.total } error de transferencia",
+        "${ numberOfFailedTransfer.total } errores de transferencia"
       ],
       "${ numberOfFailedTransfer.total } failed upload": [
-        "${ numberOfFailedTransfer.total } carga fallida",
-        "${ numberOfFailedTransfer.total } cargas fallidas"
+        "${ numberOfFailedTransfer.total } error de carga",
+        "${ numberOfFailedTransfer.total } errores de carga"
       ],
       "(active)": [
         "(activo)"
@@ -6020,7 +6030,7 @@
         "Exportando contactos"
       ],
       "Failed": [
-        "Fallida"
+        "Error"
       ],
       "Feedback": [
         "Comentarios"
@@ -6054,8 +6064,8 @@
         "Verificación humana"
       ],
       "Import as simple event?": [
-        "¿Importar como evento simple?",
-        "¿Importar como eventos simples?"
+        "¿Importar como evento sin detalles?",
+        "¿Importar como eventos sin detalles?"
       ],
       "Import contacts": [
         "Importar contactos"
@@ -6453,9 +6463,6 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } transferirá tanta información posible, comenzando con sus mensajes más recientes."
       ],
-      "Are you sure you want to discard your import?": [
-        "¿En verdad desea descartar su importación?"
-      ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "¿En verdad desea eliminar permanentemente ${ count } grupo de contactos?",
         "¿En verdad desea eliminar permanentemente ${ count } grupos de contactos?"
@@ -6495,10 +6502,10 @@
         "Los ajustes de fecha y hora en su dispositivo están desactualizados. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
-        "Falló el descifrado del contenido cifrado."
+        "Error en el descifrado del contenido cifrado."
       ],
       "The verification of the contact details' signature failed.": [
-        "Falló la verificación de la firma de los datos del contacto."
+        "Error en la verificación de la firma de los datos del contacto."
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Esta acción es irreversible. Ingrese la palabra ${ boldDanger } en el campo para continuar."

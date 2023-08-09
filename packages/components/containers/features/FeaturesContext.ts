@@ -85,6 +85,7 @@ export enum FeatureCode {
     OfferSummer2023 = 'OfferSummer2023',
     SmtpToken = 'SmtpToken',
     MailForwarding = 'MailForwarding',
+    MailDisableE2EE = 'MailDisableE2EE',
     TrustedDeviceRecovery = 'TrustedDeviceRecovery',
     DriveMyDevices = 'DriveWebMyDevices',
     DriveWindowsGA = 'DriveWindowsGA',
@@ -97,13 +98,14 @@ export enum FeatureCode {
     KeyTransparencyCalendar = 'KeyTransparencyWebCalendar',
     KeyTransparencyDrive = 'KeyTransparencyWebDrive',
     AutoDelete = 'AutoDelete',
-    FamilyPlan = 'FamilyPlan',
     OrgSpamBlockList = 'OrgSpamBlockList',
     ProtonSentinel = 'ProtonSentinel',
-    AccessibilitySettings = 'AccessibilitySettings',
     OrgTwoFactor = 'OrgTwoFactor',
     UnreadFavicon = 'UnreadFavicon',
     PassSignup = 'PassSignup',
+    OnboardingChecklist = 'OnboardingChecklist',
+    NewOnboardingChecklist = 'NewOnboardingChecklist',
+    VpnB2bPlans = 'VpnB2bPlans',
 }
 
 export interface FeaturesContextValue {

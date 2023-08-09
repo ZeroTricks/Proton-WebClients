@@ -791,7 +791,7 @@
         "Regatul Unit"
       ],
       "United States": [
-        "Statele Unite"
+        "SUA"
       ],
       "United States Minor Outlying Islands": [
         "Insulele Minore Îndepărtate ale Statelor Unite"
@@ -921,8 +921,8 @@
       "System default": [
         "Implicit din sistem"
       ],
-      "Theme default": [
-        "Temă implicită"
+      "Theme font": [
+        "Font temă"
       ]
     },
     "Font size option": {

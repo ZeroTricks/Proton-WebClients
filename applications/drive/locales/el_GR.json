@@ -520,10 +520,10 @@
         "Επαναφορά από Διαγραμμένα"
       ],
       "Restore this version": [
-        "Επαναφέρετε αυτήν την έκδοση"
+        "Επαναφορά αυτής της έκδοσης"
       ],
       "Restore version": [
-        "Επαναφορά Έκδοσης"
+        "Επαναφορά έκδοσης"
       ],
       "Resume all": [
         "Συνέχιση όλων"
@@ -897,7 +897,7 @@
         "χαλκός"
       ],
       "enzian": [
-        "ενζιάν"
+        "βαθύ μπλέ"
       ],
       "fern": [
         "φτέρη"
@@ -1940,6 +1940,9 @@
       "\"${ name }\" already exists": [
         "\"${ name }\" υπάρχει ήδη"
       ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Μπορείτε επίσης να ελέγξετε τη ${ statusPageLink }"
+      ],
       "A group with this name already exists": [
         "Υπάρχει ήδη μια ομάδα με αυτό το όνομα"
       ],
@@ -2055,13 +2058,13 @@
         "Λείπει η υπογραφή"
       ],
       "No calendars found to import": [
-        "Δε βρέθηκαν ημερολόγια για εισαγωγή."
+        "Δεν βρέθηκαν ημερολόγια προς εισαγωγή."
       ],
       "No contacts found to import": [
-        "Δε βρέθηκαν επαφές για εισαγωγή"
+        "Δεν βρέθηκαν επαφές προς εισαγωγή"
       ],
       "No emails found to import - the account does not have an inbox": [
-        "Δεν βρέθηκαν μηνύματα ηλεκτρονικού ταχυδρομείου για εισαγωγή - ο λογαριασμός δεν διαθέτει εισερχόμενα"
+        "Δεν βρέθηκαν μηνύματα προς εισαγωγή - ο λογαριασμός δεν διαθέτει εισερχόμενα"
       ],
       "No valid address found": [
         "Δεν βρέθηκε έγκυρη διεύθυνση"
@@ -2137,6 +2140,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Κάτι πήγε στραβά, παρακαλούμε ${ refresh } για να προχωρήσετε. Εάν εξακολουθείτε να βλέπετε αυτό το μήνυμα σφάλματος, παρακαλούμε επικοινωνήστε με την ${ supportTeam }."
+      ],
+      "status page": [
+        "σελίδα κατάστασης"
       ],
       "The email addresses do not match": [
         "Οι διευθύνσεις email δεν ταιριάζουν."
@@ -2702,8 +2708,8 @@
       "System default": [
         "Προεπιλογή συστήματος"
       ],
-      "Theme default": [
-        "Προεπιλεγμένο θέμα"
+      "Theme font": [
+        "Γραμματοσειρά εμφάνισης"
       ]
     },
     "Font size option": {
@@ -3234,7 +3240,7 @@
         "Χρειάζεται προσοχή"
       ],
       "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:": [
-        "Επειδή το ${ DRIVE_APP_NAME } είναι κρυπτογραφημένο από άκρο σε άκρο, δεν μπορούμε να έχουμε πρόσβαση ή να αποκρυπτογραφήσουμε τα αρχεία σας για εσάς. Για να ξεκλειδώσετε τη μονάδα δίσκου μετά την επαναφορά κωδικού πρόσβασης, πρέπει να έχετε ένα από τα εξής:"
+        "Επειδή το ${ DRIVE_APP_NAME } είναι διατερματικά κρυπτογραφημένο, δεν μπορούμε να αποκρυπτογραφήσουμε και να προσπελάσουμε τα αρχεία σας για λογαριασμό σας. Για να ξεκλειδώσετε την αρχειοθήκη σας μετά από επαναφορά κωδικού πρόσβασης, πρέπει να έχετε ένα από τα εξής:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Πριν αιτηθείτε νέο κωδικό επαλήθευσης, ελέγξτε τον φάκελό σας Ενοχλητικά και ότι η ${ strong } είναι η σωστή διεύθυνση."
@@ -3288,10 +3294,10 @@
         "Διένεξη"
       ],
       "Contact assigned to group ${ contactGroupName }": [
-        "Επαφή προστέθηκε στην ομάδα ${ contactGroupName }"
+        "Η επαφή προστέθηκε στην ομάδα ${ contactGroupName }"
       ],
       "Contact unassigned to group ${ contactGroupName }": [
-        "Επαφή αφαιρέθηκε από την ομάδα ${ contactGroupName }"
+        "Η επαφή αφαιρέθηκε από την ομάδα ${ contactGroupName }"
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Συνέχιση χρήσης ${ DRIVE_APP_NAME } και ξεκλείδωμα αρχειοθήκης αργότερα."
@@ -3414,6 +3420,9 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Συμπληρώστε τα διαπιστευτήρια του λογαριασμού email από τον οποίο θέλετε να εισάγετε."
+      ],
+      "Enter the device name to confirm removal.": [
+        "Εισαγάγετε το όνομα της συσκευής για να επιβεβαιώσετε την κατάργηση."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Εισάγετε τον κωδικό επαλήθευσης στον οποίο εστάλη ${ destinationText }."
@@ -3750,7 +3759,7 @@
         "Η φόρτωση της προεπισκόπησης απέτυχε"
       ],
       "Preview for this file type is not supported": [
-        "Η προεπισκόπηση για αυτόν τον τύπο αρχείου δεν υποστηρίζεται\n*.*, add translation *.*"
+        "Η προεπισκόπηση για αυτόν τον τύπο αρχείου δεν υποστηρίζεται"
       ],
       "Previous versions are kept for ${ retentionLabel }": [
         "Οι προηγούμενες εκδόσεις διατηρούνται για ${ retentionLabel }"
@@ -3783,7 +3792,7 @@
         "Η αναφορά στάλθηκε"
       ],
       "Restore": [
-        "Επαναφορά\n*.*, add translation *.*"
+        "Επαναφορά"
       ],
       "Restore is in progress. This can take a few seconds.": [
         "Η επαναφορά είναι σε εξέλιξη. Αυτό μπορεί να διαρκέσει μερικά δευτερόλεπτα."
@@ -3918,8 +3927,8 @@
         "Αυτό θα διαγράψει τον σύνδεσμο και θα καταργήσει την πρόσβαση στο αρχείο ή φάκελο σας για οποιονδήποτε με τον σύνδεσμο.",
         "Αυτό θα διαγράψει τους συνδέσμους και θα καταργήσει την πρόσβαση στα αρχεία ή φακέλους σας για οποιονδήποτε με τους συνδέσμους."
       ],
-      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected.": [
-        "Αυτό θα διαγράψει από ${ DRIVE_APP_NAME } τη συγχρονισμένη συσκευή ${ deviceName }. Τοπικά αρχεία στη συσκευή δε θα επηρεαστούν."
+      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
+        "Αυτό θα καταργήσει τη συγχρονισμένη συσκευή ${ deviceName } από το ${ DRIVE_APP_NAME } και θα σταματήσει το συγχρονισμό φακέλων που προσθέσατε στο Οι Υπολογιστές μου."
       ],
       "This will replace the existing file with the folder": [
         "Αυτό θα αντικαταστήσει το υπάρχον αρχείο με το φάκελο"
@@ -4042,7 +4051,7 @@
         "Θα γίνει επαναφορά στην έκδοση από ${ formattedRevisionDate }. Όλες οι άλλες εκδόσεις Θα εξακολουθούν να αποθηκεύονται."
       ],
       "With ${ DRIVE_APP_NAME }, your data is protected with end-to-end encryption. Only you can decrypt it.": [
-        "Με το ${ DRIVE_APP_NAME }, τα δεδομένα σας προστατεύονται με κρυπτογράφηση από άκρο σε άκρο. Μόνο εσείς μπορείτε να το αποκρυπτογραφήσετε."
+        "Με το ${ DRIVE_APP_NAME }, τα δεδομένα σας προστατεύονται με διατερματική κρυπτογράφηση. Μόνο εσείς μπορείτε να τα αποκρυπτογραφήσετε."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Θέλετε να λάβετε έναν νέο κωδικό επαλήθευσης ή να χρησιμοποιήσετε μια εναλλακτική μέθοδο επαλήθευσης;"
@@ -4093,10 +4102,10 @@
         "Θα χάσετε όλες τις αλλαγές που δεν έχετε αποθηκεύσει."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
-        "Έχετε συμπληρώσει τον μέγιστο αριθμό διευθύνσεων στην/στις ομάδα(ες) επαφών:"
+        "Έχετε συμπληρώσει τον μέγιστο αριθμό διευθύνσεων στις ομάδες επαφών:"
       ],
       "You've reached the maximum number of addresses in the contact group.": [
-        "Έχετε συμπληρώσει τον μέγιστο αριθμό διευθύνσεων στην ομάδα επαφών:"
+        "Έχετε συμπληρώσει τον μέγιστο αριθμό διευθύνσεων στην ομάδα επαφών."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Οι υπηρεσίες του ${ BRAND_NAME } λογαριασμού σας μόλις έχουν ανασταλεί. Μετά από 28 ημέρες, δεν θα μπορείτε να λάβετε μηνύματα στα εισερχόμενα, οι Drive σύνδεσμοι θα αποκλειστούν, και δεν θα μπορείτε να ανεβάσετε καινούργια αρχεία. Για να συνεχίσετε ομαλά τις υπηρεσίες σας, παρακαλούμε να πληρώσετε τυχόν ληξιπρόθεσμα τιμολόγια."
@@ -4130,9 +4139,6 @@
       ],
       "Your files will be encrypted and then saved.": [
         "Τα αρχεία σας θα κρυπτογραφηθούν και στη συνέχεια θα αποθηκευτούν."
-      ],
-      "Your import will not be processed.": [
-        "Η εισαγωγή σας δεν θα υποβληθεί σε επεξεργασία."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Τα στοιχεία σύνδεσής σας δεν θα αποθηκευτούν μετά την ολοκλήρωση της εισαγωγής."
@@ -4199,11 +4205,6 @@
       ],
       "Trusted": [
         "Αξιόπιστο"
-      ]
-    },
-    "Key transparency details button": {
-      "Click here for more details.": [
-        "Κάντε κλικ εδώ για περισσότερες λεπτομέρειες."
       ]
     },
     "Label": {
@@ -4704,6 +4705,9 @@
       ]
     },
     "Link": {
+      "${ DRIVE_APP_NAME } Windows app": [
+        "${ DRIVE_APP_NAME } εφαρμογή Windows"
+      ],
       "clearing your browser cache": [
         "εκκαθάριση της προσωρινής μνήμης του προγράμματος περιήγησης"
       ],
@@ -4719,6 +4723,9 @@
       "Request an invite": [
         "Ζητήστε μια πρόσκληση"
       ],
+      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
+        "Συγχρονίστε απρόσκοπτα αρχεία και φακέλους μεταξύ του υπολογιστή σας και του ${ DRIVE_APP_NAME }."
+      ],
       "Shared": [
         "Κοινοποιημένα"
       ],
@@ -4729,7 +4736,7 @@
         "Αναβάθμιση λογαριασμού"
       ],
       "What’s this?": [
-        "Τι είναι αυτό?"
+        "Τι είναι αυτό;"
       ]
     },
     "Loading info": {
@@ -5137,9 +5144,6 @@
       "Set up your organization": [
         "Ρυθμίστε τον οργανισμό σας"
       ],
-      "Set up your organization testing": [
-        "Ρύθμιση των δοκιμών του οργανισμού σας"
-      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Χρησιμοποιήστε τον επιλογέα εφαρμογών επάνω αριστερά για να αποκτήσετε πρόσβαση σε όλες τις υπηρεσίες του ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } και ${ DRIVE_SHORT_APP_NAME }."
       ]
@@ -5433,7 +5437,7 @@
         "Ασφαλής αποθήκευση στο cloud"
       ],
       "Secure streaming": [
-        "Ασφαλής μετάδοση"
+        "Διασφαλισμένη μετάδοση"
       ],
       "Support online privacy": [
         "Υποστήριξη ηλεκτρονικού απορρήτου"
@@ -5679,6 +5683,70 @@
         "Τα σχόλια απεστάλησαν"
       ]
     },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "1 έτος"
+      ],
+      "2 years": [
+        "2 έτη"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "Premium Μονάδα Αποθήκευσης"
+      ],
+      "Premium Mail and Calendar": [
+        "Premium Αλληλογραφία και Ημερολόγιο"
+      ],
+      "Premium Password Manager": [
+        "Premium Διαχειριστής Κωδικών Πρόσβασης"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Αποθηκεύστε με ασφάλεια τους κωδικούς πρόσβασής σας και συμπληρώστε τους αυτόματα σε ιστότοπους. Περιλαμβάνει απεριόριστους κωδικούς πρόσβασης, αυτόματη συμπλήρωση, γεννήτρια κωδικών πρόσβασης και πολλά άλλα."
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Διαχειριστής κωδικού"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Δημιουργήστε ασφαλή στοιχεία σύνδεσης σε όλες τις συσκευές σας. Περιλαμβάνει απεριόριστα ψευδώνυμα, 20 κρύπτες, ενσωματωμένο έλεγχο ταυτότητας δύο παραγόντων (2FA), αυτόματη συμπλήρωση πιστωτικών καρτών και πολλά άλλα."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Περιλαμβάνει 2950+ διακομιστές σε 65+ χώρες, σύνδεση έως και 10 συσκευών, πρόσβαση σε παγκόσμιες υπηρεσίες ροής, προστασία κακόβουλου λογισμικού και αποκλεισμό διαφημίσεων και πολλά άλλα."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Περιλαμβάνει υποστήριξη για 1 προσαρμοσμένο τομέα ηλεκτρονικού ταχυδρομείου, 10 διευθύνσεις ηλεκτρονικού ταχυδρομείου, 10 hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίου και πολλά άλλα."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης cloud. Περιλαμβάνει ιστορικό εκδόσεων, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "*Η συνδρομή σας θα ανανεωθεί αυτόματα με την τυπική μειωμένη τιμή στο τέλος του κύκλου χρέωσης σας."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Οι εκπτώσεις βασίζονται στην τυπική μηνιαία τιμολόγηση. Αυτή η προσφορά είναι διαθέσιμη μόνο σε νέους συνδρομητές."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Για περιορισμένο χρονικό διάστημα, αποκτήστε τα καλύτερα ${ BRAND_NAME } που έχει να προσφέρει με αποκλειστική έκπτωση."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Γιορτάζουμε την εννιάχρονη επέτειο του crowdfunding μας!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "${ BRAND_NAME } Επετειακή Πώληση"
+      ]
+    },
     "Table header": {
       "Action": [
         "Ενέργεια"
@@ -5825,7 +5893,7 @@
         "Ο περιηγητής ενδέχεται να ξεμείνει από μνήμη"
       ],
       "Cannot add more addresses": [
-        "Δεν είναι δυνατή η προσθήκη περισσότερων διευθύνσεων"
+        "Αδυναμία προσθήκης περισσότερων διευθύνσεων"
       ],
       "Cannot load link": [
         "Αποτυχία φόρτωσης συνδέσμου"
@@ -6156,7 +6224,7 @@
         "Εισέλθετε και παραχωρήστε πρόσβαση"
       ],
       "Sign in with 2FA": [
-        "Συνδεθείτε με 2FA"
+        "Είσοδος με Ταυτοποίηση 2 Παραγόντων"
       ],
       "Sign out": [
         "Αποσύνδεση"
@@ -6231,7 +6299,7 @@
         "Προειδοποίηση"
       ],
       "Warning: suspected fake website": [
-        "Προειδοποίηση: υποψία κίβδηλης ιστοσελίδας"
+        "Προειδοποίηση: υποψία ψεύτικης ιστοσελίδας"
       ],
       "What would you like to import?": [
         "Τι θα θέλατε να εισάγετε;"
@@ -6385,9 +6453,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "Η ${ BRAND_NAME } θα μεταφέρει όσο το δυνατόν περισσότερα δεδομένα, ξεκινώντας από τα πιο πρόσφατα μηνύματά σας."
-      ],
-      "Are you sure you want to discard your import?": [
-        "Θέλετε σίγουρα να απορρίψετε την εισαγωγή σας;"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Θέλετε σίγουρα να διαγράψετε οριστικά ${ count } ομάδα επαφών;",

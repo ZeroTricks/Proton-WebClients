@@ -13,7 +13,6 @@ import {
     Icon,
     usePopperAnchor,
 } from '@proton/components';
-import { detectBrowser, getWebStoreUrl } from '@proton/pass/extension/browser';
 import {
     emptyTrashIntent,
     restoreTrashIntent,
@@ -25,7 +24,6 @@ import {
 import type { MaybeNull, VaultShare } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { pipe, tap } from '@proton/pass/utils/fp';
-import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import { ConfirmationModal } from '../../../../src/shared/components/confirmation';
@@ -36,7 +34,9 @@ import { useNavigationContext } from '../../hooks/useNavigationContext';
 import { useOpenSettingsTab } from '../../hooks/useOpenSettingsTab';
 import { usePopupContext } from '../../hooks/usePopupContext';
 import { VaultModal, type Props as VaultModalProps } from '../../views/Vault/Vault.modal';
+import { usePasswordContext } from '../PasswordGenerator/PasswordContext';
 import { VaultDeleteModal } from '../Vault/VaultDeleteModal';
+import { Submenu, type SubmenuLinkItem } from './Submenu';
 import { VaultSubmenu } from './VaultSubmenu';
 
 const DROPDOWN_SIZE: NonNullable<DropdownProps['size']> = {
@@ -54,7 +54,6 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
     const planDisplayName = useSelector(selectPlanDisplayName);
 
     const openSettings = useOpenSettingsTab();
-    const webStoreURL = getWebStoreUrl(detectBrowser());
 
     const dispatch = useDispatch();
     const canLock = useSelector(selectCanLockSession);
@@ -86,6 +85,62 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
     const handleRestoreTrash = () => dispatch(restoreTrashIntent());
     const handleDeleteAllItemsInTrash = () => dispatch(emptyTrashIntent());
 
+    const feedbackLinks: SubmenuLinkItem[] = [
+        {
+            icon: 'paper-plane',
+            label: c('Action').t`Send us a message`,
+            actionTab: () => openSettings('support'),
+        },
+        {
+            url: 'https://twitter.com/Proton_Pass',
+            icon: 'brand-twitter',
+            label: c('Action').t`Write us on Twitter`,
+        },
+        {
+            url: 'https://www.reddit.com/r/ProtonPass/',
+            icon: 'brand-reddit',
+            label: c('Action').t`Write us on Reddit`,
+        },
+        {
+            url: 'https://github.com/ProtonMail/WebClients/tree/main/applications/pass-extension',
+            icon: 'brand-github',
+            label: c('Action').t`Help us improve`,
+        },
+        {
+            url: 'https://protonmail.uservoice.com/forums/953584-proton-pass',
+            icon: 'rocket',
+            label: c('Action').t`Request a feature`,
+        },
+    ];
+
+    const downloadLinks: SubmenuLinkItem[] = [
+        {
+            url: 'https://play.google.com/store/apps/details?id=proton.android.pass',
+            icon: 'brand-android',
+            label: c('Action').t`Pass for Android`,
+        },
+        {
+            url: 'https://apps.apple.com/us/app/proton-pass-password-manager/id6443490629',
+            icon: 'brand-apple',
+            label: c('Action').t`Pass for iOS`,
+        },
+    ];
+
+    const { openPasswordHistory } = usePasswordContext();
+
+    const advancedLinks: SubmenuLinkItem[] = [
+        {
+            icon: 'key-history',
+            label: c('Action').t`Generated password`,
+            actionTab: withClose(openPasswordHistory),
+        },
+        {
+            icon: 'arrow-rotate-right',
+            label: c('Action').t`Manually sync your data`,
+            actionTab: withClose(sync),
+        },
+    ];
+
     return (
         <>
             <nav className={className}>
@@ -115,7 +170,7 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
                             <span
                                 className={clsx(
                                     'flex flex-align-items-center',
-                                    passPlan === UserPassPlan.PLUS && 'ui-note'
+                                    passPlan === UserPassPlan.PLUS && 'ui-orange'
                                 )}
                             >
                                 <Icon name="star" className="mr-3" color="var(--interaction-norm)" />
@@ -164,39 +219,6 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
                             <Icon name="arrow-out-square" className="ml-3 color-weak" />
                         </DropdownMenuButton>
 
-                        <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
-
-                        {webStoreURL && (
-                            <DropdownMenuButton
-                                className="flex flex-align-items-center flex-justify-space-between py-2 px-4"
-                                onClick={() => window.open(webStoreURL, '_blank')}
-                            >
-                                <span className="flex flex-align-items-center">
-                                    <Icon name="star" className="mr-3 color-weak" />
-                                    {c('Action').t`Rate Pass`}
-                                </span>
-
-                                <Icon name="arrow-out-square" className="ml-3 color-weak" />
-                            </DropdownMenuButton>
-                        )}
-
-                        <DropdownMenuButton
-                            className="flex flex-align-items-center py-2 px-4"
-                            onClick={() => openSettings('support')}
-                        >
-                            <Icon name="bug" className="mr-3 color-weak" />
-                            {c('Action').t`Report a problem`}
-                        </DropdownMenuButton>
-
-                        <DropdownMenuButton
-                            className="flex flex-align-items-center py-2 px-4"
-                            onClick={withClose(sync)}
-                            disabled={!ready}
-                        >
-                            <Icon name="arrow-rotate-right" className="mr-3 color-weak" />
-                            {c('Action').t`Sync`}
-                        </DropdownMenuButton>
-
                         {canLock && (
                             <DropdownMenuButton
                                 className="flex flex-align-items-center py-2 px-4"
@@ -204,9 +226,24 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
                                 disabled={!ready}
                             >
                                 <Icon name="lock" className="mr-3 color-weak" />
-                                {c('Action').t`Lock ${PASS_APP_NAME}`}
+                                {c('Action').t`Lock extension`}
                             </DropdownMenuButton>
                         )}
+
+                        <Submenu
+                            submenuIcon="notepad-checklist"
+                            submenuLabel={c('Action').t`Advanced`}
+                            linkItems={advancedLinks}
+                        />
+
+                        <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
+
+                        <Submenu submenuIcon="bug" submenuLabel={c('Action').t`Feedback`} linkItems={feedbackLinks} />
+                        <Submenu
+                            submenuIcon="mobile"
+                            submenuLabel={c('Action').t`Get mobile apps`}
+                            linkItems={downloadLinks}
+                        />
 
                         <DropdownMenuButton
                             className="flex flex-align-items-center py-2 px-4"

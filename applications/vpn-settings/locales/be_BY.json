@@ -86,9 +86,6 @@
       "Create": [
         "Стварыць"
       ],
-      "Create account": [
-        "Стварыць уліковы запіс"
-      ],
       "Current plan": [
         "Бягучы тарыфны план"
       ],
@@ -170,14 +167,8 @@
       "Fit to window": [
         "Па памеры акна"
       ],
-      "Get ${ discountPercentage } off with 24 months": [
-        "Атрымаць скідку ў памеры ${ discountPercentage } за падпіску на 24 месяцы"
-      ],
       "Get ${ vpnPlus }": [
         "Атрымаць ${ vpnPlus }"
-      ],
-      "Get a new encrypted email address": [
-        "Атрымаць новы зашыфраваны адрас электроннай пошты"
       ],
       "Get the deal": [
         "Скарыстацца прапановай"
@@ -187,6 +178,9 @@
       ],
       "Hide": [
         "Схаваць"
+      ],
+      "Hide plan features": [
+        "Схаваць функцыі тарыфнага плана"
       ],
       "I have a question": [
         "У мяне ёсць пытанне"
@@ -205,9 +199,6 @@
       ],
       "Mark as default": [
         "Пазначыць як прадвызначаны"
-      ],
-      "Maybe later": [
-        "Магчыма пазней"
       ],
       "More info: ${ safeTitle }": [
         "Больш інфармацыі: ${ safeTitle }"
@@ -234,7 +225,7 @@
         "Аплаціць"
       ],
       "Pay ${ price } now": [
-        "Аплаціце ${ price } зараз"
+        "Аплаціць ${ price }"
       ],
       "Previous": [
         "Папярэдні"
@@ -289,9 +280,6 @@
       ],
       "Save": [
         "Захаваць"
-      ],
-      "Save selected": [
-        "Захаваць выбранае"
       ],
       "Search countries": [
         "Пошук краін"
@@ -392,9 +380,6 @@
       "Use recovery code": [
         "Выкарыстоўваць код аднаўлення"
       ],
-      "Use your current email instead": [
-        "Выкарыстоўваць бягучы адрас электроннай пошты"
-      ],
       "User": [
         "Карыстальнік"
       ],
@@ -429,14 +414,6 @@
         "Паменшыць"
       ]
     },
-    "Action in trial plan": {
-      "No, thanks": [
-        "Не, дзякуй"
-      ],
-      "Try free for 30 days": [
-        "Паспрабуйце бясплатна на працягу 30 дзён"
-      ]
-    },
     "Action subscription": {
       "Manage": [
         "Кіраваць"
@@ -452,6 +429,12 @@
         "+ ${ domains } карыстальніцкіх даменаў",
         "+ ${ domains } карыстальніцкія дамены"
       ],
+      "+ ${ ips } IP address": [
+        "+ ${ ips } IP-адрас",
+        "+ ${ ips } IP-адрасы",
+        "+ ${ ips } IP-адрасоў",
+        "+ ${ ips } IP-адрасоў"
+      ],
       "+ ${ users } user": [
         "+ ${ users } карыстальнік",
         "+ ${ users } карыстальнікі",
@@ -462,11 +445,6 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Гэта адключыць усе маршрутызатары і кліенты, якія выкарыстоўваюць гэты сертыфікат."
-      ]
-    },
-    "Baseline in trial plan": {
-      "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        "${ mailPlus }: пошта і каляндар з акцэнтам на прыватнасць, як рашэнне для штодзённых задач камунікацыі."
       ]
     },
     "Billing cycle": {
@@ -1485,10 +1463,13 @@
     },
     "Downgrade modal exit survey title": {
       "Help us improve!": [
-        "Дапамажыце нам стаць яшчэ лепш!"
+        "Дапамажыце нам палепшыць наш сэрвіс!"
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Вы можаце таксама праверыць наш ${ statusPageLink }"
+      ],
       "Amount above the maximum.": [
         "Сума вышэй за максімум."
       ],
@@ -1588,6 +1569,9 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Нешта пайшло не так. ${ refresh } для працягу. Калі вы ўсё яшчэ бачыце паведамленне з памылкай, напішыце ў нашу ${ supportTeam }."
       ],
+      "status page": [
+        "статус старонкі"
+      ],
       "Tab closed": [
         "Укладка закрыта"
       ],
@@ -1614,6 +1598,9 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Поле павінна змяшчаць як мінімум ${ minimumLength } сімвалаў."
+      ],
+      "Try again later": [
+        "Паспрабуйце яшчэ раз пазней"
       ],
       "Try using only letters, numerals, and _.-": [
         "Паспрабуйце выкарыстоўваць толькі літары, лічбы і _.-"
@@ -1928,7 +1915,7 @@
         "Для ўключэння 2ФА праз ключ бяспекі, вы павінны актываваць 2ФА праз праграму аўтэнтыфікацыі"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
-        "Пацвердзіце сваю асобу пры дапамозе фізічнага ключа бяспекі U2F або FIDO2"
+        "Пацвердзіце свае асабістыя даныя пры дапамозе фізічнага ключа бяспекі U2F або FIDO2"
       ],
       "Your two-factor authentication key is ready to use.": [
         "Ваш двухфактарны ключ аўтэнтыфікацыі гатовы да выкарыстання."
@@ -2009,8 +1996,8 @@
       "System default": [
         "Адпаведна сістэме"
       ],
-      "Theme default": [
-        "Прадвызначаная тэма"
+      "Theme font": [
+        "Шрыфт тэмы"
       ]
     },
     "Font size option": {
@@ -2039,6 +2026,12 @@
       ],
       "(1-2 emails per month)": [
         "(1-2 лісты ў месяц)"
+      ],
+      "(2-4 emails per year)": [
+        "(2-4 паведамленні ў год)"
+      ],
+      "(4-6 emails per year)": [
+        "(4-6 паведамленняў у год)"
       ],
       "(during your first month)": [
         "(на працягу першага месяца)"
@@ -2075,22 +2068,17 @@
       "Best deal": [
         "Лепшая прапанова"
       ],
-      "Enter your email address": [
-        "Увядзіце адрас сваёй электроннай пошты"
+      "Checkout": [
+        "Аплата"
+      ],
+      "Create your account": [
+        "Стварэнне ўліковага запісу"
       ],
       "Get help": [
         "Атрымаць даведку"
       ],
-      "Select your preferred method of payment": [
-        "Выберыце пажаданы метад аплаты"
-      ],
       "Select your pricing plan": [
         "Выберыце тарыфны план"
-      ]
-    },
-    "Heading in trial plan": {
-      "Try the best of ${ MAIL_APP_NAME } for free": [
-        "Паспрабуйце лепшы з ${ MAIL_APP_NAME } бясплатна"
       ]
     },
     "Human verification method": {
@@ -2117,6 +2105,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Тэхналогія шыфравання ${ BRAND_NAME } азначае, што ніхто не зможа атрымаць доступ да вашага пароля - нават мы."
       ],
+      "${ discountPercentage } forever": [
+        "${ discountPercentage } назаўсёды"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: відарыс у поўным памеры"
       ],
@@ -2141,17 +2132,11 @@
       "${ storage } storage": [
         "${ storage } сховішча"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } сховішча"
-      ],
       "${ vpnPlus } required for Country level connection.": [
         "Для выбару падключэння на ўзроўні краіны патрабуецца тарыфны план ${ vpnPlus }."
       ],
       "${ vpnPlus } required for Secure Core feature.": [
         "Для функцыі Secure Core патрабуецца тарыфны план ${ vpnPlus }."
-      ],
-      "* No credit card required.": [
-        "* Крэдытная картка не патрабуецца."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } бонуснага сховішча"
@@ -2161,9 +2146,6 @@
         "+${ organization.BonusVPN } падключэнні па VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад па VPN)",
         "+${ organization.BonusVPN } падключэнняў па VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад па VPN)",
         "+${ organization.BonusVPN } падключэнні па VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад па VPN)"
-      ],
-      "10 email addresses": [
-        "10 адрасоў электроннай пошты"
       ],
       "30-day money-back guarantee": [
         "Гарантыя вяртання грашовых сродкаў на працягу 30 дзён"
@@ -2372,6 +2354,9 @@
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Для Visa, MasterCard і Discover — 3 лічбы на адваротным баку карткі. Для American Express — 4 лічбы на пярэднім баку карткі."
       ],
+      "Free forever": [
+        "Бясплатна назаўсёды"
+      ],
       "Free up some space or add more storage space.": [
         "Вызваліце ​​месца або павялічце памер сховішча."
       ],
@@ -2486,9 +2471,6 @@
       "MM/YY": [
         "ММ/ГГ"
       ],
-      "No credit card required": [
-        "Крэдытная картка не патрабуецца"
-      ],
       "No payment is required at this time.": [
         "Зараз аплата не патрабуецца."
       ],
@@ -2509,9 +2491,6 @@
       ],
       "Once you reset your password:": [
         "Пасля скідання вашага пароля:"
-      ],
-      "One account. All ${ BRAND_NAME } services.": [
-        "Адзін уліковы запіс. Усе сэрвісы ${ BRAND_NAME }."
       ],
       "Open source": [
         "Адкрыты зыходны код"
@@ -2567,9 +2546,6 @@
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Кошт уключае ўсе падыходзячыя (не пратэрмінаваныя) купоны, якія захаваны ў вашым уліковым запісе."
       ],
-      "Priority support": [
-        "Прыярытэтная падтрымка"
-      ],
       "Protected by Swiss privacy laws": [
         "Абаронены швейцарскімі законамі аб прыватнасці"
       ],
@@ -2590,9 +2566,6 @@
       ],
       "Revoke certificate ${ name }": [
         "Адклікаць сертыфікат ${ name }"
-      ],
-      "Saving your password": [
-        "Захаванне вашага пароля"
       ],
       "Scan QR code instead": [
         "Сканіраваць QR-код"
@@ -2630,17 +2603,14 @@
         "Крок ${ step }",
         "Крок ${ step }"
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Прастора сховішча размеркавана паміж ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }."
-      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Адпраўце дэпазіт выкарыстоўваючы наступны адрас або адсканіруйце QR-код. Ваш дэпазіт адлюструецца на вашым рахунку пасля пацвярджэння."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Падпіска заканчваецца: актывуйце яе паўторна да ${ byDate }, каб пакінуць перавагі свайго тарыфнага плана ${ planName }. ${ reactivateLink }"
       ],
-      "Support for 1 custom email domain": [
-        "Падтрымка для 1 карыстальніцкага дамена электроннай пошты"
+      "Summary": [
+        "Зводка"
       ],
       "support team": [
         "каманда падтрымкі"
@@ -2650,9 +2620,6 @@
       ],
       "Thank you": [
         "Дзякуй"
-      ],
-      "The ${ planName } plan includes:": [
-        "Тарыфны план ${ planName } уключае:"
       ],
       "The securest way to browse, stream, and be online.": [
         "Самы бяспечны спосаб для прагляду старонак у інтэрнэце і трансляцый."
@@ -2696,9 +2663,6 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Гэты майстар дапаможа ўключыць двухфактарную аўтэнтыфікацыю (2ФА) для вашага ўліковага запісу ${ BRAND_NAME }. Мы рэкамендуем уключыць яе для таго, каб павялічыць бяспеку вашага ўліковага запісу ${ BRAND_NAME_TWO }."
       ],
-      "To ${ planName }": [
-        "у тарыфным плане ${ planName }"
-      ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Каб завяршыць плацеж, адпраўце ${ btcAmountBold } на пазначаны ніжэй адрас."
       ],
@@ -2708,8 +2672,8 @@
       "To fight spam and abuse, please verify you are human.": [
         "У мэтах барацьбы са спамам і іншымі злоўжываннямі, нам неабходна пераканацца, што вы чалавек."
       ],
-      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "Каб даведацца пра апошнія распрацоўкі прадуктаў ${ BRAND_NAME }, падпішыцеся на нашу рассылку, а таксама час ад часу наведвайце наш блог."
+      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
+        "Каб быць у курсе апошніх распрацовак прадуктаў ${ BRAND_NAME }, вы можаце падпісацца на нашу рассылку, а таксама час ад часу ${ blogLink }."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Для працягу, выберыце метад аднаўлення ўліковага запісу, каб мы маглі праверыць запыт."
@@ -2717,26 +2681,20 @@
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Для абароны вашага падключэння да інтэрнэту, вам неабходна спампаваць і ўсталяваць праграму ${ VPN_APP_NAME } на вашу прыладу і падключыцца да сервера."
       ],
-      "to use ${ toAppName } and all ${ BRAND_NAME } services": [
-        "для выкарыстання ${ toAppName } і ўсіх сэрвісаў ${ BRAND_NAME }"
-      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Папаўняйце свой уліковы запіс крэдытамі, якія вы можаце выкарыстоўваць для падпіскі на новы тарыфны план або падаўжэння свайго бягучага тарыфнага плана. Вы атрымліваеце адзін крэдыт за кожны выдаткаваны ${ i18nCurrency }."
       ],
       "Total email addresses": [
-        "Усяго адрасоў электроннай пошты"
+        "Колькасць адрасоў электроннай пошты"
       ],
       "Total storage": [
         "Агульны аб'ём сховішча"
       ],
       "Total supported domains": [
-        "Усяго падтрымліваецца даменаў"
+        "Колькасць даменаў, якія падтрымліваюцца"
       ],
       "Total VPN connections": [
-        "Усяго падключэнняў па VPN"
-      ],
-      "Try ${ upsellPlanName } risk free": [
-        "Паспрабуйце тарыфны план ${ upsellPlanName } без рызыкі"
+        "Колькасць падключэнняў па VPN"
       ],
       "two-factor authentication (2FA)": [
         "двухфактарнай праверкі сапраўднасці (2ФА)"
@@ -2755,12 +2713,6 @@
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "На жаль, для гэтага ўліковага запісу адсутнічаюць метады аднаўлення."
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Неабмежаваная колькасць папак, метак і фільтраў"
-      ],
-      "Unlimited messages": [
-        "Неабмежаваная колькасць паведамленняў"
       ],
       "Unsaved changes": [
         "Незахаваныя змены"
@@ -2790,7 +2742,7 @@
         "Праверка адкрые новую ўкладку, адключыце блакіроўку ўсплывальных вокнаў. З вас не будуць спаганяцца грашовыя сродкі. Любая сума, якая выкарыстоўваецца для праверкі вашай карткі, будзе неадкладна вернута."
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
-        "Пацвердзіце сваю асобу пры дапамозе аднаразовага пароля з абмежаваным тэрмінам дзеяння з праграмы аўтэнтыфікацыі"
+        "Пацвердзіце свае асабістыя даныя пры дапамозе аднаразовага пароля з абмежаваным тэрмінам дзеяння з праграмы аўтэнтыфікацыі"
       ],
       "Verifying your payment": [
         "Праверка вашага плацяжу"
@@ -2822,17 +2774,14 @@
       "We recommend using your recovery phrase instead.": [
         "Замест гэтага мы рэкамендуем выкарыстоўваць фразу аднаўлення."
       ],
-      "We use 3-D Secure to protect your payments.": [
-        "Мы выкарыстоўваем 3-D Secure для абароны вашых плацяжоў."
+      "We use 3-D Secure to protect your payments": [
+        "Мы выкарыстоўваем 3-D Secure для абароны вашых плацяжоў"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Для завяршэння трансакцыі мы адкрыем новую ўкладку браўзера і перанакіруем вас на сайт PayPal. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Мы адправім новы праверачны код на ${ strong }"
-      ],
-      "Welcome": [
-        "Вітаем"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Мы адправім код скідання для аднаўлення ўліковага запісу на пазначаны вамі адрас электроннай пошты."
@@ -2851,9 +2800,6 @@
       ],
       "Why?": [
         "Чаму?"
-      ],
-      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
-        "З зашыфраваным адрасам ${ BRAND_NAME }, вы можаце выкарыстоўваць усе сэрвісы ${ BRAND_NAME_TWO }"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Ці хочаце вы атрымаць новы праверачны код або скарыстацца альтэрнатыўным метадам праверкі?"
@@ -2903,9 +2849,6 @@
       "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Вы не можаце выкарыстоўваць уліковыя даныя OpenVPN / IKEv2 для ўваходу ў праграмы ${ VPN_APP_NAME } або на панэлі кіравання ${ VPN_APP_NAME }. ${ learnMore }"
       ],
-      "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
-        "Вы не задалі метад для аднаўлення доступу. Таму, калі вы забудзеце свой пароль, то аднавіць уліковы запіс будзе немагчыма. Працягнуць без метаду аднаўлення?"
-      ],
       "You have no saved payment methods.": [
         "У вас няма захаваных спосабаў аплаты."
       ],
@@ -2927,14 +2870,8 @@
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Вы дасягнулі 100% даступнай ёмістасці сховішча. У вас больш няма магчымасці адпраўляць або атрымліваць новыя лісты. ${ freeUpMessage } ${ upgradeLink }"
       ],
-      "You will be redirected to the VPN download page": [
-        "Вы будзеце перанакіраваны на старонку спампоўвання VPN"
-      ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "Вы страціце доступ да сервераў ${ vpnPlanNameShort } і функцыі пасля наступлення гэтай даты."
-      ],
-      "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
-        "Вам будзе неабходны адрас ${ BRAND_NAME } для выкарыстання ${ MAIL_APP_NAME } і ${ CALENDAR_APP_NAME }"
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Неўзабаве вы будзеце перанакіраваны на сайт PayPal для праверкі плацяжу."
@@ -2975,6 +2912,9 @@
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
         "Вашы існуючыя паведамленні, календары, або кантакты будуць заблакіраваны. Вам неабходна фраза аднаўлення або ${ oldPassword }, каб аднавіць гэтыя даныя."
       ],
+      "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
+        "З намі ваша інфармацыя ў бяспецы. Мы будзем звязвацца з вамі, толькі па меры неабходнасці, каб забяспечыць нашымі сэрвісамі."
+      ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Вашы рэквізіты плацяжу абаронены шыфраваннем TLS і швейцарскімі законамі аб прыватнасці."
       ],
@@ -2997,7 +2937,7 @@
     },
     "Info message for custom invoice modal": {
       "Add your name (or company name) and address to your invoices.": [
-        "Дадаць ваша імя (або назву кампаніі) і адрас у вашы рахункі."
+        "Дадайце сваё імя (або назву кампаніі) і адрас у вашы рахункі."
       ]
     },
     "Info subscription": {
@@ -3065,9 +3005,6 @@
       ]
     },
     "Label": {
-      "${ BRAND_NAME } email or username": [
-        "Электронная пошта або імя карыстальніка ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } username": [
         "Імя карыстальніка ${ BRAND_NAME }"
       ],
@@ -3101,6 +3038,9 @@
       "Authenticator app": [
         "Праграма аўтэнтыфікацыі"
       ],
+      "Billing address": [
+        "Адрас для аплаты"
+      ],
       "Billing cycle": [
         "Перыяд аплаты"
       ],
@@ -3122,11 +3062,11 @@
       "BTC amount": [
         "Сума BTC"
       ],
+      "Card details": [
+        "Падрабязнасці карткі"
+      ],
       "Card holder": [
         "Трымальнік карткі"
-      ],
-      "Card information": [
-        "Звесткі карткі"
       ],
       "Card number": [
         "Нумар карткі"
@@ -3329,9 +3269,6 @@
       "Recovery phrase": [
         "Фраза аднаўлення"
       ],
-      "Repeat password": [
-        "Паўтарыце пароль"
-      ],
       "Reveal password": [
         "Паказаць пароль"
       ],
@@ -3359,12 +3296,6 @@
       "Two-password mode": [
         "Рэжым двух пароляў"
       ],
-      "Use a recovery email address": [
-        "Выкарыстаць адрас электроннай пошты для аднаўлення доступу"
-      ],
-      "Use a recovery phone number": [
-        "Выкарыстаць нумар тэлефона для аднаўлення доступу"
-      ],
       "User's new password": [
         "Новы пароль карыстальніка"
       ],
@@ -3375,7 +3306,7 @@
         "Праверачны код"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "Шкада, што вы пакідаеце нас. Патлумачце, чаму вы вырашылі так зрабіць. Гэта дапаможа палепшыць наш сэрвіс."
+        "Шкада, што вы пакідаеце нас. Патлумачце, чаму вы вырашылі так зрабіць. Гэта дапаможа нам палепшыць наш сэрвіс"
       ],
       "What happened?": [
         "Што здарылася?"
@@ -3402,11 +3333,11 @@
       "${ BRAND_NAME } beta announcements": [
         "Апавяшчэнні ${ BRAND_NAME } бэта-версій"
       ],
-      "${ BRAND_NAME } company announcements": [
-        "Аб'явы кампаніі ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } for Business newsletter": [
         "Навіны ${ BRAND_NAME } для бізнесу"
+      ],
+      "${ BRAND_NAME } important announcements": [
+        "Важныя аб'явы ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } newsletter": [
         "Навіны ${ BRAND_NAME }"
@@ -3456,6 +3387,9 @@
       "Forgot username?": [
         "Забылі імя карыстальніка?"
       ],
+      "Help translate": [
+        "Дапамагчы з перакладам"
+      ],
       "How to pay with Bitcoin?": [
         "Як заплаціць з дапамогай Bitcoin?"
       ],
@@ -3470,6 +3404,9 @@
       ],
       "Pay invoice": [
         "Аплаціць рахунак"
+      ],
+      "Paypal without credit card": [
+        "PayPal без крэдытнай карткі"
       ],
       "Privacy policy": [
         "Палітыка прыватнасці"
@@ -3497,6 +3434,9 @@
       ],
       "View guide": [
         "Паглядзець дапаможнік"
+      ],
+      "visit our blog": [
+        "наведвайце наш блог"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Чым адрозніваюцца пратаколы UDP і TCP?"
@@ -3529,6 +3469,32 @@
         "Даступна новая версія ${ appName }. ${ reloadButton }."
       ]
     },
+    "Metadata title": {
+      "${ appName }: Sign-in": [
+        "${ appName }: Увайсці"
+      ],
+      "${ appName }: Sign-up": [
+        "${ appName }: Зарэгістравацца"
+      ],
+      "Create a new ${ appName } account": [
+        "Стварыць новы ўліковы запіс ${ appName }"
+      ],
+      "Find ${ BRAND_NAME } Account username": [
+        "Знайдзіце імя карыстальніка ўліковага запісу ${ BRAND_NAME }"
+      ],
+      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Забылі пароль ад свайго ўліковага запісу ${ BRAND_NAME }? Скіньце яго выкарыстоўваючы код аднаўлення, электронную пошту або SMS і аднавіце доступ да вашых сэрвісаў ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } і іншых."
+      ],
+      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Забылі сваё імя карыстальніка ўліковага запісу ${ BRAND_NAME }? Знайдзіце яго выкарыстоўваючы пошту або нумар тэлефона і аднавіце доступ да вашых сэрвісаў ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } і іншых."
+      ],
+      "Reset your ${ BRAND_NAME } Account password": [
+        "Скінуць пароль свайго ўліковага запісу ${ BRAND_NAME }"
+      ],
+      "Sign in to access your ${ appName } account": [
+        "Увайсці, каб атрымаць доступ да свайго ўліковага запісу ${ appName }"
+      ]
+    },
     "Monetary unit": {
       "Dollar": [
         "Долар"
@@ -3551,12 +3517,23 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Панізіць да ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Азнаёмцеся з усімі тарыфнымі планамі ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Ад ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Пакінуць мой уліковы запіс ${ currentPlanName }"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Працягнуць агляд"
-      ],
-      "Continue with Free": [
-        "Працягнуць бясплатнае выкарыстанне"
       ],
       "Delete account": [
         "Выдаліць уліковы запіс"
@@ -3567,14 +3544,8 @@
       "Get ${ BRAND_NAME } for free": [
         "Атрымаць ${ BRAND_NAME } бясплатна"
       ],
-      "Get ${ mostPopularShortPlan.title }": [
-        "Атрымаць тарыфны план ${ mostPopularShortPlan.title }"
-      ],
       "Get ${ planName }": [
         "Атрымаць ${ planName }"
-      ],
-      "Get ${ upsellShortPlan.title }": [
-        "Атрымаць ${ upsellShortPlan.title }"
       ],
       "Got it": [
         "Зразумела"
@@ -3590,43 +3561,6 @@
       ],
       "Switch plan": [
         "Змяніць тарыфны план"
-      ],
-      "Upgrade to ${ upsellPlanHumanSize }": [
-        "Палепшыць да ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Панізіць да ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Азнаёмцеся з усімі тарыфнымі планамі ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Ад ${ price }"
-      ],
-      "From ${ price } per user": [
-        "Ад ${ price } за карыстальніка"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Пакінуць мой уліковы запіс ${ currentPlanName }"
-      ],
-      "Upgrade now": [
-        "Палепшыць зараз"
-      ]
-    },
-    "new_plans: attribute": {
-      "Get ${ connections } high-speed VPN connection": [
-        "Атрымаць ${ connections } высакахуткаснае падключэнне па VPN",
-        "Атрымаць ${ connections } высакахуткасныя падключэнні па VPN",
-        "Атрымаць ${ connections } высакахуткасных падключэнняў па VPN",
-        "Атрымаць ${ connections } высакахуткасныя падключэнні па VPN"
-      ],
-      "Get ${ connections } high-speed VPN connection per user": [
-        "Атрымаць ${ connections } высакахуткаснае падключэнне па VPN на карыстальніка",
-        "Атрымаць ${ connections } высакахуткасныя падключэнні па VPN на карыстальніка",
-        "Атрымаць ${ connections } высакахуткасных падключэнняў па VPN на карыстальніка",
-        "Атрымаць ${ connections } высакахуткасныя падключэнні па VPN на карыстальніка"
       ]
     },
     "new_plans: feature": {
@@ -3713,6 +3647,15 @@
         "${ n } падключэнні па VPN на карыстальніка",
         "${ n } падключэнняў па VPN на карыстальніка",
         "${ n } падключэнні па VPN на карыстальніка"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } з ${ n } hide-my-email псеўданімам",
+        "${ PASS_APP_NAME } з ${ n } hide-my-email псеўданімамі",
+        "${ PASS_APP_NAME } з ${ n } hide-my-email псеўданімамі",
+        "${ PASS_APP_NAME } з ${ n } hide-my-email псеўданімамі"
+      ],
+      "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME } з неабмежаванай колькасцю псеўданімаў hide-my-email"
       ],
       "${ size } attachment size": [
         "Памер далучэння: ${ size }"
@@ -3897,6 +3840,9 @@
       "Split tunneling (Android and Windows)": [
         "Split Tunneling (Android і Windows)"
       ],
+      "Start protecting yourself online in 2 easy steps": [
+        "Пачніце абараняць сябе ў інтэрнэце выканаўшы 2 простыя крокі"
+      ],
       "Strict no-logs policy": [
         "Палітыка строгай адсутнасці журналаў актыўнасці"
       ],
@@ -3970,21 +3916,6 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand }, якая заканчваецца на ${ last4 }"
       ],
-      "* With 1-month subscription. Other subscription options available at checkout.": [
-        "* З падпіскай на адзін месяц. Іншыя параметры падпіскі даступны пры афармленні заказу."
-      ],
-      "* With 12-month subscription. Other subscription options available at checkout.": [
-        "* З падпіскай на адзін год. Іншыя параметры падпіскі даступны пры афармленні заказу."
-      ],
-      "* With 15-month subscription. Other subscription options available at checkout.": [
-        "* З падпіскай на адзін год і тры месяцы. Іншыя параметры падпіскі даступны пры афармленні заказу."
-      ],
-      "* With 24-month subscription. Other subscription options available at checkout.": [
-        "* З падпіскай на два гады. Іншыя параметры падпіскі даступны пры афармленні заказу."
-      ],
-      "* With 30-month subscription. Other subscription options available at checkout.": [
-        "* З падпіскай на два з паловай гады. Іншыя параметры падпіскі даступны пры афармленні заказу."
-      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Падыходзячыя крэдыты, рэшта на рахунку і купоны будуць ужыты на наступным кроку"
       ],
@@ -3992,7 +3923,7 @@
         "Комплексная прыватнасць і бяспека ў спалучэнні з усімі сэрвісамі ${ BRAND_NAME }."
       ],
       "For next-level password management and identity protection.": [
-        "Для больш высокага ўзроўню кіравання паролямі і абароны ідэнтыфікацыі."
+        "Для больш высокага ўзроўню кіравання паролямі і абароны асабістых даных."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Калі вы выдаліце свой уліковы запіс, то згубіце ўсе перавагі тарыфнага плана ${ visionary } і пры гэтым яго нельга будзе выбраць падчас стварэння новага ўліковага запісу."
@@ -4002,9 +3933,6 @@
       ],
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "Калі вы зменіце свой тарыфны план на іншы, то згубіце ўсе перавагі тарыфнага плана ${ visionary } і больш не зможаце вярнуцца да ${ visionary }."
-      ],
-      "Most popular": [
-        "Найбольш папулярны"
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Наш тарыфны план ${ visionary } больш недаступны для новых падпісчыкаў і зараз ён з'яўляецца спецыяльным тарыфным планам для карыстальнікаў ${ BRAND_NAME } і прадугледжвае для іх спецыяльныя функцыі і перавагі."
@@ -4041,23 +3969,14 @@
       ]
     },
     "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Зрабіце прыватнасць прадвызначаным параметрам для рэзервовага капіявання, захоўвання і абмену файламі."
-      ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Калі гэта не зрабіць, доступ да вашага ўліковага запісу будзе абмежаваны, а потым цалкам адключаны."
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Для працягу выкарыстання ${ MAIL_APP_NAME } з прэміяльнымі функцыямі, выберыце вашу падпіску і спосаб аплаты."
       ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Палепшыце да пакета для бізнесу і атрымайце доступ да ўсіх прэміяльных сэрвісаў ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Палепшыце да максімальнага пакета прыватнасці і атрымайце доступ да ўсіх прэміяльных сэрвісаў ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Ваш выпрабавальны перыяд завершыцца ${ formattedTrialExpirationDate }"
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Ваш выпрабавальны перыяд завершыцца ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -4079,32 +3998,19 @@
       ]
     },
     "new_plans: signup": {
-      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
-        "Ствараючы ўліковы запіс ${ BRAND_NAME }, вы пагаджаецеся з нашымі ${ terms }"
-      ],
       "By paying, you agree to our ${ termsAndConditions }": [
         "Уносячы аплату, вы пагаджаецеся з нашымі ${ termsAndConditions }"
       ],
-      "Payment details": [
-        "Рэквізіты плацяжу"
-      ],
-      "Save your email address or phone number to use for verification if you need to reset your account.": [
-        "Захавайце свой адрас электроннай пошты або нумар тэлефона, каб выкарыстоўваць іх для праверкі пры неабходнасці скінуць уліковы запіс."
-      ],
-      "Subscription": [
-        "Падпіска"
-      ],
       "terms and conditions": [
         "ўмовамі выкарыстання"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Выпрабавальны перыяд ${ shortPlan.title }"
       ],
-      "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
-        "Для таго, каб пачаць працу выберыце бачнае імя. Менавіта яго ўбачаць людзі, калі вы адправіце ім ліст, запрашэнне на падзею або абагулены файл."
-      ],
-      "Your ${ planName } subscription is now active.": [
-        "Ваша падпіска на тарыфны план ${ planName } зараз актыўна."
-      ],
-      "Your selected plan: ${ planName }": [
-        "Выбраны тарыфны план: ${ planName }"
+      "Your account's usage": [
+        "Выкарыстанне вашага ўліковага запісу"
       ]
     },
     "new_plans: title": {
@@ -4120,22 +4026,8 @@
       "Review subscription and pay": [
         "Прагледзець падпіску і аплату"
       ],
-      "Start exploring the ${ BRAND_NAME } universe": [
-        "Пачніце знаёмства з сэрвісамі ${ BRAND_NAME }"
-      ],
       "Switch plans?": [
         "Змяніць тарыфны план?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "Выпрабавальны перыяд ${ mailPlanName }"
-      ],
-      "Upgrade to ${ planName }": [
-        "Палепшыць да ${ planName }"
-      ],
-      "Your account's usage": [
-        "Выкарыстанне вашага ўліковага запісу"
       ]
     },
     "new_plans: tooltip": {
@@ -4155,7 +4047,7 @@
         "Атрымлівайце доступ да змесціва сэрвісаў з трансляцыямі, такіх як Netflix, Disney+ і Prime Video з любой краіны ў свеце"
       ],
       "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
-        "Адрасы з'яўляюцца поўнафункцыянальнымі для адпраўкі і атрымання лістоў. Карыстальнік можа мець некалькі адрасоў, але адзін адрас нельга прызначыць некалькім карыстальнікам."
+        "Адрасы маюць поўныя магчымасці для адпраўкі і атрымання лістоў. Карыстальнік можа мець некалькі адрасоў, але адзін адрас нельга прызначыць некалькім карыстальнікам."
       ],
       "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
         "Забяспечвае доступ да некалькіх сетак адначасова. Напрыклад, вы можаце глядзець фільм з іншай краіны і адначасова атрымліваць мясцовыя вынікі на пошукавыя запыты"
@@ -4178,8 +4070,8 @@
         "Стварайце да ${ n } календароў або дадавайце календары ад сяброў, сям'і, калег і арганізацый",
         "Стварайце да ${ n } календароў або дадавайце календары ад сяброў, сям'і, калег і арганізацый"
       ],
-      "Create up to ${ n } email addresses/aliases for the whole family. Use them for your online identities, e.g., MyFamilySubs@${ domain } for online subscriptions.": [
-        "Стварайце да ${ n } адрасоў электроннай пошты/псеўданімаў для ўсёй сям'і. Выкарыстоўвайце іх для свайго сеткавага пасведчання. Напрыклад, MyFamilySubs@${ domain } для падпісак у сетцы."
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "Стварыце да ${ n } адрасоў электроннай пошты/псеўданімаў, якія вы можаце прызначыць членам сям'і. Выкарыстоўвайце іх для ідэнтыфікацыі ў інтэрнэце, напрыклад, JankaPakupnik@${ domain } для ўліковых запісаў пакупак."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Абараняе прыватнасць VPN ад пагроз, перадаючы ваш трафік праз некалькі сервераў"
@@ -4324,53 +4216,26 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "${ storageSize } total storage": [
-        "Агульны аб'ём сховішча: ${ storageSize }"
-      ],
-      "10 email addresses/aliases": [
-        "10 адрасоў электроннай пошты/псеўданімаў"
-      ],
       "Access advanced VPN features": [
         "Доступ да пашыраных функцый VPN"
       ],
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "Дадайце больш персаналізацыі з 15 электроннымі адрасамі і падтрымкай трох карыстальніцкіх даменаў"
+        "Дадайце больш персаналізацыі з 15 адрасамі электроннай пошты і падтрымкай 3 карыстальніцкіх даменаў"
+      ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "Палепшыце прастору сховішча да ${ bundleStorage } на карыстальніка"
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Палепшыце агульны аб'ём свайго сховішча да ${ bundleStorage }"
       ],
-      "Boost your storage space to ${ businessStorage } per user": [
-        "Палепшыце прастору сховішча да ${ businessStorage } на карыстальніка"
-      ],
       "Cover more ground with support for 10 custom email domains": [
         "Дасягніце большага з падтрымкай 10 карыстальніцкіх даменаў электроннай пошты"
       ],
-      "Create up to ${ MAX_CALENDARS_PAID } calendar": [
-        "Стварыць да ${ MAX_CALENDARS_PAID } календара",
-        "Стварыць да ${ MAX_CALENDARS_PAID } календароў",
-        "Стварыць да ${ MAX_CALENDARS_PAID } календароў",
-        "Стварыць да ${ MAX_CALENDARS_PAID } календароў"
-      ],
-      "Everything in ${ vpnPlanName }": [
-        "Усё, што ўваходзіць у ${ vpnPlanName }"
-      ],
-      "Get 5 additional email addresses per user": [
-        "Атрымайце 5 дадатковых адрасоў электроннай пошты на карыстальніка"
-      ],
-      "Priority support": [
-        "Прыярытэтная падтрымка"
-      ],
-      "Secure your passwords and identity with an open-source and encrypted password manager.": [
-        "Абараняйце свае паролі і пасведчанні з дапамогай зашыфраванага менеджара пароляў, які мае адкрыты зыходны код."
-      ],
-      "Support for 1 custom email domain": [
-        "Падтрымка для 1 карыстальніцкага дамена электроннай пошты"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Неабмежаваная колькасць папак, метак і фільтраў"
-      ],
-      "Unlimited messages": [
-        "Неабмежаваная колькасць паведамленняў"
+      "Create up to ${ n } calendar": [
+        "Стварыць да ${ n } календара",
+        "Стварыць да ${ n } календароў",
+        "Стварыць да ${ n } календароў",
+        "Стварыць да ${ n } календароў"
       ]
     },
     "Notification": {
@@ -4413,6 +4278,30 @@
       ],
       "Standard server configs": [
         "Канфігурацыі стандартнага сервера"
+      ]
+    },
+    "pass_signup_2023: Action": {
+      "Start using ${ appName }": [
+        "Пачніце выкарыстоўваць ${ appName }"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "Creating your account": [
+        "Стварэнне вашага ўліковага запісу"
+      ],
+      "Preparing your Recovery Kit": [
+        "Падрыхтоўка вашага камплекту аднаўлення"
+      ],
+      "Updating your account": [
+        "Абнаўленне вашага ўліковага запісу"
+      ],
+      "Verifying your payment": [
+        "Праверка вашага плацяжу"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
+        "Усе сэрвісы ${ BRAND_NAME } Plus.${ br }Адна нескладаная падпіска."
       ]
     },
     "Payment method option": {
@@ -4460,7 +4349,7 @@
     },
     "Placeholder for custom invoice text": {
       "Add your name (or company name) and address to your invoices": [
-        "Дадаць ваша імя (або назву кампаніі) і адрас у вашы рахункі"
+        "Дадайце сваё імя (або назву кампаніі) і адрас у вашы рахункі"
       ]
     },
     "plan customizer, users": {
@@ -4549,36 +4438,22 @@
       ]
     },
     "Shared calendar; Info about calendar owner": {
-      "Created by ${ ownerName }": [
-        "Створана ${ ownerName }"
+      "Shared by ${ ownerName }": [
+        "Абагулена ${ ownerName }"
       ]
     },
     "Signup label": {
       "Confirm email address": [
         "Пацвердзіце адрас электроннай пошты"
       ],
-      "Display name": [
-        "Бачнае імя"
-      ],
-      "Email": [
-        "Электронная пошта"
+      "Confirm password": [
+        "Пацвердзіце пароль"
       ],
       "Email address": [
         "Адрас электроннай пошты"
       ],
-      "Username": [
-        "Імя карыстальніка"
-      ]
-    },
-    "Signup step": {
-      "Account setup": [
-        "Налады ўліковага запісу"
-      ],
-      "Payment": [
-        "Плацеж"
-      ],
-      "Verification": [
-        "Праверка"
+      "Password": [
+        "Пароль"
       ]
     },
     "specialoffer: Action": {
@@ -4691,7 +4566,7 @@
         "Прапанова абмежавана па часе"
       ],
       "Most popular": [
-        "Самы папулярны"
+        "Найбольш папулярны"
       ],
       "Offer ends soon": [
         "Прапанова неўзабаве скончыцца"
@@ -5004,9 +4879,6 @@
     "Subscription saving": {
       "Save": [
         "Захаваць"
-      ],
-      "Save ${ discountPercentage }%": [
-        "Эканомія ${ discountPercentage }%"
       ]
     },
     "Subscription status": {
@@ -5118,6 +4990,70 @@
         "у месяц"
       ]
     },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "1 год"
+      ],
+      "2 years": [
+        "2 гады"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "Прэміяльныя функцыі Drive"
+      ],
+      "Premium Mail and Calendar": [
+        "Прэміяльныя функцыі Mail і Calendar"
+      ],
+      "Premium Password Manager": [
+        "Прэміяльныя функцыі менеджара пароляў"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Бяспечна захоўвайце свае паролі і аўтаматычна запаўняйце іх на вэб-сайтах. Уключае неабмежаваную колькасць пароляў, аўтаматычнае запаўненне, генератар пароляў і іншыя функцыі."
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Менеджар пароляў"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Стварайце бяспечныя даныя для ўваходу на ўсіх сваіх прыладах. Уключае неабмежаваную колькасць псеўданімаў, 20 сховішчаў, інтэграваную 2ФА, аўтаматычнае запаўненне крэдытных картак і іншыя функцыі."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Уключае больш за 2950 сервераў у больш чым 65 краінах, магчымасць падключаць да 10 прылад, сэрвісы з трансляцыямі па ўсім свеце, блакіроўку шкодных праграм і рэкламы, а таксама іншыя функцыі."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Уключае падтрымку 1 карыстальніцкага дамена электроннай пошты, 10 адрасоў электроннай пошты, 10 псеўданімаў hide-my-email, абагульванне календара і іншыя функцыі."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае гісторыю версій, абагулены доступ да зашыфраваных файлаў і іншыя функцыі."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "*Ваша падпіска будзе аўтаматычна падаўжацца са стандартнай скідкай у канцы перыяду аплаты."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Скідкі разлічваюцца на падставе стандартнай платы за месяц. Гэтай прапановай могуць скарыстацца толькі тыя падпісчыкі, якія ўпершыню зарэгістраваліся."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Атрымайце эксклюзіўную скідку ад ${ BRAND_NAME }. Прапанова абмежавана па часе."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Мы святкуем дзявятую гадавіну нашага краўдфандзінга!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "Святочны распродаж ${ BRAND_NAME }"
+      ]
+    },
     "Tab subscription modal": {
       "For businesses": [
         "Для бізнесу"
@@ -5152,6 +5088,9 @@
       ]
     },
     "Title": {
+      "${ appName } Free": [
+        "${ appName } Free"
+      ],
       "${ VPN_APP_NAME } clients": [
         "Кліенты ${ VPN_APP_NAME }"
       ],
@@ -5189,7 +5128,7 @@
         "Дзеянне"
       ],
       "Add credit/debit card": [
-        "Дадаць банкаўскую картку"
+        "Дадаць крэдытную/плацежную картку"
       ],
       "Add credits": [
         "Дадаць крэдыты"
@@ -5250,12 +5189,6 @@
       ],
       "Confirm phone number": [
         "Пацвердзіць нумар тэлефона"
-      ],
-      "Congratulations on choosing privacy!": [
-        "Віншуем з выбарам прыватнасці!"
-      ],
-      "Create your ${ BRAND_NAME } Account": [
-        "Стварыць свой уліковы запіс ${ BRAND_NAME }"
       ],
       "Credits": [
         "Крэдыты"
@@ -5431,12 +5364,6 @@
       "Revoke certificate": [
         "Адклікаць сертыфікат"
       ],
-      "Save contact details": [
-        "Захаваць кантактныя звесткі"
-      ],
-      "Secure email based in Switzerland": [
-        "Бяспечная пошта, якая знаходзіцца ў Швейцарыі"
-      ],
       "Select a plan": [
         "Выбар тарыфнага плана"
       ],
@@ -5485,23 +5412,14 @@
       "Unsupported browser": [
         "Браўзер не падтрымліваецца"
       ],
-      "Verification": [
-        "Праверка"
-      ],
       "Verification failed": [
         "Збой праверкі"
-      ],
-      "Verify email address": [
-        "Праверыць адрас электроннай пошты"
       ],
       "Verifying your card...": [
         "Праверка вашай карткі..."
       ],
       "Verifying your payment...": [
         "Праверка вашага плацяжу..."
-      ],
-      "Warning": [
-        "Папярэджанне"
       ],
       "What's new": [
         "Што новага"
@@ -5526,9 +5444,6 @@
       ],
       "Your subscriptions": [
         "Вашы падпіскі"
-      ],
-      "You’ve been invited to try ${ MAIL_APP_NAME }": [
-        "Вы былі запрошаны паспрабаваць ${ MAIL_APP_NAME }"
       ]
     },
     "Title for payment methods table": {
@@ -5606,6 +5521,11 @@
         "Гэта версія браўзера Tor не падтрымліваецца. Абнавіце праграму да апошняй версіі ${ stableRelease }"
       ]
     },
+    "upsell panel": {
+      "Recommended": [
+        "Рэкамендавана"
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ length } character": [
         "Пароль павінен змяшчаць прынамсі ${ length } сімвал",
@@ -5649,6 +5569,73 @@
         "${ numberOfServers } у ${ numberOfCountries } краінах",
         "${ numberOfServers } у ${ numberOfCountries } краінах",
         "${ numberOfServers } у ${ numberOfCountries } краінах"
+      ]
+    },
+    "vpn_2step: billing": {
+      "${ billedText }, renews on ${ formattedEndTime }": [
+        "${ billedText }, падоўжыцца ${ formattedEndTime }"
+      ],
+      "Billed every 15 months": [
+        "Аплачваецца кожныя 15 месяцаў"
+      ],
+      "Billed every 2 years": [
+        "Аплачваецца кожныя 2 гады"
+      ],
+      "Billed every 30 months": [
+        "Аплачваецца кожныя 30 месяцаў"
+      ],
+      "Billed monthly": [
+        "Аплачваецца штомесяц"
+      ],
+      "Billed yearly": [
+        "Аплачваецца штогод"
+      ]
+    },
+    "vpn_2step: discount": {
+      "1-year": [
+        "1 год"
+      ],
+      "2-year": [
+        "2 гады"
+      ],
+      "Get ${ discount } off with a ${ billingCycle } subscription": [
+        "Атрымайце скідку ў памеры ${ discount } з падпіскай на ${ billingCycle }"
+      ],
+      "monthly": [
+        "штомесяц"
+      ]
+    },
+    "vpn_2step: feature": {
+      "Advanced VPN customizations": [
+        "Пашыраныя налады VPN"
+      ],
+      "No ads": [
+        "Без рэкламы"
+      ]
+    },
+    "vpn_2step: info": {
+      "${ n } month": [
+        "${ n } месяц",
+        "${ n } месяцы",
+        "${ n } месяцаў",
+        "${ n } месяцаў"
+      ],
+      "${ n } year": [
+        "${ n } год",
+        "${ n } гады",
+        "${ n } гадоў",
+        "${ n } гадоў"
+      ],
+      "Try ${ upsellPlanName } risk-free": [
+        "Паспрабуйце ${ upsellPlanName } без рызыкі"
+      ],
+      "Your ${ selected } plan": [
+        "Ваш тарыфны план ${ selected }"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
+        "Доступ да сервераў Secure Core, хуткія спампоўванні P2P/BitTorrent, Tor праз VPN, Double Hop і іншыя функцыі."
       ]
     },
     "Warning": {

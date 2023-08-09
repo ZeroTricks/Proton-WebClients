@@ -124,6 +124,9 @@
       "Block": [
         "Tiltás"
       ],
+      "Block email tracking": [
+        "E-mail követés megakadályozása"
+      ],
       "Block messages from this sender": [
         "Üzenetek tiltása ettől a feladótól"
       ],
@@ -141,6 +144,9 @@
       ],
       "Carbon Copy": [
         "Másolat"
+      ],
+      "Change email": [
+        "E-mail cím módosítása"
       ],
       "Change page": [
         "Lapozás"
@@ -317,9 +323,6 @@
       ],
       "Discard": [
         "Elvetés"
-      ],
-      "Dismiss get started checklist": [
-        "Kezdési tevékenységlista bezárásra"
       ],
       "Done": [
         "Kész"
@@ -649,6 +652,9 @@
       "Move all messages from this label": [
         "Helyezzen át minden üzenetet ebből a címkéből"
       ],
+      "Move all to archive": [
+        "Összes áthelyezése az archívumba"
+      ],
       "Move all to trash": [
         "Az összes áthelyezése a lomtárba"
       ],
@@ -720,9 +726,6 @@
       ],
       "Open composer": [
         "Szerkesztő megnyitása"
-      ],
-      "Open get started checklist modal": [
-        "Kezdési tevékenységlista megnyitása"
       ],
       "Open navigation": [
         "Navigáció megnyitása"
@@ -1049,9 +1052,6 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Próbálja újra. Sikertelen mentés oka: ${ saveError }"
       ],
-      "Turn on tracker protection": [
-        "Követés védelem bekapcsolása"
-      ],
       "Unblock": [
         "Feloldás"
       ],
@@ -1247,12 +1247,6 @@
     "Alternative text for welcome image": {
       "Welcome": [
         "Üdvözöljük"
-      ]
-    },
-    "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } kész",
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } kész"
       ]
     },
     "Animation": {
@@ -2941,6 +2935,9 @@
         "A fájl mérete maximum ${ MAX_IMPORT_FILE_SIZE_STRING } lehet és legfeljebb ${ MAX_IMPORT_CONTACTS_STRING } névjegyet tartalmazhat. Ha nagyobb a fájl, vágja több kisebb darabra.",
         "A fájl mérete maximum ${ MAX_IMPORT_FILE_SIZE_STRING } lehet és legfeljebb ${ MAX_IMPORT_CONTACTS_STRING } névjegyet tartalmazhat. Ha nagyobb a fájl, vágja több kisebb darabra."
       ],
+      "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
+        "Kapcsold be az email követő védelmet,hogy megakadályozd a hirdetők,és mások számára azt,hogy nyomon kövessék a tartózkodási helyedet,és az internetes aktivitásodat"
+      ],
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "Használja az üzenet ütemezési lehetőséget és tegyen szert további előnyökre, nagyobb csomagra váltással."
       ],
@@ -2952,6 +2949,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Húzással határozza meg az egyesítés prioritását. Szüntesse meg a kijelölést azoknál, amelyeket nem szeretne egyesíteni."
+      ],
+      "We didn't find any known trackers and tracking URLs in this email.": [
+        "Nem találtunk egyetlen ismert URL,és egyéb követőt ebben az emailben."
       ],
       "When do you want your message to be sent?": [
         "Mikor szeretné elküldeni az üzenetet?"
@@ -3111,6 +3111,9 @@
     "Error": {
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "${ error.message }. Címzett: <${ email }>. A megoldáshoz megadhat egy másik kulcsot, vagy kikapcsolhatja a titkosítást ehhez a címzetthez."
+      ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Továbbá meglátogathatja a ${ statusPageLink } oldalunkat"
       ],
       "A group with this name already exists": [
         "Már létezik csoport ezzel a névvel"
@@ -3388,6 +3391,9 @@
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "Az üzenetet a ${ BRAND_NAME } nem tudta visszafejteni. Kérjük ellenőrizze, hogy minden kulcsa aktív-e."
       ],
+      "status page": [
+        "állapot lap"
+      ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "A csatolt fájlt visszafejtése nem sikerült.\nHa rendelkezik a szükséges titkos kulccsal, még visszafejtheti egy\nprogrammal, mint például GnuPG.",
         "Néhány csatolt fájlt visszafejtése nem sikerült.\nHa rendelkezik a szükséges titkos kulccsal, még visszafejtheti egy\nprogrammal, mint például GnuPG."
@@ -3421,9 +3427,6 @@
       ],
       "There has been an issue with content search. Default search has been used instead.": [
         "Hiba történt a tartalomban való keresés közben. Alapértelmezett keresés történt."
-      ],
-      "There was a problem updating your local messages, they will be downloaded again to re-enable content search": [
-        "Hiba történt az üzenetek helyi másolatának frissítésekor, ezért ismét letöltésre kerülnek, hogy kereshetők legyenek"
       ],
       "There was an error when exporting the contacts vCards": [
         "Hiba történt a névjegyek vCard formátumra exportálásakor"
@@ -4106,8 +4109,8 @@
       "System default": [
         "Rendszer alapértelmezett"
       ],
-      "Theme default": [
-        "Alapértelmezett téma"
+      "Theme font": [
+        "Téma betűtípus"
       ]
     },
     "Font Size Default": {
@@ -4146,32 +4149,45 @@
         "Címzett: ${ toString }"
       ]
     },
-    "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        "Megnöveltük fiókjának teljes tárhelyét ${ rewardInGb } GB-ra. Szerezzen további tárhelyet és oldjon fel prémium funkciókat még ma."
-      ],
-      "You're all set!": [
-        "Minden beállítva!"
-      ]
-    },
-    "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        "Teljesítse az összes lépést és szerezzen összesen ${ rewardInGb } GB-ot a fiókjába"
-      ],
-      "Expires soon": [
-        "Hamarosan lejár"
-      ],
-      "Expires today": [
-        "Ma jár le"
-      ],
-      "Only ${ days } day left": [
-        "Már csak ${ days } nap van hátra",
-        "Már csak ${ days } nap van hátra"
-      ]
-    },
     "Get started checklist instructions": {
-      "Available on iOS and Android.": [
-        "Android és iOS változatokban érhető el."
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME } az App Store-ban"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } a Play Áruházban"
+      ],
+      "Block email communications from scammers permanently.": [
+        "A csalók e-mail kommunikációjának végleges blokkolása"
+      ],
+      "Block unsavory senders": [
+        "Blokkolja a kellemetlen feladókat"
+      ],
+      "Checklist complete": [
+        "Az ellenőrző lista kész"
+      ],
+      "Close": [
+        "Bezár"
+      ],
+      "Congratulation, you completed all the steps!": [
+        "Gratulálunk,minden lépést teljesítettél!"
+      ],
+      "Continue setting up your email": [
+        "Folytasd az e-mail címed beállítását"
+      ],
+      "Double your free storage to 1 GB when you complete the following:": [
+        "Duplázd meg az ingyenes tárhelyedet 1 GB-ra,az alábbi lépések elvégzésével:"
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails.": [
+        "A titkosítás olyan erős, hogy csak Ön és a tervezett címzettek láthatják az e-mail üzeneteit"
+      ],
+      "For your eyes only": [
+        "Csak Önnek látható"
+      ],
+      "Get free storage": [
+        "Ingyenes tároló szerzése"
+      ],
+      "Get mobile app": [
+        "Mobil alkalmazás beszerzése"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Töltse le a ${ MAIL_APP_NAME } mobil alkalmazást"
@@ -4179,41 +4195,56 @@
       "Import contacts or emails": [
         "Importálja névjegyeit vagy üzeneteit"
       ],
+      "Import data": [
+        "Adat importálása"
+      ],
       "Import your contacts or messages": [
         "Importálja a névjegyeit vagy az üzeneteit"
+      ],
+      "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
+        "Használja továbbra is a ${ MAIL_APP_NAME } alkalmazást, hogy felfedezze, hogyan védi a ${ BRAND_NAME } az adatvédelmet és hogyan egyszerűsíti az e-mailezést."
+      ],
+      "Learn more": [
+        "Tudjon meg többet"
+      ],
+      "Maybe later": [
+        "Talán később"
+      ],
+      "Nice! You've updated all services in this category.": [
+        "Kiváló! Minden szolgáltatást frissített ebben a kategóriában"
+      ],
+      "Open checklist": [
+        "Ellenőrzőlista megnyitása"
+      ],
+      "Popular online services": [
+        "Népszerű online szolgáltatások"
+      ],
+      "Protect and simplify your email": [
+        "Megvédi és leegyszerűsíti az ön elektronikus levelezését"
+      ],
+      "Protection from trackers": [
+        "Védelem a nyomkövetőkkel szemben"
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "Töltse át a névjegyeit vagy az e-mailjeit bármelyik másik szolgáltatótól az Easy Switch importáló segítségével."
       ],
-      "Sign into the mobile app to complete the action": [
-        "Jelentkezzen be a mobil alkalmazásba a befejezéshez"
-      ],
-      "Using your mobile device, scan this QR code or visit": [
-        "A mobil eszközével olvassa be a QR kódot vagy nyissa meg a címet:"
-      ]
-    },
-    "Get started checklist item": {
-      "Get mobile app": [
-        "Töltse le a mobil alkalmazást"
-      ],
-      "Import contacts or emails": [
-        "Importálja névjegyeit vagy üzeneteit"
-      ],
       "Send a message": [
-        "Küldjön egy üzenetet"
+        "Üzenet küldése"
       ],
-      "Set up a recovery method": [
-        "Állítson be egy helyreállítási módszert"
-      ]
-    },
-    "Get started checklist spotlight": {
-      "You can access the checklist anytime from here": [
-        "Innen érheti el ezt a tennivalólistát"
-      ]
-    },
-    "Get started checklist title": {
-      "Get started": [
-        "Kezdés"
+      "Set recovery method": [
+        "Helyreállítási módszer beállítása"
+      ],
+      "Sign in to the mobile app to complete this step": [
+        "Jelentkezzen be a mobilalkalmazásba, hogy befejezze ezt a lépést"
+      ],
+      "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
+        "Olvassa be ezt a QR-kódot a mobil eszközével, vagy pedig látogassa meg az iOS vagy az Android áruházat"
+      ],
+      "We stop advertisers and data collectors from profiling you.": [
+        "Megakadályozzuk, hogy a hirdetők és az adatgyűjtők profilokat készítsenek Önről"
+      ],
+      "You've unlocked 1 GB": [
+        "Ön feloldott 1 GB-ot"
       ]
     },
     "Gmail forwarding": {
@@ -4613,6 +4644,10 @@
         "${ count } olvasatlan üzenet",
         "${ count } olvasatlan üzenet"
       ],
+      "${ currentProgress } out of ${ totalProgress }": [
+        "Jelenleg: ${ currentProgress }, összesen: ${ totalProgress }",
+        "Jelenleg: ${ currentProgress }, összesen: ${ totalProgress }"
+      ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } beszúrt kép",
         "${ embeddedAttachmentsCount } beszúrt kép"
@@ -4634,9 +4669,17 @@
         "${ messagesNotAuthorizedToMove } üzenet nem helyezhető át.",
         "${ messagesNotAuthorizedToMove } üzenet nem helyezhető át."
       ],
-      "${ numberOfTrackers } email tracker blocked": [
-        "${ numberOfTrackers } e-mail követő blokkolva",
-        "${ numberOfTrackers } e-mail követő blokkolva"
+      "${ numberOfImageTrackers } email tracker blocked": [
+        "${ numberOfImageTrackers } e-mail követő blokkolva",
+        "${ numberOfImageTrackers } e-mail követő blokkolva"
+      ],
+      "${ numberOfImageTrackers } tracker blocked": [
+        "${ numberOfImageTrackers } követő blokkolva",
+        "${ numberOfImageTrackers } követő blokkolva"
+      ],
+      "${ numberOfUTMTrackers } link cleaned": [
+        "${ numberOfUTMTrackers } link kitisztítva",
+        "${ numberOfUTMTrackers } link kitisztítva"
       ],
       "${ numContact } contact": [
         "${ numContact } névjegy",
@@ -4802,6 +4845,9 @@
       ],
       "Are you sure you want to discard your changes?": [
         "Biztos abban, hogy elveti a módosításokat?"
+      ],
+      "Are you sure you want to move all messages in this location to Archive?": [
+        "Biztosan áthelyezi az összes üzenetet ebben az Archívumba?"
       ],
       "Are you sure you want to move all messages in this location to Trash?": [
         "Biztosan áthelyezi az összes üzenetet ebben a Kukába?"
@@ -4994,16 +5040,6 @@
       "Email tracker protection is disabled": [
         "E-mail követő védelem ki van kapcsolva"
       ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers in this message.": [
-        "Ez e-mail nyomkövetők megsérthetik a magánszféráját. A ${ BRAND_NAME } egyetlen követőt sem talált ebben az üzenetben."
-      ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } tracker.": [
-        "Az e-mail követők megsérthetik a magánszféráját. A ${ BRAND_NAME } ${ numberOfTrackers } követőt talált és tiltott le.",
-        "Az e-mail követők megsérthetik a magánszféráját. A ${ BRAND_NAME } ${ numberOfTrackers } követőt talált és tiltott le."
-      ],
-      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
-        "Az e-mail követők megsérthetik a magánszféráját. Kapcsolja be a követés elleni védelmet, hogy a feladók ne értesülhessenek arról, ha és amikor megnyitja az üzenetet."
-      ],
       "Emails are automatically signed": [
         "Az e-mailek automatikusan aláírásra kerülnek"
       ],
@@ -5071,6 +5107,9 @@
       ],
       "For messages newer than ${ oldestDate }": [
         "Üzeneteknek, melyek újabbak mint ${ oldestDate }"
+      ],
+      "For more search results, try searching for this keyword in the content of your email messages.": [
+        "További keresési eredményekért próbáljon meg erre a kulcsszóra keresni az email üzenetek tartalmában"
       ],
       "Free up some space or add more storage space.": [
         "Szabadítson fel helyet vagy vásároljon több területet."
@@ -5182,6 +5221,9 @@
       "Link type": [
         "Hivatkozás típusa"
       ],
+      "Links cleaned:": [
+        "Hivatkozások kitisztítva:"
+      ],
       "Loading": [
         "Betöltés"
       ],
@@ -5212,9 +5254,8 @@
       "Merged": [
         "Egyesítve"
       ],
-      "Message downloaded: ${ currentProgress } out of ${ totalProgress }": [
-        "Letöltve: ${ currentProgress } üzenet. Összesen: ${ totalProgress }",
-        "Letöltve: ${ currentProgress } üzenet. Összesen: ${ totalProgress }"
+      "Message download status:": [
+        "Üzenet letöltés aktuális állapot:"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
         "${ MAIL_APP_NAME } felhasználóknak küldött üzeneteknél az időkorlát bármikor megadható. Nem ${ BRAND_NAME } címekre küldött üzenet esetén válassza a mégsem gombot, majd állítson be jelszó védelmet az üzenethez."
@@ -5264,9 +5305,6 @@
       "No email address": [
         "Nincs e-mail cím"
       ],
-      "No email trackers found": [
-        "Nincs e-mail követő"
-      ],
       "No folder found": [
         "Nem található mappa"
       ],
@@ -5282,14 +5320,17 @@
       "No label selected": [
         "Nincs kiválasztva címke"
       ],
+      "No links cleaned": [
+        "Nincs hivatkozás kitisztítva"
+      ],
       "No more results found": [
         "Nincs több találat"
       ],
       "No results found": [
         "Nincs találat"
       ],
-      "No trackers found, but some images could not be loaded with tracking protection": [
-        "Egy követőt se találtunk, de néhány képet nem lehetett betölteni követő-védelem mellett"
+      "No trackers found": [
+        "Nem található követő"
       ],
       "non-${ MAIL_APP_NAME }": [
         "nem-${ MAIL_APP_NAME }"
@@ -5341,6 +5382,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Ez a folyamat eltarthat egy ideig, a névjegyzék méretétől függően."
+      ],
+      "Please provide a name and an email address for creating a group.": [
+        "Csoport létrehozásához adjon meg egy nevet és egy e-mail címet."
       ],
       "Please select the folders you would like to import:": [
         "Válassza ki az importálásra kerülő mappákat:"
@@ -5685,8 +5729,11 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Túl sok üzenet vár elküldésre. Várjon amíg elküldődik egy üzenet, mielőtt ezt ütemezné."
       ],
-      "Turn off to only search by date, name, or email address. To disable search message content and delete downloaded messages, go to settings.": [
-        "Kikapcsolásával csak dátum alapján, a nevekben és az e-mail címekben történik keresés. Az üzenetek tartalmában való keresés kikapcsolásához és a letöltött üzenetek törléséhez nyissa meg a beállításokat."
+      "Trackers blocked:": [
+        "Követők blokkolva:"
+      ],
+      "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
+        "Kikapcsolásával csak dátum alapján, a nevekben, email címekben vagy tárgynevekben történik keresés. Az üzenetek tartalmában való keresés kikapcsolásához és a letöltött üzenetek törléséhez nyissa meg a beállításokat."
       ],
       "Turn on to search the content of your messages": [
         "Kapcsolja be, hogy az üzenetek szövegében is kereshessen"
@@ -5702,9 +5749,6 @@
       ],
       "Updating message content search...": [
         "Üzenetek tartalmában való keresés frissítése..."
-      ],
-      "Updating your local messages, message content won't be searched during this update": [
-        "A helyi üzenetek frissítése. Ezalatt az üzenetek kereshetősége szünetel"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Váltson nagyobb csomagra a prémium funkciókért, termékekért és tárhelyért, egy kedvezményes áron"
@@ -5769,8 +5813,14 @@
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Elnézést, ez egy téves kiértékelés lehetett a mi részünkről. Megerősíti, hogy ez az üzenet helyénvaló?"
       ],
+      "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
+        "A következő hirdetők és szervezetek számára megakadályoztuk, hogy lássák, mikor nyitod meg ezt az e-mailt, milyen eszközt használsz, és hol tartózkodsz."
+      ],
       "We could not verify the sender's trusted keys.": [
         "Nem sikerült a feladó megbízható kulcsainak ellenőrzése."
+      ],
+      "We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.": [
+        "A következő linkekről eltávolítottuk a nyomkövető információkat,hogy megvédjünk a hirdetők,és mások, online tevékenységednek a nyomon követésétől."
       ],
       "We'll notify you when the import is done.": [
         "Érdesíteni fogjuk az importálás végeztével."
@@ -5830,7 +5880,7 @@
         "Próbálkozzon másik kereséssel vagy ${ button }"
       ],
       "You can either update your search query or clear it": [
-        "Próbálkozzon másik kereséssel vagy törölje a keresést"
+        "Módosíthatja a keresési lekérdezést, vagy törölheti azt"
       ],
       "You can import one data type at a time.": [
         "Egyszerre egyféle adat importálható."
@@ -5935,9 +5985,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "A fájlok titkosításra majd pedig mentésre kerülnek"
-      ],
-      "Your import will not be processed.": [
-        "Az importálás nem lesz feldolgozva."
       ],
       "Your login information will not be saved after the import is completed.": [
         "A bejelentkezési adatok az importálás befejezése után nem kerülnek tárolásra."
@@ -6129,6 +6176,9 @@
       "New message": [
         "Új üzenet"
       ],
+      "Open command panel": [
+        "Parancspanel megnyitása"
+      ],
       "Open next message": [
         "Következő üzenet megnyitása"
       ],
@@ -6310,6 +6360,9 @@
       ],
       "City": [
         "Település"
+      ],
+      "Cleaned": [
+        "Kitisztítva"
       ],
       "Code is 6 digits without spaces": [
         "A kód hatjegyű, szóközök nélkül"
@@ -6512,6 +6565,9 @@
       "OK": [
         "Megfelelő"
       ],
+      "Open in a new tab": [
+        "Megnyitás új lapon"
+      ],
       "Operating system": [
         "Operációs rendszer"
       ],
@@ -6526,6 +6582,9 @@
       ],
       "Or": [
         "Vagy"
+      ],
+      "Original link": [
+        "Eredeti hivatkozás"
       ],
       "Participants": [
         "Résztvevők"
@@ -7022,11 +7081,6 @@
         "A ${ appName } új verziója érhető el. ${ reloadButton }."
       ]
     },
-    "Message has been sent to the user via a SimpleLogin alias": {
-      "Delivered via SimpleLogin by ${ BRAND_NAME }": [
-        "A ${ BRAND_NAME } SimpleLogin szolgáltatásából"
-      ]
-    },
     "Message image": {
       "Image has not been loaded in order to protect your privacy.": [
         "Az adatai védelme érdekében a kép nem került betöltésre."
@@ -7351,11 +7405,34 @@
       "Set up your organization": [
         "Állítsa be a szervezet adatait"
       ],
-      "Set up your organization testing": [
-        "A szervezetének beállítása"
-      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Használja az alkalmazás választót a bal felső sarokban, hogy hozzáférjen az összes ${ BRAND_NAME } szolgáltatáshoz: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } és ${ DRIVE_SHORT_APP_NAME }."
+      ]
+    },
+    "Online Accounts Name": {
+      "Banking": [
+        "Bankolás"
+      ],
+      "E-commerce and Retail": [
+        "Elektronikus kereskedelem és kiskereskedelem"
+      ],
+      "Entertainment": [
+        "Szórakoztatás"
+      ],
+      "Food and beverage": [
+        "Étel és ital"
+      ],
+      "Gaming": [
+        "Játék"
+      ],
+      "Most popular": [
+        "Legnépszerűbb"
+      ],
+      "Travel": [
+        "Utazás"
+      ],
+      "Utilities": [
+        "Segédeszközök"
       ]
     },
     "Option": {
@@ -7397,20 +7474,6 @@
     "Pagination": {
       "${ page } of ${ totalText }": [
         "${ page } (összesen: ${ totalText })"
-      ]
-    },
-    "Paid user checklist item": {
-      "Get mobile app": [
-        "Mobil alkalmazás beszerzése"
-      ],
-      "Import contacts or emails": [
-        "Importája névjegyeit vagy üzeneteit"
-      ],
-      "Send a message": [
-        "Üzenet küldése"
-      ],
-      "Set up a recovery method": [
-        "Helyreállítási módszer hozzáadása"
       ]
     },
     "Participant name": {
@@ -7719,6 +7782,11 @@
       "We have detected some warnings. The following email address may not receive emails:": [
         "Hiba történhetett. A következő címzett nem biztos, hogy megkapja az üzenetet:",
         "Hiba történhetett. A következő címzettek nem biztos, hogy megkapják az üzenetet:"
+      ]
+    },
+    "Sender verification details": {
+      "Sender verification": [
+        "Feladó ellenőrzése"
       ]
     },
     "Sent email icon": {
@@ -8098,9 +8166,6 @@
       ]
     },
     "Storage": {
-      "Get extra storage for free": [
-        "Szerezzen további tárhelyet ingyen"
-      ],
       "Release notes": [
         "Kiadási megjegyzések"
       ],
@@ -8367,6 +8432,50 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Visszajelzés elküldve"
+      ]
+    },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "1 év"
+      ],
+      "2 years": [
+        "2 év"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "Prémium tárhely"
+      ],
+      "Premium Mail and Calendar": [
+        "Prémium levelezés és naptár"
+      ],
+      "Premium Password Manager": [
+        "Prémium jelszókezelő"
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Jelszókezelő"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Tartalmaz 1 darab egyéni e-mail tartománynevet,10 darab e-mail címet, 10 darab hide-my-email álnevet, naptár megosztást és egyebeket"
+      ]
+    },
+    "summer2023:Footer": {
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "A kedvezmények a standard havi árakon alapulnak. Ez az ajánlat csak az első alkalommal előfizetők számára érhető el."
+      ]
+    },
+    "summer2023:Info": {
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Közösségi finanszírozásunk kilenc éves jubileumát ünnepeljük!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "${ BRAND_NAME } jubileumi kiárusítás"
       ]
     },
     "Table header": {
@@ -8793,6 +8902,9 @@
       "More selections": [
         "További kijelölési lehetőségek"
       ],
+      "Move all messages to Archive": [
+        "Áthelyezi az összes üzenetet az Archívumba"
+      ],
       "Move all messages to Trash": [
         "Áthelyezi az összes üzenetet a lomtárba"
       ],
@@ -8829,6 +8941,9 @@
       "No attachment found": [
         "Nincs melléklet"
       ],
+      "No trackers found": [
+        "Nem található követő"
+      ],
       "Open actions dropdown": [
         "Műveletek menü megnyitása"
       ],
@@ -8855,6 +8970,9 @@
       ],
       "Previous message": [
         "Előző üzenet"
+      ],
+      "Protect yourself from trackers": [
+        "Védje magát a követőktől"
       ],
       "Re-sign all contacts": [
         "Az összes névjegy ismételt aláírása"
@@ -9004,6 +9122,10 @@
       "Warning: suspected fake website": [
         "Figyelem: gyanítottan hamis weboldal"
       ],
+      "We protected you from ${ trackersCount } tracker": [
+        "Megvédtünk téged ${ trackersCount } követőtől",
+        "Megvédtünk téged ${ trackersCount } követőtől"
+      ],
       "Welcome": [
         "Üdvözöljük"
       ],
@@ -9145,9 +9267,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "A ${ BRAND_NAME } annyi adatot áttölt, amennyi lehetséges, a legfrissebb üzenetekkel kezdve."
-      ],
-      "Are you sure you want to discard your import?": [
-        "Biztos, hogy elveti az importálást?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Biztos, hogy véglegesen töröl ${ count } névjegy csoportot?",

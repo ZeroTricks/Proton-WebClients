@@ -3,10 +3,9 @@ import { c } from 'ttag';
 import type { ItemExtraField, ItemImportIntent } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
-import { uniqueId } from '@proton/pass/utils/string';
 
-import { ImportReaderError } from '../helpers/reader.error';
-import { getImportedVaultName, importLoginItem, importNoteItem } from '../helpers/transformers';
+import { ImportProviderError } from '../helpers/error';
+import { getImportedVaultName, importCreditCardItem, importLoginItem, importNoteItem } from '../helpers/transformers';
 import type { ImportPayload, ImportVault } from '../types';
 import type { OnePassLegacyItem, OnePassLegacySectionField, OnePassLegacyURL } from './1password.1pif.types';
 import { OnePassLegacyItemType, OnePassLegacySectionFieldKey } from './1password.1pif.types';
@@ -115,6 +114,22 @@ const processPasswordItem = (item: OnePassLegacyItem): ItemImportIntent<'login'>
         modifyTime: item.updatedAt,
     });
 
+const processCreditCardItem = (item: OnePassLegacyItem): ItemImportIntent<'creditCard'> => {
+    const expirationDate =
+        item.secureContents.expiry_mm && item.secureContents.expiry_yy
+            ? `${String(item.secureContents.expiry_mm).padStart(2, '0')}${item.secureContents.expiry_yy}`
+            : undefined;
+
+    return importCreditCardItem({
+        name: item.title,
+        note: item.secureContents.notesPlain,
+        cardholderName: item.secureContents.cardholder,
+        number: item.secureContents.ccnum,
+        verificationNumber: item.secureContents.cvv,
+        expirationDate,
+    });
+};
+
 export const parse1PifData = (data: string): OnePassLegacyItem[] =>
     data
         .split('\n')
@@ -133,6 +148,8 @@ export const read1Password1PifData = async (data: string): Promise<ImportPayload
                         return processNoteItem(item);
                     case OnePassLegacyItemType.PASSWORD:
                         return processPasswordItem(item);
+                    case OnePassLegacyItemType.CREDIT_CARD:
+                        return processCreditCardItem(item);
                     default:
                         ignored.push(`[${item.typeName}] ${item.title ?? ''}`);
                 }
@@ -141,9 +158,8 @@ export const read1Password1PifData = async (data: string): Promise<ImportPayload
 
         const vaults: ImportVault[] = [
             {
-                type: 'new',
-                vaultName: getImportedVaultName(),
-                id: uniqueId(),
+                name: getImportedVaultName(),
+                shareId: null,
                 items: items,
             },
         ];
@@ -151,7 +167,6 @@ export const read1Password1PifData = async (data: string): Promise<ImportPayload
         return { vaults, ignored, warnings: [] };
     } catch (e) {
         logger.warn('[Importer::1Password]', e);
-        const errorDetail = e instanceof ImportReaderError ? e.message : '';
-        throw new ImportReaderError(c('Error').t`1Password export file could not be parsed. ${errorDetail}`);
+        throw new ImportProviderError('1Password', e);
     }
 };

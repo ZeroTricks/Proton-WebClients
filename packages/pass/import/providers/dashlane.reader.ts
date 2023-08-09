@@ -1,13 +1,11 @@
 import jszip from 'jszip';
-import { c } from 'ttag';
 
 import type { ItemImportIntent, Maybe } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
-import { uniqueId } from '@proton/pass/utils/string';
 import capitalize from '@proton/utils/capitalize';
 
 import { readCSV } from '../helpers/csv.reader';
-import { ImportReaderError } from '../helpers/reader.error';
+import { ImportProviderError } from '../helpers/error';
 import { getImportedVaultName, importLoginItem, importNoteItem } from '../helpers/transformers';
 import type { ImportPayload, ImportVault } from '../types';
 import type {
@@ -39,6 +37,11 @@ const processLoginItem = (item: DashlaneLoginItem): ItemImportIntent<'login'> =>
         password: item.password,
         urls: [item.url],
         totp: item.otpSecret,
+        extraFields: [item.username2, item.username3].filter(Boolean).map((username, index) => ({
+            fieldName: `username${index + 1}`,
+            type: 'text',
+            data: { content: username ?? '' },
+        })),
     });
 
 const processNoteItem = (item: DashlaneNoteItem): ItemImportIntent<'note'> =>
@@ -114,9 +117,8 @@ export const readDashlaneData = async (data: ArrayBuffer): Promise<ImportPayload
 
         const vaults: ImportVault[] = [
             {
-                type: 'new',
-                vaultName: getImportedVaultName(),
-                id: uniqueId(),
+                name: getImportedVaultName(),
+                shareId: null,
                 items: [...loginItems, ...noteItems],
             },
         ];
@@ -124,7 +126,6 @@ export const readDashlaneData = async (data: ArrayBuffer): Promise<ImportPayload
         return { vaults, ignored, warnings };
     } catch (e) {
         logger.warn('[Importer::Dashlane]', e);
-        const errorDetail = e instanceof ImportReaderError ? e.message : '';
-        throw new ImportReaderError(c('Error').t`Dashlane export file could not be parsed. ${errorDetail}`);
+        throw new ImportProviderError('Dashlane', e);
     }
 };

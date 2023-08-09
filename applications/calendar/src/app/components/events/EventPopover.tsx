@@ -13,10 +13,10 @@ import {
     Loader,
     ReloadSpinner,
     Tooltip,
-    useLoading,
     useReadCalendarBootstrap,
 } from '@proton/components';
 import CalendarEventDateHeader from '@proton/components/components/calendarEventDateHeader/CalendarEventDateHeader';
+import { useLoading } from '@proton/hooks';
 import {
     getIsCalendarDisabled,
     getIsCalendarWritable,
@@ -88,6 +88,7 @@ const EventPopover = ({
     isNarrow,
     displayNameEmailMap,
 }: Props) => {
+    const isDrawerApp = getIsCalendarAppInDrawer(view);
     const popoverEventContentRef = useRef<HTMLDivElement>(null);
 
     const [loadingDelete, withLoadingDelete] = useLoading();
@@ -245,7 +246,7 @@ const EventPopover = ({
             </ButtonLike>
         </Tooltip>
     );
-    const viewEventButton = getIsCalendarAppInDrawer(view) && (
+    const viewEventButton = isDrawerApp && (
         <Tooltip title={viewText}>
             <AppLink
                 to={linkTo || '/'}
@@ -359,6 +360,7 @@ const EventPopover = ({
                     key={targetEvent.id}
                     calendar={calendarData}
                     model={model}
+                    isDrawerApp={isDrawerApp}
                     formatTime={formatTime}
                     displayNameEmailMap={displayNameEmailMap}
                     popoverEventContentRef={popoverEventContentRef}

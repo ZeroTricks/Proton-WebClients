@@ -141,6 +141,9 @@
       "Continue with Google": [
         "Continuare cu Google"
       ],
+      "Copy email address": [
+        "Copiere adresă e-mail"
+      ],
       "Copy email to clipboard": [
         "Copiere mesaj în memorie"
       ],
@@ -158,6 +161,9 @@
       ],
       "Create event": [
         "Creare eveniment"
+      ],
+      "Create new contact": [
+        "Creare contact nou"
       ],
       "Customize": [
         "Personalizare"
@@ -582,6 +588,9 @@
       ],
       "View": [
         "Afișare"
+      ],
+      "View contact details": [
+        "Afișare detalii contact"
       ],
       "View invoice": [
         "Afișare factură"
@@ -1874,7 +1883,7 @@
         "Regatul Unit"
       ],
       "United States": [
-        "Statele Unite"
+        "SUA"
       ],
       "United States Minor Outlying Islands": [
         "Insulele Minore Îndepărtate ale Statelor Unite"
@@ -2167,6 +2176,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Puteți verifica situația și pe ${ statusPageLink }."
+      ],
       "${ list } doesn't have a valid email address": [
         "${ list } nu are o adresă de e-mail validă.",
         "Unele contacte nu au o adresă de e-mail validă: ${ list }",
@@ -2437,6 +2449,9 @@
       ],
       "Start time must be before end time": [
         "Timpul de începere trebuie să fie înainte de cel de sfârșit."
+      ],
+      "status page": [
+        "pagina de stare"
       ],
       "The address might be misspelled": [
         "Adresa ar putea fi scrisă greșit"
@@ -3034,8 +3049,8 @@
       "System default": [
         "Implicit din sistem"
       ],
-      "Theme default": [
-        "Temă implicită"
+      "Theme font": [
+        "Font temă"
       ]
     },
     "Font size option": {
@@ -3807,6 +3822,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Rețineți că acest proces poate dura ceva timp, în funcție de dimensiunea agendei de contacte."
       ],
+      "Please provide a name and an email address for creating a group.": [
+        "Furnizați un nume și o adresă de e-mail pentru a crea un grup."
+      ],
       "Please remove the duplicates and try again.": [
         "Eliminați duplicatele și reîncercați."
       ],
@@ -4090,9 +4108,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Fișierele vor fi criptate și apoi salvate."
-      ],
-      "Your import will not be processed.": [
-        "Importarea nu va fi procesată."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Informațiile de conectare nu vor fi salvate după terminarea importării."
@@ -4682,8 +4697,8 @@
       ]
     },
     "Modal action": {
-      "Close": [
-        "Închidere"
+      "Cancel": [
+        "Anulare"
       ],
       "Manage calendars": [
         "Gestionare calendare"
@@ -4969,6 +4984,9 @@
       ],
       "Calendar added": [
         "Calendar adăugat"
+      ],
+      "Calendar updated": [
+        "Calendarul a fost actualizat."
       ]
     },
     "Notification in share calendar modal": {
@@ -5170,9 +5188,6 @@
       "Set up your organization": [
         "Setați organizația"
       ],
-      "Set up your organization testing": [
-        "Setare testare pentru organizație"
-      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Folosiți meniul de selectare al aplicațiilor din stânga sus pentru a accesa toate serviciile ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } și ${ DRIVE_SHORT_APP_NAME }."
       ]
@@ -5320,7 +5335,7 @@
         "Nume"
       ],
       "Name or email address": [
-        "Numele de utilizator sau adresa de e-mail"
+        "Nume utilizator / adresa de e-mail"
       ],
       "Password": [
         "Parola"
@@ -5476,8 +5491,8 @@
       ]
     },
     "Shared calendar; Info about calendar owner": {
-      "Created by ${ ownerName }": [
-        "Creat de ${ ownerName }"
+      "Shared by ${ ownerName }": [
+        "Partajat de ${ ownerName }"
       ]
     },
     "Side panel spotlight": {
@@ -5785,19 +5800,6 @@
         "Aflați cum să obțineți o legătură la un calendar privat."
       ]
     },
-    "Subscribed calendar extension warning": {
-      "By using this link, Google will make the calendar you are subscribing to public": [
-        "Utilizând această legătură, Google va face public calendarul la care vă abonați."
-      ],
-      "This link might be wrong": [
-        "Această legătură ar putea fi greșită"
-      ]
-    },
-    "Subscribed calendar URL length warning": {
-      "URL is too long": [
-        "Adresa URL este prea lungă"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "Un contact arată identic.",
@@ -5950,6 +5952,70 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Mesajul a fost trimis"
+      ]
+    },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "Un an"
+      ],
+      "2 years": [
+        "2 ani"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "Drive premium"
+      ],
+      "Premium Mail and Calendar": [
+        "Mail Premium și Calendar"
+      ],
+      "Premium Password Manager": [
+        "Gestionare parole premium"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Stocați-vă parolele și completați-le automat pe paginile web. Include parole nelimitate, completare automată, generator de parole și multe altele."
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Manager de parole"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Creați detalii de conectare sigure pe toate dispozitivele. Include aliasuri nelimitate, 20 de seifuri, integrare autentificare cu doi factori, autocompletare date card de credit și multe altele."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Include 2950+ servere în peste 65 de țări, conectați până la 10 dispozitive, accesați servicii de transmisii în flux la nivel mondial, programe malițioase, blocare de reclame și multe altele."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Include suport pentru un domeniu de e-mail personal, 10 adrese de e-mail, 10 aliasuri hide-my-email, partajare calendar și altele."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Protejați-vă fișierele cu stocarea criptată în cloud. Include sincronizare automată, partajare criptată a fișierelor și multe altele."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "* Abonamentul se va reînnoi automat la aceeași sumă la sfârșitul ciclului de facturare."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Reducerile se bazează pe prețurile lunare standard. Această ofertă este disponibilă doar pentru abonații pentru prima dată."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Pentru o perioadă limitată de timp, obțineți cel mai bun ${ BRAND_NAME } disponibil cu o reducere exclusivă."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Sărbătorim aniversarea de nouă ani a finanțării noastre de la public!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "Reducere aniversară ${ BRAND_NAME }"
       ]
     },
     "Table header": {
@@ -6571,11 +6637,8 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } va transfera cât mai multe date posibil, începând cu cele mai recente mesaje."
       ],
-      "Are you sure you want to discard your import?": [
-        "Sigur doriți să anulați importarea?"
-      ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
-        "Sigur doriți să ștergeți definitiv un grup de contacte?",
+        "Sigur doriți să ștergeți definitiv ${ count } grup de contacte?",
         "Sigur doriți să ștergeți definitiv ${ count } grupuri de contacte?",
         "Sigur doriți să ștergeți definitiv ${ count } de grupuri de contacte?"
       ],

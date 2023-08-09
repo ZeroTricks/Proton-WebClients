@@ -3,22 +3,21 @@ import { ChangeEvent, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import { validateSubscription } from '@proton/shared/lib/api/calendars';
 import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { getCalendarStatusInfo } from '@proton/shared/lib/calendar/subscribe/helpers';
+import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { truncateMore } from '@proton/shared/lib/helpers/string';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { isURL } from '@proton/shared/lib/helpers/validators';
 import { CALENDAR_SUBSCRIPTION_STATUS, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import { BasicModal, Form, InputFieldTwo, Loader } from '../../../components';
-import { useApi, useLoading } from '../../../hooks';
+import { useApi } from '../../../hooks';
 import { GenericError } from '../../error';
 import { getCalendarPayload, getCalendarSettingsPayload, getDefaultModel } from '../calendarModal/calendarModalState';
 import useGetCalendarActions from '../hooks/useGetCalendarActions';
 import useGetCalendarSetup from '../hooks/useGetCalendarSetup';
-
-const { CALENDAR_URL } = MAX_CHARS_API;
 
 interface Props {
     open: boolean;
@@ -36,33 +35,6 @@ const SubscribedCalendarModal = ({ open, onClose, onExit, onCreateCalendar }: Pr
 
     const [loadingAction, withLoadingAction] = useLoading();
     const api = useApi();
-
-    const isGoogle = calendarURL.match(/^https?:\/\/calendar\.google\.com/);
-    const isOutlook = calendarURL.match(/^https?:\/\/outlook\.live\.com/);
-    const shouldProbablyHaveIcsExtension = (isGoogle || isOutlook) && !calendarURL.endsWith('.ics');
-    const googleWillPossiblyBeMakePublic = calendarURL.match(/\/public\/\w+\.ics/);
-
-    const { length: calendarURLLength } = calendarURL;
-    const isURLTooLong = calendarURLLength > CALENDAR_URL;
-
-    const getWarning = () => {
-        if (shouldProbablyHaveIcsExtension) {
-            return c('Subscribed calendar extension warning').t`This link might be wrong`;
-        }
-
-        if (isGoogle && googleWillPossiblyBeMakePublic) {
-            return c('Subscribed calendar extension warning')
-                .t`By using this link, Google will make the calendar you are subscribing to public`;
-        }
-
-        if (isURLTooLong) {
-            return c('Subscribed calendar URL length warning').t`URL is too long`;
-        }
-
-        return null;
-    };
-
-    const isURLValid = isURL(calendarURL);
 
     const { error: setupError, loading: loadingSetup } = useGetCalendarSetup({ setModel });
     const handleClose = () => {
@@ -92,7 +64,13 @@ const SubscribedCalendarModal = ({ open, onClose, onExit, onCreateCalendar }: Pr
         } = await api<{ ValidationResult: { Result: CALENDAR_SUBSCRIPTION_STATUS } }>({
             ...validateSubscription({ url: calendarURL }),
             silence: true,
-        }).catch(() => ({ ValidationResult: { Result: CALENDAR_SUBSCRIPTION_STATUS.OK } }));
+        }).catch((error) => {
+            if (error?.status === HTTP_STATUS_CODE.UNPROCESSABLE_ENTITY) {
+                return { ValidationResult: { Result: CALENDAR_SUBSCRIPTION_STATUS.INVALID_URL } };
+            }
+
+            return { ValidationResult: { Result: CALENDAR_SUBSCRIPTION_STATUS.OK } };
+        });
 
         if (result === CALENDAR_SUBSCRIPTION_STATUS.OK) {
             return handleCreateCalendar(formattedModel.addressID, calendarPayload, calendarSettingsPayload);
@@ -107,7 +85,7 @@ const SubscribedCalendarModal = ({ open, onClose, onExit, onCreateCalendar }: Pr
         errorContent = null,
         onSubmit,
     } = (() => {
-        const disabled = !calendarURL || !isURLValid || isURLTooLong;
+        const disabled = !calendarURL || !!validationError;
 
         if (error || setupError) {
             const onSubmitError = () => window.location.reload();
@@ -145,10 +123,7 @@ const SubscribedCalendarModal = ({ open, onClose, onExit, onCreateCalendar }: Pr
     );
 
     const getError = () => {
-        const hasInvalidURL =
-            (calendarURL && !isURLValid) || validationError === CALENDAR_SUBSCRIPTION_STATUS.INVALID_URL;
-
-        if (hasInvalidURL) {
+        if (validationError === CALENDAR_SUBSCRIPTION_STATUS.INVALID_URL) {
             return c('Error message').t`Invalid URL`;
         }
 
@@ -175,7 +150,7 @@ const SubscribedCalendarModal = ({ open, onClose, onExit, onCreateCalendar }: Pr
             dense
             onSubmit={() => {
                 if (!submitProps.loading) {
-                    onSubmit();
+                    void onSubmit();
                 }
             }}
             onExit={onExit}
@@ -191,7 +166,6 @@ ${kbLink}
 `}</p>
                         <InputFieldTwo
                             autoFocus
-                            warning={getWarning()}
                             error={getError()}
                             label={c('Subscribe to calendar modal').t`Calendar URL`}
                             value={calendarURL}

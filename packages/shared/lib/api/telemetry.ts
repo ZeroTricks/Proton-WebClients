@@ -2,7 +2,6 @@ import { SimpleMap } from '@proton/shared/lib/interfaces';
 
 export enum TelemetryMeasurementGroups {
     mailSimpleLogin = 'mail.web.simplelogin_popups',
-    screenSize = 'any.web.screen_size',
     calendarTimeZoneSelector = 'calendar.web.timezone_selector',
     accountSignupBasic = 'account.any.signup_basic',
     accountSignup = 'account.any.signup',
@@ -15,11 +14,6 @@ export enum TelemetrySimpleLoginEvents {
     newsletter_unsubscribe = 'newsletter_unsubscribe',
     simplelogin_modal_view = 'simplelogin_modal_view',
     go_to_simplelogin = 'go_to_simplelogin',
-}
-
-export enum TelemetryScreenSizeEvents {
-    load = 'load',
-    resize = 'resize',
 }
 
 export enum TelemetryCalendarEvents {
@@ -40,11 +34,14 @@ export enum TelemetryAccountSignupEvents {
     userCheckout = 'user.checkout',
     userSignIn = 'user.sign_in',
     interactAccountCreate = 'user.interact.account_create',
+    interactUpsell = 'user.interact.upsell',
     interactCreditCard = 'user.interact.credit_card',
+    interactPassword = 'user.interact.password',
     interactRecoveryKit = 'user.interact.recovery',
     interactDownload = 'user.interact.download',
     beAvailableExternal = 'be.available_external',
-    userSignInSuccess = 'be.sign_in_success',
+    beSignInSuccess = 'be.sign_in_success',
+    beSignOutSuccess = 'be.sign_out_success',
     bePaymentMethods = 'be.payments_available',
     checkoutError = 'be.checkout_error',
     hvNeeded = 'be.hv_needed',
@@ -65,7 +62,6 @@ export enum TelemetryMailEvents {
 
 export type TelemetryEvents =
     | TelemetrySimpleLoginEvents
-    | TelemetryScreenSizeEvents
     | TelemetryCalendarEvents
     | TelemetryAccountSignupBasicEvents
     | TelemetryAccountSignupEvents

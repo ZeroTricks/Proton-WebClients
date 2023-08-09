@@ -64,6 +64,7 @@ export const calendarBuilder = build<VisualCalendar>('Calendar', {
         Display: 1,
         Permissions: 127,
         Owner: { Email: testEmail },
+        Priority: 1,
         Members: [
             {
                 ID: 'otkpEZzG--8dMXvwyLXLQWB72hhBhNGzINjH14rUDfywvOyeN01cDxDrS3Koifxf6asA7Xcwtldm0r_MCmWiAQ==',
@@ -76,6 +77,7 @@ export const calendarBuilder = build<VisualCalendar>('Calendar', {
                 CalendarID: testCalendarId,
                 Name: 'My calendar',
                 Description: '',
+                Priority: 1,
             },
         ],
     },
@@ -94,6 +96,7 @@ export const calendarBuilder = build<VisualCalendar>('Calendar', {
                         CalendarID: testCalendarId,
                         Name: 'My calendar',
                         Description: '',
+                        Priority: 1,
                     },
                 ],
             },
@@ -112,6 +115,7 @@ export const calendarBuilder = build<VisualCalendar>('Calendar', {
                         CalendarID: testCalendarId,
                         Name: 'My calendar',
                         Description: '',
+                        Priority: 1,
                     },
                 ],
             },
@@ -162,6 +166,7 @@ export const addressBuilder = build<Address>('Address', {
         Signature: '',
         Status: 1,
         Type: ADDRESS_TYPE.TYPE_ORIGINAL,
+        ProtonMX: true,
     },
     postBuild: (address) => {
         address.Keys = [addressKeyBuilder()];
@@ -436,6 +441,7 @@ export const generateSimpleCalendar = (
     Color: color,
     Display: display,
     Permissions: permissions,
+    Priority: 1,
     Owner: { Email: ownerEmail },
     Members: [
         {
@@ -449,9 +455,37 @@ export const generateSimpleCalendar = (
             CalendarID: `id-${i}`,
             Name: `name-${i}`,
             Description: `description-${i}`,
+            Priority: 1,
         },
     ],
 });
+
+export const generateTestAddress = (compelled?: Partial<Address>): Address => {
+    return {
+        ID: 'fHR97Meg0sNme5k8IFa2umNtk5FjTUA7FbImbZj7RIO3U5hMmGk8_NF6a7qgSZ2QviSQmEg7Qib9xfLEdjCdXA==',
+        DomainID: 'l8vWAXHBQmv0u7OVtPbcqMa4iwQaBqowINSQjPrxAr-Da8fVPKUkUcqAq30_BCxj1X0nW70HQRmAa-rIvzmKUA==',
+        Email: 'unlimited@proton.test',
+        Status: 1,
+        Receive: 1,
+        Send: 1,
+        DisplayName: 'unlimited',
+        SignedKeyList: {
+            ExpectedMinEpochID: 1,
+            Data: '[{"Primary":1,"Flags":3,"Fingerprint":"c2b4f440b000d4f326a65d70a827bb8b6fa093d9","SHA256Fingerprints":["efaba78a9004f1c01cce6b45f4ccfe1e37651c9067d188b665d8d29186c693b2","439fa8debeff000609b2cf8e316f3637a3fb7479da144b10bb95fe24f64f926d"]}]',
+            Signature: '-----BEGIN PGP SIGNATURE-----...',
+            MinEpochID: 0,
+            MaxEpochID: 0,
+        },
+        Keys: [],
+        HasKeys: 0,
+        Order: 1,
+        Priority: 1,
+        Signature: '-----BEGIN PGP SIGNATURE-----...',
+        Type: ADDRESS_TYPE.TYPE_ORIGINAL,
+        ProtonMX: true,
+        ...compelled,
+    };
+};
 
 export const generateSharedCalendar = (i: number, params: GenerateSimpleCalendarCustomParams) => {
     const calendar = generateSimpleCalendar(i, params);

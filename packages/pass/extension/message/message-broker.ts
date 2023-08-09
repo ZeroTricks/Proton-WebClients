@@ -34,11 +34,13 @@ export type ExtensionMessageBroker = ReturnType<typeof createMessageBroker>;
 
 export const createMessageBroker = (options: {
     allowExternal: WorkerMessageType[];
+    strictOriginCheck: WorkerMessageType[];
     onDisconnect?: (portName: string) => void;
 }) => {
     const handlers: Map<WorkerMessageType, MessageHandlerCallback> = new Map();
     const ports: Map<string, Runtime.Port> = new Map();
     const buffer: Set<WorkerMessageWithSender> = new Set();
+    const extensionOrigin = new URL(browser.runtime.getURL('/')).origin;
 
     const broadcast = <M extends WorkerMessage>(message: M, matchPort?: string | ((name: string) => boolean)) => {
         ports.forEach(
@@ -85,19 +87,25 @@ export const createMessageBroker = (options: {
         if (handler) {
             try {
                 const isExternal = sender.id !== browser.runtime.id;
+                const isInternal = !isExternal;
 
                 if (isExternal && notIn(options.allowExternal)(message.type)) {
                     logger.warn('[MessageBroker::Message] unauthorized external message');
                     return errorMessage('unauthorized');
                 }
 
+                if (isInternal && options.strictOriginCheck.includes(message.type)) {
+                    const origin = new URL((sender as any).origin ?? sender.url).origin;
+                    if (origin !== extensionOrigin) {
+                        logger.warn('[MessageBroker::Message] unauthorized message origin');
+                        return errorMessage('unauthorized');
+                    }
+                }
+
                 const res = await handler(message, sender);
 
                 if (typeof res === 'boolean' || res === undefined) {
-                    if (res === false) {
-                        throw new Error(`Error when processing "${message.type}"`);
-                    }
-
+                    if (res === false) throw new Error(`Error when processing "${message.type}"`);
                     return successMessage({});
                 }
 

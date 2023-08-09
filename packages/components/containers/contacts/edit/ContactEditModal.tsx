@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import {
     addVCardProperty,
     getSortedProperties,
@@ -21,7 +22,7 @@ import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
 import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
-import { useContactEmails, useEventManager, useHandler, useLoading, useNotifications } from '../../../hooks';
+import { useContactEmails, useEventManager, useHandler, useNotifications } from '../../../hooks';
 import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
 import useApplyGroups from '../hooks/useApplyGroups';
 import { useSaveVCardContact } from '../hooks/useSaveVCardContact';
@@ -40,6 +41,7 @@ export interface ContactEditProps {
 
 export interface ContactEditModalProps {
     onUpgrade: () => void;
+    onChange?: () => void;
     onSelectImage: (props: ContactImageProps) => void;
     onGroupEdit: (props: ContactGroupEditProps) => void;
     onLimitReached: (props: ContactGroupLimitReachedProps) => void;
@@ -52,6 +54,7 @@ const ContactEditModal = ({
     vCardContact: inputVCardContact = { fn: [] },
     newField,
     onUpgrade,
+    onChange,
     onSelectImage,
     onGroupEdit,
     onLimitReached,
@@ -218,6 +221,7 @@ const ContactEditModal = ({
             await saveVCardContact(contactID, vCardContact);
             await call();
             await saveContactGroups();
+            onChange?.();
             createNotification({ text: c('Success').t`Contact saved` });
         } finally {
             rest.onClose?.();

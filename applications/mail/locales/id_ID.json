@@ -124,6 +124,9 @@
       "Block": [
         "Blokir"
       ],
+      "Block email tracking": [
+        "Blokir pelacakan email"
+      ],
       "Block messages from this sender": [
         "Blokir pesan dari pengirim ini"
       ],
@@ -141,6 +144,9 @@
       ],
       "Carbon Copy": [
         "Tembusan"
+      ],
+      "Change email": [
+        "Ubah email"
       ],
       "Change page": [
         "Ubah halaman"
@@ -233,10 +239,10 @@
         "Salin alamat"
       ],
       "Copy email to clipboard": [
-        "Salin email ke clipboard"
+        "Salin email ke papan klip"
       ],
       "Copy password to clipboard": [
-        "Salin kata sandi ke clipboard"
+        "Salin kata sandi ke papan klip"
       ],
       "Create a new contact group": [
         "Buat grup kontak baru"
@@ -315,9 +321,6 @@
       ],
       "Discard": [
         "Buang"
-      ],
-      "Dismiss get started checklist": [
-        "Tutup daftar orientasi pengguna baru"
       ],
       "Done": [
         "Selesai"
@@ -646,6 +649,9 @@
       "Move all messages from this label": [
         "Pindahkan seluruh pesan dari label ini"
       ],
+      "Move all to archive": [
+        "Pindahkan semuanya ke arsip"
+      ],
       "Move all to trash": [
         "Pindahkan semua ke sampah"
       ],
@@ -717,9 +723,6 @@
       ],
       "Open composer": [
         "Buka komposer"
-      ],
-      "Open get started checklist modal": [
-        "Tampilkan daftar orientasi pengguna baru"
       ],
       "Open navigation": [
         "Buka navigasi"
@@ -1045,9 +1048,6 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Cobalah untuk menyimpan kembali. Penyimpanan gagal karena: ${ saveError }"
       ],
-      "Turn on tracker protection": [
-        "Aktifkan perlindungan pelacak"
-      ],
       "Unblock": [
         "Buka blokir"
       ],
@@ -1243,11 +1243,6 @@
     "Alternative text for welcome image": {
       "Welcome": [
         "Selamat Datang"
-      ]
-    },
-    "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } telah dituntaskan"
       ]
     },
     "Animation": {
@@ -2023,7 +2018,7 @@
         "Utama"
       ],
       "Mobile": [
-        "Seluler"
+        "Mobile"
       ],
       "Other": [
         "Lainnya"
@@ -3100,6 +3095,9 @@
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "${ error.message } untuk <${ email }>. Anda dapat menambahkan kunci baru atau menonaktifkan enkripsi pada kontak yang bersangkutan untuk menyelesaikan masalah ini."
       ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Anda juga dapat mengunjungi ${ statusPageLink } kami"
+      ],
       "A group with this name already exists": [
         "Grup dengan nama ini sudah ada"
       ],
@@ -3370,6 +3368,9 @@
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "Maaf, ${ BRAND_NAME } tidak dapat mendekripsi pesan Anda. Mohon pastikan seluruh kunci Anda aktif."
       ],
+      "status page": [
+        "halaman status"
+      ],
       "The email addresses do not match": [
         "Alamat surel tidak cocok"
       ],
@@ -3399,9 +3400,6 @@
       ],
       "There has been an issue with content search. Default search has been used instead.": [
         "Terjadi suatu kesalahan dengan pencarian konten. Pencarian standar telah digunakan sebagai gantinya."
-      ],
-      "There was a problem updating your local messages, they will be downloaded again to re-enable content search": [
-        "Terdapat masalah dalam memperbarui pesan lokal Anda. Pesan Anda akan diunduh ulang agar pencarian konten dapat kembali aktif"
       ],
       "There was an error when exporting the contacts vCards": [
         "Terdapat kesalahan pada saat mengekspor kontak vCard"
@@ -4076,8 +4074,8 @@
       "System default": [
         "Bawaan sistem"
       ],
-      "Theme default": [
-        "Tema bawaan"
+      "Theme font": [
+        "Jenis tulisan tema"
       ]
     },
     "Font Size Default": {
@@ -4116,73 +4114,144 @@
         "Kepada: ${ toString }"
       ]
     },
-    "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        "Kami telah meningkatkan kuota penyimpanan Anda menjadi ${ rewardInGb } GB. Dapatkan kuota penyimpanan yang jauh lebih besar dan berbagai fitur premium lainnya sekarang juga."
-      ],
-      "You're all set!": [
-        "Anda kini telah siap!"
-      ]
-    },
-    "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        "Tuntaskan seluruh langkah yang tertera di atas dan dapatkan total kuota penyimpanan ${ rewardInGb } GB bagi akun Anda"
-      ],
-      "Expires soon": [
-        "Akan segera kedaluwarsa"
-      ],
-      "Expires today": [
-        "Akan kedaluwarsa hari ini"
-      ],
-      "Only ${ days } days left": [
-        "Hanya ${ days } hari tersisa"
-      ]
-    },
     "Get started checklist instructions": {
-      "Available on iOS and Android.": [
-        "Tersedia di iOS dan Android."
+      "${ MAIL_APP_NAME } app": [
+        "Aplikasi ${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME } di App Store"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } di Play Store"
+      ],
+      "account logins": [
+        "login akun"
+      ],
+      "Auto-forward Gmail": [
+        "Penerusan otomatis Gmail"
+      ],
+      "auto-forwarding": [
+        "penerusan otomatis"
+      ],
+      "Block email communications from scammers permanently.": [
+        "Blokir komunikasi email dari para penipu secara permanen."
+      ],
+      "Block unsavory senders": [
+        "Blokir pengirim yang tidak dikehendaki"
+      ],
+      "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
+        "Selamat karena telah menjadikan email Anda lebih aman, nyaman, dan relevan! Kami telah meningkatkan kuota penyimpanan gratis Anda ke 1 GB."
+      ],
+      "Change ${ strongText } to your ${ BRAND_NAME } address": [
+        "Ubah ${ strongText } ke alamat ${ BRAND_NAME } Anda"
+      ],
+      "Checklist complete": [
+        "Daftar ceklis selesai"
+      ],
+      "Close": [
+        "Tutup"
+      ],
+      "Congratulation, you completed all the steps!": [
+        "Selamat, Anda menyelesaikan semua tahap!"
+      ],
+      "Continue setting up your email": [
+        "Lanjutkan pengaturan email Anda"
+      ],
+      "Discover how our ${ strongText } protect you": [
+        "Cari tahu bagaimana ${ strongText } kami bekerja melindungi Anda"
+      ],
+      "Discover privacy features": [
+        "Telusuri berbagai fitur privasi kami"
+      ],
+      "Double your free storage to 1 GB when you complete the following:": [
+        "Gandakan kuota penyimpanan gratis Anda ke 1 GB dengan menyelesaikan seluruh tindakan berikut:"
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails.": [
+        "Enkripsi yang teramat kuat, yang memastikan email Anda hanya dapat dibaca oleh para penerima dan diri Anda sendiri."
+      ],
+      "For your eyes only": [
+        "Khusus untuk Anda"
+      ],
+      "Get free storage": [
+        "Dapatkan penyimpanan gratis"
+      ],
+      "Get mobile app": [
+        "Dapatkan aplikasi mobile"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Dapatkan aplikasi mobile ${ MAIL_APP_NAME }"
       ],
+      "Get the ${ strongText } on Android or iOS": [
+        "Dapatkan ${ strongText } di Android dan iOS"
+      ],
+      "Get the App": [
+        "Dapatkan Aplikasinya"
+      ],
       "Import contacts or emails": [
         "Impor kontak atau email"
+      ],
+      "Import data": [
+        "Impor data"
       ],
       "Import your contacts or messages": [
         "Impor kontak atau pesan Anda"
       ],
+      "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
+        "Terus gunakan ${ MAIL_APP_NAME } untuk menemukan lebih banyak cara ${ BRAND_NAME } melindungi privasi Anda dan menyederhanakan pengiriman email."
+      ],
+      "Learn more": [
+        "Lebih lanjut"
+      ],
+      "Make ${ BRAND_NAME } your go-to inbox": [
+        "Jadikan ${ BRAND_NAME } sebagai kotak masuk pilihan Anda."
+      ],
+      "Maybe later": [
+        "Mungkin nanti"
+      ],
+      "Nice! You've updated all services in this category.": [
+        "Bagus! Anda telah memperbarui seluruh layanan pada kategori ini."
+      ],
+      "Open checklist": [
+        "Buka daftar ceklis"
+      ],
+      "Popular online services": [
+        "Layanan online populer"
+      ],
+      "privacy features": [
+        "fitur privasi"
+      ],
+      "Protect and simplify your email": [
+        "Lindungi dan sederhanakan email Anda"
+      ],
+      "Protection from trackers": [
+        "Perlindungan pelacak"
+      ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "Pindahkan kontak dan email Anda dari layanan penyedia email lainnya secara mudah dan cepat dengan alat bantu impor Easy Switch kami."
-      ],
-      "Sign into the mobile app to complete the action": [
-        "Masuk ke aplikasi mobile Anda untuk merampungkan tindakan ini"
-      ],
-      "Using your mobile device, scan this QR code or visit": [
-        "Dengan menggunakan perangkat mobile Anda, pindai QR code di atas atau kunjungi"
-      ]
-    },
-    "Get started checklist item": {
-      "Get mobile app": [
-        "Dapatkan aplikasi seluler"
-      ],
-      "Import contacts or emails": [
-        "Impor kontak atau email"
       ],
       "Send a message": [
         "Kirim pesan"
       ],
-      "Set up a recovery method": [
-        "Tentukan metode pemulihan"
-      ]
-    },
-    "Get started checklist spotlight": {
-      "You can access the checklist anytime from here": [
-        "Anda dapat mengakses kembali daftar ini di sini"
-      ]
-    },
-    "Get started checklist title": {
-      "Get started": [
-        "Mulai"
+      "Set recovery method": [
+        "Atur metode pemulihan"
+      ],
+      "Set up ${ strongText } from Gmail": [
+        "Atur ${ strongText } dari Gmail"
+      ],
+      "Sign in to the mobile app to complete this step": [
+        "Masuk ke aplikasi mobile untuk menuntaskan langkah ini"
+      ],
+      "Update your logins": [
+        "Perbarui login Anda"
+      ],
+      "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
+        "Dengan perangkat mobile Anda, pindai kode QR berikut atau kunjungi toko aplikasi iOS atau Android."
+      ],
+      "We stop advertisers and data collectors from profiling you.": [
+        "Kami menghentikan para pengiklan dan pengumpul data untuk dapat memprofil Anda."
+      ],
+      "You've unlocked 1 GB": [
+        "Anda telah memperoleh 1 GB"
       ]
     },
     "Gmail forwarding": {
@@ -4565,6 +4634,9 @@
       "${ count } unread messages": [
         "${ count } pesan yang belum dibaca"
       ],
+      "${ currentProgress } out of ${ totalProgress }": [
+        "${ currentProgress } dari ${ totalProgress }"
+      ],
       "${ embeddedAttachmentsCount } embedded images": [
         "${ embeddedAttachmentsCount } gambar yang tersemat"
       ],
@@ -4583,8 +4655,14 @@
       "${ messagesNotAuthorizedToMove } messages could not be moved.": [
         "${ messagesNotAuthorizedToMove } pesan tidak dapat dipindahkan."
       ],
-      "${ numberOfTrackers } email trackers blocked": [
-        "${ numberOfTrackers } pelacak email telah diblokir"
+      "${ numberOfImageTrackers } email trackers blocked": [
+        "${ numberOfImageTrackers } pelacak email diblokir"
+      ],
+      "${ numberOfImageTrackers } trackers blocked": [
+        "${ numberOfImageTrackers } pelacak diblokir"
+      ],
+      "${ numberOfUTMTrackers } links cleaned": [
+        "${ numberOfUTMTrackers } tautan dibersihkan"
       ],
       "${ numContact } contacts": [
         "${ numContact } kontak"
@@ -4661,6 +4739,9 @@
       "(No Recipient)": [
         "(Tidak Ada Penerima)"
       ],
+      "**${ elementsFoundCount }** results found in ${ labelName }": [
+        "**${ elementsFoundCount }** hasil ditemukan pada ${ labelName }"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Masing-masing nomor telepon hanya dapat digunakan untuk memverifikasi satu akun ${ BRAND_NAME }"
       ],
@@ -4727,6 +4808,9 @@
       "Are you sure you want to discard your changes?": [
         "Apakah Anda yakin untuk membatalkan perubahan Anda?"
       ],
+      "Are you sure you want to move all messages in this location to Archive?": [
+        "Apakah Anda yakin untuk memindahkan seluruh pesan pada lokasi ini ke Arsip?"
+      ],
       "Are you sure you want to move all messages in this location to Trash?": [
         "Apakah Anda yakin untuk memindahkan seluruh pesan yang ada pada lokasi ini ke Sampah?"
       ],
@@ -4776,7 +4860,7 @@
         "Panel samping kalender"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "Tidak mengingat kata sandi Anda? Kami dapat membantu Anda untuk membersihkan data terenkripsi semua kontak yang dienkripsi dengan kunci ini dan dalam prosesnya mengabaikan peringatan."
+        "Tidak dapat mengingat kata sandi Anda? Kami dapat membantu Anda untuk membersihkan data terenkripsi milik seluruh kontak yang dienkripsi dengan kunci ini terlepas dari peringatan yang ada."
       ],
       "Center": [
         "Rata tengah"
@@ -4812,7 +4896,7 @@
         "Kontak tidak lagi ditetapkan ke grup ${ contactGroupName }"
       ],
       "Copied to clipboard": [
-        "Disalin ke clipboard"
+        "Disalin ke papan klip"
       ],
       "Country code": [
         "Kode negara"
@@ -4893,7 +4977,7 @@
         "Lepaskan untuk mengimpor"
       ],
       "Duplicate key updated": [
-        "Kunci ganda diperbarui"
+        "Kunci duplikat diperbarui"
       ],
       "Each code can only be used once": [
         "Masing-masing kode hanya dapat digunakan sekali"
@@ -4915,15 +4999,6 @@
       ],
       "Email tracker protection is disabled": [
         "Perlindungan pelacak email dinonakifkan"
-      ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers in this message.": [
-        "Pelacak email dapat mengusik privasi Anda. ${ BRAND_NAME } tidak menemukan pelacak apa pun pada pesan ini."
-      ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } trackers.": [
-        "Pelacak email dapat mengusik privasi Anda. ${ BRAND_NAME } telah menemukan dan memblokir ${ numberOfTrackers } pelacak yang terdapat pada email ini."
-      ],
-      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
-        "Pelacak email dapat mengusik privasi Anda. Aktifkan perlindungan pelacak agar para pengirim pesan tidak dapat mengetahui apakah Anda telah membuka pesan yang Anda terima atau belum."
       ],
       "Emails are automatically signed": [
         "Email ditandatangani secara otomatis"
@@ -5096,6 +5171,9 @@
       "Link type": [
         "Jenis tautan"
       ],
+      "Links cleaned:": [
+        "Tautan yang dibersihkan:"
+      ],
       "Loading": [
         "Memuat"
       ],
@@ -5126,6 +5204,9 @@
       "Merged": [
         "Tergabung"
       ],
+      "Message download status:": [
+        "Status unduhan pesan:"
+      ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
         "Mekanisme kedaluwarsa pesan akan langsung aktif pada saat email terkirim ke pengguna ${ MAIL_APP_NAME } lain. Untuk dapat mengirim email yang dapat kedaluwarsa kepada pengguna non-${ BRAND_NAME }, mohon batalkan pengiriman dan tambahkan kata sandi ke email Anda."
       ],
@@ -5149,9 +5230,6 @@
       ],
       "Message will be sent tomorrow at ${ formattedTime }": [
         "Pesan akan terkirim besok pada pukul ${ formattedTime }"
-      ],
-      "Messages downloaded: ${ currentProgress } out of ${ totalProgress }": [
-        "Pesan diunduh: ${ currentProgress } dari ${ totalProgress }"
       ],
       "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
         "Pesan yang telah terbuang ke sampah dan spam selama lebih dari 30 hari akan dihapus secara otomatis."
@@ -5177,9 +5255,6 @@
       "No email address": [
         "Tidak ada alamat email"
       ],
-      "No email trackers found": [
-        "Tidak ada pelacak email yang ditemukan"
-      ],
       "No folder found": [
         "Tidak ada folder yang ditemukan"
       ],
@@ -5195,14 +5270,17 @@
       "No label selected": [
         "Tidak ada label yang dipilih"
       ],
+      "No links cleaned": [
+        "Tidak ada tautan untuk dibersihkan"
+      ],
       "No more results found": [
         "Tidak ada hasil lainnya yang ditemukan"
       ],
       "No results found": [
         "Tidak ada hasil yang ditemukan"
       ],
-      "No trackers found, but some images could not be loaded with tracking protection": [
-        "Tidak ada pelacak yang ditemukan, namun beberapa gambar tidak dapat dimuat dengan perlindungan pelacak yang aktif"
+      "No trackers found": [
+        "Tidak ada pelacak yang ditemukan"
       ],
       "non-${ MAIL_APP_NAME }": [
         "non-${ MAIL_APP_NAME }"
@@ -5253,7 +5331,10 @@
         "Harap diperhatikan, alamat yang ditugaskan di grup ini TIDAK akan dihapus."
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
-        "Mohon dicatat proses ini memerlukan waktu, tergantung pada ukuran buku alamat Anda."
+        "Mohon dicatat bahwa proses ini dapat memakan waktu sejenak tergantung pada ukuran buku alamat Anda."
+      ],
+      "Please provide a name and an email address for creating a group.": [
+        "Mohon sediakan nama dan alamat email untuk membuat grup."
       ],
       "Please select the folders you would like to import:": [
         "Harap pilih folder-folder yang hendak Anda impor:"
@@ -5298,7 +5379,7 @@
         "Informasi pemulihan akan tetap terdapat pada perangkat ini kecuali Anda memilih untuk menghapusnya."
       ],
       "Recovery phrase copied to clipboard": [
-        "Frasa pemulihan disalin ke clipboard"
+        "Frasa pemulihan disalin ke papan klip"
       ],
       "Recovery phrase downloaded": [
         "Frasa pemulihan diunduh"
@@ -5594,8 +5675,11 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Pesan yang akan dikirim sudah terlalu banyak. Mohon tunggu sejenak sebelum Anda menjadwalkan pengiriman pesan ini."
       ],
-      "Turn off to only search by date, name, or email address. To disable search message content and delete downloaded messages, go to settings.": [
-        "Matikan untuk hanya mencari berdasarkan tanggal, nama, atau alamat surel. Untuk menonaktifkan pencarian konten pesan dan penghapusan pesan terunduh, pergi ke pengaturan."
+      "Trackers blocked:": [
+        "Pelacak yang diblokir:"
+      ],
+      "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
+        "Nonaktifkan pilihan ini agar pencarian pesan hanya didasarkan pada tanggal, nama, alamat email, atau baris subjek. Untuk menonaktifkan pencarian konten pesan dan menghapus pesan yang telah diunduh, tuju menu pengaturan."
       ],
       "Turn on to search the content of your messages": [
         "Aktifkan untuk dapat mencari isi konten pesan Anda"
@@ -5611,9 +5695,6 @@
       ],
       "Updating message content search...": [
         "Memperbarui pencarian konten pesan..."
-      ],
-      "Updating your local messages, message content won't be searched during this update": [
-        "Memperbarui pesan lokal Anda, konten pesan tidak akan dapat dicari pada saat proses pembaruan sedang berlangsung"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Tingkatkan sekarang untuk memperoleh berbagai fitur, produk, dan ruang penyimpanan berkapasitas premium dengan harga khusus"
@@ -5738,9 +5819,6 @@
       "You can either update your search query or ${ button }": [
         "Anda dapat memperbarui kueri pencarian atau ${ button }"
       ],
-      "You can either update your search query or clear it": [
-        "Anda dapat memperbarui atau membersihkan kueri pencarian"
-      ],
       "You can import one data type at a time.": [
         "Anda hanya dapat mengimpor satu tipe data dalam satu waktu."
       ],
@@ -5836,9 +5914,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Berkas Anda akan dienkripsi lalu disimpan"
-      ],
-      "Your import will not be processed.": [
-        "Impor Anda tidak akan diproses."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Informasi seputar akun Anda tidak akan disimpan setelah impor selesai."
@@ -6211,6 +6286,9 @@
       "City": [
         "Kota"
       ],
+      "Cleaned": [
+        "Dibersihkan"
+      ],
       "Code is 6 digits without spaces": [
         "Kode tersusun atas 6 digit angka tanpa spasi"
       ],
@@ -6412,6 +6490,9 @@
       "OK": [
         "OK"
       ],
+      "Open in a new tab": [
+        "Buka di tab baru"
+      ],
       "Operating system": [
         "Sistem operasi"
       ],
@@ -6426,6 +6507,9 @@
       ],
       "Or": [
         "Atau"
+      ],
+      "Original link": [
+        "Tautan asli"
       ],
       "Participants": [
         "Peserta"
@@ -6917,11 +7001,6 @@
         "Versi baru ${ appName } telah tersedia. ${ reloadButton }."
       ]
     },
-    "Message has been sent to the user via a SimpleLogin alias": {
-      "Delivered via SimpleLogin by ${ BRAND_NAME }": [
-        "Disampaikan via SimpleLogin oleh ${ BRAND_NAME }"
-      ]
-    },
     "Message image": {
       "Image has not been loaded in order to protect your privacy.": [
         "Gambar tidak dimuat demi melindungi privasi Anda."
@@ -7229,7 +7308,7 @@
     },
     "Onboarding Proton": {
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "Konfigurasi organisasi Anda, tautkan nama domain, dan membuat akun untuk memastikan seluruh anggota organisasi Anda terlindungi."
+        "Atur organisasi Anda, tautkan nama domain Anda, dan buat akun untuk memastikan seluruh anggota organisasi Anda terlindungi."
       ],
       "Discover all ${ BRAND_NAME } services": [
         "Telusuri seluruh layanan ${ BRAND_NAME }"
@@ -7243,11 +7322,42 @@
       "Set up your organization": [
         "Siapkan organisasi Anda"
       ],
-      "Set up your organization testing": [
-        "Siapkan pengujian organisasi Anda"
-      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Gunakan pemindah aplikasi yang terdapat pada pojok kiri atas layar untuk mengakses seluruh layanan ${ BRAND_NAME } : ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, dan ${ DRIVE_SHORT_APP_NAME }."
+      ]
+    },
+    "Online accounts": {
+      "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
+        "Memiliki akun pada salah satu layanan di bawah ini? Kini, Anda hanya mengganti email Anda pada layanan yang terkait ke alamat ${ MAIL_APP_NAME } Anda hanya dengan sekali klik."
+      ]
+    },
+    "Online Accounts Name": {
+      "Banking": [
+        "Perbankan"
+      ],
+      "Crypto": [
+        "Kripto"
+      ],
+      "E-commerce and Retail": [
+        "E-commerce dan Retail"
+      ],
+      "Entertainment": [
+        "Hiburan"
+      ],
+      "Food and beverage": [
+        "Makanan dan minuman"
+      ],
+      "Gaming": [
+        "Bermain Game"
+      ],
+      "Most popular": [
+        "Terpopuler"
+      ],
+      "Travel": [
+        "Wisata"
+      ],
+      "Utilities": [
+        "Kebutuhan sehari-hari"
       ]
     },
     "Option": {
@@ -7289,20 +7399,6 @@
     "Pagination": {
       "${ page } of ${ totalText }": [
         "Halaman ${ page } dari ${ totalText }"
-      ]
-    },
-    "Paid user checklist item": {
-      "Get mobile app": [
-        "Dapatkan aplikasi seluler"
-      ],
-      "Import contacts or emails": [
-        "Impor kontak atau email"
-      ],
-      "Send a message": [
-        "Kirim pesan"
-      ],
-      "Set up a recovery method": [
-        "Tentukan metode pemulihan"
       ]
     },
     "Participant name": {
@@ -7465,7 +7561,7 @@
         "Utama"
       ],
       "Mobile": [
-        "Seluler"
+        "Mobile"
       ],
       "Other": [
         "Lainnya"
@@ -7603,6 +7699,11 @@
       ],
       "We have detected some warnings. The following email addresses may not receive emails:": [
         "Kami mendeteksi beberapa ketidakwajaran pada alamat email yang hendak Anda tuju. Alamat berikut mungkin tidak akan dapat menerima pesan Anda:"
+      ]
+    },
+    "Sender verification details": {
+      "Sender verification": [
+        "Verifikasi pengirim"
       ]
     },
     "Sent email icon": {
@@ -7974,9 +8075,6 @@
       ]
     },
     "Storage": {
-      "Get extra storage for free": [
-        "Dapatkan kapasitas penyimpanan tambahan secara gratis"
-      ],
       "Release notes": [
         "Catatan rilis"
       ],
@@ -8112,7 +8210,7 @@
         "Alamat email disalin ke clipboard"
       ],
       "Fingerprint copied to clipboard": [
-        "Sidik jari disalin ke clipboard"
+        "Sidik jari disalin ke papan klip"
       ],
       "Import record deleted": [
         "Rekaman impor dihapus"
@@ -8175,7 +8273,7 @@
         "Pindahkan ${ selectionCount } pesan"
       ],
       "Password copied to clipboard": [
-        "Kata sandi disalin ke clipboard"
+        "Kata sandi disalin ke papan klip"
       ],
       "Phishing reported": [
         "Phishing berhasil dilaporkan"
@@ -8216,6 +8314,64 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Tanggapan telah dikirim"
+      ]
+    },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "1 tahun"
+      ],
+      "2 years": [
+        "2 tahun"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "Drive Premium"
+      ],
+      "Premium Mail and Calendar": [
+        "Mail dan Calendar Premium"
+      ],
+      "Premium Password Manager": [
+        "Password Manager Premium"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Simpan sandi Anda secara aman dan otomatis isi pada situs web. Termasuk sandi tidak terbatas, pengisi otomatis, pembuat sandi, dan banyak fitur lainnya."
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Pengelola kata sandi"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Meliputi 2950+ server di 65+ negara, kemampuan untuk menghubungkan hingga 10 perangkat, akses ke layanan streaming di seluruh dunia, pemblokir malware dan iklan, dan masih banyak lagi."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Meliputi dukungan 1 domain email khusus, 10 alamat email, 10 alias hide-my-email, fitur berbagi kalender, dan masih banyak lagi."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "*Langganan Anda akan secara otomatis diperbarui dengan harga diskon standar pada akhir siklus tagihan."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Besar diskon didasarkan pada harga bulanan standar. Penawaran ini hanya tersedia bagi pelanggan kali pertama."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Untuk waktu yang terbatas, dapatkan penawaran terbaik ${ BRAND_NAME } dengan diskon eksklusif."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Kami merayakan ulang tahun kesembilan upaya urun dana kami!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "Diskon Ulang Tahun ${ BRAND_NAME }"
       ]
     },
     "Table header": {
@@ -8627,6 +8783,9 @@
       "More selections": [
         "Pilihan lainnya"
       ],
+      "Move all messages to Archive": [
+        "Pindahkan seluruh pesan ke Arsip"
+      ],
       "Move all messages to Trash": [
         "Pindahkan seluruh pesan ke Sampah"
       ],
@@ -8662,6 +8821,9 @@
       ],
       "No attachment found": [
         "Tidak ada sisipan yang ditemukan"
+      ],
+      "No trackers found": [
+        "Tidak ada pelacak yang ditemukan"
       ],
       "Open actions dropdown": [
         "Buka menu tindakan"
@@ -8976,9 +9138,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } akan berupaya untuk mentransfer data sebanyak-banyaknya, yang dimulai dengan pesan Anda yang terbaru."
-      ],
-      "Are you sure you want to discard your import?": [
-        "Yakin ingin membuang impor Anda?"
       ],
       "Are you sure you want to permanently delete ${ count } contact groups?": [
         "Apakah Anda yakin ingin menghapus ${ count } kontak secara permanen?"

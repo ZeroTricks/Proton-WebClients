@@ -275,7 +275,7 @@ export const migrateAddressKeysRoute = (data: MigrateAddressKeysPayload) => ({
 
 export interface GetSignedKeyListsParams {
     AfterRevision?: number;
-    Email: string;
+    Identifier: string;
 }
 
 export const getSignedKeyListsRoute = (params: GetSignedKeyListsParams) => ({
@@ -286,7 +286,7 @@ export const getSignedKeyListsRoute = (params: GetSignedKeyListsParams) => ({
 
 export interface GetSignedKeyListParams {
     Revision: number;
-    Email: string;
+    Identifier: string;
 }
 
 export const getSignedKeyListRoute = (params: GetSignedKeyListParams) => ({
@@ -294,18 +294,25 @@ export const getSignedKeyListRoute = (params: GetSignedKeyListParams) => ({
     method: 'get',
     params,
 });
-
-export interface UpdateSignedKeyListParams {
-    AddressID: string;
-}
-
 export interface UpdateSignedKeyListPayload {
+    AddressID: string;
     SignedKeyList: SignedKeyList;
 }
 
-export const updateSignedKeyListRoute = (params: UpdateSignedKeyListParams, data: UpdateSignedKeyListPayload) => ({
+export const updateSignedKeyListRoute = (data: UpdateSignedKeyListPayload) => ({
     url: 'core/v4/keys/signedkeylists',
     method: 'post',
-    params,
+    data,
+});
+
+export interface UpdateSignedKeyListSignatureData {
+    AddressID: string;
+    Revision: number;
+    Signature: string;
+}
+
+export const updateSignedKeyListSignatureRoute = (data: UpdateSignedKeyListSignatureData) => ({
+    url: 'core/v4/keys/signedkeylists/signature',
+    method: 'put',
     data,
 });

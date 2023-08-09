@@ -2,12 +2,19 @@ import { configureStore } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
 import devToolsEnhancer from 'remote-redux-devtools';
 
+import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/events/constants';
 import { backgroundMessage } from '@proton/pass/extension/message';
 import { browserLocalStorage } from '@proton/pass/extension/storage';
 import type { WorkerRootSagaOptions } from '@proton/pass/store';
 import reducer from '@proton/pass/store/reducers';
 import { workerRootSaga } from '@proton/pass/store/sagas';
-import { type RequiredNonNull, ShareEventType, WorkerMessageType, WorkerStatus } from '@proton/pass/types';
+import {
+    type RequiredNonNull,
+    SessionLockStatus,
+    ShareEventType,
+    WorkerMessageType,
+    WorkerStatus,
+} from '@proton/pass/types';
 import type { TelemetryEvent } from '@proton/pass/types/data/telemetry';
 import { logger } from '@proton/pass/utils/logger';
 import { workerReady } from '@proton/pass/utils/worker';
@@ -38,6 +45,13 @@ const store = configureStore({
 const options: RequiredNonNull<WorkerRootSagaOptions> = {
     getAuth: withContext((ctx) => ctx.service.auth.authStore),
 
+    /* adapt event polling interval based on popup activity :
+     * 30 seconds if popup is opened / 30 minutes if closed */
+    getEventInterval: () =>
+        // WorkerMessageBroker.ports.query(isPopupPort()).length > 0 ? ACTIVE_POLLING_TIMEOUT : INACTIVE_POLLING_TIMEOUT,
+        // FIXME: this is a temporary fix to avoid service worker being killed
+        ACTIVE_POLLING_TIMEOUT,
+
     /* Sets the worker status according to the
      * boot sequence's result. On boot failure,
      * clear */
@@ -56,7 +70,7 @@ const options: RequiredNonNull<WorkerRootSagaOptions> = {
     /* only trigger cache flow if worker is ready */
     onCacheRequest: withContext((ctx) => workerReady(ctx.getState().status)),
 
-    onSignout: withContext((ctx) => ctx.service.auth.logout()),
+    onSignout: withContext(({ service: { auth } }) => auth.logout()),
 
     onSessionLocked: withContext((ctx) => ctx.service.auth.lock()),
 
@@ -64,6 +78,10 @@ const options: RequiredNonNull<WorkerRootSagaOptions> = {
         ctx.service.auth.unlock();
         await ctx.init({ force: true });
     }),
+
+    onSessionLockChange: withContext(({ service: { auth } }, registered) =>
+        auth.setLockStatus(registered ? SessionLockStatus.REGISTERED : null)
+    ),
 
     /* Update the extension's badge count on every
      * item state change */

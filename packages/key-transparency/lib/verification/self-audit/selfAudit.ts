@@ -7,8 +7,10 @@ import {
     GetLatestEpoch,
     KTLocalStorageAPI,
     SaveSKLToLS,
+    UploadMissingSKL,
 } from '@proton/shared/lib/interfaces';
 
+import { getSelfAuditInterval } from '../../helpers';
 import { SelfAuditResult } from '../../interfaces';
 import { auditAddress } from './addressAudit';
 import { checkLSBlobs } from './verifyLocalStorage';
@@ -24,7 +26,9 @@ export const selfAudit = async (
     userKeys: DecryptedKey[],
     ktLSAPI: KTLocalStorageAPI,
     saveSKLToLS: SaveSKLToLS,
-    getLatestEpoch: GetLatestEpoch
+    getLatestEpoch: GetLatestEpoch,
+    uploadMissingSKL: UploadMissingSKL,
+    getAddressKeys: (id: string) => Promise<DecryptedKey[]>
 ): Promise<SelfAuditResult> => {
     const userPrivateKeys = userKeys.map(({ privateKey }) => privateKey);
 
@@ -44,12 +48,13 @@ export const selfAudit = async (
         addresses
             .filter((address) => !getIsAddressDisabled(address))
             .map((address) => {
-                return auditAddress(address, userKeys, epoch, saveSKLToLS, api);
+                return auditAddress(address, userKeys, epoch, saveSKLToLS, api, uploadMissingSKL, getAddressKeys);
             })
     );
-
+    const currentTime = +serverTime();
     return {
-        auditTime: +serverTime(),
+        auditTime: currentTime,
+        nextAuditTime: currentTime + getSelfAuditInterval(),
         addressAuditResults,
         localStorageAuditResultsOwnAddress,
         localStorageAuditResultsOtherAddress,

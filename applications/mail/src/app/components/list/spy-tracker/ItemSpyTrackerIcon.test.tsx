@@ -1,4 +1,4 @@
-import { fireEvent, getByText, screen } from '@testing-library/dom';
+import { fireEvent, getByText, screen } from '@testing-library/react';
 
 import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/constants';
 import { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
@@ -127,10 +127,7 @@ describe('ItemSpyTrackerIcon', () => {
 
         // Dropdown title
         const title = screen.getByTestId('privacy:title');
-        getByText(title, 'This email is protected');
-        // Dropdown description
-        const description = screen.getByTestId('privacy:description');
-        getByText(description, 'You can read the message and click on links without being tracked.');
+        getByText(title, 'We protected you from 3 trackers');
 
         const imageTrackerRow = screen.getByTestId('privacy:image-row');
         const utmTrackerRow = screen.getByTestId('privacy:utm-row');
@@ -151,15 +148,9 @@ describe('ItemSpyTrackerIcon', () => {
         // Dropdown title
         const title = screen.getByTestId('privacy:title');
         getByText(title, 'No trackers found');
-        // Dropdown description
-        const description = screen.getByTestId('privacy:description');
-        getByText(description, 'You can read the message and click on links without being tracked.');
 
-        const imageTrackerRow = screen.getByTestId('privacy:image-row');
-        const utmTrackerRow = screen.getByTestId('privacy:utm-row');
-
-        getByText(imageTrackerRow, 'No trackers found');
-        getByText(utmTrackerRow, 'No links cleaned');
+        // Description is displayed
+        screen.getByText("We didn't find any known trackers and tracking URLs in this email.");
     });
 
     it('should open the privacy dropdown with no protection', async () => {
@@ -173,15 +164,13 @@ describe('ItemSpyTrackerIcon', () => {
 
         // Dropdown title
         const title = screen.getByTestId('privacy:title');
-        getByText(title, 'Protect your email');
-        // Dropdown description
-        const description = screen.getByTestId('privacy:description');
-        getByText(
-            description,
-            'You can read the message and click on links without being tracked with email tracker protection.'
-        );
+        getByText(title, 'Protect yourself from trackers');
 
         screen.getByTestId('privacy:prevent-tracking-toggle');
+        // Description is displayed
+        screen.getByText(
+            'Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.'
+        );
     });
 
     it('should open the image tracker modal and list expected info', async () => {
@@ -202,7 +191,7 @@ describe('ItemSpyTrackerIcon', () => {
 
         getByText(
             modal,
-            'You can read this email without revealing your interactions, location, or device to advertisers.'
+            'We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.'
         );
 
         // Trackers are visible
@@ -228,7 +217,7 @@ describe('ItemSpyTrackerIcon', () => {
 
         getByText(
             modal,
-            'You can click links in this email without being profiled and leaking your online activity with advertisers.'
+            'We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.'
         );
 
         // Trackers are visible

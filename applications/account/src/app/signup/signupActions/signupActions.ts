@@ -244,6 +244,21 @@ export const handleSetupRecoveryPhrase = async ({
     };
 };
 
+export const getSubscriptionMetricsData = (
+    subscriptionData: SubscriptionData
+): {
+    type: 'free' | 'cc' | 'pp' | 'btc';
+} => {
+    if (!hasPlanIDs(subscriptionData.planIDs)) {
+        return {
+            type: 'free',
+        };
+    }
+    return {
+        type: subscriptionData.type || 'cc',
+    };
+};
+
 export const handleSubscribeUser = async (
     api: Api,
     subscriptionData: SubscriptionData,

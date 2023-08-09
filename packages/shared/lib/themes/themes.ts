@@ -136,22 +136,19 @@ export const PROTON_THEMES_MAP = {
     },
 } as const;
 
-export const DARK_THEMES = [ThemeTypes.Carbon, ThemeTypes.Monokai, ThemeTypes.ContrastDark, ThemeTypes.Pass];
+export const getDarkThemes = () => [ThemeTypes.Carbon, ThemeTypes.Monokai, ThemeTypes.ContrastDark, ThemeTypes.Pass];
 
-export const getThemes = (accessibilitySettings: boolean) => {
-    const result = [
+export const getThemes = () => {
+    return [
         ThemeTypes.Duotone,
         ThemeTypes.Classic,
         ThemeTypes.Snow,
         ThemeTypes.Legacy,
         ThemeTypes.Carbon,
         ThemeTypes.Monokai,
+        ThemeTypes.ContrastDark,
         ThemeTypes.ContrastLight,
-    ];
-    if (accessibilitySettings) {
-        result.push(ThemeTypes.ContrastDark);
-    }
-    return result.map((id) => PROTON_THEMES_MAP[id]);
+    ].map((id) => PROTON_THEMES_MAP[id]);
 };
 
 export enum ThemeModeSetting {
@@ -205,9 +202,14 @@ export const ThemeFontSizeSettingMap: { [key in ThemeFontSizeSetting]: ThemeFont
         value: 18,
     },
 };
-export const themeFontSizeEntries = (
-    Object.entries(ThemeFontSizeSettingMap) as unknown as [ThemeFontSizeSetting, ThemeFontSizeSettingValue][]
-).sort((a, b) => a[1].value - b[1].value);
+export const getThemeFontSizeEntries = () => {
+    return Object.entries(ThemeFontSizeSettingMap)
+        .map(([key, value]): [ThemeFontSizeSetting, ThemeFontSizeSettingValue] => {
+            const themeFontSizeSettingKey: ThemeFontSizeSetting = Number(key);
+            return [themeFontSizeSettingKey, value];
+        })
+        .sort((a, b) => a[1].value - b[1].value);
+};
 
 export enum ThemeFontFaceSetting {
     DEFAULT,
@@ -222,13 +224,27 @@ interface ThemeFontFaceSettingValue {
     value: string | null;
 }
 
-export const ThemeFontFaceSettingMap = {
+export const ThemeFontFaceSettingMap: { [key in ThemeFontFaceSetting]: ThemeFontFaceSettingValue } = {
     [ThemeFontFaceSetting.DEFAULT]: {
-        label: () => c('Font face option').t`Theme default`,
+        label: () => {
+            /* translator:
+                This is the text proposed in a dropdown menu in the Accessibility settings.
+                Here the user can choose the "Font family", and this string proposes the choice of
+                "Theme font", the font of the chosen theme.
+            */
+            return c('Font face option').t`Theme font`;
+        },
         value: null,
     },
     [ThemeFontFaceSetting.SYSTEM]: {
-        label: () => c('Font face option').t`System default`,
+        label: () => {
+            /* translator:
+                This is the text proposed in a dropdown menu in the Accessibility settings.
+                Here the user can choose the "Font family", and this string proposes the choice of
+                "System default", the default font of the user's operating system.
+            */
+            return c('Font face option').t`System default`;
+        },
         value: 'system-ui, sans-serif',
     },
     [ThemeFontFaceSetting.ARIAL]: {
@@ -244,10 +260,14 @@ export const ThemeFontFaceSettingMap = {
         value: 'OpenDyslexic, cursive',
     },
 };
-export const themeFontFaceEntries = Object.entries(ThemeFontFaceSettingMap) as unknown as [
-    ThemeFontFaceSetting,
-    ThemeFontFaceSettingValue
-][];
+export const getThemeFontFaceEntries = () => {
+    return Object.entries(ThemeFontFaceSettingMap).map(
+        ([key, value]): [ThemeFontFaceSetting, ThemeFontFaceSettingValue] => {
+            const themeFontFaceSettingKey: ThemeFontFaceSetting = Number(key);
+            return [themeFontFaceSettingKey, value];
+        }
+    );
+};
 
 export enum ThemeFeatureSetting {
     DEFAULT,

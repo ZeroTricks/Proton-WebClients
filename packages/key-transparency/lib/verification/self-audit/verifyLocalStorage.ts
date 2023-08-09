@@ -1,7 +1,8 @@
 import { PrivateKeyReference } from '@proton/crypto';
 import { Api, KTLocalStorageAPI } from '@proton/shared/lib/interfaces';
+import { getParsedSignedKeyList } from '@proton/shared/lib/keys';
 
-import { fetchProof, fetchSignedKeyList } from '../../helpers/fetchHelpers';
+import { fetchProof, fetchSignedKeyList } from '../../helpers/apiHelpers';
 import {
     KeyTransparencyError,
     getEmailDomain,
@@ -25,16 +26,23 @@ const fetchSKLWithRevision = async (api: Api, email: string, revision: number, d
         return throwKTError('Could not find new SKL with same revision', { email, revision });
     }
 
-    if (includedSKL.Data != data) {
+    if (includedSKL.Data != data && includedSKL.ObsolescenceToken != data) {
         return throwKTError('SKL data has changed for revision', {
             email,
             revision,
             savedData: data,
-            fetchedData: includedSKL.Data,
+            includedSKL,
         });
     }
 
     return includedSKL;
+};
+
+const getPrimaryKeyFingerprint = (blob: KTBlobContent) => {
+    const sklItems = getParsedSignedKeyList(blob.data);
+    if (sklItems?.length) {
+        return sklItems[0].Fingerprint;
+    }
 };
 
 /**
@@ -107,6 +115,7 @@ export const checkLSBlobs = async (
             } else {
                 results.push({
                     email: ktBlobContent.email,
+                    primaryKeyFingerprint: getPrimaryKeyFingerprint(ktBlobContent),
                     success: result === LocalStorageAuditStatus.Success,
                 });
             }

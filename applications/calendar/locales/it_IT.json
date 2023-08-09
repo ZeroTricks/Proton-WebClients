@@ -141,6 +141,9 @@
       "Continue with Google": [
         "Continua con Google"
       ],
+      "Copy email address": [
+        "Copia indirizzo email"
+      ],
       "Copy email to clipboard": [
         "Copia email negli appunti"
       ],
@@ -158,6 +161,9 @@
       ],
       "Create event": [
         "Crea evento"
+      ],
+      "Create new contact": [
+        "Crea un nuovo contatto"
       ],
       "Customize": [
         "Personalizza"
@@ -580,6 +586,9 @@
       ],
       "View": [
         "Visualizza"
+      ],
+      "View contact details": [
+        "Visualizza i dettagli di contatto"
       ],
       "View invoice": [
         "Visualizza fattura"
@@ -2156,6 +2165,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Puoi anche controllare il nostro ${ statusPageLink }"
+      ],
       "${ list } doesn't have a valid email address": [
         "${ list } non ha un indirizzo email valido",
         "Alcuni contatti non hanno un indirizzo email valido: ${ list }"
@@ -2259,7 +2271,7 @@
         "Il nome della cartella non può essere vuoto."
       ],
       "Image upload failed": [
-        "Caricamento dell'immagine fallito"
+        "Caricamento dell'immagine non riuscito"
       ],
       "IMAP server is required": [
         "È richiesto il server IMAP"
@@ -2387,7 +2399,7 @@
         "Firma non verificata"
       ],
       "Signature verification failed": [
-        "Verifica della firma fallita"
+        "Verifica della firma non riuscita"
       ],
       "Some contacts could not be deleted": [
         "Alcuni contatti non possono essere eliminati"
@@ -2415,6 +2427,9 @@
       ],
       "Start time must be before end time": [
         "L'ora di inizio deve essere prima dell'ora di fine"
+      ],
+      "status page": [
+        "pagina di stato"
       ],
       "The address might be misspelled": [
         "L'indirizzo potrebbe esser errato"
@@ -2538,7 +2553,7 @@
     },
     "Error importing contact": {
       "Encryption failed": [
-        "Criptaggio fallito"
+        "Crittografia non riuscita"
       ],
       "vCard versions < 3.0 not supported": [
         "versioni di vCard < 3.0 non supportate"
@@ -2590,7 +2605,7 @@
         "Elemento"
       ],
       "Encryption failed": [
-        "Crittografia fallita"
+        "Crittografia non riuscita"
       ],
       "End time out of bounds": [
         "Ora di fine fuori dai limiti"
@@ -2599,7 +2614,7 @@
         "Evento"
       ],
       "Event validation failed": [
-        "Convalida dell'evento fallita"
+        "Convalida dell'evento non riuscita"
       ],
       "Floating times not supported": [
         "Tempi mobili non supportati"
@@ -3005,8 +3020,8 @@
       "System default": [
         "Predefinito di sistema"
       ],
-      "Theme default": [
-        "Tema predefinito"
+      "Theme font": [
+        "Tipo di carattere"
       ]
     },
     "Font size option": {
@@ -3118,7 +3133,7 @@
     },
     "Import calendar; import invitation": {
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
-        "Gli inviti importati vengono visualizzati in ${ CALENDAR_APP_NAME } come semplici eventi senza i dettagli dell'organizzatore e del partecipante. Per ricevere aggiornamenti sull'evento e vedere i partecipanti, chiedi agli organizzatori di invitarti utilizzando il tuo indirizzo email ${ BRAND_NAME }."
+        "Gli inviti importati vengono visualizzati in ${ CALENDAR_APP_NAME } come semplici eventi senza i dettagli dell'organizzatore e del partecipante. Per ricevere aggiornamenti sull'evento e vedere i partecipanti, chiedi agli organizzatori d'invitarti utilizzando il tuo indirizzo email ${ BRAND_NAME }."
       ],
       "This file contains an event invitation:": [
         "Questo file contiene un invito all'evento:",
@@ -3473,6 +3488,9 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Chiunque abbia questo link può vedere se sei libero o occupato sul tuo calendario. Non può vedere i dettagli dell'evento, come titolo, posizione o partecipanti."
       ],
+      "Are you sure you want to discard your import?": [
+        "Sei sicuro di voler eliminare la tua importazione?"
+      ],
       "Attention required": [
         "Attenzione"
       ],
@@ -3748,6 +3766,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Questo processo potrebbe richiedere un po' di tempo a seconda della dimensione della rubrica."
       ],
+      "Please provide a name and an email address for creating a group.": [
+        "Fornisci un nome e un indirizzo email per la creazione di un gruppo."
+      ],
       "Please remove the duplicates and try again.": [
         "Rimuovi i duplicati e riprova."
       ],
@@ -3755,8 +3776,8 @@
         "Si prega di selezionare le cartelle che si desidera importare:"
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
-        "Selezionare l'indirizzo o gli indirizzi e-mail da aggiungere al gruppo ${ groupCount }.",
-        "Selezionare l'indirizzo o gli indirizzi e-mail da aggiungere ai gruppi ${ groupCount }."
+        "Selezionare l'indirizzo o gli indirizzi email da aggiungere al gruppo ${ groupCount }.",
+        "Selezionare l'indirizzo o gli indirizzi email da aggiungere ai gruppi ${ groupCount }."
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Selezionare l'indirizzo o gli indirizzi e-mail da aggiungere a ${ groupName }."
@@ -3802,6 +3823,9 @@
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Alcune delle risposte alle occorrenze precedentemente aggiornate dall'organizzatore andranno perse."
+      ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Termine dell'abbonamento: riattivalo entro ${ byDate } per mantenere i vantaggi del tuo piano ${ planName }. ${ reactivateLink }"
       ],
       "support team": [
         "team di supporto"
@@ -4027,9 +4051,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "I tuoi file verranno crittografati e poi salvati."
-      ],
-      "Your import will not be processed.": [
-        "La tua importazione non verrà elaborata."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Le informazioni di accesso non verranno salvate dopo il completamento dell'importazione."
@@ -4612,8 +4633,8 @@
       ]
     },
     "Modal action": {
-      "Close": [
-        "Chiudi"
+      "Cancel": [
+        "Annulla"
       ],
       "Manage calendars": [
         "Gestisci calendari"
@@ -4896,6 +4917,9 @@
       ],
       "Calendar added": [
         "Calendario aggiunto"
+      ],
+      "Calendar updated": [
+        "Calendario aggiornato"
       ]
     },
     "Notification in share calendar modal": {
@@ -5074,9 +5098,6 @@
         "Seleziona un tema"
       ],
       "Set up your organization": [
-        "Configura la tua organizzazione"
-      ],
-      "Set up your organization testing": [
         "Configura la tua organizzazione"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
@@ -5374,8 +5395,8 @@
       ]
     },
     "Shared calendar; Info about calendar owner": {
-      "Created by ${ ownerName }": [
-        "Creato da ${ ownerName }"
+      "Shared by ${ ownerName }": [
+        "Condiviso da ${ ownerName }"
       ]
     },
     "Side panel spotlight": {
@@ -5677,19 +5698,6 @@
         "Scopri come ottenere un link per il calendario privato."
       ]
     },
-    "Subscribed calendar extension warning": {
-      "By using this link, Google will make the calendar you are subscribing to public": [
-        "Utilizzando questo link, Google renderà pubblico il calendario a cui ti stai iscrivendo"
-      ],
-      "This link might be wrong": [
-        "Il link potrebbe essere errato"
-      ]
-    },
-    "Subscribed calendar URL length warning": {
-      "URL is too long": [
-        "L'URL è troppo lungo"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } contatto sembra identico.",
@@ -5863,6 +5871,11 @@
     "summer2023: Describe Proton Pass": {
       "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
         "Memorizza in modo sicuro le tue password e inseriscile automaticamente nei siti web. Sono incluse password illimitate, generatore di password e altro ancora."
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Password manager"
       ]
     },
     "summer2023: Tooltip": {
@@ -6167,8 +6180,8 @@
         "Verifica umana"
       ],
       "Import as simple event?": [
-        "Importa come semplice evento?",
-        "Importare come semplici eventi?"
+        "Importare come evento senza i dettagli?",
+        "Importare come eventi senza i dettagli?"
       ],
       "Import contacts": [
         "Importa i contatti"
@@ -6505,9 +6518,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } trasferirà il maggior numero di dati possibile, a partire dai messaggi più recenti."
-      ],
-      "Are you sure you want to discard your import?": [
-        "Vuoi davvero ignorare la tua importazione?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Sei sicuro di voler eliminare definitivamente ${ count } gruppo di contatti?",

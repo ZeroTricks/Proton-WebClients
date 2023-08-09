@@ -141,6 +141,9 @@
       "Continue with Google": [
         "Fortsæt med Google"
       ],
+      "Copy email address": [
+        "Kopiér e-mailadresse"
+      ],
       "Copy email to clipboard": [
         "Kopiér e-mail til upklipsholder"
       ],
@@ -158,6 +161,9 @@
       ],
       "Create event": [
         "Opret begivenhed"
+      ],
+      "Create new contact": [
+        "Opret ny kontakt"
       ],
       "Customize": [
         "Tilpas"
@@ -267,7 +273,7 @@
         "Jeg har et spørgsmål"
       ],
       "Image could not be loaded with tracker protection.": [
-        "Billede kunne ikke indlæses med tracker beskyttelse."
+        "Billede kunne ikke indlæses med sporingsbeskyttelse."
       ],
       "Image will be loaded without a proxy": [
         "Billede vil blive indlæst uden en proxy"
@@ -580,6 +586,9 @@
       ],
       "View": [
         "Vis"
+      ],
+      "View contact details": [
+        "Vis kontaktoplysninger"
       ],
       "View invoice": [
         "Vis faktura"
@@ -2156,6 +2165,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Du kan også tjekke vores ${ statusPageLink }"
+      ],
       "${ list } doesn't have a valid email address": [
         "${ list } har ikke en gyldig e-mailadresse",
         "Nogle kontakter har ikke en gyldig e-mailadresse: ${ list }"
@@ -2415,6 +2427,9 @@
       ],
       "Start time must be before end time": [
         "Starttidspunkt skal være før sluttidspunkt"
+      ],
+      "status page": [
+        "statusside"
       ],
       "The address might be misspelled": [
         "Adressen kan være stavet forkert"
@@ -2838,7 +2853,7 @@
         "${ BRAND_NAME } grupper"
       ],
       "Accounts with custom domains cannot join a Visionary or family plan.": [
-        "Konti med brugerdefinerede domæner kan ikke blive medlem af et Visionary eller familie-abonnement."
+        "Konti med brugerdomæner kan ikke blive medlem af et Visionary eller familie-abonnement."
       ],
       "customer support": [
         "kundeservice"
@@ -2895,6 +2910,14 @@
         "Dit nuværende abonnement kan ikke tilmelde sig et Visionary- eller familie-abonnement."
       ]
     },
+    "familyOffer_2023:Footer": {
+      "*Your subscription will automatically renew at the same rate at the end of your billing cycle.": [
+        "*Dit abonnement vil automatisk blive fornyet til samme pris ved slutningen af din faktureringscyklus."
+      ],
+      "Discounts are based on the standard monthly pricing.": [
+        "Rabatter er baseret på den månedlige standardpris."
+      ]
+    },
     "familyOffer_2023:Get Proton Family": {
       "Get ${ planName }": [
         "Få ${ planName }"
@@ -2909,6 +2932,9 @@
       "Configure your family account and invite users ": [
         "Konfigurer din familie-konto og inviter brugere "
       ],
+      "Set up your family": [
+        "Opret din familie"
+      ],
       "Set up your family account": [
         "Konfigurer din familie-konto"
       ]
@@ -2916,6 +2942,17 @@
     "familyOffer_2023:Title": {
       "Introducing ${ planName }": [
         "Introducerer ${ planName }"
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Inkluderer 2700 servere i 65+ lande, forbind op til 10 enheder, tilgå verdensomspændende streamingtjenester, malware- og ad-blocker og meget mere."
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "Inkluderer support til 3 bruger-e-maildomæner, 90 e-mailadresser, ubegrænsede hide-my-email-aliasser, kalenderdeling med mere."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Beskyt dine filer med krypteret lagring i skyen. Inkluderer automatisk synkronisering, krypteret fildeling og meget mere."
       ]
     },
     "Feedback Modal Title": {
@@ -2983,8 +3020,8 @@
       "System default": [
         "Systemstandard"
       ],
-      "Theme default": [
-        "Temastandard"
+      "Theme font": [
+        "Temaskrifttype"
       ]
     },
     "Font size option": {
@@ -3510,22 +3547,22 @@
         "CSV-filer fra Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora og nogle andre apps samt vCard 3.1 og 4.0-formater (UTF-8-kodning) understøttes."
       ],
       "Custom": [
-        "Tilpasset"
+        "Brugerdefineret"
       ],
       "Custom daily": [
-        "Tilpasset daglig"
+        "Brugerdefineret daglig"
       ],
       "Custom monthly": [
-        "Tilpasset månedlig"
+        "Brugerdefineret månedlig"
       ],
       "Custom weekly": [
-        "Tilpasset ugentlig"
+        "Brugerdefineret ugentlig"
       ],
       "Custom yearly": [
-        "Tilpasset årlig"
+        "Brugerdefineret årlig"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "Tilpas udseendes og fornemmelsen af ${ BRAND_NAME }-applikationer."
+        "Tilpas ${ BRAND_NAME }-applikationernes udseende."
       ],
       "Daily": [
         "Daglig"
@@ -3537,7 +3574,7 @@
         "Træk fil hertil for at uploade"
       ],
       "Drop to import": [
-        "Drop for at importere"
+        "Slip for at importere"
       ],
       "Duplicate key updated": [
         "Duplikeret nøgle opdateret"
@@ -3725,6 +3762,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Bemærk at denne proces kan tage lidt tid afhængigt af størrelsen af din adressebog."
+      ],
+      "Please provide a name and an email address for creating a group.": [
+        "Angiv et navn og en e-mailadresse for at oprette en gruppe."
       ],
       "Please remove the duplicates and try again.": [
         "Fjern venligst dubletterne og prøv igen."
@@ -4008,9 +4048,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Din filer vil blive krypteret og derefter gemt"
-      ],
-      "Your import will not be processed.": [
-        "Din import vil ikke blive behandlet."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Dine loginoplysninger vil ikke blive gemt, når importen er gennemført."
@@ -4593,8 +4630,8 @@
       ]
     },
     "Modal action": {
-      "Close": [
-        "Luk"
+      "Cancel": [
+        "Annullér"
       ],
       "Manage calendars": [
         "Administrer kalendere"
@@ -4815,7 +4852,7 @@
     },
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
-        "Fjern automatisk spam og slettede beskeder"
+        "Slet automatisk spam og beskeder i papirkurven"
       ],
       "Custom email domains": [
         "Brugerdefinerede e-maildomæner"
@@ -4877,6 +4914,9 @@
       ],
       "Calendar added": [
         "Kalender tilføjet"
+      ],
+      "Calendar updated": [
+        "Kalender opdateret"
       ]
     },
     "Notification in share calendar modal": {
@@ -5020,6 +5060,11 @@
         "For at importen kan fungere, skal du vælge alle de ønskede elementer som vist i GIF-illustrationen."
       ]
     },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Vælg, hvad ${ BRAND_NAME } kan få adgang til: se dine e-mailbeskeder og indstillinger, se og downloade dine kontakter, se og downloade alle kalendere, du har adgang til fra Google Kalender."
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Velkommen til ${ appName }"
@@ -5043,13 +5088,13 @@
       "Discover all ${ BRAND_NAME } services": [
         "Udforsk alle ${ BRAND_NAME }-tjenester"
       ],
+      "More theming options are available in your account Settings > Appearance.": [
+        "Flere temamuligheder er tilgængelige i din kontos Indstillinger > Udseende."
+      ],
       "Select a theme": [
         "Vælg et tema"
       ],
       "Set up your organization": [
-        "Konfigurer din organisation"
-      ],
-      "Set up your organization testing": [
         "Konfigurer din organisation"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
@@ -5067,7 +5112,7 @@
         "Opret ny gruppe"
       ],
       "Custom": [
-        "Tilpasset"
+        "Brugerdefineret"
       ],
       "Day": [
         "Dag",
@@ -5347,8 +5392,8 @@
       ]
     },
     "Shared calendar; Info about calendar owner": {
-      "Created by ${ ownerName }": [
-        "Oprettet af ${ ownerName }"
+      "Shared by ${ ownerName }": [
+        "Delt af ${ ownerName }"
       ]
     },
     "Side panel spotlight": {
@@ -5389,6 +5434,11 @@
       ],
       "Special offer": [
         "Specialtilbud"
+      ]
+    },
+    "specialoffer: Action, Unlimited is a plan name": {
+      "Go Unlimited": [
+        "Få Unlimited"
       ]
     },
     "specialoffer: Countdown unit": {
@@ -5456,15 +5506,32 @@
         "Sikker streaming"
       ],
       "Support online privacy": [
-        "Støt privatliv online"
+        "Støt online privatlivsbeskyttelse"
+      ]
+    },
+    "specialoffer: Footer": {
+      "Discounts are based on the standard monthly pricing.": [
+        "Rabatter er baseret på den månedlige standardpris."
+      ],
+      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+        "Dette abonnement bliver automatisk fornyet hvert 2. år til samme pris, indtil det annulleres."
       ]
     },
     "specialoffer: Label": {
+      "Lifetime deal": [
+        "Livsvarigt tilbud"
+      ],
+      "Limited time only": [
+        "Kun i begrænset tid"
+      ],
       "Most popular": [
         "Mest populære"
       ],
       "Offer ends soon": [
         "Tilbuddet slutter snart"
+      ],
+      "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
+        "Rabatten vil fortsat gælde ved fornyelse, indtil abonnementet opsiges eller ændres"
       ]
     },
     "specialoffer: Link": {
@@ -5472,7 +5539,7 @@
         "Gå til abonnementer"
       ],
       "Upgrade": [
-        "Opgrader"
+        "Opgradér"
       ]
     },
     "specialoffer: Offers": {
@@ -5507,6 +5574,12 @@
       "Get the deal": [
         "Få tilbuddet"
       ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Fornyes efter 1 år til en nedsat pris på ${ discountedAmount } i stedet for ${ regularAmount } (${ discount }% rabat)"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Fornyes efter 2 år til en nedsat pris på ${ discountedAmount } i stedet for ${ regularAmount } (${ discount }% rabat)"
+      ],
       "Save ${ discount }%": [
         "Spar ${ discount }%"
       ],
@@ -5533,13 +5606,49 @@
       "Cyber Week Sale": [
         "Cyber Week-udsalg"
       ],
+      "End of year offer": [
+        "Tilbud i slutningen af året"
+      ],
+      "End of Year Sale": [
+        "Udsalg ved årets afslutning"
+      ],
       "Get our premium bundle and save more": [
         "Få vores premium-pakke og spar mere"
+      ],
+      "Our discontinued Visionary plan is back for a limited time only": [
+        "Vores udfasede Visionary-abonnement er kun tilbage i en begrænset periode"
+      ],
+      "Save more with 2 years of ${ planName }": [
+        "Spar mere med 2 års ${ planName }"
+      ],
+      "Upgrade and save more with 2 years of ${ planName }": [
+        "Opgradér og spar mere med 2 års ${ planName }"
       ]
     },
     "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Få adgang til blokeret indhold og browse privat. Inkluderer 1700 servere i 60+ lande, højeste VPN-hastighed, 10 VPN-forbindelser, verdensomspændende streamingtjenester, malware- og ad-blocker og mere."
+      ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "Få adgang til blokeret indhold, og browse privat. Inkluderer 1700 servere i mere end 60 lande, højeste VPN-hastighed, 10 VPN-forbindelser, verdensomspændende streamingtjenester, malware- og ad-blocker og meget mere."
+      ],
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
+        "Få adgang til indhold på streamingtjenester, herunder Netflix, Disney+ og Prime Video, hvor som helst."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Alle vores premium-tjenester med deres højeste grænser: 100 e-mailadresser, mulighed for 10 brugerdomæner, ubegrænsede Hide-my-email-aliasser, kalenderdeling, krypteret cloud-lagring og fildeling og meget mere."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Inkluderer support for 1 tilpasset e-maildomæne, 10 e-mailadresser, 10 Hide-my-email-aliasser, kalenderdeling med mere."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Inkluderer support til 3 tilpassede e-maildomæner, 15 e-mailadresser, ubegrænsede Hide-my-email-aliasser, kalenderdeling med mere."
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "Perfekt til familier eller små teams, hvor alle kan have deres egen indbakke og aliasser. Kræver et brugerdomæne."
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "Modtag uden ekstra omkostninger betalingsversionerne af alle nye privatlivstjenester, vi lancerer i fremtiden, samt tidlig adgang til alle fremtidige funktioner og produkter."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Beskyt dine filer med krypteret lagring i skyen. Inkluderer automatisk synkronisering, krypteret fildeling og meget mere."
@@ -5584,19 +5693,6 @@
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
         "Få mere at vide om, hvordan du får et privat kalenderlink."
-      ]
-    },
-    "Subscribed calendar extension warning": {
-      "By using this link, Google will make the calendar you are subscribing to public": [
-        "Bruger du dette link, vil Google offentliggøre den kalender du abonnerer på"
-      ],
-      "This link might be wrong": [
-        "Dette link er muligvis forkert"
-      ]
-    },
-    "Subscribed calendar URL length warning": {
-      "URL is too long": [
-        "URL er for lang"
       ]
     },
     "Success": {
@@ -5748,6 +5844,70 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Feedback sendt"
+      ]
+    },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "1 år"
+      ],
+      "2 years": [
+        "2 år"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "Premium Drive"
+      ],
+      "Premium Mail and Calendar": [
+        "Premium Mail og Kalender"
+      ],
+      "Premium Password Manager": [
+        "Premium Adgangskodeadministrator"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Gem sikkert dine adgangskoder og udfyld dem automatisk på hjemmesider. Indeholder ubegrænsede adgangskoder, autofyld, adgangskodegenerator og meget mere."
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Adgangskodeadministrator"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Opret sikre login-oplysninger på alle dine enheder. Inkludere ubegrænsede aliasser, 20 bokse, integreret 2FA, kreditkort-autofyld og meget mere."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Inkluderer 2950+ servere i 65+ lande, forbind op til 10 enheder, tilgå verdensomspændende streamingtjenester, malware- og ad-blocker og meget mere."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Inkluderer support for 1 tilpasset e-maildomæne, 10 e-mailadresser, 10 Hide-my-email-aliasser, kalenderdeling med mere."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Beskyt dine filer med krypteret lagring i skyen. Inkluderer versionshistorik, krypteret fildeling og meget mere."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "*Dit abonnement vil automatisk blive fornyet til den nedsatte standardpris ved slutningen af din faktureringscyklus."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Rabatter er baseret på den månedlige standardpris. Dette tilbud er kun tilgængeligt for førstegangsabonnenter."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "I en begrænset periode kan du få det bedste, ${ BRAND_NAME } har at tilbyde til en eksklusiv rabat."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Vi fejrer niårsdagen for vores crowdfunding!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "${ BRAND_NAME } Jubilæumssalg"
       ]
     },
     "Table header": {
@@ -6355,9 +6515,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } vil overføre så mange data som muligt, startende med dine seneste beskeder."
-      ],
-      "Are you sure you want to discard your import?": [
-        "Er du sikker på, at du vil kassere din import?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Er du sikker på, at du vil slette ${ count } kontaktgruppe permanent?",

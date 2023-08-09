@@ -141,6 +141,9 @@
       "Continue with Google": [
         "Ga verder met Google"
       ],
+      "Copy email address": [
+        "Kopieer e-mailadres"
+      ],
       "Copy email to clipboard": [
         "E-mailadres kopiëren naar klembord"
       ],
@@ -158,6 +161,9 @@
       ],
       "Create event": [
         "Afspraak aanmaken"
+      ],
+      "Create new contact": [
+        "Nieuwe contactpersoon aanmaken"
       ],
       "Customize": [
         "Personaliseer"
@@ -327,7 +333,7 @@
         "Misschien"
       ],
       "Maybe I'll attend": [
-        "Misschien zal ik aanwezig zijn"
+        "Misschien zal ik deelnemen"
       ],
       "Merge": [
         "Samenvoegen"
@@ -366,7 +372,7 @@
         "Nee"
       ],
       "No, I won't attend": [
-        "Nee, ik zal niet aanwezig zijn"
+        "Nee, ik zal niet deelnemen"
       ],
       "No, thanks": [
         "Nee, bedankt"
@@ -581,6 +587,9 @@
       "View": [
         "Bekijken"
       ],
+      "View contact details": [
+        "Contactdetails bekijken"
+      ],
       "View invoice": [
         "Factuur bekijken"
       ],
@@ -588,7 +597,7 @@
         "Ja"
       ],
       "Yes, I'll attend": [
-        "Ja, ik zal aanwezig zijn"
+        "Ja, ik zal deelnemen"
       ]
     },
     "Action subline": {
@@ -820,7 +829,7 @@
     },
     "Calendar invite buttons label": {
       "Attending?": [
-        "Aanwezig?"
+        "Deelnemen?"
       ]
     },
     "Calendar invite info": {
@@ -2156,6 +2165,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. U kunt ook onze ${ statusPageLink } bekijken"
+      ],
       "${ list } doesn't have a valid email address": [
         "${ list } heeft geen geldig e-mailadres",
         "Sommige contacten hebben geen geldig e-mailadres: ${ list }"
@@ -2415,6 +2427,9 @@
       ],
       "Start time must be before end time": [
         "Starttijd dient voor de begintijd te liggen"
+      ],
+      "status page": [
+        "status pagina"
       ],
       "The address might be misspelled": [
         "Het adres is mogelijk verkeerd gespeld"
@@ -2776,7 +2791,7 @@
         "nee"
       ],
       "pending": [
-        "in wachtrij"
+        "in afwachting"
       ],
       "yes": [
         "ja"
@@ -3005,8 +3020,8 @@
       "System default": [
         "Systeem standaard"
       ],
-      "Theme default": [
-        "Thema standaard"
+      "Theme font": [
+        "Thema lettertype"
       ]
     },
     "Font size option": {
@@ -3748,6 +3763,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Houd er rekening mee dat dit proces enige tijd in beslag kan nemen, afhankelijk van de grootte van uw adresboek."
       ],
+      "Please provide a name and an email address for creating a group.": [
+        "Voorzie een naam en een email adres voor het aanmaken van een groep"
+      ],
       "Please remove the duplicates and try again.": [
         "Verwijder de duplicaten en probeer het opnieuw."
       ],
@@ -4030,9 +4048,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Uw bestanden worden versleuteld en vervolgens opgeslagen"
-      ],
-      "Your import will not be processed.": [
-        "Uw import zal niet worden verwerkt."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Uw inloginformatie zal niet worden opgeslagen nadat de import is voltooid."
@@ -4517,7 +4532,7 @@
         "Meer informatie"
       ],
       "My calendars": [
-        "Mijn agenda"
+        "Mijn agenda's"
       ],
       "Other calendars": [
         "Andere agenda's"
@@ -4615,8 +4630,8 @@
       ]
     },
     "Modal action": {
-      "Close": [
-        "Sluiten"
+      "Cancel": [
+        "Annuleren"
       ],
       "Manage calendars": [
         "Agenda's beheren"
@@ -4899,6 +4914,9 @@
       ],
       "Calendar added": [
         "Agenda toegevoegd"
+      ],
+      "Calendar updated": [
+        "Agenda bijgewerkt"
       ]
     },
     "Notification in share calendar modal": {
@@ -5077,9 +5095,6 @@
         "Selecteer een thema"
       ],
       "Set up your organization": [
-        "Stel uw organisatie in"
-      ],
-      "Set up your organization testing": [
         "Stel uw organisatie in"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
@@ -5377,8 +5392,8 @@
       ]
     },
     "Shared calendar; Info about calendar owner": {
-      "Created by ${ ownerName }": [
-        "Aangemaakt door ${ ownerName }"
+      "Shared by ${ ownerName }": [
+        "Gedeeld door ${ ownerName }"
       ]
     },
     "Side panel spotlight": {
@@ -5680,19 +5695,6 @@
         "Leer hoe je een persoonlijkge agenda link krijgt."
       ]
     },
-    "Subscribed calendar extension warning": {
-      "By using this link, Google will make the calendar you are subscribing to public": [
-        "Door deze link te gebruiken, maakt Google de agenda waarop u zich abonneert openbaar"
-      ],
-      "This link might be wrong": [
-        "Deze link kan fout zijn"
-      ]
-    },
-    "Subscribed calendar URL length warning": {
-      "URL is too long": [
-        "URL is te lang"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } contact ziet er identiek uit.",
@@ -5853,6 +5855,9 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium Drive": [
+        "Premium Drive"
+      ],
       "Premium Mail and Calendar": [
         "Premium Mail en Calendar"
       ],
@@ -6510,9 +6515,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } zal zo veel mogelijk gegevens overdragen, te beginnen met uw meest recente berichten."
-      ],
-      "Are you sure you want to discard your import?": [
-        "Weet u zeker dat u uw import wilt verwijderen?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Weet u zeker dat u ${ count } contactgroep permanent wilt verwijderen?",

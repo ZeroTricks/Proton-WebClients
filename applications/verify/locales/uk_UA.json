@@ -921,8 +921,8 @@
       "System default": [
         "Системна"
       ],
-      "Theme default": [
-        "Стандартна тема"
+      "Theme font": [
+        "Шрифт теми"
       ]
     },
     "Font size option": {

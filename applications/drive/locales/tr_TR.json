@@ -20,7 +20,7 @@
         "${ BRAND_NAME } mağazası"
       ],
       "Activate recovery": [
-        "Kurtarmayı etkinleştir"
+        "Kurtarma özelliğini aç"
       ],
       "Add": [
         "Ekle"
@@ -268,10 +268,10 @@
         "Çöp kutusunu boşalt"
       ],
       "enable desktop notifications": [
-        "masaüstü bildirimlerini etkinleştirmek"
+        "masaüstü bildirimlerini açmak"
       ],
       "Enable drive search": [
-        "Drive aramasını etkinleştir"
+        "Drive arama özelliğini aç"
       ],
       "Expand": [
         "Genişlet"
@@ -782,7 +782,7 @@
         "Beta erişimi, ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } beta sürümlerini herkese sunulmadan önce kullanmanızı sağlar. Böylece, yeni ürünleri ilk deneyen, yeni güncellemeleri ilk alan ve yeni özellikleri kullanan ilk kişilerden olabilirsiniz."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
-        "Sorunlarla karşılaşırsanız, istediğiniz zaman Beta erişimini devre dışı bırakabilirsiniz."
+        "Sorunlarla karşılaşırsanız, istediğiniz zaman Beta erişimini kapatabilirsiniz."
       ]
     },
     "Billing cycle option": {
@@ -1940,6 +1940,9 @@
       "\"${ name }\" already exists": [
         "\"${ name }\" zaten var"
       ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Ayrıca ${ statusPageLink }na da bakabilirsiniz"
+      ],
       "A group with this name already exists": [
         "Aynı adlı bir grup zaten var"
       ],
@@ -1971,7 +1974,7 @@
         "Kişi imzası doğrulanamadı"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        "Bu tarayıcıda içerik araması etkinleştirilemiyor. Lütfen gizli/özel tarayıcı kipinden çıkın ya da farklı bir tarayıcı deneyin."
+        "Bu tarayıcıda içerik arama özelliği açılamıyor. Lütfen gizli/özel tarayıcı kipinden çıkın ya da farklı bir tarayıcı deneyin."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "En az ${ calendarsToFixCount } takvimi kaldırın",
@@ -2084,7 +2087,7 @@
         "Parola ile onayı aynı değil"
       ],
       "Please activate your search again": [
-        "Lütfen aramayı yeniden etkinleştirin"
+        "Lütfen arama özelliğini yeniden açın"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "İlerlemek için lütfen vurgulanan çakışmayı düzeltin.",
@@ -2137,6 +2140,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Bir şeyler ters gitti. Lütfen ilerlemek için ${ refresh }yin. Bu sorun sürerse lütfen ${ supportTeam } ile görüşün."
+      ],
+      "status page": [
+        "durum sayfası"
       ],
       "The email addresses do not match": [
         "E-posta adresleri eşleşmiyor"
@@ -2702,8 +2708,8 @@
       "System default": [
         "Sistem varsayılanı"
       ],
-      "Theme default": [
-        "Tema varsayılanı"
+      "Theme font": [
+        "Tema yazı tipi"
       ]
     },
     "Font size option": {
@@ -2888,16 +2894,16 @@
         "${ BRAND_NAME }, Yahoo hesabınızla bağlantı kuramadı. Lütfen şundan emin olun:"
       ],
       "2-step verification is enabled in your external account.": [
-        "Dış hesabınızda iki adımlı kimlik doğrulaması etkinleştirilmiş."
+        "Dış hesabınızda iki adımlı doğrulama açılmış."
       ],
       "2-step verification is enabled in your external email account.": [
-        "Dış e-posta hesabınızda iki adımlı kimlik doğrulaması etkinleştirilmiş."
+        "Dış e-posta hesabınızda iki adımlı doğrulama açılmış."
       ],
       "IMAP access is enabled in your external account.": [
-        "Dış hesabınızda IMAP erişimi etkinleştirilmiş."
+        "Dış hesabınızda IMAP erişimi açılmış."
       ],
       "IMAP access is enabled in your Yahoo account.": [
-        "Yahoo hesabınızda IMAP erişimi etkinleştirildi."
+        "Yahoo hesabınızda IMAP erişimi özelliği açıldı."
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Kısa sürede çok fazla istek yapıldı. Lütfen birkaç dakika sonra yeniden deneyin."
@@ -2992,7 +2998,7 @@
         "uygulama parolası"
       ],
       "app password or enable IMAP": [
-        "uygulama parolası ya da IMAP etkinleştirin"
+        "uygulama parolası ya da IMAP özelliğini açın"
       ],
       "CSV or a VCF (vCard) file": [
         "CSV ya da VCF (vCard) dosyası"
@@ -3043,16 +3049,16 @@
     },
     "Info": {
       "${ activeDownloadsCount } downloading": [
-        "${ activeDownloadsCount } indiriliyor",
-        "${ activeDownloadsCount } indiriliyor"
+        "${ activeDownloadsCount } öge indiriliyor",
+        "${ activeDownloadsCount } öge indiriliyor"
       ],
       "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount } indiriliyor (${ downloadProgress }%)",
-        "${ activeDownloadsCount } indiriliyor (${ downloadProgress }%)"
+        "${ activeDownloadsCount } öge indiriliyor (${ downloadProgress }%)",
+        "${ activeDownloadsCount } öge indiriliyor (${ downloadProgress }%)"
       ],
       "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } yükleniyor (%${ uploadProgress })",
-        "${ activeUploadsCount } yükleniyor (%${ uploadProgress })"
+        "${ activeUploadsCount } öge yükleniyor (%${ uploadProgress })",
+        "${ activeUploadsCount } öge yükleniyor (%${ uploadProgress })"
       ],
       "${ addressCount } email address": [
         "${ addressCount } e-posta adresi",
@@ -3070,8 +3076,8 @@
         "${ calendarsToBeMergedCount } birleştirilmiş takvim"
       ],
       "${ canceledCount } canceled": [
-        "${ canceledCount } iptal edildi",
-        "${ canceledCount } iptal edildi"
+        "${ canceledCount } öge iptal edildi",
+        "${ canceledCount } öge iptal edildi"
       ],
       "${ contactCount } contact contains multiple email addresses.": [
         "${ contactCount } kişinin birkaç e-posta adresi var.",
@@ -3097,8 +3103,8 @@
         "${ doneDownloadsCount } indirildi"
       ],
       "${ doneUploadsCount } uploaded": [
-        "${ doneUploadsCount } yüklendi",
-        "${ doneUploadsCount } yüklendi"
+        "${ doneUploadsCount } öge yüklendi",
+        "${ doneUploadsCount } öge yüklendi"
       ],
       "${ errorCount } failed": [
         "${ errorCount } başarısız oldu",
@@ -3184,7 +3190,7 @@
         "Ödenmemiş faturalar nedeniyle hesap erişimi kısıtlandı. Lütfen yöneticinizle görüşün."
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "Bu adres için güvenilen anahtarlar ile adres doğrulaması etkinleştirildi. Bu adrese e-posta gönderebilmek için, önce göndermek için kullanılabilecek herkese açık anahtarlara güvenin."
+        "Bu adres için güvenilen anahtarlar ile adres doğrulama özelliği açıldı. Bu adrese e-posta gönderebilmek için, önce göndermek için kullanılabilecek herkese açık anahtarlara güvenin."
       ],
       "All (${ totalFoldersCount } folder)": [
         "Tümü (${ totalFoldersCount } klasör)",
@@ -3395,10 +3401,10 @@
         "E-postalar otomatik olarak imzalanıyor"
       ],
       "Enable drive search": [
-        "Drive aramasını etkinleştir"
+        "Drive arama özelliğini aç"
       ],
       "Enabling drive search": [
-        "Drive araması etkinleştiriliyor"
+        "Drive arama özelliği açılıyor"
       ],
       "Encrypted search is here": [
         "Şifrelenmiş aramayı deneyimleyin"
@@ -3414,6 +3420,9 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "İçe aktarmak istediğiniz e-posta hesabının kimlik doğrulama bilgilerini yazın."
+      ],
+      "Enter the device name to confirm removal.": [
+        "Kaldırma işlemini onaylamak için aygıt adını yazın."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } alıcısına gönderilen doğrulama kodunu yazın."
@@ -3435,7 +3444,7 @@
         "Kalan süre öngörülüyor..."
       ],
       "Failed": [
-        "Başarısız oldu"
+        "Aktarılmayan"
       ],
       "Failed to generate a secure link. The reason is: ${ error }": [
         "Güvenli bir bağlantı oluşturulamadı. Nedeni: ${ error }"
@@ -3667,7 +3676,7 @@
         "Eşitlenmiş bir klasör yok"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
-        "Yüklenen anahtarların hiçbiri şifreleme için geçerli değil. Bu adrese ileti gönderebilmek için lütfen geçerli bir anahtar yükleyin ya da \"E-postalar şifrelensin\" seçeneğini devre dışı bırakın."
+        "Yüklenen anahtarların hiçbiri şifreleme için geçerli değil. Bu adrese ileti gönderebilmek için lütfen geçerli bir anahtar yükleyin ya da \"E-postalar şifrelensin\" seçeneğini kapatın."
       ],
       "Not a valid URL": [
         "Adres geçersiz"
@@ -3721,6 +3730,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Bu işlemin kişi listenizin boyutuna bağlı olarak uzun sürebileceğini unutmayın."
       ],
+      "Please provide a name and an email address for creating a group.": [
+        "Bir grup oluşturmak için lütfen bir ad ve bir e-posta adresi belirtin."
+      ],
       "Please select the folders you would like to import:": [
         "Lütfen içe aktarmak istediğiniz klasörleri seçin:"
       ],
@@ -3762,7 +3774,7 @@
         "Birincil"
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
-        "Gizli arama etkinleştirildi. Bu pencereyi kapatarak dosya ve klasörlerde arama yapabilirsiniz."
+        "Gizli arama özelliği açıldı. Bu pencereyi kapatarak dosya ve klasörlerde arama yapabilirsiniz."
       ],
       "Queued": [
         "Sıraya alındı"
@@ -3792,10 +3804,10 @@
         "${ formattedDate } tarihli dosyalar geri yüklendi"
       ],
       "Search cannot be enabled in this browser": [
-        "Bu tarayıcıda arama etkinleştirilemez"
+        "Bu tarayıcıda arama özelliği açılamaz"
       ],
       "Search Enabled": [
-        "Arama etkinleştirildi"
+        "Arama özelliği açıldı"
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "Yüklenmiş bir dosyayı ya da klasörü seçin ve bir bağlantı oluşturun."
@@ -3849,7 +3861,7 @@
         "Bir şeyler ters gitti. Lütfen bir süre sonra yeniden deneyin."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
-        "Abonelik sona eriyor: ${ planName } tarifesinin ek özelliklerini korumak için ${ byDate } tarihine kadar yeniden etkinleştirin. ${ reactivateLink }"
+        "Abonelik sona eriyor: ${ planName } tarifesinin ek özelliklerini korumak için ${ byDate } tarihine kadar yenileyin. ${ reactivateLink }"
       ],
       "support team": [
         "destek ekibi"
@@ -3888,7 +3900,7 @@
         "Bu hesap, ilkeye aykırı kullanım olasılığı nedeniyle askıya alınmış."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Bu adres devre dışı. Bu adrese e-posta gönderebilmek için önce sahibi adresi etkinleştirmelidir."
+        "Bu adres kullanımdan kaldırılmış. Bu adrese e-posta gönderebilmek için önce sahibi adresi kullanıma almalıdır."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Bu tarayıcı, PDF belgelerinin ön izlemesini desteklemiyor. Lütfen dosyayı indirin."
@@ -3909,17 +3921,17 @@
         "Bu bağlantı eski Drive sürümüyle oluşturulmuş ve düzenlenemiyor. Bu bağlantıyı silin ve ayarları değiştirmek için yeni bir tane oluşturun."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Bu bağlantı kalıcı olarak devre dışı bırakılacak. Hiç kimse bu bağlantıyı kullanarak dosyanıza erişemeyecek. Dosyayı yeniden paylaşmak için yeni bir bağlantı oluşturmanız gerekecek."
+        "Bu bağlantı kalıcı olarak kullanımdan kaldırılmış. Hiç kimse bu bağlantıyı kullanarak dosyanıza erişemeyecek. Dosyayı yeniden paylaşmak için yeni bir bağlantı oluşturmanız gerekecek."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "Bu bağlantı kalıcı olarak devre dışı bırakılacak. Hiç kimse bu bağlantıyı kullanarak klasörünüze erişemeyecek. Klasörü yeniden paylaşmak için yeni bir bağlantı oluşturmanız gerekecek."
+        "Bu bağlantı kalıcı olarak kullanımdan kaldırılacak. Hiç kimse bu bağlantıyı kullanarak klasörünüze erişemeyecek. Klasörü yeniden paylaşmak için yeni bir bağlantı oluşturmanız gerekecek."
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Bu işlem, bağlantıyı siler ve bağlantıya sahip olan herkesin dosyanıza erişimini kaldırır.",
         "Bu işlem, bağlantıları siler ve bağlantılara sahip olan herkesin dosyalarınıza erişimini kaldırır."
       ],
-      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected.": [
-        "Bu işlem ${ DRIVE_APP_NAME } üzerinden ${ deviceName } aygıtının eşitlemesini kaldıracak. Aygıt üzerindeki yerel dosyalar etkilenmeyecek."
+      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
+        "Bu işlem, ${ DRIVE_APP_NAME } uygulamasından ${ deviceName } aygıtının eşitlemesini kaldıracak ve Bilgisayarlarım altına eklediğiniz klasörlerin eşitlemesini durduracak."
       ],
       "This will replace the existing file with the folder": [
         "Bu işlem var olan dosyayı klasör ile değiştirir"
@@ -3937,7 +3949,7 @@
         "Gizliliği koruyarak arama yapabilmek için ${ DRIVE_APP_NAME } dosyalarınızı yerel dizine eklemeli."
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "Gerçek gizliliği koruyan aramayı etkinleştirmek için dosyalarınızın yerel dizinini hazırlamamız gerekiyor. ${ DRIVE_APP_NAME } kullanmayı normal şekilde sürdürebilirsiniz. Dizin hazırlama işlemi tamamlandığında sizi bilgilendireceğiz."
+        "Gerçek gizliliği koruyan arama özelliğini açmak için yerel dizini hazırlamamız gerekiyor. ${ DRIVE_APP_NAME } kullanmayı normal şekilde sürdürebilirsiniz. Dizin hazırlama işlemi tamamlandığında sizi bilgilendireceğiz."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
@@ -3949,7 +3961,7 @@
         "Kişilerinizi yeniden imzalamak için, her kişiyi hesabınızda bulunan şifreleme anahtarı listesiyle karşılaştırarak denetlememiz gerekir. Herhangi bir eşleşme bulunamazsa, kişiniz birincil şifreleme anahtarıyla yeniden imzalanır."
       ],
       "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Verilerinizi kurtarmak için, verilerin oluşturulduğu sırada kullanılan hesap anahtarını yeniden etkinleştirmelisiniz. Bunun için anahtar oluşturulurken kullanılan parolayı bilmeniz gerekir."
+        "Verilerinizi kurtarmak için, verilerin oluşturulduğu sırada kullanılan hesap anahtarını yeniden kullanıma almalısınız. Bunun için anahtar oluşturulurken kullanılan parolayı bilmeniz gerekir."
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Adres doğrulamasını kullanabilmek için, gönderirken kullanmak istediğinizle birlikte bir veya daha fazla kullanılabilecek herkese açık anahtara güvenmeniz gerekir. Güvenme işlemi, şifreleme anahtarlarının sahte olmasını önler."
@@ -4130,9 +4142,6 @@
       ],
       "Your files will be encrypted and then saved.": [
         "Dosyalarınız şifrelendikten sonra kaydedilecek."
-      ],
-      "Your import will not be processed.": [
-        "İçe aktarma işleminiz yapılmayacak."
       ],
       "Your login information will not be saved after the import is completed.": [
         "İçe aktarma işleminden sonra oturum açma bilgileriniz kaydedilmez."
@@ -4374,7 +4383,7 @@
         "E-postalar (son 1 ay)"
       ],
       "Enable Beta Access": [
-        "Beta erişimini etkinleştir"
+        "Beta erişimini aç"
       ],
       "Encrypt emails": [
         "E-postaları şifrele"
@@ -4699,6 +4708,9 @@
       ]
     },
     "Link": {
+      "${ DRIVE_APP_NAME } Windows app": [
+        "${ DRIVE_APP_NAME } Windows uygulaması"
+      ],
       "clearing your browser cache": [
         "tarayıcınızın ön belleğini temizlemek"
       ],
@@ -4709,10 +4721,13 @@
         "Faturayı öde"
       ],
       "Reactivate now": [
-        "Şimdi yeniden etkinleştir"
+        "Şimdi yenile"
       ],
       "Request an invite": [
         "Davet iste"
+      ],
+      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
+        "Dosya ve klasörleri bilgisayarınız ve ${ DRIVE_APP_NAME } arasında kesintisiz eşitleyin."
       ],
       "Shared": [
         "Paylaşılmış"
@@ -4771,7 +4786,7 @@
     },
     "Message": {
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        "Ücretsiz deneme süreniz doldu. Hesap erişiminiz yakında devre dışı bırakılacak. ${ action }"
+        "Ücretsiz deneme süreniz doldu. Hesabınıza erişim yakında kapatılacak. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -4993,7 +5008,7 @@
         "Aygıt yeniden adlandırıldı"
       ],
       "Encrypted search activated": [
-        "Şifrelenmiş arama etkinleştirildi"
+        "Şifrelenmiş arama özelliği açıldı"
       ],
       "Failed to download files: ${ err }": [
         "Dosyalar indirilemedi: ${ err }"
@@ -5130,9 +5145,6 @@
         "Bir tema seçin"
       ],
       "Set up your organization": [
-        "Kuruluşunuzu ayarlayın"
-      ],
-      "Set up your organization testing": [
         "Kuruluşunuzu ayarlayın"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
@@ -5450,7 +5462,7 @@
         "Yalnızca sınırlı bir süre için"
       ],
       "Most popular": [
-        "En beğenilen"
+        "En çok kullanılan"
       ],
       "Offer ends soon": [
         "Teklifin süresi yakında dolacak"
@@ -5590,7 +5602,7 @@
         "${ credits } tutarına kadar kredi kazanın."
       ],
       "Invite friends to ${ BRAND_NAME }": [
-        "Arkadaşlarınızı ${ BRAND_NAME } üzerine çağırın"
+        "Arkadaşlarınızı ${ BRAND_NAME } kullanmaya davet edin"
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Artık verilerinizi güvende tutmayı sürdürürken Drive dosyalarınızı kolayca arayabilirsiniz."
@@ -5850,7 +5862,7 @@
         "Hesap askıya alınmış"
       ],
       "Active": [
-        "Etkin"
+        "İşlenen"
       ],
       "Add contact group name": [
         "Kişi grubu adı ekle"
@@ -5896,7 +5908,7 @@
         "Veriler temizleniyor"
       ],
       "Completed": [
-        "Tamamlandı"
+        "Aktarılan"
       ],
       "Computers": [
         "Bilgisayarlar"
@@ -6003,7 +6015,7 @@
         "Çöp kutusunu boşalt"
       ],
       "Enable drive search": [
-        "Drive aramasını etkinleştir"
+        "Drive arama özelliğini aç"
       ],
       "Enter your password": [
         "Parolanızı yazın"
@@ -6012,7 +6024,7 @@
         "Kişileri dışa aktarma"
       ],
       "Failed": [
-        "Başarısız"
+        "Aktarılmayan"
       ],
       "Feedback": [
         "Geri bildirim"
@@ -6333,7 +6345,7 @@
         "Otomatik, bu kullanıcıya gönderim için oluşturucudaki biçimin kullanılacağını belirtir. Düz metin, iletinin gönderim sırasında her zaman düz metne dönüştürüleceğini belirtir."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
-        "Sisteminizin gündüz ve gece kipine uyarak gündüz ve gece için seçtiğiniz temalar arasında otomatik olarak geçiş yapın"
+        "Sisteminizin gündüz ve gece durumuna uyarak gündüz ve gece için seçtiğiniz temalar arasında otomatik olarak geçiş yapın"
       ],
       "Customize import to reduce the number of folders": [
         "Klasör sayısını azaltmak için içe aktarmayı özelleştirin"
@@ -6387,10 +6399,10 @@
         "İçe aktarma yeni iletilerden eski iletilere doğru yapılacak."
       ],
       "The selected theme will be active when your system is set to \"dark mode\"": [
-        "Seçilmiş tema sisteminiz \"koyu kipe\" geçtiğinde etkinleştirilecek"
+        "Sisteminiz \"koyu temaya\" geçtiğinde seçilmiş tema kullanılacak"
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
-        "Seçilmiş tema sisteminiz \"açık kipe\" geçtiğinde etkinleştirilecek"
+        "Sisteminiz \"açık temaya\" geçtiğinde seçilmiş tema kullanılacak"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Bu e-posta adresine uçtan uca şifrelenmiş e-postalar göndermek için bir herkese açık anahtar yükleyin"
@@ -6445,9 +6457,6 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME }, en son iletilerinizden başlayarak olabildiğince fazla veri aktaracak."
       ],
-      "Are you sure you want to discard your import?": [
-        "İçe aktarma işleminden vazgeçmek istediğinize emin misiniz?"
-      ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "${ count } kişi grubunu kalıcı olarak silmek istediğinize emin misiniz?",
         "${ count } kişi grubunu kalıcı olarak silmek istediğinize emin misiniz?"
@@ -6466,7 +6475,7 @@
         "Kişiler birleştirilemedi"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
-        "Parolanızı hatırlamıyorsanız, anahtarınız yeniden etkinleştirilemez. Bu uyarıyı kapatmanıza yardımcı olabiliriz. Ancak bu süreçte bu anahtarla şifrelenmiş tüm verilere erişimi kalıcı olarak kaybedeceksiniz."
+        "Parolanızı hatırlamıyorsanız, anahtarınız yeniden kullanıma alınamaz. Bu uyarıyı kapatmanıza yardımcı olabiliriz. Ancak bu süreçte bu anahtarla şifrelenmiş tüm verilere erişimi kalıcı olarak kaybedeceksiniz."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Bildirimler uçtan uca şifrelenmez. Lütfen herhangi bir hassas bilgi göndermeyin."

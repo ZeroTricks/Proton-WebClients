@@ -7,18 +7,18 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import { itemCreationIntent, selectTOTPLimits } from '@proton/pass/store';
-import { PassFeature } from '@proton/pass/types/api/features';
+import { passwordSave } from '@proton/pass/store/actions/creators/pw-history';
 import { prop } from '@proton/pass/utils/fp';
 import { merge } from '@proton/pass/utils/object';
-import { parseOTPValue } from '@proton/pass/utils/otp/otp';
+import { getSecretOrUri, parseOTPValue } from '@proton/pass/utils/otp/otp';
 import { isEmptyString, uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time';
+import { parseUrl } from '@proton/pass/utils/url';
 
 import { UpgradeButton } from '../../../../shared/components/upgrade/UpgradeButton';
 import type { EditLoginItemFormValues } from '../../../../shared/form/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../../../../shared/form/validator/validate-item';
 import { validateLoginForm } from '../../../../shared/form/validator/validate-login';
-import { useFeatureFlag } from '../../../../shared/hooks/useFeatureFlag';
 import type { ItemEditProps } from '../../../../shared/items';
 import { deriveAliasPrefix, sanitizeLoginAliasHydration, sanitizeLoginAliasSave } from '../../../../shared/items/alias';
 import { DropdownMenuButton } from '../../../components/Dropdown/DropdownMenuButton';
@@ -53,15 +53,13 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
     const dispatch = useDispatch();
     const { needsUpgrade } = useSelector(selectTOTPLimits);
 
-    const showCustomFields = useFeatureFlag<boolean>(PassFeature.PassCustomFields);
-
     const initialValues: EditLoginItemFormValues = {
         name,
         username,
         password,
         note,
         shareId,
-        totpUri,
+        totpUri: getSecretOrUri(totpUri),
         url: '',
         urls: urls.map(createNewUrl),
         withAlias: false,
@@ -177,6 +175,7 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
                         <Form id={FORM_ID}>
                             <FieldsetCluster>
                                 <Field
+                                    lengthLimiters
                                     name="name"
                                     label={c('Label').t`Title`}
                                     component={TitleField}
@@ -256,6 +255,20 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
                                     placeholder={c('Placeholder').t`Enter password`}
                                     component={PasswordField}
                                     icon="key"
+                                    onPasswordGenerated={(value: string) => {
+                                        const { urls, url } = form.values;
+                                        const baseUrl = urls?.[0]?.url ?? url;
+                                        const { subdomain, domain, hostname } = parseUrl(baseUrl);
+
+                                        dispatch(
+                                            passwordSave({
+                                                id: uniqueId(),
+                                                value,
+                                                origin: subdomain ?? domain ?? hostname,
+                                                createTime: getEpoch(),
+                                            })
+                                        );
+                                    }}
                                 />
 
                                 {
@@ -270,7 +283,7 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
                                         </ValueControl>
                                     ) : (
                                         <Field
-                                            masked
+                                            hidden
                                             name="totpUri"
                                             label={c('Label').t`2FA secret (TOTP)`}
                                             placeholder={c('Placeholder').t`Add 2FA secret`}
@@ -316,7 +329,7 @@ export const LoginEdit: VFC<ItemEditProps<'login'>> = ({ vault, revision, onSubm
                                 />
                             </FieldsetCluster>
 
-                            {Boolean(showCustomFields) && <ExtraFieldGroup form={form} />}
+                            <ExtraFieldGroup form={form} />
                         </Form>
                     </FormikProvider>
                 )}

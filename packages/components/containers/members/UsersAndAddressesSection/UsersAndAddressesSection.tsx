@@ -28,7 +28,6 @@ import {
     useApi,
     useDomains,
     useEventManager,
-    useFeature,
     useMemberAddresses,
     useMembers,
     useNotifications,
@@ -38,7 +37,6 @@ import {
 } from '../../../hooks';
 import { SettingsParagraph, SettingsSectionWide } from '../../account';
 import { AddressModal } from '../../addresses';
-import { FeatureCode } from '../../features';
 import RestoreAdministratorPrivileges from '../../organization/RestoreAdministratorPrivileges';
 import InviteUserCreateSubUserModal from '../InviteUserCreateSubUserModal';
 import LoginMemberModal, { validateMemberLogin } from '../LoginMemberModal';
@@ -72,8 +70,6 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
 
     const canInviteProtonUsers = hasNewVisionary(subscription) || hasFamily(subscription);
     const { createNotification } = useNotifications();
-
-    const familyPlanFeature = useFeature(FeatureCode.FamilyPlan);
 
     const cleanOption = {
         onClose: () => setTmpMember(null),
@@ -130,7 +126,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
     const handleDeleteUser = (member: Member) => {
         setTmpMember(member);
 
-        // We can remove members if the user is a Proton member (excluding logged user)
+        //  We can remove members if the user is a Proton member (excluding logged user)
         if (canInviteProtonUsers && member.Type === MEMBER_TYPE.PROTON && !member.Self) {
             setUserRemoveModalOpen(true);
         } else {
@@ -164,7 +160,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
     };
 
     const handleAddUser = () => {
-        //Visionary can either create a sub user or invite existing users
+        // Visionary can either create a sub user or invite existing users
         if (hasVisionary(subscription) || hasNewVisionary(subscription) || hasFamily(subscription)) {
             setInviteOrCreateUserModalOpen(true);
         } else {
@@ -250,7 +246,6 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                         organizationKey={organizationKey}
                         verifiedDomains={verifiedDomains}
                         onInviteUser={handleInviteUser}
-                        familyPlanEnabled={familyPlanFeature.feature?.Value === true}
                         {...inviteOrCreateUserModalProps}
                     />
                 )}

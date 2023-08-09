@@ -124,6 +124,9 @@
       "Block": [
         "Blokovat"
       ],
+      "Block email tracking": [
+        "Blokovat sledovací prvky v e-mailech"
+      ],
       "Block messages from this sender": [
         "Blokovat zprávy tohoto odesílatele"
       ],
@@ -141,6 +144,9 @@
       ],
       "Carbon Copy": [
         "Kopie"
+      ],
+      "Change email": [
+        "Změnit e-mail"
       ],
       "Change page": [
         "Změnit stránku"
@@ -321,9 +327,6 @@
       ],
       "Discard": [
         "Zahodit"
-      ],
-      "Dismiss get started checklist": [
-        "Odmítnout průvodce pro začátečníky"
       ],
       "Done": [
         "Hotovo"
@@ -655,6 +658,9 @@
       "Move all messages from this label": [
         "Přesun všech zpráv tohoto štítku"
       ],
+      "Move all to archive": [
+        "Přesunout vše do archivu"
+      ],
       "Move all to trash": [
         "Přesunout vše do koše"
       ],
@@ -726,9 +732,6 @@
       ],
       "Open composer": [
         "Otevřít editor"
-      ],
-      "Open get started checklist modal": [
-        "Otevřít průvodce pro začátečníky"
       ],
       "Open navigation": [
         "Otevřít menu"
@@ -1057,9 +1060,6 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Pokuste se znovu uložit. Uložení se nezdařilo z důvodu: ${ saveError }"
       ],
-      "Turn on tracker protection": [
-        "Zapnout ochranu proti sledování"
-      ],
       "Unblock": [
         "Odblokovat"
       ],
@@ -1255,14 +1255,6 @@
     "Alternative text for welcome image": {
       "Welcome": [
         "Vítejte"
-      ]
-    },
-    "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } dokončena",
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } dokončeno",
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } dokončeno",
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } dokončeno"
       ]
     },
     "Animation": {
@@ -2963,6 +2955,9 @@
         "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat nanejvýš ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud je váš soubor větší, rozdělte jej do menších souborů.",
         "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat nanejvýš ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud je váš soubor větší, rozdělte jej do menších souborů."
       ],
+      "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
+        "Zapnutím ochrany proti sledování e-mailů zabráníte inzerentům a dalším subjektům sledovat vaši polohu a online aktivity."
+      ],
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "Odemkněte si vlastní plánování zpráv a další výhody navýšením tarifu."
       ],
@@ -2974,6 +2969,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Pomocí myši táhněte a pusťte pro změnu priority spojení kontaktů. Odškrtněte kontakty, které nechcete sloučit."
+      ],
+      "We didn't find any known trackers and tracking URLs in this email.": [
+        "V tomto e-mailu jsme nenašli žádné známé sledovací prvky a sledovací adresy URL."
       ],
       "When do you want your message to be sent?": [
         "Kdy chcete, aby byla vaše zpráva odeslána?"
@@ -3135,6 +3133,9 @@
     "Error": {
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "${ error.message } pro <${ email }>. Problém můžete vyřešit přidáním jiného klíče nebo vypnutím šifrování pro tento kontakt."
+      ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Můžete se také podívat na to, co říká naše ${ statusPageLink }"
       ],
       "A group with this name already exists": [
         "Skupina s tímto názvem již existuje"
@@ -3430,6 +3431,9 @@
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "Omlouváme se, ${ BRAND_NAME } nemůže dešifrovat vaší zprávu. Prosím zkontrolujte, že jsou všechny vaše klíče aktivní."
       ],
+      "status page": [
+        "stavová stránka"
+      ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Přílohu nebylo možné dešifrovat.\nPokud máte příslušný privátní klíč, budete moci soubor nadále dešifrovat \nprogramem, jako je např. GnuPG.",
         "Přílohy nebylo možné dešifrovat.\nPokud máte příslušný privátní klíč, budete moci soubory nadále dešifrovat \nprogramem, jako je např. GnuPG.",
@@ -3465,9 +3469,6 @@
       ],
       "There has been an issue with content search. Default search has been used instead.": [
         "Vyskytl se problém s vyhledáváním obsahu. Místo toho bylo použito výchozí vyhledávání."
-      ],
-      "There was a problem updating your local messages, they will be downloaded again to re-enable content search": [
-        "Došlo k problému s aktualizací vašich místních zpráv, budou znovu staženy, aby se znovu aktivovalo vyhledávání v obsahu"
       ],
       "There was an error when exporting the contacts vCards": [
         "Při exportu kontaktů vCard došlo k chybě"
@@ -4166,8 +4167,8 @@
       "System default": [
         "Systémové výchozí"
       ],
-      "Theme default": [
-        "Výchozí téma"
+      "Theme font": [
+        "Písmo motivu"
       ]
     },
     "Font Size Default": {
@@ -4206,76 +4207,144 @@
         "Komu: ${ toString }"
       ]
     },
-    "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        "Zvýšili jsme celkové úložiště vašeho účtu na ${ rewardInGb }. GB. Získejte další úložiště a odemkněte prémiové funkce ještě dnes."
-      ],
-      "You're all set!": [
-        "Vše je připraveno!"
-      ]
-    },
-    "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        "Dokončete všechny kroky a získejte celkem ${ rewardInGb } GB na svém účtu"
-      ],
-      "Expires soon": [
-        "Brzy vyprší"
-      ],
-      "Expires today": [
-        "Platnost končí dnes"
-      ],
-      "Only ${ days } day left": [
-        "Zbývá už jen ${ days } den",
-        "Zbývá už jen ${ days } dny",
-        "Zbývá už jen ${ days } dní",
-        "Zbývá už jen ${ days } dní"
-      ]
-    },
     "Get started checklist instructions": {
-      "Available on iOS and Android.": [
-        "K dispozici pro iOS a Android."
+      "${ MAIL_APP_NAME } app": [
+        "${ MAIL_APP_NAME } aplikace"
+      ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME } v App Store"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } v Obchodu Play"
+      ],
+      "account logins": [
+        "přihlášení k účtům"
+      ],
+      "Auto-forward Gmail": [
+        "Automatické přeposílání Gmailu"
+      ],
+      "auto-forwarding": [
+        "automatické přeposílání"
+      ],
+      "Block email communications from scammers permanently.": [
+        "Trvale blokujte e-mailovou komunikaci od podvodníků."
+      ],
+      "Block unsavory senders": [
+        "Blokování nevhodných odesílatelů"
+      ],
+      "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
+        "Bravo za ještě bezpečnější, pohodlnější a relevantnější e-mail! Zvýšili jsme vaše bezplatné úložiště na celkem 1 GB."
+      ],
+      "Change ${ strongText } to your ${ BRAND_NAME } address": [
+        "Změňte adresu ${ strongText } na adresu ${ BRAND_NAME }."
+      ],
+      "Checklist complete": [
+        "Kontrolní seznam je kompletní"
+      ],
+      "Close": [
+        "Zavřít"
+      ],
+      "Congratulation, you completed all the steps!": [
+        "Gratulujeme, dokončili jste všechny kroky!"
+      ],
+      "Continue setting up your email": [
+        "Pokračujte v nastavení e-mailu"
+      ],
+      "Discover how our ${ strongText } protect you": [
+        "Zjistěte, jak vás naše ${ strongText } chrání"
+      ],
+      "Discover privacy features": [
+        "Objevte funkce ochrany soukromí"
+      ],
+      "Double your free storage to 1 GB when you complete the following:": [
+        "Zdvojnásobte své bezplatné úložiště na 1 GB splněním následujících podmínek:"
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails.": [
+        "Šifrování je tak silné, že e-maily můžete zobrazit pouze vy a určení příjemci."
+      ],
+      "For your eyes only": [
+        "Pouze pro vaše oči"
+      ],
+      "Get free storage": [
+        "Získat bezplatné úložiště"
+      ],
+      "Get mobile app": [
+        "Získat mobilní aplikaci"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Získat mobilní aplikaci ${ MAIL_APP_NAME }"
       ],
+      "Get the ${ strongText } on Android or iOS": [
+        "Získání ${ strongText } pro Android nebo iOS"
+      ],
+      "Get the App": [
+        "Získat aplikaci"
+      ],
       "Import contacts or emails": [
         "Import kontaktů nebo emailů"
+      ],
+      "Import data": [
+        "Importovat data"
       ],
       "Import your contacts or messages": [
         "Import kontaktů nebo zpráv"
       ],
+      "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
+        "Používejte ${ MAIL_APP_NAME } i nadále a objevte další způsoby, jak ${ BRAND_NAME } chrání vaše soukromí a zjednodušuje odesílání e-mailů."
+      ],
+      "Learn more": [
+        "Více informací"
+      ],
+      "Make ${ BRAND_NAME } your go-to inbox": [
+        "Udělejte si z ${ BRAND_NAME } svou schránku pro doručenou poštu"
+      ],
+      "Maybe later": [
+        "Možná později"
+      ],
+      "Nice! You've updated all services in this category.": [
+        "Pěkné! Aktualizovali jste všechny služby v této kategorii."
+      ],
+      "Open checklist": [
+        "Otevřít kontrolní seznam"
+      ],
+      "Popular online services": [
+        "Oblíbené online služby"
+      ],
+      "privacy features": [
+        "funkce ochrany soukromí"
+      ],
+      "Protect and simplify your email": [
+        "Ochrana a zjednodušení e-mailu"
+      ],
+      "Protection from trackers": [
+        "Ochrana před sledováním"
+      ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "Rychle přeneste kontakty nebo e-maily od jakéhokoli poskytovatele pomocí našeho Easy Switch asistenta pro snadný import."
-      ],
-      "Sign into the mobile app to complete the action": [
-        "Přihlaste se do mobilní aplikace a dokončete akci"
-      ],
-      "Using your mobile device, scan this QR code or visit": [
-        "Pomocí mobilního zařízení naskenujte tento QR kód nebo navštivte stránku"
-      ]
-    },
-    "Get started checklist item": {
-      "Get mobile app": [
-        "Získat mobilní aplikaci"
-      ],
-      "Import contacts or emails": [
-        "Import kontaktů nebo e-mailů"
       ],
       "Send a message": [
         "Odeslat zprávu"
       ],
-      "Set up a recovery method": [
+      "Set recovery method": [
         "Nastavit metodu obnovení"
-      ]
-    },
-    "Get started checklist spotlight": {
-      "You can access the checklist anytime from here": [
-        "Kontrolní seznam je kdykoli k dispozici zde"
-      ]
-    },
-    "Get started checklist title": {
-      "Get started": [
-        "Začínáme"
+      ],
+      "Set up ${ strongText } from Gmail": [
+        "Nastavit ${ strongText } z Gmailu"
+      ],
+      "Sign in to the mobile app to complete this step": [
+        "Přihlaste se do mobilní aplikace a dokončete tento krok"
+      ],
+      "Update your logins": [
+        "Aktualizace přihlašovacích údajů"
+      ],
+      "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
+        "Pomocí svého mobilního zařízení naskenujte tento QR kód nebo navštivte obchod pro iOS nebo Android."
+      ],
+      "We stop advertisers and data collectors from profiling you.": [
+        "Zabraňujeme inzerentům a sběratelům dat, aby vás profilovali."
+      ],
+      "You've unlocked 1 GB": [
+        "Odemkli jste 1 GB"
       ]
     },
     "Gmail forwarding": {
@@ -4709,6 +4778,12 @@
         "${ count } nepřečtených zpráv",
         "${ count } nepřečtených zpráv"
       ],
+      "${ currentProgress } out of ${ totalProgress }": [
+        "${ currentProgress } z ${ totalProgress }",
+        "${ currentProgress } ze ${ totalProgress }",
+        "${ currentProgress } z ${ totalProgress }",
+        "${ currentProgress } z ${ totalProgress }"
+      ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } vložený obrázek",
         "${ embeddedAttachmentsCount } vložené obrázky",
@@ -4736,11 +4811,23 @@
         "${ messagesNotAuthorizedToMove } zpráv nemohlo být přesunuto.",
         "${ messagesNotAuthorizedToMove } zpráv nemohlo být přesunuto."
       ],
-      "${ numberOfTrackers } email tracker blocked": [
-        "${ numberOfTrackers } e-mailový sledovací prvek zablokován",
-        "${ numberOfTrackers } e-mailové sledovací prvky zablokovány",
-        "${ numberOfTrackers } e-mailových sledovacích prvků zablokováno",
-        "${ numberOfTrackers } e-mailových sledovacích prvků zablokováno"
+      "${ numberOfImageTrackers } email tracker blocked": [
+        "${ numberOfImageTrackers } e-mailový sledovací prvek zablokován",
+        "${ numberOfImageTrackers } e-mailové sledovací prvky zablokovány",
+        "${ numberOfImageTrackers } e-mailových sledovacích prvků zablokováno",
+        "${ numberOfImageTrackers } e-mailových sledovacích prvků zablokováno"
+      ],
+      "${ numberOfImageTrackers } tracker blocked": [
+        "${ numberOfImageTrackers } sledovací prvek zablokován",
+        "${ numberOfImageTrackers } sledovací prvky zablokovány",
+        "${ numberOfImageTrackers } sledovacích prvků zablokováno",
+        "${ numberOfImageTrackers } sledovacích prvků zablokováno"
+      ],
+      "${ numberOfUTMTrackers } link cleaned": [
+        "${ numberOfUTMTrackers } vyčištěný odkaz",
+        "${ numberOfUTMTrackers } vyčištěné odkazy",
+        "${ numberOfUTMTrackers } vyčištěných odkazů",
+        "${ numberOfUTMTrackers } vyčištěných odkazů"
       ],
       "${ numContact } contact": [
         "${ numContact } kontakt",
@@ -4883,6 +4970,12 @@
       "(No Recipient)": [
         "(Žádný příjemce)"
       ],
+      "**${ elementsFoundCount }** result found in ${ labelName }": [
+        "**${ elementsFoundCount }** výsledek nalezen v ${ labelName }",
+        "**${ elementsFoundCount }** výsledky nalezeny v ${ labelName }",
+        "**${ elementsFoundCount }** výsledků nalezeno v ${ labelName }",
+        "**${ elementsFoundCount }** výsledků nalezeno v ${ labelName }"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Telefonní číslo lze použít k ověření pouze jednoho ${ BRAND_NAME } účtu"
       ],
@@ -4954,6 +5047,9 @@
       ],
       "Are you sure you want to discard your changes?": [
         "Určitě chcete zahodit všechny provedené změny?"
+      ],
+      "Are you sure you want to move all messages in this location to Archive?": [
+        "Jste si jisti, že chcete přesunout všechny zprávy odtud do Archivu?"
       ],
       "Are you sure you want to move all messages in this location to Trash?": [
         "Jste si jisti, že chcete přesunout všechny zprávy odtud do Koše?"
@@ -5159,18 +5255,6 @@
       "Email tracker protection is disabled": [
         "Ochrana před sledovacími prvky v e-mailech je vypnutá"
       ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers in this message.": [
-        "Sledovací prvky v e-mailech mohou narušit vaše soukromí. ${ BRAND_NAME } nenalezl žádné sledovací prvky v této zprávě."
-      ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } tracker.": [
-        "Sledovací prvky e-mailů můžou narušit vaše soukromí. ${ BRAND_NAME } nalezl a zablokoval ${ numberOfTrackers } sledovací prvek.",
-        "Sledovací prvky e-mailů můžou narušit vaše soukromí. ${ BRAND_NAME } nalezl a zablokoval ${ numberOfTrackers } sledovací prvky.",
-        "Sledovací prvky e-mailů můžou narušit vaše soukromí. ${ BRAND_NAME } nalezl a zablokoval ${ numberOfTrackers } sledovacích prvků.",
-        "Sledovací prvky e-mailů můžou narušit vaše soukromí. ${ BRAND_NAME } nalezl a zablokoval ${ numberOfTrackers } sledovacích prvků."
-      ],
-      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
-        "Sledovací prvky v e-mailech mohou narušit vaše soukromí. Zapnutím ochrany proti sledování zabráníte odesílatelům zjistit, zda a kdy jste zprávu otevřeli."
-      ],
       "Emails are automatically signed": [
         "E-maily jsou automaticky podepsány"
       ],
@@ -5248,6 +5332,9 @@
       ],
       "For messages newer than ${ oldestDate }": [
         "Pro zprávy novější než ${ oldestDate }"
+      ],
+      "For more search results, try searching for this keyword in the content of your email messages.": [
+        "Chcete-li získat více výsledků vyhledávání, zkuste toto klíčové slovo vyhledat v obsahu e-mailových zpráv."
       ],
       "Free up some space or add more storage space.": [
         "Uvolněte místo nebo přidejte další úložný prostor."
@@ -5363,6 +5450,9 @@
       "Link type": [
         "Typ odkazu"
       ],
+      "Links cleaned:": [
+        "Vyčištěno odkazů:"
+      ],
       "Loading": [
         "Načítání"
       ],
@@ -5393,11 +5483,8 @@
       "Merged": [
         "Sloučený"
       ],
-      "Message downloaded: ${ currentProgress } out of ${ totalProgress }": [
-        "Stahování zprávy: ${ currentProgress } z ${ totalProgress }",
-        "Stahování zpráv: ${ currentProgress } ze ${ totalProgress }",
-        "Stahování zpráv: ${ currentProgress } z ${ totalProgress }",
-        "Stahování zpráv: ${ currentProgress } z ${ totalProgress }"
+      "Message download status:": [
+        "Stav stahování zprávy:"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
         "Vypršení platnosti zprávy funguje mezi uživateli služby ${ MAIL_APP_NAME }. Pro zaslání e-mailů s omezenou platností uživatelům, kteří nepoužívají službu ${ BRAND_NAME }, prosím nepokračujte a přidejte k e-mailu ochranu heslem."
@@ -5447,9 +5534,6 @@
       "No email address": [
         "Žádná e-mailová adresa"
       ],
-      "No email trackers found": [
-        "Bez sledovacích prvků"
-      ],
       "No folder found": [
         "Nenalezena žádná složka"
       ],
@@ -5465,14 +5549,17 @@
       "No label selected": [
         "Není vybrán žádný štítek"
       ],
+      "No links cleaned": [
+        "Nebyl vyčištěn žádný odkaz"
+      ],
       "No more results found": [
         "Nebylo nalezeno více výsledků"
       ],
       "No results found": [
         "Nebyly nalezeny žádné výsledky"
       ],
-      "No trackers found, but some images could not be loaded with tracking protection": [
-        "Nebyly nalezeny žádné sledovací prvky, ale některé obrázky nebylo možné načíst s ochranou proti sledování"
+      "No trackers found": [
+        "Bez sledovacích prvků"
       ],
       "non-${ MAIL_APP_NAME }": [
         "mimo ${ MAIL_APP_NAME }"
@@ -5524,6 +5611,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Upozornění, tento proces může trvat nějakou dobu v záležitosti na velikosti Vašeho adresáře."
+      ],
+      "Please provide a name and an email address for creating a group.": [
+        "Pro vytvoření skupiny uveďte jméno a e-mailovou adresu."
       ],
       "Please select the folders you would like to import:": [
         "Vyberte složky, které chcete importovat:"
@@ -5781,7 +5871,7 @@
         "Tato pozvánka je uložena v zakázaném kalendáři."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        "Tento odkaz vede na webovou stránku, která se může pokoušet ukrást vaše údaje, například hesla a údaje o kreditní kartě."
+        "Tento odkaz vede na webovou stránku, která se může pokoušet ukrást vaše údaje, například hesla a údaje o platební kartě."
       ],
       "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Tento odkaz může být homografickým útokem a prohlížeč Edge jej nemůže otevřít. Pokud jste si jisti, že je odkaz legitimní, použijte k jeho otevření jiný prohlížeč."
@@ -5876,8 +5966,11 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Příliš mnoho zpráv čeká na odeslání. Prosím počkejte až bude další zpráva odeslána k naplánování této zprávy."
       ],
-      "Turn off to only search by date, name, or email address. To disable search message content and delete downloaded messages, go to settings.": [
-        "Vypněte vyhledávání pouze podle data, jména nebo e-mailové adresy. Chcete-li zakázat vyhledávání obsahu zpráv a odstranit stažené zprávy, přejděte do Nastavení."
+      "Trackers blocked:": [
+        "Zablokováno sledovacích prvků:"
+      ],
+      "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
+        "Vypněte pro vyhledávání pouze podle data, jména, e-mailové adresy nebo předmětu. Chcete-li zakázat vyhledávání v obsahu zpráv a smazat stažené zprávy, přejděte do nastavení."
       ],
       "Turn on to search the content of your messages": [
         "Zapněte pro možnost vyhledávat v obsahu vašich zpráv"
@@ -5893,9 +5986,6 @@
       ],
       "Updating message content search...": [
         "Aktualizuji vyhledávání ve zprávách..."
-      ],
-      "Updating your local messages, message content won't be searched during this update": [
-        "Aktualizace lokálních zpráv, obsah zpráv nebude během této aktualizace prohledáván"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Navyšte tarif nyní a získejte tím prémiové funkce, produkty a úložiště za speciální cenu"
@@ -5960,8 +6050,14 @@
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Omlouváme se. Toto mohla být chyba na naší straně. Potvrďte prosím, že jste si jistí, že chcete tento e-mail označit jako legitimní?"
       ],
+      "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
+        "Následujícím inzerentům a organizacím jsme zabránili, aby při otevření tohoto e-mailu viděli, jaké zařízení používáte a kde se nacházíte."
+      ],
       "We could not verify the sender's trusted keys.": [
         "Nemohli jsme ověřit důvěrné klíče odesílatele."
+      ],
+      "We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.": [
+        "Z následujících odkazů jsme odstranili informace ke sledování, abychom vás ochránili před inzerenty a dalšími subjekty, kteří se snaží sledovat vaši online aktivitu."
       ],
       "We'll notify you when the import is done.": [
         "Po dokončení importu Vás budeme informovat."
@@ -6021,7 +6117,7 @@
         "Můžete buď aktualizovat hledaný dotaz nebo ${ button }"
       ],
       "You can either update your search query or clear it": [
-        "Můžete buď aktualizovat hledaný dotaz nebo jej smazat"
+        "Vyhledávací dotaz můžete buď aktualizovat, nebo vyčistit"
       ],
       "You can import one data type at a time.": [
         "Importovat můžete vždy jeden typ dat."
@@ -6142,9 +6238,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Vaše soubory budou zašifrovány a uloženy"
-      ],
-      "Your import will not be processed.": [
-        "Váš import nebude zpracován."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Po dokončení importu nebudou Vaše přihlašovací údaje uloženy."
@@ -6529,6 +6622,9 @@
       "City": [
         "Město"
       ],
+      "Cleaned": [
+        "Vyčištěno"
+      ],
       "Code is 6 digits without spaces": [
         "Kód má 6 číslic bez mezer"
       ],
@@ -6730,6 +6826,9 @@
       "OK": [
         "OK"
       ],
+      "Open in a new tab": [
+        "Otevřít na nové kartě"
+      ],
       "Operating system": [
         "Operační systém"
       ],
@@ -6744,6 +6843,9 @@
       ],
       "Or": [
         "Nebo"
+      ],
+      "Original link": [
+        "Původní odkaz"
       ],
       "Participants": [
         "Účastníci"
@@ -7250,11 +7352,6 @@
         "K dispozici je nová verze aplikace ${ appName }. ${ reloadButton }."
       ]
     },
-    "Message has been sent to the user via a SimpleLogin alias": {
-      "Delivered via SimpleLogin by ${ BRAND_NAME }": [
-        "Doručeno pomocí SimpleLogin od ${ BRAND_NAME }"
-      ]
-    },
     "Message image": {
       "Image has not been loaded in order to protect your privacy.": [
         "Obrázek nebyl nahrán kvůli ochraně vašeho soukromí."
@@ -7585,11 +7682,42 @@
       "Set up your organization": [
         "Nastavení organizace"
       ],
-      "Set up your organization testing": [
-        "Nastavte testování Vaší organizace"
-      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Pomocí výběru aplikací v levém horním rohu získáte přístup ke všem službám ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } a ${ DRIVE_SHORT_APP_NAME }."
+      ]
+    },
+    "Online accounts": {
+      "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
+        "Máte účet u některé z těchto služeb? Stačí kliknout pro změnu e-mailové adresy na vaši adresu ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Online Accounts Name": {
+      "Banking": [
+        "Bankovnictví"
+      ],
+      "Crypto": [
+        "Krypto"
+      ],
+      "E-commerce and Retail": [
+        "Internetový obchod a maloobchod"
+      ],
+      "Entertainment": [
+        "Zábava"
+      ],
+      "Food and beverage": [
+        "Potraviny a nápoje"
+      ],
+      "Gaming": [
+        "Hry"
+      ],
+      "Most popular": [
+        "Nejoblíbenější"
+      ],
+      "Travel": [
+        "Cestování"
+      ],
+      "Utilities": [
+        "Nástroje"
       ]
     },
     "Option": {
@@ -7631,20 +7759,6 @@
     "Pagination": {
       "${ page } of ${ totalText }": [
         "${ page } z ${ totalText }"
-      ]
-    },
-    "Paid user checklist item": {
-      "Get mobile app": [
-        "Získat mobilní aplikaci"
-      ],
-      "Import contacts or emails": [
-        "Import kontaktů nebo emailů"
-      ],
-      "Send a message": [
-        "Odeslat zprávu"
-      ],
-      "Set up a recovery method": [
-        "Nastavit metodu obnovení"
       ]
     },
     "Participant name": {
@@ -7969,6 +8083,11 @@
         "Zjistili jsme několik varování. Následující e-mailové adresy nemusí obdržet e-maily:",
         "Zjistili jsme několik varování. Následující e-mailové adresy nemusí obdržet e-maily:",
         "Zjistili jsme několik varování. Následující e-mailové adresy nemusí obdržet e-maily:"
+      ]
+    },
+    "Sender verification details": {
+      "Sender verification": [
+        "Ověření odesílatele"
       ]
     },
     "Sent email icon": {
@@ -8364,9 +8483,6 @@
       ]
     },
     "Storage": {
-      "Get extra storage for free": [
-        "Získat další úložiště zdarma"
-      ],
       "Release notes": [
         "Seznam změn"
       ],
@@ -8681,6 +8797,70 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Zpětná vazba byla odeslána"
+      ]
+    },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "1 rok"
+      ],
+      "2 years": [
+        "2 roky"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "Prémiový Disk"
+      ],
+      "Premium Mail and Calendar": [
+        "Prémiový Mail a Kalendář"
+      ],
+      "Premium Password Manager": [
+        "Prémiový správce hesel"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Bezpečné ukládání hesel a jejich automatické vyplňování na webových stránkách. Obsahuje neomezený počet hesel, automatické vyplňování, generátor hesel a další funkce."
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Správce hesel"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Vytvoření zabezpečených přihlašovacích údajů na všech zařízeních. Obsahuje neomezený počet aliasů, 20 trezorů, integrovanou funkci 2FA, automatické vyplňování kreditních karet a další funkce."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Zahrnuje 2950 serverů v 65+ zemích, přípojení až 10 zařízení, přístup ke světovým streamovacím službám, blokovač malwaru a reklam a více."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Obsahuje podporu 1 vlastní e-mailové domény, 10 e-mailových adres, 10 aliasů pro hide-my-email, sdílení kalendáře a další funkce."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Obsahuje historii verzí, šifrované sdílení souborů a další funkce."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "*Vaše předplatné se automaticky obnoví za standardní zvýhodněnou sazbu na konci vašeho zúčtovacího cyklu."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Slevy jsou založeny na standardní měsíční ceně. Tato nabídka je k dispozici pouze pro první předplatitele."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Po omezenou dobu získáte to nejlepší, co ${ BRAND_NAME } nabízí, s exkluzivní slevou."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Slavíme devítileté výročí našeho crowdfundingu!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "${ BRAND_NAME } Výprodej k výročí"
       ]
     },
     "Table header": {
@@ -9137,6 +9317,9 @@
       "More selections": [
         "Další výběry"
       ],
+      "Move all messages to Archive": [
+        "Přesunout všechny zprávy do Archivu"
+      ],
       "Move all messages to Trash": [
         "Přesun všech zpráv do Koše"
       ],
@@ -9173,6 +9356,9 @@
       "No attachment found": [
         "Žádná příloha nenalezena"
       ],
+      "No trackers found": [
+        "Bez sledovacích prvků"
+      ],
       "Open actions dropdown": [
         "Otevřít seznam akcí"
       ],
@@ -9199,6 +9385,9 @@
       ],
       "Previous message": [
         "Předchozí zpráva"
+      ],
+      "Protect yourself from trackers": [
+        "Chraňte se před sledovacími prvky"
       ],
       "Re-sign all contacts": [
         "Znovu podepsat všechny kontakty"
@@ -9350,6 +9539,12 @@
       "Warning: suspected fake website": [
         "Varování: podezření na falešnou webovou stránku"
       ],
+      "We protected you from ${ trackersCount } tracker": [
+        "Ochránili jsme vás před ${ trackersCount } sledovacím prvkem",
+        "Ochránili jsme vás před ${ trackersCount } sledovacími prvky",
+        "Ochránili jsme vás před ${ trackersCount } sledovacími prvky",
+        "Ochránili jsme vás před ${ trackersCount } sledovacími prvky"
+      ],
       "Welcome": [
         "Vítejte"
       ],
@@ -9495,9 +9690,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } přenese co nejvíce dat, počínaje vašimi nejnovějšími zprávami."
-      ],
-      "Are you sure you want to discard your import?": [
-        "Jste si jistí, že chcete zahodit váš import?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Opravdu chcete nevratně smazat ${ count } skupinu kontaktů?",

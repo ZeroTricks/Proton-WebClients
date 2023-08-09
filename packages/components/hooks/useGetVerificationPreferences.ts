@@ -63,13 +63,14 @@ const useGetVerificationPreferences = () => {
                     apiKeys: activePublicKeys,
                     pinnedKeys: [],
                     compromisedFingerprints,
-                    ktVerificationStatus: KT_VERIFICATION_STATUS.VERIFIED_KEYS,
+                    ktVerificationResult: { status: KT_VERIFICATION_STATUS.VERIFIED_KEYS },
                 };
             }
             const {
                 RecipientType,
                 publicKeys: apiKeys,
-                ktVerificationStatus,
+                ktVerificationResult,
+                Errors,
             }: ApiKeysConfig = await getPublicKeys(emailAddress, lifetime);
             const isInternal = RecipientType === RECIPIENT_TYPES.TYPE_INTERNAL;
             const { publicKeys } = splitKeys(await getUserKeys());
@@ -88,9 +89,9 @@ const useGetVerificationPreferences = () => {
             const pinnedKeysFingerprints = new Set(pinnedKeys.map((key) => key.getFingerprint()));
             const apiPublicKeys = apiKeys.filter(({ publicKey }) => !!publicKey).map(({ publicKey }) => publicKey!);
             let verifyingKeys: PublicKeyReference[] = [];
-            if (pinnedKeys) {
+            if (pinnedKeys.length) {
                 verifyingKeys = getVerifyingKeys(pinnedKeys, compromisedKeysFingerprints);
-            } else if (isInternal && ktVerificationStatus === KT_VERIFICATION_STATUS.VERIFIED_KEYS) {
+            } else if (isInternal && ktVerificationResult?.status === KT_VERIFICATION_STATUS.VERIFIED_KEYS) {
                 verifyingKeys = getVerifyingKeys(apiPublicKeys, compromisedKeysFingerprints);
             }
             return {
@@ -98,10 +99,11 @@ const useGetVerificationPreferences = () => {
                 verifyingKeys,
                 pinnedKeys,
                 apiKeys: apiPublicKeys,
-                ktVerificationStatus,
+                ktVerificationResult,
                 pinnedKeysFingerprints,
                 compromisedKeysFingerprints,
                 pinnedKeysVerified,
+                apiKeysErrors: Errors,
             };
         },
         [api, getAddressKeys, getAddresses, getPublicKeys, getMailSettings]

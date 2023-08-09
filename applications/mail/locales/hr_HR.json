@@ -2751,19 +2751,8 @@
       ]
     },
     "Get started checklist instructions": {
-      "Available on iOS and Android.": [
-        "Dostupno na iOS i Android."
-      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Nabavite ${ MAIL_APP_NAME } mobilnu aplikaciju"
-      ],
-      "Using your mobile device, scan this QR code or visit": [
-        "Pomoću mobilnog uređaja skenirajte ovaj QR kôd ili posjetite"
-      ]
-    },
-    "Get started checklist title": {
-      "Get started": [
-        "Započnite"
       ]
     },
     "Group": {
@@ -3439,9 +3428,6 @@
       "No results found": [
         "Nema rezultata"
       ],
-      "No trackers found, but some images could not be loaded with tracking protection": [
-        "Nisu pronađeni tragovi, ali neke slike nije bilo moguće učitati sa zaštitom praćenja"
-      ],
       "Not a valid URL": [
         "Nije valjani URL"
       ],
@@ -3696,9 +3682,6 @@
       "You can either update your search query or ${ button }": [
         "Možete ažurirati svoj upit za pretraživanje ili ${ button }"
       ],
-      "You can either update your search query or clear it": [
-        "Možete ažurirati svoj upit za pretraživanje ili ukloniti ga"
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Možete uključiti obavijesti da biste dobili upozorenja kada u tu mapu stignu nove poruke e-pošte."
       ],
@@ -3731,9 +3714,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Vaša adresa e-pošte koristit će se samo za ovu jednokratnu provjeru."
-      ],
-      "Your import will not be processed.": [
-        "Vaš uvoz nije moguće obraditi."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Vaši podaci za prijavi neće biti spremljeni nakon što se uvoz završi."
@@ -5893,9 +5873,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } će prenijeti što više podataka, počevši od vaših najnovijih poruka."
-      ],
-      "Are you sure you want to discard your import?": [
-        "Jeste li sigurni da želite odbaciti vaš uvoz?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Jeste li sigurni da želite trajno izbrisati ${ count } grupu kontakata?",

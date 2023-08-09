@@ -14,7 +14,6 @@ import {
     DowngradeSubscriptionSection,
     EmailSubscriptionSection,
     ErrorBoundary,
-    FeatureCode,
     FreeUserLiveChatModal,
     GiftCodeSection,
     InvoicesSection,
@@ -40,12 +39,12 @@ import {
     TopBanners,
     TopNavbarUpsell,
     UnAuthenticated,
+    UpgradeVpnSection,
     UserDropdown,
     UsernameSection,
     WireGuardConfigurationSection,
     YourPlanSection,
     useActiveBreakpoint,
-    useFeature,
     useModalState,
     useSubscription,
     useToggle,
@@ -60,7 +59,6 @@ import LiveChatZendesk, {
     getIsSelfChat,
     useCanEnableChat,
 } from '@proton/components/containers/zendesk/LiveChatZendesk';
-import useTelemetryScreenSize from '@proton/components/hooks/useTelemetryScreenSize';
 import { DEFAULT_APP, getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import { localeCode } from '@proton/shared/lib/i18n';
@@ -73,11 +71,6 @@ import { getRoutes } from './routes';
 const vpnZendeskKey = 'c08ab87d-68c3-4d7d-a419-a0a1ef34759d';
 
 const MainContainer = () => {
-    useTelemetryScreenSize();
-
-    const isAccessibilitySettingsEnabled =
-        useFeature<boolean>(FeatureCode.AccessibilitySettings)?.feature?.Value === true;
-
     const [user] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
     const [tagsArray, setTagsArray] = useState<string[]>([]);
@@ -214,9 +207,12 @@ const MainContainer = () => {
                                         <PrivateMainSettingsArea config={routes.dashboard}>
                                             <PlansSection app={APPS.PROTONVPN_SETTINGS} />
                                             <YourPlanSection app={APPS.PROTONVPN_SETTINGS} />
+                                            <UpgradeVpnSection app={APPS.PROTONVPN_SETTINGS} />
                                             <SubscriptionsSection />
+                                            <PaymentMethodsSection />
                                             <CreditsSection />
                                             <GiftCodeSection />
+                                            <InvoicesSection />
                                             <CancelSubscriptionSection />
                                             <DowngradeSubscriptionSection />
                                         </PrivateMainSettingsArea>
@@ -226,7 +222,7 @@ const MainContainer = () => {
                             <Route path={routes.general.to}>
                                 <PrivateMainSettingsArea config={routes.general}>
                                     <LanguageSection locales={locales} />
-                                    <ThemesSection accessibilitySettingsAvailable={isAccessibilitySettingsEnabled} />
+                                    <ThemesSection />
                                 </PrivateMainSettingsArea>
                             </Route>
                             <Route path={routes.account.to}>
@@ -249,14 +245,6 @@ const MainContainer = () => {
                                     <WireGuardConfigurationSection />
                                 </PrivateMainSettingsArea>
                             </Route>
-                            {getIsSectionAvailable(routes.payments) && (
-                                <Route path={routes.payments.to}>
-                                    <PrivateMainSettingsArea config={routes.payments}>
-                                        <PaymentMethodsSection />
-                                        <InvoicesSection />
-                                    </PrivateMainSettingsArea>
-                                </Route>
-                            )}
                             <Redirect
                                 to={getIsSectionAvailable(routes.dashboard) ? routes.dashboard.to : routes.downloads.to}
                             />

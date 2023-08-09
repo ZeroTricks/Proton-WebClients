@@ -15,17 +15,16 @@ import {
     InputFieldTwo,
     Label,
     PasswordInputTwo,
-    useConfig,
     useFormErrors,
-    useLoading,
     useLocalState,
 } from '@proton/components';
-import { getIsVPNApp } from '@proton/shared/lib/authentication/apps';
-import { APP_NAMES, BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
+import { useLoading } from '@proton/hooks';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
 
+import type { Paths } from '../content/helper';
 import SupportDropdown from '../public/SupportDropdown';
 import { defaultPersistentKey } from '../public/helper';
 import Loader from '../signup/Loader';
@@ -37,24 +36,21 @@ interface Props {
         persistent: boolean;
         payload: ChallengeResult;
     }) => Promise<void>;
-    toApp?: APP_NAMES;
     signInText?: string;
     defaultUsername?: string;
     hasRemember?: boolean;
     trustedDeviceRecoveryFeature?: { loading?: boolean; feature: { Value: boolean } | undefined };
-    signupUrl: string;
+    paths: Paths;
 }
 
 const LoginForm = ({
     onSubmit,
-    toApp,
     defaultUsername = '',
     signInText = c('Action').t`Sign in`,
     hasRemember,
     trustedDeviceRecoveryFeature,
-    signupUrl,
+    paths,
 }: Props) => {
-    const { APP_NAME } = useConfig();
     const [submitting, withSubmitting] = useLoading();
     const [username, setUsername] = useState(defaultUsername);
     const [password, setPassword] = useState('');
@@ -64,8 +60,6 @@ const LoginForm = ({
     const challengeRefLogin = useRef<ChallengeRef>();
     const [challengeLoading, setChallengeLoading] = useState(true);
     const [challengeError, setChallengeError] = useState(false);
-
-    const isVPN = getIsVPNApp(APP_NAME) || getIsVPNApp(toApp);
 
     const loading = Boolean(challengeLoading || trustedDeviceRecoveryFeature?.loading);
 
@@ -102,8 +96,8 @@ const LoginForm = ({
         </Href>
     );
 
-    const signUp = signupUrl && (
-        <Link key="signup" className="link link-focus text-nowrap" to={signupUrl}>
+    const signUp = paths.signup && (
+        <Link key="signup" className="link link-focus text-nowrap" to={paths.signup}>
             {c('Link').t`Create account`}
         </Link>
     );
@@ -153,7 +147,7 @@ const LoginForm = ({
                 <InputFieldTwo
                     id="username"
                     bigger
-                    label={isVPN ? c('Label').t`${BRAND_NAME} email or username` : c('Label').t`Email or username`}
+                    label={c('Label').t`Email or username`}
                     error={validator([requiredValidator(username)])}
                     disableChange={submitting}
                     autoComplete="username"
@@ -235,14 +229,14 @@ const LoginForm = ({
                         content={c('Link').t`Trouble signing in?`}
                     >
                         <Link
-                            to={SSO_PATHS.RESET_PASSWORD}
+                            to={paths.reset}
                             className="dropdown-item-link w100 px-4 py-2 block text-no-decoration text-left"
                         >
                             <Icon name="user-circle" className="mr-2" />
                             {c('Link').t`Reset password`}
                         </Link>
                         <Link
-                            to={SSO_PATHS.FORGOT_USERNAME}
+                            to={paths.forgotUsername}
                             className="dropdown-item-link w100 px-4 py-2 block text-no-decoration text-left"
                         >
                             <Icon name="key" className="mr-2" />

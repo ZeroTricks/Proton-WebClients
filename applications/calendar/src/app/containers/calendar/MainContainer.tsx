@@ -11,7 +11,6 @@ import {
     useUser,
     useWelcomeFlags,
 } from '@proton/components';
-import useTelemetryScreenSize from '@proton/components/hooks/useTelemetryScreenSize';
 import { useInstance } from '@proton/hooks/index';
 import { getVisualCalendars, groupCalendarsByTaxonomy, sortCalendars } from '@proton/shared/lib/calendar/calendar';
 import { CALENDAR_FLAGS } from '@proton/shared/lib/calendar/constants';
@@ -26,7 +25,6 @@ import MainContainerSetup from './MainContainerSetup';
 import { fromUrlParams } from './getUrlHelper';
 
 const MainContainer = () => {
-    useTelemetryScreenSize();
     useCalendarFavicon();
 
     const [addresses] = useAddresses();
@@ -64,7 +62,11 @@ const MainContainer = () => {
 
     const [calendarsToUnlock, setCalendarsToUnlock] = useState(() => {
         return memoedCalendars.filter(({ Flags }) => {
-            return hasBit(Flags, CALENDAR_FLAGS.RESET_NEEDED) || hasBit(Flags, CALENDAR_FLAGS.UPDATE_PASSPHRASE);
+            return (
+                hasBit(Flags, CALENDAR_FLAGS.RESET_NEEDED) ||
+                hasBit(Flags, CALENDAR_FLAGS.UPDATE_PASSPHRASE) ||
+                hasBit(Flags, CALENDAR_FLAGS.LOST_ACCESS)
+            );
         });
     });
 

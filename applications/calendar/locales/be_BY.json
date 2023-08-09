@@ -141,6 +141,9 @@
       "Continue with Google": [
         "Працягнуць з Google"
       ],
+      "Copy email address": [
+        "Скапіяваць адрас электроннай пошты"
+      ],
       "Copy email to clipboard": [
         "Капіяваць ліст у буфер абмену"
       ],
@@ -158,6 +161,9 @@
       ],
       "Create event": [
         "Стварыць падзею"
+      ],
+      "Create new contact": [
+        "Стварыць новы кантакт"
       ],
       "Customize": [
         "Наладзіць"
@@ -584,6 +590,9 @@
       ],
       "View": [
         "Прагледзець"
+      ],
+      "View contact details": [
+        "Паглядзець кантактныя звесткі"
       ],
       "View invoice": [
         "Паглядзець рахунак"
@@ -2178,6 +2187,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Вы можаце таксама праверыць наш ${ statusPageLink }"
+      ],
       "${ list } doesn't have a valid email address": [
         "У ${ list } няма сапраўднага адраса электроннай пошты",
         "У некаторых кантактаў няма сапраўдных адрасоў электроннай пошты: ${ list }",
@@ -2459,6 +2471,9 @@
       ],
       "Start time must be before end time": [
         "Час пачатку павінен быць ранейшым за час завяршэння"
+      ],
+      "status page": [
+        "статус старонкі"
       ],
       "The address might be misspelled": [
         "Магчыма, што адрас няправільны"
@@ -3063,8 +3078,8 @@
       "System default": [
         "Адпаведна сістэме"
       ],
-      "Theme default": [
-        "Прадвызначаная тэма"
+      "Theme font": [
+        "Шрыфт тэмы"
       ]
     },
     "Font size option": {
@@ -3555,7 +3570,7 @@
         "Дададзеныя і выдаленыя ўдзельнікі атрымаюць апавяшчэнне пра ўсе падзеі ў гэтай серыі."
       ],
       "Added and removed participants will be notified.": [
-        "Дададзеныя і выдаленыя ўдзельнікі атрымаюць апавяшчэнні."
+        "Дададзеныя і выдаленыя ўдзельнікі атрымаюць апавяшчэнне."
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Для гэтага адраса ўключана праверка адраса даверанымі ключамі. Каб атрымаць магчымасць адпраўкі на гэты адрас, спачатку зрабіце даверанымі публічныя ключы, якія можна выкарыстоўваць для адпраўкі."
@@ -3822,7 +3837,7 @@
         "Назавіце новую папку і выберыце бацькоўскую папку, у якую вы хочаце яе ўкласці. Калі вы не выбераце бацькоўскую папку, то гэта новая папка будзе створана як папка верхняга ўзроўню."
       ],
       "New": [
-        "Новы"
+        "Новае"
       ],
       "No contacts added yet": [
         "Кантакты пакуль не дададзены"
@@ -3865,6 +3880,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Звярніце ўвагу, што гэты працэс можа заняць некаторы час у залежнасці ад памеру вашай адраснай кнігі."
+      ],
+      "Please provide a name and an email address for creating a group.": [
+        "Забяспечце назву і адрас электроннай пошты для стварэння групы."
       ],
       "Please remove the duplicates and try again.": [
         "Выдаліце дублікаты і паспрабуйце яшчэ раз."
@@ -3945,7 +3963,7 @@
         "Немагчыма апавясціць арганізатара, што вы хочаце змяніць свой адказ:"
       ],
       "The organizer could not be notified that you changed your answer:": [
-        "Немагчыма апавясціць арганізатара, што вы змянілі свой адказ:"
+        "Не ўдалося апавясціць арганізатара, што вы змянілі свой адказ:"
       ],
       "The organizer has updated some of the events in this series. Changing the calendar is not supported yet for this type of recurring events.": [
         "Арганізатар абнавіў некаторыя падзеі ў гэтай серыі. Змяненне календара пакуль не падтрымліваецца для дадзенага тыпу перыядычных падзей."
@@ -4150,9 +4168,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Вашы файлы будуць зашыфраваны, а пасля гэтага захаваны"
-      ],
-      "Your import will not be processed.": [
-        "Ваша імпартаванне не будзе апрацавана."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Пасля завяршэння імпартавання вашы даныя ўваходу не будуць захаваны."
@@ -4749,8 +4764,8 @@
       ]
     },
     "Modal action": {
-      "Close": [
-        "Закрыць"
+      "Cancel": [
+        "Скасаваць"
       ],
       "Manage calendars": [
         "Кіраванне календарамі"
@@ -5039,6 +5054,9 @@
       ],
       "Calendar added": [
         "Каляндар дададзены"
+      ],
+      "Calendar updated": [
+        "Каляндар абноўлены"
       ]
     },
     "Notification in share calendar modal": {
@@ -5259,9 +5277,6 @@
         "Выберыце тэму"
       ],
       "Set up your organization": [
-        "Наладзьце сваю арганізацыю"
-      ],
-      "Set up your organization testing": [
         "Наладзьце сваю арганізацыю"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
@@ -5575,8 +5590,8 @@
       ]
     },
     "Shared calendar; Info about calendar owner": {
-      "Created by ${ ownerName }": [
-        "Створана ${ ownerName }"
+      "Shared by ${ ownerName }": [
+        "Абагулена ${ ownerName }"
       ]
     },
     "Side panel spotlight": {
@@ -5718,7 +5733,7 @@
         "Прапанова абмежавана па часе"
       ],
       "Most popular": [
-        "Самы папулярны"
+        "Найбольш папулярны"
       ],
       "Offer ends soon": [
         "Прапанова неўзабаве скончыцца"
@@ -5890,19 +5905,6 @@
         "Даведайцеся, як атрымаць прыватную спасылку на каляндар."
       ]
     },
-    "Subscribed calendar extension warning": {
-      "By using this link, Google will make the calendar you are subscribing to public": [
-        "Гэта спасылка дазволіць Google зрабіць каляндар на які вы падпісваецеся публічным"
-      ],
-      "This link might be wrong": [
-        "Гэта спасылка можа быць няправільнай"
-      ]
-    },
-    "Subscribed calendar URL length warning": {
-      "URL is too long": [
-        "Занадта доўгі URL-адрас"
-      ]
-    },
     "Success": {
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } кантакт выглядае ідэнтычна.",
@@ -6060,6 +6062,70 @@
         "Водгук адпраўлены"
       ]
     },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "1 год"
+      ],
+      "2 years": [
+        "2 гады"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "Прэміяльныя функцыі Drive"
+      ],
+      "Premium Mail and Calendar": [
+        "Прэміяльныя функцыі Mail і Calendar"
+      ],
+      "Premium Password Manager": [
+        "Прэміяльныя функцыі менеджара пароляў"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Бяспечна захоўвайце свае паролі і аўтаматычна запаўняйце іх на вэб-сайтах. Уключае неабмежаваную колькасць пароляў, аўтаматычнае запаўненне, генератар пароляў і іншыя функцыі."
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Менеджар пароляў"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Стварайце бяспечныя даныя для ўваходу на ўсіх сваіх прыладах. Уключае неабмежаваную колькасць псеўданімаў, 20 сховішчаў, інтэграваную 2ФА, аўтаматычнае запаўненне крэдытных картак і іншыя функцыі."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Уключае больш за 2950 сервераў у больш чым 65 краінах, магчымасць падключаць да 10 прылад, сэрвісы з трансляцыямі па ўсім свеце, блакіроўку шкодных праграм і рэкламы, а таксама іншыя функцыі."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Уключае падтрымку 1 карыстальніцкага дамена электроннай пошты, 10 адрасоў электроннай пошты, 10 псеўданімаў hide-my-email, абагульванне календара і іншыя функцыі."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае гісторыю версій, абагулены доступ да зашыфраваных файлаў і іншыя функцыі."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "*Ваша падпіска будзе аўтаматычна падаўжацца са стандартнай скідкай у канцы перыяду аплаты."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Скідкі разлічваюцца на падставе стандартнай платы за месяц. Гэтай прапановай могуць скарыстацца толькі тыя падпісчыкі, якія ўпершыню зарэгістраваліся."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Атрымайце эксклюзіўную скідку ад ${ BRAND_NAME }. Прапанова абмежавана па часе."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Мы святкуем дзявятую гадавіну нашага краўдфандзінга!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "Святочны распродаж ${ BRAND_NAME }"
+      ]
+    },
     "Table header": {
       "Action": [
         "Дзеянне"
@@ -6197,7 +6263,7 @@
         "Дадаць у ${ groupCount } групу",
         "Дадаць у ${ groupCount } групы",
         "Дадаць у ${ groupCount } груп",
-        "Дадаць у ${ groupCount } групы"
+        "Дадаць у ${ groupCount } груп"
       ],
       "Add to ${ groupName }": [
         "Дадаць у ${ groupName }"
@@ -6692,9 +6758,6 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } перанясе столькі даных, колькі будзе магчыма, пачынаючы з самых новых паведамленняў."
       ],
-      "Are you sure you want to discard your import?": [
-        "Вы сапраўды хочаце адхіліць імпартаванне?"
-      ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Вы сапраўды хочаце незваротна выдаліць ${ count } групу кантактаў?",
         "Вы сапраўды хочаце незваротна выдаліць ${ count } групы кантактаў?",
@@ -6767,7 +6830,7 @@
         "Для доступу да гэтага абагуленага календара, уключыце гэты адрас або папрасіце ${ boldCalendarOwnerEmail } адправіць запрашэнне на актывацыю адраса."
       ],
       "You cannot join this calendar because your invited email address (${ boldInvitedAddress }) is disabled.": [
-        "Вы не можаце далучыцца да гэтага календара, таму што запрошаны адрас электроннай пошты (${ boldInvitedAddress }) адключаны."
+        "Вы не можаце далучыцца да гэтага календара, бо запрошаны адрас электроннай пошты (${ boldInvitedAddress }) адключаны."
       ]
     },
     "Weekly recurring event, frequency": {

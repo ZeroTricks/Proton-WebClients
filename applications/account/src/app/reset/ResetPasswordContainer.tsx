@@ -15,6 +15,7 @@ import {
     useLocalState,
     useMyCountry,
     useNotifications,
+    useResetSelfAudit,
     useSearchParamsEffect,
 } from '@proton/components';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
@@ -38,7 +39,6 @@ import { decodeAutomaticResetParams } from '@proton/shared/lib/helpers/encoding'
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
 
-import resetPasswordPage from '../../pages/reset-password.json';
 import LoginSupportDropdown from '../login/LoginSupportDropdown';
 import SetPasswordForm from '../login/SetPasswordForm';
 import Content from '../public/Content';
@@ -48,7 +48,7 @@ import Main from '../public/Main';
 import Text from '../public/Text';
 import { defaultPersistentKey } from '../public/helper';
 import { useFlowRef } from '../useFlowRef';
-import { useMetaTags } from '../useMetaTags';
+import { MetaTags, useMetaTags } from '../useMetaTags';
 import RequestRecoveryForm from './RequestRecoveryForm';
 import RequestResetTokenForm from './RequestResetTokenForm';
 import ValidateResetTokenForm from './ValidateResetTokenForm';
@@ -57,12 +57,14 @@ interface Props {
     onLogin: OnLoginCallback;
     toApp: APP_NAMES | undefined;
     setupVPN: boolean;
+    loginUrl: string;
+    metaTags: MetaTags;
 }
 
-const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
+const ResetPasswordContainer = ({ metaTags, onLogin, setupVPN, loginUrl }: Props) => {
     const { APP_NAME } = useConfig();
 
-    useMetaTags({ title: resetPasswordPage.appTitle, description: resetPasswordPage.appDescription });
+    useMetaTags(metaTags);
 
     const history = useHistory();
     const location = useLocation();
@@ -83,13 +85,14 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
             : originalTrustedDeviceRecoveryFeature;
     const hasTrustedDeviceRecovery = !!trustedDeviceRecoveryFeature.feature?.Value;
     const ktActivation = useKTActivation();
+    const resetSelfAudit = useResetSelfAudit();
 
     const [defaultCountry] = useMyCountry();
 
     const createFlow = useFlowRef();
 
     const handleBack = () => {
-        history.push('/login');
+        history.push(loginUrl);
     };
 
     const [step, setStep] = useState(STEPS.REQUEST_RECOVERY_METHODS);
@@ -107,6 +110,7 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
             Methods: [],
             hasTrustedDeviceRecovery,
             ktActivation,
+            resetSelfAudit,
         };
         setStep(STEPS.REQUEST_RECOVERY_METHODS);
     };
@@ -188,6 +192,7 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
                     type: 'internal',
                     hasTrustedDeviceRecovery,
                     ktActivation,
+                    resetSelfAudit,
                 };
 
                 const validateFlow = createFlow();
@@ -243,6 +248,7 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
                                 persistent,
                                 hasTrustedDeviceRecovery,
                                 ktActivation,
+                                resetSelfAudit,
                             },
                             token,
                         });
@@ -288,7 +294,6 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
         return handleCancel;
     })();
 
-    console.log(cache);
     const children = (
         <Main>
             {step === STEPS.LOADING && (
@@ -306,6 +311,7 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
                         <Text>{c('Info').t`Enter your ${BRAND_NAME} Account email address or username.`}</Text>
                         {/* key to trigger a refresh so that it renders a default username */}
                         <RequestRecoveryForm
+                            loginUrl={loginUrl}
                             key={automaticVerification.username}
                             loading={automaticVerification.loading}
                             defaultUsername={cache?.username || automaticVerification.username}
@@ -321,6 +327,7 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
                                         username,
                                         persistent,
                                         api: silentApi,
+                                        resetSelfAudit,
                                     });
                                     if (validateFlow()) {
                                         return await handleResult(result);
@@ -360,6 +367,7 @@ const ResetPasswordContainer = ({ onLogin, setupVPN }: Props) => {
                     <Header title={c('Title').t`Reset password`} onBack={handleBackStep} />
                     <Content>
                         <RequestResetTokenForm
+                            loginUrl={loginUrl}
                             defaultCountry={defaultCountry}
                             defaultEmail={
                                 cache.type === 'external' && cache.Methods.includes('login')

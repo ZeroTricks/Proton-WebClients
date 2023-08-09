@@ -1,0 +1,1577 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=2; plural=(n != 1);",
+    "language": "da_DK"
+  },
+  "contexts": {
+    "Action": {
+      "Add": [
+        "Tilføj"
+      ],
+      "Add current url": [
+        "Tilføj nuværende URL"
+      ],
+      "Add more": [
+        "Tilføj mere"
+      ],
+      "Add new item": [
+        "Tilføj nyt element"
+      ],
+      "Advanced": [
+        "Avanceret"
+      ],
+      "Advanced options": [
+        "Avancerede indstillinger"
+      ],
+      "Back": [
+        "Tilbage"
+      ],
+      "Can't find your password manager? Please let us know!": [
+        "Kan du ikke finde din adgangskodeadministrator? Giv os besked!"
+      ],
+      "Cancel": [
+        "Annullér"
+      ],
+      "Change": [
+        "Skift"
+      ],
+      "Choose a file or drag it here": [
+        "Vælg en fil eller træk den hertil"
+      ],
+      "Clear": [
+        "Ryd"
+      ],
+      "Clear search": [
+        "Ryd søgning"
+      ],
+      "Close": [
+        "Luk"
+      ],
+      "Close advanced options": [
+        "Luk avancerede indstillinger"
+      ],
+      "Close navigation": [
+        "Luk navigation"
+      ],
+      "Confirm": [
+        "Bekræft"
+      ],
+      "Continue without pinning": [
+        "Fortsæt uden at fastgøre"
+      ],
+      "Copy & fill in": [
+        "Kopiér og udfyld"
+      ],
+      "Copy and close": [
+        "Kopiér og luk"
+      ],
+      "Copy to clipboard": [
+        "Kopiér til udklipsholder"
+      ],
+      "Create": [
+        "Opret"
+      ],
+      "Create a ${ BRAND_NAME } account": [
+        "Opret en ${ BRAND_NAME }-konto"
+      ],
+      "Create alias": [
+        "Opret alias"
+      ],
+      "Create an account": [
+        "Opret en konto"
+      ],
+      "Create login": [
+        "Opret login"
+      ],
+      "Create note": [
+        "Opret note"
+      ],
+      "Create vault": [
+        "Opret boks"
+      ],
+      "Creating vault": [
+        "Opretter boks"
+      ],
+      "Delete": [
+        "Slet"
+      ],
+      "Delete alias": [
+        "Slet alias"
+      ],
+      "Delete all": [
+        "Slet alle"
+      ],
+      "Delete password": [
+        "Slet adgangskode"
+      ],
+      "Delete permanently": [
+        "Slet permanent"
+      ],
+      "Delete vault": [
+        "Slet boks"
+      ],
+      "Discard": [
+        "Kassér"
+      ],
+      "Dismiss": [
+        "Afvis"
+      ],
+      "Done": [
+        "Udført"
+      ],
+      "Edit": [
+        "Redigér"
+      ],
+      "Edit vault": [
+        "Redigér boks"
+      ],
+      "Export": [
+        "Eksportér"
+      ],
+      "Feedback": [
+        "Feedback"
+      ],
+      "Fill password": [
+        "Udfyld adgangskode"
+      ],
+      "Filter vault items": [
+        "Filtrér elementer i boks"
+      ],
+      "Generate alias": [
+        "Generér alias"
+      ],
+      "Generate password": [
+        "Generér adgangskode"
+      ],
+      "Generated password": [
+        "Genereret adgangskode"
+      ],
+      "Get mobile apps": [
+        "Hent mobilapps"
+      ],
+      "Help us improve": [
+        "Hjælp os med at blive bedre"
+      ],
+      "Hide": [
+        "Skjul"
+      ],
+      "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
+        "Hvordan eksporterer jeg mine data fra ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
+      ],
+      "Import": [
+        "Importér"
+      ],
+      "Import your passwords": [
+        "Importér dine adgangskoder"
+      ],
+      "Importing": [
+        "Importerer"
+      ],
+      "Learn more": [
+        "Få mere at vide"
+      ],
+      "Lock extension": [
+        "Lås udvidelse"
+      ],
+      "Manually sync your data": [
+        "Synkronisér dine data manuelt"
+      ],
+      "More options": [
+        "Flere muligheder"
+      ],
+      "Move to another vault": [
+        "Flyt til en anden boks"
+      ],
+      "Move to Trash": [
+        "Flyt til papirkurv"
+      ],
+      "Move to trash": [
+        "Flyt til papirkurv"
+      ],
+      "Not now": [
+        "Ikke nu"
+      ],
+      "Open navigation": [
+        "Åbn navigation"
+      ],
+      "Pass for Android": [
+        "Pass til Android"
+      ],
+      "Pass for iOS": [
+        "Pass til iOS"
+      ],
+      "Proceed": [
+        "Fortsæt"
+      ],
+      "Refresh the page": [
+        "Opdater siden"
+      ],
+      "Regenerate": [
+        "Regenerér"
+      ],
+      "Reload extension": [
+        "Genindlæs udvidelse"
+      ],
+      "Request a feature": [
+        "Anmod om en funktion"
+      ],
+      "Restore item": [
+        "Gendan element"
+      ],
+      "Retry": [
+        "Prøv igen"
+      ],
+      "Save": [
+        "Gem"
+      ],
+      "Saving": [
+        "Gemmer"
+      ],
+      "Send us a message": [
+        "Send en besked til os"
+      ],
+      "Show": [
+        "Vis"
+      ],
+      "Sign back in": [
+        "Log ind igen"
+      ],
+      "Sign in": [
+        "Log ind"
+      ],
+      "Sign in with ${ BRAND_NAME }": [
+        "Log ind på ${ BRAND_NAME }"
+      ],
+      "Sign out": [
+        "Log ud"
+      ],
+      "Sort vault items": [
+        "Sortér elementer i boks"
+      ],
+      "Submit": [
+        "Indsend"
+      ],
+      "Submitting report...": [
+        "Indsender rapport..."
+      ],
+      "Try again": [
+        "Prøv igen"
+      ],
+      "Update": [
+        "Opdatér"
+      ],
+      "Updating": [
+        "Opdaterer"
+      ],
+      "Upgrade": [
+        "Opgradér"
+      ],
+      "Upgrade to keep these features": [
+        "Opgradér for at beholde disse funktioner"
+      ],
+      "Write us on Reddit": [
+        "Skriv til os på Reddit"
+      ],
+      "Write us on Twitter": [
+        "Skriv til os på Twitter"
+      ]
+    },
+    "Button": {
+      "More info": [
+        "Yderligere info"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Fold sammen"
+      ],
+      "Expand": [
+        "Udvid"
+      ]
+    },
+    "Error": {
+      "${ provider } file could not be parsed. ${ errorDetail }": [
+        "${ provider }-fil kunne ikke fortolkes. ${ errorDetail }"
+      ],
+      "Alias options could not be resolved": [
+        "Aliasindstillinger kunne ikke løses"
+      ],
+      "Authentication error": [
+        "Godkendelsesfejl"
+      ],
+      "Auto-lock could not be activated": [
+        "Autolås kunne ikke aktiveres"
+      ],
+      "Auto-lock could not be disabled": [
+        "Autolås kunne ikke deaktiveres"
+      ],
+      "Cannot create alias (${ error }).": [
+        "Kan ikke oprette alias (${ error })."
+      ],
+      "Could not open created vault": [
+        "Kunne ikke åbne den oprettede boks"
+      ],
+      "Could not open updated vault": [
+        "Kunne ikke åbne den opdaterede boks"
+      ],
+      "Could not resume your session : ${ description }": [
+        "Kunne ikke genoptage din session : ${ description }"
+      ],
+      "CSV file is missing expected headers: ${ missingHeaders }": [
+        "CSV-fil mangler forventede overskrifter: ${ missingHeaders }"
+      ],
+      "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
+        "Dekryptering af din ${ PASS_APP_NAME } eksport-fil mislykkedes. ${ errorDetail }"
+      ],
+      "Deleting item failed": [
+        "Sletning af element mislykkedes"
+      ],
+      "Deleting vault \"${ payload.content.name }\" failed": [
+        "Sletning af boksen \"${ payload.content.name }\" mislykkedes"
+      ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "Opdagede ${ errors.length } beskadiget CSV-række",
+        "Opdagede ${ errors.length } beskadigede CSV-rækker"
+      ],
+      "Editing item failed": [
+        "Redigering af element mislykkedes"
+      ],
+      "Empty CSV file": [
+        "Tom CSV-fil"
+      ],
+      "Emptying trash failed": [
+        "Tømning af papirkurv mislykkedes"
+      ],
+      "Encrypted JSON not supported": [
+        "Krypteret JSON er ikke understøttet"
+      ],
+      "Error reporting problem": [
+        "Problem med fejlrapportering"
+      ],
+      "File could not be parsed": [
+        "Fil kunne ikke fortolkes"
+      ],
+      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
+        "Import mislykkedes for boks \"${ vaultData.name }\" : ${ description }"
+      ],
+      "Importing items failed": [
+        "Import af elementer mislykkedes"
+      ],
+      "Invalid password manager": [
+        "Ugyldig adgangskodeadministrator"
+      ],
+      "Item content cannot exceed 40kb": [
+        "Element-indhold kan ikke overstige 40 kb"
+      ],
+      "Item creation failed": [
+        "Oprettelse af element mislykkedes"
+      ],
+      "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
+        "LastPass vil eksportere en korrupteret CSV-fil hvis nogle af dine element-felter indeholder uventede kommaet, citationstegn eller flere linjer."
+      ],
+      "Moving item failed": [
+        "Flytning af element mislykkedes"
+      ],
+      "Passphrase is incorrect": [
+        "Adgangssætning er forkert"
+      ],
+      "PIN codes do not match": [
+        "Pinkoder stemmer ikke overens"
+      ],
+      "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
+        "Giv venligst ${ PASS_APP_NAME } de nødvendige udvidelsestilladelser for at kunne fortsætte"
+      ],
+      "Please pin the extension or select \"Continue without pinning\".": [
+        "Fastgør udvidelsen, eller vælg \"Fortsæt uden at fastgøre\"."
+      ],
+      "Request timed out": [
+        "Forespørgsel fik timeout"
+      ],
+      "Requesting alias details failed": [
+        "Anmodning om alias-detaljer mislykkedes"
+      ],
+      "Requesting alias options failed": [
+        "Anmodning om alias-indstillinger mislykkedes"
+      ],
+      "Restoring item failed": [
+        "Genoprettelse af element mislykkedes"
+      ],
+      "Setting \"${ payload.name }\" as primary vault failed": [
+        "Det mislykkedes at indstille \"${ payload.name }\" som den primære boks"
+      ],
+      "Settings update failed": [
+        "Ændring af indstillinger mislykkedes"
+      ],
+      "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
+        "Nogle bokse er ikke længere tilgængelige grundet en nulstilling af adgangskoden. Genaktiver dine kontonøgler for at få adgang igen. ${ reactivateLink }"
+      ],
+      "Something went wrong": [
+        "Noget gik galt"
+      ],
+      "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
+        "Noget gik galt. Genindlæs venligst ${ PASS_APP_NAME }-udvidelsen. Dette problem er blevet registreret"
+      ],
+      "The file you are trying to import is empty": [
+        "Filen du prøver at importere er tom"
+      ],
+      "Too many failed attempts. Please sign in again.": [
+        "For mange mislykkede forsøg. Log venligst ind igen."
+      ],
+      "Trashing item failed": [
+        "Sletning af element mislykkedes"
+      ],
+      "Unable to boot": [
+        "Kan ikke logge boote"
+      ],
+      "Unable to generate an OTP code for this item": [
+        "Kunne ikke generere en OTP-kode for dette element"
+      ],
+      "Unable to sync": [
+        "Synkronisering mislykkedes"
+      ],
+      "Unknown error": [
+        "Ukendt fejl"
+      ],
+      "Unsupported ${ PASS_APP_NAME } file format": [
+        "Ikke-understøttet ${ PASS_APP_NAME } filformat"
+      ],
+      "Unsupported 1Password file format": [
+        "Ikke-understøttet 1Password filformat"
+      ],
+      "Updating vault \"${ payload.content.name }\" failed": [
+        "Opdatering af boksen \"${ payload.content.name }\" mislykkedes"
+      ],
+      "Vault \"${ payload.content.name }\" creation failed": [
+        "Oprettelse af boksen \"${ payload.content.name }\" mislykkedes"
+      ],
+      "Vault \"${ vaultData.name }\" could not be created": [
+        "Boks \"${ vaultData.name }\" kunne ikke oprettes"
+      ],
+      "Vault name does not match": [
+        "Boksens navn matcher ikke"
+      ],
+      "Wrong PIN code. Try again.": [
+        "Forkert pinkode. Prøv igen."
+      ]
+    },
+    "Error message": {
+      "Please refresh the page or try again later.": [
+        "Opdater venligst siden eller prøv igen senere."
+      ],
+      "Something went wrong": [
+        "Noget gik galt"
+      ]
+    },
+    "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "Megabyte",
+        "Megabytes"
+      ]
+    },
+    "Info": {
+      " Upgrade to a paid plan to create multiple vaults.": [
+        "Opgradér til et betalt abonnement for at oprette flere bokse."
+      ],
+      "\"${ payload.item.data.metadata.name }\" item was dismissed": [
+        "\"${ payload.item.data.metadata.name }\" element blev afvist"
+      ],
+      "\"${ payload.item.data.metadata.name }\" update was dismissed": [
+        "\"${ payload.item.data.metadata.name }\" opdatering blev afvist"
+      ],
+      "\"${ payload.name }\" set as primary vault": [
+        "\"${ payload.name }\" indstillet som primær boks"
+      ],
+      "${ count } item": [
+        "${ count } element",
+        "${ count } elementer"
+      ],
+      "${ PASS_APP_NAME } will only import logins and notes. Credit cards, passports, attached files, etc. are not supported at the moment.": [
+        "${ PASS_APP_NAME } vil kun importere login og noter. Kreditkort, pas, vedhæftede filer osv er ikke understøttet på nuværende tidspunkt."
+      ],
+      "${ revisionNumber } time": [
+        "${ revisionNumber } gang",
+        "${ revisionNumber } gange"
+      ],
+      "${ totalImportedItems } item": [
+        "${ totalImportedItems } element",
+        "${ totalImportedItems } elementer"
+      ],
+      "${ totalItems } item": [
+        "${ totalItems } element",
+        "${ totalItems } elementer"
+      ],
+      "${ trialDaysLeft } day left": [
+        "${ trialDaysLeft } dag tilbage",
+        "${ trialDaysLeft } dage tilbage"
+      ],
+      "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
+        "En ny version af ${ PASS_APP_NAME } er tilgængelig. Opdater den for at nyde de seneste funktioner og fejlrettelser."
+      ],
+      "Access ${ PASS_APP_NAME } via this icon": [
+        "Tilgå ${ PASS_APP_NAME } via dette ikon"
+      ],
+      "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
+        "Adgang til ${ PASS_APP_NAME } vil kræve en pinkode for at låse din session op."
+      ],
+      "Access your passwords on the go with our mobile apps.": [
+        "Tilgå dine adgangskoder på farten med vores mobil-apps."
+      ],
+      "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
+        "Aliasset \"${ item.aliasEmail }\" blev flyttet til papirkurven - det vil stoppe med at videresende e-mails til din indbakke"
+      ],
+      "All items permanently removed": [
+        "Alle elementer blev fjernet permanent"
+      ],
+      "All items successfully restored": [
+        "Alle elementer blev gendannet"
+      ],
+      "An item previously shared with you was disabled": [
+        "Et element der tidligere var delt med dig er blevet deaktiveret"
+      ],
+      "Auto-lock successfully disabled": [
+        "Autolås deaktiveret"
+      ],
+      "Autosaved on ${ submissionURL }": [
+        "Autogemt på ${ submissionURL }"
+      ],
+      "Check out all the exclusive features that are available to you for a limited time.": [
+        "Se alle de eksklusive funktioner, der er tilgængelige for dig i en begrænset periode."
+      ],
+      "Copied to clipboard": [
+        "Kopieret til udklipsholder"
+      ],
+      "Creating alias...": [
+        "Opretter alias..."
+      ],
+      "Custom fields": [
+        "Brugerdefinerede felter"
+      ],
+      "Decrypting your data": [
+        "Dekrypterer dine data"
+      ],
+      "Deleted items will be moved here first": [
+        "Slettede elementer vil blive flytte hertil først"
+      ],
+      "Discover ${ PASS_APP_NAME } Youtube Video": [
+        "Opdag ${ PASS_APP_NAME } YouTube-video"
+      ],
+      "Drop file here to upload": [
+        "Træk fil hertil for at uploade"
+      ],
+      "Drop to import": [
+        "Slip for at importere"
+      ],
+      "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
+        "Importer nemt dine eksisterende adgangskoder til ${ PASS_APP_NAME }."
+      ],
+      "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
+        "Aktiver ${ PASS_APP_NAME } ved at forbinde din ${ BRAND_NAME }-konto"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Indtast verifikationskode. Ciffer ${ digit }."
+      ],
+      "Enter your pin code": [
+        "Indtast din pinkode"
+      ],
+      "Enter your PIN code": [
+        "Indtast din pinkode"
+      ],
+      "Export is encrypted using PGP and requires a strong passphrase.": [
+        "Eksporten er krypteret med PGP og kræver en stærk adgangssætning."
+      ],
+      "Follow these simple steps to get the best experience:": [
+        "Følg disse enkle trin for at få den bedste oplevelse:"
+      ],
+      "Free Trial": [
+        "Gratis prøveperiode"
+      ],
+      "Generated passwords will be stored for a period of one day.": [
+        "Genererede adgangskoder vil blive gemt i en dag."
+      ],
+      "Generating alias...": [
+        "Genererer alias..."
+      ],
+      "Here you will find all the necessary information to get you started.": [
+        "Her finder du alle de nødvendige oplysninger, for at du kan komme i gang."
+      ],
+      "If disabled, ${ PASS_APP_NAME } will not display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
+        "Hvis deaktiveret, vil ${ PASS_APP_NAME } ikke vise elementets favicon via ${ BRAND_NAME } anonymiseret billedproxy."
+      ],
+      "If disabled, ${ PASS_APP_NAME } will not prompt you to save or update credentials.": [
+        "Hvis deaktiveret, vil ${ PASS_APP_NAME } ikke bede dig om at gemme eller opdatere legitimationsoplysninger."
+      ],
+      "If disabled, ${ PASS_APP_NAME } will not suggest creating an email alias on sign-up forms.": [
+        "Hvis deaktiveret, vil ${ PASS_APP_NAME } ikke foreslå at oprette et e-mail-alias på tilmeldingsformularer."
+      ],
+      "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
+        "Hvis deaktiveret, vil ${ PASS_APP_NAME } ikke foreslå at oprette stærke adgangskoder på tilmeldingsformularer."
+      ],
+      "If enabled, the autosave dropdown will automatically open on field focus.": [
+        "Hvis aktiveret, vil autogem-dropdown automatisk åbne, når feltet fokuseres."
+      ],
+      "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
+        "Hvis aktiveret, kan du hurtigt udfylde dine legitimationsoplysninger automatisk ved at klikke på ikonet for ${ PASS_APP_NAME }."
+      ],
+      "Import in progress :": [
+        "Import i gang :"
+      ],
+      "Imported ${ payload.total } item": [
+        "Importerede ${ payload.total } element",
+        "Importerede ${ payload.total } elementer"
+      ],
+      "Imported on ${ date }": [
+        "Importeret ${ date }"
+      ],
+      "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
+        "For at få den bedste oplevelse ud af ${ PASS_APP_NAME }, bedes du give de nødvendige udvidelsestilladelser"
+      ],
+      "In order to migrate your data to ${ PASS_APP_NAME } from another password manager, export your passwords and import them using the form below. Once all your items have been imported, delete the previously exported file.": [
+        "For at migrere dine data til ${ PASS_APP_NAME } fra en anden adgangskodeadministrator skal du eksportere dine adgangskoder og importere dem ved hjælp af nedenstående formular. Når alle dine elementer er blevet importeret, skal du slette den tidligere eksporterede fil."
+      ],
+      "Integrated 2FA authenticator": [
+        "Integreret 2FA-godkendelse"
+      ],
+      "Internet connection lost": [
+        "Internetforbindelse mistet"
+      ],
+      "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
+        "Det ser ud til, at du allerede er logget ind på ${ PASS_APP_NAME }. Hvis du prøver at logge ind med en anden konto, bedes du logge ud af udvidelsen først."
+      ],
+      "item": [
+        "element",
+        "elementer"
+      ],
+      "Item \"${ payload.item.data.metadata.name }\" created": [
+        "Elementet \"${ payload.item.data.metadata.name }\" blev oprettet"
+      ],
+      "Item \"${ payload.item.data.metadata.name }\" updated": [
+        "Elementet \"${ payload.item.data.metadata.name }\" opdateret"
+      ],
+      "Item moved to trash": [
+        "Element flyttet til papirkurv"
+      ],
+      "Item permanently deleted": [
+        "Element slettet permanent"
+      ],
+      "Item restored": [
+        "Element gendannet"
+      ],
+      "Item successfully moved": [
+        "Element flyttet"
+      ],
+      "Let's get you started by creating your first item": [
+        "Lad os få dig i gang ved at oprette dit første element"
+      ],
+      "Loading": [
+        "Indlæser"
+      ],
+      "Loading extension": [
+        "Indlæser udvidelse"
+      ],
+      "Loading...": [
+        "Indlæser..."
+      ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
+        "Mere end en adgangskodeadministrator, ${ PASS_APP_NAME } beskytter dine adgangskoder og din personlige e-mailadresse via e-mail-aliasser. Med den samme teknologi, som ligger bag ${ MAIL_APP_NAME }, er dine data end-to-end krypteret og kun tilgængelige for dig."
+      ],
+      "Multiple vaults": [
+        "Flere bokse"
+      ],
+      "N/A": [
+        "Ikke tilgængelig"
+      ],
+      "No login found": [
+        "Intet login fundet"
+      ],
+      "None": [
+        "Ingen"
+      ],
+      "Open the Extensions menu": [
+        "Åbn menuen Udvidelser"
+      ],
+      "Passwords older than 1 day are automatically deleted from history.": [
+        "Adgangskoder, der er ældre end 1 dag, slettes automatisk fra historikken."
+      ],
+      "Pin ${ PASS_APP_NAME } to your toolbar": [
+        "Fastgør ${ PASS_APP_NAME } til din værktøjslinje"
+      ],
+      "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Pinkode registreret. Brug den til at låse ${ PASS_APP_NAME } op."
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
+        "Bekræft venligst din pinkode for at afregistrere din nuværende lås.\n${ PASS_APP_NAME } vil derefter aldrig låse."
+      ],
+      "Please confirm your PIN code to edit this setting.": [
+        "Bekræft din pinkode for at ændre denne indstilling."
+      ],
+      "Please confirm your PIN code to finish registering your auto-lock settings.": [
+        "Bekræft din pinkode for at afslutte registreringen af dine auto-lås indstillinger."
+      ],
+      "Please consider leaving a review.": [
+        "Skriv gerne en anmeldelse."
+      ],
+      "Please enter your current pin code to continue": [
+        "Indtast din nuværende pinkode for at fortsætte"
+      ],
+      "Press Enter to copy": [
+        "Tryk Enter for at kopiere"
+      ],
+      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
+        "Vi bekymrer os om dit privatliv. Få mere at vide om, hvorfor ${ PASS_APP_NAME } er anderledes."
+      ],
+      "Save login": [
+        "Gem login"
+      ],
+      "Select the destination vault for each imported vault.": [
+        "Vælg destinationsboks for hver importeret boks."
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Servere er utilgængelige. Prøv igen om nogle få minutter"
+      ],
+      "Session timed out": [
+        "Session er udløbet"
+      ],
+      "Set up a PIN code to easily lock your data": [
+        "Konfigurer en pinkode for nemt at låse dine data"
+      ],
+      "Settings successfully updated": [
+        "Indstillingerne blev opdateret"
+      ],
+      "Sign in or create an account to continue.": [
+        "Log ind eller opret en konto for at fortsætte."
+      ],
+      "Sign in to your account": [
+        "Log ind på din konto"
+      ],
+      "Signing you in": [
+        "Logger dig ind"
+      ],
+      "Successfully exported all your items": [
+        "Eksporterede alle dine elementer"
+      ],
+      "Successfully synced all vaults": [
+        "Synkroniserede alle bokse"
+      ],
+      "Syncing your vaults…": [
+        "Synkroniserer dine bokse…"
+      ],
+      "Thank you, the problem has been reported": [
+        "Tak, problemet er blevet rapporteret"
+      ],
+      "The following item could not be imported :": [
+        "Det følgende element kunne ikke importeres :",
+        "De følgende ${ result.ignored.length } elementer kunne ikke importeres"
+      ],
+      "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
+        "Teksten du forsøger at indsætte er længere end den maksimalt tilladte længde på ${ maxLength } tegn."
+      ],
+      "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
+        "Denne eksport vil ikke være krypteret og hvem som helst med adgang til den eksporterede fil vil kunne se dine adgangskoder. For en sikkerheds skyld bedes du slette den når du er færdig med at bruge den."
+      ],
+      "Unable to copy to clipboard": [
+        "Kunne ikke kopiere til udklipsholder"
+      ],
+      "Unlock it with your PIN to access the settings": [
+        "Lås den op med din pinkode for at få adgang til indstillingerne."
+      ],
+      "Update login": [
+        "Opdatér login"
+      ],
+      "Upgrade ${ PASS_APP_NAME }": [
+        "Opgrader ${ PASS_APP_NAME }"
+      ],
+      "Vault \"${ payload.content.name }\" successfully deleted": [
+        "Boksen \"${ payload.content.name }\" blev slettet"
+      ],
+      "Vault \"${ payload.share.content.name }\" successfully created": [
+        "Boksen \"${ payload.share.content.name }\" blev oprettet"
+      ],
+      "Vault \"${ payload.share.content.name }\" successfully updated": [
+        "Boksen \"${ payload.share.content.name }\" blev opdateret"
+      ],
+      "Vault \"${ share.content.name }\" was disabled": [
+        "Boksen \"${ share.content.name }\" blev deaktiveret"
+      ],
+      "Verification code": [
+        "Bekræftelseskode"
+      ],
+      "You are about to create:": [
+        "Du er ved at oprette:"
+      ],
+      "You have ${ daysRemaining } day left in your trial period.": [
+        "Du har ${ daysRemaining } dag tilbage af din prøveperiode",
+        "Du har ${ daysRemaining } dage tilbage af din prøveperiode"
+      ],
+      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.": [
+        "Du har overskredet antallet af bokse, der er inkluderet i dit abonnement. Elementer kan kun flyttes til din primære boks. For at flytte elementer mellem alle bokse, skal du opgradere dit abonnement."
+      ],
+      "You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.": [
+        "Du har overskredet antallet af bokse, der er inkluderet i dit abonnement. Nye elementer kan kun oprettes i din primære boks. For at oprette nye elementer i alle bokse, skal du opgradere dit abonnement."
+      ],
+      "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
+        "Du har nået grænsen for, hvor mange aliasser du kan oprette. Opret et ubegrænset antal aliasser, når du opgraderer dit abonnement."
+      ],
+      "You have reached the limit of vaults you can create.": [
+        "Du har nået grænsen for, hvor mange bokse du kan oprette."
+      ],
+      "You have reached the maximum allowed length of ${ maxLength } characters.": [
+        "Du har nået den maksimalt tilladte længde på ${ maxLength } tegn."
+      ],
+      "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
+        "Du skal bruge denne pinkode til at låse ${ PASS_APP_NAME } op, når den låses automatisk efter en periode med inaktivitet."
+      ],
+      "You're about to create": [
+        "Du er ved at oprette"
+      ],
+      "Your ${ PASS_APP_NAME } session is locked": [
+        "Din ${ PASS_APP_NAME }-session er låst"
+      ],
+      "Your files will be encrypted and then saved": [
+        "Din filer vil blive krypteret og derefter gemt"
+      ]
+    },
+    "Label": {
+      "${ passwordOptions.options.length } character": [
+        "${ passwordOptions.options.length } tegn",
+        "${ passwordOptions.options.length } tegn"
+      ],
+      "${ passwordOptions.options.wordCount } word": [
+        "${ passwordOptions.options.wordCount } ord",
+        "${ passwordOptions.options.wordCount } ord"
+      ],
+      "1 hour": [
+        "1 time"
+      ],
+      "1 minute": [
+        "1 minut"
+      ],
+      "10 minutes": [
+        "10 minutter"
+      ],
+      "15 minutes": [
+        "15 minutter"
+      ],
+      "2FA secret (TOTP)": [
+        "2FA hemmelighed (TOTP)"
+      ],
+      "2FA token (TOTP)": [
+        "2FA token (TOTP)"
+      ],
+      "30 minutes": [
+        "30 minutter"
+      ],
+      "30 seconds": [
+        "30 sekunder"
+      ],
+      "5 minutes": [
+        "5 minutter"
+      ],
+      "A-Z": [
+        "A-Z"
+      ],
+      "Alias": [
+        "Alias"
+      ],
+      "Alias address": [
+        "Alias-adresse"
+      ],
+      "Aliases": [
+        "Aliasser"
+      ],
+      "All": [
+        "Alle"
+      ],
+      "All vaults": [
+        "Alle bokse"
+      ],
+      "Alphabetical": [
+        "Alfabetisk"
+      ],
+      "Application logs": [
+        "Applikationslogs"
+      ],
+      "Auto-lock ${ PASS_APP_NAME }": [
+        "Autolås ${ PASS_APP_NAME }"
+      ],
+      "Auto-lock after": [
+        "Lås automatisk efter"
+      ],
+      "Autofill": [
+        "Autofyld"
+      ],
+      "Automatically open autofill when focusing login fields": [
+        "Åbn automatisk autofyld, når der fokuseres på login-felter"
+      ],
+      "Autosave": [
+        "Gem automatisk"
+      ],
+      "Autosuggest": [
+        "Auto-forslag"
+      ],
+      "Capital letters (A-Z)": [
+        "Store bogstaver (A-Z)"
+      ],
+      "Capitalise": [
+        "Brug store bogstaver"
+      ],
+      "Card number": [
+        "Kortnummer"
+      ],
+      "Cardholder name": [
+        "Kortholders navn"
+      ],
+      "Cards": [
+        "Kort"
+      ],
+      "Confirm vault name": [
+        "Bekræft boks-navn"
+      ],
+      "Create a credit card": [
+        "Opret et kreditkort"
+      ],
+      "Create a hide-my-email alias": [
+        "Opret et hide-my-email alias"
+      ],
+      "Create a login": [
+        "Opret et login"
+      ],
+      "Create an encrypted note": [
+        "Opret en krypteret note"
+      ],
+      "Create new vault": [
+        "Opret ny boks"
+      ],
+      "Created": [
+        "Oprettet"
+      ],
+      "Credit Card": [
+        "Kreditkort"
+      ],
+      "Current plan": [
+        "Nuværende abonnement"
+      ],
+      "Display": [
+        "Visning"
+      ],
+      "Display ${ PASS_APP_NAME } icon on login fields": [
+        "Vis ${ PASS_APP_NAME }-ikon på login-felter"
+      ],
+      "Download logs": [
+        "Hent logfiler"
+      ],
+      "Email aliases": [
+        "E-mail-aliasser"
+      ],
+      "Empty trash": [
+        "Tøm papirkurv"
+      ],
+      "Encrypt your ${ PASS_APP_NAME } data export file": [
+        "Krypter din ${ PASS_APP_NAME } dataeksportfil"
+      ],
+      "Expires on": [
+        "Udløber"
+      ],
+      "Export": [
+        "Eksportér"
+      ],
+      "Forwards to": [
+        "Videresender til"
+      ],
+      "General": [
+        "Generelt"
+      ],
+      "Grant": [
+        "Tildel"
+      ],
+      "Hidden": [
+        "Skjult"
+      ],
+      "Hide password": [
+        "Skjul adgangskode"
+      ],
+      "Import": [
+        "Importér"
+      ],
+      "Import passwords": [
+        "Importér adgangskoder"
+      ],
+      "Imported from : ": [
+        "Importeret fra : "
+      ],
+      "Imported on : ": [
+        "Importeret : "
+      ],
+      "Include numbers": [
+        "Inkluder tal"
+      ],
+      "Include numbers (0-9)": [
+        "Inkluder tal (0-9)"
+      ],
+      "Label": [
+        "Etikette"
+      ],
+      "Last 2 weeks": [
+        "Sidste 2 uger"
+      ],
+      "Last autofill": [
+        "Sidste autofyld"
+      ],
+      "Last month": [
+        "Sidste måned"
+      ],
+      "Last week": [
+        "Sidste uge"
+      ],
+      "Latest import": [
+        "Seneste import"
+      ],
+      "Learn more": [
+        "Lær mere"
+      ],
+      "Login": [
+        "Log ind"
+      ],
+      "Logins": [
+        "Logins"
+      ],
+      "Modified": [
+        "Ændret"
+      ],
+      "Most recent": [
+        "Seneste"
+      ],
+      "Move items to": [
+        "Flyt elementer til"
+      ],
+      "Name": [
+        "Navn"
+      ],
+      "New vault": [
+        "Ny boks"
+      ],
+      "New-Old": [
+        "Nyt-Gammelt"
+      ],
+      "Newest to oldest": [
+        "Nyeste til ældste"
+      ],
+      "No history": [
+        "Ingen historik"
+      ],
+      "Not recently used": [
+        "Ikke brugt for nyligt"
+      ],
+      "Note": [
+        "Note"
+      ],
+      "Notes": [
+        "Noter"
+      ],
+      "Old-New": [
+        "Gammelt-Nyt"
+      ],
+      "Oldest to newest": [
+        "Ældste til nyeste"
+      ],
+      "Passphrase": [
+        "Adgangssætning"
+      ],
+      "Password": [
+        "Adgangskode"
+      ],
+      "Password history": [
+        "Adgangskodehistorik"
+      ],
+      "Passwords": [
+        "Adgangskoder"
+      ],
+      "Permanently delete items": [
+        "Slet elementer permanent"
+      ],
+      "PIN": [
+        "Pinkode"
+      ],
+      "Prefix": [
+        "Præfiks"
+      ],
+      "Primary vault": [
+        "Primær boks"
+      ],
+      "Prompt for auto-save": [
+        "Spørg om auto-gem"
+      ],
+      "Rate us": [
+        "Bedøm os"
+      ],
+      "Recent": [
+        "Seneste"
+      ],
+      "Report a problem": [
+        "Anmeld et problem"
+      ],
+      "Restore all items": [
+        "Gendan alle emner"
+      ],
+      "Reveal password": [
+        "Vis adgangskode"
+      ],
+      "Security": [
+        "Sikkerhed"
+      ],
+      "Select an email address": [
+        "Vælg en e-mailadresse"
+      ],
+      "Select your password manager": [
+        "Vælg din adgangskodeadministrator"
+      ],
+      "Selected": [
+        "Valgte"
+      ],
+      "Session locking": [
+        "Sessionslåsning"
+      ],
+      "Set PIN code": [
+        "Angiv pinkode"
+      ],
+      "Settings": [
+        "Indstillinger"
+      ],
+      "Show website thumbnails": [
+        "Vis websteds-miniaturebilleder"
+      ],
+      "Special characters (!&*)": [
+        "Specielle tegn (!&*)"
+      ],
+      "Suffix": [
+        "Suffiks"
+      ],
+      "Support": [
+        "Support"
+      ],
+      "Text": [
+        "Tekst"
+      ],
+      "Title": [
+        "Titel"
+      ],
+      "Today": [
+        "I dag"
+      ],
+      "Total imported items : ": [
+        "Samlet antal importerede elementer : "
+      ],
+      "Total items : ": [
+        "Elementer i alt : "
+      ],
+      "TOTP": [
+        "TOTP"
+      ],
+      "Trash": [
+        "Papirkurv"
+      ],
+      "Type": [
+        "Type"
+      ],
+      "Unnamed Credit Card": [
+        "Unavngivet kreditkort"
+      ],
+      "Unnamed item": [
+        "Unavngivet element"
+      ],
+      "Unnamed note": [
+        "Unavngivet note"
+      ],
+      "Untitled": [
+        "Unavngivet"
+      ],
+      "Update": [
+        "Opdatér"
+      ],
+      "Username": [
+        "Brugernavn"
+      ],
+      "Username (alias)": [
+        "Brugernavn (alias)"
+      ],
+      "Username (new alias)": [
+        "Brugernavn (nyt alias)"
+      ],
+      "Vault": [
+        "Boks"
+      ],
+      "Vaults": [
+        "Bokse"
+      ],
+      "Verification number": [
+        "Verifikationsnummer"
+      ],
+      "View logs": [
+        "Vis logfiler"
+      ],
+      "Websites": [
+        "Websider"
+      ],
+      "You are about to create": [
+        "Du er ved at oprette"
+      ]
+    },
+    "Option": {
+      "Commas": [
+        "Kommaer"
+      ],
+      "Hyphens": [
+        "Bindestreger"
+      ],
+      "Memorable Password": [
+        "Huskværdig adgangskode"
+      ],
+      "Numbers": [
+        "Tal"
+      ],
+      "Numbers and Symbols": [
+        "Tal og Symboler"
+      ],
+      "Periods": [
+        "Pumktummer"
+      ],
+      "Random Password": [
+        "Tilfældig adgangskode"
+      ],
+      "Spaces": [
+        "Mellemrum"
+      ],
+      "Underscores": [
+        "Bundstreger"
+      ]
+    },
+    "Placeholder": {
+      "Add 2FA secret": [
+        "Tilføj 2FA-hemmelighed"
+      ],
+      "Add hidden text": [
+        "Tilføj skjult tekst"
+      ],
+      "Add note": [
+        "Tilføj note"
+      ],
+      "Add text": [
+        "Tilføj tekst"
+      ],
+      "Enter a note...": [
+        "Indtast en note..."
+      ],
+      "Enter a prefix": [
+        "Indtast et præfiks"
+      ],
+      "Enter email or username": [
+        "Indtast e-mail eller brugernavn"
+      ],
+      "Enter password": [
+        "Indtast adgangskode"
+      ],
+      "Full Name": [
+        "Fuldt navn"
+      ],
+      "MM/YYYY": [
+        "MM/ÅÅÅÅ"
+      ],
+      "Move items to another vault (optional)": [
+        "Flyt elementer til en anden boks (valgfrit)"
+      ],
+      "Pick a vault": [
+        "Vælg en boks"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Beskriv problemet og medtag evt. fejlmeddelelser"
+      ],
+      "Retype \"${ vaultName }\" to confirm deletion": [
+        "Indtast \"${ vaultName }\" igen for at bekræfte sletning"
+      ],
+      "Search in ${ vault.content.name }": [
+        "Søg i ${ vault.content.name }"
+      ],
+      "Search in all vaults": [
+        "Søg i alle bokse"
+      ],
+      "Search in Trash": [
+        "Søg i papirkurv"
+      ],
+      "Select a suffix": [
+        "Vælg et suffiks"
+      ],
+      "Unknown origin": [
+        "Ukendt oprindelse"
+      ],
+      "Untitled": [
+        "Uden titel"
+      ],
+      "Used on ${ url }": [
+        "Brugt på ${ url }"
+      ],
+      "Write your note": [
+        "Skriv din note"
+      ]
+    },
+    "Title": {
+      "${ PASS_APP_NAME } Settings": [
+        "${ PASS_APP_NAME }-indstillinger"
+      ],
+      "Auto-lock update": [
+        "Autolås-opdatering"
+      ],
+      "Confirm PIN code": [
+        "Bekræft pinkode"
+      ],
+      "Connect your ${ BRAND_NAME } account": [
+        "Tilslut din ${ BRAND_NAME }-konto"
+      ],
+      "Create PIN code": [
+        "Opret pinkode"
+      ],
+      "Delete vault \"${ vaultName }\" ?": [
+        "Slet boksen \"${ vaultName }\"?"
+      ],
+      "Discard changes ?": [
+        "Kassér ændringer?"
+      ],
+      "Enjoy your free trial": [
+        "Nyd din gratis prøveperiode"
+      ],
+      "Enjoying ${ PASS_APP_NAME }?": [
+        "Glad for ${ PASS_APP_NAME }?"
+      ],
+      "Enter your Pin": [
+        "Indtast din pinkode"
+      ],
+      "Get the mobile apps": [
+        "Hent mobil-appsene"
+      ],
+      "Grant permissions": [
+        "Giv tilladelser"
+      ],
+      "Hide my email": [
+        "Hide my email"
+      ],
+      "Import - ${ date }": [
+        "Import - ${ date }"
+      ],
+      "Import to vaults": [
+        "Importér til bokse"
+      ],
+      "Permanently remove all items ?": [
+        "Fjern alle elementer permanent?"
+      ],
+      "Pin the extension": [
+        "Fastgør udvidelsen"
+      ],
+      "Secure your data": [
+        "Beskyt dine data"
+      ],
+      "Switching to ${ PASS_APP_NAME }?": [
+        "Skifter du til ${ PASS_APP_NAME }?"
+      ],
+      "Thank you for installing ${ PASS_APP_NAME }": [
+        "Tak fordi du installerede ${ PASS_APP_NAME }"
+      ],
+      "The extension is now ready to use.": [
+        "Udvidelsen er nu klar til at blive brugt."
+      ],
+      "Trash empty": [
+        "Papirkurv tom"
+      ],
+      "Unlock ${ brandNameJSX }": [
+        "Lås op for ${ brandNameJSX }"
+      ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "Lås op for ${ PASS_APP_NAME }"
+      ],
+      "Update available": [
+        "Opdatering tilgængelig"
+      ],
+      "Use my email": [
+        "Brug min e-mail"
+      ],
+      "Use secure password": [
+        "Brug sikker adgangskode"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Velkommen til ${ brandNameJSX }"
+      ],
+      "Welcome to ${ PASS_APP_NAME }": [
+        "Velkommen til ${ PASS_APP_NAME }"
+      ],
+      "Welcome!": [
+        "Velkommen!"
+      ],
+      "Why ${ PASS_APP_NAME }?": [
+        "Hvorfor ${ PASS_APP_NAME }?"
+      ],
+      "Your vault is empty": [
+        "Din boks er tom"
+      ]
+    },
+    "Validation": {
+      "Duplicated url": [
+        "Duplikeret URL"
+      ],
+      "Label is required": [
+        "Etiket er påkrævet"
+      ],
+      "OTP Secret or URI is invalid": [
+        "OTP-hemmelighed eller URI er ugyldig"
+      ],
+      "OTP Secret or URI required": [
+        "OTP-hemmelighed eller URI påkrævet"
+      ],
+      "Url already exists": [
+        "URL eksisterer allerede"
+      ],
+      "Url cannot be empty": [
+        "URL må ikke være tom"
+      ],
+      "Url is invalid": [
+        "URL er ugyldig"
+      ]
+    },
+    "Warning": {
+      "A description of the problem is required": [
+        "En beskrivelse af problemet er påkrævet"
+      ],
+      "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
+        "Aliasset \"${ name }\" bruges i øjeblikket i login-elementet \"${ relatedLoginName }\". Du vil også stoppe med at modtage e-mails sendt til \"${ aliasEmail }\"."
+      ],
+      "All your trashed items will be permanently deleted. You can not undo this action.": [
+        "Alle elementerne i papirkurven vil blive slettet permanent. Du kan ikke fortryde denne handling."
+      ],
+      "An error occured while exporting your data": [
+        "Der opstod en fejl under eksport af dine data"
+      ],
+      "Cannot retrieve mailboxes for this alias right now": [
+        "Kan ikke hente postkasser for dette alias lige nu"
+      ],
+      "Could not create vault \"${ vaultName }\"": [
+        "Kunne ikke oprette boksen \"${ vaultName }\""
+      ],
+      "Empty note": [
+        "Tom note"
+      ],
+      "Expiration Date is incomplete": [
+        "Udløbsdato er ukomplet"
+      ],
+      "Invalid alias prefix": [
+        "Ugyldigt alias-præfiks"
+      ],
+      "Maximum length is ${ maxLength } characters": [
+        "Maksimal længde er ${ maxLength } tegn"
+      ],
+      "Missing alias prefix": [
+        "Mangler alias-præfiks"
+      ],
+      "Missing alias suffix": [
+        "Mangler alias-suffiks"
+      ],
+      "No items": [
+        "Ingen elementer"
+      ],
+      "No items in trash matching": [
+        "Ingen matchende elementer i papirkurven"
+      ],
+      "No items matching": [
+        "Ingen elementer matcher"
+      ],
+      "No password manager selected": [
+        "Ingen adgangskodeadministrator valgt"
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "Kun alfanumeriske tegn, prikker, bindestreger og bundstreger er tilladt"
+      ],
+      "Passphrase is required": [
+        "Adgangssætning er påkrævet"
+      ],
+      "PGP encrypted export file requires passphrase": [
+        "PGP-krypteret eksportfil kræver adgangssætning"
+      ],
+      "Please log back in": [
+        "Log venligst ind igen"
+      ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Fejlrapporter er ikke end-to-end krypterede. Send derfor ikke følsomme oplysninger."
+      ],
+      "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
+        "Noget gik galt under opstarten af ${ PASS_APP_NAME }. Prøv at genopfriske eller genindlæse udvidelsen"
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "Alias-præfikset må højest være 40 tegn langt."
+      ],
+      "Title is required": [
+        "Titel er påkrævet"
+      ],
+      "Trash alias ?": [
+        "Kassér alias?"
+      ],
+      "Unable to save": [
+        "Kunne ikke gemme"
+      ],
+      "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
+        "Kunne ikke logge ind på ${ PASS_APP_NAME }. ${ additionalMessage }"
+      ],
+      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You can not undo this action": [
+        "Boksen \"${ vaultName }\" og alle dens elementer vil blive slettet permanent. Du kan ikke fortryde denne handling"
+      ],
+      "Vault \"${ vaultName }\" will be permanently deleted and all its items moved to \"${ destinationVaultName }\"": [
+        "Boksen \"${ vaultName }\" vil blive slettet permanent og alle dens elementer flyttet til \"${ destinationVaultName }\""
+      ],
+      "Vault name is required": [
+        "Navn på boks er påkrævet"
+      ],
+      "You cannot create more vaults than your subscription allows.": [
+        "Du kan ikke oprette flere bokse, end dit abonnement tillader."
+      ],
+      "You have unsaved changes, are you sure you want to discard them?": [
+        "Du har ikke-gemte ændringer, er du sikker på, at du vil kassere dem?"
+      ],
+      "You must select at least one mailbox": [
+        "Du skal vælge mindst en postkasse"
+      ],
+      "Your plan does not allow you to create more aliases": [
+        "Dit abonnement giver dig ikke mulighed for at oprette flere aliasser"
+      ],
+      "Your plan only allows you to autofill from your primary vault": [
+        "Dit abonnement tillader kun autofyld fra din primære boks."
+      ],
+      "Your session was locked due to inactivity": [
+        "Din session blev låst grundet inaktivitet"
+      ],
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
+        "Dit abonnement giver dig ikke mulighed for at oprette flere bokse. Alle elementer vil blive importeret til din primære boks. For at importere til flere bokse skal du opgradere dit abonnement."
+      ]
+    }
+  }
+}

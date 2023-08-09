@@ -3,12 +3,11 @@ import { c } from 'ttag';
 import type { ItemExtraField, ItemImportIntent, Maybe } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
-import { uniqueId } from '@proton/pass/utils/string';
 import groupWith from '@proton/utils/groupWith';
 import lastItem from '@proton/utils/lastItem';
 
 import { readCSV } from '../helpers/csv.reader';
-import { ImportReaderError } from '../helpers/reader.error';
+import { ImportProviderError } from '../helpers/error';
 import { getImportedVaultName, importLoginItem, importNoteItem } from '../helpers/transformers';
 import type { ImportPayload, ImportVault } from '../types';
 import type { KeeperItem } from './keeper.types';
@@ -27,9 +26,12 @@ const extractExtraFields = (item: KeeperItem): ItemExtraField[] => {
         for (let i = 7; i < item.length; i += 2) {
             /* skip totp field because it was already added in extractTOTP above */
             if (item[i] == 'TFC:Keeper') continue;
+
+            const type = item[i] === 'Hidden Field' ? 'hidden' : 'text';
+
             customFields.push({
-                fieldName: item[i],
-                type: item[i] === 'Hidden Field' ? 'hidden' : 'text',
+                fieldName: item[i] || (type === 'hidden' ? c('Label').t`Hidden` : c('Label').t`Text`),
+                type,
                 data: {
                     content: item[i + 1],
                 },
@@ -72,9 +74,8 @@ export const readKeeperData = async (data: string): Promise<ImportPayload> => {
             .filter(({ length }) => length > 0)
             .map((items) => {
                 return {
-                    type: 'new',
-                    vaultName: getImportedVaultName(items?.[0][0]),
-                    id: uniqueId(),
+                    name: getImportedVaultName(items?.[0][0]),
+                    shareId: null,
                     items: items
                         .map((item): Maybe<ItemImportIntent> => {
                             if (isNoteItem(item)) {
@@ -110,7 +111,6 @@ export const readKeeperData = async (data: string): Promise<ImportPayload> => {
         };
     } catch (e) {
         logger.warn('[Importer::Keeper]', e);
-        const errorDetail = e instanceof ImportReaderError ? e.message : '';
-        throw new Error(c('Error').t`Keeper export file could not be parsed. ${errorDetail}`);
+        throw new ImportProviderError('Keeper', e);
     }
 };

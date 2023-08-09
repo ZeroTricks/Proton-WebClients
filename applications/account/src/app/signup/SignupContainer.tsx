@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -13,13 +13,13 @@ import {
     useConfig,
     useErrorHandler,
     useExperiment,
-    useLoading,
     useLocalState,
     useMyCountry,
     useVPNServersCount,
 } from '@proton/components/hooks';
 import { PaymentMethodStatus } from '@proton/components/payments/core';
-import metrics from '@proton/metrics';
+import { useLoading } from '@proton/hooks';
+import metrics, { observeApiError } from '@proton/metrics';
 import { WebCoreSignupBackButtonTotal } from '@proton/metrics/types/web_core_signup_backButton_total_v1.schema';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
@@ -47,10 +47,13 @@ import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
+import mailReferPage from '../../pages/refer-a-friend';
+import mailTrialPage from '../../pages/trial';
 import Layout from '../public/Layout';
 import { defaultPersistentKey } from '../public/helper';
 import { useFlowRef } from '../useFlowRef';
-import { useMetaTags } from '../useMetaTags';
+import useLocationWithoutLocale from '../useLocationWithoutLocale';
+import { MetaTags, useMetaTags } from '../useMetaTags';
 import AccountStep from './AccountStep';
 import CongratulationsStep from './CongratulationsStep';
 import ExploreStep from './ExploreStep';
@@ -91,7 +94,6 @@ import {
     handleSetupUser,
     usernameAvailabilityError,
 } from './signupActions';
-import { getSignupMeta } from './signupPagesJson';
 
 const {
     AccountCreationUsername,
@@ -113,18 +115,29 @@ interface Props {
     toAppName?: string;
     onBack?: () => void;
     clientType: CLIENT_TYPES;
+    loginUrl: string;
+    metaTags: MetaTags;
 }
 
-const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, productParam }: Props) => {
+const SignupContainer = ({
+    metaTags,
+    toApp,
+    toAppName,
+    onBack,
+    onLogin,
+    clientType,
+    productParam,
+    loginUrl,
+}: Props) => {
     const { APP_NAME } = useConfig();
 
-    const location = useLocation<{ invite?: InviteData }>();
+    const location = useLocationWithoutLocale<{ invite?: InviteData }>();
     const isMailTrial = isMailTrialSignup(location);
     const isMailRefer = isMailReferAFriendSignup(location);
 
     const { isTinyMobile } = useActiveBreakpoint();
 
-    useMetaTags(getSignupMeta(toApp, APP_NAME, { isMailTrial, isMailRefer }));
+    useMetaTags(isMailRefer ? mailReferPage() : isMailTrial ? mailTrialPage() : metaTags);
 
     const normalApi = useApi();
     const history = useHistory();
@@ -136,7 +149,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
         toAppName = MAIL_APP_NAME;
     }
     const [signupParameters] = useState(() => {
-        const params = getSignupSearchParams(new URLSearchParams(location.search));
+        const params = getSignupSearchParams(location.pathname, new URLSearchParams(location.search));
         if (isMailTrial) {
             params.referrer = REFERRER_CODE_MAIL_TRIAL;
         }
@@ -325,7 +338,9 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
     };
 
     if (step === NoSignup) {
-        throw new Error('Missing dependencies');
+        const error: any = new Error('Missing dependencies');
+        error.trace = false;
+        throw error;
     }
 
     const [defaultCountry] = useMyCountry();
@@ -552,6 +567,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
         <>
             {step === AccountCreationUsername && (
                 <AccountStep
+                    loginUrl={loginUrl}
                     toApp={toApp}
                     clientType={clientType}
                     onBack={handleBackStep}
@@ -651,12 +667,13 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                             ) {
                                 return;
                             }
-
-                            metrics.core_signup_accountStep_accountCreation_total.increment({
-                                account_type: accountType,
-                                status: 'failure',
-                                application: getSignupApplication(APP_NAME),
-                            });
+                            observeApiError(error, (status) =>
+                                metrics.core_signup_accountStep_accountCreation_total.increment({
+                                    account_type: accountType,
+                                    status,
+                                    application: getSignupApplication(APP_NAME),
+                                })
+                            );
                         }
                     }}
                     hasChallenge={!accountData?.payload || !Object.keys(accountData.payload).length}
@@ -726,10 +743,12 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                             });
                         } catch (error) {
                             handleError(error);
-                            metrics.core_signup_referralStep_planSelection_total.increment({
-                                status: 'failure',
-                                application: getSignupApplication(APP_NAME),
-                            });
+                            observeApiError(error, (status) =>
+                                metrics.core_signup_referralStep_planSelection_total.increment({
+                                    status,
+                                    application: getSignupApplication(APP_NAME),
+                                })
+                            );
                         }
                     }}
                 />
@@ -768,10 +787,12 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                             });
                         } catch (error) {
                             handleError(error);
-                            metrics.core_signup_upsellStep_planSelection_total.increment({
-                                status: 'failure',
-                                application: getSignupApplication(APP_NAME),
-                            });
+                            observeApiError(error, (status) =>
+                                metrics.core_signup_upsellStep_planSelection_total.increment({
+                                    status,
+                                    application: getSignupApplication(APP_NAME),
+                                })
+                            );
                         }
                     }}
                 />
@@ -788,7 +809,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                     onChangeCurrency={handleChangeCurrency}
                     onChangeCycle={handleChangeCycle}
                     onChangePlanIDs={handleChangePlanIDs}
-                    onPay={async (payment) => {
+                    onPay={async (payment, type) => {
                         try {
                             if (!cache) {
                                 throw new Error('Missing cache');
@@ -796,6 +817,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                             const subscriptionData = {
                                 ...model.subscriptionData,
                                 payment,
+                                type,
                             };
 
                             const validateFlow = createFlow();
@@ -814,10 +836,13 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                             });
                         } catch (error) {
                             handleError(error);
-                            metrics.core_signup_paymentStep_payment_total.increment({
-                                status: 'failure',
-                                application: getSignupApplication(APP_NAME),
-                            });
+
+                            observeApiError(error, (status) =>
+                                metrics.core_signup_paymentStep_payment_total.increment({
+                                    status,
+                                    application: getSignupApplication(APP_NAME),
+                                })
+                            );
                         }
                     }}
                 />
@@ -861,10 +886,12 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                             handleError(error);
 
                             metrics.startBatchingProcess();
-                            metrics.core_signup_loadingStep_accountSetup_total.increment({
-                                status: 'failure',
-                                application: getSignupApplication(APP_NAME),
-                            });
+                            observeApiError(error, (status) =>
+                                metrics.core_signup_loadingStep_accountSetup_total.increment({
+                                    status,
+                                    application: getSignupApplication(APP_NAME),
+                                })
+                            );
                         }
                     }}
                 />
@@ -898,10 +925,12 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                             });
                         } catch (error) {
                             handleError(error);
-                            metrics.core_signup_congratulationsStep_displayNameChoice_total.increment({
-                                status: 'failure',
-                                application: getSignupApplication(APP_NAME),
-                            });
+                            observeApiError(error, (status) =>
+                                metrics.core_signup_congratulationsStep_displayNameChoice_total.increment({
+                                    status,
+                                    application: getSignupApplication(APP_NAME),
+                                })
+                            );
                         }
                     }}
                 />
@@ -945,10 +974,12 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                             }
                         } catch (error) {
                             handleError(error);
-                            metrics.core_signup_recoveryStep_setRecoveryMethod_total.increment({
-                                status: 'failure',
-                                application: getSignupApplication(APP_NAME),
-                            });
+                            observeApiError(error, (status) =>
+                                metrics.core_signup_recoveryStep_setRecoveryMethod_total.increment({
+                                    status,
+                                    application: getSignupApplication(APP_NAME),
+                                })
+                            );
                         }
                     }}
                 />
@@ -975,10 +1006,12 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType, produc
                             });
                         } catch (error) {
                             handleError(error);
-                            metrics.core_signup_exploreStep_login_total.increment({
-                                status: 'failure',
-                                application: getSignupApplication(APP_NAME),
-                            });
+                            observeApiError(error, (status) =>
+                                metrics.core_signup_exploreStep_login_total.increment({
+                                    status,
+                                    application: getSignupApplication(APP_NAME),
+                                })
+                            );
                         }
                     }}
                 />

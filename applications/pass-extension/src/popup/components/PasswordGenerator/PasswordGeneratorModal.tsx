@@ -10,12 +10,14 @@ import { SidebarModal } from '../../../shared/components/sidebarmodal/SidebarMod
 import { usePasswordGenerator } from '../../../shared/hooks';
 import { PanelHeader } from '../Panel/Header';
 import { Panel } from '../Panel/Panel';
+import { usePasswordContext } from './PasswordContext';
 import { PasswordGenerator } from './PasswordGenerator';
 
 export type BaseProps = { actionLabel?: string; className?: string; onSubmit?: (password: string) => void };
 export type Props = Omit<ModalProps, 'onSubmit'> & BaseProps;
 
 export const PasswordGeneratorModal: VFC<Props> = ({ onSubmit, actionLabel, ...props }) => {
+    const { openPasswordHistory } = usePasswordContext();
     const passwordGenerator = usePasswordGenerator();
     const handleActionClick = useCallback(() => onSubmit?.(passwordGenerator.password), [passwordGenerator, onSubmit]);
 
@@ -29,7 +31,6 @@ export const PasswordGeneratorModal: VFC<Props> = ({ onSubmit, actionLabel, ...p
             <Panel
                 header={
                     <PanelHeader
-                        className="mb-8"
                         actions={[
                             <Button
                                 key="close-modal-button"
@@ -62,6 +63,16 @@ export const PasswordGeneratorModal: VFC<Props> = ({ onSubmit, actionLabel, ...p
                 }
             >
                 <PasswordGenerator {...passwordGenerator} />
+
+                <hr className="my-2" />
+
+                <button
+                    className="w100 flex flex-align-items-center flex-justify-space-between"
+                    onClick={() => openPasswordHistory(true)}
+                >
+                    <span>{c('Label').t`Password history`}</span>
+                    <Icon name="chevron-right" />
+                </button>
             </Panel>
         </SidebarModal>
     );

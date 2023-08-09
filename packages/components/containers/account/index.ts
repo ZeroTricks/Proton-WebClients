@@ -5,8 +5,9 @@ export { default as SettingsPageTitle } from './SettingsPageTitle';
 export { default as SettingsParagraph } from './SettingsParagraph';
 export { default as SettingsSection } from './SettingsSection';
 export { default as SettingsSectionWide } from './SettingsSectionWide';
+export { default as SettingsSectionExtraWide } from './SettingsSectionExtraWide';
 export { default as SettingsSectionTitle } from './SettingsSectionTitle';
-export { default as EmailSubscriptionCheckboxes } from './EmailSubscriptionCheckboxes';
+export { default as EmailSubscriptionToggles } from './EmailSubscriptionToggles';
 export { default as EmailSubscriptionCategories } from './EmailSubscriptionCategories';
 export { default as EmailSubscriptionSection } from './EmailSubscriptionSection';
 export { default as EditEmailSubscription } from './EditEmailSubscription';
@@ -21,3 +22,5 @@ export { default as AccessibilitySection } from './AccessibilitySection';
 
 export { default as AuthSecurityKeyContent } from './fido/AuthSecurityKeyContent';
 export { default as TotpInputs } from './totp/TotpInputs';
+
+export * from './constants';

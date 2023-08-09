@@ -30,7 +30,6 @@ import useScrollToTop from '../../components/list/useScrollToTop';
 import MessageOnlyView from '../../components/message/MessageOnlyView';
 import { useLabelActionsContext } from '../../components/sidebar/EditLabelContext';
 import Toolbar from '../../components/toolbar/Toolbar';
-import PlaceholderView from '../../components/view/PlaceholderView';
 import { LABEL_IDS_TO_HUMAN, MAILTO_PROTOCOL_HANDLER_SEARCH_PARAM, MESSAGE_ACTIONS } from '../../constants';
 import { isMessage, isSearch as testIsSearch } from '../../helpers/elements';
 import { getFolderName } from '../../helpers/labels';
@@ -64,6 +63,7 @@ import { useAppSelector } from '../../logic/store';
 import { Filter, SearchParameters, Sort } from '../../models/tools';
 import { Breakpoints } from '../../models/utils';
 import { useOnCompose, useOnMailTo } from '../ComposeProvider';
+import MailboxContainerPlaceholder from './MailboxContainerPlaceholder';
 import { MailboxContainerContextProvider } from './MailboxContainerProvider';
 
 interface Props {
@@ -141,11 +141,17 @@ const MailboxContainer = ({
         }
     }, [location.hash, isSearch]);
 
-    const handlePage = useCallback((pageNumber: number) => {
-        history.push(setPageInUrl(history.location, pageNumber));
-    }, []);
-    const handleSort = useCallback((sort: Sort) => history.push(setSortInUrl(history.location, sort)), []);
-    const handleFilter = useCallback((filter: Filter) => history.push(setFilterInUrl(history.location, filter)), []);
+    const handlePage = useCallback(
+        (pageNumber: number) => {
+            history.push(setPageInUrl(history.location, pageNumber));
+        },
+        [history]
+    );
+    const handleSort = useCallback((sort: Sort) => history.push(setSortInUrl(history.location, sort)), [history]);
+    const handleFilter = useCallback(
+        (filter: Filter) => history.push(setFilterInUrl(history.location, filter)),
+        [history]
+    );
 
     const [isMessageOpening, setIsMessageOpening] = useState(false);
 
@@ -166,7 +172,10 @@ const MailboxContainer = ({
     const { handleDelete: permanentDelete, modal: deleteModal } = usePermanentDelete(labelID);
     useApplyEncryptedSearch(elementsParams);
 
-    const handleBack = useCallback(() => history.push(setParamsInLocation(history.location, { labelID })), [labelID]);
+    const handleBack = useCallback(
+        () => history.push(setParamsInLocation(history.location, { labelID })),
+        [history, labelID]
+    );
 
     const onCompose = useOnCompose();
 
@@ -238,7 +247,7 @@ const MailboxContainer = ({
             }
             handleCheckAll(false);
         },
-        [onCompose, isConversationContentView, labelID]
+        [onCompose, isConversationContentView, labelID, history]
     );
 
     const handleMarkAs = useCallback(
@@ -259,7 +268,7 @@ const MailboxContainer = ({
 
     const conversationMode = isConversationMode(labelID, mailSettings, location);
 
-    usePreLoadElements({ elementIDs, isConversation: conversationMode, labelID, loading });
+    usePreLoadElements({ elements, labelID, loading });
 
     const {
         elementRef,
@@ -499,11 +508,12 @@ const MailboxContainer = ({
                             ])}
                         >
                             {showPlaceholder && (
-                                <PlaceholderView
+                                <MailboxContainerPlaceholder
+                                    showPlaceholder={showContentPanel}
                                     welcomeFlag={welcomeFlag}
                                     labelID={labelID}
                                     checkedIDs={checkedIDs}
-                                    onCheckAll={handleCheckAll}
+                                    handleCheckAll={handleCheckAll}
                                 />
                             )}
                             {showContentView &&

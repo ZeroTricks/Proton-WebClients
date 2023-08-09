@@ -25,6 +25,9 @@ export const MAX_DOMAIN_PRO_ADDON = 99;
 export const MAX_DOMAIN_PLUS_ADDON = 10;
 export const MAX_ADDRESS_ADDON = 10;
 export const MAX_SPACE_ADDON = 20;
+// VPN B2B limits
+export const MAX_MEMBER_VPN_B2B_ADDON = 500;
+export const MAX_IPS_ADDON = 10;
 
 export const DOMAIN_PLACEHOLDER = 'example.com';
 export const EMAIL_PLACEHOLDER = 'john.doe@example.com';
@@ -220,12 +223,13 @@ export const SSO_PATHS = {
     CALENDAR_SIGN_IN: '/calendar',
     DRIVE_SIGNUP: '/drive/signup',
     DRIVE_SIGN_IN: '/drive',
+    BUSINESS_SIGNUP: '/business/signup',
     VPN_SIGNUP: '/vpn/signup',
+    VPN_PRICING: '/vpn/pricing',
     VPN_SIGN_IN: '/vpn',
     PASS_SIGNUP: '/pass/signup',
     PASS_SIGN_IN: '/pass',
     SIGNUP: '/signup',
-    PRICING: '/pricing',
     INVITE: '/pre-invite',
     REFER: '/refer-a-friend',
     TRIAL: '/trial',
@@ -551,6 +555,7 @@ export enum APP_UPSELL_REF_PATH {
     MAIL_UPSELL_REF_PATH = 'upsell_mail-',
     CALENDAR_UPSELL_REF_PATH = 'upsell_calendar-',
     DRIVE_UPSELL_REF_PATH = 'upsell_drive-',
+    PASS_UPSELL_REF_PATH = 'upsell_pass-',
     VPN_UPSELL_REF_PATH = 'upsell_vpn-',
 }
 
@@ -592,6 +597,15 @@ export enum SHARED_UPSELL_PATHS {
     ORGANIZATION_CAPACITY = 'organization-capacity',
 }
 
+export enum DASHBOARD_UPSELL_PATHS {
+    MAILPLUS = 'mailplus-dashboard',
+    UNLIMITED = 'unlimited-dashboard',
+    DRIVE = 'drive-dashboard',
+    PASS = 'pass-dashboard',
+    FAMILY = 'family-dashboard',
+    BUSINESS = 'business-dashboard',
+}
+
 export const LOYAL_BONUS_STORAGE = 5 * GIGA;
 export const LOYAL_BONUS_CONNECTION = 2;
 
@@ -601,6 +615,7 @@ export const COVID_VISIONARY_BONUS_STORAGE = 10 * GIGA;
 
 export const DEFAULT_CYCLE = 24;
 
+export const FREE_VPN_CONNECTIONS = 1;
 export const VPN_CONNECTIONS = 10;
 
 export enum CYCLE {
@@ -627,15 +642,53 @@ export const PRODUCT_PAYER = {
 export const MIN_PAYPAL_AMOUNT = 499;
 export const MAX_PAYPAL_AMOUNT = 99999900;
 
-export enum NEWS {
+export enum NEWSLETTER_SUBSCRIPTIONS {
+    ANNOUNCEMENTS = 'Announcements',
+    /** not displayed anymore, turning on one product news should turn it on as well */
+    FEATURES = 'Features',
+    NEWSLETTER = 'Newsletter',
+    BETA = 'Beta',
+    BUSINESS = 'Business',
+    OFFERS = 'Offers',
+    /** used in `Messages & Composing` */
+    NEW_EMAIL_NOTIF = 'NewEmailNotif',
+    ONBOARDING = 'Onboarding',
+    USER_SURVEY = 'UserSurveys',
+    INBOX_NEWS = 'InboxNews',
+    VPN_NEWS = 'VpnNews',
+    DRIVE_NEWS = 'DriveNews',
+}
+
+export enum NEWSLETTER_SUBSCRIPTIONS_BITS {
     ANNOUNCEMENTS = 1 << 0,
     FEATURES = 1 << 1,
     NEWSLETTER = 1 << 2,
     BETA = 1 << 3,
     BUSINESS = 1 << 4,
     OFFERS = 1 << 5,
+    /** used in `Messages & Composing` */
+    NEW_EMAIL_NOTIF = 1 << 6,
     ONBOARDING = 1 << 7,
+    USER_SURVEY = 1 << 8,
+    INBOX_NEWS = 1 << 9,
+    VPN_NEWS = 1 << 10,
+    DRIVE_NEWS = 1 << 11,
 }
+
+export const NEWSLETTER_SUBSCRIPTIONS_BY_BITS: Record<NEWSLETTER_SUBSCRIPTIONS_BITS, NEWSLETTER_SUBSCRIPTIONS> = {
+    [NEWSLETTER_SUBSCRIPTIONS_BITS.ANNOUNCEMENTS]: NEWSLETTER_SUBSCRIPTIONS.ANNOUNCEMENTS,
+    [NEWSLETTER_SUBSCRIPTIONS_BITS.FEATURES]: NEWSLETTER_SUBSCRIPTIONS.FEATURES,
+    [NEWSLETTER_SUBSCRIPTIONS_BITS.NEWSLETTER]: NEWSLETTER_SUBSCRIPTIONS.NEWSLETTER,
+    [NEWSLETTER_SUBSCRIPTIONS_BITS.BETA]: NEWSLETTER_SUBSCRIPTIONS.BETA,
+    [NEWSLETTER_SUBSCRIPTIONS_BITS.BUSINESS]: NEWSLETTER_SUBSCRIPTIONS.BUSINESS,
+    [NEWSLETTER_SUBSCRIPTIONS_BITS.OFFERS]: NEWSLETTER_SUBSCRIPTIONS.OFFERS,
+    [NEWSLETTER_SUBSCRIPTIONS_BITS.NEW_EMAIL_NOTIF]: NEWSLETTER_SUBSCRIPTIONS.NEW_EMAIL_NOTIF,
+    [NEWSLETTER_SUBSCRIPTIONS_BITS.ONBOARDING]: NEWSLETTER_SUBSCRIPTIONS.ONBOARDING,
+    [NEWSLETTER_SUBSCRIPTIONS_BITS.USER_SURVEY]: NEWSLETTER_SUBSCRIPTIONS.USER_SURVEY,
+    [NEWSLETTER_SUBSCRIPTIONS_BITS.INBOX_NEWS]: NEWSLETTER_SUBSCRIPTIONS.INBOX_NEWS,
+    [NEWSLETTER_SUBSCRIPTIONS_BITS.VPN_NEWS]: NEWSLETTER_SUBSCRIPTIONS.VPN_NEWS,
+    [NEWSLETTER_SUBSCRIPTIONS_BITS.DRIVE_NEWS]: NEWSLETTER_SUBSCRIPTIONS.DRIVE_NEWS,
+};
 
 export const CONTACT_EMAILS_LIMIT = 1000;
 export const CONTACTS_LIMIT = 1000;
@@ -657,18 +710,23 @@ export enum LINK_WARNING {
     VALUE = 'dontAsk',
 }
 
+export const MEMBER_ADDON_PREFIX = '1member';
+
 export enum ADDON_NAMES {
     ADDRESS = '5address',
     MEMBER = '1member',
     DOMAIN = '1domain',
     SPACE = '1gb',
     VPN = '1vpn',
-    MEMBER_DRIVE_PRO = '1member-drivepro2022',
-    MEMBER_MAIL_PRO = '1member-mailpro2022',
-    MEMBER_BUNDLE_PRO = '1member-bundlepro2022',
+    MEMBER_DRIVE_PRO = `${MEMBER_ADDON_PREFIX}-drivepro2022`,
+    MEMBER_MAIL_PRO = `${MEMBER_ADDON_PREFIX}-mailpro2022`,
+    MEMBER_BUNDLE_PRO = `${MEMBER_ADDON_PREFIX}-bundlepro2022`,
     DOMAIN_BUNDLE_PRO = '1domain-bundlepro2022',
-    MEMBER_ENTERPRISE = '1member-enterprise2022',
+    MEMBER_ENTERPRISE = `${MEMBER_ADDON_PREFIX}-enterprise2022`,
     DOMAIN_ENTERPRISE = '1domain-enterprise2022',
+    MEMBER_VPN_PRO = `${MEMBER_ADDON_PREFIX}-vpnpro2023`,
+    MEMBER_VPN_BUSINESS = `${MEMBER_ADDON_PREFIX}-vpnbiz2023`,
+    IP_VPN_BUSINESS = '1ip-vpnbiz2023',
 }
 
 export enum PLAN_TYPES {
@@ -712,6 +770,8 @@ export enum PLANS {
     ENTERPRISE = 'enterprise2022',
     FAMILY = 'family2022',
     NEW_VISIONARY = 'visionary2022',
+    VPN_PRO = 'vpnpro2023',
+    VPN_BUSINESS = 'vpnbiz2023',
 }
 
 export const PLAN_NAMES = {
@@ -732,6 +792,8 @@ export const PLAN_NAMES = {
     [PLANS.ENTERPRISE]: 'Enterprise',
     [PLANS.FAMILY]: 'Proton Family',
     [PLANS.NEW_VISIONARY]: 'Visionary',
+    [PLANS.VPN_PRO]: 'VPN Essentials',
+    [PLANS.VPN_BUSINESS]: 'VPN Business',
 };
 
 export const MEMBER_PLAN_MAPPING = {
@@ -739,6 +801,8 @@ export const MEMBER_PLAN_MAPPING = {
     [ADDON_NAMES.MEMBER_MAIL_PRO]: PLANS.MAIL_PRO,
     [ADDON_NAMES.MEMBER_DRIVE_PRO]: PLANS.DRIVE_PRO,
     [ADDON_NAMES.MEMBER_ENTERPRISE]: PLANS.ENTERPRISE,
+    [ADDON_NAMES.MEMBER_VPN_PRO]: PLANS.VPN_PRO,
+    [ADDON_NAMES.MEMBER_VPN_BUSINESS]: PLANS.VPN_BUSINESS,
 };
 
 export enum COUPON_CODES {
@@ -1067,3 +1131,11 @@ export enum RELEASE_CATEGORIES {
     STABLE = 'Stable',
     EARLY_ACCESS = 'EarlyAccess',
 }
+
+export enum PROTON_WEBSITES {
+    PROTON_STATUS_PAGE = 'https://status.proton.me',
+}
+
+export const IPS_INCLUDED_IN_PLAN: Partial<Record<PLANS, number>> = {
+    [PLANS.VPN_BUSINESS]: 1,
+} as const;

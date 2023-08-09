@@ -921,8 +921,8 @@
       "System default": [
         "跟随系统"
       ],
-      "Theme default": [
-        "跟随配色方案"
+      "Theme font": [
+        "跟随配色"
       ]
     },
     "Font size option": {

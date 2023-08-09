@@ -28,15 +28,13 @@ describe('Import LastPass csv', () => {
     it('converts LastPass folders to vaults correctly', () => {
         const [primary, secondary] = payload.vaults;
         expect(payload.vaults.length).toEqual(2);
-        expect(primary.type).toEqual('new');
-        expect(primary.type === 'new' && primary.vaultName).toEqual('Import - 27 Apr 2023');
-        expect(secondary.type).toEqual('new');
-        expect(secondary.type === 'new' && secondary.vaultName).toEqual('company services');
+        expect(primary.name).toEqual('Import - 27 Apr 2023');
+        expect(secondary.name).toEqual('company services');
     });
 
     it('parses primary `LastPass import` vault items correctly', () => {
         const [primary] = payload.vaults;
-        expect(primary.items.length).toEqual(2);
+        expect(primary.items.length).toEqual(3);
 
         /* Login */
         const loginItem1 = primary.items[0] as ItemImportIntent<'login'>;
@@ -45,13 +43,24 @@ describe('Import LastPass csv', () => {
         expect(loginItem1.metadata.note).toEqual('Secure note');
         expect(loginItem1.content.username).toEqual('nobody@proton.me');
         expect(loginItem1.content.password).toEqual('proton123');
-        expect(loginItem1.content.urls[0]).toEqual('https://account.proton.me');
+        expect(loginItem1.content.urls[0]).toEqual('https://account.proton.me/');
 
         /* Note */
         const noteItem1 = primary.items[1] as ItemImportIntent<'login'>;
         expect(noteItem1.type).toEqual('note');
         expect(noteItem1.metadata.name).toEqual('Secure note');
         expect(noteItem1.metadata.note).toEqual('This is a secure note');
+
+        /* Credit Card */
+        const creditCardItem1 = primary.items[2] as ItemImportIntent<'creditCard'>;
+        expect(creditCardItem1.type).toEqual('creditCard');
+        expect(creditCardItem1.metadata.name).toEqual('Credit Card Item with note');
+        expect(creditCardItem1.metadata.note).toEqual('this is a note for the credit card');
+        expect(creditCardItem1.content.cardholderName).toEqual('A B');
+        expect(creditCardItem1.content.number).toEqual('4242424242424242');
+        expect(creditCardItem1.content.expirationDate).toEqual('012025');
+        expect(creditCardItem1.content.verificationNumber).toEqual('123');
+        expect(creditCardItem1.content.pin).toEqual('');
     });
 
     it('parses secondary vault items correctly', async () => {
@@ -64,7 +73,7 @@ describe('Import LastPass csv', () => {
         expect(loginItem2.metadata.note).toEqual('');
         expect(loginItem2.content.username).toEqual('admin');
         expect(loginItem2.content.password).toEqual('proton123');
-        expect(loginItem2.content.urls[0]).toEqual('https://proton.me');
+        expect(loginItem2.content.urls[0]).toEqual('https://proton.me/');
 
         /* Login */
         const loginItem3 = secondary.items[1] as ItemImportIntent<'login'>;
@@ -73,7 +82,7 @@ describe('Import LastPass csv', () => {
         expect(loginItem3.metadata.note).toEqual('This is a twitter note');
         expect(loginItem3.content.username).toEqual('@nobody');
         expect(loginItem3.content.password).toEqual('proton123');
-        expect(loginItem3.content.urls[0]).toEqual('https://twitter.com');
+        expect(loginItem3.content.urls[0]).toEqual('https://twitter.com/login');
         expect(loginItem3.content.totpUri).toEqual(
             'otpauth://totp/Twitter?secret=BASE32SECREQ&algorithm=SHA1&digits=6&period=30'
         );
@@ -85,7 +94,7 @@ describe('Import LastPass csv', () => {
         expect(loginItem4.metadata.note).toEqual('');
         expect(loginItem4.content.username).toEqual('@nobody');
         expect(loginItem4.content.password).toEqual('proton123');
-        expect(loginItem4.content.urls[0]).toEqual('https://fb.com');
+        expect(loginItem4.content.urls[0]).toEqual('https://fb.com/login');
         expect(loginItem4.content.totpUri).toEqual(
             'otpauth://totp/fb.com?secret=BASE32SECREQ&algorithm=SHA1&digits=6&period=30'
         );
@@ -103,7 +112,6 @@ describe('Import LastPass csv', () => {
     test('correctly keeps a reference to ignored items', () => {
         expect(payload.ignored).not.toEqual([]);
         expect(payload.ignored[0]).toEqual('[Bank Account] test');
-        expect(payload.ignored[1]).toEqual('[Credit Card] TestCC');
-        expect(payload.ignored[2]).toEqual('[Address] TestID');
+        expect(payload.ignored[1]).toEqual('[Address] TestID');
     });
 });

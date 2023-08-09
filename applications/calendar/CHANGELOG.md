@@ -1,3 +1,31 @@
+## Release 5.0.13.0 — Aug 9, 2023
+
+### Improvements
+
+-   Add the ability to easily see the addresses of events' participants, copy them and create or view linked contacts  
+
+### Fixes
+
+-   Small fixes when sending or replying to invitations
+
+## Release 5.0.12.0 — July 12, 2023
+
+### New features
+
+-   Public holidays are here!
+
+### Improvements
+
+-   Add app languages: Finnish, Hindi and Swedish
+
+### Fixes
+
+-   Minor bug fixes
+
+### Other
+
+-   Our Terms and Conditions have been updated https://proton.me/legal/terms
+
 ## Release 5.0.11.0 — June 14, 2023
 
 ### Improvements

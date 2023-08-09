@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { Href } from '@proton/atoms/Href';
 import { Dropdown, Icon, useModalState, usePopperAnchor } from '@proton/components/components';
@@ -21,16 +21,32 @@ import SpyTrackerIcon from './SpyTrackerIcon';
 import SpyTrackerModal from './SpyTrackerModal';
 import UTMTrackerModal from './UTMTrackerModal';
 
-const getTitle = (needsMoreProtection: boolean, hasTrackers: boolean) => {
+const getTitle = (needsMoreProtection: boolean, trackersCount: number) => {
     if (needsMoreProtection) {
-        return c('Title').t`Protect your email`;
+        return c('Title').t`Protect yourself from trackers`;
     } else {
-        if (hasTrackers) {
-            return c('Title').t`This email is protected`;
+        if (trackersCount > 0) {
+            // translator: trackersCount refers to the number of image trackers + utm trackers found in the message
+            return c('Title').ngettext(
+                msgid`We protected you from ${trackersCount} tracker`,
+                `We protected you from ${trackersCount} trackers`,
+                trackersCount
+            );
         } else {
             return c('Title').t`No trackers found`;
         }
     }
+};
+
+const getDescription = (needsMoreProtection: boolean, hasTrackers: boolean) => {
+    if (needsMoreProtection) {
+        return c('Description')
+            .t`Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.`;
+    } else if (!hasTrackers) {
+        return c('Description').t`We didn't find any known trackers and tracking URLs in this email.`;
+    }
+
+    return undefined;
 };
 
 interface Props {
@@ -68,11 +84,8 @@ const PrivacyDropdown = ({ message }: Props) => {
         }
     }, [showSpotlight]);
 
-    const title = getTitle(needsMoreProtection, hasTrackers);
-    const description = needsMoreProtection
-        ? c('Description')
-              .t`You can read the message and click on links without being tracked with email tracker protection.`
-        : c('Description').t`You can read the message and click on links without being tracked.`;
+    const title = getTitle(needsMoreProtection, numberOfImageTrackers + numberOfUTMTrackers);
+    const description = getDescription(needsMoreProtection, hasTrackers);
 
     const handleShowImageTrackersDetails = () => {
         if (numberOfImageTrackers > 0) {
@@ -125,7 +138,7 @@ const PrivacyDropdown = ({ message }: Props) => {
 
         void sendTelemetryReport({
             api,
-            measurementGroup: TelemetryMeasurementGroups.mailSimpleLogin,
+            measurementGroup: TelemetryMeasurementGroups.mailPrivacyDropdown,
             event: TelemetryMailEvents.privacy_dropdown_opened,
         });
     };
@@ -140,16 +153,16 @@ const PrivacyDropdown = ({ message }: Props) => {
                 ref={anchorRef}
             />
             <Dropdown anchorRef={anchorRef} isOpen={isOpen} onClose={close} originalPlacement="bottom-end">
-                <div className="p-4">
+                <div className="p-4" data-testid="privacy:dropdown-content">
+                    <img src={hasTrackers ? trackersImage : noTrackersImage} alt={title} className="block m-auto" />
                     <div className="flex text-center flex-justify-center">
-                        <img src={hasTrackers ? trackersImage : noTrackersImage} alt={title} className="hauto" />
                         <span className="my-4">
                             <h5 className="text-bold mb-2" tabIndex={-2} data-testid="privacy:title">
                                 {title}
                             </h5>
-                            <span data-testid="privacy:description">{description}</span>
+                            {description && <span data-testid="privacy:description">{description}</span>}
                             <br />
-                            <Href className="ml-1" href={emailTrackerProtectionURL} data-testid="privacy:learnmore">{c(
+                            <Href className="ml-1" href={emailTrackerProtectionURL} data-testid="privacy:learn-more">{c(
                                 'Info'
                             ).t`Learn more`}</Href>
                         </span>
@@ -174,39 +187,38 @@ const PrivacyDropdown = ({ message }: Props) => {
                             <hr className="mt-4 mb-2" />
                         </>
                     ) : (
-                        <>
-                            <hr className="my-1" />
+                        hasTrackers && (
+                            <>
+                                <hr className="my-1" />
 
-                            {hasImageTrackers ? (
-                                <button
-                                    onClick={handleShowImageTrackersDetails}
-                                    className="interactive w100 rounded-sm"
-                                >
-                                    {imageTrackerRow}
-                                </button>
-                            ) : (
-                                imageTrackerRow
-                            )}
+                                {hasImageTrackers && (
+                                    <>
+                                        <button
+                                            onClick={handleShowImageTrackersDetails}
+                                            className="interactive w100 rounded-sm"
+                                            data-testid="privacy:spy-trackers-row"
+                                        >
+                                            {imageTrackerRow}
+                                        </button>
 
-                            <hr className="my-1" />
+                                        <hr className="my-1" />
+                                    </>
+                                )}
 
-                            {canCleanUTMTrackers && (
-                                <>
-                                    {hasUTMTrackers ? (
+                                {canCleanUTMTrackers && hasUTMTrackers && (
+                                    <>
                                         <button
                                             onClick={handleShowUTMTrackersDetails}
                                             className="interactive w100 rounded-sm"
+                                            data-testid="privacy:link-trackers-row"
                                         >
                                             {utmTrackerRow}
                                         </button>
-                                    ) : (
-                                        utmTrackerRow
-                                    )}
-
-                                    <hr className="my-1" />
-                                </>
-                            )}
-                        </>
+                                        <hr className="my-1" />
+                                    </>
+                                )}
+                            </>
+                        )
                     )}
                 </div>
             </Dropdown>

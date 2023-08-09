@@ -10,6 +10,7 @@ import { useOnline } from '../../hooks';
 import useApi from '../../hooks/useApi';
 import useApiStatus from '../../hooks/useApiStatus';
 import TopBanner from './TopBanner';
+import UnreachableTopBanner from './UnreachableTopBanner';
 
 const OFFLINE_TIMEOUT = 5000;
 
@@ -59,7 +60,7 @@ const OnlineTopBanner = () => {
     if (safeOnlineStatus) {
         // If the device is known to be online, and the API is unreachable
         if (apiUnreachable) {
-            return <TopBanner className="bg-danger">{apiUnreachable}</TopBanner>;
+            return <UnreachableTopBanner errorMessage={apiUnreachable} />;
         }
         return null;
     }

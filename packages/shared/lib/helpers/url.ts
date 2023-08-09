@@ -1,3 +1,5 @@
+import { stripLeadingSlash, stripTrailingSlash } from '@proton/shared/lib/helpers/string';
+
 import { APPS, APPS_CONFIGURATION, APP_NAMES, DOH_DOMAINS, LINK_TYPES } from '../constants';
 import window from '../window';
 
@@ -271,11 +273,11 @@ export const getShopURL = () => {
 };
 
 export const getDownloadUrl = (path: string) => {
-    return `https://proton.me/downloads${path}`;
+    return `https://proton.me/download${path}`;
 };
 
-export const getSupportContactURL = (params: string) => {
-    return getStaticURL(`/support/contact?${params}`);
+export const getSupportContactURL = (params: { [key: string]: string | string[] | undefined }) => {
+    return getStaticURL(`/support/contact${stringifySearchParams(params, '?')}`);
 };
 
 export const getPrivacyPolicyURL = (app?: APP_NAMES) => {
@@ -328,4 +330,14 @@ export const formatURLForAjaxRequest = () => {
     url.hash = '';
 
     return url;
+};
+
+export const getPathFromLocation = (location: { pathname: string; hash: string; search: string }) => {
+    return [location.pathname, location.search, location.hash].join('');
+};
+
+export const joinPaths = (...paths: string[]) => {
+    return paths.reduce((acc, path) => {
+        return `${stripTrailingSlash(acc)}/${stripLeadingSlash(path)}`;
+    }, '');
 };

@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Info, InputFieldTwo, Select } from '../../components';
 import { DEFAULT_SEPARATOR, getFullList } from '../../helpers/countries';
-import { CardModel } from '../../payments/core/interface';
+import { CardModel } from '../../payments/core';
 import CardNumberInput from './CardNumberInput';
 import ExpInput from './ExpInput';
 
@@ -17,7 +17,7 @@ interface Props {
 
 const CreditCard = ({ card, errors, onChange, loading = false }: Props) => {
     const countries = useMemo(
-        () => getFullList().map(({ value, label: text, disabled }) => ({ value, text, disabled })),
+        () => getFullList().map(({ key, value, label: text, disabled }) => ({ key, value, text, disabled })),
         []
     );
     const handleChange =

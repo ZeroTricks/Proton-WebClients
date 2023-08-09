@@ -4,12 +4,12 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon, InputFieldTwo, PhoneInput, Tabs, useFormErrors, useLoading } from '@proton/components';
+import { Icon, InputFieldTwo, PhoneInput, Tabs, useFormErrors } from '@proton/components';
 import MnemonicInputField, {
     useMnemonicInputValidation,
 } from '@proton/components/containers/mnemonic/MnemonicInputField';
 import { RecoveryMethod } from '@proton/components/containers/resetPassword/interface';
-import { SSO_PATHS } from '@proton/shared/lib/constants';
+import { useLoading } from '@proton/hooks';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
@@ -33,6 +33,7 @@ interface Props {
     defaultMethod?: RecoveryMethod;
     defaultValue?: string;
     defaultEmail?: string;
+    loginUrl: string;
 }
 
 const RequestResetTokenForm = ({
@@ -42,6 +43,7 @@ const RequestResetTokenForm = ({
     methods,
     defaultMethod,
     defaultValue = '',
+    loginUrl,
 }: Props) => {
     const history = useHistory();
     const [loading, withLoading] = useLoading();
@@ -246,7 +248,7 @@ const RequestResetTokenForm = ({
                 shape="ghost"
                 fullWidth
                 className="mt-2"
-                onClick={() => history.push(SSO_PATHS.LOGIN)}
+                onClick={() => history.push(loginUrl)}
             >{c('Action').t`Return to sign in`}</Button>
         </form>
     );

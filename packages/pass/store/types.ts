@@ -12,6 +12,7 @@ export type Action = ReturnType<(typeof actions)[keyof typeof actions]>;
 
 export interface WorkerRootSagaOptions {
     getAuth: () => AuthenticationStore;
+    getEventInterval: () => number;
     onBoot?: (result: { ok: true } | { ok: false; clearCache: boolean }) => void;
     onCacheRequest: () => boolean;
     onItemsChange?: () => void;
@@ -19,6 +20,7 @@ export interface WorkerRootSagaOptions {
     onNotification?: (notification: Notification) => void;
     onSessionLocked?: (storageToken: string) => void;
     onSessionUnlocked?: (storageToken: string) => void;
+    onSessionLockChange?: (registered: boolean) => void;
     onSettingUpdate?: (settings: ProxiedSettings) => Promise<void>;
     onShareEventDisabled?: (shareId: string) => void;
     onShareEventItemsDeleted?: (shareId: string, itemIds: string[]) => void;

@@ -124,6 +124,9 @@
       "Block": [
         "屏蔽"
       ],
+      "Block email tracking": [
+        "屏蔽邮件跟踪"
+      ],
       "Block messages from this sender": [
         "屏蔽来自此发件人的所有邮件"
       ],
@@ -141,6 +144,9 @@
       ],
       "Carbon Copy": [
         "抄送"
+      ],
+      "Change email": [
+        "更换邮箱"
       ],
       "Change page": [
         "页面跳转"
@@ -315,9 +321,6 @@
       ],
       "Discard": [
         "放弃"
-      ],
-      "Dismiss get started checklist": [
-        "忽略入门清单"
       ],
       "Done": [
         "完成"
@@ -646,6 +649,9 @@
       "Move all messages from this label": [
         "移动该标签中的所有邮件"
       ],
+      "Move all to archive": [
+        "全部存档"
+      ],
       "Move all to trash": [
         "全部移至废件箱"
       ],
@@ -717,9 +723,6 @@
       ],
       "Open composer": [
         "打开邮件编辑区"
-      ],
-      "Open get started checklist modal": [
-        "打开入门清单"
       ],
       "Open navigation": [
         "打开导航栏"
@@ -1045,9 +1048,6 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "保存失败，请重试。失败原因：${ saveError }"
       ],
-      "Turn on tracker protection": [
-        "开启追踪保护"
-      ],
       "Unblock": [
         "解除屏蔽"
       ],
@@ -1243,11 +1243,6 @@
     "Alternative text for welcome image": {
       "Welcome": [
         "欢迎"
-      ]
-    },
-    "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
-        "已完成 ${ numberOfCompletedItems }/${ totalNumberOfItems }"
       ]
     },
     "Animation": {
@@ -2942,6 +2937,9 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "拖动可调整联系人合并优先级，未勾选的联系人不会被合并。"
       ],
+      "We didn't find any known trackers and tracking URLs in this email.": [
+        "我们未在此邮件中发现任何跟踪器与跟踪链接。"
+      ],
       "When do you want your message to be sent?": [
         "您想何时发送邮件？"
       ],
@@ -3399,9 +3397,6 @@
       ],
       "There has been an issue with content search. Default search has been used instead.": [
         "全文搜索出现问题，已改为使用普通搜索。"
-      ],
-      "There was a problem updating your local messages, they will be downloaded again to re-enable content search": [
-        "邮件内容同步失败，即将重新下载以开启邮件全文搜索"
       ],
       "There was an error when exporting the contacts vCards": [
         "导出联系人 vCards 时出错"
@@ -4076,8 +4071,8 @@
       "System default": [
         "跟随系统"
       ],
-      "Theme default": [
-        "跟随配色方案"
+      "Theme font": [
+        "跟随配色"
       ]
     },
     "Font Size Default": {
@@ -4116,31 +4111,48 @@
         "收件人：${ toString }"
       ]
     },
-    "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        "我们已将您的存储空间升至 ${ rewardInGb } GB。您还可以升级账户，从而获得更大的存储空间和更高级的功能。"
-      ],
-      "You're all set!": [
-        "一切就绪！"
-      ]
-    },
-    "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        "完成所有步骤即可将存储空间升至 ${ rewardInGb } GB"
-      ],
-      "Expires soon": [
-        "即将过期"
-      ],
-      "Expires today": [
-        "今天过期"
-      ],
-      "Only ${ days } days left": [
-        "仅剩 ${ days } 天"
-      ]
-    },
     "Get started checklist instructions": {
-      "Available on iOS and Android.": [
-        "支持 iOS 与安卓设备。"
+      "${ MAIL_APP_NAME } on App Store": [
+        "App Store 上的${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "Play Store 上的${ MAIL_APP_NAME }"
+      ],
+      "Block email communications from scammers permanently.": [
+        "永久阻止诈骗者的电子邮件通信。"
+      ],
+      "Block unsavory senders": [
+        "阻止不良发件人"
+      ],
+      "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
+        "太好了，现在您的邮箱将更加安全、更加便捷、更加称心如意。我们已免费为您将邮箱容量升至 1 GB。"
+      ],
+      "Checklist complete": [
+        "清单已完成"
+      ],
+      "Close": [
+        "关闭"
+      ],
+      "Congratulation, you completed all the steps!": [
+        "恭喜，您已完成所有步骤！"
+      ],
+      "Continue setting up your email": [
+        "继续设置您的电子邮件"
+      ],
+      "Double your free storage to 1 GB when you complete the following:": [
+        "完成以下操作后，您的免费存储空间将翻倍至 1 GB："
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails.": [
+        "极致的加密技术，只有您和目标收件人能够阅读邮件内容。"
+      ],
+      "For your eyes only": [
+        "密不透风"
+      ],
+      "Get free storage": [
+        "获得免费存储空间"
+      ],
+      "Get mobile app": [
+        "下载移动端应用"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "下载 ${ MAIL_APP_NAME } 移动应用"
@@ -4148,41 +4160,62 @@
       "Import contacts or emails": [
         "导入您的通讯录或信息"
       ],
+      "Import data": [
+        "导入数据"
+      ],
       "Import your contacts or messages": [
         "导入您的通讯录或信息"
+      ],
+      "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
+        "继续使用 ${ MAIL_APP_NAME } 来发现 ${ BRAND_NAME } 保护您的隐私和简化电子邮件发送的更多方法。"
+      ],
+      "Learn more": [
+        "了解详情"
+      ],
+      "Make ${ BRAND_NAME } your go-to inbox": [
+        "将 ${ BRAND_NAME } 设置为您的首选收件箱"
+      ],
+      "Maybe later": [
+        "以后再说"
+      ],
+      "Nice! You've updated all services in this category.": [
+        "好的！您已更新此类别中的所有服务。"
+      ],
+      "Open checklist": [
+        "打开清单"
+      ],
+      "Popular online services": [
+        "热门在线服务"
+      ],
+      "Protect and simplify your email": [
+        "让您的邮箱更加安全便捷"
+      ],
+      "Protection from trackers": [
+        "抵御追踪脚本"
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "通过简单转换助手以快速地将您之前的联系人和电子邮件从任何服务提供商转移"
       ],
-      "Sign into the mobile app to complete the action": [
-        "打开手机APP完成后续操作。"
-      ],
-      "Using your mobile device, scan this QR code or visit": [
-        "使用您的移动设备扫描此二维码或只读打开"
-      ]
-    },
-    "Get started checklist item": {
-      "Get mobile app": [
-        "下载移动端应用"
-      ],
-      "Import contacts or emails": [
-        "导入通讯录或邮件"
-      ],
       "Send a message": [
         "发送邮件"
       ],
-      "Set up a recovery method": [
-        "设置恢复方法"
-      ]
-    },
-    "Get started checklist spotlight": {
-      "You can access the checklist anytime from here": [
-        "您可以在任何时候通过这里查看任务进度"
-      ]
-    },
-    "Get started checklist title": {
-      "Get started": [
-        "入门步骤"
+      "Set recovery method": [
+        "设置恢复方式"
+      ],
+      "Set up ${ strongText } from Gmail": [
+        "设置${ strongText } Gmail 邮件"
+      ],
+      "Sign in to the mobile app to complete this step": [
+        "登录移动应用程序以完成此步骤"
+      ],
+      "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
+        "使用您的移动设备扫描此二维码或访问 iOS 或 Android 商店。"
+      ],
+      "We stop advertisers and data collectors from profiling you.": [
+        "我们阻止广告商和数据收集者对您进行分析。"
+      ],
+      "You've unlocked 1 GB": [
+        "您已解锁 1 GB"
       ]
     },
     "Gmail forwarding": {
@@ -4583,8 +4616,14 @@
       "${ messagesNotAuthorizedToMove } messages could not be moved.": [
         "${ messagesNotAuthorizedToMove } 封邮件无法移动。"
       ],
-      "${ numberOfTrackers } email trackers blocked": [
-        "已屏蔽 ${ numberOfTrackers } 个电子邮件跟踪器"
+      "${ numberOfImageTrackers } email trackers blocked": [
+        "已屏蔽 ${ numberOfImageTrackers } 款邮件跟踪器"
+      ],
+      "${ numberOfImageTrackers } trackers blocked": [
+        "已屏蔽 ${ numberOfImageTrackers } 款跟踪器"
+      ],
+      "${ numberOfUTMTrackers } links cleaned": [
+        "已净化 ${ numberOfUTMTrackers } 个链接"
       ],
       "${ numContact } contacts": [
         "${ numContact } 位联系人"
@@ -4726,6 +4765,9 @@
       ],
       "Are you sure you want to discard your changes?": [
         "确定要放弃修改吗？"
+      ],
+      "Are you sure you want to move all messages in this location to Archive?": [
+        "确定要将此处所有邮件存档吗？"
       ],
       "Are you sure you want to move all messages in this location to Trash?": [
         "确定要将此处所有邮件移至废件箱吗？"
@@ -4913,15 +4955,6 @@
       "Email tracker protection is disabled": [
         "已禁用电子邮件跟踪保护"
       ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers in this message.": [
-        "邮件跟踪器会侵害您的隐私，${ BRAND_NAME } 在此邮件中未发现跟踪器。"
-      ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } trackers.": [
-        "邮件跟踪器会侵害您的隐私，${ BRAND_NAME } 已发现并屏蔽了 ${ numberOfTrackers } 个跟踪器。"
-      ],
-      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
-        "邮件跟踪器会威胁到您的隐私，开启跟踪器防护可以避免发件人得知您在何时何地阅览了此邮件。"
-      ],
       "Emails are automatically signed": [
         "自动对邮件进行数字签名"
       ],
@@ -5093,6 +5126,9 @@
       "Link type": [
         "链接类型"
       ],
+      "Links cleaned:": [
+        "已净化的链接："
+      ],
       "Loading": [
         "加载中"
       ],
@@ -5147,9 +5183,6 @@
       "Message will be sent tomorrow at ${ formattedTime }": [
         "邮件将于明天 ${ formattedTime } 发送"
       ],
-      "Messages downloaded: ${ currentProgress } out of ${ totalProgress }": [
-        "已下载 ${ currentProgress }/${ totalProgress } 封邮件"
-      ],
       "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
         "已归入垃圾邮件或废件箱超过 30 天的邮件将被直接删除。"
       ],
@@ -5174,9 +5207,6 @@
       "No email address": [
         "无邮箱地址"
       ],
-      "No email trackers found": [
-        "未发现电子邮件跟踪器"
-      ],
       "No folder found": [
         "未找到文件夹"
       ],
@@ -5192,14 +5222,17 @@
       "No label selected": [
         "未选择标签"
       ],
+      "No links cleaned": [
+        "无需净化链接"
+      ],
       "No more results found": [
         "到底了"
       ],
       "No results found": [
         "未找到结果"
       ],
-      "No trackers found, but some images could not be loaded with tracking protection": [
-        "没有检测到跟踪器，但跟踪器防护导致某些图像无法加载"
+      "No trackers found": [
+        "未发现跟踪器"
       ],
       "non-${ MAIL_APP_NAME }": [
         "非 ${ MAIL_APP_NAME }"
@@ -5415,7 +5448,7 @@
         "主题："
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
-        "订阅即将结束：在 ${ byDate } 之前重新激活以保留您的 ${ planName } 权益。${ reactivateLink }"
+        "您的账户等级即将失效：${ byDate } 前重新激活即可继续享受 ${ planName } 权益。${ reactivateLink }"
       ],
       "support team": [
         "客服团队"
@@ -5591,8 +5624,11 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "待发送的邮件过多，请静待另一封邮件发送后陆续发送此邮件。"
       ],
-      "Turn off to only search by date, name, or email address. To disable search message content and delete downloaded messages, go to settings.": [
-        "关闭则仅搜索日期、姓名和邮箱地址。前往设置可关闭邮件全文搜索并删除已下载的邮件。"
+      "Trackers blocked:": [
+        "已屏蔽的跟踪器："
+      ],
+      "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
+        "关闭则仅搜索邮件主题、日期、姓名和邮箱地址。前往设置可关闭邮件全文搜索并删除已下载的邮件。"
       ],
       "Turn on to search the content of your messages": [
         "开启以搜索您的邮件全文"
@@ -5608,9 +5644,6 @@
       ],
       "Updating message content search...": [
         "正在更新邮件内容..."
-      ],
-      "Updating your local messages, message content won't be searched during this update": [
-        "正在同步邮件信息，暂时无法搜索邮件全文"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "现在升级账户可获得更大存储空间、更多功能，还能享受优惠"
@@ -5735,9 +5768,6 @@
       "You can either update your search query or ${ button }": [
         "您可以更改或${ button }搜索条件。"
       ],
-      "You can either update your search query or clear it": [
-        "您可以修改或清除搜索内容"
-      ],
       "You can import one data type at a time.": [
         "您一次可以导入一种数据类型。"
       ],
@@ -5833,9 +5863,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "您的文件将被加密保存。"
-      ],
-      "Your import will not be processed.": [
-        "此次导入将不会进行。"
       ],
       "Your login information will not be saved after the import is completed.": [
         "导入完成后我们不会留存您的账号和密码。"
@@ -6208,6 +6235,9 @@
       "City": [
         "城市"
       ],
+      "Cleaned": [
+        "净化后"
+      ],
       "Code is 6 digits without spaces": [
         "验证码是无空格的六位数"
       ],
@@ -6409,6 +6439,9 @@
       "OK": [
         "还行"
       ],
+      "Open in a new tab": [
+        "在新标签页中打开"
+      ],
       "Operating system": [
         "操作系统"
       ],
@@ -6423,6 +6456,9 @@
       ],
       "Or": [
         "或"
+      ],
+      "Original link": [
+        "原始链接"
       ],
       "Participants": [
         "参与者"
@@ -6914,11 +6950,6 @@
         "${ appName } 有新版本，请${ reloadButton }。"
       ]
     },
-    "Message has been sent to the user via a SimpleLogin alias": {
-      "Delivered via SimpleLogin by ${ BRAND_NAME }": [
-        "通过 ${ BRAND_NAME } 的 SimpleLogin 服务送达"
-      ]
-    },
     "Message image": {
       "Image has not been loaded in order to protect your privacy.": [
         "为了保护您的隐私，图像未被加载。"
@@ -7244,6 +7275,40 @@
         "通过左上角的切换按钮可以前往所有 ${ BRAND_NAME } 服务：${ MAIL_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 和 ${ DRIVE_SHORT_APP_NAME }。"
       ]
     },
+    "Online accounts": {
+      "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
+        "注册过下列账户？点击右侧按钮即可将注册邮箱更改为 ${ MAIL_APP_NAME }。"
+      ]
+    },
+    "Online Accounts Name": {
+      "Banking": [
+        "银行"
+      ],
+      "Crypto": [
+        "加密货币"
+      ],
+      "E-commerce and Retail": [
+        "电商"
+      ],
+      "Entertainment": [
+        "娱乐"
+      ],
+      "Food and beverage": [
+        "餐饮"
+      ],
+      "Gaming": [
+        "游戏"
+      ],
+      "Most popular": [
+        "常用"
+      ],
+      "Travel": [
+        "旅游"
+      ],
+      "Utilities": [
+        "通信"
+      ]
+    },
     "Option": {
       "Add to existing group": [
         "添加到已有队列"
@@ -7283,20 +7348,6 @@
     "Pagination": {
       "${ page } of ${ totalText }": [
         "${ page } / ${ totalText }"
-      ]
-    },
-    "Paid user checklist item": {
-      "Get mobile app": [
-        "下载移动端应用"
-      ],
-      "Import contacts or emails": [
-        "导入通讯录或邮件"
-      ],
-      "Send a message": [
-        "发送邮件"
-      ],
-      "Set up a recovery method": [
-        "设置恢复方法"
       ]
     },
     "Participant name": {
@@ -7597,6 +7648,11 @@
       ],
       "We have detected some warnings. The following email addresses may not receive emails:": [
         "请注意，下列邮箱地址可能收不到邮件："
+      ]
+    },
+    "Sender verification details": {
+      "Sender verification": [
+        "发件人验证"
       ]
     },
     "Sent email icon": {
@@ -7968,9 +8024,6 @@
       ]
     },
     "Storage": {
-      "Get extra storage for free": [
-        "免费获取额外的存储空间"
-      ],
       "Release notes": [
         "版本说明"
       ],
@@ -8212,6 +8265,70 @@
         "反馈已发送"
       ]
     },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "一年"
+      ],
+      "2 years": [
+        "两年"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "高级云盘账户"
+      ],
+      "Premium Mail and Calendar": [
+        "高级邮箱与日历账户"
+      ],
+      "Premium Password Manager": [
+        "高级密码管理器"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "安全地存储您的密码并在网站上自动填充它们。包括无限密码、自动填充、密码生成器等。"
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "密码管理器"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "在您的所有设备上创建安全的登录详细信息。包括无限别名、20 个保管库、集成 2FA、信用卡自动填充等。"
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "连接全球逾 65 个国家的 2950 + 台服务器，多达 10 台设备同时在线，畅享全球流媒体服务，拦截恶意软件和广告，还有更多功能等您体验。"
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "支持 1 个自有域名、10 个邮箱地址、10 个 Hide-my-email 邮箱别名、日程共享等功能。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "使用加密的云存储保护您的文件。包括版本历史记录、加密文件共享等。"
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "*您的订阅将在计费周期结束时以标准折扣费率自动续订。"
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "折扣基于标准每月定价。此优惠仅适用于首次订阅者。"
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "在有限的时间内，以独家折扣获得 ${ BRAND_NAME } 的最佳优惠。"
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "我们正在庆祝众筹九周年！"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "${ BRAND_NAME } 周年纪念促销"
+      ]
+    },
     "Table header": {
       "Action": [
         "操作"
@@ -8370,7 +8487,7 @@
         "更改我的回复"
       ],
       "Clear out the junk": [
-        "辞旧迎新"
+        "邮件也需辞旧迎新"
       ],
       "Clearing data": [
         "数据清除中"
@@ -8621,6 +8738,9 @@
       "More selections": [
         "更多选择"
       ],
+      "Move all messages to Archive": [
+        "全部存档"
+      ],
       "Move all messages to Trash": [
         "全部移至废件箱"
       ],
@@ -8656,6 +8776,9 @@
       ],
       "No attachment found": [
         "未找到附件"
+      ],
+      "No trackers found": [
+        "未发现跟踪器"
       ],
       "Open actions dropdown": [
         "展开操作菜单"
@@ -8970,9 +9093,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } 将从最近的邮件开始导入尽可能多的数据。"
-      ],
-      "Are you sure you want to discard your import?": [
-        "您确定要放弃导入吗？"
       ],
       "Are you sure you want to permanently delete ${ count } contact groups?": [
         "您确定要永久删除 ${ count } 联系人群组吗？"

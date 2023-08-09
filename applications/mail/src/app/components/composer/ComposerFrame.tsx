@@ -5,26 +5,25 @@ import { COMPOSER_MODE } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import { ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT, DRAG_ADDRESS_KEY } from '../../constants';
-import { computeComposerStyle, shouldBeMaximized } from '../../helpers/composerPositioning';
+import { computeComposerStyle, getComposerDimension, shouldBeMaximized } from '../../helpers/composerPositioning';
 import useComposerDrag from '../../hooks/composer/useComposerDrag';
+import { ComposerID } from '../../logic/composers/composerTypes';
 import { Breakpoints } from '../../models/utils';
 import Composer, { ComposerAction } from './Composer';
 import ComposerTitleBar from './ComposerTitleBar';
 
 interface Props {
-    messageID: string;
     index: number;
     count: number;
     focus: boolean;
     breakpoints: Breakpoints;
     onFocus: () => void;
     onClose: () => void;
-    composerID: number;
+    composerID: ComposerID;
     drawerOffset: number;
 }
 
 const ComposerFrame = ({
-    messageID,
     index,
     count,
     focus,
@@ -37,7 +36,6 @@ const ComposerFrame = ({
     const [mailSettings] = useMailSettings();
     const composerFrameRef = useRef<HTMLDivElement>(null);
     const composerRef = useRef<ComposerAction>(null);
-    const composerIDRef = useRef(composerID);
     // Needed for re-renders when window size changes
     const [, windowHeight] = useWindowSize();
 
@@ -49,7 +47,10 @@ const ComposerFrame = ({
         mailSettings?.ComposerMode === COMPOSER_MODE.MAXIMIZED
     );
 
+    const composerDimension = getComposerDimension();
+
     const { style, customClasses } = computeComposerStyle({
+        composerDimension,
         index,
         count,
         minimized,
@@ -63,6 +64,7 @@ const ComposerFrame = ({
         offset: dragOffset,
         isDragging,
     } = useComposerDrag({
+        composerDimension,
         composerIndex: index,
         maximized,
         minimized,
@@ -85,7 +87,7 @@ const ComposerFrame = ({
 
     // Automatic maximize if height too small
     useEffect(() => {
-        const shouldMaximized = shouldBeMaximized(windowHeight);
+        const shouldMaximized = shouldBeMaximized(composerDimension, windowHeight);
 
         if (!maximized && shouldMaximized) {
             toggleMaximized();
@@ -115,7 +117,6 @@ const ComposerFrame = ({
     return (
         <div
             ref={composerFrameRef}
-            data-id={composerIDRef.current}
             className={clsx([
                 `composer rounded flex flex-column outline-none ${customClasses}`,
                 !focus && 'composer--is-blur',
@@ -127,6 +128,7 @@ const ComposerFrame = ({
             onClick={handleClick}
             onDragEnter={handleDragEnter}
             tabIndex={-1}
+            data-testid={composerID}
         >
             <ComposerTitleBar
                 title={subject}
@@ -140,7 +142,6 @@ const ComposerFrame = ({
             <ErrorBoundary>
                 <Composer
                     ref={composerRef}
-                    messageID={messageID}
                     composerFrameRef={composerFrameRef}
                     toggleMinimized={toggleMinimized}
                     toggleMaximized={toggleMaximized}
@@ -148,6 +149,7 @@ const ComposerFrame = ({
                     onClose={onClose}
                     onSubject={(subject) => setSubject(subject)}
                     isFocused={focus}
+                    composerID={composerID}
                 />
             </ErrorBoundary>
         </div>

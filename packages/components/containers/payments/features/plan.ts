@@ -8,7 +8,7 @@ import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features'
 import { getCalendarAppFeature, getNCalendarsFeature } from './calendar';
 import { getDriveAppFeature, getStorageFeature, getStorageFeatureB2B } from './drive';
 import { getSupport, getUsersFeature } from './highlights';
-import { ShortPlan } from './interface';
+import { ShortPlan, ShortPlanLike } from './interface';
 import {
     getContactGroupsManagement,
     getFoldersAndLabelsFeature,
@@ -30,14 +30,26 @@ import {
     getVaults,
 } from './pass';
 import {
+    get24x7SupportVPNFeature,
+    getAESEncryptionVPNFeature,
+    getAutoConnectVPNFeature,
     getB2BHighSpeedVPNConnections,
+    getBandwidth,
+    getBrowserExtensionVPNFeature,
+    getCensorshipCircumventionVPNFeature,
+    getCentralControlPanelVPNFeature,
     getCountries,
+    getDedicatedServersVPNFeature,
     getDoubleHop,
+    getKillSwitch,
+    getMultiPlatformSupportVPNFeature,
     getNetShield,
     getNoLogs,
     getP2P,
     getPrioritySupport,
+    getPrivateGatewaysVPNFeature,
     getProtectDevices,
+    getRequire2FAVPNFeature,
     getSecureCore,
     getStreaming,
     getTor,
@@ -121,7 +133,7 @@ export const getPassPlan = (plan: Plan): ShortPlan => {
             getVaults(PASS_PLUS_VAULTS),
             getHideMyEmailAliases('unlimited'),
             get2FAAuthenticator(true),
-            getCustomFields(),
+            getCustomFields(true),
             getSupport('priority'),
         ],
     };
@@ -294,25 +306,114 @@ export const getFamilyPlan = (plan: Plan): ShortPlan => {
     };
 };
 
+export const getVPNProPlan = (plan: Plan, serversCount: VPNServersCountData | undefined): ShortPlan => {
+    const plusServers = getPlusServers(serversCount?.paid.servers, serversCount?.paid.countries);
+    return {
+        plan: PLANS.VPN_PRO,
+        title: plan.Title,
+        label: '',
+        description: c('new_plans: info').t`Safely access internet from anywhere with essential network monitoring`,
+        cta: getCTA(plan.Title),
+        features: [
+            getCountries(plusServers),
+            getAESEncryptionVPNFeature(),
+            getBandwidth(),
+            getCensorshipCircumventionVPNFeature(),
+            getCentralControlPanelVPNFeature(),
+            getKillSwitch(),
+            getAutoConnectVPNFeature(),
+            getMultiPlatformSupportVPNFeature(),
+            get24x7SupportVPNFeature(),
+        ],
+    };
+};
+
+export const getVPNBusinessPlan = (plan: Plan, serversCount: VPNServersCountData | undefined): ShortPlan => {
+    const plusServers = getPlusServers(serversCount?.paid.servers, serversCount?.paid.countries);
+    return {
+        plan: PLANS.VPN_BUSINESS,
+        title: plan.Title,
+        label: '',
+        description: c('new_plans: info')
+            .t`Advanced network security and access management with dedicated secure Gateways`,
+        cta: getCTA(plan.Title),
+        features: [
+            getCountries(plusServers),
+            getAESEncryptionVPNFeature(),
+            getBandwidth(),
+            getCensorshipCircumventionVPNFeature(),
+            getCentralControlPanelVPNFeature(),
+            getKillSwitch(),
+            getAutoConnectVPNFeature(),
+            getMultiPlatformSupportVPNFeature(),
+            get24x7SupportVPNFeature(),
+            getPrivateGatewaysVPNFeature(),
+            getDedicatedServersVPNFeature(),
+            getRequire2FAVPNFeature(),
+            getNetShield(true),
+            getBrowserExtensionVPNFeature(),
+        ],
+    };
+};
+
+export const getVPNEnterprisePlan = (serversCount: VPNServersCountData | undefined): ShortPlanLike => {
+    const plusServers = getPlusServers(serversCount?.paid.servers, serversCount?.paid.countries);
+    return {
+        isPlanLike: true,
+        plan: 'PLANS.VPN_ENTERPRISE',
+        title: c('new_plans: Title').t`VPN Enterprise`,
+        label: '',
+        description: c('new_plans: info')
+            .t`Tailor-made solutions for larger organizations with specific security needs`,
+        features: [
+            getCountries(plusServers),
+            getAESEncryptionVPNFeature(),
+            getBandwidth(),
+            getCensorshipCircumventionVPNFeature(),
+            getCentralControlPanelVPNFeature(),
+            getKillSwitch(),
+            getAutoConnectVPNFeature(),
+            getMultiPlatformSupportVPNFeature(),
+            get24x7SupportVPNFeature(),
+            getPrivateGatewaysVPNFeature(),
+            getDedicatedServersVPNFeature(),
+            getRequire2FAVPNFeature(),
+            getNetShield(true),
+            getBrowserExtensionVPNFeature(),
+        ],
+    };
+};
+
+/**
+ * Takes a plans map, a plan and some options and returns short visual plan details
+ *
+ * @param options.boldStorageSize Whether or not print the storage size in bold
+ * @param options.vpnServers Details about vpn servers. WARNING: If this option is not provided, then VPN plan won't be returned
+ */
 export const getShortPlan = (
     plan: PLANS,
     plansMap: PlansMap,
-    vpnServers: VPNServersCountData,
-    options: { boldStorageSize?: boolean } = {}
+    options: {
+        boldStorageSize?: boolean;
+        vpnServers?: VPNServersCountData;
+    } = {}
 ) => {
-    const { boldStorageSize } = options;
     if (plan === PLANS.FREE) {
         return getFreePlan();
     }
+
     const planData = plansMap[plan];
     if (!planData) {
         return null;
     }
+
+    const { vpnServers, boldStorageSize } = options;
+
     switch (plan) {
         case PLANS.MAIL:
             return getMailPlan(planData);
         case PLANS.VPN:
-            return getVPNPlan(planData, vpnServers);
+            return vpnServers && getVPNPlan(planData, vpnServers);
         case PLANS.DRIVE:
             return getDrivePlan(planData, boldStorageSize);
         case PLANS.PASS_PLUS:
@@ -327,6 +428,10 @@ export const getShortPlan = (
             return getNewVisionaryPlan(planData);
         case PLANS.FAMILY:
             return getFamilyPlan(planData);
+        case PLANS.VPN_PRO:
+            return getVPNProPlan(planData, vpnServers);
+        case PLANS.VPN_BUSINESS:
+            return getVPNBusinessPlan(planData, vpnServers);
         default:
             return null;
     }

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { CurrencySelector, Price, useConfig, useLoading } from '@proton/components';
+import { CurrencySelector, Price, useConfig } from '@proton/components';
 import { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import {
     getFreeDrivePlan,
@@ -12,6 +12,7 @@ import {
     getFreeVPNPlan,
     getShortPlan,
 } from '@proton/components/containers/payments/features/plan';
+import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
 import { CYCLE, PLANS } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
@@ -122,7 +123,10 @@ const UpsellStep = ({
         return getFreePlan();
     })();
 
-    const upsellShortPlan = getShortPlan(upsellPlanName, plansMap, vpnServers, { boldStorageSize: true });
+    const upsellShortPlan = getShortPlan(upsellPlanName, plansMap, {
+        vpnServers,
+        boldStorageSize: true,
+    });
     const upsellPlan = plansMap[upsellPlanName];
     const upsellPlanHumanSize = humanSize(upsellPlan.MaxSpace, undefined, undefined, 0);
 
@@ -137,8 +141,9 @@ const UpsellStep = ({
             return null;
         }
 
-        const mostPopularShortPlan = getShortPlan(mostPopularPlanName, plansMap, vpnServers, {
+        const mostPopularShortPlan = getShortPlan(mostPopularPlanName, plansMap, {
             boldStorageSize: true,
+            vpnServers,
         });
 
         if (!mostPopularShortPlan) {

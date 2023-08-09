@@ -141,6 +141,9 @@
       "Continue with Google": [
         "Continuar com o Google"
       ],
+      "Copy email address": [
+        "Copiar endereço de email"
+      ],
       "Copy email to clipboard": [
         "Copiar e-mail para a área de transferência"
       ],
@@ -158,6 +161,9 @@
       ],
       "Create event": [
         "Criar evento"
+      ],
+      "Create new contact": [
+        "Criar novo contato"
       ],
       "Customize": [
         "Personalizar"
@@ -581,6 +587,9 @@
       "View": [
         "Visualizar"
       ],
+      "View contact details": [
+        "Ver detalhes do contato"
+      ],
       "View invoice": [
         "Visualizar fatura"
       ],
@@ -695,13 +704,13 @@
         "Arquivo ICS vazio"
       ],
       "Invalid event": [
-        "Evento inválido"
+        "O evento não é válido."
       ],
       "Invalid ICS file": [
-        "Arquivo ICS inválido"
+        "O arquivo ICS não é válido."
       ],
       "Invalid method": [
-        "Método inválido"
+        "O método não é válido."
       ],
       "Unsupported calendar component": [
         "Componente de calendário não suportado"
@@ -904,7 +913,7 @@
     },
     "Calendar sharing error": {
       "Failed to retrieve contact information for ${ address }": [
-        "Falha ao recuperar a informação de contato para ${ address }"
+        "Erro ao recuperar a informação de contato para ${ address }"
       ]
     },
     "Calendar sidebar dropdown item": {
@@ -943,7 +952,7 @@
         "O link do calendário está temporariamente inacessível"
       ],
       "Failed to sync calendar": [
-        "Falha ao sincronizar calendário"
+        "Erro ao sincronizar calendário"
       ],
       "More than 12 hours passed since last update": [
         "Mais de 12 horas se passaram desde a última atualização"
@@ -2006,7 +2015,7 @@
         "Mesclando contatos... Isso pode levar alguns minutos. Quando o processo estiver concluído, você poderá fechar esta janela."
       ],
       "ProtonMail logo and a plus sign": [
-        "Logo ProtonMail e um sinal de mais"
+        "Logotipo do Proton Mail e um sinal de mais"
       ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Ganhe tempo enviando e-mail ou convites para todo mundo de uma só vez, uma funcionalidade premium entre muitas outras. Faça o upgrade hoje."
@@ -2156,6 +2165,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Você também pode conferir nossa ${ statusPageLink }"
+      ],
       "${ list } doesn't have a valid email address": [
         "${ list } não tem um endereço de e-mail válido",
         "Alguns contatos não têm endereço de e-mail: ${ list }"
@@ -2165,8 +2177,8 @@
         "Alguns contatos não têm endereço de e-mail: ${ list }"
       ],
       "${ list } has invalid emails": [
-        "${ list } possui e-mails inválidos",
-        "Alguns grupos têm e-mails inválidos: ${ list }"
+        "${ list } tem e-mails incorretos.",
+        "Alguns grupos têm e-mails incorretos: ${ list }"
       ],
       "${ list } has no contacts": [
         "${ list } não tem contatos",
@@ -2179,13 +2191,13 @@
         "A conta não existe"
       ],
       "Address primary private key not found": [
-        "Chave privada primária do endereço não encontrada"
+        "Chave privada principal do endereço não encontrada"
       ],
       "Already a member of this calendar": [
         "Já é membro desse calendário"
       ],
       "Answer failed to be sent": [
-        "A resposta falhou ao ser enviada"
+        "Não foi possível enviar a resposta."
       ],
       "Authentication canceled.": [
         "Autenticação cancelada."
@@ -2215,7 +2227,7 @@
         "Assinatura do contato não foi verificada"
       ],
       "Decryption error: Decryption of this event's content failed.": [
-        "Erro ao descriptografar: A descriptografia deste evento falhou."
+        "Erro ao descriptografar: Não foi possível descriptografar este evento."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Desmarque pelo menos ${ calendarsToFixCount } calendário",
@@ -2235,7 +2247,7 @@
         "O endereço de e-mail é obrigatório"
       ],
       "Email is not valid": [
-        "O e-mail é inválido"
+        "O e-mail não é válido."
       ],
       "Ends on date cannot be empty": [
         "A data de término não pode estar vazia"
@@ -2253,19 +2265,19 @@
         "Erro: ${ errorMessage }"
       ],
       "Failed to get original occurrence in series": [
-        "Falha em obter a ocorrência original em série"
+        "Não foi possível obter a ocorrência original em série."
       ],
       "Folder name cannot be empty.": [
         "O nome da pasta não pode ser vazio."
       ],
       "Image upload failed": [
-        "Falha no carregamento da imagem"
+        "Erro no carregamento da imagem"
       ],
       "IMAP server is required": [
         "O servidor IMAP é obrigatório"
       ],
       "Incorrect login credentials. Please try again.": [
-        "Credenciais de início de sessão inválidos. Tente novamente."
+        "As credenciais de início de sessão não são válidas. Tente novamente."
       ],
       "Incorrect mailbox password. Please try again.": [
         "Senha da caixa de correio incorreta. Tente novamente."
@@ -2274,19 +2286,19 @@
         "O intervalo não pode estar vazio"
       ],
       "Invalid email address": [
-        "Endereço de e-mail inválido"
+        "O endereço de e-mail não é válido."
       ],
       "Invalid link to the event": [
-        "Link para o evento inválido"
+        "O link para o evento não é válido."
       ],
       "Invalid name": [
-        "Nome inválido"
+        "O nome não é válido."
       ],
       "Invalid public key file": [
-        "Arquivo de chave pública inválido"
+        "O arquivo de chave pública não é válido."
       ],
       "Invalid verification code": [
-        "Código de verificação inválido"
+        "O código de verificação não é válido."
       ],
       "Invitation failed to be sent": [
         "O convite não foi enviado"
@@ -2320,7 +2332,7 @@
         "Nenhum contato encontrado para importação"
       ],
       "No emails found to import - the account does not have an inbox": [
-        "Nenhum e-mail encontrado para importação — a conta não possui uma caixa de entrada."
+        "Nenhum e-mail encontrado para importação - a conta não possui uma caixa de entrada."
       ],
       "No valid address found": [
         "Nenhum endereço válido encontrado"
@@ -2362,16 +2374,16 @@
         "Porta é necessária"
       ],
       "Primary address key is not decrypted": [
-        "A chave do endereço primário não está descriptografada"
+        "A chave do endereço principal não está descriptografada"
       ],
       "Primary address key is not decrypted.": [
-        "A chave do endereço primário não está descriptografada."
+        "A chave do endereço principal não está descriptografada."
       ],
       "Primary key is not valid for sending": [
-        "A chave primária não é valida para o envio"
+        "A chave principal não é valida para o envio"
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
-        "A chave primária recuperada para o usuário da ${ BRAND_NAME } não é válida para o envio."
+        "A chave principal recuperada para o usuário da ${ BRAND_NAME } não é válida para o envio."
       ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
         "Destinatário duplicado removido: ${ joinedRecipients }",
@@ -2387,7 +2399,7 @@
         "Assinatura não verificada"
       ],
       "Signature verification failed": [
-        "Falha na verificação da assinatura"
+        "Erro na verificação da assinatura"
       ],
       "Some contacts could not be deleted": [
         "Não foi possível excluir alguns contatos."
@@ -2416,20 +2428,23 @@
       "Start time must be before end time": [
         "A hora de início deve ser antes da hora de término"
       ],
+      "status page": [
+        "Página de status"
+      ],
       "The address might be misspelled": [
         "O endereço pode estar incorreto"
       ],
       "The email addresses do not match": [
-        "Os endereços de e-mail não são iguais"
+        "Os endereços de e-mail não correspondem."
       ],
       "The folder name is invalid. Please choose a different name.": [
-        "O nome da pasta é inválido. Escolha um nome diferente."
+        "O nome da pasta não é válido. Escolha um nome diferente."
       ],
       "The folder name is too long. Please choose a different name.": [
         "O nome da pasta é muito longo. Escolha um nome diferente."
       ],
       "The label name is invalid. Please choose a different name.": [
-        "O nome do marcador é inválido. Escolha um nome diferente."
+        "O nome do marcador não é válido. Escolha um nome diferente."
       ],
       "The label name is too long. Please choose a different name.": [
         "O nome do marcador é muito longo. Escolha um nome diferente."
@@ -2462,7 +2477,7 @@
         "Essa mensagem pode conter alguns links de URL que podem não serem abertos corretamente pelo seu navegador."
       ],
       "Trusted keys are not valid for sending": [
-        "As chaves confiáveis não são válidas para o envio"
+        "As chaves de confiança não são válidas para o envio"
       ],
       "Try using only letters, numerals, and _.-": [
         "Tente usar apenas letras, números e _.-"
@@ -2505,7 +2520,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
-        "Ocorreu um erro ao ler o arquivo ${ formattedFilename }. Formato do aquivo incorreto."
+        "Ocorreu um erro ao ler o arquivo ${ formattedFilename }. O formato do aquivo não é correto."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Ocorreu um erro ao carregar o seu arquivo ${ formattedFilename }. O tamanho máximo do arquivo é ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2524,7 +2539,7 @@
         "O arquivo ${ formattedFilename } contém mais de ${ MAX_IMPORT_EVENTS_STRING } eventos."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
-        "Seu arquivo ${ formattedFilename } tem um método inválido e não é possível importá-lo."
+        "Seu arquivo ${ formattedFilename } tem um método incorreto e não é possível importá-lo."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "O arquivo ${ formattedFilename } não tem eventos a serem importados."
@@ -2538,7 +2553,7 @@
     },
     "Error importing contact": {
       "Encryption failed": [
-        "Falha na criptografia"
+        "Erro na criptografia"
       ],
       "vCard versions < 3.0 not supported": [
         "versões vCard <3.0 não são suportadas"
@@ -2546,7 +2561,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
-        "Ocorreu um erro ao ler o arquivo ${ formattedFilename }. Formato do aquivo incorreto."
+        "Ocorreu um erro ao ler o arquivo ${ formattedFilename }. O formato do aquivo não é correto."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Ocorreu um erro ao carregar o seu arquivo ${ formattedFilename }. O tamanho máximo do arquivo é ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -2590,7 +2605,7 @@
         "Elemento"
       ],
       "Encryption failed": [
-        "Falha na criptografia"
+        "Erro na criptografia"
       ],
       "End time out of bounds": [
         "Hora de término fora dos limites"
@@ -2599,7 +2614,7 @@
         "Evento"
       ],
       "Event validation failed": [
-        "Falha na validação do evento"
+        "Erro na validação do evento"
       ],
       "Floating times not supported": [
         "Tempos flutuantes não suportados"
@@ -2608,7 +2623,7 @@
         "Informação de horário disponível/ocupado"
       ],
       "Invalid event": [
-        "Evento inválido"
+        "O evento não é válido."
       ],
       "Journal entry": [
         "Entradas periódicas"
@@ -2617,13 +2632,13 @@
         "Evento de dia inteiro mal formado"
       ],
       "Malformed end time": [
-        "Hora de término inválido"
+        "A hora de término não é válida."
       ],
       "Malformed recurring event": [
         "Evento recorrente mal formado"
       ],
       "Malformed start time": [
-        "Hora de início inválido"
+        "A hora de início não é válida."
       ],
       "Missing start time": [
         "Falta o horário de início"
@@ -2670,7 +2685,7 @@
         "Erro: ${ errorMessage }"
       ],
       "Invalid URL": [
-        "URL inválida"
+        "O URL não é válido."
       ],
       "Oops, something went wrong": [
         "Opa, alguma coisa deu errado"
@@ -2727,10 +2742,10 @@
         "Não foi possível ler o arquivo ICS anexado."
       ],
       "Invalid invitation": [
-        "Convite inválido"
+        "O convite não é válido."
       ],
       "Invalid response": [
-        "Resposta inválida"
+        "A resposta não é válida."
       ],
       "The event could not be added to your calendar. No answer was sent": [
         "Não foi possível adicionar o evento ao seu calendário. Nenhuma resposta foi enviada"
@@ -2745,7 +2760,7 @@
         "Convite não suportado"
       ],
       "Unsupported response": [
-        "Tipo de resposta não suportado"
+        "A categoria de resposta não é suportado."
       ],
       "We could not cancel the event in your calendar": [
         "Não foi possível cancelar o evento no seu calendário"
@@ -2880,7 +2895,7 @@
         "Você foi convidado a participar de ${ bannerOrganization }. ${ viewInviteButton }"
       ],
       "You have successfully joined the Family plan": [
-        "Você entrou no plano familiar"
+        "Você entrou no plano Family"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Você foi convidado a vincular sua conta da ${ BRAND_NAME } a este plano de grupo e aproveitar juntos de todos os recursos premium da ${ BRAND_NAME_TWO }."
@@ -3005,8 +3020,8 @@
       "System default": [
         "Padrão do sistema"
       ],
-      "Theme default": [
-        "Padrão do tema"
+      "Theme font": [
+        "Fonte do tema"
       ]
     },
     "Font size option": {
@@ -3110,7 +3125,7 @@
     },
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
-        "${ CALENDAR_APP_NAME } atualmente não oferece suporte para alguns tipos de eventos, detalhes e formatos."
+        "${ CALENDAR_APP_NAME } atualmente não oferece suporte para algumas categorias de eventos, detalhes e formatos."
       ],
       "vCard versions < 3.0": [
         "versões vCard < 3.0"
@@ -3448,7 +3463,7 @@
         "Os participantes adicionados e removidos serão notificados."
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "A verificação de endereço com chaves confiáveis ​​está ativada para este endereço. Para poder enviar para este endereço, primeiro confie nas chaves públicas que podem ser usadas para envio."
+        "A verificação de endereço com chaves de confiança ​​está ativada para este endereço. Para poder enviar para este endereço, primeiro confie nas chaves públicas que podem ser usadas para envio."
       ],
       "All (${ totalFoldersCount } folder)": [
         "Tudo (${ totalFoldersCount } pasta)",
@@ -3734,7 +3749,7 @@
         "Ocorrências previamente atualizadas pelo organizador serão mantidas."
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
-        "Uma ou mais de suas chaves confiáveis foram marcadas como \"comprometidas\" pelo proprietário. Recomendamos que você \"desconfie\" dessas chaves."
+        "Uma ou mais de suas chaves de confiança foram marcadas como \"comprometidas\" pelo proprietário. Recomendamos que você \"desconfie\" dessas chaves."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline é compatível apenas com o formato de Texto Simples."
@@ -3747,6 +3762,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Note que este processo pode levar algum tempo, dependendo do tamanho da sua lista de contatos."
+      ],
+      "Please provide a name and an email address for creating a group.": [
+        "Forneça um nome e um endereço de e-mail para criar um grupo."
       ],
       "Please remove the duplicates and try again.": [
         "Remova as duplicatas e tente novamente."
@@ -3798,7 +3816,7 @@
         "Sessão expirada"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        "Configurar o PGP permite o envio de e-mails com criptografia de ponta-a-ponta com um usuário não-${ BRAND_NAME } que usa um serviço compatível com PGP."
+        "Configurar o PGP permite o envio de e-mails com criptografia de ponta-a-ponta com um usuário que não usam o ${ BRAND_NAME } que usa um serviço compatível com PGP."
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Algumas das suas respostas a ocorrências previamente atualizadas pelo organizador serão perdidas."
@@ -3810,7 +3828,7 @@
         "equipe de suporte"
       ],
       "Temporarily unavailable. Please check back later.": [
-        "Temporariamente indisponível. Retorne mais tarde."
+        "Temporariamente indisponível. Tente mais tarde."
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "O aplicativo precisa descriptografar localmente seus contatos antes que eles possam ser exportados. Ao final do processo, um arquivo VCF será gerado e você poderá baixá-lo."
@@ -3828,7 +3846,7 @@
         "Não foi possível notificar o organizador de que você alterou sua resposta:"
       ],
       "The organizer has updated some of the events in this series. Changing the calendar is not supported yet for this type of recurring events.": [
-        "O organizador atualizou alguns dos eventos desta série. A alteração do calendário ainda não é compatível com este tipo de eventos recorrentes."
+        "O organizador atualizou alguns dos eventos desta série. A alteração do calendário ainda não é compatível com esta categoria de eventos recorrentes."
       ],
       "The organizer of this event will be notified that you decline the invitation. Would you like to delete this event?": [
         "O organizador deste evento será notificado de que você recusou o convite. Você gostaria de excluir este evento?"
@@ -3954,7 +3972,7 @@
         "Você pode verificar o progresso ${ importProgressLink }."
       ],
       "You can import one data type at a time.": [
-        "Você pode importar um tipo de dado por vez."
+        "Você pode importar uma categoria de dado por vez."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Você pode ativar as notificações para receber alertas quando novas mensagens de e-mail chegarem nesta pasta."
@@ -3999,7 +4017,7 @@
         "Você alcançou o número máximo de endereços no grupo de contato."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Sua conta da ${ BRAND_NAME } está atualmente suspensa. Após 28 dias, os e-mails não serão mais entregues em sua caixa de entrada, seus links de compartilhamento de Drive serão bloqueados e você não poderá enviar novos arquivos. Para retomar o serviço normal, favor pagar qualquer fatura vencida."
+        "Sua conta da ${ BRAND_NAME } está atualmente suspensa. Após 28 dias, os e-mails não serão mais entregues em sua caixa de entrada, seus links de compartilhamento de Drive serão bloqueados e você não poderá enviar novos arquivos. Para retomar o serviço normal, pague quaisquer faturas vencidas."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Sua conta da ${ BRAND_NAME } está suspensa no momento. Os e-mails não estão mais sendo entregues em sua caixa de entrada. Seus links de compartilhamento do Drive não estão mais ativos e você não pode enviar novos arquivos. Para continuar usando sua conta, pague as faturas vencidas."
@@ -4030,9 +4048,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Seus arquivos serão criptografados e depois salvos"
-      ],
-      "Your import will not be processed.": [
-        "Sua importação não será processada."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Suas informações de início de sessão não serão salvas após a importação ser concluída."
@@ -4093,7 +4108,7 @@
         "São permitidos no máximo ${ MAX_ATTENDEES } participantes por convite"
       ],
       "Creating invites in a shared calendar is not allowed": [
-        "A criação de convites em um calendário compartilhado não é permitida"
+        "A criação de convites em um calendário compartilhado não é permitida."
       ]
     },
     "Input label": {
@@ -4127,11 +4142,6 @@
       ],
       "Trusted": [
         "Confiável"
-      ]
-    },
-    "Key transparency details button": {
-      "Click here for more details.": [
-        "Clique aqui para mais detalhes."
       ]
     },
     "Knowledge base link label": {
@@ -4258,7 +4268,7 @@
         "E-mails (último mês)"
       ],
       "Enable Beta Access": [
-        "Habilitar acesso beta"
+        "Ativar acesso beta"
       ],
       "Encrypt emails": [
         "Criptografar e-mails"
@@ -4620,8 +4630,8 @@
       ]
     },
     "Modal action": {
-      "Close": [
-        "Fechar"
+      "Cancel": [
+        "Cancelar"
       ],
       "Manage calendars": [
         "Gerenciar calendários"
@@ -4645,7 +4655,7 @@
     },
     "Modal title": {
       "Add public holidays": [
-        "Adicionar feriados públicos"
+        "Adicionar feriados"
       ],
       "Cannot add more calendars": [
         "Não é possível adicionar mais calendários"
@@ -4900,10 +4910,13 @@
     },
     "Notification in holidays calendar modal": {
       "Adding holidays calendar failed": [
-        "A adição do calendário de feriados falhou"
+        "Não foi possível adicionar o calendário de feriados."
       ],
       "Calendar added": [
         "Calendário adicionado"
+      ],
+      "Calendar updated": [
+        "Calendário atualizado"
       ]
     },
     "Notification in share calendar modal": {
@@ -5082,9 +5095,6 @@
         "Selecione um tema"
       ],
       "Set up your organization": [
-        "Configure a sua organização"
-      ],
-      "Set up your organization testing": [
         "Configure a sua organização"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
@@ -5352,7 +5362,7 @@
     },
     "Settings update growler warning": {
       "Failed to update settings": [
-        "Falha ao atualizar configurações"
+        "Erro ao atualizar configurações"
       ]
     },
     "Share calendar assistive text": {
@@ -5382,8 +5392,8 @@
       ]
     },
     "Shared calendar; Info about calendar owner": {
-      "Created by ${ ownerName }": [
-        "Criado por ${ ownerName }"
+      "Shared by ${ ownerName }": [
+        "Compartilhado por ${ ownerName }"
       ]
     },
     "Side panel spotlight": {
@@ -5652,7 +5662,7 @@
     },
     "Spotlight": {
       "Add your country's public holidays to your calendar.": [
-        "Adicione seus feriados públicos de seu país no seu calendário."
+        "Adicione seus feriados de seu país no seu calendário."
       ],
       "Get up to ${ credits } in credits.": [
         "Receba até ${ credits } em créditos."
@@ -5661,7 +5671,7 @@
         "Convide amigos para ${ BRAND_NAME }"
       ],
       "Public holidays are here!": [
-        "Feriados públicos estão aqui!"
+        "Feriados estão aqui!"
       ]
     },
     "Storage": {
@@ -5686,19 +5696,6 @@
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
         "Aprenda como obter um link para um calendário privado."
-      ]
-    },
-    "Subscribed calendar extension warning": {
-      "By using this link, Google will make the calendar you are subscribing to public": [
-        "Ao usar este link, Google tornará público o calendário ao qual você está se inscrevendo"
-      ],
-      "This link might be wrong": [
-        "Este link pode estar errado"
-      ]
-    },
-    "Subscribed calendar URL length warning": {
-      "URL is too long": [
-        "URL é muito longo"
       ]
     },
     "Success": {
@@ -6193,10 +6190,10 @@
         "Importar eventos"
       ],
       "Import failed": [
-        "Falha na importação"
+        "Erro na importação"
       ],
       "Invalid verification code": [
-        "Código de verificação inválido"
+        "O código de verificação não é válido."
       ],
       "Link confirmation": [
         "Confirmar redirecionamento"
@@ -6522,9 +6519,6 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "A ${ BRAND_NAME } irá transferir o máximo de dados possível, começando com as mensagens mais recentes."
       ],
-      "Are you sure you want to discard your import?": [
-        "Você tem certeza de que quer descartar sua importação?"
-      ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Você tem certeza de que deseja excluir permanentemente ${ count } grupo de contatos?",
         "Você tem certeza de que deseja excluir permanentemente ${ count } grupos de contatos?"
@@ -6558,16 +6552,16 @@
         "Os dados do contato estão corrompidos e não podem ser exibidos."
       ],
       "The contact failed to load.": [
-        "Falha ao carregar o contato."
+        "Erro ao carregar o contato."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "As configurações de data e hora em seu dispositivo estão dessincronizadas. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
-        "A descriptografia do conteúdo criptografado falhou."
+        "Não foi possível descriptografar o conteúdo criptografado."
       ],
       "The verification of the contact details' signature failed.": [
-        "A verificação da assinatura dos detalhes de contato falhou."
+        "Não foi possível verificar a assinatura dos detalhes de contato."
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
         "Essa ação é irreversível. Digite a palavra ${ boldDanger } no campo para continuar."

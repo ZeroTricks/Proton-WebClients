@@ -3,7 +3,7 @@ import fs from 'fs';
 import type { ItemImportIntent } from '@proton/pass/types';
 import { getEpoch } from '@proton/pass/utils/time';
 
-import type { ImportPayload } from '../types';
+import type { ImportPayload, ImportVault } from '../types';
 import { readKeePassData } from './keepass.reader';
 
 jest.mock('@proton/pass/utils/time/get-epoch', () => ({
@@ -26,19 +26,13 @@ describe('Import KeePass xml', () => {
     });
 
     it('should extract vaults from groups', () => {
-        expect(payload.vaults.length).toEqual(4);
+        expect(payload.vaults.length).toEqual(5);
 
-        expect(payload.vaults[0].type).toEqual('new');
-        expect(payload.vaults[0].vaultName).toEqual('Group A');
-
-        expect(payload.vaults[1].type).toEqual('new');
-        expect(payload.vaults[1].vaultName).toEqual('Group B');
-
-        expect(payload.vaults[2].type).toEqual('new');
-        expect(payload.vaults[2].vaultName).toEqual('Group C');
-
-        expect(payload.vaults[3].type).toEqual('new');
-        expect(payload.vaults[3].vaultName).toEqual('Import - 27 Apr 2023');
+        expect(payload.vaults[0].name).toEqual('Group A');
+        expect(payload.vaults[1].name).toEqual('Group B');
+        expect(payload.vaults[2].name).toEqual('Group C');
+        expect(payload.vaults[3].name).toEqual('Import - 27 Apr 2023');
+        expect(payload.vaults[4].name).toEqual('TOTP definitions');
     });
 
     it('should extract items from `Group A`', () => {
@@ -52,7 +46,7 @@ describe('Import KeePass xml', () => {
         expect(loginItem.metadata.itemUuid).not.toBeUndefined();
         expect(loginItem.content.username).toEqual('nobodyA@proton.me');
         expect(loginItem.content.password).toEqual('proton123');
-        expect(loginItem.content.urls).toEqual(['https://account.proton.me']);
+        expect(loginItem.content.urls).toEqual(['https://account.proton.me/']);
         expect(loginItem.content.totpUri).toEqual(
             'otpauth://totp/Entry%20A:nobodyA%40proton.me%40account.proton.me?issuer=Entry%20A&secret=VZKDI2A4UP2NG5BB&algorithm=SHA1&digits=6&period=30'
         );
@@ -130,7 +124,7 @@ describe('Import KeePass xml', () => {
         expect(loginItem1.metadata.itemUuid).not.toBeUndefined();
         expect(loginItem1.content.username).toEqual('nobody@proton.me');
         expect(loginItem1.content.password).toEqual('proton123');
-        expect(loginItem1.content.urls).toEqual(['https://account.proton.me']);
+        expect(loginItem1.content.urls).toEqual(['https://account.proton.me/']);
         expect(loginItem1.content.totpUri).toEqual('');
         expect(loginItem1.extraFields).toEqual([]);
         expect(loginItem1.platformSpecific).toBeUndefined();
@@ -156,5 +150,33 @@ describe('Import KeePass xml', () => {
         ]);
         expect(loginItem2.platformSpecific).toBeUndefined();
         expect(loginItem2.trashed).toEqual(false);
+    });
+
+    describe('TOTP definition', () => {
+        let group: ImportVault;
+
+        beforeAll(async () => {
+            group = payload.vaults[4];
+        });
+
+        it('should have 2 items in group', () => {
+            expect(group.items.length).toEqual(2);
+        });
+
+        it('should extract modern TOTP definition', () => {
+            const item = group.items[0] as ItemImportIntent<'login'>;
+            expect(item.metadata.name).toEqual('Modern TOTP definition');
+            expect(item.content.totpUri).toEqual(
+                'otpauth://totp/Modern%20TOTP%20definition:none?issuer=Modern%20TOTP%20definition&secret=5KO67YMS2FHKA627&algorithm=SHA1&digits=8&period=42'
+            );
+        });
+
+        it('should extract legacy TOTP definition', () => {
+            const item = group.items[1] as ItemImportIntent<'login'>;
+            expect(item.metadata.name).toEqual('Legacy TOTP definition');
+            expect(item.content.totpUri).toEqual(
+                'otpauth://totp/Legacy%20TOTP%20definition:none?issuer=Legacy%20TOTP%20definition&secret=AU2HMGCJYPNI2WZT&algorithm=SHA1&digits=8&period=42'
+            );
+        });
     });
 });

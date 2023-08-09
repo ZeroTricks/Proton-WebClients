@@ -1,7 +1,7 @@
 import { CryptoProxy, PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { KTLocalStorageAPI } from '@proton/shared/lib/interfaces';
 
-import { ktSentryReport, throwKTError } from '../helpers/utils';
+import { ktSentryReportError, throwKTError } from '../helpers/utils';
 import { KTBlobContent, KTBlobValuesWithInfo, SelfAuditResult } from '../interfaces';
 
 /**
@@ -59,9 +59,7 @@ export const getAllKTBlobValuesWithInfo = async (
                 ktBlobsContent: newKTBlobs,
             });
         } catch (error: any) {
-            const errorMessage = error instanceof Error ? error.message : 'unknown error';
-            const stack = error instanceof Error ? error.stack : undefined;
-            ktSentryReport(errorMessage, { context: 'getAllKTBlobValuesWithInfo', armoredMessage, stack });
+            ktSentryReportError(error, { context: 'getAllKTBlobValuesWithInfo' });
         }
     }
 
@@ -130,9 +128,7 @@ export const commitSKLToLS = async (
             );
         }
     } catch (error: any) {
-        const errorMessage = error instanceof Error ? error.message : 'unknown error';
-        const stack = error instanceof Error ? error.stack : undefined;
-        ktSentryReport(errorMessage, { context: 'commitSKLToLS', stack });
+        ktSentryReportError(error, { context: 'commitSKLToLS' });
     }
 };
 
@@ -170,7 +166,6 @@ export const getAuditResult = async (
 ): Promise<SelfAuditResult | undefined> => {
     try {
         const armoredMessage = await ktLSAPI.getItem(generateKeyAuditName(userID));
-
         if (armoredMessage) {
             if (!armoredMessage.startsWith('-----BEGIN PGP MESSAGE-----')) {
                 // Old audits blob were only containing the audit time, not encrypted.
@@ -180,11 +175,13 @@ export const getAuditResult = async (
                 armoredMessage,
                 decryptionKeys: userPrivateKeys,
             });
-            return JSON.parse(decrypted.data);
+            const parsed = JSON.parse(decrypted.data);
+            if (!parsed.nextAuditTime) {
+                return;
+            }
+            return parsed;
         }
     } catch (error: any) {
-        const errorMessage = error instanceof Error ? error.message : 'unknown error';
-        const stack = error instanceof Error ? error.stack : undefined;
-        ktSentryReport(errorMessage, { context: 'getAuditResult', stack });
+        ktSentryReportError(error, { context: 'getAuditResult' });
     }
 };

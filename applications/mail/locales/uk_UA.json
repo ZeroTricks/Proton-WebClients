@@ -124,6 +124,9 @@
       "Block": [
         "Блокувати"
       ],
+      "Block email tracking": [
+        "Блокування відстеження електронної пошти"
+      ],
       "Block messages from this sender": [
         "Заблокувати повідомлення від цього відправника"
       ],
@@ -141,6 +144,9 @@
       ],
       "Carbon Copy": [
         "Копія"
+      ],
+      "Change email": [
+        "Змінити електронну пошту"
       ],
       "Change page": [
         "Змінити сторінку"
@@ -321,9 +327,6 @@
       ],
       "Discard": [
         "Відхилити"
-      ],
-      "Dismiss get started checklist": [
-        "Відмовитися від контрольного списку початку роботи"
       ],
       "Done": [
         "Готово"
@@ -730,9 +733,6 @@
       "Open composer": [
         "Відкрити редактор"
       ],
-      "Open get started checklist modal": [
-        "Відкрити модальний контрольний список початку роботи"
-      ],
       "Open navigation": [
         "Відкрити панель навігації"
       ],
@@ -1060,9 +1060,6 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Спробуйте зберегти ще раз. Не вдалося зберегти через: ${ saveError }"
       ],
-      "Turn on tracker protection": [
-        "Увімкнути захист від стеження"
-      ],
       "Unblock": [
         "Розблокувати"
       ],
@@ -1258,14 +1255,6 @@
     "Alternative text for welcome image": {
       "Welcome": [
         "Вітаємо"
-      ]
-    },
-    "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } виконано",
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } виконано",
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } виконано",
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } виконано"
       ]
     },
     "Animation": {
@@ -2966,6 +2955,9 @@
         "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли.",
         "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли."
       ],
+      "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
+        "Увімкніть захист трекера електронної пошти, щоб рекламодавці та інші не відстежували ваше розташування та активність в Інтернеті."
+      ],
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "Користуйтеся власним розкладом листування та іншими перевагами після оновлення тарифного плану."
       ],
@@ -2977,6 +2969,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Використовуйте перетягування для пріоритету об'єднання між контактами. Приберіть позначку з тих контактів, які ви не хочете об'єднувати."
+      ],
+      "We didn't find any known trackers and tracking URLs in this email.": [
+        "У цьому електронному листі не знайдено жодних відомих трекерів і URL-адрес для відстеження."
       ],
       "When do you want your message to be sent?": [
         "Коли ви хочете надіслати своє повідомлення?"
@@ -3138,6 +3133,9 @@
     "Error": {
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "${ error.message } для <${ email }>. Щоб розв'язати проблему, можете додати інший ключ або вимкнути шифрування для цього контакту."
+      ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Ви також можете перевірити наші ${ statusPageLink }"
       ],
       "A group with this name already exists": [
         "Група з такою назвою вже існує"
@@ -3433,6 +3431,9 @@
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "Перепрошуємо, але ${ BRAND_NAME } не може розшифрувати ваше повідомлення. Переконайтеся, що всі ваші ключі активні."
       ],
+      "status page": [
+        "сторінка стану"
+      ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Не вдалося розшифрувати вкладення.\nЯкщо у вас є відповідний приватний ключ, ви зможете розшифрувати\nфайл за допомогою програми, наприклад, GnuPG.",
         "Не вдалося розшифрувати вкладення.\nЯкщо у вас є відповідний приватний ключ, ви зможете розшифрувати\nфайли за допомогою програми, наприклад, GnuPG.",
@@ -3468,9 +3469,6 @@
       ],
       "There has been an issue with content search. Default search has been used instead.": [
         "Виникла проблема з пошуком вмісту. Натомість використано типовий пошук."
-      ],
-      "There was a problem updating your local messages, they will be downloaded again to re-enable content search": [
-        "Під час оновлення локальних повідомлень виникла проблема. Їх буде завантажено знову для активації пошуку вмісту"
       ],
       "There was an error when exporting the contacts vCards": [
         "При експортуванні vCards для контактів виникла помилка"
@@ -4169,8 +4167,8 @@
       "System default": [
         "Системна"
       ],
-      "Theme default": [
-        "Стандартна тема"
+      "Theme font": [
+        "Шрифт теми"
       ]
     },
     "Font Size Default": {
@@ -4209,76 +4207,144 @@
         "Кому: ${ toString }"
       ]
     },
-    "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        "Ми збільшили загальний обсяг сховища вашого облікового запису до ${ rewardInGb } ГБ. Отримайте додатковий обсяг та доступ до можливостей преміум."
-      ],
-      "You're all set!": [
-        "Все готово!"
-      ]
-    },
-    "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        "Завершіть усі кроки та отримайте всього ${ rewardInGb } ГБ для свого облікового запису"
-      ],
-      "Expires soon": [
-        "Скоро завершується"
-      ],
-      "Expires today": [
-        "Завершується сьогодні"
-      ],
-      "Only ${ days } day left": [
-        "Лишився всього ${ days } день",
-        "Лишилося всього ${ days } дні",
-        "Лишилося всього ${ days } днів",
-        "Лишилося всього ${ days } дні"
-      ]
-    },
     "Get started checklist instructions": {
-      "Available on iOS and Android.": [
-        "Доступний на iOS та Android."
+      "${ MAIL_APP_NAME } app": [
+        "Застосунок ${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME } в App Store"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } у Play Маркеті"
+      ],
+      "account logins": [
+        "облікові записи"
+      ],
+      "Auto-forward Gmail": [
+        "Автопересилання Gmail"
+      ],
+      "auto-forwarding": [
+        "автопересилання"
+      ],
+      "Block email communications from scammers permanently.": [
+        "Блокуйте електронні листи від шахраїв постійно."
+      ],
+      "Block unsavory senders": [
+        "Блокувати небажаних відправників"
+      ],
+      "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
+        "Браво! Ми за те, що ваша електронна пошта стала ще безпечнішою, зручнішою та актуальнішою! Ми збільшили ваш безплатний обсяг пам'яті до 1 ГБ."
+      ],
+      "Change ${ strongText } to your ${ BRAND_NAME } address": [
+        "Змініть ${ strongText } на адресу ${ BRAND_NAME }"
+      ],
+      "Checklist complete": [
+        "Контрольний список завершено"
+      ],
+      "Close": [
+        "Закрити"
+      ],
+      "Congratulation, you completed all the steps!": [
+        "Вітаємо, ви виконали всі кроки!"
+      ],
+      "Continue setting up your email": [
+        "Продовжити налаштування електронної пошти"
+      ],
+      "Discover how our ${ strongText } protect you": [
+        "Дізнайтеся, як наш ${ strongText } захищає вас"
+      ],
+      "Discover privacy features": [
+        "Відкрийте для себе функції приватності"
+      ],
+      "Double your free storage to 1 GB when you complete the following:": [
+        "Подвоїть обсяг безплатного сховища до 1 ГБ, виконавши наведені нижче дії:"
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails.": [
+        "Шифрування настільки надійне, що лише ви та очікувані одержувачі можете переглядати ваші електронні листи."
+      ],
+      "For your eyes only": [
+        "Тільки для ваших очей"
+      ],
+      "Get free storage": [
+        "Отримати безплатне сховище"
+      ],
+      "Get mobile app": [
+        "Отримати мобільний застосунок"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Отримайте мобільний застосунок ${ MAIL_APP_NAME }"
       ],
+      "Get the ${ strongText } on Android or iOS": [
+        "Отримайте ${ strongText } на Android або iOS"
+      ],
+      "Get the App": [
+        "Отримати застосунок"
+      ],
       "Import contacts or emails": [
         "Імпорт контактів чи е-пошти"
+      ],
+      "Import data": [
+        "Імпортувати дані"
       ],
       "Import your contacts or messages": [
         "Імпортуйте свої контакти чи повідомлення"
       ],
+      "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
+        "Продовжуйте використовувати ${ MAIL_APP_NAME }, щоб дізнатися більше про те, як ${ BRAND_NAME } захищає вашу конфіденційність та спрощує надсилання листів."
+      ],
+      "Learn more": [
+        "Докладніше"
+      ],
+      "Make ${ BRAND_NAME } your go-to inbox": [
+        "Зробити ${ BRAND_NAME } своєю вхідною поштою"
+      ],
+      "Maybe later": [
+        "Можливо пізніше"
+      ],
+      "Nice! You've updated all services in this category.": [
+        "Чудово! Ви оновили всі сервіси в цій категорії."
+      ],
+      "Open checklist": [
+        "Відкрити контрольний список"
+      ],
+      "Popular online services": [
+        "Популярні онлайн-сервіси"
+      ],
+      "privacy features": [
+        "функції приватності"
+      ],
+      "Protect and simplify your email": [
+        "Захист та спрощення електронної пошти"
+      ],
+      "Protection from trackers": [
+        "Захист від трекерів"
+      ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "Швидко передавайте свої контакти або електронні листи від будь-якого постачальника послуг за допомогою нашого помічника для імпорту Easy Switch."
-      ],
-      "Sign into the mobile app to complete the action": [
-        "Увійдіть у мобільний застосунок, щоб завершити дію"
-      ],
-      "Using your mobile device, scan this QR code or visit": [
-        "Скануйте цей QR-код за допомогою свого мобільного пристрою, або відвідайте"
-      ]
-    },
-    "Get started checklist item": {
-      "Get mobile app": [
-        "Отримати мобільний застосунок"
-      ],
-      "Import contacts or emails": [
-        "Імпорт контактів чи е-пошти"
       ],
       "Send a message": [
         "Надіслати повідомлення"
       ],
-      "Set up a recovery method": [
-        "Встановити спосіб відновлення"
-      ]
-    },
-    "Get started checklist spotlight": {
-      "You can access the checklist anytime from here": [
-        "Ви можете повернутися до контрольного списку в будь-який час звідси"
-      ]
-    },
-    "Get started checklist title": {
-      "Get started": [
-        "Розпочнімо"
+      "Set recovery method": [
+        "Додати спосіб відновлення"
+      ],
+      "Set up ${ strongText } from Gmail": [
+        "Налаштуйте ${ strongText } із Gmail"
+      ],
+      "Sign in to the mobile app to complete this step": [
+        "Увійдіть у мобільний застосунок, щоб завершити цей крок"
+      ],
+      "Update your logins": [
+        "Оновіть свої логіни"
+      ],
+      "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
+        "За допомогою мобільного пристрою проскануйте цей QR-код або відвідайте магазин iOS чи Android."
+      ],
+      "We stop advertisers and data collectors from profiling you.": [
+        "Ми не дозволяємо рекламодавцям і збирачам даних формулювати ваш профіль."
+      ],
+      "You've unlocked 1 GB": [
+        "Ви розблокували 1 ГБ"
       ]
     },
     "Gmail forwarding": {
@@ -4712,6 +4778,12 @@
         "${ count } непрочитаних повідомлень",
         "${ count } непрочитаних повідомлень"
       ],
+      "${ currentProgress } out of ${ totalProgress }": [
+        "${ currentProgress } з ${ totalProgress }",
+        "${ currentProgress } з ${ totalProgress }",
+        "${ currentProgress } з ${ totalProgress }",
+        "${ currentProgress } з ${ totalProgress }"
+      ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } вбудоване зображення",
         "${ embeddedAttachmentsCount } вбудовані зображення",
@@ -4739,11 +4811,23 @@
         "${ messagesNotAuthorizedToMove } повідомлень не вдалося перемістити.",
         "${ messagesNotAuthorizedToMove } повідомлень не вдалося перемістити."
       ],
-      "${ numberOfTrackers } email tracker blocked": [
-        "Заблоковано ${ numberOfTrackers } елемент стеження",
-        "Заблоковано ${ numberOfTrackers } елементи стеження",
-        "Заблоковано ${ numberOfTrackers } елементів стеження",
-        "Заблоковано ${ numberOfTrackers } елементи стеження"
+      "${ numberOfImageTrackers } email tracker blocked": [
+        "${ numberOfImageTrackers } поштовий трекер заблоковано",
+        "${ numberOfImageTrackers } поштові трекери заблоковано",
+        "${ numberOfImageTrackers } поштових трекерів заблоковано",
+        "${ numberOfImageTrackers } поштових трекерів заблоковано"
+      ],
+      "${ numberOfImageTrackers } tracker blocked": [
+        "${ numberOfImageTrackers } трекер заблоковано",
+        "${ numberOfImageTrackers } трекери заблоковано",
+        "${ numberOfImageTrackers } трекерів заблоковано",
+        "${ numberOfImageTrackers } трекерів заблоковано"
+      ],
+      "${ numberOfUTMTrackers } link cleaned": [
+        "${ numberOfUTMTrackers } посилання очищено",
+        "${ numberOfUTMTrackers } посилання очищено",
+        "${ numberOfUTMTrackers } посилань очищено",
+        "${ numberOfUTMTrackers } посилань очищено"
       ],
       "${ numContact } contact": [
         "${ numContact } контакт",
@@ -4885,6 +4969,12 @@
       ],
       "(No Recipient)": [
         "(Немає отримувача)"
+      ],
+      "**${ elementsFoundCount }** result found in ${ labelName }": [
+        "**${ elementsFoundCount }** результат знайдено в ${ labelName }",
+        "**${ elementsFoundCount }** результати знайдено в ${ labelName }",
+        "**${ elementsFoundCount }** результатів знайдено в ${ labelName }",
+        "**${ elementsFoundCount }** результатів знайдено в ${ labelName }"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Один номер телефону можна використати для підтвердження лише одного облікового запису ${ BRAND_NAME }"
@@ -5165,18 +5255,6 @@
       "Email tracker protection is disabled": [
         "Захист від стеження у пошті вимкнено"
       ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers in this message.": [
-        "Елементи стеження в електронній пошті можуть порушити вашу приватність. ${ BRAND_NAME } не виявив елементів стеження у цьому повідомленні."
-      ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } tracker.": [
-        "Елементи стеження в електронній пошті можуть порушувати вашу приватність. ${ BRAND_NAME } знайшов і заблокував ${ numberOfTrackers } елемент стеження.",
-        "Елементи стеження в електронній пошті можуть порушувати вашу приватність. ${ BRAND_NAME } знайшов і заблокував ${ numberOfTrackers } елементи стеження.",
-        "Елементи стеження в електронній пошті можуть порушувати вашу приватність. ${ BRAND_NAME } знайшов і заблокував ${ numberOfTrackers } елементів стеження.",
-        "Елементи стеження в електронній пошті можуть порушувати вашу приватність. ${ BRAND_NAME } знайшов і заблокував ${ numberOfTrackers } елементи стеження."
-      ],
-      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
-        "Елементи стеження в електронній пошті можуть порушувати вашу приватність. Увімкніть захист від стеження, щоб відправники не могли довідатися, чи відкривали ви повідомлення і коли."
-      ],
       "Emails are automatically signed": [
         "Електронні листи підписуються автоматично"
       ],
@@ -5254,6 +5332,9 @@
       ],
       "For messages newer than ${ oldestDate }": [
         "Для повідомлень новіших ${ oldestDate }"
+      ],
+      "For more search results, try searching for this keyword in the content of your email messages.": [
+        "Щоб отримати більше результатів пошуку, спробуйте шукати за цим ключовим словом у вмісті повідомлень вашої пошти."
       ],
       "Free up some space or add more storage space.": [
         "Звільніть місце або збільште обсяг сховища."
@@ -5369,6 +5450,9 @@
       "Link type": [
         "Тип посилання"
       ],
+      "Links cleaned:": [
+        "Посилань очищено:"
+      ],
       "Loading": [
         "Завантаження"
       ],
@@ -5399,11 +5483,8 @@
       "Merged": [
         "Об'єднано"
       ],
-      "Message downloaded: ${ currentProgress } out of ${ totalProgress }": [
-        "Завантажено повідомлення: ${ currentProgress } з ${ totalProgress }",
-        "Завантажено повідомлень: ${ currentProgress } з ${ totalProgress }",
-        "Завантажено повідомлень: ${ currentProgress } з ${ totalProgress }",
-        "Завантажено повідомлень: ${ currentProgress } з ${ totalProgress }"
+      "Message download status:": [
+        "Статус завантаження повідомлення:"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
         "Термін дії повідомлень працює типово при надсиланні пошти не користувачам ${ MAIL_APP_NAME }. Щоб надсилати повідомлення з терміном дії не користувачам ${ BRAND_NAME }, скасуйте це і додайте парольний захист до свого повідомлення."
@@ -5453,9 +5534,6 @@
       "No email address": [
         "Немає адреси е-пошти"
       ],
-      "No email trackers found": [
-        "Стеження не виявлено"
-      ],
       "No folder found": [
         "Теку не знайдено"
       ],
@@ -5471,14 +5549,17 @@
       "No label selected": [
         "Жодної мітки не вибрано"
       ],
+      "No links cleaned": [
+        "Посилання не очищено"
+      ],
       "No more results found": [
         "Більше нічого не знайдено"
       ],
       "No results found": [
         "Результатів не знайдено"
       ],
-      "No trackers found, but some images could not be loaded with tracking protection": [
-        "Елементів стеження не виявлено, але деякі зображення неможливо завантажити з активним захистом від стеження"
+      "No trackers found": [
+        "Трекерів не виявлено"
       ],
       "non-${ MAIL_APP_NAME }": [
         "користувачу поза ${ MAIL_APP_NAME }"
@@ -5530,6 +5611,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Зверніть увагу, що цей процес може тривати деякий час, залежно від розміру вашої адресної книги."
+      ],
+      "Please provide a name and an email address for creating a group.": [
+        "Будь ласка, вкажіть ім'я та адресу пошти для створення групи."
       ],
       "Please select the folders you would like to import:": [
         "Оберіть теки, які ви бажаєте імпортувати:"
@@ -5882,8 +5966,11 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Забагато повідомлень очікують надсилання. Зачекайте, доки буде відправлено інше повідомлення, щоб запланувати це."
       ],
-      "Turn off to only search by date, name, or email address. To disable search message content and delete downloaded messages, go to settings.": [
-        "Вимкніть, щоб шукати лише за датою, іменем або адресою електронної пошти. Щоб вимкнути пошук вмісту повідомлень і видалити завантажені повідомлення, перейдіть до налаштувань."
+      "Trackers blocked:": [
+        "Трекерів заблоковано:"
+      ],
+      "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
+        "Вимкніть, щоб шукати лише за датою, іменем, адресою електронної пошти або темою повідомлення. Щоб вимкнути пошук вмісту повідомлень і видалення завантажених повідомлень, перейдіть до налаштувань."
       ],
       "Turn on to search the content of your messages": [
         "Увімкніть, щоб шукати вміст своїх повідомлень"
@@ -5899,9 +5986,6 @@
       ],
       "Updating message content search...": [
         "Оновлення пошуку вмісту повідомлень..."
-      ],
-      "Updating your local messages, message content won't be searched during this update": [
-        "Триває оновлення локальних повідомлень. Пошук у вмісті повідомлень не виконуватиметься доки не завершиться оновлення"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Передплатіть зараз, щоб отримати преміумфункції, продукти та сховище за спеціальною ціною"
@@ -5966,8 +6050,14 @@
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Перепрошуємо. Це могла бути помилка з нашого боку. Підтвердьте, що ви хочете позначити цей лист надійним."
       ],
+      "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
+        "Ми заблокували наступним рекламодавцям та організаціям можливість бачити, коли ви відкриваєте цей лист, який пристрій ви використовуєте і де ви знаходитесь."
+      ],
       "We could not verify the sender's trusted keys.": [
         "Нам не вдалося перевірити довірені ключі відправника."
+      ],
+      "We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.": [
+        "Ми видалили інформацію про відстеження з наступних посилань, щоб захистити вас від рекламодавців та інших осіб, які намагаються відстежувати вашу активність в Інтернеті."
       ],
       "We'll notify you when the import is done.": [
         "Ми сповістимо вас, коли імпорт буде завершено."
@@ -6027,7 +6117,7 @@
         "Ви можете оновити свій пошуковий запит, або ${ button }"
       ],
       "You can either update your search query or clear it": [
-        "Ви можете змінити пошуковий запит, або стерти його"
+        "Ви можете оновити пошуковий запит або очистити його"
       ],
       "You can import one data type at a time.": [
         "Ви можете імпортувати один тип даних за один раз."
@@ -6148,9 +6238,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Ваші файли буде зашифровано, а потім збережено"
-      ],
-      "Your import will not be processed.": [
-        "Ваш імпорт не буде оброблений."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Ваша реєстраційна інформація не буде збережена після завершення імпорту."
@@ -6535,6 +6622,9 @@
       "City": [
         "Місто"
       ],
+      "Cleaned": [
+        "Очищено"
+      ],
       "Code is 6 digits without spaces": [
         "Код складається з 6 цифр без пробілів"
       ],
@@ -6736,6 +6826,9 @@
       "OK": [
         "Нормально"
       ],
+      "Open in a new tab": [
+        "Відкрити у новій вкладці"
+      ],
       "Operating system": [
         "Операційна система"
       ],
@@ -6750,6 +6843,9 @@
       ],
       "Or": [
         "Або"
+      ],
+      "Original link": [
+        "Оригінальне посилання"
       ],
       "Participants": [
         "Учасники"
@@ -7256,11 +7352,6 @@
         "Доступна нова версія ${ appName }. ${ reloadButton }."
       ]
     },
-    "Message has been sent to the user via a SimpleLogin alias": {
-      "Delivered via SimpleLogin by ${ BRAND_NAME }": [
-        "Надіслано через SimpleLogin від ${ BRAND_NAME }"
-      ]
-    },
     "Message image": {
       "Image has not been loaded in order to protect your privacy.": [
         "З метою захисту вашої приватності, зображення не було завантажено."
@@ -7591,11 +7682,42 @@
       "Set up your organization": [
         "Налаштуйте свою організацію"
       ],
-      "Set up your organization testing": [
-        "Налаштуйте тестування своєї організації"
-      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Використовуйте селектор застосунків у верхньому лівому куті, щоб отримати доступ до всіх служб ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } і ${ DRIVE_SHORT_APP_NAME }."
+      ]
+    },
+    "Online accounts": {
+      "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
+        "Маєте обліковий запис в одному з цих сервісів? Просто натисніть, щоб змінити електронну адресу на адресу ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Online Accounts Name": {
+      "Banking": [
+        "Банкінг"
+      ],
+      "Crypto": [
+        "Крипто"
+      ],
+      "E-commerce and Retail": [
+        "Електронна комерція та роздрібна торгівля"
+      ],
+      "Entertainment": [
+        "Розваги"
+      ],
+      "Food and beverage": [
+        "Їжа та напої"
+      ],
+      "Gaming": [
+        "Ігри"
+      ],
+      "Most popular": [
+        "Найпопулярніші"
+      ],
+      "Travel": [
+        "Подорожі"
+      ],
+      "Utilities": [
+        "Утиліти"
       ]
     },
     "Option": {
@@ -7637,20 +7759,6 @@
     "Pagination": {
       "${ page } of ${ totalText }": [
         "${ page } з ${ totalText }"
-      ]
-    },
-    "Paid user checklist item": {
-      "Get mobile app": [
-        "Отримати мобільну програму"
-      ],
-      "Import contacts or emails": [
-        "Імпорт контактів чи е-пошти"
-      ],
-      "Send a message": [
-        "Надіслати повідомлення"
-      ],
-      "Set up a recovery method": [
-        "Встановити спосіб відновлення"
       ]
     },
     "Participant name": {
@@ -7977,6 +8085,11 @@
         "Ми виявили застереження. Вказані електронні адреси можуть не отримувати листи:"
       ]
     },
+    "Sender verification details": {
+      "Sender verification": [
+        "Перевірка відправника"
+      ]
+    },
     "Sent email icon": {
       "Encrypted by ${ MAIL_APP_NAME }": [
         "Зашифровано ${ MAIL_APP_NAME }"
@@ -8300,7 +8413,7 @@
         "Доступ звідусіль до стримінгових сервісів, включно з Netflix, Disney+ та Prime Video."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Всі найкращі можливості наших преміум функцій: 100 адрес пошти, підтримка 10 власних доменів, необмежена кількість псевдонімів Hide-my-email, спільний доступ до календаря, зашифроване хмарне сховище, спільний доступ до файлів і багато іншого."
+        "Усі найкращі можливості наших преміумфункцій: 100 адрес пошти, підтримка 10 власних доменів, необмежена кількість псевдонімів Hide-my-email, спільний доступ до календаря, зашифроване хмарне сховище, спільний доступ до файлів і багато іншого."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Включає підтримку 1 власного домену, 10 адрес пошти, 10 псевдонімів Hide-my-email, спільний доступ до календаря та інші можливості."
@@ -8370,9 +8483,6 @@
       ]
     },
     "Storage": {
-      "Get extra storage for free": [
-        "Отримайте додаткове сховище безплатно"
-      ],
       "Release notes": [
         "Примітки до випуску"
       ],
@@ -8687,6 +8797,70 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Відгук надіслано"
+      ]
+    },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "1 рік"
+      ],
+      "2 years": [
+        "2 роки"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "Premium Drive"
+      ],
+      "Premium Mail and Calendar": [
+        "Premium Mail і Calendar"
+      ],
+      "Premium Password Manager": [
+        "Premium Менеджер паролів"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Надійно зберігайте свої паролі та автоматично заповнюйте їх на вебсайтах. Включає необмежену кількість паролів, автозаповнення, генератор паролів тощо."
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Менеджер паролів"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Створюйте захищені дані для входу на всіх своїх пристроях. Включає необмежену кількість псевдонімів, 20 сховищ, інтегровану 2FA, автоматичне заповнення кредитної картки тощо."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Включає понад 2950 серверів у 65 країнах, підключення до 10 пристроїв, доступ до стримінгових сервісів у всьому світі, шкідливого програмного забезпечення та блокування реклами тощо."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Включає підтримку 1 власного домену електронної пошти, 10 адрес електронної пошти, 10 псевдонімів hide-my-email, спільний доступ до календаря тощо."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Захистіть свої файли за допомогою зашифрованого хмарного сховища. Включає історію версій, спільний доступ до зашифрованих файлів тощо."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "*Ваша підписка буде автоматично поновлюватися за стандартною зниженою ставкою в кінці вашого розрахункового циклу."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Знижки розраховуються на основі стандартної місячної ціни. Ця пропозиція доступна лише тим, хто підписався вперше."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Протягом обмеженого часу отримуйте найліпші пропозиції від ${ BRAND_NAME } з ексклюзивною знижкою."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Ми святкуємо дев'ятирічну річницю нашого краудфандингу!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "${ BRAND_NAME } Святковий розпродаж"
       ]
     },
     "Table header": {
@@ -9182,6 +9356,9 @@
       "No attachment found": [
         "Вкладення не знайдено"
       ],
+      "No trackers found": [
+        "Трекерів не знайдено"
+      ],
       "Open actions dropdown": [
         "Випадне меню дій"
       ],
@@ -9208,6 +9385,9 @@
       ],
       "Previous message": [
         "Попереднє повідомлення"
+      ],
+      "Protect yourself from trackers": [
+        "Захистіть себе від трекерів"
       ],
       "Re-sign all contacts": [
         "Повторно підписати всі контакти"
@@ -9359,6 +9539,12 @@
       "Warning: suspected fake website": [
         "Попередження: імовірно підроблений вебсайт"
       ],
+      "We protected you from ${ trackersCount } tracker": [
+        "Ми захистили вас від ${ trackersCount } трекера",
+        "Ми захистили вас від ${ trackersCount } трекерів",
+        "Ми захистили вас від ${ trackersCount } трекерів",
+        "Ми захистили вас від ${ trackersCount } трекерів"
+      ],
       "Welcome": [
         "Вітаємо"
       ],
@@ -9504,9 +9690,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } перенесе стільки даних, скільки можливо, починаючи з найновіших повідомлень."
-      ],
-      "Are you sure you want to discard your import?": [
-        "Ви дійсно хочете відхилити імпортування?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Ви дійсно хочете остаточно видалити ${ count } групу контактів?",

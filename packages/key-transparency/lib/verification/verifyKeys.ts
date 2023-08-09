@@ -1,11 +1,11 @@
 import { CryptoProxy, PublicKeyReference, VERIFICATION_STATUS } from '@proton/crypto';
-import { KEY_FLAG } from '@proton/shared/lib/constants';
-import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import {
     Api,
     ArmoredKeyWithFlags,
     FetchedSignedKeyList,
     GetLatestEpoch,
+    KT_VERIFICATION_STATUS,
+    KeyTransparencyVerificationResult,
     SaveSKLToLS,
     SignedKeyListItem,
 } from '@proton/shared/lib/interfaces';
@@ -13,12 +13,12 @@ import { getParsedSignedKeyList } from '@proton/shared/lib/keys';
 
 import { KT_SKL_VERIFICATION_CONTEXT } from '../constants';
 import { NO_KT_DOMAINS } from '../constants/domains';
-import { fetchProof } from '../helpers/fetchHelpers';
+import { fetchProof } from '../helpers/apiHelpers';
 import { KeyTransparencyError, getEmailDomain, throwKTError } from '../helpers/utils';
 import { KeyWithFlags } from '../interfaces';
 import {
-    verifyProofOfAbscenceForAllRevision,
-    verifyProofOfAbscenceForRevision,
+    verifyProofOfAbsenceForAllRevision,
+    verifyProofOfAbsenceForRevision,
     verifyProofOfExistence,
     verifyProofOfObsolescence,
 } from './verifyProofs';
@@ -128,26 +128,21 @@ export const checkKeysInSKL = async (email: string, importedKeysWithFlags: KeyWi
 export const verifySKLSignature = async (
     verificationKeys: PublicKeyReference[],
     signedKeyListData: string,
-    signedKeyListSignature: string
+    signedKeyListSignature: string,
+    verificationTime?: Date
 ): Promise<Date | null> => {
     const { verified, signatureTimestamp } = await CryptoProxy.verifyMessage({
         armoredSignature: signedKeyListSignature,
         verificationKeys,
         textData: signedKeyListData,
         context: KT_SKL_VERIFICATION_CONTEXT,
+        date: verificationTime,
     });
     if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
         return null;
     }
     return signatureTimestamp;
 };
-
-export enum KTPublicKeyStatus {
-    VERIFICATION_SKIPPED,
-    VERIFIED_ABSENT,
-    VERIFIED_PRESENT,
-    VERIFICATION_FAILED,
-}
 
 /**
  * Verify that public keys associated to an email address are correctly stored in KT
@@ -161,12 +156,12 @@ const verifyPublicKeys = async (
     getLatestEpoch: GetLatestEpoch,
     keysIntendedForEmail: boolean,
     isCatchall?: boolean
-): Promise<KTPublicKeyStatus> => {
+): Promise<KeyTransparencyVerificationResult> => {
     try {
         if (!signedKeyList || !signedKeyList.Signature) {
             // Absent or obsolete address
             if (keysIntendedForEmail && NO_KT_DOMAINS.includes(getEmailDomain(email))) {
-                return KTPublicKeyStatus.VERIFICATION_SKIPPED;
+                return { status: KT_VERIFICATION_STATUS.UNVERIFIED_KEYS };
             }
         }
 
@@ -178,27 +173,7 @@ const verifyPublicKeys = async (
         const verifySKL = async () => {
             if (signedKeyList?.Data) {
                 const importedKeysWithFlags = await importKeys(armoredKeysWithFlags);
-
-                const verificationKeys = importedKeysWithFlags
-                    .filter(({ Flags }) => hasBit(Flags, KEY_FLAG.FLAG_NOT_COMPROMISED))
-                    .map(({ PublicKey }) => PublicKey);
-
-                if (!signedKeyList?.Signature) {
-                    return throwKTError('Signed key list has no signature', { email, signedKeyList });
-                }
-
-                // Verify signature
-                const verified = await verifySKLSignature(
-                    verificationKeys,
-                    signedKeyList.Data!,
-                    signedKeyList.Signature
-                );
-
-                if (!verified) {
-                    return throwKTError('Signed key list signature could not be verified', { email });
-                }
-
-                // Verify key list and signed key list
+                // Verify key list matches the signed key list
                 await checkKeysInSKL(email, importedKeysWithFlags, signedKeyList.Data!);
             }
         };
@@ -207,7 +182,7 @@ const verifyPublicKeys = async (
 
         const identifier = isCatchall ? getEmailDomain(email) : email;
 
-        if (signedKeyList && signedKeyList.MinEpochID == null) {
+        if (signedKeyList && !signedKeyList.MinEpochID) {
             if (!signedKeyList.ExpectedMinEpochID) {
                 return throwKTError("SKL doesn't have a MinEpochID or ExpectedMinEpochID set", {
                     email,
@@ -227,19 +202,24 @@ const verifyPublicKeys = async (
                 undefined,
                 isCatchall
             );
-            if (signedKeyList.Data && signedKeyList.Signature) {
-                return KTPublicKeyStatus.VERIFIED_PRESENT;
+            if (signedKeyList.ObsolescenceToken) {
+                return { status: KT_VERIFICATION_STATUS.UNVERIFIED_KEYS, keysChangedRecently: true };
             } else {
-                return KTPublicKeyStatus.VERIFIED_ABSENT;
+                return { status: KT_VERIFICATION_STATUS.VERIFIED_KEYS, keysChangedRecently: true };
             }
         }
 
-        const epoch = await getLatestEpoch();
+        let epoch = await getLatestEpoch();
 
         if (!signedKeyList) {
             const proof = await fetchProof(epoch.EpochID, identifier, 1, api);
-            await verifyProofOfAbscenceForAllRevision(proof, identifier, epoch.TreeHash);
-            return KTPublicKeyStatus.VERIFIED_ABSENT;
+            await verifyProofOfAbsenceForAllRevision(proof, identifier, epoch.TreeHash);
+            return { status: KT_VERIFICATION_STATUS.UNVERIFIED_KEYS };
+        }
+
+        if (epoch.EpochID < signedKeyList.MinEpochID!) {
+            // Cache is too old, refetch the last epoch
+            epoch = await getLatestEpoch(true);
         }
 
         const [proof, nextRevisionProof] = await Promise.all([
@@ -247,7 +227,7 @@ const verifyPublicKeys = async (
             fetchProof(epoch.EpochID, identifier, signedKeyList.Revision + 1, api),
         ]);
 
-        const nextProofVerification = verifyProofOfAbscenceForRevision(
+        const nextProofVerification = verifyProofOfAbsenceForRevision(
             nextRevisionProof,
             identifier,
             epoch.TreeHash,
@@ -260,18 +240,18 @@ const verifyPublicKeys = async (
                 nextProofVerification,
                 verifyProofOfExistence(proof, identifier, epoch.TreeHash, signedKeyList),
             ]);
-            return KTPublicKeyStatus.VERIFIED_PRESENT;
+            return { status: KT_VERIFICATION_STATUS.VERIFIED_KEYS };
         } else {
             await Promise.all([
                 sklVerificationPromise,
                 nextProofVerification,
                 verifyProofOfObsolescence(proof, identifier, epoch.TreeHash, signedKeyList),
             ]);
-            return KTPublicKeyStatus.VERIFIED_ABSENT;
+            return { status: KT_VERIFICATION_STATUS.UNVERIFIED_KEYS };
         }
     } catch (error: any) {
         if (error instanceof KeyTransparencyError) {
-            return KTPublicKeyStatus.VERIFICATION_FAILED;
+            return { status: KT_VERIFICATION_STATUS.VERIFICATION_FAILED };
         }
         throw error;
     }
@@ -292,8 +272,8 @@ export const verifyPublicKeysAddressAndCatchall = async (
         signedKeyList: FetchedSignedKeyList | null;
     }
 ): Promise<{
-    addressKTStatus?: KTPublicKeyStatus;
-    catchAllKTStatus?: KTPublicKeyStatus;
+    addressKTResult?: KeyTransparencyVerificationResult;
+    catchAllKTResult?: KeyTransparencyVerificationResult;
 }> => {
     const addressKTStatusPromise = verifyPublicKeys(
         address.keyList,
@@ -304,7 +284,7 @@ export const verifyPublicKeysAddressAndCatchall = async (
         getLatestEpoch,
         keysIntendendedForEmail
     );
-    let catchAllKTStatusPromise: Promise<KTPublicKeyStatus> | undefined;
+    let catchAllKTStatusPromise: Promise<KeyTransparencyVerificationResult> | undefined;
     if (address.keyList.length == 0 || catchAll) {
         catchAllKTStatusPromise = verifyPublicKeys(
             catchAll?.keyList ?? [],
@@ -319,7 +299,7 @@ export const verifyPublicKeysAddressAndCatchall = async (
     }
     const [addressKTStatus, catchAllKTStatus] = await Promise.all([addressKTStatusPromise, catchAllKTStatusPromise]);
     return {
-        addressKTStatus,
-        catchAllKTStatus,
+        addressKTResult: addressKTStatus,
+        catchAllKTResult: catchAllKTStatus,
     };
 };

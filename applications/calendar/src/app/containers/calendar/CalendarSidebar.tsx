@@ -21,7 +21,6 @@ import {
     useApi,
     useEventManager,
     useFeature,
-    useLoading,
     useModalState,
     useSpotlightOnFeature,
     useSpotlightShow,
@@ -33,6 +32,7 @@ import { CalendarModal } from '@proton/components/containers/calendar/calendarMo
 import HolidaysCalendarModal from '@proton/components/containers/calendar/holidaysCalendarModal/HolidaysCalendarModal';
 import SubscribedCalendarModal from '@proton/components/containers/calendar/subscribedCalendarModal/SubscribedCalendarModal';
 import useSubscribedCalendars from '@proton/components/hooks/useSubscribedCalendars';
+import { useLoading } from '@proton/hooks';
 import { updateMember } from '@proton/shared/lib/api/calendars';
 import { groupCalendarsByTaxonomy, sortCalendars } from '@proton/shared/lib/calendar/calendar';
 import { getHasUserReachedCalendarsLimit } from '@proton/shared/lib/calendar/calendarLimits';
@@ -110,14 +110,17 @@ const CalendarSidebar = ({
         !user.hasPaidMail
     );
 
-    const { show: showHolidaysSpotlight, onDisplayed: onHolidaysSpotlightDisplayed } = useSpotlightOnFeature(
+    const {
+        show: showHolidaysSpotlight,
+        onDisplayed: onHolidaysSpotlightDisplayed,
+        onClose: onCloseHolidaysSpotlight,
+    } = useSpotlightOnFeature(
         FeatureCode.HolidaysCalendarsSpotlight,
         !isWelcomeFlow && !isNarrow && !holidaysCalendars.length,
-        // TODO: update
         {
             alpha: Date.UTC(2023, 4, 25, 12),
-            beta: Date.UTC(2023, 4, 25, 12),
-            default: Date.UTC(2023, 4, 25, 12),
+            beta: Date.UTC(2023, 7, 7, 12),
+            default: Date.UTC(2023, 7, 10, 12),
         }
     );
     const shouldShowHolidaysSpotlight = useSpotlightShow(showHolidaysSpotlight);
@@ -178,6 +181,12 @@ const CalendarSidebar = ({
             />
         </Tooltip>
     );
+    const handleClickPlusButton = () => {
+        // close spotlight if it's on display
+        if (shouldShowHolidaysSpotlight) {
+            onCloseHolidaysSpotlight();
+        }
+    };
 
     const myCalendarsList = (
         <SidebarList>
@@ -213,6 +222,7 @@ const CalendarSidebar = ({
                                         className="navigation-link-header-group-control flex"
                                         content={<Icon name="plus" className="navigation-icon" alt={addCalendarText} />}
                                         ref={dropdownRef}
+                                        onClick={handleClickPlusButton}
                                     >
                                         <DropdownMenu>
                                             <DropdownMenuButton

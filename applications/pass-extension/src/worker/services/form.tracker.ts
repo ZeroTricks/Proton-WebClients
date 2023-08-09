@@ -1,3 +1,4 @@
+import { FormType } from '@proton/pass/fathom';
 import type { FormEntry, FormIdentifier, Maybe, TabId, WithAutoSavePromptOptions } from '@proton/pass/types';
 import { FormEntryStatus, WorkerMessageType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
@@ -11,8 +12,14 @@ import { createMainFrameRequestTracker } from './main-frame.tracker';
 import { createXMLHTTPRequestTracker } from './xmlhttp-request.tracker';
 
 const isPartialFormData = ({ type, data }: Pick<FormEntry, 'data' | 'type'>): boolean => {
-    if (type === 'login') return data.password === undefined || data.password.trim() === '';
-    return false;
+    switch (type) {
+        case FormType.LOGIN:
+        case FormType.REGISTER: {
+            return !(data.username?.trim() && data.password?.trim());
+        }
+        default:
+            return false;
+    }
 };
 
 const getFormId = (tabId: TabId, domain: string): FormIdentifier => `${tabId}:${domain}`;
@@ -22,9 +29,7 @@ export const createFormTrackerService = () => {
 
     const get = (tabId: TabId, domain: string): Maybe<FormEntry> => {
         const submission = submissions.get(getFormId(tabId, domain));
-        if (submission && submission.domain === domain) {
-            return submission;
-        }
+        if (submission && submission.domain === domain) return submission;
     };
 
     const stash = (tabId: TabId, domain: string, reason: string): void => {
@@ -43,7 +48,9 @@ export const createFormTrackerService = () => {
         const pending = submissions.get(formId);
 
         if (pending !== undefined && pending.status === FormEntryStatus.STAGING) {
-            const update = merge(pending, { ...submission, status: FormEntryStatus.STAGING });
+            /* do not override empty values when merging in order to properly
+             * support multi-step forms which may have partial data on each step */
+            const update = merge(pending, { ...submission, status: FormEntryStatus.STAGING }, { excludeEmpty: true });
             const staging = merge(update, { partial: isPartialFormData(update) });
 
             submissions.set(formId, staging);
@@ -157,7 +164,10 @@ export const createFormTrackerService = () => {
 
                         return promptOptions.shouldPrompt
                             ? { committed: merge(committed, { autosave: promptOptions }) }
-                            : { committed: undefined };
+                            : (() => {
+                                  stash(tabId, url.domain, 'PROMPT_IGNORE');
+                                  return { committed: undefined };
+                              })();
                     }
 
                     throw new Error(`Cannot commit form submission for tab#${tabId} on domain "${url.domain}"`);

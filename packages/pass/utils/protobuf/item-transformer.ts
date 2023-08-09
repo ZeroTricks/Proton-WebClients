@@ -7,6 +7,7 @@ import type {
     SafeProtobufItem,
 } from '@proton/pass/types';
 import { ProtobufItem } from '@proton/pass/types';
+import type { ItemCreditCard } from '@proton/pass/types/protobuf/item-v1';
 import { omit } from '@proton/shared/lib/helpers/object';
 
 const protobufToExtraField = ({ fieldName, ...field }: SafeProtobufExtraField): ItemExtraField => {
@@ -22,6 +23,16 @@ const protobufToExtraField = ({ fieldName, ...field }: SafeProtobufExtraField): 
     }
 };
 
+const protobufToCreditCardContent = (creditCard: ItemCreditCard): ItemCreditCard => {
+    const [year, month] = (creditCard.expirationDate ?? '').split('-') as [string, string | undefined];
+
+    return {
+        ...creditCard,
+        /* YYYY-MM to MMYYYY */
+        expirationDate: year?.length && month?.length ? `${month}${year}` : '',
+    };
+};
+
 const protobufToItem = (item: SafeProtobufItem): Item => {
     const { platformSpecific, metadata, content: itemContent } = item;
     const base = { metadata, extraFields: item.extraFields.map(protobufToExtraField), platformSpecific };
@@ -34,6 +45,8 @@ const protobufToItem = (item: SafeProtobufItem): Item => {
             return { ...base, type: 'note', content: data.note };
         case 'alias':
             return { ...base, type: 'alias', content: data.alias };
+        case 'creditCard':
+            return { ...base, type: 'creditCard', content: protobufToCreditCardContent(data.creditCard) };
         default:
             throw new Error('Unsupported item type');
     }
@@ -52,6 +65,18 @@ const extraFieldToProtobuf = ({ fieldName, ...extraField }: ItemExtraField): Saf
     }
 };
 
+const creditCardContentToProtobuf = (creditCard: ItemCreditCard): ItemCreditCard => {
+    const expirationDate = creditCard.expirationDate?.length
+        ? `${creditCard.expirationDate.slice(2, 6)}-${creditCard.expirationDate.slice(0, 2)}`
+        : '';
+
+    return {
+        ...creditCard,
+        /* MMYYYY to YYYY-MM */
+        expirationDate,
+    };
+};
+
 const itemToProtobuf = (item: Item): SafeProtobufItem => {
     const { platformSpecific, metadata } = item;
 
@@ -64,6 +89,13 @@ const itemToProtobuf = (item: Item): SafeProtobufItem => {
             return { ...base, content: { content: { oneofKind: 'note', note: item.content } } };
         case 'alias':
             return { ...base, content: { content: { oneofKind: 'alias', alias: item.content } } };
+        case 'creditCard':
+            return {
+                ...base,
+                content: {
+                    content: { oneofKind: 'creditCard', creditCard: creditCardContentToProtobuf(item.content) },
+                },
+            };
         default:
             throw new Error('Unsupported item type');
     }

@@ -2,7 +2,6 @@ import { traceError } from '@proton/shared/lib/helpers/sentry';
 
 import { TransferCancel } from '../../components/TransferManager/transfer';
 import {
-    BlockToken,
     FileKeys,
     FileRequestBlock,
     ThumbnailRequestBlock,
@@ -22,19 +21,19 @@ export function initUploadFileWorker(
     let workerApi: UploadWorkerController;
 
     // Start detecting mime type right away to have this information once the
-    // upload starts so we can generate thumbnail as fast as possible without
+    // upload starts, so we can generate thumbnail as fast as possible without
     // need to wait for creation of revision on API.
     const mimeTypePromise = mimeTypeFromFile(file);
 
     const start = async ({ onInit, onProgress, onNetworkError, onFinalize }: UploadFileProgressCallbacks = {}) => {
-        // Worker has a slight overhead about 40 ms. Lets start generating
+        // Worker has a slight overhead about 40 ms. Let's start generating
         // thumbnail a bit sooner.
-        const thumbnailDataPromise = mimeTypePromise.then(async (mimeType) => {
-            return makeThumbnail(mimeType, file).catch((err) => {
+        const thumbnailDataPromise = mimeTypePromise.then(async (mimeType) =>
+            makeThumbnail(mimeType, file).catch((err) => {
                 traceError(err);
                 return undefined;
-            });
-        });
+            })
+        );
 
         return new Promise<void>((resolve, reject) => {
             const worker = new Worker(
@@ -74,9 +73,9 @@ export function initUploadFileWorker(
                 onProgress: (increment: number) => {
                     onProgress?.(increment);
                 },
-                finalize: (blockTokens: BlockToken[], signature: string, signatureAddress: string, xattr: string) => {
+                finalize: (signature: string, signatureAddress: string, xattr: string) => {
                     onFinalize?.();
-                    finalize(blockTokens, signature, signatureAddress, xattr).then(resolve).catch(reject);
+                    finalize(signature, signatureAddress, xattr).then(resolve).catch(reject);
                 },
                 onNetworkError: (error: string) => {
                     onNetworkError?.(error);

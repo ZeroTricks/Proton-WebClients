@@ -1940,6 +1940,9 @@
       "\"${ name }\" already exists": [
         "« ${ name } » existe déjà."
       ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Vous pouvez aussi vérifier notre ${ statusPageLink }."
+      ],
       "A group with this name already exists": [
         "Un groupe avec ce nom existe déjà."
       ],
@@ -2137,6 +2140,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Une erreur s'est produite, nous vous invitons à ${ refresh } pour continuer. Si ce message d'erreur s'affiche toujours, contactez notre ${ supportTeam }."
+      ],
+      "status page": [
+        "page d'état"
       ],
       "The email addresses do not match": [
         "Les adresses e-mail ne correspondent pas."
@@ -2702,8 +2708,8 @@
       "System default": [
         "Identique au système"
       ],
-      "Theme default": [
-        "Thème par défaut"
+      "Theme font": [
+        "Police du thème"
       ]
     },
     "Font size option": {
@@ -3101,8 +3107,8 @@
         "${ doneUploadsCount } importés"
       ],
       "${ errorCount } failed": [
-        "${ errorCount } échec",
-        "${ errorCount } échecs"
+        "${ errorCount } erreur",
+        "${ errorCount } erreurs"
       ],
       "${ fileName }: full-size image": [
         "${ fileName } : image en taille réelle"
@@ -3217,6 +3223,9 @@
       ],
       "Are you sure you want to discard your changes?": [
         "Voulez-vous vraiment abandonner vos modifications ?"
+      ],
+      "Are you sure you want to discard your import?": [
+        "Voulez-vous vraiment annuler votre importation ?"
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Voulez-vous vraiment vider le dossier Corbeille et définitivement supprimer tous les éléments ?"
@@ -3414,6 +3423,9 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Saisissez les identifiants du compte de messagerie depuis lequel vous voulez importer."
+      ],
+      "Enter the device name to confirm removal.": [
+        "Saisissez le nom de l'appareil pour confirmer sa suppression."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Saisissez le code de vérification qui a été envoyé à ${ destinationText }."
@@ -3721,6 +3733,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Notez que ce processus peut prendre un certain temps selon la taille de votre carnet d'adresses."
       ],
+      "Please provide a name and an email address for creating a group.": [
+        "Indiquez un nom et une addresse e-mail pour créer un groupe."
+      ],
       "Please select the folders you would like to import:": [
         "Sélectionnez les dossiers que vous voulez importer :"
       ],
@@ -3918,8 +3933,8 @@
         "Cela supprimera le lien et l'accès à votre fichier ou dossier pour toute personne ayant le lien.",
         "Cela supprimera les liens et l'accès à vos fichiers ou dossiers pour toute personne ayant les liens."
       ],
-      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected.": [
-        "Cela supprimera l'appareil synchronisé ${ deviceName } de ${ DRIVE_APP_NAME }. Les fichiers locaux sur l'appareil ne seront pas affectés."
+      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
+        "L'appareil synchronisé ${ deviceName } sera supprimé de ${ DRIVE_APP_NAME } et les fichiers qui ont été ajoutés à Ordinateurs ne seront plus synchronisés."
       ],
       "This will replace the existing file with the folder": [
         "Cela remplacera le fichier existant par le dossier."
@@ -4131,9 +4146,6 @@
       "Your files will be encrypted and then saved.": [
         "Vos fichiers seront chiffrés puis sauvegardés."
       ],
-      "Your import will not be processed.": [
-        "Votre importation ne sera pas traitée."
-      ],
       "Your login information will not be saved after the import is completed.": [
         "Vos informations de connexion ne seront pas enregistrées une fois l'importation terminée."
       ],
@@ -4199,11 +4211,6 @@
       ],
       "Trusted": [
         "Approuvée"
-      ]
-    },
-    "Key transparency details button": {
-      "Click here for more details.": [
-        "Cliquez ici pour plus de détails."
       ]
     },
     "Label": {
@@ -4598,7 +4605,7 @@
         "Adresse postale"
       ],
       "Synchronize with system": [
-        "Synchroniser avec les paramètres du système"
+        "Synchroniser avec le système"
       ],
       "System information": [
         "Informations système"
@@ -4704,6 +4711,9 @@
       ]
     },
     "Link": {
+      "${ DRIVE_APP_NAME } Windows app": [
+        "Application ${ DRIVE_APP_NAME } pour Windows"
+      ],
       "clearing your browser cache": [
         "videz le cache de votre navigateur"
       ],
@@ -4718,6 +4728,9 @@
       ],
       "Request an invite": [
         "Demander une invitation"
+      ],
+      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
+        "Synchronisez facilement des fichiers et des dossiers entre votre ordinateur et ${ DRIVE_APP_NAME }."
       ],
       "Shared": [
         "Partagé"
@@ -5135,9 +5148,6 @@
         "Choisissez un thème"
       ],
       "Set up your organization": [
-        "Configurez votre organisation"
-      ],
-      "Set up your organization testing": [
         "Configurez votre organisation"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
@@ -5671,7 +5681,7 @@
         "Annulation en cours"
       ],
       "Verification successful": [
-        "La vérification est réussie."
+        "La vérification a abouti."
       ]
     },
     "Success notification when user send feedback": {
@@ -5849,7 +5859,7 @@
         "${ numberOfFailedTransfer.total } chargements n'ont pas abouti."
       ],
       "(active)": [
-        "(activé)"
+        "(actif)"
       ],
       "Account suspended": [
         "Compte suspendu"
@@ -6449,9 +6459,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } transférera autant de données que possible, en commençant par vos messages les plus récents."
-      ],
-      "Are you sure you want to discard your import?": [
-        "Voulez-vous vraiment annuler votre importation ?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Voulez-vous vraiment supprimer définitivement ${ count } groupe de contacts ?",

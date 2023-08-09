@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-throw-literal */
+import { captureException as sentryCaptureException } from '@sentry/browser';
 import { c } from 'ttag';
 
 import {
@@ -9,27 +10,35 @@ import {
     persistSession,
     resumeSession,
 } from '@proton/pass/auth';
+import type { MessageHandlerCallback } from '@proton/pass/extension/message';
 import { browserLocalStorage, browserSessionStorage } from '@proton/pass/extension/storage';
 import {
+    extendLock,
     notification,
+    selectSessionLockTTL,
     selectSessionLockToken,
     selectUser,
+    sessionUnlockFailure,
+    sessionUnlockIntent,
+    sessionUnlockSuccess,
     setUserPlan,
     stateDestroy,
     stateLock,
+    syncLock,
 } from '@proton/pass/store';
 import type { AccountForkMessage, Api, MaybeNull, WorkerMessageResponse } from '@proton/pass/types';
 import { SessionLockStatus, WorkerMessageType, WorkerStatus } from '@proton/pass/types';
 import { withPayload } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time';
-import { workerReady } from '@proton/pass/utils/worker';
+import { workerLocked, workerReady } from '@proton/pass/utils/worker';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
 import createAuthenticationStore from '@proton/shared/lib/authentication/createAuthenticationStore';
 import { MAIL_APP_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import createStore from '@proton/shared/lib/helpers/store';
 
+import { SSO_URL } from '../../app/config';
 import WorkerMessageBroker from '../channel';
 import { withContext } from '../context';
 import store from '../store';
@@ -42,6 +51,7 @@ type LoginOptions = {
 };
 export interface AuthService {
     authStore: AuthenticationStore;
+    setLockStatus: (status: MaybeNull<SessionLockStatus>) => void;
     resumeSession: () => Promise<boolean>;
     consumeFork: (
         data: AccountForkMessage['payload']
@@ -63,6 +73,7 @@ type CreateAuthServiceOptions = {
 type AuthContext = {
     pendingInit: MaybeNull<Promise<boolean>>;
     lockStatus: MaybeNull<SessionLockStatus>;
+    extendTime: number;
 };
 
 export const createAuthService = ({
@@ -71,10 +82,15 @@ export const createAuthService = ({
     onUnauthorized,
     onLocked,
 }: CreateAuthServiceOptions): AuthService => {
-    const authCtx: AuthContext = { pendingInit: null, lockStatus: null };
+    const authCtx: AuthContext = {
+        pendingInit: null,
+        lockStatus: null,
+        extendTime: getEpoch(),
+    };
 
     const authService: AuthService = {
         authStore: exposeAuthStore(createAuthenticationStore(createStore())),
+        setLockStatus: (status) => (authCtx.lockStatus = status),
 
         lock: withContext((ctx) => {
             logger.info(`[Worker::Auth] Locking context`);
@@ -83,7 +99,7 @@ export const createAuthService = ({
             /* set the lock status before dispatching
              * the `stateLock` so the UI can pick up
              * the locked state before wiping the store */
-            authCtx.lockStatus = SessionLockStatus.LOCKED;
+            authService.setLockStatus(SessionLockStatus.LOCKED);
             ctx.setStatus(WorkerStatus.LOCKED);
 
             if (shouldLockState) {
@@ -96,7 +112,7 @@ export const createAuthService = ({
 
         unlock: () => {
             logger.info(`[Worker::Auth] Unlocking context`);
-            authCtx.lockStatus = SessionLockStatus.REGISTERED;
+            authService.setLockStatus(SessionLockStatus.REGISTERED);
         },
 
         init: async () => {
@@ -133,13 +149,23 @@ export const createAuthService = ({
          * Reset api in case it was in an invalid session state.
          * to see full data flow : `applications/account/src/app/content/PublicApp.tsx` */
         consumeFork: withContext(async (ctx, data) => {
+            if (ctx.getState().loggedIn) {
+                throw {
+                    payload: {
+                        title: c('Error').t`Authentication error`,
+                        message: c('Info')
+                            .t`It seems you are already logged in to ${PASS_APP_NAME}. If you're trying to login with a different account, please logout from the extension first.`,
+                    },
+                };
+            }
+
             await authService.logout();
 
             try {
                 ctx.setStatus(WorkerStatus.AUTHORIZING);
 
                 const { keyPassword } = data;
-                const result = await consumeFork({ api, ...data });
+                const result = await consumeFork({ api, apiUrl: `${SSO_URL}/api`, ...data });
 
                 const { AccessToken, RefreshToken } = result;
 
@@ -147,18 +173,9 @@ export const createAuthService = ({
 
                 /* if the session is locked we might not be considered
                  * fully logged in but we can still persist the session */
-                if (loggedIn || api.getStatus().sessionLocked) {
+                if (loggedIn || workerLocked(ctx.status)) {
                     logger.info('[Worker::Auth] Persisting session...');
                     void persistSession(api, result);
-                }
-
-                /* the `/pass/v1/user/session/lock/check` may have failed during
-                 * the login call : this indicates that the user is not white-listed */
-                if (!loggedIn && !api.getStatus().sessionLocked) {
-                    throw {
-                        title: c('Title').t`Unauthorized access`,
-                        message: c('Info').t`${PASS_APP_NAME} is currently under a closed beta. Come back later.`,
-                    };
                 }
 
                 /* if we get a locked session error on user/access we should not
@@ -166,13 +183,11 @@ export const createAuthService = ({
                  * removing the session-lock mechanism (and moving to biometrics)
                  * make sure to catch 403 in this catch block. It is handled by
                  * the session lock check in the AuthService::login call right now */
-                const accessResponse = await api({ url: `pass/v1/user/access`, method: 'post' }).catch((e) => {
-                    if (!api.getStatus().sessionLocked) throw e;
-                });
-
-                if (accessResponse?.Access) {
-                    store.dispatch(setUserPlan({ ...accessResponse.Access.Plan, requestedAt: getEpoch() }));
-                }
+                await api({ url: `pass/v1/user/access`, method: 'get' })
+                    .then(({ Access }) => store.dispatch(setUserPlan({ ...Access!.Plan, requestedAt: getEpoch() })))
+                    .catch((e) => {
+                        if (!api.getStatus().sessionLocked) throw e;
+                    });
 
                 return {
                     payload: {
@@ -184,6 +199,23 @@ export const createAuthService = ({
             } catch (error: any) {
                 void authService.logout();
                 const additionalMessage = error.message ?? '';
+
+                if (error instanceof Error) {
+                    /* API errors are excluded from core's sentry `beforeSend`
+                     * handler: wrap the error message to by-pass */
+                    const loginError = new Error(error.message);
+                    loginError.name = 'PassLoginError';
+                    loginError.cause = error.cause;
+                    loginError.stack = error.stack;
+
+                    sentryCaptureException(loginError, {
+                        extra: {
+                            forkSelector: data.selector,
+                            persistent: data.persistent,
+                            trusted: data.trusted,
+                        },
+                    });
+                }
 
                 store.dispatch(
                     notification({
@@ -214,7 +246,9 @@ export const createAuthService = ({
             try {
                 const cachedLockStatus = authCtx.lockStatus;
                 const lock = cachedLockStatus !== null ? { status: cachedLockStatus } : await checkSessionLock();
-                authCtx.lockStatus = lock.status;
+
+                store.dispatch(syncLock(lock));
+                authService.setLockStatus(lock.status);
 
                 if (lock.status === SessionLockStatus.LOCKED) {
                     logger.info(`[Worker::Auth] Detected locked session`);
@@ -289,7 +323,7 @@ export const createAuthService = ({
             void browserSessionStorage.removeItems(['AccessToken', 'RefreshToken', 'UID', 'keyPassword']);
             void browserLocalStorage.clear();
 
-            authCtx.lockStatus = null;
+            authService.setLockStatus(null);
             authService.authStore.setUID(undefined);
             authService.authStore.setPassword(undefined);
 
@@ -350,11 +384,41 @@ export const createAuthService = ({
         }),
     };
 
+    const handleUnlockRequest = (request: { pin: string }) =>
+        new Promise<WorkerMessageResponse<WorkerMessageType.UNLOCK_REQUEST>>((resolve) => {
+            store.dispatch(
+                sessionUnlockIntent({ pin: request.pin }, (action) => {
+                    if (sessionUnlockSuccess.match(action)) return resolve({ ok: true });
+                    if (sessionUnlockFailure.match(action)) return resolve({ ok: false, ...action.payload });
+                })
+            );
+        });
+
+    /* only extend the session lock if a lock is registered and we've
+     * reached at least 80% of the lock TTL since the last extension */
+    const handleActivityProbe = withContext<MessageHandlerCallback<WorkerMessageType.ACTIVITY_PROBE>>(({ status }) => {
+        const shouldExtend = workerReady(status) && authCtx.lockStatus === SessionLockStatus.REGISTERED;
+        const ttl = selectSessionLockTTL(store.getState());
+
+        if (shouldExtend && ttl !== undefined) {
+            const now = getEpoch();
+            const diff = now - authCtx.extendTime;
+            if (diff > ttl * 0.8) {
+                authCtx.extendTime = now;
+                store.dispatch(extendLock());
+            }
+        }
+
+        return true;
+    });
+
+    const resolveUserData = () => ({ user: selectUser(store.getState()) });
+
     WorkerMessageBroker.registerMessage(WorkerMessageType.ACCOUNT_FORK, withPayload(authService.consumeFork));
     WorkerMessageBroker.registerMessage(WorkerMessageType.SESSION_RESUMED, withPayload(authService.login));
-    WorkerMessageBroker.registerMessage(WorkerMessageType.RESOLVE_USER_DATA, () => ({
-        user: selectUser(store.getState()),
-    }));
+    WorkerMessageBroker.registerMessage(WorkerMessageType.UNLOCK_REQUEST, withPayload(handleUnlockRequest));
+    WorkerMessageBroker.registerMessage(WorkerMessageType.ACTIVITY_PROBE, handleActivityProbe);
+    WorkerMessageBroker.registerMessage(WorkerMessageType.RESOLVE_USER_DATA, resolveUserData);
 
     return authService;
 };

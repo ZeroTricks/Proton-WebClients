@@ -1,9 +1,10 @@
-import { PublicKeyReference } from '@proton/crypto';
-import { Epoch, KTPublicKeyStatus, SelfAuditResult } from '@proton/key-transparency/lib';
+import { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
+import { Epoch, SelfAuditResult } from '@proton/key-transparency/lib';
 
 import { Address } from './Address';
 import { DecryptedKey } from './Key';
 import { FetchedSignedKeyList, SignedKeyList } from './SignedKeyList';
+import { User } from './User';
 
 export enum IGNORE_KT {
     NORMAL,
@@ -53,8 +54,8 @@ export type VerifyOutboundPublicKeys = (
         signedKeyList: FetchedSignedKeyList | null;
     }
 ) => Promise<{
-    addressKTStatus?: KTPublicKeyStatus;
-    catchAllKTStatus?: KTPublicKeyStatus;
+    addressKTResult?: KeyTransparencyVerificationResult;
+    catchAllKTResult?: KeyTransparencyVerificationResult;
 }>;
 
 export type SaveSKLToLS = (
@@ -75,3 +76,27 @@ export enum KeyTransparencyActivation {
 }
 
 export type GetLatestEpoch = (forceRefresh?: boolean) => Epoch;
+
+export enum KT_VERIFICATION_STATUS {
+    VERIFIED_KEYS,
+    UNVERIFIED_KEYS,
+    VERIFICATION_FAILED,
+}
+
+export interface KeyTransparencyVerificationResult {
+    status: KT_VERIFICATION_STATUS;
+    keysChangedRecently?: boolean;
+}
+
+export type UploadMissingSKL = (address: Address, epoch: Epoch, saveSKLToLS: SaveSKLToLS) => Promise<void>;
+
+export type ResetSelfAudit = (user: User, keyPassword: string, addressesBeforeReset: Address[]) => Promise<void>;
+
+export interface ResignSKLWithPrimaryKeyArguments {
+    address: Address;
+    newPrimaryKey: PrivateKeyReference;
+    formerPrimaryKey: PublicKeyReference;
+    userKeys: DecryptedKey[];
+}
+
+export type ResignSKLWithPrimaryKey = (args: ResignSKLWithPrimaryKeyArguments) => Promise<void>;

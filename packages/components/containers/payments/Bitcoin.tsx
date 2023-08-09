@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS, TokenPaymentMethod } from '@proton/components/payments/core';
+import { useLoading } from '@proton/hooks';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import {
     CreateBitcoinTokenData,
@@ -16,7 +17,6 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { Api, Currency } from '@proton/shared/lib/interfaces';
 
 import { Alert, Bordered, Loader, Price } from '../../components';
-import { useLoading } from '../../hooks';
 import { PaymentMethodFlows } from '../paymentMethods/interface';
 import BitcoinDetails from './BitcoinDetails';
 import BitcoinQRCode, { OwnProps as BitcoinQRCodeProps } from './BitcoinQRCode';
@@ -124,25 +124,36 @@ const Bitcoin = ({
     );
 
     const request = async () => {
-        setError(false);
-        try {
-            const data: CreateBitcoinTokenData = {
-                Amount: amount,
-                Currency: currency,
-                Payment: {
-                    Type: 'cryptocurrency',
-                    Details: {
-                        Coin: 'bitcoin',
-                    },
-                },
-            };
+        const fetchWithoutToken = async () => {
+            const { AmountBitcoin, Address } = await api(createBitcoinPayment(amount, currency));
+            setModel({ amountBitcoin: AmountBitcoin, address: Address, token: null });
+        };
 
+        const fetchAsToken = async () => {
             try {
+                const data: CreateBitcoinTokenData = {
+                    Amount: amount,
+                    Currency: currency,
+                    Payment: {
+                        Type: 'cryptocurrency',
+                        Details: {
+                            Coin: 'bitcoin',
+                        },
+                    },
+                };
                 const { Token, Data } = await silentApi<any>(createToken(data));
                 setModel({ amountBitcoin: Data.CoinAmount, address: Data.CoinAddress, token: Token });
             } catch (error) {
-                const { AmountBitcoin, Address } = await api(createBitcoinPayment(amount, currency));
-                setModel({ amountBitcoin: AmountBitcoin, address: Address, token: null });
+                await fetchWithoutToken();
+            }
+        };
+
+        setError(false);
+        try {
+            if (type === 'signup-pass') {
+                await fetchAsToken();
+            } else {
+                await fetchWithoutToken();
             }
         } catch (error) {
             setError(true);

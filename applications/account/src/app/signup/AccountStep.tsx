@@ -19,8 +19,8 @@ import {
     SelectTwo,
     useConfig,
     useFormErrors,
-    useLoading,
 } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
 import { getIsVPNApp } from '@proton/shared/lib/authentication/apps';
 import {
@@ -30,7 +30,6 @@ import {
     CALENDAR_APP_NAME,
     CLIENT_TYPES,
     MAIL_APP_NAME,
-    SSO_PATHS,
 } from '@proton/shared/lib/constants';
 import {
     confirmPasswordValidator,
@@ -56,7 +55,7 @@ import { SignupType } from './interfaces';
 
 import './AccountStep.scss';
 
-interface Props {
+export interface AccountStepProps {
     clientType: CLIENT_TYPES;
     onBack?: () => void;
     defaultUsername?: string;
@@ -79,6 +78,7 @@ interface Props {
         payload: ChallengeResult;
     }) => Promise<void>;
     loading?: boolean;
+    loginUrl: string;
 }
 
 const AccountStep = ({
@@ -96,7 +96,8 @@ const AccountStep = ({
     hasChallenge = true,
     domains,
     loading: loadingDependencies,
-}: Props) => {
+    loginUrl,
+}: AccountStepProps) => {
     const { APP_NAME } = useConfig();
     const challengeRefLogin = useRef<ChallengeRef>();
     const anchorRef = useRef<HTMLButtonElement | null>(null);
@@ -259,7 +260,7 @@ const AccountStep = ({
     );
 
     const signIn = (
-        <Link key="signin" className="link link-focus text-nowrap" to={SSO_PATHS.LOGIN}>
+        <Link key="signin" className="link link-focus text-nowrap" to={loginUrl}>
             {c('Link').t`Sign in`}
         </Link>
     );

@@ -1,5 +1,4 @@
 import { ReactNode, useEffect, useState } from 'react';
-import * as React from 'react';
 
 import * as H from 'history';
 import { c } from 'ttag';
@@ -15,23 +14,31 @@ import {
     getActiveSessions,
     resumeSession,
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { APPS } from '@proton/shared/lib/constants';
-import { getCookie } from '@proton/shared/lib/helpers/cookies';
+import { APPS, DEFAULT_LOCALE } from '@proton/shared/lib/constants';
 import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
-import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
+import { getBrowserLocale, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 
 interface Props {
     location: H.Location;
     locales?: TtagLocaleMap;
-    children: React.ReactNode;
+    children: ReactNode;
     onActiveSessions: (data: GetActiveSessionsResult) => boolean;
     onLogin: ProtonLoginCallback;
     loader: ReactNode;
+    pathLocale: string;
 }
 
-const AccountPublicApp = ({ loader, location, locales = {}, children, onActiveSessions, onLogin }: Props) => {
+const AccountPublicApp = ({
+    pathLocale,
+    loader,
+    location,
+    locales = {},
+    children,
+    onActiveSessions,
+    onLogin,
+}: Props) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<{ message?: string } | null>(null);
     const normalApi = useApi();
@@ -41,11 +48,8 @@ const AccountPublicApp = ({ loader, location, locales = {}, children, onActiveSe
         const runGetSessions = async () => {
             const searchParams = new URLSearchParams(location.search);
             const languageParams = searchParams.get('language');
-            const languageCookie = getCookie('Locale');
             const browserLocale = getBrowserLocale();
-            const localeCode =
-                getClosestLocaleMatch(languageParams || languageCookie || '', locales) ||
-                getClosestLocaleCode(browserLocale, locales);
+            const localeCode = getClosestLocaleMatch(pathLocale || languageParams || '', locales) || DEFAULT_LOCALE;
             await Promise.all([
                 loadCryptoWorker(getCryptoWorkerOptions(APPS.PROTONACCOUNT)),
                 loadLocale(localeCode, locales),

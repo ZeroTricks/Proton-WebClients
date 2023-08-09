@@ -1,5 +1,5 @@
-import type { FormType } from '@proton/pass/types';
-import { FormField } from '@proton/pass/types';
+import type { FormType } from '@proton/pass/fathom';
+import { setFieldProcessable, setFormProcessable } from '@proton/pass/fathom';
 import { getMaxZIndex } from '@proton/pass/utils/dom';
 import { createListenerStore } from '@proton/pass/utils/listener';
 import { logger } from '@proton/pass/utils/logger';
@@ -8,7 +8,7 @@ import debounce from '@proton/utils/debounce';
 
 import { withContext } from '../../context/context';
 import type { DetectedField, DetectedForm, FormHandle } from '../../types';
-import { hasUnprocessedFields, setFieldProcessable, setFormProcessable } from '../../utils/nodes';
+import { hasUnprocessedFields } from '../../utils/nodes';
 import { createFormTracker } from '../form/tracker';
 import { createFieldHandles } from './field';
 
@@ -24,18 +24,16 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
         element: form,
         formType: formType,
         fields: new Map(
-            detectedFields
-                .filter(({ fieldType }) => fieldType !== FormField.NOOP)
-                .map(({ fieldType, field }) => [
-                    field,
-                    createFieldHandles({
-                        element: field,
-                        formType,
-                        fieldType,
-                        zIndex,
-                        getFormHandle: () => formHandle,
-                    }),
-                ])
+            detectedFields.map(({ fieldType, field }) => [
+                field,
+                createFieldHandles({
+                    element: field,
+                    formType,
+                    fieldType,
+                    zIndex,
+                    getFormHandle: () => formHandle,
+                }),
+            ])
         ),
         getFieldsFor: (type, predicate) => {
             const fields = Array.from(formHandle.fields.values());
@@ -57,14 +55,15 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
 
         reconciliate: (formType: FormType, fields: DetectedField[]) => {
             formHandle.formType = formType;
-            /* detach removed fields */
+
             formHandle.getFields().forEach((field) => {
-                if (!form.contains(field.element)) formHandle.detachField(field.element);
+                const shouldDetach = !fields.some((incoming) => field.element === incoming.field);
+                return shouldDetach && formHandle.detachField(field.element);
             });
 
             /* attach incoming new fields */
             fields.forEach(({ field, fieldType }) => {
-                if (formHandle.fields.get(field) === undefined && fieldType !== FormField.NOOP) {
+                if (formHandle.fields.get(field) === undefined) {
                     formHandle.fields.set(
                         field,
                         createFieldHandles({
@@ -91,7 +90,6 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
             logger.debug(`[FormHandles]: Detaching tracker for form [${formType}:${formHandle.id}]`);
             listeners.removeAll();
             setFormProcessable(form);
-            Array.from(form.querySelectorAll('input')).forEach(setFieldProcessable);
             formHandle.tracker?.detach();
             formHandle.getFields().forEach((field) => field.detach());
         },
@@ -113,7 +111,9 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
             const fields = formHandle.getFields();
             fields.forEach((field) => field.icon?.reposition());
 
-            if (hasUnprocessedFields(options.form.parentElement!)) void formManager.detect('NewFormFields');
+            if (options.form.parentElement === null || hasUnprocessedFields(options.form.parentElement)) {
+                void formManager.detect({ reason: 'NewFormFieldsOnResize' });
+            }
         }),
         50
     );

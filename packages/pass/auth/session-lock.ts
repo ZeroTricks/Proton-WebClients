@@ -1,11 +1,16 @@
 import { api } from '../api';
 import { type MaybeNull, SessionLockStatus } from '../types';
 
-export const checkSessionLock = async (): Promise<{ status: SessionLockStatus; ttl?: MaybeNull<number> }> => {
+export type SessionLockCheckResult = {
+    status: MaybeNull<SessionLockStatus>;
+    ttl?: MaybeNull<number>;
+};
+
+export const checkSessionLock = async (): Promise<SessionLockCheckResult> => {
     try {
         const { LockInfo } = await api({ url: 'pass/v1/user/session/lock/check', method: 'get' });
         return {
-            status: LockInfo?.Exists ? SessionLockStatus.REGISTERED : SessionLockStatus.NO_LOCK,
+            status: LockInfo?.Exists ? SessionLockStatus.REGISTERED : null,
             ttl: LockInfo?.UnlockedSecs,
         };
     } catch (e: any) {

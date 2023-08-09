@@ -124,6 +124,9 @@
       "Block": [
         "封鎖"
       ],
+      "Block email tracking": [
+        "封鎖郵件追蹤"
+      ],
       "Block messages from this sender": [
         "攔截此寄件者的所有來信"
       ],
@@ -141,6 +144,9 @@
       ],
       "Carbon Copy": [
         "副本"
+      ],
+      "Change email": [
+        "更換電子郵件"
       ],
       "Change page": [
         "跳至頁"
@@ -316,9 +322,6 @@
       "Discard": [
         "放棄"
       ],
-      "Dismiss get started checklist": [
-        "忽略入門清單"
-      ],
       "Done": [
         "完成"
       ],
@@ -419,7 +422,7 @@
         "取得 SimpleLogin 延伸功能"
       ],
       "Get started": [
-        "入門指南"
+        "開始使用"
       ],
       "Get verification code": [
         "取得驗證碼"
@@ -476,7 +479,7 @@
         "隱藏郵件"
       ],
       "hide-my-email aliases": [
-        "隱藏我的郵件別名"
+        "hide-my-email 別名"
       ],
       "I have a question": [
         "我要發問"
@@ -720,9 +723,6 @@
       ],
       "Open composer": [
         "打開撰寫器"
-      ],
-      "Open get started checklist modal": [
-        "開啟新手教學清單視窗"
       ],
       "Open navigation": [
         "開啟導覽"
@@ -1048,9 +1048,6 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "嘗試再次儲存。儲存失敗原因：${ saveError }"
       ],
-      "Turn on tracker protection": [
-        "開啟追蹤保護"
-      ],
       "Unblock": [
         "解除攔截"
       ],
@@ -1246,11 +1243,6 @@
     "Alternative text for welcome image": {
       "Welcome": [
         "歡迎"
-      ]
-    },
-    "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
-        "${ totalNumberOfItems } 中的 ${ numberOfCompletedItems } 已完成"
       ]
     },
     "Animation": {
@@ -1682,7 +1674,7 @@
     },
     "color": {
       "apple": [
-        "Apple"
+        "apple"
       ],
       "azureish white": [
         "天藍白"
@@ -2933,6 +2925,9 @@
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
         "檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_CONTACTS_STRING } 個聯絡人。若您的檔案超出此限，請將其分割為較小的檔案。"
       ],
+      "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
+        "開啟電郵追蹤程式保護以避免廣告商或其他人追踪您的地點或網上活動。"
+      ],
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "升級方案以解鎖自訂訊息排程與其他好處。"
       ],
@@ -2944,6 +2939,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "拖動以調整聯絡人合併的優先次序。未勾選的聯絡人將不會被合併。"
+      ],
+      "We didn't find any known trackers and tracking URLs in this email.": [
+        "我們沒有在此電郵中發現追蹤程式或追踪網址。"
       ],
       "When do you want your message to be sent?": [
         "您想在什麼時候傳送郵件？"
@@ -3102,6 +3100,9 @@
     "Error": {
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "關於 <${ email }> 的 ${ error.message }。您可以針對此聯絡人加入另一組金鑰或是停用加密以解決問題。"
+      ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }。您也可查看我們的${ statusPageLink }"
       ],
       "A group with this name already exists": [
         "此名稱的群組已存在"
@@ -3373,6 +3374,9 @@
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "抱歉，${ BRAND_NAME } 無法解密您的郵件。請檢查您所有的金鑰是否在使用中。"
       ],
+      "status page": [
+        "狀態頁面"
+      ],
       "The email addresses do not match": [
         "電子郵件位址不相符"
       ],
@@ -3402,9 +3406,6 @@
       ],
       "There has been an issue with content search. Default search has been used instead.": [
         "內容搜尋發生問題。已改為使用預設搜尋。"
-      ],
-      "There was a problem updating your local messages, they will be downloaded again to re-enable content search": [
-        "更新您的本機郵件時發生問題，它們將會再次下載以重新啟用內容搜尋"
       ],
       "There was an error when exporting the contacts vCards": [
         "匯出聯絡人 vCard 時發生錯誤"
@@ -4079,8 +4080,8 @@
       "System default": [
         "系統預設值"
       ],
-      "Theme default": [
-        "佈景主題預設值"
+      "Theme font": [
+        "選擇布景主題字體"
       ]
     },
     "Font Size Default": {
@@ -4119,73 +4120,144 @@
         "收件人：${ toString }"
       ]
     },
-    "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        "我們已將您帳號的儲存空間調高至 ${ rewardInGb } GB。今天就解鎖付費加值功能，同時獲得更多儲存空間！"
-      ],
-      "You're all set!": [
-        "完工！"
-      ]
-    },
-    "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        "完成所有步驟，您的帳號即可獲得總數 ${ rewardInGb } GB 儲存空間"
-      ],
-      "Expires soon": [
-        "即將到期"
-      ],
-      "Expires today": [
-        "今日過期"
-      ],
-      "Only ${ days } days left": [
-        "只剩下 ${ days } 天了"
-      ]
-    },
     "Get started checklist instructions": {
-      "Available on iOS and Android.": [
-        "IOS 和 Android 皆適用。"
+      "${ MAIL_APP_NAME } app": [
+        "${ MAIL_APP_NAME }應用程式"
+      ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "App Store的${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "Play 商店的${ MAIL_APP_NAME }"
+      ],
+      "account logins": [
+        "帳號登錄"
+      ],
+      "Auto-forward Gmail": [
+        "自動轉寄至Gmail"
+      ],
+      "auto-forwarding": [
+        "自動轉寄"
+      ],
+      "Block email communications from scammers permanently.": [
+        "阻擋詐騙電子郵件通訊。"
+      ],
+      "Block unsavory senders": [
+        "封鎖不良寄件者"
+      ],
+      "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
+        "太棒了，讓您的電子郵件變得更加安全、方便與相關！我們已將您的免費儲存空間增加到總計 1 GB。"
+      ],
+      "Change ${ strongText } to your ${ BRAND_NAME } address": [
+        "變更${ strongText }至${ BRAND_NAME }地址"
+      ],
+      "Checklist complete": [
+        "清單完成"
+      ],
+      "Close": [
+        "關閉"
+      ],
+      "Congratulation, you completed all the steps!": [
+        "恭喜，您已完成全部的步驟"
+      ],
+      "Continue setting up your email": [
+        "繼續設定您的電子郵件"
+      ],
+      "Discover how our ${ strongText } protect you": [
+        "了解${ strongText }如何保護您。"
+      ],
+      "Discover privacy features": [
+        "發現隱私功能"
+      ],
+      "Double your free storage to 1 GB when you complete the following:": [
+        "當完成以下任務將獲得兩倍的處存空間(1GB):"
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails.": [
+        "強式加密，只有您及其他收件者可查看內容。"
+      ],
+      "For your eyes only": [
+        "只為了您的眼睛"
+      ],
+      "Get free storage": [
+        "取得免費的儲存空間"
+      ],
+      "Get mobile app": [
+        "取得行動裝置應用程式"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "免費下載 ${ MAIL_APP_NAME } 行動裝置程式"
       ],
+      "Get the ${ strongText } on Android or iOS": [
+        "於Android或iOS取得${ strongText }"
+      ],
+      "Get the App": [
+        "取得應用程式"
+      ],
       "Import contacts or emails": [
         "匯入聯絡人或郵件"
+      ],
+      "Import data": [
+        "匯入資料"
       ],
       "Import your contacts or messages": [
         "匯入您的通訊錄或郵件"
       ],
+      "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
+        "保持使用${ MAIL_APP_NAME }以了解更多方法${ BRAND_NAME }保護隱私及簡化信件。"
+      ],
+      "Learn more": [
+        "了解更多"
+      ],
+      "Make ${ BRAND_NAME } your go-to inbox": [
+        "使${ BRAND_NAME }進到您的收件匣"
+      ],
+      "Maybe later": [
+        "稍後再說"
+      ],
+      "Nice! You've updated all services in this category.": [
+        "您已更新於清單上的全部服務"
+      ],
+      "Open checklist": [
+        "開啟確認清單"
+      ],
+      "Popular online services": [
+        "熱門線上節點"
+      ],
+      "privacy features": [
+        "隱私功能"
+      ],
+      "Protect and simplify your email": [
+        "保護及簡化您的電子郵件"
+      ],
+      "Protection from trackers": [
+        "保護免於追蹤"
+      ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "使用我們的 Easy Switch 匯入助理從任何提供商快速移轉您的通訊錄或電郵。"
       ],
-      "Sign into the mobile app to complete the action": [
-        "登入行動APP以完成此操作"
-      ],
-      "Using your mobile device, scan this QR code or visit": [
-        "使用您的行動裝置掃描此QR碼或訪問"
-      ]
-    },
-    "Get started checklist item": {
-      "Get mobile app": [
-        "取得手機 App"
-      ],
-      "Import contacts or emails": [
-        "匯入聯絡人或郵件"
-      ],
       "Send a message": [
-        "傳送郵件"
+        "傳送訊息"
       ],
-      "Set up a recovery method": [
+      "Set recovery method": [
         "設定復原方法"
-      ]
-    },
-    "Get started checklist spotlight": {
-      "You can access the checklist anytime from here": [
-        "您可以隨時從這裡存取檢查清單"
-      ]
-    },
-    "Get started checklist title": {
-      "Get started": [
-        "入門指南"
+      ],
+      "Set up ${ strongText } from Gmail": [
+        "設定${ strongText }至Gmail"
+      ],
+      "Sign in to the mobile app to complete this step": [
+        "登入行動APP以完成此步驟"
+      ],
+      "Update your logins": [
+        "更新您的登入"
+      ],
+      "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
+        "請掃描此條碼或瀏覽iOS、Android商店。"
+      ],
+      "We stop advertisers and data collectors from profiling you.": [
+        "我們無廣告及收集販賣你的資料。"
+      ],
+      "You've unlocked 1 GB": [
+        "您解鎖1GB"
       ]
     },
     "Gmail forwarding": {
@@ -4568,6 +4640,9 @@
       "${ count } unread messages": [
         "${ count } 封未讀郵件"
       ],
+      "${ currentProgress } out of ${ totalProgress }": [
+        "${ totalProgress } 中的 ${ currentProgress }"
+      ],
       "${ embeddedAttachmentsCount } embedded images": [
         "${ embeddedAttachmentsCount } 個內嵌圖像"
       ],
@@ -4586,8 +4661,14 @@
       "${ messagesNotAuthorizedToMove } messages could not be moved.": [
         "${ messagesNotAuthorizedToMove } 封郵件無法進行移動。"
       ],
-      "${ numberOfTrackers } email trackers blocked": [
-        "已攔截 ${ numberOfTrackers } 個電郵追蹤程式"
+      "${ numberOfImageTrackers } email trackers blocked": [
+        "${ numberOfImageTrackers } 電郵追蹤程式已攔截"
+      ],
+      "${ numberOfImageTrackers } trackers blocked": [
+        "${ numberOfImageTrackers } 個追蹤程式已攔截"
+      ],
+      "${ numberOfUTMTrackers } links cleaned": [
+        "${ numberOfUTMTrackers } 個連結已清理"
       ],
       "${ numContact } contacts": [
         "${ numContact } 位聯絡人"
@@ -4596,13 +4677,13 @@
         "${ numGroups } 個聯絡人群組"
       ],
       "${ NumMessages } messages in conversation": [
-        "對話中有 ${ NumMessages } 則訊息"
+        "${ NumMessages } 封郵件在交談對話中"
       ],
       "${ numOccurrences } occurrences found": [
-        "${ numOccurrences } 件事故已找到"
+        "${ numOccurrences } 個事件已找到"
       ],
       "${ numOccurrences } occurrences found in the mail content": [
-        "${ numOccurrences } 件事故在郵件內容中找到"
+        "${ numOccurrences } 個事件在郵件內容中找到"
       ],
       "${ providerFoldersNumLocalized } folders found": [
         "找到 ${ providerFoldersNumLocalized } 個資料夾"
@@ -4611,7 +4692,7 @@
         "在 Gmail 中找到 ${ providerFoldersNumLocalized } 種標籤"
       ],
       "${ pureAttachmentsCount } files attached": [
-        "${ pureAttachmentsCount } 個附件"
+        "${ pureAttachmentsCount } 個附加檔案"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
         "${ selectedCalendarsTotal } 個，共 ${ providerCalendars.length } 個行事曆"
@@ -4641,10 +4722,10 @@
         "${ unread } 封未讀郵件"
       ],
       "${ unreadCount } scheduled messages": [
-        "${ unreadCount } 排程訊息"
+        "${ unreadCount } 封已排程訊息"
       ],
       "${ unreadCount } unread conversations": [
-        "${ unreadCount } 個未讀交談"
+        "${ unreadCount } 則未讀交談對話"
       ],
       "${ unreadCount } unread messages": [
         "${ unreadCount } 封未讀郵件"
@@ -4663,6 +4744,9 @@
       ],
       "(No Recipient)": [
         "(無收件人)"
+      ],
+      "**${ elementsFoundCount }** results found in ${ labelName }": [
+        "於${ labelName }找到**${ elementsFoundCount }**"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "電話號碼僅能用於驗證一個 ${ BRAND_NAME } 帳號"
@@ -4730,6 +4814,9 @@
       "Are you sure you want to discard your changes?": [
         "您確定要捨棄所作的變更嗎？"
       ],
+      "Are you sure you want to discard your import?": [
+        "您確定要捨棄您的匯入嗎？"
+      ],
       "Are you sure you want to move all messages in this location to Archive?": [
         "您確定您要把所有郵件移動至此位置進行封存嗎？"
       ],
@@ -4737,10 +4824,10 @@
         "您確定您要把所有郵件移動至此位置進行刪除嗎？"
       ],
       "Are you sure you want to permanently delete ${ count } conversations?": [
-        "您確定要永久刪除 ${ count } 個交談嗎？"
+        "您確定要永久刪除 ${ count } 則交談對話？"
       ],
       "Are you sure you want to permanently delete ${ count } drafts?": [
-        "您確定要永久刪除這 ${ count } 個草稿嗎？"
+        "您確定要永久刪除這 ${ count } 封草稿嗎？"
       ],
       "Are you sure you want to permanently delete ${ count } messages?": [
         "您確定要永久刪除 ${ count } 封郵件嗎？"
@@ -4922,15 +5009,6 @@
       "Email tracker protection is disabled": [
         "電郵追蹤保護已停用"
       ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers in this message.": [
-        "電郵追蹤程式會侵犯您的隱私。 ${ BRAND_NAME } 在此訊息中並未發現任何電郵追蹤程式。"
-      ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } trackers.": [
-        "電郵追蹤程式會侵犯您的私隱。 已發現 ${ BRAND_NAME } 並且攔截 ${ numberOfTrackers } 個追踪程式。"
-      ],
-      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
-        "電郵追蹤器會侵犯您的隱私。開啟電郵追蹤保護防止寄件者得知您是否開啟過此訊息。"
-      ],
       "Emails are automatically signed": [
         "電子郵件已自動簽章"
       ],
@@ -4993,6 +5071,9 @@
       ],
       "For messages newer than ${ oldestDate }": [
         "自 ${ oldestDate } 起的郵件"
+      ],
+      "For more search results, try searching for this keyword in the content of your email messages.": [
+        "若要更多結果，請於通訊錄中搜尋您的電子郵件訊息的關鍵字。"
       ],
       "Free up some space or add more storage space.": [
         "請釋出部分空間或增加更多儲存空間。"
@@ -5102,6 +5183,9 @@
       "Link type": [
         "連結類型"
       ],
+      "Links cleaned:": [
+        "連結已清理:"
+      ],
       "Loading": [
         "正在載入"
       ],
@@ -5132,6 +5216,9 @@
       "Merged": [
         "合併的"
       ],
+      "Message download status:": [
+        "訊息下載狀態:"
+      ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
         "郵件訊息時效功能會在傳送電郵至其它 ${ MAIL_APP_NAME } 使用者時同步啟用。 傳送時效性電郵至非 ${ BRAND_NAME } 使用者時，請取消該功能，並在您的電郵加入密碼防護。"
       ],
@@ -5155,9 +5242,6 @@
       ],
       "Message will be sent tomorrow at ${ formattedTime }": [
         "郵件將在名天 ${ formattedTime } 寄出"
-      ],
-      "Messages downloaded: ${ currentProgress } out of ${ totalProgress }": [
-        "正在下載 ${ totalProgress } 郵件中的 ${ currentProgress }"
       ],
       "Messages that have been in trash and spam more than 30 days will be automatically deleted.": [
         "垃圾桶與垃圾郵件中超過30天的訊息將會被自動刪除。"
@@ -5183,9 +5267,6 @@
       "No email address": [
         "沒有電郵位址"
       ],
-      "No email trackers found": [
-        "未找到電郵追蹤器"
-      ],
       "No folder found": [
         "找不到資料夾"
       ],
@@ -5201,14 +5282,17 @@
       "No label selected": [
         "未選取任何標籤"
       ],
+      "No links cleaned": [
+        "無需清理的連結"
+      ],
       "No more results found": [
         "找不到更多結果"
       ],
       "No results found": [
         "找不到相符的結果"
       ],
-      "No trackers found, but some images could not be loaded with tracking protection": [
-        "沒有發現追蹤程式，但追蹤保護啟用時即無法載入某些圖像"
+      "No trackers found": [
+        "未發現追蹤程式"
       ],
       "non-${ MAIL_APP_NAME }": [
         "非 ${ MAIL_APP_NAME }"
@@ -5260,6 +5344,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "請注意：此過程或需時，並會視乎您的通訊錄大小而定。"
+      ],
+      "Please provide a name and an email address for creating a group.": [
+        "請提供一個名子和電子郵件地址以創建群組。"
       ],
       "Please select the folders you would like to import:": [
         "請選擇您想匯入的資料夾："
@@ -5475,10 +5562,10 @@
         "用來驗證連絡人詳細資料的簽章發生錯誤，可能是重設密碼所導致。"
       ],
       "These conversations will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "交談將會標記為垃圾信件。請問您也想退訂往後相關的電郵信件嗎？"
+        "交談對話會標記為垃圾信件。請問您也想退訂日後相關的電郵嗎？"
       ],
       "These messages will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "這些信件將會標記為垃圾信件。請問您也想退訂往後相關的電郵信件嗎？"
+        "這些信件會標記為垃圾信件。請問您也想退訂日後相關的電郵嗎？"
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "如果他們不知道您的電子郵件位址，他們就無法向您傳送垃圾郵件。使用 hide-my-email 別名保護您的收件匣。"
@@ -5600,8 +5687,11 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "等待傳送的訊息太多了。請等其它訊息傳送後再安排此訊息。"
       ],
-      "Turn off to only search by date, name, or email address. To disable search message content and delete downloaded messages, go to settings.": [
-        "關閉搜尋日期、名稱、電子郵件位址。於設定中停用搜尋訊息並刪除下載的訊息。"
+      "Trackers blocked:": [
+        "追蹤器已封鎖:"
+      ],
+      "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
+        "關閉搜尋日期、名稱、電子郵件位址及主旨。於設定中停用搜尋訊息並刪除下載的訊息。"
       ],
       "Turn on to search the content of your messages": [
         "啟用以搜尋您的郵件內容"
@@ -5617,9 +5707,6 @@
       ],
       "Updating message content search...": [
         "正在更新郵件內容搜尋..."
-      ],
-      "Updating your local messages, message content won't be searched during this update": [
-        "更新您的本機郵件，更新時將無法搜尋郵件內容"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "立即以優惠價升級就可以擁有進階功能、產品與儲存空間。"
@@ -5684,8 +5771,14 @@
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "不好意思，說不好是我們搞錯了。可否請您確認一下，您想要標記這是一封正當的電郵？"
       ],
+      "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
+        "我們已攔截以下廣告商及組織機構獲取您打開此封電子郵件時的各項資料，其中包括您使用的裝置，以及您的地理位址。"
+      ],
       "We could not verify the sender's trusted keys.": [
         "我們無法驗證此寄件人的已信任金鑰。"
+      ],
+      "We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.": [
+        "我們已移除來自以下連結的追蹤資訊，讓您從此不被廣告商和其它試圖追蹤您在線上的一舉一動。"
       ],
       "We'll notify you when the import is done.": [
         "我們將會在匯入完成後通知你。"
@@ -5745,7 +5838,7 @@
         "您可以更新您的搜尋查詢，又或者${ button }。"
       ],
       "You can either update your search query or clear it": [
-        "您可以更新或清除您的搜尋條件"
+        "您可以更新亦或是清除搜尋條件"
       ],
       "You can import one data type at a time.": [
         "您可以一次匯入一種資料類型。"
@@ -5769,7 +5862,7 @@
         "您有 ${ unreadsLabel } 在收件匣中。"
       ],
       "You have **${ count } conversations** stored in this folder": [
-        "您有 **${ count } 個交談** 儲存於此資料夾"
+        "您有 **${ count } 則交談對話** 儲存於此資料夾"
       ],
       "You have **${ count } conversations** tagged with this label": [
         "您選取了有此標籤的 **${ count } 個交談**"
@@ -5802,7 +5895,7 @@
         "您選取了有此標籤的 **${ count } 個交談**"
       ],
       "You selected **${ count } messages** from this folder": [
-        "您從此資料夾選取了 **${ count } 則訊息**"
+        "您已在此資料夾選取 **${ count } 則訊息**"
       ],
       "You selected **${ count } messages** with this label": [
         "您選取了有此標籤的 **${ count } 則訊息**"
@@ -5842,9 +5935,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "你的檔案將加密後再儲存"
-      ],
-      "Your import will not be processed.": [
-        "將不會處理您的匯入。"
       ],
       "Your login information will not be saved after the import is completed.": [
         "匯入完成後不會保存您的登入資訊。"
@@ -6176,7 +6266,7 @@
         "附加螢幕截圖"
       ],
       "Authenticator app": [
-        "驗證 APP"
+        "驗證 app"
       ],
       "Automatically save contacts": [
         "自動儲存聯絡人"
@@ -6216,6 +6306,9 @@
       ],
       "City": [
         "縣市"
+      ],
+      "Cleaned": [
+        "已清理"
       ],
       "Code is 6 digits without spaces": [
         "驗證碼為六位數且無空格"
@@ -6418,6 +6511,9 @@
       "OK": [
         "還不錯"
       ],
+      "Open in a new tab": [
+        "於新分頁開啟"
+      ],
       "Operating system": [
         "作業系統"
       ],
@@ -6432,6 +6528,9 @@
       ],
       "Or": [
         "或"
+      ],
+      "Original link": [
+        "原始鏈接"
       ],
       "Participants": [
         "參與者"
@@ -6551,7 +6650,7 @@
         "工具列"
       ],
       "Type a command...": [
-        "輸入命令…"
+        "輸入指令…"
       ],
       "Undisclosed Recipients": [
         "非公開收件者"
@@ -6923,11 +7022,6 @@
         "${ appName } 的新版本可供使用。${ reloadButton }。"
       ]
     },
-    "Message has been sent to the user via a SimpleLogin alias": {
-      "Delivered via SimpleLogin by ${ BRAND_NAME }": [
-        "此遞送採用 ${ BRAND_NAME }  SimpleLogin 服務"
-      ]
-    },
     "Message image": {
       "Image has not been loaded in order to protect your privacy.": [
         "為了保護您的隱私，不會載入圖像."
@@ -7137,7 +7231,7 @@
         "自訂電郵網域"
       ],
       "Hide-my-email aliases": [
-        "隱藏我的郵件別名"
+        "Hide-my-email 別名"
       ],
       "Schedule messages at any time": [
         "在任意時間排程訊息"
@@ -7249,11 +7343,42 @@
       "Set up your organization": [
         "設定您的組織"
       ],
-      "Set up your organization testing": [
-        "設定您的組織測試"
-      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "使用左上角的應用程式選取器存取所有的 ${ BRAND_NAME } 服務：${ MAIL_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 與 ${ DRIVE_SHORT_APP_NAME }"
+      ]
+    },
+    "Online accounts": {
+      "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
+        "您是否有以下服務的帳號?按變更電子郵件地址至您的${ MAIL_APP_NAME }地址。"
+      ]
+    },
+    "Online Accounts Name": {
+      "Banking": [
+        "銀行"
+      ],
+      "Crypto": [
+        "加密貨幣"
+      ],
+      "E-commerce and Retail": [
+        "電子發票"
+      ],
+      "Entertainment": [
+        "娛樂"
+      ],
+      "Food and beverage": [
+        "飲食"
+      ],
+      "Gaming": [
+        "遊戲"
+      ],
+      "Most popular": [
+        "最熱門"
+      ],
+      "Travel": [
+        "旅遊"
+      ],
+      "Utilities": [
+        "無標題"
       ]
     },
     "Option": {
@@ -7295,20 +7420,6 @@
     "Pagination": {
       "${ page } of ${ totalText }": [
         "第 ${ page } 頁，共 ${ totalText } 頁"
-      ]
-    },
-    "Paid user checklist item": {
-      "Get mobile app": [
-        "取得手機 App"
-      ],
-      "Import contacts or emails": [
-        "匯入聯絡人或郵件"
-      ],
-      "Send a message": [
-        "傳送郵件"
-      ],
-      "Set up a recovery method": [
-        "設定復原方法"
       ]
     },
     "Participant name": {
@@ -7420,7 +7531,7 @@
         "文字"
       ],
       "Type a command…": [
-        "輸入命令…"
+        "輸入指令…"
       ],
       "Type text or keyword": [
         "鍵入文字或關鍵詞"
@@ -7609,6 +7720,11 @@
       ],
       "We have detected some warnings. The following email addresses may not receive emails:": [
         "偵測到一些警告。下列電郵位址或者無法接收電郵："
+      ]
+    },
+    "Sender verification details": {
+      "Sender verification": [
+        "驗證的寄件人"
       ]
     },
     "Sent email icon": {
@@ -7980,9 +8096,6 @@
       ]
     },
     "Storage": {
-      "Get extra storage for free": [
-        "免費獲得額外的空間"
-      ],
       "Release notes": [
         "版本資訊"
       ],
@@ -8224,6 +8337,70 @@
         "意見反饋已送出"
       ]
     },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "1 年"
+      ],
+      "2 years": [
+        "2年"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "付費版雲端硬碟"
+      ],
+      "Premium Mail and Calendar": [
+        "付費版信件和行事曆"
+      ],
+      "Premium Password Manager": [
+        "付費版密碼管理器"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "安全處存密碼和自動填入網站。包含無限密碼、自動填入、密碼生成、和更多。"
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "密碼管理員"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "於您全部的裝置創建安全登入的詳細資料。包含無限別名、20個保管庫、組合雙重驗證、信用卡自動填入及更多。"
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "包含於65+國家的2950+伺服器，連接最多10臺裝置，存取全球影音串流服務和惡意軟體、廣告攔截程式，及更多。"
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "包含對 1 個自訂電子郵件網域、10 組電子郵件位址、10 組 hide-my-email 別名、行事曆分享與更多功能的支援。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "透過加密的雲端儲存保護檔案。包含版本紀錄、加密的檔案共享、及更多。"
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "*您的訂閱將自動續約採用起始繳款單週期的折扣。"
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "折扣於每月基本價格。此優惠只提供給第一次訂閱者。"
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "於限定時間，取得最佳的${ BRAND_NAME }折扣。"
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "我們正在慶祝九年群眾募資!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "${ BRAND_NAME }年度銷售"
+      ]
+    },
     "Table header": {
       "Action": [
         "動作"
@@ -8319,7 +8496,7 @@
         "${ unreads } 封未讀郵件"
       ],
       "(active)": [
-        "（啟用）"
+        "(啟用)"
       ],
       "Account suspended": [
         "帳號已被停用"
@@ -8484,7 +8661,7 @@
         "正在刪除聯絡人"
       ],
       "Don't give spam a chance": [
-        "垃圾郵件沒有存在的空間"
+        "垃圾郵件別拜託、拜拜就好"
       ],
       "Edit contact": [
         "編輯聯絡人"
@@ -8672,6 +8849,9 @@
       "No attachment found": [
         "找不到附件"
       ],
+      "No trackers found": [
+        "未發現追蹤程式"
+      ],
       "Open actions dropdown": [
         "展開操作下拉選單"
       ],
@@ -8698,6 +8878,9 @@
       ],
       "Previous message": [
         "上一封郵件"
+      ],
+      "Protect yourself from trackers": [
+        "保護自己免於追蹤程式"
       ],
       "Re-sign all contacts": [
         "重新簽署所有聯絡人"
@@ -8846,6 +9029,9 @@
       "Warning: suspected fake website": [
         "警告：疑似假冒網站"
       ],
+      "We protected you from ${ trackersCount } trackers": [
+        "我們保護您避免 ${ trackersCount } 個追蹤程式的追踪"
+      ],
       "Welcome": [
         "歡迎"
       ],
@@ -8985,9 +9171,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } 會從最近期的郵件開始，以最大量方式傳輸資料。"
-      ],
-      "Are you sure you want to discard your import?": [
-        "您確定要捨棄您的匯入嗎？"
       ],
       "Are you sure you want to permanently delete ${ count } contact groups?": [
         "您確定要永久刪除 ${ count } 個聯絡人群組嗎？"

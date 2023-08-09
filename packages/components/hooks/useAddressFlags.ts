@@ -20,6 +20,7 @@ import { getActiveKeys, getNormalizedActiveKeys } from '@proton/shared/lib/keys/
 import { getSignedKeyList } from '@proton/shared/lib/keys/signedKeyList';
 
 type UseAddressFlags = (address: Address) => {
+    allowDisablingEncryption: boolean;
     encryptionDisabled: boolean;
     expectSignatureDisabled: boolean;
     handleSetAddressFlags: (encryptionDisabled: boolean, expectSignatureDisabled: boolean) => Promise<void>;
@@ -33,9 +34,11 @@ const useAddressFlags: UseAddressFlags = (address) => {
     const [addressesKeys] = useAddressesKeys();
     const { keyTransparencyVerify } = useKTVerifier(api, async () => User);
     const mailForwardingFeature = useFeature<boolean>(FeatureCode.MailForwarding);
-    const isMailForwardingEnabled = !mailForwardingFeature.loading && mailForwardingFeature.feature?.Value === true;
+    const mailDisableE2EEFeature = useFeature<boolean>(FeatureCode.MailDisableE2EE);
+    const isForwardingEnabled = mailForwardingFeature.feature?.Value === true;
+    const isDisableEncryptionEnabled = mailDisableE2EEFeature.feature?.Value === true;
 
-    if (address.Flags === undefined || !isMailForwardingEnabled) {
+    if (address.Flags === undefined) {
         return null;
     }
 
@@ -72,10 +75,12 @@ const useAddressFlags: UseAddressFlags = (address) => {
         createNotification({ text: c('Success notification').t`Preference updated` });
     };
 
+    const allowDisablingEncryption = (address.ProtonMX === false && isDisableEncryptionEnabled) || isForwardingEnabled; // TODO: Remove the second condition once forwarding is ready, only needed for development
     const encryptionDisabled = hasBit(address.Flags, ADDRESS_FLAGS.FLAG_DISABLE_E2EE);
     const expectSignatureDisabled = hasBit(address.Flags, ADDRESS_FLAGS.FLAG_DISABLE_EXPECTED_SIGNED);
 
     return {
+        allowDisablingEncryption,
         encryptionDisabled,
         expectSignatureDisabled,
         handleSetAddressFlags,

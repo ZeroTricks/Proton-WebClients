@@ -124,6 +124,9 @@
       "Block": [
         "Блакіраваць"
       ],
+      "Block email tracking": [
+        "Блакіраваць адсочванне электроннай пошты"
+      ],
       "Block messages from this sender": [
         "Блакіраваць паведамленні ад гэтага адпраўніка"
       ],
@@ -141,6 +144,9 @@
       ],
       "Carbon Copy": [
         "Копія"
+      ],
+      "Change email": [
+        "Змяніць электронную пошту"
       ],
       "Change page": [
         "Змяніць старонку"
@@ -321,9 +327,6 @@
       ],
       "Discard": [
         "Адхіліць"
-      ],
-      "Dismiss get started checklist": [
-        "Ігнараваць кантрольны спіс пачатку працы"
       ],
       "Done": [
         "Гатова"
@@ -730,9 +733,6 @@
       "Open composer": [
         "Адкрыць рэдактар"
       ],
-      "Open get started checklist modal": [
-        "Адкрыць акно пачатку працы кантрольнага спіса"
-      ],
       "Open navigation": [
         "Адкрыць панэль навігацыі"
       ],
@@ -1060,9 +1060,6 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Паспрабуйце захаваць яшчэ раз пазней. Не ўдалося выканаць аперацыю па прычыне: ${ saveError }"
       ],
-      "Turn on tracker protection": [
-        "Уключыць абарону ад праграм сачэння"
-      ],
       "Unblock": [
         "Разблакіраваць"
       ],
@@ -1258,14 +1255,6 @@
     "Alternative text for welcome image": {
       "Welcome": [
         "Вітаем"
-      ]
-    },
-    "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } завершана",
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } завершана",
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } завершана",
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } завершана"
       ]
     },
     "Animation": {
@@ -2966,6 +2955,9 @@
         "Максімальны памер файла не павінен перавышаць ${ MAX_IMPORT_FILE_SIZE_STRING } і мець ${ MAX_IMPORT_CONTACTS_STRING } кантактаў. Падзяліце свой файл на меншыя часткі, калі ён занадта вялікі.",
         "Максімальны памер файла не павінен перавышаць ${ MAX_IMPORT_FILE_SIZE_STRING } і мець ${ MAX_IMPORT_CONTACTS_STRING } кантакты. Падзяліце свой файл на меншыя часткі, калі ён занадта вялікі."
       ],
+      "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
+        "Уключыце абарону ад праграм сачэння электроннай пошты, каб прадухіліць рэкламу і іншыя спосабы вызначэння вашага месцазнаходжання і актыўнасці ў інтэрнэце."
+      ],
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "Разблакіруйце магчымасць ствараць уласны расклад адпраўкі паведамленняў і іншыя перавагі пасля паляпшэння свайго тарыфнага плана."
       ],
@@ -2977,6 +2969,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Выкарыстоўвайце перацягванне, каб задаць прыярытэт аб'яднання паміж кантактамі. Здыміце пазнаку з кантактаў, якія вы не хочаце аб'ядноўваць."
+      ],
+      "We didn't find any known trackers and tracking URLs in this email.": [
+        "Мы не знайшлі ніякіх вядомых праграм сачэння і URL-адрасоў з элементамі сачэння ў гэтым лісце."
       ],
       "When do you want your message to be sent?": [
         "Калі вы хочаце, каб ваша паведамленне было адпраўлена?"
@@ -3138,6 +3133,9 @@
     "Error": {
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "${ error.message } для <${ email }>. Вы можаце дадаць іншы ключ або адключыць шыфраванне для гэтага кантакту, каб вырашыць праблему."
+      ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Вы можаце таксама праверыць наш ${ statusPageLink }"
       ],
       "A group with this name already exists": [
         "Група з такой назвай ужо існуе"
@@ -3433,6 +3431,9 @@
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "На жаль, ${ BRAND_NAME } не змог расшыфраваць ваша паведамленне. Пераканайцеся, што ўсе вашы ключы актыўныя."
       ],
+      "status page": [
+        "статус старонкі"
+      ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Не атрымалася расшыфраваць далучэнне.\nКалі ў вас ёсць адпаведны прыватны ключ, вы зможаце расшыфраваць \nфайл з дапамогай праграмы, напрыклад, GnuPG.",
         "Не атрымалася расшыфраваць далучэнні.\nКалі ў вас ёсць адпаведны прыватны ключ, вы зможаце расшыфраваць \nфайлы з дапамогай праграмы, напрыклад, GnuPG.",
@@ -3468,9 +3469,6 @@
       ],
       "There has been an issue with content search. Default search has been used instead.": [
         "Узнікла праблема з пошукам змесціва. Замест гэтага быў выкарыстаны прадвызначаны пошук."
-      ],
-      "There was a problem updating your local messages, they will be downloaded again to re-enable content search": [
-        "Узнікла праблема пры абнаўленні вашых лакальных паведамленняў. Яны будуць спампаваны яшчэ раз, каб паўторна ўключыць у іх пошук па змесціве"
       ],
       "There was an error when exporting the contacts vCards": [
         "Падчас экспартавання кантактаў vCard адбылася памылка"
@@ -4169,8 +4167,8 @@
       "System default": [
         "Адпаведна сістэме"
       ],
-      "Theme default": [
-        "Прадвызначаная тэма"
+      "Theme font": [
+        "Шрыфт тэмы"
       ]
     },
     "Font Size Default": {
@@ -4209,76 +4207,144 @@
         "Каму: ${ toString }"
       ]
     },
-    "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        "Мы павялічылі агульны аб'ём сховішча вашага ўліковага запісу да ${ rewardInGb } ГБ. Ужо сёння вы можаце атрымаць дадатковае сховішча і разблакіраваць прэміяльныя функцыі."
-      ],
-      "You're all set!": [
-        "Усё гатова!"
-      ]
-    },
-    "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        "Завяршыце ўсе крокі і атрымайце ${ rewardInGb } ГБ да вашага ўліковага запісу"
-      ],
-      "Expires soon": [
-        "Неўзабаве міне"
-      ],
-      "Expires today": [
-        "Міне сёння"
-      ],
-      "Only ${ days } day left": [
-        "Застаўся толькі ${ days } дзень",
-        "Засталося толькі ${ days } дні",
-        "Засталося толькі ${ days } дзён",
-        "Засталося толькі ${ days } дні"
-      ]
-    },
     "Get started checklist instructions": {
-      "Available on iOS and Android.": [
-        "Даступна на iOS і Android."
+      "${ MAIL_APP_NAME } app": [
+        "Праграма ${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME } у App Store"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } у Play Store"
+      ],
+      "account logins": [
+        "даныя ўваходу ўліковага запісу"
+      ],
+      "Auto-forward Gmail": [
+        "Аўтаперасыланне Gmail"
+      ],
+      "auto-forwarding": [
+        "аўтаперасыланне"
+      ],
+      "Block email communications from scammers permanently.": [
+        "Цалкам блакіруйце электронныя лісты ад ашуканцаў."
+      ],
+      "Block unsavory senders": [
+        "Блакіруйце адпраўнікоў з дрэннай рэпутацыяй"
+      ],
+      "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
+        "Цудоўна, што робіце сваю электронную пошту яшчэ больш бяспечнай, зручнай, і актуальнай! Мы павялічылі аб'ём вашага бясплатнага месца ў сховішчы да 1 ГБ."
+      ],
+      "Change ${ strongText } to your ${ BRAND_NAME } address": [
+        "Змяніце ${ strongText } на ваш адрас ${ BRAND_NAME }"
+      ],
+      "Checklist complete": [
+        "Кантрольны спіс завершаны"
+      ],
+      "Close": [
+        "Закрыць"
+      ],
+      "Congratulation, you completed all the steps!": [
+        "Віншуем, вы выканалі ўсе крокі!"
+      ],
+      "Continue setting up your email": [
+        "Працягнуць наладжванне электроннай пошты"
+      ],
+      "Discover how our ${ strongText } protect you": [
+        "Даведайцеся, як наш ${ strongText } вас абараняе"
+      ],
+      "Discover privacy features": [
+        "Даведайцеся пра функцыі прыватнасці"
+      ],
+      "Double your free storage to 1 GB when you complete the following:": [
+        "Падвойце бясплатнае сховішча да 1 ГБ, выканаўшы наступныя дзеянні:"
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails.": [
+        "У нас настолькі надзейнае шыфраванне, што толькі вы і прызначаныя атрымальнікі змогуць прачытаць вашы лісты."
+      ],
+      "For your eyes only": [
+        "Толькі для вашых вачэй"
+      ],
+      "Get free storage": [
+        "Атрымаць бясплатнае сховішча"
+      ],
+      "Get mobile app": [
+        "Атрымаць мабільную праграму"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Атрымаць мабільную праграму ${ MAIL_APP_NAME }"
       ],
+      "Get the ${ strongText } on Android or iOS": [
+        "Атрымайце ${ strongText } на Android або iOS"
+      ],
+      "Get the App": [
+        "Атрымаць праграму"
+      ],
       "Import contacts or emails": [
         "Імпартуйце кантакты або лісты"
+      ],
+      "Import data": [
+        "Імпартаваць даныя"
       ],
       "Import your contacts or messages": [
         "Імпартуйце вашы кантакты або паведамленні"
       ],
+      "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
+        "Працягвайце выкарыстоўваць ${ MAIL_APP_NAME }, каб даведацца больш спосабаў, як з ${ BRAND_NAME } абараніць сваю прыватнасць і спрасціць адпраўку лістоў."
+      ],
+      "Learn more": [
+        "Даведацца больш"
+      ],
+      "Make ${ BRAND_NAME } your go-to inbox": [
+        "Зрабіце ${ BRAND_NAME } сваёй уваходнай паштовай скрыняй"
+      ],
+      "Maybe later": [
+        "Магчыма пазней"
+      ],
+      "Nice! You've updated all services in this category.": [
+        "Цудоўна! Вы абнавілі ўсе сэрвісы ў гэтай катэгорыі."
+      ],
+      "Open checklist": [
+        "Адкрыць кантроль спіс"
+      ],
+      "Popular online services": [
+        "Папулярныя сеткавыя сэрвісы"
+      ],
+      "privacy features": [
+        "функцыі прыватнасці"
+      ],
+      "Protect and simplify your email": [
+        "Абарона і спрашчэнне электроннай пошты"
+      ],
+      "Protection from trackers": [
+        "Абарона ад праграм сачэння"
+      ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "Хутка перанясіце вашы кантакты або лісты ад любога пастаўшчыка паслуг выкарыстоўваючы памочнік па імпартаванні Easy Switch."
-      ],
-      "Sign into the mobile app to complete the action": [
-        "Увайдзіце ў мабільную праграму, каб завяршыць гэта дзеянне"
-      ],
-      "Using your mobile device, scan this QR code or visit": [
-        "Выкарыстоўваючы сваю мабільную прыладу, адсканіруйце гэты QR-код або наведайце"
-      ]
-    },
-    "Get started checklist item": {
-      "Get mobile app": [
-        "Атрымаць мабільную праграму"
-      ],
-      "Import contacts or emails": [
-        "Імпартуйце кантакты або лісты"
       ],
       "Send a message": [
         "Адправіць паведамленне"
       ],
-      "Set up a recovery method": [
-        "Наладзіць метад аднаўлення"
-      ]
-    },
-    "Get started checklist spotlight": {
-      "You can access the checklist anytime from here": [
-        "Вы можаце атрымаць доступ да кантрольнага спісу ў любы час адсюль"
-      ]
-    },
-    "Get started checklist title": {
-      "Get started": [
-        "Пачаць працу"
+      "Set recovery method": [
+        "Задаць метад аднаўлення"
+      ],
+      "Set up ${ strongText } from Gmail": [
+        "Наладзьце ${ strongText } з Gmail"
+      ],
+      "Sign in to the mobile app to complete this step": [
+        "Увайдзіце ў мабільную праграму, каб завяршыць гэты крок"
+      ],
+      "Update your logins": [
+        "Абнавіце вашы запісы ўваходу"
+      ],
+      "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
+        "Выкарыстоўваючы мабільны тэлефон, адсканіруйце гэты QR-код або наведайце краму iOS або Android."
+      ],
+      "We stop advertisers and data collectors from profiling you.": [
+        "Мы не дазваляем рэкламадаўцам і зборшчыкам даных фарміраваць ваш профіль."
+      ],
+      "You've unlocked 1 GB": [
+        "Вы разблакіравалі 1 ГБ"
       ]
     },
     "Gmail forwarding": {
@@ -4712,6 +4778,12 @@
         "${ count } непрачытаных паведамленняў",
         "${ count } непрачытаныя паведамленні"
       ],
+      "${ currentProgress } out of ${ totalProgress }": [
+        "${ currentProgress } з ${ totalProgress }",
+        "${ currentProgress } з ${ totalProgress }",
+        "${ currentProgress } з ${ totalProgress }",
+        "${ currentProgress } з ${ totalProgress }"
+      ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } убудаваны відарыс",
         "${ embeddedAttachmentsCount } убудаваныя відарысы",
@@ -4739,11 +4811,23 @@
         "Не атрымалася перамясціць ${ messagesNotAuthorizedToMove } паведамленняў.",
         "Не атрымалася перамясціць ${ messagesNotAuthorizedToMove } паведамленні."
       ],
-      "${ numberOfTrackers } email tracker blocked": [
-        "Заблакіравана ${ numberOfTrackers } праграма сачэння",
-        "Заблакіраваны ${ numberOfTrackers } праграмы сачэння",
-        "Заблакіраваны ${ numberOfTrackers } праграм сачэння",
-        "Заблакіраваны ${ numberOfTrackers } праграмы сачэння"
+      "${ numberOfImageTrackers } email tracker blocked": [
+        "Заблакіравана ${ numberOfImageTrackers } праграма сачэння электроннай пошты",
+        "Заблакіраваны ${ numberOfImageTrackers } праграмы сачэння электроннай пошты",
+        "Заблакіраваны ${ numberOfImageTrackers } праграм сачэння электроннай пошты",
+        "Заблакіраваны ${ numberOfImageTrackers } праграм сачэння электроннай пошты"
+      ],
+      "${ numberOfImageTrackers } tracker blocked": [
+        "Заблакіравана ${ numberOfImageTrackers } праграма сачэння",
+        "Заблакіраваны ${ numberOfImageTrackers } праграмы сачэння",
+        "Заблакіраваны ${ numberOfImageTrackers } праграм сачэння",
+        "Заблакіраваны ${ numberOfImageTrackers } праграм сачэння"
+      ],
+      "${ numberOfUTMTrackers } link cleaned": [
+        "${ numberOfUTMTrackers } спасылка ачышчана",
+        "${ numberOfUTMTrackers } спасылкі ачышчаны",
+        "${ numberOfUTMTrackers } спасылак ачышчаны",
+        "${ numberOfUTMTrackers } спасылак ачышчаны"
       ],
       "${ numContact } contact": [
         "${ numContact } кантакт",
@@ -4885,6 +4969,12 @@
       ],
       "(No Recipient)": [
         "(Няма атрымальніка)"
+      ],
+      "**${ elementsFoundCount }** result found in ${ labelName }": [
+        "**${ elementsFoundCount }** вынік знойдзены ў ${ labelName }",
+        "**${ elementsFoundCount }** вынікі знойдзены ў ${ labelName }",
+        "**${ elementsFoundCount }** вынікаў знойдзены ў ${ labelName }",
+        "**${ elementsFoundCount }** вынікаў знойдзены ў ${ labelName }"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Нумар тэлефона можа быць выкарыстаны для праверкі аднаго ўліковага запісу ${ BRAND_NAME }"
@@ -5165,18 +5255,6 @@
       "Email tracker protection is disabled": [
         "Абарона электроннай пошты ад праграм сачэння адключана"
       ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers in this message.": [
-        "Праграмы сачэння электроннай пошты могуць парушыць вашу прыватнасць. ${ BRAND_NAME } не выявіў ніякіх праграм сачэння ў гэтым паведамленні."
-      ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } tracker.": [
-        "Праграмы сачэння электроннай пошты могуць парушыць вашу прыватнасць. ${ BRAND_NAME } знайшоў і заблакіраваў ${ numberOfTrackers } праграму сачэння.",
-        "Праграмы сачэння электроннай пошты могуць парушыць вашу прыватнасць. ${ BRAND_NAME } знайшоў і заблакіраваў ${ numberOfTrackers } праграмы сачэння.",
-        "Праграмы сачэння электроннай пошты могуць парушыць вашу прыватнасць. ${ BRAND_NAME } знайшоў і заблакіраваў ${ numberOfTrackers } праграм сачэння.",
-        "Праграмы сачэння электроннай пошты могуць парушыць вашу прыватнасць. ${ BRAND_NAME } знайшоў і заблакіраваў ${ numberOfTrackers } праграмы сачэння."
-      ],
-      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
-        "Праграмы сачэння электроннай пошты могуць парушыць вашу прыватнасць. Уключыце абарону ад іх, каб адпраўнікі не маглі даведацца, ці адкрывалі вы паведамленне."
-      ],
       "Emails are automatically signed": [
         "Лісты падпісваюцца аўтаматычна"
       ],
@@ -5255,6 +5333,9 @@
       "For messages newer than ${ oldestDate }": [
         "Для паведамленняў больш новых, чым ${ oldestDate }"
       ],
+      "For more search results, try searching for this keyword in the content of your email messages.": [
+        "Паспрабуйце пашукаць па гэтым ключавым слове ў змесціве вашых лістоў, каб атрымаць больш вынікаў пошуку."
+      ],
       "Free up some space or add more storage space.": [
         "Вызваліце ​​месца або павялічце памер сховішча."
       ],
@@ -5301,7 +5382,7 @@
         "URL-адрас відарыса"
       ],
       "Images have been removed because they are not allowed in auto-reply": [
-        "Відарысы былі выдалены, таму што іх нельга выкарыстоўваць у аўтаматычным адказе"
+        "Відарысы былі выдалены, бо іх нельга выкарыстоўваць у аўтаматычным адказе"
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Імпартаванне ${ calendarCount } календара з ${ totalCalendarsCount }",
@@ -5369,6 +5450,9 @@
       "Link type": [
         "Тып спасылкі"
       ],
+      "Links cleaned:": [
+        "Спасылак ачышчана:"
+      ],
       "Loading": [
         "Загрузка"
       ],
@@ -5399,11 +5483,8 @@
       "Merged": [
         "Аб'яднана"
       ],
-      "Message downloaded: ${ currentProgress } out of ${ totalProgress }": [
-        "Спампавана паведамленне: ${ currentProgress } з ${ totalProgress }",
-        "Спампавана паведамленняў: ${ currentProgress } з ${ totalProgress }",
-        "Спампавана паведамленняў: ${ currentProgress } з ${ totalProgress }",
-        "Спампавана паведамленняў: ${ currentProgress } з ${ totalProgress }"
+      "Message download status:": [
+        "Статус спампоўвання паведамлення:"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
         "Тэрмін дзеяння для паведамленняў працуе без дадатковых патрабаванняў пры адпраўцы лістоў іншым карыстальнікам ${ MAIL_APP_NAME }. Для адпраўкі паведамленняў з тэрмінам дзеяння карыстальнікам, якія не карыстаюцца ${ BRAND_NAME }, скасуйце адпраўку і абараніце свой ліст паролем."
@@ -5442,7 +5523,7 @@
         "Назавіце новую папку і выберыце бацькоўскую папку, у якую вы хочаце яе ўкласці. Калі вы не выбераце бацькоўскую папку, то гэта новая папка будзе створана як папка верхняга ўзроўню."
       ],
       "New": [
-        "Новы"
+        "Новае"
       ],
       "No action selected": [
         "Дзеянне не выбрана"
@@ -5452,9 +5533,6 @@
       ],
       "No email address": [
         "Няма адраса электроннай пошты"
-      ],
-      "No email trackers found": [
-        "Праграмы сачэння не знойдзены"
       ],
       "No folder found": [
         "Папка не знойдзена"
@@ -5471,14 +5549,17 @@
       "No label selected": [
         "Метка не выбрана"
       ],
+      "No links cleaned": [
+        "Спасылкі не ачышчаны"
+      ],
       "No more results found": [
         "Больш нічога не знойдзена"
       ],
       "No results found": [
         "Нічога не знойдзена"
       ],
-      "No trackers found, but some images could not be loaded with tracking protection": [
-        "Праграмы сачэння не знойдзены, але некаторыя відарысы не былі загружаны з актыўнай абаронай ад праграм сачэння"
+      "No trackers found": [
+        "Праграмы сачэння не знойдзены"
       ],
       "non-${ MAIL_APP_NAME }": [
         "па-за сэрвісам ${ MAIL_APP_NAME }"
@@ -5530,6 +5611,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Звярніце ўвагу, што гэты працэс можа заняць некаторы час у залежнасці ад памеру вашай адраснай кнігі."
+      ],
+      "Please provide a name and an email address for creating a group.": [
+        "Забяспечце назву і адрас электроннай пошты для стварэння групы."
       ],
       "Please select the folders you would like to import:": [
         "Выберыце папкі для імпартавання:"
@@ -5882,8 +5966,11 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Занадта шмат паведамленняў чакаюць адпраўкі. Пачакайце, пакуль адправіцца іншае паведамленне, каб запланаваць гэта."
       ],
-      "Turn off to only search by date, name, or email address. To disable search message content and delete downloaded messages, go to settings.": [
-        "Выключыце, каб шукаць толькі па даце, імі або адрасе электроннай пошты. Каб выключыць пошук па змесціве паведамлення, і выдаліць спампаваныя паведамленні, перайдзіце ў налады."
+      "Trackers blocked:": [
+        "Праграм сачэння заблакіравана:"
+      ],
+      "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
+        "Выключыце, каб шукаць толькі па даце, імі або адрасе электроннай пошты або радку тэмы. Каб выключыць пошук па змесціве паведамлення, і выдаліць спампаваныя паведамленні, перайдзіце ў налады."
       ],
       "Turn on to search the content of your messages": [
         "Уключыце, каб шукаць змесціва вашых паведамленняў"
@@ -5899,9 +5986,6 @@
       ],
       "Updating message content search...": [
         "Абнаўленне пошуку змесціва паведамлення..."
-      ],
-      "Updating your local messages, message content won't be searched during this update": [
-        "Абнаўленне вашых лакальных паведамленняў. У вас не будзе магчымасці шукаць па змесціву паведамлення падчас гэтага абнаўлення"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Палепшыце зараз, каб атрымаць прэміяльныя функцыі прадуктаў і сховішча па спецыяльным кошце"
@@ -5966,8 +6050,14 @@
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Прыносім прабачэнні. Магчыма, гэта была памылка з нашага боку. Ці можаце вы пацвердзіць, што хочаце пазначыць гэты ліст як надзейны?"
       ],
+      "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
+        "Мы заблакіравалі наступным рэкламадаўцам і арганізацыям магчымасць бачыць, калі вы адкрывалі гэты ліст, якой прыладай вы карысталіся, а таксама дзе вы знаходзіцеся."
+      ],
       "We could not verify the sender's trusted keys.": [
         "Мы не змаглі праверыць давераныя ключы адпраўніка."
+      ],
+      "We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.": [
+        "Мы выдалілі звесткі сачэння з наступных спасылак, каб дапамагчы абараніць вас ад рэкламадаўцаў і іншых асоб, якія спрабуюць адсачыць вашу актыўнасць у інтэрнэце."
       ],
       "We'll notify you when the import is done.": [
         "Мы апавясцім вас пра завяршэнне імпартавання."
@@ -6148,9 +6238,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Вашы файлы будуць зашыфраваны, а пасля гэтага захаваны"
-      ],
-      "Your import will not be processed.": [
-        "Ваша імпартаванне не будзе апрацавана."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Пасля завяршэння імпартавання вашы даныя ўваходу не будуць захаваны."
@@ -6426,7 +6513,7 @@
     },
     "Keyboard Shortcuts Enabled": {
       "On": [
-        "Уключаны"
+        "Уключана"
       ]
     },
     "Label": {
@@ -6534,6 +6621,9 @@
       ],
       "City": [
         "Горад"
+      ],
+      "Cleaned": [
+        "Ачышчана"
       ],
       "Code is 6 digits without spaces": [
         "Код складаецца з 6 лічбаў без прабелаў"
@@ -6736,6 +6826,9 @@
       "OK": [
         "Добра"
       ],
+      "Open in a new tab": [
+        "Адкрыць у новай укладцы"
+      ],
       "Operating system": [
         "Аперацыйная сістэма"
       ],
@@ -6750,6 +6843,9 @@
       ],
       "Or": [
         "Або"
+      ],
+      "Original link": [
+        "Арыгінальная спасылка"
       ],
       "Participants": [
         "Удзельнікі"
@@ -7256,11 +7352,6 @@
         "Даступна новая версія ${ appName }. ${ reloadButton }."
       ]
     },
-    "Message has been sent to the user via a SimpleLogin alias": {
-      "Delivered via SimpleLogin by ${ BRAND_NAME }": [
-        "Дастаўлена праз SimpleLogin з дапамогай ${ BRAND_NAME }"
-      ]
-    },
     "Message image": {
       "Image has not been loaded in order to protect your privacy.": [
         "Відарыс не быў загружаны, каб абараніць вашу прыватнасць."
@@ -7591,11 +7682,42 @@
       "Set up your organization": [
         "Наладзьце сваю арганізацыю"
       ],
-      "Set up your organization testing": [
-        "Наладзьце тэсціраванне сваёй арганізацыі"
-      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Скарыстайцеся выбарам праграм злева ўверсе для атрымання доступу да ўсіх сэрвісаў ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } і ${ DRIVE_SHORT_APP_NAME }."
+      ]
+    },
+    "Online accounts": {
+      "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
+        "У вас ужо ёсць уліковы запіс у адным з гэтых сэрвісаў? Проста націсніце, каб змяніць адрас электроннай пошты на адрас ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Online Accounts Name": {
+      "Banking": [
+        "Банкаўская справа"
+      ],
+      "Crypto": [
+        "Крыпта"
+      ],
+      "E-commerce and Retail": [
+        "Электронная камерцыя і рознічны продаж"
+      ],
+      "Entertainment": [
+        "Забавы"
+      ],
+      "Food and beverage": [
+        "Ежа і напоі"
+      ],
+      "Gaming": [
+        "Гульні"
+      ],
+      "Most popular": [
+        "Найбольш папулярныя"
+      ],
+      "Travel": [
+        "Падарожжы"
+      ],
+      "Utilities": [
+        "Утыліты"
       ]
     },
     "Option": {
@@ -7637,20 +7759,6 @@
     "Pagination": {
       "${ page } of ${ totalText }": [
         "${ page } з ${ totalText }"
-      ]
-    },
-    "Paid user checklist item": {
-      "Get mobile app": [
-        "Атрымаць мабільную праграму"
-      ],
-      "Import contacts or emails": [
-        "Імпартуйце кантакты або лісты"
-      ],
-      "Send a message": [
-        "Адправіць паведамленне"
-      ],
-      "Set up a recovery method": [
-        "Наладзіць метад аднаўлення"
       ]
     },
     "Participant name": {
@@ -7977,6 +8085,11 @@
         "Мы выявілі некаторыя папярэджанні. Атрымальнікі з наступнымі адрасамі могуць не атрымаць ваш ліст:"
       ]
     },
+    "Sender verification details": {
+      "Sender verification": [
+        "Праверка адпраўніка"
+      ]
+    },
     "Sent email icon": {
       "Encrypted by ${ MAIL_APP_NAME }": [
         "Зашыфравана ${ MAIL_APP_NAME }"
@@ -8187,7 +8300,7 @@
         "Прапанова абмежавана па часе"
       ],
       "Most popular": [
-        "Самы папулярны"
+        "Найбольш папулярны"
       ],
       "Offer ends soon": [
         "Прапанова неўзабаве скончыцца"
@@ -8370,9 +8483,6 @@
       ]
     },
     "Storage": {
-      "Get extra storage for free": [
-        "Атрымаць дадатковае сховішча бясплатна"
-      ],
       "Release notes": [
         "Нататкі да выпуску"
       ],
@@ -8689,6 +8799,70 @@
         "Водгук адпраўлены"
       ]
     },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "1 год"
+      ],
+      "2 years": [
+        "2 гады"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "Прэміяльныя функцыі Drive"
+      ],
+      "Premium Mail and Calendar": [
+        "Прэміяльныя функцыі Mail і Calendar"
+      ],
+      "Premium Password Manager": [
+        "Прэміяльныя функцыі менеджара пароляў"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Бяспечна захоўвайце свае паролі і аўтаматычна запаўняйце іх на вэб-сайтах. Уключае неабмежаваную колькасць пароляў, аўтаматычнае запаўненне, генератар пароляў і іншыя функцыі."
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Менеджар пароляў"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Стварайце бяспечныя даныя для ўваходу на ўсіх сваіх прыладах. Уключае неабмежаваную колькасць псеўданімаў, 20 сховішчаў, інтэграваную 2ФА, аўтаматычнае запаўненне крэдытных картак і іншыя функцыі."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Уключае больш за 2950 сервераў у больш чым 65 краінах, магчымасць падключаць да 10 прылад, сэрвісы з трансляцыямі па ўсім свеце, блакіроўку шкодных праграм і рэкламы, а таксама іншыя функцыі."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Уключае падтрымку 1 карыстальніцкага дамена электроннай пошты, 10 адрасоў электроннай пошты, 10 псеўданімаў hide-my-email, абагульванне календара і іншыя функцыі."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае гісторыю версій, абагулены доступ да зашыфраваных файлаў і іншыя функцыі."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "*Ваша падпіска будзе аўтаматычна падаўжацца са стандартнай скідкай у канцы перыяду аплаты."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Скідкі разлічваюцца на падставе стандартнай платы за месяц. Гэтай прапановай могуць скарыстацца толькі тыя падпісчыкі, якія ўпершыню зарэгістраваліся."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Атрымайце эксклюзіўную скідку ад ${ BRAND_NAME }. Прапанова абмежавана па часе."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Мы святкуем дзявятую гадавіну нашага краўдфандзінга!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "Святочны распродаж ${ BRAND_NAME }"
+      ]
+    },
     "Table header": {
       "Action": [
         "Дзеянне"
@@ -8823,7 +8997,7 @@
         "Дадаць у ${ groupCount } групу",
         "Дадаць у ${ groupCount } групы",
         "Дадаць у ${ groupCount } груп",
-        "Дадаць у ${ groupCount } групы"
+        "Дадаць у ${ groupCount } груп"
       ],
       "Add to ${ groupName }": [
         "Дадаць у ${ groupName }"
@@ -9182,6 +9356,9 @@
       "No attachment found": [
         "Далучэнні не знойдзены"
       ],
+      "No trackers found": [
+        "Праграмы сачэння не знойдзены"
+      ],
       "Open actions dropdown": [
         "Адкрыць спіс даступных дзеянняў"
       ],
@@ -9208,6 +9385,9 @@
       ],
       "Previous message": [
         "Папярэдняе паведамленне"
+      ],
+      "Protect yourself from trackers": [
+        "Абараніце сябе ад праграм сачэння"
       ],
       "Re-sign all contacts": [
         "Паўторна падпісаць усе кантакты"
@@ -9359,6 +9539,12 @@
       "Warning: suspected fake website": [
         "Папярэджанне: гэты вэб-сайт можа быць падробленым"
       ],
+      "We protected you from ${ trackersCount } tracker": [
+        "Мы абаранілі вас ад ${ trackersCount } праграмы сачэння",
+        "Мы абаранілі вас ад ${ trackersCount } праграм сачэння",
+        "Мы абаранілі вас ад ${ trackersCount } праграм сачэння",
+        "Мы абаранілі вас ад ${ trackersCount } праграм сачэння"
+      ],
       "Welcome": [
         "Вітаем"
       ],
@@ -9504,9 +9690,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } перанясе столькі даных, колькі будзе магчыма, пачынаючы з самых новых паведамленняў."
-      ],
-      "Are you sure you want to discard your import?": [
-        "Вы сапраўды хочаце адхіліць імпартаванне?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Вы сапраўды хочаце незваротна выдаліць ${ count } групу кантактаў?",

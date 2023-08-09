@@ -235,6 +235,12 @@
       "Download anyway": [
         "ダウンロード"
       ],
+      "Download apps": [
+        "アプリをダウンロード"
+      ],
+      "Download Drive for Windows": [
+        "Windows 版 Drive をダウンロード"
+      ],
       "Drive Locked": [
         "ドライブはロックされています"
       ],
@@ -315,6 +321,9 @@
       ],
       "Got it": [
         "はい"
+      ],
+      "Grid layout": [
+        "グリッド表示"
       ],
       "Hide advanced PGP settings": [
         "拡張 PGP 設定を非表示"
@@ -542,7 +551,7 @@
         "ドライブ内を検索"
       ],
       "See plan features": [
-        "プランの特徴を見る"
+        "プランの機能を見る"
       ],
       "See version history": [
         "バージョン履歴を表示"
@@ -1827,6 +1836,9 @@
       "ProtonMail logo and a plus sign": [
         "Proton Mail ロゴとプラスマーク"
       ],
+      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
+        "一度に全員にメールや招待状を送信することで時間を節約できます。今すぐアップグレード"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
         "最大 ${ MAX_IMPORT_FILE_SIZE_STRING } のファイルサイズ、最大 ${ MAX_IMPORT_CONTACTS_STRING } 件の連絡先に対応しています。それより大きなファイルは、分割してください。"
       ],
@@ -1924,6 +1936,9 @@
     "Error": {
       "\"${ name }\" already exists": [
         "「${ name }」はすでに存在します"
+      ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }。必要に応じて${ statusPageLink }も確認してください。"
       ],
       "A group with this name already exists": [
         "この名前のグループは既に存在します"
@@ -2116,6 +2131,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "エラーが発生しました。続行するには ${ refresh } してください。それでもこのエラーが発生する場合は ${ supportTeam } までお問い合わせください。"
+      ],
+      "status page": [
+        "ステータスページ"
       ],
       "The email addresses do not match": [
         "メールアドレスが一致しません"
@@ -2459,7 +2477,7 @@
     },
     "Event title": {
       "(no title)": [
-        "（タイトルなし）"
+        "(タイトルなし)"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -2478,6 +2496,9 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Decline invitation": [
+        "招待を断る"
+      ],
       "Got it": [
         "了解"
       ],
@@ -2605,6 +2626,9 @@
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "65 か国以上の 2700 台のサーバー、最大 10 台のデバイスの接続、世界中のストリーミングサービスへのアクセス、マルウェアと広告ブロッカーなどが含まれます。"
       ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "3 件の独自メールドメイン対応、90 件のメールアドレス、無制限の hide-my-email エイリアス、カレンダー共有などが含まれます。"
+      ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "暗号化クラウドストレージでファイルの安全を保ちます。自動同期、暗号化ファイル共有などが含まれます。"
       ]
@@ -2669,8 +2693,8 @@
       "System default": [
         "システムのデフォルト"
       ],
-      "Theme default": [
-        "テーマのデフォルト"
+      "Theme font": [
+        "テーマ フォント"
       ]
     },
     "Font size option": {
@@ -3163,6 +3187,9 @@
       "Attention required": [
         "注意が必要です"
       ],
+      "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:": [
+        "${ DRIVE_APP_NAME } はエンドツーエンド暗号化されているため、私たちはあなたのファイルにアクセスしたり、復号化したりすることはできません。パスワードのリセット後にドライブをロック解除するには、以下のいずれかを持っている必要があります :"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "新しい検証コードを要求する前に、迷惑メールフォルダーを確認し、${ strong } が正しいアドレスなことを確認してください。"
       ],
@@ -3262,6 +3289,9 @@
       "Current version": [
         "現在のバージョン"
       ],
+      "Customize the look and feel of ${ BRAND_NAME } applications.": [
+        "${ BRAND_NAME }アプリの外観をカスタマイズ"
+      ],
       "Decrypting files": [
         "ファイルを復号中"
       ],
@@ -3300,6 +3330,12 @@
       ],
       "Downloading": [
         "ダウンロード中"
+      ],
+      "Drop file here to upload": [
+        "アップロードするファイルをここにドロップ"
+      ],
+      "Drop to import": [
+        "ドロップしてインポート"
       ],
       "Duplicate key updated": [
         "重複した鍵がアップデートされました"
@@ -3351,6 +3387,12 @@
       ],
       "Failed": [
         "失敗"
+      ],
+      "Failed to generate a secure link. The reason is: ${ error }": [
+        "セキュアリンクの生成に失敗しました。原因: ${ error }"
+      ],
+      "Failed to generate a secure link. Try again later": [
+        "セキュアリンクの生成に失敗しました。後でもう一度お試しください"
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "リンクを開くことができませんでした。エラー内容：${ error }"
@@ -3423,6 +3465,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "受信トレイに関連するメッセージを見つけなかった場合、迷惑メールフォルダーを確認してください。"
+      ],
+      "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
+        "いずれかをお持ちの場合は、${ BRAND_NAME } のアカウント設定に進んでブロック解除のプロセスを開始してください。"
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendars": [
         "${ totalCalendarsCount } 件中 ${ calendarCount } 件のカレンダーをインポート"
@@ -3653,7 +3698,7 @@
         "プレビューの読み込みに失敗しました"
       ],
       "Preview for this file type is not supported": [
-        "申し訳ございません、このファイル形式はサポートされておりません"
+        "このファイル形式はサポートされておりません。"
       ],
       "Previous versions are kept for ${ retentionLabel }": [
         "以前のバージョンは ${ retentionLabel } 保存されます"
@@ -3751,11 +3796,20 @@
       "Something went wrong, please try again later.": [
         "問題が発生しました。後ほど再度お試しください。"
       ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "サブスクリプションがもうすぐ終了します: ${ planName }の特典を維持するには${ byDate }までに更新してください。${ reactivateLink }"
+      ],
       "support team": [
         "サポートチーム"
       ],
       "Swiss encrypted file storage": [
         "スイスの暗号化ファイルストレージ"
+      ],
+      "Sync folders from your computer": [
+        "コンピューターのフォルダーと同期する"
+      ],
+      "Sync folders with ease using our desktop app, ensuring your files are always up to date and accessible from anywhere.": [
+        "デスクトップアプリを使用して簡単にフォルダを同期し、常に最新のファイルにどこからでもアクセスできるようにします。"
       ],
       "Temporarily unavailable. Please check back later.": [
         "一時的に利用できません。あとでお試しください。"
@@ -3819,6 +3873,9 @@
       ],
       "This will upload a new version of the file": [
         "ファイルの新しいバージョンをアップロードします"
+      ],
+      "This will upload a new version of the folder": [
+        "フォルダーの新しいバージョンをアップロードします"
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "厳格なプライベート検索を有効にするために、${ DRIVE_APP_NAME } はローカルにファイルのインデックスを作成する必要があります。"
@@ -3974,13 +4031,13 @@
         "ストレージ容量の ${ spaceDisplayed }% に達しました。${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "ストレージ容量が最大に達したため、新しいメールを送受信できません。${ freeUpMessage } ${ upgradeLink }"
+        "ストレージ容量が100%に達したため、新しいメールを送受信できません。${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will lose all unsaved changes.": [
         "保存されていない変更はすべて失なわれます。"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
-        "連絡先グループのアドレス数の上限に達しました。"
+        "(1個以上の)連絡先グループのアドレス数の上限に達しました。"
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "連絡先グループのアドレス数の上限に達しました。"
@@ -4012,11 +4069,11 @@
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "パスワードを変更したためファイルにアクセスできません。古い暗号鍵を再度アップロードすることでアクセス可能になります。${ KeyReactivationButton }"
       ],
+      "Your files will be encrypted and then saved": [
+        "ファイルは暗号化して保存されます"
+      ],
       "Your files will be encrypted and then saved.": [
         "あなたのファイルは暗号化して保存されます。"
-      ],
-      "Your import will not be processed.": [
-        "インポートできませんでした。"
       ],
       "Your login information will not be saved after the import is completed.": [
         "インポート完了後、ログイン情報は保存されません。"
@@ -4473,6 +4530,9 @@
       "Street address": [
         "番地"
       ],
+      "Synchronize with system": [
+        "システムとの同期"
+      ],
       "System information": [
         "システム情報"
       ],
@@ -4524,6 +4584,9 @@
       "Wonderful": [
         "すばらしい"
       ],
+      "Yes, I want to permanently delete my old files": [
+        "はい、古いファイルを永久に削除したいです。"
+      ],
       "Your password (admin)": [
         "あなたのパスワード (管理者)"
       ]
@@ -4574,6 +4637,9 @@
       ]
     },
     "Link": {
+      "${ DRIVE_APP_NAME } Windows app": [
+        "${ DRIVE_APP_NAME } Windows アプリ"
+      ],
       "clearing your browser cache": [
         "ブラウザのキャッシュを消去"
       ],
@@ -4583,8 +4649,14 @@
       "Pay invoice": [
         "請求の支払い"
       ],
+      "Reactivate now": [
+        "今すぐ再アクティブ化する"
+      ],
       "Request an invite": [
         "登録を申請"
+      ],
+      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
+        "コンピューターと ${ DRIVE_APP_NAME } 間でファイルとフォルダーをシームレスに同期します"
       ],
       "Shared": [
         "共有中"
@@ -4702,6 +4774,9 @@
       "Custom email domains": [
         "独自メールドメイン"
       ],
+      "Hide-my-email aliases": [
+        "Hide-my-email エイリアス"
+      ],
       "Schedule messages at any time": [
         "いつでもメッセージを送信予約できます"
       ],
@@ -4719,11 +4794,17 @@
       ]
     },
     "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "例えば、JohnShopper@${ domain }はショッピングアカウント用、JohnNews@${ domain2 }はニュース購読用です。"
+      ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "SimpleLogin by ${ BRAND_NAME } で無制限にエイリアスを作成"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "ストレージ容量は ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } で共有されます。"
+      ],
+      "Use your own custom email domain address, e.g., you@yourname.com": [
+        "独自ドメインのメールアドレスを使用する（例：you@yourname.com）"
       ]
     },
     "new_plans: label": {
@@ -4962,14 +5043,14 @@
       "Discover all ${ BRAND_NAME } services": [
         "すべての ${ BRAND_NAME } サービスを 1 つのアカウントで"
       ],
+      "More theming options are available in your account Settings > Appearance.": [
+        "その他のテーマ設定オプションは、アカウントの「設定」>「外観」で利用できます。"
+      ],
       "Select a theme": [
         "テーマを選択"
       ],
       "Set up your organization": [
         "組織のための設定"
-      ],
-      "Set up your organization testing": [
-        "組織の設定"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "左上のアプリセレクターで、すべてのアプリにアクセスできます。 ${ BRAND_NAME } サービス: ${ MAIL_SHORT_APP_NAME }・ ${ VPN_SHORT_APP_NAME }・ ${ CALENDAR_SHORT_APP_NAME }・ ${ DRIVE_SHORT_APP_NAME }"
@@ -5090,6 +5171,11 @@
     "Placeholder for contact group name": {
       "Name": [
         "名前"
+      ]
+    },
+    "Platform": {
+      "Windows": [
+        "Windows"
       ]
     },
     "Progress bar description": {
@@ -5382,6 +5468,15 @@
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Netflix、Disney+、Prime Video などのストリーミングサービス上のコンテンツにどこからでもアクセスします。"
       ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "すべてのプレミアムサービスを高い自由度で利用できます。100 件のメールアドレス、10 件の独自ドメイン対応、無制限の hide-my-email エイリアス、カレンダー共有、暗号化クラウドストレージとファイル共有など。"
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "1 件の独自メールドメイン対応、10 件のメールアドレス、10 件の hide-my-email エイリアス、カレンダー共有などが含まれます。"
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "3 件の独自メールドメイン対応、15 件のメールアドレス、無制限の hide-my-email エイリアス、カレンダー共有などが含まれます。"
+      ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "ファミリーや小規模なチームに最適で、各自が受信トレイとエイリアスを持ちます。カスタムドメインが必要です。"
       ],
@@ -5479,6 +5574,70 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "フィードバックを送信しました"
+      ]
+    },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "1 年"
+      ],
+      "2 years": [
+        "2 年"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "プレミアム Drive"
+      ],
+      "Premium Mail and Calendar": [
+        "プレミアム Mail と Calendar"
+      ],
+      "Premium Password Manager": [
+        "プレミアムパスワードマネージャー"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "安全にパスワードを保存し、ウェブサイト上で自動入力します。無制限のパスワード、自動入力、パスワード生成などが含まれています。"
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "パスワードマネージャー"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "すべてのデバイスで安全なログインの詳細情報を作成します。無制限のエイリアス、20 個の保管庫、統合された 2 要素認証、クレジットカードの自動入力などが含まれます。"
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "65 か国以上の 2950 台以上のサーバー、最大 10 台のデバイスの接続、世界中のストリーミングサービスへのアクセス、マルウェアと広告ブロッカーなどが含まれます。"
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "1 件の独自メールドメイン対応、10 件のメールアドレス、10 件の hide-my-email エイリアス、カレンダー共有などが含まれます。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "暗号化されたクラウドストレージでファイルの安全性を保ちましょう。バージョン履歴、暗号化済みファイル共有などが含まれています。"
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "* あなたのサブスクリプションは、支払い間隔の終了時に標準の割引価格で自動的に更新されます。"
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "割引は標準の月額価格を基にしています。このオファーは初回のサブスクリプションでのみ有効です。"
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "期間限定で、最高の ${ BRAND_NAME } 提供製品を特別な割引価格で入手できます。"
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "クラウドファンディングを開始してから９周年です！"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "${ BRAND_NAME } 記念セール"
       ]
     },
     "Table header": {
@@ -5614,6 +5773,9 @@
       ],
       "Browser might run out of memory": [
         "ブラウザーのメモリが不足する可能性があります。"
+      ],
+      "Cannot add more addresses": [
+        "これ以上アドレスを追加できません"
       ],
       "Cannot load link": [
         "リンクの読み込みに失敗しました"
@@ -5990,6 +6152,9 @@
       "Type": [
         "種類"
       ],
+      "Unlock contacts groups": [
+        "連絡先グループをアンロック"
+      ],
       "Uploaded": [
         "アップロード日時"
       ],
@@ -6054,6 +6219,9 @@
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "「自動」はこのユーザーに送信する際の書式が、自動選択される事を示しています。「プレーンテキスト」は、常にプレーンテキストに変換されてメッセージが送信されることを示します。"
       ],
+      "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
+        "システムの昼夜モードと同期して、昼と夜のお好みのテーマを自動的に切り替える"
+      ],
       "Customize import to reduce the number of folders": [
         "フォルダー数を減らすためにインポートをカスタマイズします"
       ],
@@ -6096,8 +6264,20 @@
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "システムのサブフォルダーは ${ MAIL_APP_NAME } のそれそれのフォルダーとして表示されます"
       ],
+      "The image could not be loaded": [
+        "画像が読み込めませんでした"
+      ],
+      "The image could not be loaded using proxy": [
+        "プロキシを使用して画像を読み込めませんでした"
+      ],
       "The import will start with the most recent messages.": [
         "インポートは新しいメッセージから始まります。"
+      ],
+      "The selected theme will be active when your system is set to \"dark mode\"": [
+        "選択したテーマは、システムが「ダークモード」に設定されているときに有効になります。"
+      ],
+      "The selected theme will be active when your system is set to \"light mode\"": [
+        "選択したテーマは、システムが「ライトモード」に設定されているときに有効になります。"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "公開鍵をアップロードすると、このメールアドレス宛の電子メールをエンドツーエンド暗号化することができます"
@@ -6148,9 +6328,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } は、最新のメッセージからできるだけ多くのデータを転送します。"
-      ],
-      "Are you sure you want to discard your import?": [
-        "インポートを破棄してよろしいですか?"
       ],
       "Are you sure you want to permanently delete ${ count } contact groups?": [
         "${ count } 件の連絡先グループを完全に削除してよろしいですか？"

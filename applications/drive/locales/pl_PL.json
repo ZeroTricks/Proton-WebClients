@@ -95,7 +95,7 @@
         "Zmień"
       ],
       "Chat with us": [
-        "Czatuj z nami"
+        "Czat z nami"
       ],
       "Check import progress": [
         "Sprawdź postęp importowania"
@@ -1946,6 +1946,9 @@
       "\"${ name }\" already exists": [
         "Plik \"${ name }\" już istnieje"
       ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Możesz również sprawdzić naszą ${ statusPageLink }"
+      ],
       "A group with this name already exists": [
         "Grupa o tej nazwie już istnieje"
       ],
@@ -2155,6 +2158,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Coś poszło nie tak. ${ refresh }, aby kontynuować. Jeśli wciąż widzisz ten błąd, skontaktuj się z naszą ${ supportTeam }."
+      ],
+      "status page": [
+        "stronę statusu"
       ],
       "The email addresses do not match": [
         "Adresy e-mail nie pasują do siebie"
@@ -2651,7 +2657,7 @@
         "Zawiera 2700 serwerów w ponad 65 krajach z możliwością połączenia do 10 urządzeń, dostępem do globalnych usług streamingu oraz funkcję blokowania reklam, złośliwego oprogramowania i wiele więcej."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Zawiera obsługę 3 niestandardowych domen, 90 adresów e-mail, nieograniczoną liczbę aliasów Hide-my-email, udostępnianie kalendarza i wiele więcej."
+        "Zawiera obsługę 3 niestandardowych domen, 90 adresów e-mail, nieograniczoną liczbę aliasów hide-my-email, udostępnianie kalendarza i wiele więcej."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpiecz pliki dzięki szyfrowanej przestrzeni dyskowej w chmurze. Zawiera automatyczną synchronizację, szyfrowane udostępnianie plików i wiele więcej."
@@ -2732,8 +2738,8 @@
       "System default": [
         "Domyślny systemu"
       ],
-      "Theme default": [
-        "Domyślny motyw"
+      "Theme font": [
+        "Czcionka"
       ]
     },
     "Font size option": {
@@ -3319,6 +3325,9 @@
       "Are you sure you want to discard your changes?": [
         "Czy na pewno chcesz odrzucić wprowadzone zmiany?"
       ],
+      "Are you sure you want to discard your import?": [
+        "Czy na pewno chcesz odrzucić swój import?"
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Czy na pewno chcesz opróżnić Kosz i trwale usunąć wszystkie elementy?"
       ],
@@ -3519,6 +3528,9 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Wpisz dane logowania do konta e-mail, z którego chcesz zaimportować dane."
+      ],
+      "Enter the device name to confirm removal.": [
+        "Wpisz nazwę urządzenia, aby potwierdzić jego usunięcie."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Wpisz kod weryfikacyjny wysłany do ${ destinationText }."
@@ -3832,6 +3844,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Pamiętaj, że w zależności od rozmiaru książki adresowej, ten proces może zająć trochę czasu."
       ],
+      "Please provide a name and an email address for creating a group.": [
+        "Wpisz nazwę i adres e-mail, aby utworzyć grupę."
+      ],
       "Please select the folders you would like to import:": [
         "Wybierz foldery, które chcesz zaimportować:"
       ],
@@ -3961,6 +3976,9 @@
       "Something went wrong, please try again later.": [
         "Coś poszło nie tak. Spróbuj ponownie później."
       ],
+      "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
+        "Subskrypcja wkrótce się zakończy. Reaktywuj ją do ${ byDate }, aby zachować bonusy planu ${ planName }. ${ reactivateLink }"
+      ],
       "support team": [
         "pomocą techniczną"
       ],
@@ -4030,8 +4048,8 @@
         "Spowoduje to usunięcie linków i dostępu do folderów dla każdego, kto posiada link.",
         "Spowoduje to usunięcie linków i dostępu do folderów dla każdego, kto posiada link."
       ],
-      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected.": [
-        "Spowoduje to usunięcie zsynchronizowanego urządzenia ${ deviceName } z ${ DRIVE_APP_NAME }. Lokalne pliki na urządzeniu nie zostaną utracone."
+      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
+        "Spowoduje to usunięcie zsynchronizowanego urządzenia ${ deviceName } z ${ DRIVE_APP_NAME } i zatrzymanie synchronizacji folderów."
       ],
       "This will replace the existing file with the folder": [
         "Spowoduje to zastąpienie obecnego pliku folderem"
@@ -4242,9 +4260,6 @@
       ],
       "Your files will be encrypted and then saved.": [
         "Twoje pliki przed zapisaniem zostaną zaszyfrowane."
-      ],
-      "Your import will not be processed.": [
-        "Twój import nie zostanie przetworzony."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Twoje dane logowania, po ukończeniu importu, zostaną usunięte."
@@ -4817,6 +4832,9 @@
       ]
     },
     "Link": {
+      "${ DRIVE_APP_NAME } Windows app": [
+        "Aplikacja ${ DRIVE_APP_NAME } na Windowsa"
+      ],
       "clearing your browser cache": [
         "wyczyszczenie pamięci podręcznej przeglądarki"
       ],
@@ -4831,6 +4849,9 @@
       ],
       "Request an invite": [
         "Poproś o zaproszenie"
+      ],
+      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
+        "Synchronizuj pliki oraz foldery między urządzeniem i ${ DRIVE_APP_NAME }."
       ],
       "Shared": [
         "Udostępnione"
@@ -4964,7 +4985,7 @@
         "Niestandardowe domeny"
       ],
       "Hide-my-email aliases": [
-        "Aliasy Hide-my-email"
+        "Aliasy hide-my-email"
       ],
       "Schedule messages at any time": [
         "Zaplanuj wiadomości w dowolnym momencie"
@@ -5298,9 +5319,6 @@
       "Set up your organization": [
         "Skonfiguruj organizację"
       ],
-      "Set up your organization testing": [
-        "Skonfiguruj organizację"
-      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Otwórz menu aplikacji w lewym górnym rogu, aby uzyskać dostęp do wszystkich usług ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i ${ DRIVE_SHORT_APP_NAME }."
       ]
@@ -5566,10 +5584,10 @@
     },
     "specialoffer: Deal": {
       "${ n } month FREE": [
-        "${ n } miesiąc BEZPŁATNIE",
-        "${ n } miesiące BEZPŁATNIE",
-        "${ n } miesięcy BEZPŁATNIE",
-        "${ n } miesięcy BEZPŁATNIE"
+        "${ n } miesiąc ZA DARMO",
+        "${ n } miesiące ZA DARMO",
+        "${ n } miesięcy ZA DARMO",
+        "${ n } miesięcy ZA DARMO"
       ]
     },
     "specialoffer: Deal details": {
@@ -5748,13 +5766,13 @@
         "Uzyskaj dostęp z dowolnego miejsca do treści w usługach streamingowych, takich jak Netflix, Disney+ i Prime Video."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Wszystkie nasze usługi premium z najwyższymi limitami: 100 adresów e-mail, obsługa 10 niestandardowych domen, nieograniczona liczba aliasów Hide-my-email, udostępnianie kalendarza, szyfrowane przechowywanie oraz udostępnianie plików i wiele więcej."
+        "Wszystkie nasze usługi premium z najwyższymi limitami: 100 adresów e-mail, obsługa 10 niestandardowych domen, nieograniczona liczba aliasów hide-my-email, udostępnianie kalendarza, szyfrowane przechowywanie, udostępnianie plików i wiele więcej."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Zawiera obsługę 1 niestandardowej domeny, 10 adresów e-mail, 10 aliasów Hide-my-email, udostępnianie kalendarza i wiele więcej."
+        "Zawiera obsługę 1 niestandardowej domeny, 10 adresów e-mail, 10 aliasów hide-my-email, udostępnianie kalendarza i wiele więcej."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Zawiera obsługę 3 niestandardowych domen, 15 adresów e-mail, nieograniczoną liczbę aliasów Hide-my-email, udostępnianie kalendarza i wiele więcej."
+        "Zawiera obsługę 3 niestandardowych domen, 15 adresów e-mail, nieograniczoną liczbę aliasów hide-my-email, udostępnianie kalendarza i wiele więcej."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Idealne rozwiązanie dla rodzin lub małych zespołów, każda osoba może mieć własną skrzynkę odbiorczą i aliasy. Wymaga niestandardowej domeny."
@@ -6610,10 +6628,10 @@
         "Proces importowania rozpocznie się od najnowszych wiadomości."
       ],
       "The selected theme will be active when your system is set to \"dark mode\"": [
-        "Wybrany motyw będzie aktywny, gdy w systemie jest ustawiony ciemny motyw"
+        "Wybrany motyw będzie aktywny, kiedy w systemie będzie ustawiony ciemny motyw"
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
-        "Wybrany motyw będzie aktywny, gdy w systemie jest ustawiony jasny motyw"
+        "Wybrany motyw będzie aktywny, kiedy w systemie będzie ustawiony jasny motyw"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Prześlij klucz publiczny, aby włączyć wysyłanie wiadomości zaszyfrowanych end-to-end dla tego adresu e-mail"
@@ -6673,9 +6691,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } prześle możliwie jak najwięcej danych, zaczynając od najnowszych wiadomości."
-      ],
-      "Are you sure you want to discard your import?": [
-        "Czy na pewno chcesz odrzucić swój import?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Czy na pewno chcesz trwale usunąć grupę kontaktów?",

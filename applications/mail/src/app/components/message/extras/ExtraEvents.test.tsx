@@ -1,4 +1,4 @@
-import { waitFor } from '@testing-library/dom';
+import { waitFor } from '@testing-library/react';
 import { screen, waitForElementToBeRemoved } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -102,6 +102,7 @@ const dummyCalendar = {
             Display: CALENDAR_DISPLAY.HIDDEN,
             Name: dummyCalendarName,
             Description: '',
+            Priority: 1,
         },
     ],
 };
@@ -904,6 +905,7 @@ END:VCALENDAR`;
                         Display: CALENDAR_DISPLAY.HIDDEN,
                         Name: dummyCalendarName,
                         Description: '',
+                        Priority: 1,
                     },
                 ],
             };
@@ -1048,7 +1050,7 @@ END:VCALENDAR`;
 
             userEvent.click(await waitFor(() => screen.getByTitle(`Yes, I'll attend`)));
 
-            await waitForElementToBeRemoved(() => screen.getByText(/Loading/));
+            await waitForElementToBeRemoved(() => screen.queryByText(/Loading/));
 
             expect(screen.queryByTestId('ics-widget-summary')).not.toBeInTheDocument();
         });

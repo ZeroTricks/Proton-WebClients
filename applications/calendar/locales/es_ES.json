@@ -91,7 +91,7 @@
         "Chatea con nosotros"
       ],
       "Check import progress": [
-        "Comprobar el progreso de la importación"
+        "Verificar el progreso de la importación"
       ],
       "Choose a file or drag it here": [
         "Elige un archivo o arrástralo aquí"
@@ -141,6 +141,9 @@
       "Continue with Google": [
         "Continuar con Google"
       ],
+      "Copy email address": [
+        "Copiar la dirección de correo"
+      ],
       "Copy email to clipboard": [
         "Copiar correo al portapapeles"
       ],
@@ -158,6 +161,9 @@
       ],
       "Create event": [
         "Crear evento"
+      ],
+      "Create new contact": [
+        "Crear un contacto"
       ],
       "Customize": [
         "Personalizar"
@@ -567,7 +573,7 @@
         "Utilizar código de autenticación"
       ],
       "Use for sending": [
-        "Usar para enviar"
+        "Utilizar para el envío"
       ],
       "Use recovery code": [
         "Utilizar código de recuperación"
@@ -580,6 +586,9 @@
       ],
       "View": [
         "Ver"
+      ],
+      "View contact details": [
+        "Ver detalles del contacto"
       ],
       "View invoice": [
         "Ver factura"
@@ -728,7 +737,7 @@
         "Anual"
       ],
       "Monthly": [
-        "Mensualmente"
+        "Mensual"
       ],
       "Two-year": [
         "Bienal"
@@ -810,7 +819,7 @@
     },
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
-        "Continuar usando ${ MAIL_APP_NAME }."
+        "Continuar utilizando ${ MAIL_APP_NAME }."
       ]
     },
     "Calendar access select label": {
@@ -2156,6 +2165,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. También puedes comprobar nuestra ${ statusPageLink }"
+      ],
       "${ list } doesn't have a valid email address": [
         "${ list } no tiene una dirección de correo válida.",
         "Algunos contactos no tienen una dirección de correo válida: ${ list }."
@@ -2415,6 +2427,9 @@
       ],
       "Start time must be before end time": [
         "La hora inicial debe ser antes de la hora final."
+      ],
+      "status page": [
+        "página de estado"
       ],
       "The address might be misspelled": [
         "La dirección podría estar mal escrita."
@@ -2679,7 +2694,7 @@
         "Vuelve a cargar la página o inténtalo de nuevo más tarde."
       ],
       "Something went wrong": [
-        "Algo salió mal"
+        "Se ha producido un error."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "No hemos podido cargar esta página. Vuelve a cargar la página o verifica tu conexión a internet."
@@ -2889,7 +2904,7 @@
         "Tu cuenta tiene más direcciones de correo electrónico que las que tienes disponibles en este plan. ${ addressSettingsLink }"
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
-        "Tu cuenta está usando ${ usedSpace } de almacenamiento, por lo que sobrepasa el espacio que tienes asignado (${ inviteSpace }). Elimina algunos datos o pídeles al administrador del plan que aumente el espacio de almacenamiento."
+        "Tu cuenta está utilizando ${ usedSpace } de almacenamiento, por lo que sobrepasa el espacio que tienes asignado (${ inviteSpace }). Elimina algunos datos o pídeles al administrador del plan que aumente el espacio de almacenamiento."
       ],
       "Your current plan cannot join a Visionary or family plan.": [
         "Tu plan actual no puede formar parte de un plan Visionary o familiar."
@@ -3003,10 +3018,10 @@
     },
     "Font face option": {
       "System default": [
-        "Igual que el sistema"
+        "Valor por defecto"
       ],
-      "Theme default": [
-        "Tema por defecto"
+      "Theme font": [
+        "Fuente del tema"
       ]
     },
     "Font size option": {
@@ -3436,7 +3451,7 @@
         "Se enviará un correo electrónico de cancelación a los participantes del evento. ¿Quieres eliminar este evento?"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
-        "Un número telefónico solo puede usarse para verificar una cuenta de ${ BRAND_NAME }."
+        "Un número telefónico solo puede utilizarse para verificar una cuenta de ${ BRAND_NAME }."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "El acceso a la cuenta ha sido restringido debido a facturas impagadas. Contacta con tu administrador."
@@ -3472,6 +3487,9 @@
       ],
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Cualquier persona con este enlace puede ver si estás libre u ocupado en tu calendario. No pueden ver los detalles de eventos, como título, ubicación o participantes."
+      ],
+      "Are you sure you want to discard your import?": [
+        "¿Estás seguro de que quieres descartar tu importación?"
       ],
       "Attention required": [
         "Atención requerida"
@@ -3547,7 +3565,7 @@
         "Personalización anual"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "Personalza el aspecto y la sensación de las aplicaciones de ${ BRAND_NAME }"
+        "Personaliza el aspecto y la sensación de las aplicaciones de ${ BRAND_NAME }"
       ],
       "Daily": [
         "Diariamente"
@@ -3565,7 +3583,7 @@
         "Clave duplicada actualizada"
       ],
       "Each code can only be used once": [
-        "Cada código puede usarse solo una vez."
+        "Cada código puede utilizarse solo una vez."
       ],
       "Emails are automatically signed": [
         "Los correos electrónicos son firmados automáticamente."
@@ -3748,6 +3766,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Ten en cuenta que este proceso puede tardar algo de tiempo dependiendo del tamaño de tu libreta de direcciones."
       ],
+      "Please provide a name and an email address for creating a group.": [
+        "Indica un nombre y una dirección de correo para crear un grupo."
+      ],
       "Please remove the duplicates and try again.": [
         "Elimina los duplicados y vuelve a intentarlo."
       ],
@@ -3864,7 +3885,7 @@
         "Este enlace conduce a un sitio web que podría estar intentando robar tus datos, como contraseñas y datos de tarjetas de crédito."
       ],
       "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Este enlace puede ser un ataque homógrafo y el navegador Edge no puede abrirlo. Si estás seguro de que el enlace es legítimo, usa un navegador diferente para abrirlo."
+        "Este enlace puede ser un ataque homógrafo y el navegador Edge no puede abrirlo. Si estás seguro de que el enlace es legítimo, utiliza un navegador diferente para abrirlo."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Este enlace puede ser un ataque homógrafo. Verifica que este es el enlace que quieres visitar o no lo abras."
@@ -3882,7 +3903,7 @@
         "Para recuperar tus datos, necesitas volver a activar la clave de la cuenta utilizada en el momento en que se crearon los datos. Esto requerirá recordar la contraseña utilizada cuando se ha generado la clave."
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "Para usar la verificación de dirección, debes confiar en una o más de las claves públicas disponibles, incluyendo la clave que quieres utilizar para enviar. Esto impedirá que las claves de cifrado sean falsificadas."
+        "Para utilizar la verificación de dirección, debes confiar en una o más de las claves públicas disponibles, incluyendo la clave que quieres utilizar para enviar. Esto impedirá que las claves de cifrado sean falsificadas."
       ],
       "Update recurring event": [
         "Actualizar evento recurrente"
@@ -4002,7 +4023,7 @@
         "Tu cuenta ${ BRAND_NAME } está actualmente suspendida. Transcurridos 28 días, los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu almacenamiento serán bloqueados y no podrás cargar nuevos archivos. Para restablecer el servicio normal, tienes que pagar las facturas pendientes."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Tu cuenta ${ BRAND_NAME } está suspendida actualmente. Los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu almacenamiento están bloqueados y no puedes cargar nuevos archivos. Para continuar usando tu cuenta, tienes que pagar las facturas pendientes."
+        "Tu cuenta ${ BRAND_NAME } está suspendida actualmente. Los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu almacenamiento están bloqueados y no puedes cargar nuevos archivos. Para continuar utilizando tu cuenta, tienes que pagar las facturas pendientes."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Tu cuenta tiene al menos una factura atrasada. Tu acceso pronto será restringido. ${ payInvoiceLink }"
@@ -4030,9 +4051,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Tus archivos serán cifrados y después guardados."
-      ],
-      "Your import will not be processed.": [
-        "No se procesará tu importación."
       ],
       "Your login information will not be saved after the import is completed.": [
         "La información de inicio de sesión no se guardará una vez finalizada la importación."
@@ -4127,11 +4145,6 @@
       ],
       "Trusted": [
         "Confiable"
-      ]
-    },
-    "Key transparency details button": {
-      "Click here for more details.": [
-        "Haz clic aquí para obtener más información."
       ]
     },
     "Knowledge base link label": {
@@ -4505,7 +4518,7 @@
         "Para añadir un calendario, elimina uno existente."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Para añadir un calendario, elimina otro calendario o actualiza tu plan ${ BRAND_NAME } a un plan de pago ${ MAIL_SHORT_APP_NAME }."
+        "Para añadir un calendario, elimina otro calendario o mejora tu plan ${ BRAND_NAME } a un plan de pago ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
         "Has alcanzado el número máximo de calendarios disponibles en tu plan."
@@ -4537,7 +4550,7 @@
         "Solicitar una invitación"
       ],
       "Upgrade account": [
-        "Mejorar cuenta"
+        "Mejorar mi cuenta"
       ],
       "What’s this?": [
         "¿Qué es esto?"
@@ -4620,8 +4633,8 @@
       ]
     },
     "Modal action": {
-      "Close": [
-        "Cerrar"
+      "Cancel": [
+        "Cancelar"
       ],
       "Manage calendars": [
         "Gestionar calendarios"
@@ -4832,7 +4845,7 @@
     },
     "new_plans: Action": {
       "Upgrade now": [
-        "Actualizar"
+        "Actualizar el plan ahora"
       ]
     },
     "new_plans: action": {
@@ -4877,7 +4890,7 @@
         "El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
       ],
       "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Utiliza tu propia dirección de correo personalizada, p. ej. tú@tunombre.com"
+        "Utiliza tu propia dirección de correo personalizada, p. ej. tu@tunombre.com"
       ]
     },
     "new_plans: label": {
@@ -4904,6 +4917,9 @@
       ],
       "Calendar added": [
         "El calendario ha sido añadido."
+      ],
+      "Calendar updated": [
+        "Calendario actualizado"
       ]
     },
     "Notification in share calendar modal": {
@@ -5076,15 +5092,12 @@
         "Descubre todos los servicios de ${ BRAND_NAME }"
       ],
       "More theming options are available in your account Settings > Appearance.": [
-        "Más opciones de temas están disponibles en tu ajustes de cuenta en la sección Apariencia."
+        "Hay disponibles más opciones de temas en tus ajustes de cuenta, en la sección Apariencia."
       ],
       "Select a theme": [
         "Seleccionar un tema"
       ],
       "Set up your organization": [
-        "Configura tu organización"
-      ],
-      "Set up your organization testing": [
         "Configura tu organización"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
@@ -5178,10 +5191,10 @@
     },
     "PGP Key info": {
       "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        "${ emailAddress } marcó esta clave como comprometida. Esta clave no puede usarse ni para el cifrado ni para verificar la firma."
+        "${ emailAddress } marcó esta clave como comprometida. Esta clave no puede utilizarse ni para el cifrado ni para verificar la firma."
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
-        "${ emailAddress } marcó esta clave como obsoleta. Esta clave solo puede usarse para verificar la firma."
+        "${ emailAddress } marcó esta clave como obsoleta. Esta clave solo puede utilizarse para verificar la firma."
       ],
       "We recommend that you \"untrust\" this key.": [
         "Te recomendamos que consideres esta clave \"no fiable\"."
@@ -5382,8 +5395,8 @@
       ]
     },
     "Shared calendar; Info about calendar owner": {
-      "Created by ${ ownerName }": [
-        "Creado por ${ ownerName }"
+      "Shared by ${ ownerName }": [
+        "Compartido por ${ ownerName }"
       ]
     },
     "Side panel spotlight": {
@@ -5404,7 +5417,7 @@
         "Error al verificar la firma"
       ],
       "You have enabled address verification for ${ boldSenderEmail }. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${ boldSenderEmail } for a new invite.": [
-        "Has activado la verificación de dirección para ${ boldSenderEmail }. No hemos podido verificar la autenticidad de la invitación de este calendario. Esto puede ser debido a cambios en las claves de cifrado de este contacto. Revisa los ajustes de PGP avanzados o pide a ${ boldSenderEmail } una nueva invitación."
+        "Has activado la verificación de dirección para ${ boldSenderEmail }. No hemos podido verificar la autenticidad de la invitación de este calendario. Esto puede ser debido a cambios en las claves de cifrado de este contacto. Verifica los ajustes de PGP avanzados o pide a ${ boldSenderEmail } una nueva invitación."
       ]
     },
     "Signing preference for emails": {
@@ -5626,7 +5639,7 @@
         "Accede desde cualquier lugar al contenido de servicios de transmisión como Netflix, Disney+ o Prime Video."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Todos nuestros servicios premium al máximo: 100 direcciones de correo electrónico, compatibilidad con 10 dominios personalizados, alias ilimitados de Hide-my-email, posibilidad de compartir calendarios y archivos cifrados, almacenamiento cifrado en la nube, etc."
+        "Todos nuestros servicios premium: 100 direcciones de correo electrónico, compatibilidad con 10 dominios personalizados, alias ilimitados de Hide-my-email, posibilidad de compartir calendarios y archivos cifrados, almacenamiento cifrado en la nube, etc."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Incluye compatibilidad con 1 dominio de correo electrónico personalizado, 10 direcciones de correo electrónico, 10 alias de Hide-my-email, posibilidad de compartir calendario, etc."
@@ -5666,7 +5679,7 @@
         "Notas de la versión"
       ],
       "Upgrade storage": [
-        "Aumentar almacenamiento"
+        "Aumentar el almacenamiento"
       ],
       "Your current storage:": [
         "Tu almacenamiento actual:"
@@ -5677,25 +5690,12 @@
         "URL del calendario"
       ],
       "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Other calendars.\n${ kbLink }": [
-        "Para suscribirte a un calendario externo o público y sus actualizaciones, introduce la URL. Se añadirá una versión de solo lectura del calendario a t us otros calendarios.\n${ kbLink }"
+        "Para suscribirte a un calendario externo o público y sus actualizaciones, introduce su URL. Se añadirá una versión de solo lectura del calendario a tus otros calendarios.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
         "Aprende a obtener un enlace de calendario privado."
-      ]
-    },
-    "Subscribed calendar extension warning": {
-      "By using this link, Google will make the calendar you are subscribing to public": [
-        "Al utilizar este enlace, Google hará público el calendario al que te estás suscribiendo."
-      ],
-      "This link might be wrong": [
-        "Este enlace puede ser incorrecto."
-      ]
-    },
-    "Subscribed calendar URL length warning": {
-      "URL is too long": [
-        "La URL es demasiado larga."
       ]
     },
     "Success": {
@@ -6058,7 +6058,7 @@
         "Alarma del calendario"
       ],
       "Cannot add more addresses": [
-        "No se pueden añadir más direcciones."
+        "No se pueden añadir más direcciones"
       ],
       "Change my answer": [
         "Cambiar mi respuesta"
@@ -6147,7 +6147,7 @@
         "Direcciones de correo electrónico"
       ],
       "Email settings": [
-        "Configuración del correo electrónico"
+        "Ajustes del correo"
       ],
       "Encrypted event": [
         "Evento cifrado"
@@ -6180,8 +6180,8 @@
         "Verificación humana"
       ],
       "Import as simple event?": [
-        "¿Importar como evento simple?",
-        "¿Importar como eventos simples?"
+        "¿Importar como evento sin detalles?",
+        "¿Importar como eventos sin detalles?"
       ],
       "Import contacts": [
         "Importar contactos"
@@ -6349,7 +6349,7 @@
         "Desbloquear los grupos de contactos"
       ],
       "Update event": [
-        "Actualizar evento"
+        "Actualizar el evento"
       ],
       "Update recurring event": [
         "Actualizar evento recurrente"
@@ -6392,7 +6392,7 @@
     },
     "Title; calendar sharing pop-up": {
       "Planning just got easier!": [
-        "¡La planificación ahora es más fácil!"
+        "¡Planificar es ahora más fácil!"
       ]
     },
     "Title; create calendar modal": {
@@ -6519,9 +6519,6 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } transferirá tantos datos como sea posible, comenzando con tus mensajes más recientes."
       ],
-      "Are you sure you want to discard your import?": [
-        "¿Estás seguro de que quieres descartar tu importación?"
-      ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "¿Estás seguro de que quieres eliminar permanentemente ${ count } grupo de contactos?",
         "¿Estás seguro de que quieres eliminar permanentemente ${ count } grupos de contactos?"
@@ -6611,8 +6608,8 @@
         "Cada ${ interval } semanas todos los días"
       ],
       "Every ${ interval } week on all days, ${ timesString }": [
-        "Cada semana todos los días, ${ timesString } ${ interval }",
-        "Cada ${ interval } semanas todos los días a las ${ timesString }"
+        "Todos los días cada ${ interval } semana, ${ timesString }",
+        "Todos los días cada ${ interval } semanas, ${ timesString }"
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
         "Cada semana todos los días, ${ untilString } ${ interval }",
@@ -6635,8 +6632,8 @@
         "Cada ${ interval } semanas los lunes"
       ],
       "Every ${ interval } week on Monday, ${ timesString }": [
-        "Cada semana los lunes a las ${ timesString } ${ interval }",
-        "Cada ${ interval } semanas los lunes a las ${ timesString }"
+        "Los lunes de cada ${ interval } semana, a las ${ timesString }",
+        "Los lunes cada ${ interval } semanas, a las ${ timesString }"
       ],
       "Every ${ interval } week on Monday, ${ untilString }": [
         "Cada semana los lunes, ${ untilString } ${ interval }",
@@ -6659,8 +6656,8 @@
         "Cada ${ interval } semanas los domingos"
       ],
       "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Cada semana los domingos a las ${ timesString } ${ interval }",
-        "Cada ${ interval } semanas los domingos a las ${ timesString }"
+        "Los domingos de cada ${ interval } semana, a las ${ timesString }",
+        "Los domingos cada ${ interval } semanas, a las ${ timesString }"
       ],
       "Every ${ interval } week on Sunday, ${ untilString }": [
         "Cada semana los domingos, ${ untilString } ${ interval }",

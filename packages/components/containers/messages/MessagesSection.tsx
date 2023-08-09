@@ -2,13 +2,14 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useLoading } from '@proton/hooks';
 import { updateSpamAction, updateStickyLabels, updateViewMode } from '@proton/shared/lib/api/mailSettings';
 import { SHOW_IMAGES, STICKY_LABELS, VIEW_MODE } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { SpamAction } from '@proton/shared/lib/interfaces';
 
 import { Info } from '../../components';
-import { useApi, useEventManager, useLoading, useMailSettings, useNotifications } from '../../hooks';
+import { useApi, useEventManager, useMailSettings, useNotifications } from '../../hooks';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
@@ -17,7 +18,6 @@ import ViewModeToggle from '../layouts/ViewModeToggle';
 import AutoDeleteSetting from './AutoDeleteSetting';
 import EmbeddedToggle from './EmbeddedToggle';
 import RequestLinkConfirmationToggle from './RequestLinkConfirmationToggle';
-import SenderImagesToggle from './SenderImagesToggle';
 import ShowMovedToggle from './ShowMovedToggle';
 import SpamActionSelect from './SpamActionSelect';
 
@@ -135,21 +135,6 @@ const MessagesSection = () => {
                         onToggle={(value) => withLoadingViewMode(handleChangeViewMode(value))}
                         data-testid="appearance:conversation-group-toggle"
                     />
-                </SettingsLayoutRight>
-            </SettingsLayout>
-
-            <SettingsLayout>
-                <SettingsLayoutLeft>
-                    <label htmlFor="senderImagesToggle" className="text-semibold">
-                        <span className="mr-2">{c('Label').t`Show sender images`}</span>
-                        <Info
-                            title={c('Tooltip')
-                                .t`Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.`}
-                        />
-                    </label>
-                </SettingsLayoutLeft>
-                <SettingsLayoutRight className="pt-2">
-                    <SenderImagesToggle className="mr-4" id="senderImagesToggle" />
                 </SettingsLayoutRight>
             </SettingsLayout>
 

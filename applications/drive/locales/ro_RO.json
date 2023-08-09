@@ -1756,7 +1756,7 @@
         "Regatul Unit"
       ],
       "United States": [
-        "Statele Unite"
+        "SUA"
       ],
       "United States Minor Outlying Islands": [
         "Insulele Minore Îndepărtate ale Statelor Unite"
@@ -1942,6 +1942,9 @@
     "Error": {
       "\"${ name }\" already exists": [
         "„${ name }” există deja."
+      ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Puteți verifica situația și pe ${ statusPageLink }."
       ],
       "A group with this name already exists": [
         "Un grup cu acest nume există deja"
@@ -2146,6 +2149,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ceva nu a funcționat bine, ${ refresh } pagina pentru a continua. Dacă mai vedeți acest mesaj de eroare contactați ${ supportTeam }."
+      ],
+      "status page": [
+        "pagina de stare"
       ],
       "The email addresses do not match": [
         "Adresele de e-mail nu se potrivesc."
@@ -2717,8 +2723,8 @@
       "System default": [
         "Implicit din sistem"
       ],
-      "Theme default": [
-        "Temă implicită"
+      "Theme font": [
+        "Font temă"
       ]
     },
     "Font size option": {
@@ -3469,6 +3475,9 @@
       "Enter the credentials of the email account you want to import from.": [
         "Introduceți datele de conectare a contului de e-mail din care doriți să importați."
       ],
+      "Enter the device name to confirm removal.": [
+        "Introduceți numele dispozitivului pentru a confirma ștergerea."
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduceți codul de verificare care a fost trimis la ${ destinationText }."
       ],
@@ -3778,6 +3787,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Rețineți că acest proces poate dura ceva timp, în funcție de dimensiunea agendei de contacte."
       ],
+      "Please provide a name and an email address for creating a group.": [
+        "Furnizați un nume și o adresă de e-mail pentru a crea un grup."
+      ],
       "Please select the folders you would like to import:": [
         "Selectați folderele pe care doriți să le importați:"
       ],
@@ -3977,8 +3989,8 @@
         "Această operație va șterge și elimina accesul la fișiere sau foldere pentru oricine are legătura.",
         "Această operație va șterge și elimina accesul la fișiere sau foldere pentru oricine are legătura."
       ],
-      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected.": [
-        "Acest lucru va elimina din ${ DRIVE_APP_NAME } dispozitivul sincronizat ${ deviceName }. Fișierele locale de pe dispozitiv nu vor fi afectate."
+      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
+        "Aceasta va elimina dispozitivul sincronizat ${ deviceName } din ${ DRIVE_APP_NAME } și va opri sincronizarea folderelor pe care le-ați adăugat la secțiunea „Calculatoare”."
       ],
       "This will replace the existing file with the folder": [
         "Aceasta va înlocui fișierul existent cu folderul."
@@ -4101,7 +4113,7 @@
         "va fi restaurat de la versiunea din ${ formattedRevisionDate }. Toate celelalte versiuni vor fi salvate în continuare."
       ],
       "With ${ DRIVE_APP_NAME }, your data is protected with end-to-end encryption. Only you can decrypt it.": [
-        "Cu ${ DRIVE_APP_NAME }, datele vă sunt protejate prin criptare la ambele capete. Numai dvs. le puteți decripta."
+        "Cu ${ DRIVE_APP_NAME }, datele vă sunt protejate prin criptare în ambele sensuri. Numai dvs. le puteți decripta."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Doriți să primiți un cod nou de verificare sau să folosiți o metodă alternativă de verificare?"
@@ -4189,9 +4201,6 @@
       ],
       "Your files will be encrypted and then saved.": [
         "Fișierele vor fi criptate și apoi salvate."
-      ],
-      "Your import will not be processed.": [
-        "Importarea nu va fi procesată."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Informațiile de conectare nu vor fi salvate după terminarea importării."
@@ -4761,6 +4770,9 @@
       ]
     },
     "Link": {
+      "${ DRIVE_APP_NAME } Windows app": [
+        "Aplicația Windows ${ DRIVE_APP_NAME }"
+      ],
       "clearing your browser cache": [
         "golind bufferul navigatorului"
       ],
@@ -4775,6 +4787,9 @@
       ],
       "Request an invite": [
         "Solicitați o invitație"
+      ],
+      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
+        "Sincronizați fără întreruperi fișierele și folderele dintre calculatorul personal și ${ DRIVE_APP_NAME }"
       ],
       "Shared": [
         "Partajat"
@@ -5218,9 +5233,6 @@
       "Set up your organization": [
         "Setați organizația"
       ],
-      "Set up your organization testing": [
-        "Setare testare pentru organizație"
-      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Folosiți meniul de selectare al aplicațiilor din stânga sus pentru a accesa toate serviciile ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } și ${ DRIVE_SHORT_APP_NAME }."
       ]
@@ -5313,7 +5325,7 @@
         "Nume"
       ],
       "Name or email address": [
-        "Numele de utilizator sau adresa de e-mail"
+        "Nume utilizator / adresa de e-mail"
       ],
       "New name": [
         "Nume nou"
@@ -5772,6 +5784,70 @@
         "Mesajul a fost trimis"
       ]
     },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "Un an"
+      ],
+      "2 years": [
+        "2 ani"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "Drive premium"
+      ],
+      "Premium Mail and Calendar": [
+        "Mail Premium și Calendar"
+      ],
+      "Premium Password Manager": [
+        "Gestionare parole premium"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Stocați-vă parolele și completați-le automat pe paginile web. Include parole nelimitate, completare automată, generator de parole și multe altele."
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Manager de parole"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Creați detalii de conectare sigure pe toate dispozitivele. Include aliasuri nelimitate, 20 de seifuri, integrare autentificare cu doi factori, autocompletare date card de credit și multe altele."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Include 2950+ servere în peste 65 de țări, conectați până la 10 dispozitive, accesați servicii de transmisii în flux la nivel mondial, programe malițioase, blocare de reclame și multe altele."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Include suport pentru un domeniu de e-mail personal, 10 adrese de e-mail, 10 aliasuri hide-my-email, partajare calendar și altele."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Protejați-vă fișierele cu stocarea criptată în cloud. Include sincronizare automată, partajare criptată a fișierelor și multe altele."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "* Abonamentul se va reînnoi automat la aceeași sumă la sfârșitul ciclului de facturare."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Reducerile se bazează pe prețurile lunare standard. Această ofertă este disponibilă doar pentru abonații pentru prima dată."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Pentru o perioadă limitată de timp, obțineți cel mai bun ${ BRAND_NAME } disponibil cu o reducere exclusivă."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Sărbătorim aniversarea de nouă ani a finanțării noastre de la public!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "Reducere aniversară ${ BRAND_NAME }"
+      ]
+    },
     "Table header": {
       "Action": [
         "Acțiune"
@@ -5878,7 +5954,7 @@
         "Au eșuat ${ numberOfFailedTransfer.total } de descărcări."
       ],
       "${ numberOfFailedTransfer.total } failed transfer": [
-        "Un transfer a eșuat",
+        "A eșuat ${ numberOfFailedTransfer.total } transfer.",
         "Au eșuat ${ numberOfFailedTransfer.total } transferuri.",
         "Au eșuat ${ numberOfFailedTransfer.total } de transferuri."
       ],
@@ -6497,11 +6573,8 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } va transfera cât mai multe date posibil, începând cu cele mai recente mesaje."
       ],
-      "Are you sure you want to discard your import?": [
-        "Sigur doriți să anulați importarea?"
-      ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
-        "Sigur doriți să ștergeți definitiv un grup de contacte?",
+        "Sigur doriți să ștergeți definitiv ${ count } grup de contacte?",
         "Sigur doriți să ștergeți definitiv ${ count } grupuri de contacte?",
         "Sigur doriți să ștergeți definitiv ${ count } de grupuri de contacte?"
       ],

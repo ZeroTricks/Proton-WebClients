@@ -299,7 +299,7 @@
         "取得連結"
       ],
       "Get started": [
-        "入門指南"
+        "開始使用"
       ],
       "Get verification code": [
         "取得驗證碼"
@@ -1937,6 +1937,9 @@
       "\"${ name }\" already exists": [
         "「${ name }」已存在"
       ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }。您也可查看我們的${ statusPageLink }"
+      ],
       "A group with this name already exists": [
         "此名稱的群組已存在"
       ],
@@ -2128,6 +2131,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "發生錯誤，請${ refresh }以繼續。如果您仍看到此錯誤訊息，請聯絡我們的${ supportTeam }。"
+      ],
+      "status page": [
+        "狀態頁面"
       ],
       "The email addresses do not match": [
         "電子郵件位址不相符"
@@ -2687,8 +2693,8 @@
       "System default": [
         "系統預設值"
       ],
-      "Theme default": [
-        "佈景主題預設值"
+      "Theme font": [
+        "選擇布景主題字體"
       ]
     },
     "Font size option": {
@@ -3166,6 +3172,9 @@
       "Are you sure you want to discard your changes?": [
         "您確定要捨棄所作的變更嗎？"
       ],
+      "Are you sure you want to discard your import?": [
+        "您確定要捨棄您的匯入嗎？"
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "您確定要清空垃圾桶並永久刪除當中所有項目嗎？"
       ],
@@ -3290,7 +3299,7 @@
         "正在解密檔案"
       ],
       "Delete locked drives": [
-        "刪除已鎖定的硬碟"
+        "刪除鎖定的硬碟"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "數碼簽署已通過驗證。此檔案由 ${ emailAddress } 安全上載。"
@@ -3360,6 +3369,9 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "請輸入您想匯入的電郵帳號所使用的憑證。"
+      ],
+      "Enter the device name to confirm removal.": [
+        "輸入裝置名稱以確認移除。"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "驗證碼已傳送至 ${ destinationText }，請在下方輸入。"
@@ -3664,6 +3676,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "請注意：此過程或需時，並會視乎您的通訊錄大小而定。"
       ],
+      "Please provide a name and an email address for creating a group.": [
+        "請提供一個名子和電子郵件地址以創建群組。"
+      ],
       "Please select the folders you would like to import:": [
         "請選擇您想匯入的資料夾："
       ],
@@ -3859,8 +3874,8 @@
       "This will delete the links and remove access to your files or folders for anyone with the links.": [
         "此操作將會刪除連結，並且阻止其他嘗試使用此連結存取檔案或資料夾的人。"
       ],
-      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected.": [
-        "這將從 ${ DRIVE_APP_NAME } 中刪除同步的裝置 ${ deviceName }。裝置上的本機檔案不會受影響。"
+      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
+        "這將會從 ${ DRIVE_APP_NAME } 移除裝置 ${ deviceName }，並停止同步您新增到「我的電腦」的資料夾。"
       ],
       "This will replace the existing file with the folder": [
         "這將會使用資料夾取代既有檔案"
@@ -4072,9 +4087,6 @@
       "Your files will be encrypted and then saved.": [
         "您的檔案將經加密後儲存。"
       ],
-      "Your import will not be processed.": [
-        "將不會處理您的匯入。"
-      ],
       "Your login information will not be saved after the import is completed.": [
         "匯入完成後不會保存您的登入資訊。"
       ],
@@ -4189,7 +4201,7 @@
         "音訊檔"
       ],
       "Authenticator app": [
-        "驗證 APP"
+        "驗證 app"
       ],
       "Automatically save contacts": [
         "自動儲存聯絡人"
@@ -4637,6 +4649,9 @@
       ]
     },
     "Link": {
+      "${ DRIVE_APP_NAME } Windows app": [
+        "${ DRIVE_APP_NAME } Windows 應用程式"
+      ],
       "clearing your browser cache": [
         "清除瀏覽器快取"
       ],
@@ -4651,6 +4666,9 @@
       ],
       "Request an invite": [
         "請求邀請"
+      ],
+      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
+        "完美無縫地同步檔案和資料夾，可真正實現在您的電腦與 ${ DRIVE_APP_NAME }。"
       ],
       "Shared": [
         "已分享"
@@ -4769,7 +4787,7 @@
         "自訂電郵網域"
       ],
       "Hide-my-email aliases": [
-        "隱藏我的郵件別名"
+        "Hide-my-email 別名"
       ],
       "Schedule messages at any time": [
         "在任意時間排程訊息"
@@ -5044,9 +5062,6 @@
         "選擇佈景主題"
       ],
       "Set up your organization": [
-        "設定您的組織"
-      ],
-      "Set up your organization testing": [
         "設定您的組織"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
@@ -5573,6 +5588,70 @@
         "意見反饋已送出"
       ]
     },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "1 年"
+      ],
+      "2 years": [
+        "2年"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "付費版雲端硬碟"
+      ],
+      "Premium Mail and Calendar": [
+        "付費版信件和行事曆"
+      ],
+      "Premium Password Manager": [
+        "付費版密碼管理器"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "安全處存密碼和自動填入網站。包含無限密碼、自動填入、密碼生成、和更多。"
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "密碼管理員"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "於您全部的裝置創建安全登入的詳細資料。包含無限別名、20個保管庫、組合雙重驗證、信用卡自動填入及更多。"
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "包含於65+國家的2950+伺服器，連接最多10臺裝置，存取全球影音串流服務和惡意軟體、廣告攔截程式，及更多。"
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "包含對 1 個自訂電子郵件網域、10 組電子郵件位址、10 組 hide-my-email 別名、行事曆分享與更多功能的支援。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "透過加密的雲端儲存保護檔案。包含版本紀錄、加密的檔案共享、及更多。"
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "*您的訂閱將自動續約採用起始繳款單週期的折扣。"
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "折扣於每月基本價格。此優惠只提供給第一次訂閱者。"
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "於限定時間，取得最佳的${ BRAND_NAME }折扣。"
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "我們正在慶祝九年群眾募資!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "${ BRAND_NAME }年度銷售"
+      ]
+    },
     "Table header": {
       "Action": [
         "動作"
@@ -5669,7 +5748,7 @@
         "${ numberOfFailedTransfer.total } 個檔案上載失敗"
       ],
       "(active)": [
-        "（啟用）"
+        "(啟用)"
       ],
       "Account suspended": [
         "帳號已被停用"
@@ -6261,9 +6340,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } 會從最近期的郵件開始，以最大量方式傳輸資料。"
-      ],
-      "Are you sure you want to discard your import?": [
-        "您確定要捨棄您的匯入嗎？"
       ],
       "Are you sure you want to permanently delete ${ count } contact groups?": [
         "您確定要永久刪除 ${ count } 個聯絡人群組嗎？"

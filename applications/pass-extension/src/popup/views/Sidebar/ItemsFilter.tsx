@@ -17,38 +17,42 @@ interface ItemsFilterProps {
 
 const DROPDOWN_SIZE: DropdownProps['size'] = { width: '11rem' };
 
-const optionsWithoutCount: { [key in ItemTypeFilter]: { label: string; icon: IconName } } = {
+const getOptionsWithoutCount = (): { [key in ItemTypeFilter]: { label: string; icon: IconName } } => ({
     '*': {
         label: c('Label').t`All`,
         icon: 'grid-2',
-    },
-    alias: {
-        label: c('Label').t`Aliases`,
-        icon: itemTypeToIconName.alias,
     },
     login: {
         label: c('Label').t`Logins`,
         icon: itemTypeToIconName.login,
     },
+    alias: {
+        label: c('Label').t`Aliases`,
+        icon: itemTypeToIconName.alias,
+    },
+    creditCard: {
+        label: c('Label').t`Cards`,
+        icon: itemTypeToIconName.creditCard,
+    },
     note: {
         label: c('Label').t`Notes`,
         icon: itemTypeToIconName.note,
     },
-};
+});
 
 export const ItemsFilter: VFC<ItemsFilterProps> = ({ value, onChange }) => {
     const { anchorRef, isOpen, close, toggle } = usePopperAnchor<HTMLButtonElement>();
-    const { matched } = useItems();
+    const { searched } = useItems();
 
     const options = useMemo(
         () =>
-            Object.entries(optionsWithoutCount).map(([type, { label, icon }]) => ({
+            Object.entries(getOptionsWithoutCount()).map(([type, { label, icon }]) => ({
                 type: type as ItemTypeFilter,
                 label,
                 icon,
-                count: type === '*' ? matched.length : matched.filter((item) => item.data.type === type).length,
+                count: type === '*' ? searched.length : searched.filter((item) => item.data.type === type).length,
             })),
-        [matched]
+        [searched]
     );
 
     const selectedOption = options.find(({ type }) => type === value)!;
@@ -56,8 +60,7 @@ export const ItemsFilter: VFC<ItemsFilterProps> = ({ value, onChange }) => {
     return (
         <>
             <DropdownButton
-                hasCaret
-                className="flex text-sm text-semibold"
+                className="flex text-sm text-semibold flex-item-fluid-auto flex-item-nogrow flex-item-noshrink"
                 onClick={toggle}
                 ref={anchorRef}
                 color="weak"

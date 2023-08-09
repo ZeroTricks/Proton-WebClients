@@ -16,7 +16,6 @@ import {
 import { getTotalBillingText } from '@proton/components/containers/payments/helper';
 import { getDefaultVerifyPayment } from '@proton/components/containers/payments/usePaymentToken';
 import { useConfig } from '@proton/components/hooks';
-import { WithLoading } from '@proton/components/hooks/useLoading';
 import useModals from '@proton/components/hooks/useModals';
 import {
     AmountAndCurrency,
@@ -26,6 +25,7 @@ import {
     TokenPayment,
     createPaymentToken,
 } from '@proton/components/payments/core';
+import { WithLoading } from '@proton/hooks/useLoading';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { getIsVPNApp } from '@proton/shared/lib/authentication/apps';
 import { APPS } from '@proton/shared/lib/constants';
@@ -59,7 +59,10 @@ interface Props {
     selectedPlanCard?: PlanCard;
     loadingPaymentDetails: boolean;
     loadingSignup: boolean;
-    onPay: (payment: 'signup-token' | PaypalPayment | TokenPayment | CardPayment | undefined) => Promise<void>;
+    onPay: (
+        payment: 'signup-token' | PaypalPayment | TokenPayment | CardPayment | undefined,
+        type: 'pp' | 'btc' | 'cc' | undefined
+    ) => Promise<void>;
     onValidate: () => boolean;
     withLoadingSignup: WithLoading;
     measure: Measure;
@@ -98,7 +101,7 @@ const AccountStepPayment = ({
             event,
             dimensions: {
                 type: type,
-                plan: options.plan?.Name as any,
+                plan: options.plan.Name as any,
                 cycle: `${options.cycle}`,
                 currency: options.currency,
             },
@@ -155,7 +158,7 @@ const AccountStepPayment = ({
             return onValidate() && validatePayment();
         },
         onPaypalPay({ Payment, type }) {
-            return withLoadingSignup(onPay(Payment)).catch(() => {
+            return withLoadingSignup(onPay(Payment, 'pp')).catch(() => {
                 measurePayError(type === PAYMENT_METHOD_TYPES.PAYPAL ? 'pay_pp' : 'pay_pp_no_cc');
             });
         },
@@ -207,7 +210,7 @@ const AccountStepPayment = ({
 
                         const run = async () => {
                             if (amountAndCurrency.Amount <= 0) {
-                                return onPay(undefined);
+                                return onPay(undefined, undefined);
                             }
 
                             if (!paymentParameters) {
@@ -220,7 +223,7 @@ const AccountStepPayment = ({
                                 normalApi,
                                 { amountAndCurrency }
                             );
-                            return onPay(data.Payment);
+                            return onPay(data.Payment, 'cc');
                         };
 
                         const type = amountAndCurrency.Amount <= 0 ? 'free' : 'pay_cc';
@@ -245,7 +248,7 @@ const AccountStepPayment = ({
                             method={method}
                             onBitcoinTokenValidated={(data) => {
                                 measurePaySubmit('pay_btc');
-                                return withLoadingSignup(onPay(data.Payment)).catch(() => {
+                                return withLoadingSignup(onPay(data.Payment, 'btc')).catch(() => {
                                     measurePayError('pay_btc');
                                 });
                             }}
@@ -276,7 +279,7 @@ const AccountStepPayment = ({
                     {(() => {
                         if (method === PAYMENT_METHOD_TYPES.PAYPAL && options.checkResult.AmountDue > 0) {
                             return (
-                                <div className="flex flex-column">
+                                <div className="flex flex-column gap-2">
                                     <StyledPayPalButton
                                         paypal={paypal}
                                         amount={options.checkResult.AmountDue}
@@ -287,8 +290,8 @@ const AccountStepPayment = ({
                                         shape="ghost"
                                         color="norm"
                                         paypal={paypalCredit}
+                                        disabled={loadingSignup}
                                         amount={options.checkResult.AmountDue}
-                                        className="mt-2"
                                     >
                                         {c('Link').t`Paypal without credit card`}
                                     </PayPalButton>
@@ -311,7 +314,7 @@ const AccountStepPayment = ({
                                     onClick={() => {
                                         measurePaySubmit('pay_btc');
                                         if (onValidate() && validatePayment()) {
-                                            withLoadingSignup(onPay('signup-token')).catch(() => {
+                                            withLoadingSignup(onPay('signup-token', undefined)).catch(() => {
                                                 measurePayError('pay_btc');
                                             });
                                         }

@@ -1,9 +1,10 @@
 import {
     KeyTransparencyError,
-    fetchAndVerifyLatestEpoch,
+    fetchLatestEpoch,
     fetchProof,
     ktSentryReport,
-    verifyProofOfAbscenceForAllRevision,
+    ktSentryReportError,
+    verifyProofOfAbsenceForAllRevision,
 } from '@proton/key-transparency/lib';
 import { Api, KeyMigrationKTVerifier, KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 
@@ -13,16 +14,14 @@ const createKeyMigrationKTVerifier = (ktActivation: KeyTransparencyActivation, a
             return;
         }
         try {
-            const epoch = await fetchAndVerifyLatestEpoch(api);
+            const epoch = await fetchLatestEpoch(api);
             const proof = await fetchProof(epoch.EpochID, email, 1, api);
-            await verifyProofOfAbscenceForAllRevision(proof, email, epoch.TreeHash);
+            await verifyProofOfAbsenceForAllRevision(proof, email, epoch.TreeHash);
         } catch (error: any) {
             if (error instanceof KeyTransparencyError) {
                 ktSentryReport('KT error during key migration', { error: error.message });
             } else {
-                const errorMessage = error instanceof Error ? error.message : 'unknown error';
-                const stack = error instanceof Error ? error.stack : undefined;
-                ktSentryReport(errorMessage, { context: 'KeyMigrationKTVerifier', stack });
+                ktSentryReportError(error, { context: 'KeyMigrationKTVerifier' });
             }
         }
     };

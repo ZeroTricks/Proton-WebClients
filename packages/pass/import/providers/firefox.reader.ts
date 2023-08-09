@@ -1,12 +1,9 @@
-import { c } from 'ttag';
-
 import type { ItemImportIntent } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
-import { uniqueId } from '@proton/pass/utils/string';
 import { msToEpoch } from '@proton/pass/utils/time/get-epoch';
 
 import { readCSV } from '../helpers/csv.reader';
-import { ImportReaderError } from '../helpers/reader.error';
+import { ImportProviderError } from '../helpers/error';
 import { getImportedVaultName, importLoginItem } from '../helpers/transformers';
 import type { ImportPayload } from '../types';
 import type { FirefoxItem } from './firefox.types';
@@ -33,9 +30,8 @@ export const readFirefoxData = async (data: string): Promise<ImportPayload> => {
         return {
             vaults: [
                 {
-                    type: 'new',
-                    vaultName: getImportedVaultName(),
-                    id: uniqueId(),
+                    name: getImportedVaultName(),
+                    shareId: null,
                     items: result.items
                         .filter((item) => item.url !== 'chrome://FirefoxAccounts')
                         .map(
@@ -57,7 +53,6 @@ export const readFirefoxData = async (data: string): Promise<ImportPayload> => {
         };
     } catch (e) {
         logger.warn('[Importer::Firefox]', e);
-        const errorDetail = e instanceof ImportReaderError ? e.message : '';
-        throw new Error(c('Error').t`Firefox export file could not be parsed. ${errorDetail}`);
+        throw new ImportProviderError('Firefox', e);
     }
 };

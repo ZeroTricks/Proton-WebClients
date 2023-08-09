@@ -1,4 +1,4 @@
-import { fireEvent, getByTitle, waitFor } from '@testing-library/dom';
+import { fireEvent, getByTitle, waitFor } from '@testing-library/react';
 import { act } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
@@ -16,6 +16,7 @@ import {
     addKeysToAddressKeysCache,
     clearAll,
     createAttachment,
+    createDocument,
     decryptSessionKey,
     generateKeys,
     getDropdown,
@@ -26,6 +27,7 @@ import {
     waitForNoNotification,
     waitForNotification,
 } from '../../../helpers/test/helper';
+import { store } from '../../../logic/store';
 import Composer from '../Composer';
 import { ID, prepareMessage, props, toAddress } from './Composer.test.helpers';
 
@@ -54,7 +56,7 @@ describe('Composer attachments', () => {
             address1Keys.publicKeys
         );
 
-        const resolve = addApiResolver('mail/v4/attachments');
+        const { resolve } = addApiResolver('mail/v4/attachments');
 
         updateSpy = jest.fn(({ data: { Message, AttachmentKeyPackets } }: any) => {
             Message.Attachments.forEach((Attachment: any) => {
@@ -73,15 +75,17 @@ describe('Composer attachments', () => {
 
         const message = prepareMessage({
             localID: ID,
-            data: { AddressID: address1.ID, MIMEType },
-            messageDocument: { plainText: 'test' },
+            data: { AddressID: address1.ID, MIMEType, Sender: { Address: address1.ID, Name: address1.Email } },
+            messageDocument: { plainText: 'test', document: createDocument('hello') },
         });
 
         addApiKeys(false, toAddress, []);
         addAddressToCache(address1);
         addAddressToCache(address2);
 
-        const result = await render(<Composer {...props} messageID={ID} />, false);
+        const composerID = Object.keys(store.getState().composers.composers)[0];
+
+        const result = await render(<Composer {...props} composerID={composerID} />, false);
 
         props.onClose.mockImplementation(result.unmount);
 
@@ -121,17 +125,18 @@ describe('Composer attachments', () => {
     });
 
     afterAll(async () => {
+        clearAll();
         await releaseCryptoProxy();
     });
 
     beforeEach(() => {
+        clearAll();
         jest.useFakeTimers();
         addKeysToAddressKeysCache(address1.ID, address1Keys);
         addKeysToAddressKeysCache(address2.ID, address2Keys);
     });
 
     afterEach(() => {
-        clearAll();
         jest.useRealTimers();
     });
 

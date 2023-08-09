@@ -2,8 +2,8 @@ import { ReactElement } from 'react';
 
 import { c } from 'ttag';
 
-import { useFeature } from '@proton/components/hooks';
-import { CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
+import { useConfig } from '@proton/components/hooks';
+import { APPS, CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import {
     Audience,
@@ -30,13 +30,15 @@ import {
     Tabs,
     VpnLogo,
 } from '../../../components';
-import { FeatureCode } from '../../features';
 import CurrencySelector from '../CurrencySelector';
 import CycleSelector from '../CycleSelector';
 import { getAllFeatures } from '../features';
-import { getShortPlan } from '../features/plan';
+import { ShortPlanLike, isShortPlanLike } from '../features/interface';
+import { getShortPlan, getVPNEnterprisePlan } from '../features/plan';
+import useVpnB2bPlansFeature from '../useVpnB2bPlansFeature';
 import PlanCard from './PlanCard';
-import PlanCardFeatures, { PlanCardFeaturesShort } from './PlanCardFeatures';
+import PlanCardFeatures, { PlanCardFeatureList, PlanCardFeaturesShort } from './PlanCardFeatures';
+import VpnEnterpriseAction from './helpers/VpnEnterpriseAction';
 
 import './PlanSelection.scss';
 
@@ -118,13 +120,10 @@ const PlanSelection = ({
     calendarSharingEnabled,
     filter,
 }: Props) => {
-    const featureContext = useFeature(FeatureCode.FamilyPlan);
-    if (featureContext.loading) {
-        return null;
-    }
-    const familyPlanAvailable = featureContext.feature?.Value;
-
+    const { APP_NAME } = useConfig();
+    const isVpnSettingsApp = APP_NAME === APPS.PROTONVPN_SETTINGS;
     const currentPlan = subscription ? subscription.Plans?.find(({ Type }) => Type === PLAN_TYPES.PLAN) : null;
+    const [showVpnB2bPlans, featureLoading] = useVpnB2bPlansFeature();
 
     const enabledProductB2CPlans = [PLANS.MAIL, PLANS.VPN, PLANS.DRIVE, PLANS.PASS_PLUS].filter(isTruthy);
     const enabledProductB2BPlans = [PLANS.MAIL_PRO /*, PLANS.DRIVE_PRO*/];
@@ -137,11 +136,31 @@ const PlanSelection = ({
 
     const FamilyPlans = [hasFreePlan ? FREE_PLAN : null, plansMap[PLANS.FAMILY]].filter(isTruthy);
 
-    const B2BPlans = [
-        hasFreePlan ? FREE_PLAN : null,
-        getPlanPanel(enabledProductB2BPlans, selectedProductPlans[Audience.B2B], plansMap) || plansMap[PLANS.MAIL_PRO],
-        plansMap[PLANS.BUNDLE_PRO],
-    ].filter(isTruthy);
+    let B2BPlans: (Plan | ShortPlanLike)[] = [];
+    /**
+     * The VPN B2B plans should be displayed only in the ProtonVPN Settings app (protonvpn.com).
+     */
+    if (isVpnSettingsApp && showVpnB2bPlans && !featureLoading) {
+        const vpnB2BPlans = [
+            plansMap[PLANS.VPN_PRO],
+            plansMap[PLANS.VPN_BUSINESS],
+            getVPNEnterprisePlan(vpnServers),
+        ].filter(isTruthy);
+        /**
+         * In case if the VPN B2B plans are not available, we should fallback to the usual set of plans.
+         * It can happens if backend doesn't return the VPN B2B plans.
+         */
+        if (vpnB2BPlans.length !== 0) {
+            B2BPlans = vpnB2BPlans;
+        }
+    } else {
+        B2BPlans = [
+            hasFreePlan ? FREE_PLAN : null,
+            getPlanPanel(enabledProductB2BPlans, selectedProductPlans[Audience.B2B], plansMap) ||
+                plansMap[PLANS.MAIL_PRO],
+            plansMap[PLANS.BUNDLE_PRO],
+        ].filter(isTruthy);
+    }
 
     const isSignupMode = mode === 'signup';
     const features = getAllFeatures(plansMap, vpnServers, calendarSharingEnabled);
@@ -153,7 +172,7 @@ const PlanSelection = ({
         const isFree = plan.ID === PLANS.FREE;
         const isCurrentPlan = isFree ? !currentPlan : currentPlan?.ID === plan.ID;
         const isRecommended = recommendedPlans.includes(plan.Name as PLANS);
-        const shortPlan = getShortPlan(plan.Name as PLANS, plansMap, vpnServers, {});
+        const shortPlan = getShortPlan(plan.Name as PLANS, plansMap, { vpnServers });
 
         if (!shortPlan) {
             return null;
@@ -175,6 +194,13 @@ const PlanSelection = ({
         if (price === undefined) {
             return null;
         }
+
+        const featuresElement =
+            mode === 'settings' || (audience === Audience.B2B && isVpnSettingsApp) ? (
+                <PlanCardFeaturesShort plan={shortPlan} icon />
+            ) : (
+                <PlanCardFeatures audience={audience} features={features} planName={plan.Name as PLANS} />
+            );
 
         return (
             <PlanCard
@@ -206,13 +232,7 @@ const PlanSelection = ({
                 cycle={cycle}
                 key={plan.ID}
                 price={price}
-                features={
-                    mode === 'settings' ? (
-                        <PlanCardFeaturesShort plan={shortPlan} icon />
-                    ) : (
-                        <PlanCardFeatures audience={audience} features={features} planName={plan.Name as PLANS} />
-                    )
-                }
+                features={featuresElement}
                 onSelect={(planName) => {
                     onChangePlanIDs(
                         switchPlan({
@@ -223,6 +243,30 @@ const PlanSelection = ({
                         })
                     );
                 }}
+            />
+        );
+    };
+
+    const renderShortPlanCard = (plan: ShortPlanLike) => {
+        return (
+            // this render contains some assumptions that are valid only because we currently have the only UI plan.
+            // If we get more later, then this code must be generalized. Examples: "Let's talk" price might be
+            // different, so is the actionElement.
+            <PlanCard
+                isCurrentPlan={false}
+                actionElement={<VpnEnterpriseAction />}
+                info={plan.description}
+                planName={plan.plan as any}
+                planTitle={plan.title}
+                recommended={false}
+                currency={currency}
+                cycle={cycle}
+                key={plan.plan}
+                price={
+                    // translator: displayed instead of price for VPN Enterprise plan. User should contact Sales first.
+                    c('Action').t`Let's talk`
+                }
+                features={<PlanCardFeatureList features={plan.features} icon />}
             />
         );
     };
@@ -241,20 +285,18 @@ const PlanSelection = ({
             ),
             audience: Audience.B2C,
         },
-        familyPlanAvailable
-            ? {
-                  title: c('Tab subscription modal').t`For families`,
-                  content: (
-                      <div
-                          className="plan-selection plan-selection--family mt-4"
-                          style={{ '--plan-selection-number': FamilyPlans.length }}
-                      >
-                          {FamilyPlans.map((plan) => renderPlanCard(plan, Audience.FAMILY))}
-                      </div>
-                  ),
-                  audience: Audience.FAMILY,
-              }
-            : null,
+        {
+            title: c('Tab subscription modal').t`For families`,
+            content: (
+                <div
+                    className="plan-selection plan-selection--family mt-4"
+                    style={{ '--plan-selection-number': FamilyPlans.length }}
+                >
+                    {FamilyPlans.map((plan) => renderPlanCard(plan, Audience.FAMILY))}
+                </div>
+            ),
+            audience: Audience.FAMILY,
+        },
         {
             title: c('Tab subscription modal').t`For businesses`,
             content: (
@@ -263,7 +305,13 @@ const PlanSelection = ({
                     style={{ '--plan-selection-number': B2BPlans.length }}
                     data-testid="b2b-plan"
                 >
-                    {B2BPlans.map((plan) => renderPlanCard(plan, Audience.B2B))}
+                    {B2BPlans.map((plan) => {
+                        if (isShortPlanLike(plan)) {
+                            return renderShortPlanCard(plan);
+                        } else {
+                            return renderPlanCard(plan, Audience.B2B);
+                        }
+                    })}
                 </div>
             ),
             audience: Audience.B2B,

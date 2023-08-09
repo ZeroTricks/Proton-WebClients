@@ -1,14 +1,15 @@
-import { addDays } from 'date-fns';
+import { useHistory } from 'react-router-dom';
 
 import { Button, ButtonLike } from '@proton/atoms';
 import { DropdownMenu, DropdownMenuButton, Icon, SimpleDropdown, useConfig, useForceRefresh } from '@proton/components';
-import { setCookie } from '@proton/shared/lib/helpers/cookies';
-import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 import { localeCode } from '@proton/shared/lib/i18n';
 import { getBrowserLocale, getClosestLocaleCode, getLanguageCode } from '@proton/shared/lib/i18n/helper';
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import clsx from '@proton/utils/clsx';
+
+import { getLocaleMapping } from '../locales';
+import useLocationWithoutLocale, { getLocalePathPrefix } from '../useLocationWithoutLocale';
 
 interface Props {
     className?: string;
@@ -18,23 +19,17 @@ interface Props {
     locales?: TtagLocaleMap;
 }
 
-const cookieDomain = `.${getSecondLevelDomain(window.location.hostname)}`;
-
 const LanguageSelect = ({ className, style, locales = {}, outlined, globe }: Props) => {
     const { LOCALES = {} } = useConfig();
     const forceRefresh = useForceRefresh();
+    const location = useLocationWithoutLocale();
+    const history = useHistory();
 
     const handleChange = async (newLocale: string) => {
         const localeCode = getClosestLocaleCode(newLocale, locales);
         await Promise.all([loadLocale(localeCode, locales), loadDateLocale(localeCode, getBrowserLocale())]);
-        setCookie({
-            cookieName: 'Locale',
-            cookieValue: localeCode,
-            expirationDate: addDays(new Date(), 30).toUTCString(),
-            cookieDomain,
-            path: '/',
-        });
         forceRefresh();
+        history.push(`${getLocalePathPrefix(getLocaleMapping(localeCode) || '')}${location.pathname}`);
     };
 
     const menu = (

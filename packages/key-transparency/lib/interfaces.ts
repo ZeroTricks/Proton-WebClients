@@ -74,7 +74,6 @@ export enum AddressAuditStatus {
 }
 
 export enum AddressAuditWarningReason {
-    NullSKL,
     UnverifiableHistory,
 }
 
@@ -95,11 +94,19 @@ export interface LocalStorageAuditResult {
     email: string;
     success: boolean;
     error?: KeyTransparencyError;
+    primaryKeyFingerprint?: string;
 }
 
 export interface SelfAuditResult {
     auditTime: number;
+    nextAuditTime: number;
     addressAuditResults: AddressAuditResult[];
     localStorageAuditResultsOwnAddress: LocalStorageAuditResult[];
     localStorageAuditResultsOtherAddress: LocalStorageAuditResult[];
+    error?: SelfAuditError;
+}
+
+export interface SelfAuditError {
+    failedTrials: number;
+    tooManyRetries: boolean;
 }

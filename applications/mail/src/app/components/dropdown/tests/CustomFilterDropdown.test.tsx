@@ -1,4 +1,4 @@
-import { fireEvent } from '@testing-library/dom';
+import { fireEvent } from '@testing-library/react';
 import { act } from '@testing-library/react';
 
 import { ConditionType } from '@proton/components/containers/filters/interfaces';
@@ -6,11 +6,6 @@ import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { render, tick } from '../../../helpers/test/render';
 import CustomFilterDropdown from '../CustomFilterDropdown';
-
-jest.mock('@proton/shared/lib/filters/sieve', () => ({
-    toTree: jest.fn(() => []),
-    fromTree: jest.fn(() => []),
-}));
 
 const subject = 'Message subject';
 const sender = 'sender@pm.me';
@@ -32,18 +27,12 @@ describe('CustomFilterDropdown', () => {
     it('should create a filter based on all options', async () => {
         const { getByTestId } = await render(<CustomFilterDropdown {...props} />);
 
-        const subjectCheckbox = (await getByTestId(
-            `custom-filter-checkbox:${ConditionType.SUBJECT}`
-        )) as HTMLInputElement;
-        const recipientCheckbox = (await getByTestId(
-            `custom-filter-checkbox:${ConditionType.RECIPIENT}`
-        )) as HTMLInputElement;
-        const senderCheckbox = (await getByTestId(
-            `custom-filter-checkbox:${ConditionType.SENDER}`
-        )) as HTMLInputElement;
-        const attachmentCheckbox = (await getByTestId(
+        const subjectCheckbox = getByTestId(`custom-filter-checkbox:${ConditionType.SUBJECT}`) as HTMLInputElement;
+        const recipientCheckbox = getByTestId(`custom-filter-checkbox:${ConditionType.RECIPIENT}`) as HTMLInputElement;
+        const senderCheckbox = getByTestId(`custom-filter-checkbox:${ConditionType.SENDER}`) as HTMLInputElement;
+        const attachmentCheckbox = getByTestId(
             `custom-filter-checkbox:${ConditionType.ATTACHMENTS}`
-        )) as HTMLInputElement;
+        ) as HTMLInputElement;
 
         // By default all options are not checked
         expect(subjectCheckbox.checked).toBeFalsy();
@@ -77,7 +66,7 @@ describe('CustomFilterDropdown', () => {
         expect(attachmentCheckbox.checked).toBeTruthy();
 
         // Open the filter modal
-        const applyButton = await getByTestId('filter-dropdown:next-button');
+        const applyButton = getByTestId('filter-dropdown:next-button');
         fireEvent.click(applyButton);
 
         /* TODO enable this part of the test when Sieve will be part of the monorepo

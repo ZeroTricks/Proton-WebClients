@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon, Price, useConfig, useLoading } from '@proton/components';
+import { Icon, Price, useConfig } from '@proton/components';
 import {
     Alert3ds,
     CurrencySelector,
@@ -24,6 +24,7 @@ import {
     TokenPayment,
     TokenPaymentMethod,
 } from '@proton/components/payments/core';
+import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
 import { PLANS } from '@proton/shared/lib/constants';
 import { getIsCustomCycle, getIsOfferBasedOnCoupon } from '@proton/shared/lib/helpers/checkout';
@@ -43,7 +44,7 @@ export interface Props {
     subscriptionData: SubscriptionData;
     plans: Plan[];
     onBack?: () => void;
-    onPay: (payment: PaypalPayment | TokenPayment | CardPayment | undefined) => Promise<void>;
+    onPay: (payment: PaypalPayment | TokenPayment | CardPayment | undefined, type: 'cc' | 'pp') => Promise<void>;
     onChangePlanIDs: (planIDs: PlanIDs) => void;
     onChangeCurrency: (currency: Currency) => void;
     onChangeCycle: (cycle: Cycle) => void;
@@ -91,7 +92,7 @@ const PaymentStep = ({
         amount: subscriptionData.checkResult.AmountDue,
         currency: subscriptionData.currency,
         onPaypalPay({ Payment }: TokenPaymentMethod) {
-            return withLoading(onPay(Payment));
+            return withLoading(onPay(Payment, 'pp'));
         },
     });
 
@@ -195,7 +196,7 @@ const PaymentStep = ({
                                 };
                                 const data = await createPaymentToken(paymentParameters, { amountAndCurrency });
 
-                                return onPay(data.Payment);
+                                return onPay(data.Payment, 'cc');
                             };
                             withLoading(handle()).catch(noop);
                         }}

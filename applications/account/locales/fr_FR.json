@@ -330,10 +330,10 @@
         "Terminé"
       ],
       "Downgrade": [
-        "Rétrograder"
+        "Passer à un abonnement inférieur"
       ],
       "Downgrade account": [
-        "Rétrograder le compte"
+        "Passer à un plan inférieur"
       ],
       "Download": [
         "Télécharger"
@@ -434,9 +434,6 @@
       "Generate token": [
         "Générer un jeton"
       ],
-      "Get ${ discountPercentage } off with 24 months": [
-        "Bénéficier d'une réduction de ${ discountPercentage } sur 24 mois"
-      ],
       "Get ${ vpnPlus }": [
         "Obtenir ${ vpnPlus }"
       ],
@@ -475,6 +472,9 @@
       ],
       "Hide labels": [
         "Masquer les labels"
+      ],
+      "Hide plan features": [
+        "Masquer les fonctionnalités de l'offre"
       ],
       "I have a question": [
         "J’ai une question"
@@ -522,7 +522,7 @@
         "Conserver"
       ],
       "Keep my ${ vpnPlanNameShort } subscription": [
-        "Je maintiens mon abonnement à ${ vpnPlanNameShort }."
+        "Garder mon abonnement à ${ vpnPlanNameShort }."
       ],
       "label emails as": [
         "labelliser les messages comme"
@@ -939,7 +939,7 @@
         "Utiliser un code de récupération"
       ],
       "Use your current email instead": [
-        "Utiliser plutôt votre adresse e-mail actuelle"
+        "Utiliser plutôt votre adresse actuelle"
       ],
       "Use “${ label }” setting": [
         "Utiliser le paramètre « ${ label } »"
@@ -1031,6 +1031,10 @@
         "+ ${ domains } domaine personnalisé",
         "+ ${ domains } domaines personnalisés"
       ],
+      "+ ${ ips } IP address": [
+        "+ ${ ips } adresse IP",
+        "+ ${ ips } adresses IP"
+      ],
       "+ ${ users } user": [
         "+ ${ users } utilisateur",
         "+ ${ users } utilisateurs"
@@ -1043,20 +1047,17 @@
       "Disable": [
         "Désactiver"
       ],
-      "Disable encryption": [
-        "Désactiver le chiffrement"
+      "Disable E2EE mail": [
+        "Chiffrement mail E2E OFF"
       ],
-      "Disable expect signed": [
-        "Désactiver l'attente de la signature"
+      "Disallow unsigned mail": [
+        "Interdire les messages non signés"
       ],
       "Enable": [
         "Activer"
       ],
-      "Enable encryption": [
-        "Activer le chiffrement"
-      ],
-      "Enable expect signed": [
-        "Activer l'attente de la signature"
+      "Enable E2EE mail": [
+        "Chiffrement mail E2E ON"
       ],
       "Generate missing keys": [
         "Générer les clés manquantes"
@@ -1072,6 +1073,9 @@
       "Active": [
         "Active"
       ],
+      "Allow unsigned mail": [
+        "Autoriser les messages non signés"
+      ],
       "Default": [
         "Par défaut"
       ],
@@ -1084,11 +1088,8 @@
       "Missing keys": [
         "Clés manquantes"
       ],
-      "No E2EE": [
-        "Pas de chiffrement de bout en bout"
-      ],
-      "No signing": [
-        "Pas de signature"
+      "No E2EE mail": [
+        "Pas de chiffrement mail (E2EE)"
       ],
       "Orphan": [
         "Orpheline"
@@ -2840,7 +2841,7 @@
         "Utilisation d'un autre service"
       ],
       "Temporary need, may come back in the future": [
-        "Il s'agit d'un besoin ponctuel dont je pourrais avoir besoin à l'avenir."
+        "Besoin temporaire, qui pourrait revenir à l'avenir"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -2864,16 +2865,16 @@
     },
     "Email": {
       "Email verified": [
-        "Email vérifié"
+        "Adresse e-mail validée"
       ],
       "Thank you for verifying your email address.": [
         "Merci de vérifier votre adresse e-mail."
       ],
       "Thanks for letting us know": [
-        "Merci de nous en informer"
+        "Merci de nous avoir informés."
       ],
       "We've noted that this account doesn't belong to you. We'll investigate and act accordingly.": [
-        "Nous avons constaté que ce compte ne vous appartient pas. Nous allons enquêter et agir en conséquence."
+        "Nous avons constaté que ce compte ne vous appartient pas. Nous allons examiner la situation et prendre les mesures nécessaires."
       ],
       "You can safely close this tab.": [
         "Vous pouvez fermer cet onglet en toute sécurité."
@@ -2986,8 +2987,8 @@
       ]
     },
     "Email Unsubscribe Categories": {
-      "${ allCategoriesExceptTheLastOne } and ${ lastCategory }": [
-        "${ allCategoriesExceptTheLastOne } et ${ lastCategory }"
+      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
+        "${ allCategoryTitlesExceptTheLastOne } et ${ lastCategoryTitle }"
       ]
     },
     "Enabled 2FA": {
@@ -2996,6 +2997,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Vous pouvez aussi vérifier notre ${ statusPageLink }."
+      ],
       "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
         "${ Local } est votre nom d'utilisateur. Pour créer ${ Local }@${ Domain }, allez dans Paramètres > Messages et rédaction > Domaine court (pm.me)."
       ],
@@ -3300,6 +3304,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Une erreur s'est produite, nous vous invitons à ${ refresh } pour continuer. Si ce message d'erreur s'affiche toujours, contactez notre ${ supportTeam }."
+      ],
+      "status page": [
+        "page d'état"
       ],
       "Tab closed": [
         "L'onglet est fermé."
@@ -3662,7 +3669,7 @@
     },
     "Error message, recovery": {
       "Contact ${ BRAND_NAME }": [
-        "Contactez ${ BRAND_NAME }"
+        "Contacter ${ BRAND_NAME }"
       ],
       "Please ${ signIn } to resend a recovery email verification request.": [
         "Veuillez vous ${ signIn } pour envoyer une nouvelle demande de vérification de l'adresse e-mail de récupération."
@@ -4384,8 +4391,8 @@
       "System default": [
         "Identique au système"
       ],
-      "Theme default": [
-        "Thème par défaut"
+      "Theme font": [
+        "Police du thème"
       ]
     },
     "Font Size Default": {
@@ -4420,8 +4427,52 @@
       "(1-2 emails per month)": [
         "(une à deux fois par mois)"
       ],
+      "(2-4 emails per year)": [
+        "(2 à 4 messages par an)"
+      ],
+      "(4-6 emails per year)": [
+        "(4 à 6 messages par an)"
+      ],
       "(during your first month)": [
         "(au cours de votre premier mois)"
+      ]
+    },
+    "Get started checklist instructions": {
+      "${ MAIL_APP_NAME } app": [
+        "application ${ MAIL_APP_NAME }"
+      ],
+      "account logins": [
+        "identifiants du compte"
+      ],
+      "Auto-forward Gmail": [
+        "Transfert automatique depuis Gmail"
+      ],
+      "auto-forwarding": [
+        "le transfert automatique"
+      ],
+      "Change ${ strongText } to your ${ BRAND_NAME } address": [
+        "Changez les ${ strongText } pour votre adresse ${ BRAND_NAME }"
+      ],
+      "Discover how our ${ strongText } protect you": [
+        "Découvrez comment nos ${ strongText } vous protègent."
+      ],
+      "Discover privacy features": [
+        "Découvrez les fonctionnalités de protection de la vie privée"
+      ],
+      "Get the ${ strongText } on Android or iOS": [
+        "Téléchargez l'${ strongText } sur Android ou iOS."
+      ],
+      "Get the App": [
+        "Téléchargez l'application"
+      ],
+      "privacy features": [
+        "fonctionnalités de protection de la vie privée"
+      ],
+      "Set up ${ strongText } from Gmail": [
+        "Configurer ${ strongText } depuis Gmail"
+      ],
+      "Update your logins": [
+        "Mettez à jour vos identifiants"
       ]
     },
     "Gmail forwarding": {
@@ -4478,11 +4529,14 @@
       "Best deal": [
         "Meilleure offre"
       ],
+      "Checkout": [
+        "Paiement"
+      ],
+      "Create your account": [
+        "Créez votre compte"
+      ],
       "Device": [
         "Appareil"
-      ],
-      "Enter your email address": [
-        "Saisissez votre adresse e-mail."
       ],
       "Event": [
         "Événement"
@@ -4514,11 +4568,8 @@
       "Protection": [
         "Protection"
       ],
-      "Select your preferred method of payment": [
-        "Choisissez votre moyen de paiement préféré."
-      ],
       "Select your pricing plan": [
-        "Sélectionnez votre plan tarifaire"
+        "Sélectionnez votre formule d'abonnement"
       ],
       "Status": [
         "État"
@@ -4959,7 +5010,7 @@
         "${ boldWarning } si vous continuez, vous perdrez l'accès à toutes les données actuellement chiffrées de votre compte."
       ],
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
-        "${ BRAND_NAME }, la confidentialité en laquelle vous pouvez avoir confiance, garantie par un chiffrement puissant, un code sopen source et les lois suisses sur la protection de la vie privée. Personne ne devrait pouvoir exploiter vos données. Notre technologie et notre activité reposent sur cette définition fondamentalement plus forte de la vie privée."
+        "Vous pouvez faire confiance à ${ BRAND_NAME } pour protéger votre vie privée, grâce à un chiffrement fort, un code open source et la législation suisse en matière de protection des données. Nous pensons que personne ne devrait pouvoir exploiter vos données. Notre technologie et notre activité reposent sur cette définition fondamentalement plus forte de la protection de la vie privée"
       ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME } a suspendu une importation parce que la connexion avec votre autre fournisseur de messagerie a été perdue. Nous vous invitons à vous reconnecter."
@@ -4986,6 +5037,9 @@
       ],
       "${ current } of ${ total }": [
         "${ current } sur ${ total }"
+      ],
+      "${ discountPercentage } forever": [
+        "${ discountPercentage } à vie"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
         "${ DRIVE_APP_NAME } ne conservera plus les versions précédentes de vos fichiers."
@@ -5035,11 +5089,8 @@
         "${ numGroups } groupe de contacts",
         "${ numGroups } groupes de contacts"
       ],
-      "${ PROTON_SENTINEL_NAME } is an account protection program developed at ${ BRAND_NAME } for users who need maximum security.": [
-        "${ PROTON_SENTINEL_NAME } est un programme de protection de compte développé par ${ BRAND_NAME } pour les utilisateurs ayant besoin d'une sécurité maximale."
-      ],
-      "${ PROTON_SENTINEL_NAME } is powered by sophisticated AI systems and teams of specialists working 24/7 to mitigate bad actors and security threats.": [
-        "${ PROTON_SENTINEL_NAME } bénéficie de systèmes d'IA sophistiqués et d'équipes de spécialistes qui travaillent 24 heures sur 24 et 7 jours sur 7 pour neutraliser les acteurs malveillants et les menaces de sécurité."
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } est un programme avancé de protection des comptes qui s'appuie sur des systèmes d'IA sophistiqués et des spécialistes qui travaillent en permanence pour vous protéger des acteurs malveillants et des menaces de sécurité."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } dossier trouvé",
@@ -5293,6 +5344,9 @@
       ],
       "Are you sure you want to discard your changes?": [
         "Voulez-vous vraiment abandonner vos modifications ?"
+      ],
+      "Are you sure you want to discard your import?": [
+        "Voulez-vous vraiment annuler votre importation ?"
       ],
       "Are you sure you want to permanently delete all your logs?": [
         "Voulez-vous vraiment supprimer définitivement tous vos journaux ?"
@@ -5982,9 +6036,6 @@
       "old password": [
         "ancien mot de passe"
       ],
-      "Once you enable ${ PROTON_SENTINEL_NAME }:": [
-        "Une fois que vous avez activé ${ PROTON_SENTINEL_NAME } :"
-      ],
       "Once you reset your password:": [
         "Une fois votre mot de passe réinitialisé :"
       ],
@@ -6022,7 +6073,7 @@
         "La phrase de récupération est périmée : mettez-la à jour pour assurer l'accès à vos données."
       ],
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
-        "Plus de 100 millions de personnes et d'entreprises ont adhéré à ${ BRAND_NAME }."
+        "Plus de 100 millions de personnes et d'entreprises ont choisi ${ BRAND_NAME }."
       ],
       "Paid for a ${ rewardMonths } month plan": [
         "Payé pour un abonnement d'${ rewardMonths } mois",
@@ -6129,6 +6180,9 @@
       "Protected by Swiss privacy laws": [
         "Protégé par les lois suisses sur la vie privée"
       ],
+      "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
+        "Si vous êtes une personnalité publique, un journaliste, un dirigeant ou une personne susceptible d'être la cible de cyberattaques, nous vous recommandons d'activer ${ PROTON_SENTINEL_NAME }."
+      ],
       "Public link invite": [
         "Lien d'invitation public"
       ],
@@ -6154,7 +6208,7 @@
         "Les informations de récupération resteront sur cet appareil jusqu'à ce que vous demandiez à les supprimer."
       ],
       "Recovery kit copied to clipboard": [
-        "Le kit de récupération est copié dans le presse-papiers"
+        "Le kit de récupération est copié dans le presse-papiers."
       ],
       "Recovery phrase copied to clipboard": [
         "La phrase de récupération est copiée dans le presse-papiers."
@@ -6181,7 +6235,7 @@
         "Retirez un de vos calendriers pour rejoindre celui-ci."
       ],
       "Report link expired": [
-        "Signaler un lien périmé"
+        "Le lien a expiré"
       ],
       "Restore": [
         "Restauration"
@@ -6197,9 +6251,6 @@
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Enregistrez votre mot de passe en lieu sûr. Cliquez sur l'icône pour confirmer que vous avez correctement tapé votre mot de passe."
-      ],
-      "Saving your password": [
-        "Enregistrement de votre mot de passe"
       ],
       "Scan QR code instead": [
         "Scanner plutôt le code QR"
@@ -6261,11 +6312,11 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Votre compte bénéficie de fonctionnalités supplémentaires parce que vous êtes un utilisateur fidèle."
       ],
-      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. It is a new feature available to select business users. Please email ${ emailLink } to request access.": [
-        "Le SMTP permet à des services ou dispositifs tiers d'envoyer des messages par l'intermédiaire de ${ MAIL_APP_NAME }. Il s'agit d'une nouvelle fonctionnalité disponible pour certains utilisateurs professionnels. Vous pouvez envoyer un message à ${ emailLink } pour demander un accès."
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
+        "Une requête SMTP permet à des services ou des appareils tiers d'envoyer des messages par l'intermédiaire de ${ MAIL_APP_NAME } depuis les adresses de votre domaine personnalisé. Pour demander l'accès, nous vous invitons à ${ createTicket } en décrivant vos cas d'utilisation, les domaines personnalisés que vous voudriez utiliser et le nombre de messages attendus par heure et par jour."
       ],
-      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }. To use this feature, start by generating a new token.": [
-        "Le SMTP permet à des services ou dispositifs tiers d'envoyer des messages par l'intermédiaire de ${ MAIL_APP_NAME }. Pour utiliser cette fonctionnalité, commencez par générer un nouveau jeton."
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
+        "Une requête SMTP permet à des services ou des appareils tiers d'envoyer des messages par l'intermédiaire de ${ MAIL_APP_NAME } depuis les adresses de votre domaine personnalisé. Pour utiliser cette fonctionnalité, commencez par générer un nouveau jeton."
       ],
       "Some keys successfully reactivated": [
         "Certaines clés ont été réactivées."
@@ -6310,9 +6361,6 @@
       "support team": [
         "équipe support"
       ],
-      "Suspicious events will be challenged by multiple layers of defense that help prevent attackers from hijacking your account.": [
-        "Les événements suspects seront soumis à plusieurs niveaux de défense pour empêcher les attaquants de pirater votre compte."
-      ],
       "Swiss based": [
         "Basé en Suisse"
       ],
@@ -6333,9 +6381,6 @@
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Le message ${ boldDataLocked } n'apparaîtra plus, mais vous pouvez toujours déverrouiller vos données sous ${ encryptionAndKeysLink }."
-      ],
-      "The ${ planName } plan includes:": [
-        "L'abonnement ${ planName } comprend :"
       ],
       "The calendar will be removed from your account.": [
         "Le calendrier sera retiré de votre compte."
@@ -6368,7 +6413,7 @@
         "L'application Import-Export permet d'exporter des messages pour des sauvegardes locales et de restaurer des sauvegardes précédentes sur votre compte."
       ],
       "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
-        "Le lien pour signaler que vous n'avez pas configuré un compte ${ BRAND_NAME } est arrivé à expiration. Veuillez contacter l'équipe support pour résoudre ce problème."
+        "Le lien permettant de signaler que vous n'avez pas créé de compte ${ BRAND_NAME } a expiré. Nous vous invitons à prendre contact avec notre équipe support pour résoudre ce problème."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Le nom sera visible par vos utilisateurs quand ils seront connectés."
@@ -6428,7 +6473,7 @@
         "Ce lien de désinscription a expiré. Nous vous invitons à ouvrir un message plus récent provenant de cette liste de diffusion."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
-        "Cet utilisateur est actuellement responsable des paiements pour votre organisation. Si vous le rétrogradez, vous deviendrez responsable des paiements pour votre organisation."
+        "Cet utilisateur est actuellement responsable des paiements pour votre organisation. Si vous lui attribuez un abonnement inférieur, vous deviendrez responsable des paiements pour votre organisation."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Cela annulera votre abonnement payant actuel et vous perdrez tous les avantages de fidélité dont vous bénéficiez."
@@ -6469,9 +6514,6 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Cet assistant permet d'activer l'authentification à deux facteurs (A2F) sur votre compte ${ BRAND_NAME }. Cela renforce la sécurité de votre compte ${ BRAND_NAME_TWO }, c'est pourquoi nous vous recommandons de l'activer."
       ],
-      "To ${ planName }": [
-        "À : ${ planName }"
-      ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Pour éviter toute perte de données, ne le supprimez que si vous maîtrisez la situation ou si vous en avez exporté une copie."
       ],
@@ -6502,8 +6544,8 @@
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Pour importer des événements, créez d'abord un calendrier dans ${ CALENDAR_APP_NAME }. Ce calendrier contiendra les événements après leur importation."
       ],
-      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "Pour rester au courant des actualités et évolutions des produits ${ BRAND_NAME }, vous pouvez vous abonner à nos différentes newsletters et consulter notre blog de temps en temps."
+      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
+        "Pour vous tenir au courant des dernières évolutions des produits ${ BRAND_NAME }, vous pouvez vous abonner à nos différentes newsletters et ${ blogLink } de temps en temps."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Pour continuer, sélectionnez une méthode de récupération de compte et nous pourrons vérifier la demande."
@@ -6534,9 +6576,6 @@
       ],
       "Total VPN connections": [
         "Nombre total de connexions VPN"
-      ],
-      "Try ${ upsellPlanName } risk free": [
-        "Essayez ${ upsellPlanName }, satisfait ou remboursé"
       ],
       "two-factor authentication (2FA)": [
         "authentification à deux facteurs (2FA)"
@@ -6619,9 +6658,6 @@
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "Utilisez l'adresse e-mail sélectionnée comme nom d'utilisateur SMTP pour le service externe et le jeton généré comme mot de passe SMTP."
       ],
-      "Users with sensitive data and communications, such as journalists or executives, are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
-        "Les utilisateurs ayant des données et des communications sensibles, comme les journalistes ou les dirigeants, devraient activer ${ PROTON_SENTINEL_NAME }."
-      ],
       "Verification can take a few minutes.": [
         "La vérification peut prendre quelques minutes."
       ],
@@ -6676,7 +6712,7 @@
       "We securely store recovery information on your trusted device to prevent you from losing your data": [
         "Nous stockons en toute sécurité les informations de récupération sur votre appareil de confiance pour vous éviter de perdre vos données."
       ],
-      "We use 3-D Secure to protect your payments.": [
+      "We use 3-D Secure to protect your payments": [
         "Nous utilisons 3-D Secure pour protéger vos paiements."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
@@ -6696,9 +6732,6 @@
       ],
       "Week and month views only apply to desktop.": [
         "Les vues de type semaine et mois s'appliquent à la version de bureau (grand écran)."
-      ],
-      "Welcome": [
-        "Bienvenue"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Nous enverrons un code de réinitialisation à l'adresse e-mail que vous avez indiquée pour la récupération du compte."
@@ -6858,23 +6891,14 @@
       "You still need to reply to invitations for the host to see your response.": [
         "Vous devez encore répondre aux invitations pour que l'organisateur puisse voir votre réponse."
       ],
-      "You will be redirected to the VPN download page": [
-        "Vous serez redirigé vers la page de téléchargement du VPN."
-      ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
-        "À cette date, vous n'aurez plus accès aux serveurs et fonctionnalités de ${ vpnPlanNameShort }."
+        "À cette date, vous n'aurez plus accès aux serveurs et aux fonctionnalités de ${ vpnPlanNameShort }."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Vous avez besoin d'une adresse ${ BRAND_NAME } pour utiliser ${ MAIL_APP_NAME } et ${ CALENDAR_APP_NAME }."
       ],
-      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
-        "Vous ne pourrez PAS déchiffrer les messages, fichiers et autres données chiffrés avec cette clé."
-      ],
-      "You will receive priority support from specialists trained in account protection. For any account security concerns, please ${ hereLink }.": [
-        "Vous bénéficierez d'une assistance prioritaire par des spécialistes formés à la protection des comptes. Pour toute question concernant la sécurité de votre compte, ${ hereLink }."
-      ],
-      "You will see more details in the Security logs below for important events such as sign in attempts.": [
-        "Vous verrez plus de détails dans les journaux de sécurité ci-dessous pour les événements importants comme les tentatives de connexions."
+      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
+        "Vous ne pourrez déchiffrer aucun message, fichier ou toute autre donnée chiffrée avec cette clé. Toutes les données signées avec cette clé ne seront plus vérifiées par les applications ${ BRAND_NAME }."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Vous serez bientôt redirigé vers PayPal pour vérifier votre paiement."
@@ -6940,8 +6964,8 @@
         "Votre importation à partir de ${ accounts } est temporairement retardée.",
         "Vos importations à partir de ${ accounts } sont temporairement retardées."
       ],
-      "Your import will not be processed.": [
-        "Votre importation ne sera pas traitée."
+      "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
+        "Vos informations sont en sécurité avec nous. Nous ne vous contacterons que si cela est nécessaire pour fournir nos services."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Vos informations de connexion ne seront pas enregistrées une fois l'importation terminée."
@@ -7133,11 +7157,6 @@
       ],
       "Primary": [
         "Principale"
-      ]
-    },
-    "Key transparency details button": {
-      "Click here for more details.": [
-        "Cliquez ici pour plus de détails."
       ]
     },
     "Key type option": {
@@ -7382,9 +7401,6 @@
       " and ${ l }": [
         " et ${ l }"
       ],
-      "${ BRAND_NAME } email or username": [
-        "Adresse e-mail ou nom d'utilisateur ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } username": [
         "Nom d'utilisateur ${ BRAND_NAME }"
       ],
@@ -7512,6 +7528,9 @@
       "Awarded": [
         "Attribué"
       ],
+      "Billing address": [
+        "Adresse de facturation"
+      ],
       "Billing cycle": [
         "Cycle de facturation"
       ],
@@ -7545,11 +7564,11 @@
       "Calendars": [
         "Calendriers"
       ],
+      "Card details": [
+        "Informations de carte bancaire"
+      ],
       "Card holder": [
         "Titulaire de la carte"
-      ],
-      "Card information": [
-        "Informations sur la carte"
       ],
       "Card number": [
         "Numéro de la carte"
@@ -8092,7 +8111,7 @@
         "Afficher les images des expéditeurs"
       ],
       "Show unread count in Favicon": [
-        "Afficher le nombre de non lus dans la Favicon"
+        "Afficher le nombre de non lus sur l'icône de l'onglet"
       ],
       "Show week numbers": [
         "Afficher les numéros de semaine"
@@ -8143,7 +8162,7 @@
         "Options de l'abonnement"
       ],
       "Synchronize with system": [
-        "Synchroniser avec les paramètres du système"
+        "Synchroniser avec le système"
       ],
       "System information": [
         "Informations système"
@@ -8306,11 +8325,11 @@
       "${ BRAND_NAME } beta announcements": [
         "Actualités des versions bêta ${ BRAND_NAME }"
       ],
-      "${ BRAND_NAME } company announcements": [
-        "Actualités de l'entreprise ${ BRAND_NAME }"
-      ],
       "${ BRAND_NAME } for Business newsletter": [
         "Newsletter ${ BRAND_NAME } for Business"
+      ],
+      "${ BRAND_NAME } important announcements": [
+        "Annonces importantes de ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } newsletter": [
         "Newsletter ${ BRAND_NAME }"
@@ -8431,8 +8450,8 @@
       "Common sign up issues": [
         "Problèmes d'inscription courants"
       ],
-      "contact us": [
-        "contactez-nous"
+      "create a ticket": [
+        "créer un ticket"
       ],
       "Create account": [
         "Créer un compte"
@@ -8445,6 +8464,9 @@
       ],
       "General": [
         "Général"
+      ],
+      "Help translate": [
+        "Contribuez à la traduction"
       ],
       "How to pay with Bitcoin?": [
         "Comment payer en bitcoins ?"
@@ -8471,7 +8493,7 @@
         "Payer la facture"
       ],
       "Paypal without credit card": [
-        "Paypal sans carte de crédit"
+        "PayPal sans carte de crédit"
       ],
       "Privacy policy": [
         "Politique de confidentialité"
@@ -8505,6 +8527,9 @@
       ],
       "View guide": [
         "Voir le guide"
+      ],
+      "visit our blog": [
+        "consulter notre blog"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Quelle est la différence entre les protocoles UDP et TCP ?"
@@ -8616,6 +8641,50 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Une nouvelle version de ${ appName } est disponible. ${ reloadButton }."
+      ]
+    },
+    "Metadata title": {
+      "${ appName }: Sign-in": [
+        "${ appName } : connexion"
+      ],
+      "${ appName }: Sign-up": [
+        "${ appName } : inscription"
+      ],
+      "Create a ${ BRAND_NAME } Account to use all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more, with just one login. Get a Free ${ BRAND_NAME } Account.": [
+        "Créez un compte ${ BRAND_NAME } pour utiliser tous les services chiffrés de ${ BRAND_NAME } comme ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } et d'autres encore, avec un seul identifiant. Créez un compte ${ BRAND_NAME } gratuit."
+      ],
+      "Create a ${ BRAND_NAME } Account | Take back your privacy": [
+        "Créez un compte ${ BRAND_NAME } | Reprenez le contrôle de votre vie privée"
+      ],
+      "Create a new ${ appName } account": [
+        "Créer un nouveau compte ${ appName }"
+      ],
+      "Find ${ BRAND_NAME } Account username": [
+        "Trouver le nom d'utilisateur du compte ${ BRAND_NAME }"
+      ],
+      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Vous avez oublié le mot de passe de votre compte ${ BRAND_NAME } ? Réinitialisez-le ici à l'aide d'un code de récupération, d'un e-mail ou d'un SMS et accédez à nouveau à vos comptes ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }…"
+      ],
+      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Vous avez oublié votre nom d'utilisateur pour votre compte ${ BRAND_NAME } ? Retrouvez-le en utilisant votre e-mail ou votre numéro de téléphone de récupération et accédez de nouveau à ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } et aux autres services Proton."
+      ],
+      "Private and secure email, no credit card required": [
+        "Messagerie privée et sécurisée, aucune carte bancaire n'est nécessaire"
+      ],
+      "Reset your ${ BRAND_NAME } Account password": [
+        "Réinitialisez le mot de passe de votre compte ${ BRAND_NAME }"
+      ],
+      "Sign in to access your ${ appName } account": [
+        "Connectez-vous pour accéder à votre compte ${ appName }"
+      ],
+      "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
+        "Connectez-vous à votre compte ${ BRAND_NAME } pour accéder à tous les services chiffrés de ${ BRAND_NAME } comme ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } et d'autres encore. Vous n'avez pas de compte ? Créez un compte GRATUITEMENT."
+      ],
+      "Sign in | ${ BRAND_NAME } Account - Access ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and more": [
+        "Connexion | Compte ${ BRAND_NAME } - Accédez à ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } et plus encore"
+      ],
+      "Try ${ planName } for free with this link": [
+        "Essayez gratuitement ${ planName } avec ce lien"
       ]
     },
     "Modal title": {
@@ -8852,16 +8921,13 @@
     },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
-        "Rétrograder vers ${ downgradedPlanName }"
+        "Passer à ${ downgradedPlanName }"
       ],
       "Explore all ${ BRAND_NAME } plans": [
         "Découvrir tous les abonnements ${ BRAND_NAME }"
       ],
       "From ${ price }": [
         "À partir de ${ price }"
-      ],
-      "From ${ price } per user": [
-        "À partir de ${ price } par utilisateur"
       ],
       "Keep my ${ currentPlanName } account": [
         "Conserver mon compte ${ currentPlanName }"
@@ -8881,7 +8947,7 @@
         "Supprimer le compte"
       ],
       "Downgrade account": [
-        "Rétrograder le compte"
+        "Passer à un plan inférieur"
       ],
       "Get ${ BRAND_NAME } for free": [
         "Obtenir gratuitement ${ BRAND_NAME }"
@@ -8912,16 +8978,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Passer à ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: attribute": {
-      "Get ${ connections } high-speed VPN connection": [
-        "Obtenir ${ connections } connexion VPN haut débit",
-        "Obtenir ${ connections } connexions VPN haut débit"
-      ],
-      "Get ${ connections } high-speed VPN connection per user": [
-        "Obtenir ${ connections } connexion VPN haut débit par utilisateur",
-        "Obtenir ${ connections } connexions VPN haut débit par utilisateur"
       ]
     },
     "new_plans: feature": {
@@ -8981,6 +9037,13 @@
         "${ n } connexion VPN par utilisateur",
         "${ n } connexions VPN par utilisateur"
       ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } avec ${ n } alias « hide-my-email »",
+        "${ PASS_APP_NAME } avec ${ n } alias « hide-my-email »"
+      ],
+      "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME } avec des alias « hide-my-email » illimités"
+      ],
       "${ size } attachment size": [
         "${ size } de pièces jointes"
       ],
@@ -9015,7 +9078,7 @@
         "Réponse automatique"
       ],
       "Autofill credit cards (coming soon)": [
-        "Remplissage automatique des cartes de crédit (à venir)"
+        "Remplissage automatique pour les cartes bancaires (prochainement)"
       ],
       "Available on all platforms": [
         "Disponible sur toutes les plateformes"
@@ -9036,7 +9099,7 @@
         "Gestion des groupes de contacts"
       ],
       "Custom domains for email aliases": [
-        "Domaines personnalisés pour les alias d'adresses e-mail"
+        "Domaines personnalisés pour les alias d'adresse e-mail"
       ],
       "Custom email domains": [
         "Domaines de messagerie personnalisés"
@@ -9124,7 +9187,7 @@
         "Politique de non-journalisation (no log)"
       ],
       "Organize items with multiple vaults": [
-        "Organiser les éléments avec plusieurs coffres"
+        "Plusieurs coffres-forts pour organiser vos mots de passe"
       ],
       "Password-protected Emails": [
         "Messages protégés par mot de passe"
@@ -9171,6 +9234,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android et Windows)"
+      ],
+      "Start protecting yourself online in 2 easy steps": [
+        "Commencez à vous protéger en ligne en 2 étapes simples"
       ],
       "Strict no-logs policy": [
         "Politique stricte de non-journalisation (no log)"
@@ -9262,23 +9328,14 @@
       ]
     },
     "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Protégez votre vie privée en matière de sauvegarde, de stockage, de partage et de récupération de fichiers."
-      ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Autrement, l'accès à votre compte sera limité, puis votre compte sera désactivé."
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Pour continuer à utiliser ${ MAIL_APP_NAME } avec les fonctionnalités premium, choisissez votre abonnement et votre moyen de paiement."
       ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Passez au pack pour entreprises avec l'accès à tous les services premium de ${ BRAND_NAME }."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Passez à la protection la plus complète de votre vie privée et accédez à tous les services premium de ${ BRAND_NAME }."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Votre essai se termine le ${ formattedTrialExpirationDate }."
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Votre essai se termine le ${ formattedPeriodEndDate }."
       ]
     },
     "new_plans: info": {
@@ -9316,7 +9373,7 @@
         "Si vous supprimez votre compte, vous perdrez tous les avantages de l'abonnement ${ visionary }, qui ne sera plus disponible si vous créez un nouveau compte."
       ],
       "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
-        "Si vous rétrogradez votre compte, vous perdrez tous les avantages de l'abonnement ${ visionary }, qui ne sera plus disponible si vous voulez vous réabonner."
+        "Si vous passez à un compte inférieur, vous perdrez tous les avantages de l'abonnement ${ visionary }, qui ne sera plus disponible si vous voulez vous réabonner."
       ],
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "Si vous changez d'abonnement, vous perdrez tous les avantages de l'abonnement ${ visionary } et ne serez plus en mesure de revenir à l'abonnement ${ visionary }."
@@ -9358,7 +9415,7 @@
         "Vous bénéficiez d'un tarif promotionnel sur votre abonnement actuel. En supprimant votre compte, vous perdrez ce tarif promotionnel, qui ne sera plus disponible si vous créez un nouveau compte."
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
-        "Vous bénéficiez d'un tarif promotionnel sur votre abonnement actuel. En rétrogradant votre compte, vous perdrez ce tarif promotionnel, qui ne sera plus disponible si vous voulez vous réabonner."
+        "Vous bénéficiez d'un tarif promotionnel sur votre abonnement actuel. En choisissant un compte avec moins de fonctionnalités, vous perdrez ce tarif et il ne sera plus disponible si vous voulez vous réabonner."
       ]
     },
     "new_plans: Label": {
@@ -9407,11 +9464,8 @@
       ]
     },
     "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "Essai de ${ mailPlanName }"
-      ],
-      "Upgrade to ${ planName }": [
-        "Passer à ${ planName }"
+      "${ shortPlan.title } Trial": [
+        "Essai de ${ shortPlan.title }"
       ],
       "Your account's usage": [
         "Utilisation de votre compte"
@@ -9422,7 +9476,7 @@
         "Supprimer le compte ?"
       ],
       "Downgrade account?": [
-        "Rétrograder le compte ?"
+        "Passer à un plan inférieur ?"
       ],
       "Improved plans coming soon!": [
         "Bientôt de nouveaux abonnements !"
@@ -9442,13 +9496,13 @@
     },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
-        "${ CALENDAR_APP_NAME }: calendrier chiffré de bout-en-bout"
+        "${ CALENDAR_APP_NAME } : calendrier chiffré de bout en bout"
       ],
       "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
-        "${ DRIVE_APP_NAME }: stockage cloud chiffré de bout-en-bout"
+        "${ DRIVE_APP_NAME } : stockage cloud chiffré de bout en bout"
       ],
       "${ MAIL_APP_NAME }: end-to-end encrypted email": [
-        "${ MAIL_APP_NAME }: messagerie chiffrée de bout-en-bout"
+        "${ MAIL_APP_NAME } : messagerie chiffrée de bout en bout"
       ],
       "${ VPN_APP_NAME }: unblock content, browse privately": [
         "${ VPN_APP_NAME } : débloquez des contenus et surfez de façon anonyme"
@@ -9478,8 +9532,8 @@
         "Créez jusqu'à ${ n } calendrier ou ajoutez les calendriers d'amis, de la famille, de collègues et d'organisations.",
         "Créez jusqu'à ${ n } calendriers ou ajoutez les calendriers d'amis, de la famille, de collègues et d'organisations."
       ],
-      "Create up to ${ n } email addresses/aliases for the whole family. Use them for your online identities, e.g., MyFamilySubs@${ domain } for online subscriptions.": [
-        "Créez jusqu'à ${ n } adresses e-mail/alias pour toute la famille. Utilisez-les pour vos identités en ligne, comme AbonnementFamille@${ domain } pour les abonnements en ligne par exemple."
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "Créez jusqu'à ${ n } adresses e-mail/alias et attribuez-les aux membres de votre famille. Utilisez-les pour vos identités en ligne, comme « SebShopping@${ domain } » pour tous vos achats en ligne."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Cette fonctionnalité vous protège des menaces sur la confidentialité du VPN en acheminant votre trafic internet à travers plusieurs serveurs."
@@ -9536,7 +9590,7 @@
         "Les disques durs de nos serveurs sont entièrement chiffrés avec plusieurs couches de mots de passe pour protéger vos données même si notre matériel est compromis."
       ],
       "Password management and identity protection": [
-        "Gestionnaire de mots de passe et protection d'identité"
+        "Gestion des mots de passe et protection de l'identité"
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personnalisez votre signature d'e-mail avec des logos, images, icônes de réseaux sociaux, liens vers vos coordonnées…"
@@ -9632,51 +9686,24 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "${ storageSize } total storage": [
-        "${ storageSize } d'espace de stockage total"
-      ],
-      "10 email addresses/aliases": [
-        "10 adresses e-mail/alias"
-      ],
       "Access advanced VPN features": [
         "Accédez à des fonctionnalités VPN avancées."
       ],
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "Plus de personnalisation avec 15 adresses e-mail et la prise en charge de 3 domaines de messagerie personnalisés"
       ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "Augmentez votre espace de stockage pour un total de ${ bundleStorage } par utilisateur."
+      ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Augmentez votre espace de stockage pour un total de ${ bundleStorage }."
-      ],
-      "Boost your storage space to ${ businessStorage } per user": [
-        "Augmentez votre espace de stockage pour un total de ${ businessStorage } par utilisateur."
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Bénéficiez de plus de possibilités avec la prise en charge de 10 domaines de messagerie personnalisés."
       ],
-      "Create up to ${ MAX_CALENDARS_PAID } calendar": [
-        "Créez jusqu'à ${ MAX_CALENDARS_PAID } calendrier",
-        "Créez jusqu'à ${ MAX_CALENDARS_PAID } calendriers"
-      ],
-      "Everything in ${ vpnPlanName }": [
-        "Tout ce qui est inclus dans l'abonnement ${ vpnPlanName }"
-      ],
-      "Get 5 additional email addresses per user": [
-        "Obtenez 5 adresses e-mail supplémentaires par utilisateur."
-      ],
-      "Priority support": [
-        "Assistance prioritaire"
-      ],
-      "Secure your passwords and identity with an open-source and encrypted password manager.": [
-        "Sécurisez vos mots de passe et votre identité grâce à un gestionnaire de mots de passe chiffré et open-source."
-      ],
-      "Support for 1 custom email domain": [
-        "Prise en charge d'un nom de domaine personnalisé"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Dossiers, labels et filtres illimités"
-      ],
-      "Unlimited messages": [
-        "Messages illimités"
+      "Create up to ${ n } calendar": [
+        "Créez jusqu'à ${ n } calendrier",
+        "Créez jusqu'à ${ n } calendriers"
       ]
     },
     "Notification": {
@@ -9714,6 +9741,9 @@
       ],
       "Calendar added": [
         "Le calendrier a été ajouté."
+      ],
+      "Calendar updated": [
+        "Le calendrier a été mis à jour."
       ]
     },
     "Notification in share calendar modal": {
@@ -10085,6 +10115,9 @@
       "create a new account": [
         "créer un nouveau compte"
       ],
+      "Create another account instead": [
+        "Créer un autre compte à la place"
+      ],
       "Download again ${ size }": [
         "Télécharger à nouveau ${ size }"
       ],
@@ -10107,7 +10140,7 @@
         "Passer à la version supérieure pour seulement ${ relativePrice } de plus par mois"
       ],
       "Upgrade my plan": [
-        "Je change d'abonnement"
+        "Changer d'abonnement"
       ],
       "Use ${ free } instead": [
         "Utiliser plutôt ${ free }"
@@ -10151,6 +10184,12 @@
       "${ PASS_APP_NAME } benefits": [
         "Les avantages de ${ PASS_APP_NAME }"
       ],
+      "${ PASS_APP_NAME } is available as a browser extension on Firefox Add-ons.": [
+        "${ PASS_APP_NAME } est disponible comme extension de navigateur dans les extensions Firefox."
+      ],
+      "${ PASS_APP_NAME } is available as a browser extension on the Chrome Web Store.": [
+        "${ PASS_APP_NAME } est disponible comme extension de navigateur dans le Chrome Web Store."
+      ],
       "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
         "${ PASS_APP_NAME } sécurise vos mots de passe et votre identité grâce à un chiffrement de bout en bout rigoureux."
       ],
@@ -10187,8 +10226,8 @@
       "Download the ${ PASS_APP_NAME } app from the App Store and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
         "Téléchargez l'application ${ PASS_APP_NAME } sur l'App Store et installez-la pour utiliser ${ PASS_APP_NAME2 } sur votre téléphone."
       ],
-      "Encrypted password manager${ breakToken }that also protects your identity": [
-        "Le gestionnaire de mots de passe chiffré${ breakToken }qui protège aussi votre identité"
+      "Encrypted password manager that also protects your identity": [
+        "Le gestionnaire de mots de passe chiffré qui protège aussi votre identité"
       ],
       "End-to-end encrypted notes": [
         "Notes chiffrées de bout en bout"
@@ -10215,7 +10254,7 @@
         "Avec les fonctionnalités de base de ${ appName } :"
       ],
       "Install ${ PASS_APP_NAME }": [
-        "Installer ${ PASS_APP_NAME }"
+        "Installez ${ PASS_APP_NAME }"
       ],
       "Install app": [
         "Installez l'application"
@@ -10521,7 +10560,7 @@
         "L'adresse e-mail n'est pas vérifiée."
       ],
       "Email removed": [
-        "Addresse e-mail supprimée"
+        "Adresse e-mail supprimée"
       ],
       "sign in": [
         "se connecter"
@@ -10752,8 +10791,8 @@
       ]
     },
     "Shared calendar; Info about calendar owner": {
-      "Created by ${ ownerName }": [
-        "Créé par ${ ownerName }"
+      "Shared by ${ ownerName }": [
+        "Partagé par ${ ownerName }"
       ]
     },
     "Signature verification error when joining calendar": {
@@ -11086,25 +11125,12 @@
         "Découvrez comment obtenir un lien de calendrier privé."
       ]
     },
-    "Subscribed calendar extension warning": {
-      "By using this link, Google will make the calendar you are subscribing to public": [
-        "En utilisant ce lien, Google rendra public le calendrier auquel vous vous inscrivez."
-      ],
-      "This link might be wrong": [
-        "Ce lien n'est peut-être pas correct."
-      ]
-    },
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
         "Ajouter des calendriers publics, externes ou partagés en utilisant une URL."
       ],
       "Add public, external, or shared calendars.": [
         "Ajoutez des calendriers publics, externes ou partagés."
-      ]
-    },
-    "Subscribed calendar URL length warning": {
-      "URL is too long": [
-        "L'URL est trop longue."
       ]
     },
     "Subscription attribute": {
@@ -11227,7 +11253,7 @@
         "Garder le paiement automatique"
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
-        "Notre système ne vous facturera plus de manière automatique en utilisant ce moyen de paiement, mais votre abonnement sera toujours renouvelé à la fin du cycle de facturation. Si vous voulez modifier votre abonnement, vous devez toujours le faire vous-même avant la fin de la période de facturation. De plus, si vous oubliez de faire un paiement manuel et que le paiement automatique est désactivé pour tous les moyens de paiement, nous pourrions rétrograder votre compte à un abonnement inférieur de manière automatique, ce qui entraînera la perte de nombreuses fonctionnalités."
+        "Notre système ne vous facturera plus de manière automatique en utilisant ce moyen de paiement, mais votre abonnement sera toujours renouvelé à la fin du cycle de facturation. Si vous voulez modifier votre abonnement, vous devez toujours le faire vous-même avant la fin de la période de facturation. De plus, si vous oubliez de faire un paiement manuel et que le paiement automatique est désactivé pour tous les moyens de paiement, nous pourrions passer votre compte à un abonnement inférieur de manière automatique, ce qui entraînera la perte de nombreuses fonctionnalités."
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
         "Notre système n'utilisera plus ce moyen de paiement pour effectuer des prélèvements automatiques, mais votre abonnement sera toujours renouvelé à la fin de la période de facturation. Si vous voulez modifier votre abonnement, vous devez toujours le faire vous-même avant la fin de la période de facturation. Vous ne pouvez pas passer automatiquement à un abonnement inférieur car si vous avez dépassé le quota d'espace de stockage de l'abonnement gratuit ou si vous utilisez d'autres fonctions payantes, nous ne pouvons pas supprimer automatiquement des fichiers, des messages ou d'autres données à votre place. Si vous désactivez le paiement automatique, n'oubliez pas de payer la prochaine facture de votre abonnement avant la date d'échéance pour éviter la suspension de votre compte."
@@ -11236,9 +11262,6 @@
     "Subscription saving": {
       "Save": [
         "Économisez"
-      ],
-      "Save ${ discountPercentage }%": [
-        "Économisez ${ discountPercentage } %"
       ]
     },
     "Subscription status": {
@@ -11246,7 +11269,7 @@
         "Actif"
       ],
       "Expiring": [
-        "Expiration"
+        "Expiré"
       ],
       "Upcoming": [
         "À venir"
@@ -11317,7 +11340,7 @@
         "L'adresse e-mail a été copiée dans le presse-papiers."
       ],
       "Email updated": [
-        "L'adresse e-mail a été mise à jour."
+        "L'adresse a été mise à jour."
       ],
       "Gift code applied": [
         "Le code cadeau a été appliqué."
@@ -11413,7 +11436,7 @@
         "Le code de vérification a été copié dans le presse-papiers."
       ],
       "Verification successful": [
-        "La vérification est réussie."
+        "La vérification a abouti."
       ],
       "You have successfully cancelled your subscription.": [
         "Vous avez résilié votre abonnement."
@@ -11677,7 +11700,7 @@
         "Raccourcis clavier ${ MAIL_APP_NAME }"
       ],
       "(active)": [
-        "(activé)"
+        "(actif)"
       ],
       "1. Give a name to the config to be generated": [
         "1. Donnez un nom à la configuration qui doit être générée"
@@ -12011,7 +12034,7 @@
         "Ne plus afficher ?"
       ],
       "Downgrade account": [
-        "Rétrograder le compte"
+        "Passer à un plan inférieur"
       ],
       "Download ${ VPN_APP_NAME }": [
         "Télécharger ${ VPN_APP_NAME }"
@@ -12268,7 +12291,7 @@
         "La vérification PayPal n'a pas abouti."
       ],
       "Personalise your e-mail footer": [
-        "Personnalisez le pied de page de vos messages"
+        "Personnalisez le pied de page de vos messages."
       ],
       "Phone": [
         "Téléphone"
@@ -12417,8 +12440,8 @@
       "Signed in to member account": [
         "Connecté au compte membre"
       ],
-      "SMTP tokens": [
-        "Jetons SMTP"
+      "SMTP submission": [
+        "Requête SMTP"
       ],
       "Sort folders alphabetically": [
         "Trier les dossiers par ordre alphabétique"
@@ -12726,7 +12749,7 @@
         "Les messages dans le dossier Envoyés ou Brouillons continueront à apparaître dans ce dossier, même si vous les déplacez vers un autre dossier."
       ],
       "See number of unread messages in the tab icon": [
-        "Voir le nombre de messages non lus dans l'icône de l'onglet"
+        "Voir le nombre de messages non lus sur l'icône dans l'onglet de navigation"
       ],
       "Set how your list of messages looks like by default.": [
         "Choisissez la façon dont se présente votre liste de messages."
@@ -12818,7 +12841,7 @@
     },
     "tooltip": {
       "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
-        "${ PASS_APP_NAME }: gestionnaire de mots de passe chiffré de bout-en-bout"
+        "${ PASS_APP_NAME } : gestionnaire de mots de passe chiffré de bout en bout"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -12880,6 +12903,11 @@
     "Upgrade notice": {
       "Upgrade to a ${ MAIL_SHORT_APP_NAME } paid plan to share your calendar.": [
         "Passez à un abonnement payant ${ MAIL_SHORT_APP_NAME } pour partager votre calendrier."
+      ]
+    },
+    "upsell panel": {
+      "Recommended": [
+        "Recommandé"
       ]
     },
     "User referee invited via email": {
@@ -12944,6 +12972,69 @@
         "${ numberOfServers } dans ${ numberOfCountries } pays"
       ]
     },
+    "vpn_2step: billing": {
+      "${ billedText }, renews on ${ formattedEndTime }": [
+        "${ billedText }, se renouvellera le ${ formattedEndTime }"
+      ],
+      "Billed every 15 months": [
+        "Facturé tous les 15 mois"
+      ],
+      "Billed every 2 years": [
+        "Facturé tous les 2 ans"
+      ],
+      "Billed every 30 months": [
+        "Facturé tous les 30 mois"
+      ],
+      "Billed monthly": [
+        "Facturé mensuellement"
+      ],
+      "Billed yearly": [
+        "Facturé annuellement"
+      ]
+    },
+    "vpn_2step: discount": {
+      "1-year": [
+        "1 an"
+      ],
+      "2-year": [
+        "2 ans"
+      ],
+      "Get ${ discount } off with a ${ billingCycle } subscription": [
+        "Obtenez une réduction de ${ discount } avec un abonnement ${ billingCycle }"
+      ],
+      "monthly": [
+        "mensuel"
+      ]
+    },
+    "vpn_2step: feature": {
+      "Advanced VPN customizations": [
+        "Personnalisations VPN avancées"
+      ],
+      "No ads": [
+        "Aucune publicité"
+      ]
+    },
+    "vpn_2step: info": {
+      "${ n } month": [
+        "${ n } mois",
+        "${ n } mois"
+      ],
+      "${ n } year": [
+        "${ n } an",
+        "${ n } ans"
+      ],
+      "Try ${ upsellPlanName } risk-free": [
+        "Essayez ${ upsellPlanName }, satisfait ou remboursé"
+      ],
+      "Your ${ selected } plan": [
+        "Votre abonnement ${ selected }"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
+        "Accès aux serveurs Secure Core, téléchargements P2P/BitTorrent rapides, Tor via VPN, Double Hop et bien d'autres fonctionnalités."
+      ]
+    },
     "Warning": {
       "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
         "${ BRAND_NAME } fusionnera tous les dossiers portant le même nom. Si vous voulez éviter cela, il faut changer les noms avant l'importation."
@@ -12956,9 +13047,6 @@
       ],
       "Are you sure you want to delete this address?": [
         "Voulez-vous vraiment supprimer cette adresse ?"
-      ],
-      "Are you sure you want to discard your import?": [
-        "Voulez-vous vraiment annuler votre importation ?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "En supprimant cette adresse, vous ne pourrez plus recevoir de notifications quotidiennes par e-mail."

@@ -915,9 +915,6 @@
       "Try another method": [
         "Ɛreḍ tarrayt nniḍen"
       ],
-      "Turn on tracker protection": [
-        "Sermed amesten n uḍfar"
-      ],
       "Unblock": [
         "Serreḥ"
       ],
@@ -3353,47 +3350,9 @@
         "I: ${ toString }"
       ]
     },
-    "Get started checklist completion": {
-      "You're all set!": [
-        "Tesbaduḍ kullec!"
-      ]
-    },
-    "Get started checklist incentive": {
-      "Expires soon": [
-        "Ad ifat"
-      ],
-      "Expires today": [
-        "Ad yemmet ass-a"
-      ]
-    },
     "Get started checklist instructions": {
-      "Available on iOS and Android.": [
-        "Yewjed di iOS akked Android."
-      ],
       "Import contacts or emails": [
         "Kter inermisen neɣ imaylen"
-      ],
-      "Using your mobile device, scan this QR code or visit": [
-        "S yibenk-ik•im aziraz, smiḍen tangalt-a tengalt QR neɣ rzu ɣer"
-      ]
-    },
-    "Get started checklist item": {
-      "Get mobile app": [
-        "Awi asnas aziraz"
-      ],
-      "Import contacts or emails": [
-        "Kter inermisen neɣ imaylen"
-      ],
-      "Send a message": [
-        "Azen yizen"
-      ],
-      "Set up a recovery method": [
-        "Sbadu tarrayt n tririt"
-      ]
-    },
-    "Get started checklist title": {
-      "Get started": [
-        "Bdu"
       ]
     },
     "Group": {
@@ -3724,10 +3683,6 @@
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } izen ulamek ad yettusenkez.",
         "${ messagesNotAuthorizedToMove } iznan ulamek ad ttwasnekzen."
-      ],
-      "${ numberOfTrackers } email tracker blocked": [
-        "${ numberOfTrackers } n umeḍfar n yimayl iweḥlen",
-        "${ numberOfTrackers } n yimeḍfaren n yimayl iweḥlen"
       ],
       "${ numContact } contact": [
         "${ numContact } n unermis",
@@ -4208,9 +4163,6 @@
       "No email address": [
         "Ulac tansa n yimayl"
       ],
-      "No email trackers found": [
-        "Ulac ineḍfaren n yimayl yettwafen"
-      ],
       "No folder found": [
         "Ulac akaram yettwafen"
       ],
@@ -4231,9 +4183,6 @@
       ],
       "No results found": [
         "Ulac igmaḍ"
-      ],
-      "No trackers found, but some images could not be loaded with tracking protection": [
-        "Ulacineḍfaren, maca kra n tugniwin ulamek ara d-alint s ummesten n uḍfar"
       ],
       "Not a valid URL": [
         "Mačči d URL ameɣtu"
@@ -4560,9 +4509,6 @@
       "You can either update your search query or ${ button }": [
         "Tzemreḍ ad tleqqmeḍ tuttra-k.m n undi neɣ ${ button }"
       ],
-      "You can either update your search query or clear it": [
-        "Tzemreḍ ad tleqqmeḍ tuttra-k.m n unadi neɣ sfeḍ-itt"
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Tzemreḍ ad tremdeḍ ilɣuyen i wakken ad teṭṭfeḍ alɣu mi ara d-awwḍen yiznan imaynuten deg ukaram-a."
       ],
@@ -4617,9 +4563,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Imayl-ik ad yettwaseqdec kan tikkelt deg usenqed-agi."
-      ],
-      "Your import will not be processed.": [
-        "Taktert-inek•inem ur tettwasekkar ara."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Talɣut-ik·im n unekcum ur tettwaseklas ara alamma yemmed uktar."
@@ -5863,20 +5806,6 @@
         "${ page } n ${ totalText }"
       ]
     },
-    "Paid user checklist item": {
-      "Get mobile app": [
-        "Awi asnas aziraz"
-      ],
-      "Import contacts or emails": [
-        "Kter inermisen neɣ imaylen"
-      ],
-      "Send a message": [
-        "Azen yizen"
-      ],
-      "Set up a recovery method": [
-        "Sbadu tarrayt n tririt"
-      ]
-    },
     "Participant name": {
       "You": [
         "Kečč/kemm"
@@ -6263,9 +6192,6 @@
       ]
     },
     "Storage": {
-      "Get extra storage for free": [
-        "Awi-d tallunt n uḥraz n zzyada baṭel"
-      ],
       "Release notes": [
         "Tizmilin n llqem"
       ],
@@ -7101,9 +7027,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } ad siweḍ aqettun n yisefka iwum yezmer, ad yebdu s yiznan-inek·inem n melmi kan."
-      ],
-      "Are you sure you want to discard your import?": [
-        "D tidet tebɣiḍ ad tesfesxeḍ taktert-ik m?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Tebɣiḍ s tidet ad tekkseḍ ${ count } n ugraw n unermes s wudem imezgi?",

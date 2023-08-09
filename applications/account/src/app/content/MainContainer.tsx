@@ -28,11 +28,12 @@ import {
 } from '@proton/components';
 import ContactEmailsProvider from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
-import useTelemetryScreenSize from '@proton/components/hooks/useTelemetryScreenSize';
-import { DEFAULT_APP, getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
+import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
+import { getToApp } from '@proton/shared/lib/authentication/apps';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import { APPS, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
+import { getPathFromLocation } from '@proton/shared/lib/helpers/url';
 import { UserModel } from '@proton/shared/lib/interfaces';
 import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
 import { getRequiresAddressSetup } from '@proton/shared/lib/keys';
@@ -94,7 +95,6 @@ const getDefaultRedirect = (accountRoutes: ReturnType<typeof getRoutes>['account
 };
 
 const MainContainer = () => {
-    useTelemetryScreenSize();
     const [user] = useUser();
     const [userSettings] = useUserSettings();
     const [addresses] = useAddresses();
@@ -108,12 +108,12 @@ const MainContainer = () => {
         FeatureCode.ReferralProgram,
         FeatureCode.SmtpToken,
         FeatureCode.MailForwarding,
+        FeatureCode.MailDisableE2EE,
         FeatureCode.CalendarSharingEnabled,
         FeatureCode.HolidaysCalendars,
         FeatureCode.EasySwitch,
         FeatureCode.OrgSpamBlockList,
         FeatureCode.ProtonSentinel,
-        FeatureCode.AccessibilitySettings,
         FeatureCode.OrgTwoFactor,
     ]);
 
@@ -123,14 +123,14 @@ const MainContainer = () => {
     const isGmailSyncEnabled = getFeature(FeatureCode.EasySwitch).feature?.Value.GoogleMailSync === true;
     const isOrgSpamBlockListEnabled = getFeature(FeatureCode.OrgSpamBlockList).feature?.Value === true;
     const isProtonSentinelFeatureEnabled = getFeature(FeatureCode.ProtonSentinel).feature?.Value === true;
-    const isAccessibilitySettingsEnabled = getFeature(FeatureCode.AccessibilitySettings).feature?.Value === true;
     const isOrgTwoFactorEnabled = getFeature(FeatureCode.OrgTwoFactor).feature?.Value === true;
 
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const loadingFeatures = featuresFlags.some(({ loading }) => loading) || loadingDataRecovery;
     const recoveryNotification = useRecoveryNotification(false);
 
-    const app = getAppFromPathnameSafe(location.pathname) || DEFAULT_APP;
+    const appFromPathname = getAppFromPathnameSafe(location.pathname);
+    const app = appFromPathname || getToApp(undefined, user);
     const appSlug = getSlugFromApp(app);
 
     const routes = getRoutes({
@@ -149,7 +149,6 @@ const MainContainer = () => {
             !!userSettings.HighSecurity.Eligible ||
             userSettings.HighSecurity.Value === SETTINGS_PROTON_SENTINEL_STATE.ENABLED,
         isProtonSentinelFeatureEnabled,
-        isAccessibilitySettingsEnabled,
         isOrgTwoFactorEnabled,
     });
 
@@ -223,6 +222,10 @@ const MainContainer = () => {
     const redirect = (() => {
         if (loadingOrganization || loadingFeatures || loadingSubscription) {
             return <PrivateMainAreaLoading />;
+        }
+
+        if (!appFromPathname) {
+            return <Redirect to={`/${appSlug}${getPathFromLocation(location)}`} />;
         }
 
         const path = (() => {

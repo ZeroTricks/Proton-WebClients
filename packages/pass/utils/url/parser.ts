@@ -58,12 +58,18 @@ export const parseUrl = (url?: string): ParsedUrl => {
     };
 };
 
-export const parseSender = (sender: Runtime.MessageSender): { tabId: TabId; url: ParsedUrl } => {
+export type ParsedSender = { tabId: TabId; url: ParsedUrl };
+
+/* Safely parses the sender information, providing compatibility
+ * for non-Chromium browsers: if available, uses the MessageSender origin
+ * property for enhanced protection against compromised renderer spoofing. */
+export const parseSender = (sender: Runtime.MessageSender): ParsedSender => {
+    const origin = (sender as any)?.origin;
     const { url, tab } = sender;
-    const parsedUrl = parseUrl(url ?? '');
+    const parsedUrl = parseUrl(origin ?? url ?? '');
     const tabId = tab?.id;
 
-    if (!parsedUrl.domain || !tabId) throw new Error('unsupported sender');
+    if (!parsedUrl.domain || !tabId) throw new Error('Unsupported sender');
 
     return { tabId, url: parsedUrl };
 };

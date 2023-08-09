@@ -43,6 +43,22 @@ export const getStorageFeature = (
     };
 };
 
+export const getStorageBoostFeature = (bundleStorage: string): PlanCardFeatureDefinition => {
+    return {
+        icon: 'storage',
+        text: c('new_plans: Upsell attribute').t`Boost your storage space to ${bundleStorage} total`,
+        included: true,
+    };
+};
+
+export const getStorageBoostFeatureB2B = (bundleStorage: string): PlanCardFeatureDefinition => {
+    return {
+        icon: 'storage',
+        text: c('new_plans: Upsell attribute').t`Boost your storage space to ${bundleStorage} per user`,
+        included: true,
+    };
+};
+
 export const getStorageFeatureB2B = (bytes: number, highlight?: boolean): PlanCardFeatureDefinition => {
     const size = humanSize(bytes, undefined, undefined, 0);
     return {
@@ -120,6 +136,8 @@ export const getStorage = (plansMap: PlansMap): PlanCardFeature => {
             }),
             [PLANS.MAIL_PRO]: getStorageFeatureB2B(plansMap[PLANS.MAIL_PRO]?.MaxSpace ?? 16106127360),
             [PLANS.BUNDLE_PRO]: getStorageFeatureB2B(plansMap[PLANS.BUNDLE_PRO]?.MaxSpace ?? 536870912000),
+            [PLANS.VPN_PRO]: null,
+            [PLANS.VPN_BUSINESS]: null,
         },
     };
 };
@@ -139,6 +157,8 @@ export const getDriveFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getEndToEndEncryption(),
                 [PLANS.MAIL_PRO]: getEndToEndEncryption(),
                 [PLANS.BUNDLE_PRO]: getEndToEndEncryption(),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
             },
         },
         {
@@ -153,6 +173,8 @@ export const getDriveFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getShareFeature(),
                 [PLANS.MAIL_PRO]: getShareFeature(),
                 [PLANS.BUNDLE_PRO]: getShareFeature(),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
             },
         },
         {
@@ -167,6 +189,8 @@ export const getDriveFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getAdvancedShareFeature(),
                 [PLANS.MAIL_PRO]: getAdvancedShareFeature(),
                 [PLANS.BUNDLE_PRO]: getAdvancedShareFeature(),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
             },
         },
         {
@@ -182,6 +206,8 @@ export const getDriveFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getTeamManagement(),
                 [PLANS.MAIL_PRO]: getTeamManagement(),
                 [PLANS.BUNDLE_PRO]: getTeamManagement(),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
             },
         },
         {
@@ -197,6 +223,8 @@ export const getDriveFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getDocumentEditor(),
                 [PLANS.MAIL_PRO]: getDocumentEditor(),
                 [PLANS.BUNDLE_PRO]: getDocumentEditor(),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
             },
         },
     ];

@@ -17,7 +17,7 @@ import { Icon, InlineLinkButton } from '@proton/components/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { CurrencySelector, CycleSelector } from '@proton/components/containers';
 import { getShortBillingText } from '@proton/components/containers/payments/helper';
-import { useLoading } from '@proton/components/hooks';
+import { useLoading } from '@proton/hooks';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { APP_NAMES, BRAND_NAME, CYCLE, PLANS } from '@proton/shared/lib/constants';
@@ -91,7 +91,7 @@ const Step1 = ({
     logo: ReactNode;
     titles: { [SignupMode.Default]: ReactNode; [SignupMode.Onboarding]: ReactNode };
     features: { text: string; left: ReactNode }[];
-    selectedPlan: Plan | undefined;
+    selectedPlan: Plan;
     planCards: PlanCard[];
     isDesktop: boolean;
     vpnServersCountData: VPNServersCountData;
@@ -140,7 +140,7 @@ const Step1 = ({
         checkResult: model.optimistic.checkResult || model.subscriptionData.checkResult,
     };
 
-    const selectedPlanCard = planCards.find((planCard) => planCard.plan === options.plan?.Name);
+    const selectedPlanCard = planCards.find((planCard) => planCard.plan === options.plan.Name);
 
     const setOptimisticDiff = (diff: Partial<OptimisticOptions>) => {
         setModel((old) => ({
@@ -270,15 +270,9 @@ const Step1 = ({
     const isOnboardingMode = mode === SignupMode.Onboarding && !!model.session?.user;
 
     return (
-        <Layout
-            logo={logo}
-            hasDecoration
-            languageSelect={false}
-            bottomRight={<SignupSupportDropdown />}
-            className={className}
-        >
+        <Layout logo={logo} hasDecoration bottomRight={<SignupSupportDropdown />} className={className}>
             <div className="flex flex-align-items-center flex-column">
-                <div className={clsx('single-signup-header-v2 text-center', 'mt-8 mb-4')}>
+                <div className="single-signup-header-v2 text-center mt-8 mb-4">
                     <h1 className="m-0 large-font lg:px-4 text-semibold">
                         {!isOnboardingMode ? titles[SignupMode.Default] : titles[SignupMode.Onboarding]}
                     </h1>
@@ -363,7 +357,7 @@ const Step1 = ({
                         {model.upsell.mode === UpsellTypes.PLANS ? (
                             <PlanCardSelector
                                 plansMap={model.plansMap}
-                                plan={options.plan?.Name}
+                                plan={options.plan.Name}
                                 cycle={options.cycle}
                                 currency={options.currency}
                                 planCards={planCards}
@@ -499,12 +493,12 @@ const Step1 = ({
                                     <div className="flex flex-align-items-start flex-justify-space-between gap-14">
                                         <div className="flex-item-fluid w0 relative">
                                             <AccountStepDetails
+                                                passwordFields={true}
                                                 model={model}
                                                 measure={measure}
                                                 loading={loadingChallenge || loadingSignout}
                                                 api={silentApi}
                                                 accountStepDetailsRef={accountDetailsRef}
-                                                onOpenLogin={onOpenLogin}
                                                 onChallengeError={() => {
                                                     setLoadingChallenge(false);
                                                     onChallengeError();
@@ -525,7 +519,50 @@ const Step1 = ({
                                                           }
                                                         : undefined
                                                 }
-                                                appName={appName}
+                                                footer={(details) => {
+                                                    const signIn = (
+                                                        <InlineLinkButton
+                                                            key="signin"
+                                                            className="link link-focus text-nowrap"
+                                                            onClick={() => {
+                                                                onOpenLogin({
+                                                                    email: details.email.trim(),
+                                                                    location: 'step2',
+                                                                });
+                                                            }}
+                                                        >
+                                                            {c('Link').t`Sign in`}
+                                                        </InlineLinkButton>
+                                                    );
+
+                                                    return (
+                                                        <>
+                                                            {hasSelectedFree && (
+                                                                <div className="mb-4">
+                                                                    <Button
+                                                                        type="submit"
+                                                                        size="large"
+                                                                        loading={loadingSignup}
+                                                                        color="norm"
+                                                                        fullWidth
+                                                                    >
+                                                                        {c('pass_signup_2023: Action')
+                                                                            .t`Start using ${appName} now`}
+                                                                    </Button>
+                                                                </div>
+                                                            )}
+                                                            <div className="text-center">
+                                                                <span>
+                                                                    {
+                                                                        // translator: Full sentence "Already have an account? Sign in"
+                                                                        c('Go to sign in')
+                                                                            .jt`Already have an account? ${signIn}`
+                                                                    }
+                                                                </span>
+                                                            </div>
+                                                        </>
+                                                    );
+                                                }}
                                             />
                                         </div>
                                         {step2Summary}
@@ -553,7 +590,7 @@ const Step1 = ({
                                 vpnServersCountData={vpnServersCountData}
                                 loadingSignup={loadingSignup}
                                 loadingPaymentDetails={loadingPaymentDetails || loadingSignout}
-                                onPay={async (payment) => {
+                                onPay={async (payment, type) => {
                                     if (payment === 'signup-token') {
                                         await handleCompletion(model.subscriptionData, 'signup-token');
                                         return;
@@ -561,6 +598,7 @@ const Step1 = ({
                                     await handleCompletion({
                                         ...model.subscriptionData,
                                         payment,
+                                        type,
                                     });
                                 }}
                                 onValidate={() => {

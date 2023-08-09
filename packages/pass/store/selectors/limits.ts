@@ -13,8 +13,8 @@ export const selectVaultLimits = createSelector([selectAllVaults, selectUserPlan
     return {
         vaultLimit,
         vaultTotalCount: vaults.length,
-        needsUpgrade: vaults.length >= vaultLimit,
-        didDowngrade: vaults.length > vaultLimit,
+        vaultLimitReached: vaults.length >= vaultLimit,
+        didDowngrade: vaults.length > vaultLimit && plan?.Type === PlanType.free,
     };
 });
 
@@ -43,7 +43,7 @@ export const selectTOTPLimits = createSelector([selectItemsByType('login'), sele
         needsUpgrade = totpTotalCount >= totpLimit;
         didDowngrade = totpTotalCount > totpLimit;
         totpAllowed = (itemId: string) =>
-            sortItems(totpItems, 'createTimeASC')
+            sortItems('createTimeASC')(totpItems)
                 .slice(0, totpLimit)
                 .some((item) => item.itemId === itemId);
     }

@@ -1,11 +1,8 @@
-import { c } from 'ttag';
-
 import type { ItemImportIntent } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
-import { uniqueId } from '@proton/pass/utils/string';
 
 import { readCSV } from '../helpers/csv.reader';
-import { ImportReaderError } from '../helpers/reader.error';
+import { ImportProviderError } from '../helpers/error';
 import { getImportedVaultName, importLoginItem } from '../helpers/transformers';
 import type { ImportPayload } from '../types';
 import type { SafariItem } from './safari.types';
@@ -29,9 +26,8 @@ export const readSafariData = async (data: string): Promise<ImportPayload> => {
         return {
             vaults: [
                 {
-                    type: 'new',
-                    vaultName: getImportedVaultName(),
-                    id: uniqueId(),
+                    name: getImportedVaultName(),
+                    shareId: null,
                     items: result.items.map(
                         (item): ItemImportIntent<'login'> =>
                             importLoginItem({
@@ -50,7 +46,6 @@ export const readSafariData = async (data: string): Promise<ImportPayload> => {
         };
     } catch (e) {
         logger.warn('[Importer::Safari]', e);
-        const errorDetail = e instanceof ImportReaderError ? e.message : '';
-        throw new Error(c('Error').t`Safari export file could not be parsed. ${errorDetail}`);
+        throw new ImportProviderError('Safari', e);
     }
 };

@@ -187,9 +187,10 @@ export const verificationComplete = (
             pinnedKeysVerified: verificationPreferences?.pinnedKeysVerified,
             verificationStatus: verification?.verified,
             verificationErrors: verification?.verificationErrors,
-            ktVerificationStatus: verificationPreferences?.ktVerificationStatus,
+            ktVerificationResult: verificationPreferences?.ktVerificationResult,
             signingPublicKeyIsPinned,
             signingPublicKeyIsCompromised,
+            apiKeysErrors: verificationPreferences?.apiKeysErrors,
         };
         messageState.errors = { ...messageState.errors, ...errors };
     }

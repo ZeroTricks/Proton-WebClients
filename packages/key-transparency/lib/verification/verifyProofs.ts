@@ -40,14 +40,16 @@ const getMerkleTreePath = (vrfHash: Uint8Array, revision: number): Uint8Array =>
 /**
  * Verify the given leafValue exists in the provided chain of the Merkle Tree.
  * The leafValue defaults to the empty node if not provided, which is used in
- * Proofs of Abscence. The incompleteHashing parameter informs whether to start
+ * Proofs of Absence. The incompleteHashing parameter informs whether to start
  * hashing only after the first non-null neighbor or from the very beginning
  */
 const verifyNeighbors = async (
     Neighbors: (string | null)[],
     TreeHash: string,
     vrfHash: Uint8Array,
+    email: string,
     revision: number,
+    proofType: KTPROOF_TYPE,
     leafValue: Uint8Array = new Uint8Array(KT_LEN).fill(0),
     incompleteHashing: boolean = true
 ) => {
@@ -91,6 +93,9 @@ const verifyNeighbors = async (
             vrfHash: arrayToHexString(vrfHash),
             leafValue: arrayToHexString(leafValue),
             incompleteHashing,
+            email,
+            proofType,
+            revision,
         });
     }
 };
@@ -99,7 +104,7 @@ const verifyNeighbors = async (
  * Verify an address is not in KT by checking the Merkle Tree from the leaf 00...000. It only
  * starts hashing from the first non-null neighbour from the bottom of the tree
  */
-export const verifyProofOfAbscenceForRevision = async (
+export const verifyProofOfAbsenceForRevision = async (
     proof: Proof,
     email: string,
     TreeHash: string,
@@ -112,7 +117,7 @@ export const verifyProofOfAbscenceForRevision = async (
         });
     }
     const vrfHash = await verifyVRFProof(proof, email);
-    return verifyNeighbors(proof.Neighbors, TreeHash, vrfHash, Revision);
+    return verifyNeighbors(proof.Neighbors, TreeHash, vrfHash, email, Revision, proof.Type);
 };
 
 /**
@@ -120,8 +125,8 @@ export const verifyProofOfAbscenceForRevision = async (
  * starts hashing from the first non-null neighbour from the bottom of the tree
  *
  */
-export const verifyProofOfAbscenceForAllRevision = async (proof: Proof, email: string, TreeHash: string) => {
-    await verifyProofOfAbscenceForRevision(proof, email, TreeHash, 0);
+export const verifyProofOfAbsenceForAllRevision = async (proof: Proof, email: string, TreeHash: string) => {
+    await verifyProofOfAbsenceForRevision(proof, email, TreeHash, 0);
     proof.Neighbors.slice(224).forEach((neighbor) => {
         if (neighbor != null) {
             return throwKTError('Revision subtree is not empty', {
@@ -181,7 +186,7 @@ export const verifyProofOfObsolescence = async (
     const vrfHash = await verifyVRFProof(proof, email);
     const leafValue = await computeLeafValue(binaryStringToArray(ObsolescenceToken), MinEpochID);
 
-    await verifyNeighbors(proof.Neighbors, TreeHash, vrfHash, Revision, leafValue, false);
+    await verifyNeighbors(proof.Neighbors, TreeHash, vrfHash, email, Revision, proof.Type, leafValue, false);
 };
 
 /**
@@ -210,7 +215,7 @@ export const verifyProofOfExistence = async (
     const vrfHash = await verifyVRFProof(proof, email);
     const leafValue = await computeLeafValue(binaryStringToArray(Data), MinEpochID);
 
-    await verifyNeighbors(proof.Neighbors, TreeHash, vrfHash, Revision, leafValue, false);
+    await verifyNeighbors(proof.Neighbors, TreeHash, vrfHash, email, Revision, proof.Type, leafValue, false);
 };
 
 export const verifyProofOfExistenceOrObsolescence = async (

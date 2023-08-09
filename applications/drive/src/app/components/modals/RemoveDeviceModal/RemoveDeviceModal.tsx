@@ -12,9 +12,9 @@ import {
     ModalTwoHeader,
     Row,
     useFormErrors,
-    useLoading,
     useModalTwo,
 } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
@@ -71,9 +71,11 @@ const RemoveDeviceModal = ({ device, onClose, ...modalProps }: Props) => {
             <ModalTwoContent>
                 <p key={'remove-device-modal-content-paragraph-1'}>
                     {c('Info')
-                        .jt`This will remove from ${DRIVE_APP_NAME} the synced device ${deviceName}. Local files on the device won’t be affected.`}
+                        .jt`This will remove the synced device ${deviceName} from ${DRIVE_APP_NAME} and stop syncing folders you added to My Computers.`}
                 </p>
-                <p key={'remove-device-modal-content-paragraph-2'}>Enter the device name to confirm removal.</p>
+                <p key={'remove-device-modal-content-paragraph-2'}>
+                    {c('Info').t`Enter the device name to confirm removal.`}
+                </p>
                 <Row className="my-4">
                     <InputFieldTwo
                         aria-required

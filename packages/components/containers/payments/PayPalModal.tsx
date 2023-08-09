@@ -3,12 +3,14 @@ import { useEffect, useRef } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { PAYMENT_METHOD_TYPES, process } from '@proton/components/payments/core';
+import { ensureTokenChargeable } from '@proton/components/payments/client-extensions';
+import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
+import { useLoading } from '@proton/hooks';
 import { createToken, setPaymentMethod } from '@proton/shared/lib/api/payments';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import { ModalProps, Prompt } from '../../components';
-import { useApi, useEventManager, useLoading, useNotifications } from '../../hooks';
+import { useApi, useEventManager, useNotifications } from '../../hooks';
 import { PaymentTokenResult } from '../../payments/core/interface';
 
 const PAYMENT_AUTHORIZATION_AMOUNT = 100;
@@ -45,7 +47,7 @@ const PayPalModal = ({ onClose, ...rest }: ModalProps) => {
 
     const handleSubmit = async (data: PaymentTokenResult) => {
         abortRef.current = new AbortController();
-        await process({
+        await ensureTokenChargeable({
             Token: data.Token,
             api,
             ApprovalURL: data.ApprovalURL,

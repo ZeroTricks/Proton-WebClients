@@ -3,12 +3,13 @@ import { c } from 'ttag';
 
 import usePaymentToken from '@proton/components/containers/payments/usePaymentToken';
 import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
+import { useLoading } from '@proton/hooks';
 import { checkInvoice, payInvoice } from '@proton/shared/lib/api/payments';
 import { toPrice } from '@proton/shared/lib/helpers/string';
 import { Currency } from '@proton/shared/lib/interfaces';
 
 import { Field, FormModal, Input, Label, Price, PrimaryButton, Row } from '../../components';
-import { useApi, useApiResult, useEventManager, useLoading, useNotifications } from '../../hooks';
+import { useApi, useApiResult, useEventManager, useNotifications } from '../../hooks';
 import {
     AmountAndCurrency,
     ExistingPayment,
@@ -136,7 +137,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
                             />
                         </Field>
                     </Row>
-                    {AmountDue && AmountDue > 0 && (
+                    {AmountDue && AmountDue > 0 ? (
                         <Payment
                             api={api}
                             type="invoice"
@@ -150,7 +151,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
                             onCard={setCard}
                             cardErrors={cardErrors}
                         />
-                    )}
+                    ) : null}
                 </>
             )}
         </FormModal>

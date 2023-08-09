@@ -921,8 +921,8 @@
       "System default": [
         "Systemstandard"
       ],
-      "Theme default": [
-        "Standard-Farbschema"
+      "Theme font": [
+        "Design-Schriftart"
       ]
     },
     "Font size option": {

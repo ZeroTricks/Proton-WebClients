@@ -11,7 +11,7 @@ import clsx from '@proton/utils/clsx';
 import { Icon, Label, Option, SelectTwo } from '../../components';
 import { DEFAULT_SEPARATOR, getFullList } from '../../helpers/countries';
 import { useElementRect } from '../../hooks';
-import { CardModel } from '../../payments/core/interface';
+import { CardModel } from '../../payments/core';
 import { formatCreditCardNumber, isValidNumber } from './CardNumberInput';
 import { handleExpOnChange } from './ExpInput';
 import { isPotentiallyCVV } from './cardValidator';
@@ -29,13 +29,14 @@ const WarningIcon = ({ className }: { className?: string }) => {
     );
 };
 
-interface Props {
+export interface Props {
     onChange: (key: keyof CardModel, value: string) => void;
     loading?: boolean;
     card: CardModel;
     errors: Partial<CardModel>;
-    fieldStatus?: CardFieldStatus;
+    fieldsStatus?: CardFieldStatus;
     bigger?: boolean;
+    forceNarrow?: boolean;
 }
 
 /**
@@ -59,7 +60,15 @@ const useAdvancer = (
     }, [currentFieldState, condition]);
 };
 
-const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldStatus, bigger = false }: Props) => {
+const CreditCardNewDesign = ({
+    card,
+    errors,
+    onChange,
+    loading = false,
+    fieldsStatus,
+    bigger = false,
+    forceNarrow = false,
+}: Props) => {
     const narrowNumberRef = useRef<HTMLInputElement>(null);
     const narrowExpRef = useRef<HTMLInputElement>(null);
     const narrowCvcRef = useRef<HTMLInputElement>(null);
@@ -70,21 +79,18 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldSta
 
     const zipRef = useRef<HTMLInputElement>(null);
 
-    useAdvancer(narrowNumberRef, narrowExpRef, card.number, fieldStatus?.number ?? false);
-    useAdvancer(narrowExpRef, narrowCvcRef, card.month, fieldStatus?.month ?? false);
-    useAdvancer(narrowCvcRef, zipRef, card.cvc, fieldStatus?.cvc ?? false);
+    useAdvancer(narrowNumberRef, narrowExpRef, card.number, fieldsStatus?.number ?? false);
+    useAdvancer(narrowExpRef, narrowCvcRef, card.month, fieldsStatus?.month ?? false);
+    useAdvancer(narrowCvcRef, zipRef, card.cvc, fieldsStatus?.cvc ?? false);
 
-    useAdvancer(wideNumberRef, wideExpRef, card.number, fieldStatus?.number ?? false);
-    useAdvancer(wideExpRef, wideCvcRef, card.month, fieldStatus?.month ?? false);
-    useAdvancer(wideCvcRef, zipRef, card.cvc, fieldStatus?.cvc ?? false);
+    useAdvancer(wideNumberRef, wideExpRef, card.number, fieldsStatus?.number ?? false);
+    useAdvancer(wideExpRef, wideCvcRef, card.month, fieldsStatus?.month ?? false);
+    useAdvancer(wideCvcRef, zipRef, card.cvc, fieldsStatus?.cvc ?? false);
 
     const formContainer = useRef<HTMLDivElement>(null);
     const formRect = useElementRect(formContainer, requestAnimationFrameRateLimiter);
 
-    const countries = useMemo(
-        () => getFullList().map(({ value, label: text, disabled }) => ({ value, text, disabled })),
-        []
-    );
+    const countries = useMemo(() => getFullList(), []);
 
     const maxCvvLength = 4;
     const handleChange =
@@ -143,7 +149,7 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldSta
 
     // 25 x 16 = we want eq 400px width to trigger the adaptation being zoom-friendly
     const narrowWidth = rootFontSize() * 25;
-    const isNarrow = formRect ? formRect.width < narrowWidth : false;
+    const isNarrow = forceNarrow || (formRect ? formRect.width < narrowWidth : false);
 
     let error = null;
     if (errors.number) {
@@ -181,7 +187,7 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldSta
                 <Label
                     htmlFor={commonNumberProps.id}
                     className="field-two-label field-two-label-container flex pt-3"
-                >{c('Label').t`Card information`}</Label>
+                >{c('Label').t`Card details`}</Label>
                 <span id="id_desc_card_number" className="sr-only">{c('Label').t`Card number`}</span>
                 <Input
                     className="card-number--small"
@@ -241,7 +247,7 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldSta
                 <Label
                     htmlFor={commonNumberProps.id}
                     className="field-two-label field-two-label-container flex pt-3"
-                >{c('Label').t`Card information`}</Label>
+                >{c('Label').t`Card details`}</Label>
                 <span id="id_desc_card_number" className="sr-only">{c('Label').t`Card number`}</span>
                 <Input
                     className="card-information"
@@ -307,7 +313,15 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldSta
     }
 
     return (
-        <div ref={formContainer} className={clsx(['field-two-container', bigger && 'field-two--bigger'])}>
+        <div
+            ref={formContainer}
+            data-testid="credit-card-form-container"
+            className={clsx([
+                'field-two-container',
+                bigger && 'field-two--bigger',
+                isNarrow && 'credit-card-form--narrow',
+            ])}
+        >
             {creditCardForm}
             <div className="error-container mt-1 text-semibold text-sm flex gap-2">
                 {error && (
@@ -318,7 +332,7 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldSta
                 )}
             </div>
             <Label htmlFor="postalcode" className="field-two-label field-two-label-container flex pt-1">{c('Label')
-                .t`Country`}</Label>
+                .t`Billing address`}</Label>
             <Input
                 placeholder={title}
                 className="country-select flex-justify-space-between divide-x"
@@ -343,10 +357,10 @@ const CreditCardNewDesign = ({ card, errors, onChange, loading = false, fieldSta
                         id="country"
                         value={card.country}
                     >
-                        {countries.map(({ value, text, disabled }) => {
+                        {countries.map(({ key, value, label, disabled }) => {
                             return (
-                                <Option key={value} value={value} title={text} disabled={disabled}>
-                                    {value === DEFAULT_SEPARATOR.value ? <hr className="m-0" /> : text}
+                                <Option key={key} value={value} title={label} disabled={disabled}>
+                                    {value === DEFAULT_SEPARATOR.value ? <hr className="m-0" /> : label}
                                 </Option>
                             );
                         })}

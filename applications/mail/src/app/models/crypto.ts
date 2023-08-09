@@ -1,4 +1,5 @@
 import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
+import { ENCRYPTION_PREFERENCES_ERROR_TYPES } from '@proton/shared/lib/mail/encryptionPreferences';
 
 export enum STATUS_ICONS_FILLS {
     PLAIN = 0,
@@ -34,8 +35,8 @@ export interface StatusIcon {
 }
 
 export interface SenderVerificationDetails {
-    success: boolean;
     description: string;
+    showKeyTransparencyLearnMore?: boolean;
 }
 
 export interface MapStatusIcons {
@@ -51,6 +52,7 @@ export interface SendInfo {
     sendPreferences?: SendPreferences;
     sendIcon?: StatusIcon;
     loading: boolean;
+    encryptionPreferenceError?: ENCRYPTION_PREFERENCES_ERROR_TYPES;
     emailValidation: boolean;
     emailAddressWarnings?: string[];
     contactSignatureInfo?: ContactSignatureInfo;

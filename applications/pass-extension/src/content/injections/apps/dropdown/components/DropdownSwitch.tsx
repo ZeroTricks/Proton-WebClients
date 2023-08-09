@@ -3,33 +3,35 @@ import { type ForwardRefRenderFunction, forwardRef } from 'react';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { Icon } from '@proton/components/components';
 import type { MaybeNull } from '@proton/pass/types';
 import { WorkerStatus } from '@proton/pass/types';
 import { PassIconStatus } from '@proton/pass/types/data/pass-icon';
 import { pixelEncoder } from '@proton/pass/utils/dom';
+import { workerBusy } from '@proton/pass/utils/worker';
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 
-import type { IFrameMessage } from '../../../../../content/types';
-import { DropdownAction, type DropdownSetActionPayload } from '../../../../../content/types';
+import type { IFrameCloseOptions, IFrameMessage } from '../../../../../content/types';
+import { DropdownAction, type DropdownActions } from '../../../../../content/types';
 import { useAccountFork } from '../../../../../shared/hooks';
 import { AliasAutoSuggest } from '../views/AliasAutoSuggest';
 import { ItemsList } from '../views/ItemsList';
 import { PasswordAutoSuggest } from '../views/PasswordAutoSuggest';
 import { DROPDOWN_ITEM_HEIGHT, DropdownItem } from './DropdownItem';
+import { DropdownPinUnlock } from './DropdownPinUnlock';
 
 type Props = {
-    state: MaybeNull<DropdownSetActionPayload>;
+    state: MaybeNull<DropdownActions>;
     status: WorkerStatus;
     loggedIn: boolean;
-    onClose?: () => void;
-    onLoad?: () => void;
+    visible?: boolean;
+    onClose?: (options?: IFrameCloseOptions) => void;
     onMessage?: (message: IFrameMessage) => void;
+    onResize?: () => void;
 };
 
 const DropdownSwitchRender: ForwardRefRenderFunction<HTMLDivElement, Props> = (
-    { state, loggedIn, status, onClose, onLoad, onMessage },
+    { state, loggedIn, status, visible, onClose, onResize, onMessage },
     ref
 ) => {
     const accountFork = useAccountFork();
@@ -41,15 +43,16 @@ const DropdownSwitchRender: ForwardRefRenderFunction<HTMLDivElement, Props> = (
             style={{ '--min-h-custom': pixelEncoder(DROPDOWN_ITEM_HEIGHT) }}
         >
             {(() => {
-                if (state === null) return <CircleLoader className="absolute absolute-center m-auto" />;
+                if (state === null || workerBusy(status)) {
+                    return <CircleLoader className="absolute-center m-auto" />;
+                }
 
                 if (status === WorkerStatus.LOCKED) {
                     return (
-                        <DropdownItem
-                            onClick={onClose}
-                            title={c('Title').t`${PASS_APP_NAME} locked`}
-                            subTitle={c('Info').t`Unlock with your pin`}
-                            icon={PassIconStatus.LOCKED_DROPDOWN}
+                        <DropdownPinUnlock
+                            onError={onResize}
+                            onUnlock={() => onClose?.({ refocus: true })}
+                            visible={visible}
                         />
                     );
                 }
@@ -61,12 +64,7 @@ const DropdownSwitchRender: ForwardRefRenderFunction<HTMLDivElement, Props> = (
                                 onClose?.();
                                 await accountFork(FORK_TYPE.SWITCH);
                             }}
-                            subTitle={
-                                <>
-                                    {c('Info').t`Enable ${PASS_APP_NAME} by connecting your ${BRAND_NAME} account`}
-                                    <Icon className="ml-1" name="arrow-out-square" />
-                                </>
-                            }
+                            subTitle={c('Info').t`Enable ${PASS_APP_NAME} by connecting your ${BRAND_NAME} account`}
                             icon={PassIconStatus.DISABLED}
                             autogrow
                         />
@@ -75,14 +73,13 @@ const DropdownSwitchRender: ForwardRefRenderFunction<HTMLDivElement, Props> = (
 
                 switch (state.action) {
                     case DropdownAction.AUTOFILL:
-                        return state.items.length > 0 ? (
-                            <ItemsList items={state.items} needsUpgrade={state.needsUpgrade} onMessage={onMessage} />
-                        ) : (
-                            <DropdownItem
-                                icon={PassIconStatus.ACTIVE}
-                                onClick={onClose}
-                                title={PASS_APP_NAME}
-                                subTitle={c('Info').t`No login found`}
+                        return (
+                            <ItemsList
+                                items={state.items}
+                                needsUpgrade={state.needsUpgrade}
+                                onMessage={onMessage}
+                                onClose={onClose}
+                                visible={visible}
                             />
                         );
 
@@ -94,7 +91,7 @@ const DropdownSwitchRender: ForwardRefRenderFunction<HTMLDivElement, Props> = (
                             <AliasAutoSuggest
                                 prefix={state.prefix}
                                 domain={state.domain}
-                                onOptions={onLoad}
+                                onOptions={onResize}
                                 onMessage={onMessage}
                             />
                         );

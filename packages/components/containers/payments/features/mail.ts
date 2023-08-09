@@ -34,7 +34,7 @@ export const getNAddressesFeature = ({
 
     if (family) {
         tooltip = c('new_plans: tooltip')
-            .t`Create up to ${n} email addresses/aliases for the whole family. Use them for your online identities, e.g., MyFamilySubs@${domain} for online subscriptions.`;
+            .t`Create up to ${n} email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${domain} for shopping accounts.`;
     }
 
     return {
@@ -64,6 +64,13 @@ export const getNAddressesFeatureB2B = ({
     };
 };
 
+export const getExtraPersonalizationFeature = (): PlanCardFeatureDefinition => ({
+    icon: 'checkmark-circle',
+    text: c('new_plans: Upsell attribute')
+        .t`Add more personalization with 15 email addresses and support for 3 custom email domains`,
+    included: true,
+});
+
 export const getNMessagesFeature = (n: number | 'unlimited'): PlanCardFeatureDefinition => {
     if (n === Number.POSITIVE_INFINITY || n === 'unlimited') {
         return {
@@ -80,6 +87,12 @@ export const getNMessagesFeature = (n: number | 'unlimited'): PlanCardFeatureDef
         icon: 'speech-bubble',
     };
 };
+
+export const getB2BNDomainsFeature = (): PlanCardFeatureDefinition => ({
+    icon: 'globe',
+    text: c('new_plans: Upsell attribute').t`Cover more ground with support for 10 custom email domains`,
+    included: true,
+});
 
 export const getNDomainsFeature = ({ n, highlight }: { n: number; highlight?: boolean }): PlanCardFeatureDefinition => {
     if (n === 0) {
@@ -279,6 +292,8 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.BUNDLE_PRO]: getNAddressesFeatureB2B({
                     n: plansMap[PLANS.BUNDLE_PRO]?.MaxAddresses || 15,
                 }),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
             },
         },
         {
@@ -293,6 +308,8 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getNDomainsFeature({ n: plansMap[PLANS.FAMILY]?.MaxDomains ?? 5 }),
                 [PLANS.MAIL_PRO]: getNDomainsFeature({ n: plansMap[PLANS.MAIL_PRO]?.MaxDomains ?? 3 }),
                 [PLANS.BUNDLE_PRO]: getNDomainsFeature({ n: plansMap[PLANS.BUNDLE_PRO]?.MaxDomains ?? 10 }),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
             },
         },
         {
@@ -307,6 +324,8 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getNMessagesFeature('unlimited'),
                 [PLANS.MAIL_PRO]: getNMessagesFeature('unlimited'),
                 [PLANS.BUNDLE_PRO]: getNMessagesFeature('unlimited'),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
             },
         },
         {
@@ -321,6 +340,8 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getFolders('unlimited'),
                 [PLANS.MAIL_PRO]: getFolders('unlimited'),
                 [PLANS.BUNDLE_PRO]: getFolders('unlimited'),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
             },
         },
         {
@@ -335,6 +356,8 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getLabels('unlimited'),
                 [PLANS.MAIL_PRO]: getLabels('unlimited'),
                 [PLANS.BUNDLE_PRO]: getLabels('unlimited'),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
             },
         },
         {
@@ -349,6 +372,8 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getFilters('unlimited'),
                 [PLANS.MAIL_PRO]: getFilters('unlimited'),
                 [PLANS.BUNDLE_PRO]: getFilters('unlimited'),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
             },
         },
         {
@@ -363,6 +388,8 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getAttachments(),
                 [PLANS.MAIL_PRO]: getAttachments(),
                 [PLANS.BUNDLE_PRO]: getAttachments(),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
             },
         },
         {
@@ -377,6 +404,8 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getSignature(),
                 [PLANS.MAIL_PRO]: getSignature(),
                 [PLANS.BUNDLE_PRO]: getSignature(),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
             },
         },
         {
@@ -391,6 +420,8 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getEndToEndEncryption(),
                 [PLANS.MAIL_PRO]: getEndToEndEncryption(),
                 [PLANS.BUNDLE_PRO]: getEndToEndEncryption(),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
             },
         },
         {
@@ -405,6 +436,8 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getEncryptionOutside(),
                 [PLANS.MAIL_PRO]: getEncryptionOutside(),
                 [PLANS.BUNDLE_PRO]: getEncryptionOutside(),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
             },
         },
         {
@@ -419,6 +452,8 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getEncryptedContacts(),
                 [PLANS.MAIL_PRO]: getEncryptedContacts(),
                 [PLANS.BUNDLE_PRO]: getEncryptedContacts(),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
             },
         },
         {
@@ -433,6 +468,8 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getContactGroups(true),
                 [PLANS.MAIL_PRO]: getContactGroups(true),
                 [PLANS.BUNDLE_PRO]: getContactGroups(true),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
             },
         },
         {
@@ -447,6 +484,8 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getSMTP(true),
                 [PLANS.MAIL_PRO]: getSMTP(true),
                 [PLANS.BUNDLE_PRO]: getSMTP(true),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
             },
         },
         {
@@ -461,6 +500,8 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getAutoReply(true),
                 [PLANS.MAIL_PRO]: getAutoReply(true, Audience.B2B),
                 [PLANS.BUNDLE_PRO]: getAutoReply(true, Audience.B2B),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
             },
         },
         {
@@ -475,6 +516,8 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getCatchAll(true),
                 [PLANS.MAIL_PRO]: getCatchAll(true),
                 [PLANS.BUNDLE_PRO]: getCatchAll(true),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
             },
         },
     ];

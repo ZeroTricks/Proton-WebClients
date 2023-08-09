@@ -3,6 +3,7 @@ import { FormEvent, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, CircleLoader } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import { createAddress } from '@proton/shared/lib/api/addresses';
 import { getAllMemberAddresses } from '@proton/shared/lib/api/members';
 import {
@@ -44,7 +45,6 @@ import {
     useAuthentication,
     useEventManager,
     useGetUserKeys,
-    useLoading,
     useNotifications,
     usePremiumDomains,
     useUser,
@@ -159,7 +159,6 @@ const AddressModal = ({ member, members, organizationKey, ...rest }: Props) => {
                         password,
                         api,
                         keyTransparencyVerify,
-                        keyTransparencyCommit,
                     });
                 } else {
                     await missingKeysMemberProcess({

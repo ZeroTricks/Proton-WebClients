@@ -1,5 +1,5 @@
 import { type ReactElement, type VFC, useMemo } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
 import { Form, FormikProvider, useFormik } from 'formik';
@@ -8,19 +8,18 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { DropdownMenuButton, Icon } from '@proton/components';
 import { selectTOTPLimits, selectVaultLimits } from '@proton/pass/store';
+import { passwordSave } from '@proton/pass/store/actions/creators/pw-history';
 import { type LoginWithAliasCreationDTO } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { merge } from '@proton/pass/utils/object';
 import { parseOTPValue } from '@proton/pass/utils/otp/otp';
 import { isEmptyString, uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
-import { isValidURL } from '@proton/pass/utils/url';
+import { isValidURL, parseUrl } from '@proton/pass/utils/url';
 
 import { UpgradeButton } from '../../../../shared/components/upgrade/UpgradeButton';
 import type { LoginItemFormValues, NewLoginItemFormValues } from '../../../../shared/form/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../../../../shared/form/validator/validate-item';
 import { validateLoginForm } from '../../../../shared/form/validator/validate-login';
-import { useFeatureFlag } from '../../../../shared/hooks/useFeatureFlag';
 import type { ItemNewProps } from '../../../../shared/items';
 import { deriveAliasPrefix, sanitizeLoginAliasHydration, sanitizeLoginAliasSave } from '../../../../shared/items/alias';
 import { QuickActionsDropdown } from '../../../components/Dropdown/QuickActionsDropdown';
@@ -43,13 +42,12 @@ import { AliasModal } from '../Alias/Alias.modal';
 const FORM_ID = 'new-login';
 
 export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCancel }) => {
+    const dispatch = useDispatch();
     const { domain, subdomain } = usePopupContext().url;
     const { search } = useLocation();
 
     const { vaultTotalCount } = useSelector(selectVaultLimits);
     const { needsUpgrade } = useSelector(selectTOTPLimits);
-
-    const showCustomFields = useFeatureFlag<boolean>(PassFeature.PassCustomFields);
 
     const initialValues: LoginItemFormValues = useMemo(() => {
         const params = new URLSearchParams(search);
@@ -261,6 +259,20 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
                                     placeholder={c('Placeholder').t`Enter password`}
                                     icon="key"
                                     component={PasswordField}
+                                    onPasswordGenerated={(value: string) => {
+                                        const { urls, url } = form.values;
+                                        const baseUrl = urls?.[0]?.url ?? url;
+                                        const { subdomain, domain, hostname } = parseUrl(baseUrl);
+
+                                        dispatch(
+                                            passwordSave({
+                                                id: uniqueId(),
+                                                value,
+                                                origin: subdomain ?? domain ?? hostname,
+                                                createTime: getEpoch(),
+                                            })
+                                        );
+                                    }}
                                 />
 
                                 {
@@ -272,7 +284,7 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
                                         </ValueControl>
                                     ) : (
                                         <Field
-                                            masked
+                                            hidden
                                             name="totpUri"
                                             label={c('Label').t`2FA secret (TOTP)`}
                                             placeholder={c('Placeholder').t`Add 2FA secret`}
@@ -298,7 +310,7 @@ export const LoginNew: VFC<ItemNewProps<'login'>> = ({ shareId, onSubmit, onCanc
                                 />
                             </FieldsetCluster>
 
-                            {Boolean(showCustomFields) && <ExtraFieldGroup form={form} />}
+                            <ExtraFieldGroup form={form} />
                         </Form>
                     </FormikProvider>
                 )}

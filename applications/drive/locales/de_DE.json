@@ -325,7 +325,7 @@
         "Verstanden"
       ],
       "Grid layout": [
-        "Rasteranordnung"
+        "Rasteransicht"
       ],
       "Hide advanced PGP settings": [
         "Erweiterte PGP-Einstellungen ausblenden"
@@ -1940,6 +1940,9 @@
       "\"${ name }\" already exists": [
         "„${ name }“ existiert bereits"
       ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Du kannst auch auf unserer ${ statusPageLink } nachsehen."
+      ],
       "A group with this name already exists": [
         "Eine Gruppe mit diesem Namen existiert bereits"
       ],
@@ -2137,6 +2140,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ein Problem ist aufgetreten. Bitte ${ refresh }, um fortzufahren. Wenn dir diese Fehlermeldung weiterhin angezeigt wird, wende dich bitte an unser ${ supportTeam }."
+      ],
+      "status page": [
+        "Statusseite"
       ],
       "The email addresses do not match": [
         "Die E-Mail-Adressen stimmen nicht überein"
@@ -2702,8 +2708,8 @@
       "System default": [
         "Systemstandard"
       ],
-      "Theme default": [
-        "Standard-Farbschema"
+      "Theme font": [
+        "Design-Schriftart"
       ]
     },
     "Font size option": {
@@ -3218,6 +3224,9 @@
       "Are you sure you want to discard your changes?": [
         "Möchtest du deine Änderungen wirklich verwerfen?"
       ],
+      "Are you sure you want to discard your import?": [
+        "Möchtest du deinen Import wirklich verwerfen?"
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Möchtest du den Papierkorb wirklich leeren und alle Elemente dauerhaft löschen?"
       ],
@@ -3234,7 +3243,7 @@
         "Aufmerksamkeit erforderlich"
       ],
       "Because ${ DRIVE_APP_NAME } is end-to-end encrypted, we cannot access or decrypt your files for you. To unlock your drive after a password reset, you must have one of the following:": [
-        "Da ${ DRIVE_APP_NAME } Ende-zu-Ende verschlüsselt ist, haben wir keinen Zugriff auf deine Dateien und können sie auch nicht für dich entschlüsseln. Um dein Laufwerk nach einem Zurücksetzen des Passworts zu entsperren, musst du einen der folgenden Punkte erfüllen:"
+        "Da ${ DRIVE_APP_NAME } Ende-zu-Ende verschlüsselt ist, haben wir keinen Zugriff auf deine Dateien und können sie auch nicht für dich entschlüsseln. Um dein Laufwerk nach einem Zurücksetzen des Passworts zu entsperren, benötigst du eine der folgenden Optionen:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Bevor du einen neuen Bestätigungscode anforderst, überprüfe deinen Spam-Ordner und stelle sicher, dass ${ strong } die richtige Adresse ist."
@@ -3414,6 +3423,9 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Gib die Anmeldedaten des E-Mail-Kontos ein, aus dem du Daten importieren möchtest."
+      ],
+      "Enter the device name to confirm removal.": [
+        "Gib den Gerätenamen ein, um das Entfernen zu bestätigen."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Gib den an ${ destinationText } gesendeten Verifizierungscode ein."
@@ -3721,6 +3733,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Bitte beachte, dass dieser Vorgang (je nach Größe deines Adressbuchs) einige Zeit dauern kann."
       ],
+      "Please provide a name and an email address for creating a group.": [
+        "Bitte gib einen Namen und eine E-Mail-Adresse an, um eine Gruppe zu erstellen."
+      ],
       "Please select the folders you would like to import:": [
         "Bitte die zu importierenden Ordner auswählen:"
       ],
@@ -3918,8 +3933,8 @@
         "Dadurch wird der Link gelöscht und der Zugriff auf deine Datei oder deinen Ordner für jeden, der über den Link verfügt, entfernt.",
         "Dadurch werden die Links gelöscht und der Zugriff auf deine Dateien oder deine Ordner für jeden, der über die Links verfügt, entfernt."
       ],
-      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected.": [
-        "Dadurch wird das synchronisierte Gerät ${ deviceName } aus ${ DRIVE_APP_NAME } entfernt. Lokale Dateien auf dem Gerät sind davon nicht betroffen."
+      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
+        "Dadurch wird das synchronisierte Gerät ${ deviceName } aus ${ DRIVE_APP_NAME } entfernt und die Synchronisierung von Ordnern, die du zu \"Meine Computer\" hinzugefügt hast, beendet."
       ],
       "This will replace the existing file with the folder": [
         "Dadurch wird die vorhandene Datei durch den Ordner ersetzt."
@@ -4131,9 +4146,6 @@
       "Your files will be encrypted and then saved.": [
         "Deine Dateien werden verschlüsselt und anschließend gespeichert."
       ],
-      "Your import will not be processed.": [
-        "Dein Import wird nicht verarbeitet."
-      ],
       "Your login information will not be saved after the import is completed.": [
         "Deine Anmeldeinformationen werden nach Abschluss des Importvorgangs nicht gespeichert."
       ],
@@ -4199,11 +4211,6 @@
       ],
       "Trusted": [
         "Vertrauenswürdig"
-      ]
-    },
-    "Key transparency details button": {
-      "Click here for more details.": [
-        "Klicke hier für weitere Details."
       ]
     },
     "Label": {
@@ -4704,6 +4711,9 @@
       ]
     },
     "Link": {
+      "${ DRIVE_APP_NAME } Windows app": [
+        "${ DRIVE_APP_NAME } Windows-App"
+      ],
       "clearing your browser cache": [
         "Leeren des Browser-Cache"
       ],
@@ -4718,6 +4728,9 @@
       ],
       "Request an invite": [
         "Einladung anfordern"
+      ],
+      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
+        "Nahtlose Synchronisation der Dateien und Ordner zwischen deinem Computer und ${ DRIVE_APP_NAME }."
       ],
       "Shared": [
         "Geteilt"
@@ -5136,9 +5149,6 @@
       ],
       "Set up your organization": [
         "Organisation einrichten"
-      ],
-      "Set up your organization testing": [
-        "Richte deine Organisation ein"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Verwende die App-Auswahl oben links, um auf alle ${ BRAND_NAME }-Dienste zuzugreifen: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } und ${ DRIVE_SHORT_APP_NAME }."
@@ -6449,9 +6459,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } wird so viele Daten wie möglich übertragen, beginnend mit deinen aktuellsten Nachrichten."
-      ],
-      "Are you sure you want to discard your import?": [
-        "Möchtest du deinen Import wirklich verwerfen?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Möchtest du wirklich ${ count } Kontaktgruppe dauerhaft löschen?",

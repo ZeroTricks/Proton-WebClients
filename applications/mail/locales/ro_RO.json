@@ -124,6 +124,9 @@
       "Block": [
         "Blocare"
       ],
+      "Block email tracking": [
+        "Blocare urmărire mesaje"
+      ],
       "Block messages from this sender": [
         "Blocare mesaje de la acest expeditor"
       ],
@@ -141,6 +144,9 @@
       ],
       "Carbon Copy": [
         "Copie"
+      ],
+      "Change email": [
+        "Modificare e-mail"
       ],
       "Change page": [
         "Schimbare pagină"
@@ -319,9 +325,6 @@
       ],
       "Discard": [
         "Renunțare"
-      ],
-      "Dismiss get started checklist": [
-        "Ignorare listă de opțiuni de la pornire"
       ],
       "Done": [
         "Gata"
@@ -727,9 +730,6 @@
       "Open composer": [
         "Deschidere editor mesaje"
       ],
-      "Open get started checklist modal": [
-        "Deschidere panou listă de opțiuni de la pornire"
-      ],
       "Open navigation": [
         "Deschidere navigare"
       ],
@@ -1056,9 +1056,6 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Reîncercați salvarea. Aceasta a eșuat deoarece: ${ saveError }"
       ],
-      "Turn on tracker protection": [
-        "Activare protecție împotriva urmăririi"
-      ],
       "Unblock": [
         "Deblocare"
       ],
@@ -1254,13 +1251,6 @@
     "Alternative text for welcome image": {
       "Welcome": [
         "Bun venit"
-      ]
-    },
-    "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } finalizată",
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } finalizate",
-        "${ numberOfCompletedItems }/${ totalNumberOfItems } finalizate"
       ]
     },
     "Animation": {
@@ -2773,7 +2763,7 @@
         "Regatul Unit"
       ],
       "United States": [
-        "Statele Unite"
+        "SUA"
       ],
       "United States Minor Outlying Islands": [
         "Insulele Minore Îndepărtate ale Statelor Unite"
@@ -2955,6 +2945,9 @@
         "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_CONTACTS_STRING } contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici.",
         "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_CONTACTS_STRING } de contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici."
       ],
+      "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
+        "Activați protecția împotriva monitorizării prin e-mail pentru a împiedica agenții de publicitate și alții să vă urmărească locul și activitatea online."
+      ],
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "Deblocați programarea personalizată a mesajelor și alte avantaje trecând la un plan superior."
       ],
@@ -2966,6 +2959,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Trageți și plasați prioritatea de îmbinare dintre contacte. Debifați contactele pe care nu doriți să le îmbinați."
+      ],
+      "We didn't find any known trackers and tracking URLs in this email.": [
+        "Nu am găsit funcții de monitorizare și adrese URL cunoscute în acest e-mail."
       ],
       "When do you want your message to be sent?": [
         "Când doriți să fie trimis mesajul?"
@@ -3126,6 +3122,9 @@
     "Error": {
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "${ error.message } pentru <${ email }>. Puteți adăuga o altă cheie sau dezactiva criptarea pentru acest contact pentru a rezolva problema."
+      ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Puteți verifica situația și pe ${ statusPageLink }."
       ],
       "A group with this name already exists": [
         "Un grup cu acest nume există deja"
@@ -3412,6 +3411,9 @@
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "${ BRAND_NAME } nu poate decripta mesajul. Verificați dacă toate cheile sunt active."
       ],
+      "status page": [
+        "pagina de stare"
+      ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Atașamentul nu a putut fi decriptat.\nDacă aveți cheia privată corespunzătoare, veți putea decripta\nfișierul cu un program cum ar fi GnuPG.",
         "Unele atașamente nu a putut fi decriptate.\nDacă aveți cheia privată corespunzătoare, veți putea decripta\nfișierele cu un program cum ar fi GnuPG.",
@@ -3446,9 +3448,6 @@
       ],
       "There has been an issue with content search. Default search has been used instead.": [
         "A apărut o problemă la căutarea în conținut. S-a folosit căutarea implicită."
-      ],
-      "There was a problem updating your local messages, they will be downloaded again to re-enable content search": [
-        "A apărut o problemă la actualizarea mesajelor locale. Acestea vor fi redescărcate pentru a reactiva căutarea în conținut."
       ],
       "There was an error when exporting the contacts vCards": [
         "A apărut o eroare la exportarea cărților de vizită a contactelor („vCards”)."
@@ -4119,7 +4118,7 @@
     },
     "Filter option to only show message with attachments": {
       "Has file": [
-        "Are fișier"
+        "Cu atașament"
       ]
     },
     "Filter preview": {
@@ -4139,8 +4138,8 @@
       "System default": [
         "Implicit din sistem"
       ],
-      "Theme default": [
-        "Temă implicită"
+      "Theme font": [
+        "Font temă"
       ]
     },
     "Font Size Default": {
@@ -4179,75 +4178,144 @@
         "Către: ${ toString }"
       ]
     },
-    "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        "V-am mărit spațiul de stocare total al contului la ${ rewardInGb } GB. Obțineți spațiu de stocare suplimentar și deblocați caracteristici premium astăzi."
-      ],
-      "You're all set!": [
-        "Sunteți gata!"
-      ]
-    },
-    "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        "Completați toți pașii și primiți un total de ${ rewardInGb } GB în contul personal."
-      ],
-      "Expires soon": [
-        "Expiră în curând"
-      ],
-      "Expires today": [
-        "Expiră astăzi"
-      ],
-      "Only ${ days } day left": [
-        "A mai rămas doar o zi",
-        "A mai rămas doar ${ days } zile",
-        "A mai rămas doar ${ days } de zile"
-      ]
-    },
     "Get started checklist instructions": {
-      "Available on iOS and Android.": [
-        "Disponibilă pe iOS și Android."
+      "${ MAIL_APP_NAME } app": [
+        "aplicația ${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME } din App Store"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } din Magazinul Play"
+      ],
+      "account logins": [
+        "autentificarea în cont"
+      ],
+      "Auto-forward Gmail": [
+        "Redirecționare automată din Gmail"
+      ],
+      "auto-forwarding": [
+        "redirecționarea automată"
+      ],
+      "Block email communications from scammers permanently.": [
+        "Blocați permanent comunicațiile prin e-mail de la escroci."
+      ],
+      "Block unsavory senders": [
+        "Blocați expeditorii nesăbuiți"
+      ],
+      "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
+        "Felicitări că v-ați vă face e-mailul și mai sigur, mai convenabil și mai relevant! Am ridicat stocarea gratuită la un total de 1 GB."
+      ],
+      "Change ${ strongText } to your ${ BRAND_NAME } address": [
+        "Schimbați ${ strongText } cu adresa personală ${ BRAND_NAME }"
+      ],
+      "Checklist complete": [
+        "Listă completată"
+      ],
+      "Close": [
+        "Închidere"
+      ],
+      "Congratulation, you completed all the steps!": [
+        "Felicitări, ați completat toți pașii!"
+      ],
+      "Continue setting up your email": [
+        "Continuați să vă setați contul de e-mail"
+      ],
+      "Discover how our ${ strongText } protect you": [
+        "Descoperiți cum ${ strongText } vă protejează"
+      ],
+      "Discover privacy features": [
+        "Descoperiți funcțiile de confidențialitate"
+      ],
+      "Double your free storage to 1 GB when you complete the following:": [
+        "Dublați-vă stocarea gratuită la 1 GB după ce executați următoarele:"
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails.": [
+        "Criptarea atât de puternică, încât doar dvs. și destinatarii doriți vă puteți vedea mesajele."
+      ],
+      "For your eyes only": [
+        "Doar pentru dumneavoastră"
+      ],
+      "Get free storage": [
+        "Obțineți spațiu gratuit"
+      ],
+      "Get mobile app": [
+        "Luați aplicația mobilă"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Obțineți aplicația mobilă ${ MAIL_APP_NAME }"
       ],
+      "Get the ${ strongText } on Android or iOS": [
+        "Luați ${ strongText } pentru Android sau iOS"
+      ],
+      "Get the App": [
+        "Luați aplicația"
+      ],
       "Import contacts or emails": [
         "Importați contacte sau e-mailuri"
+      ],
+      "Import data": [
+        "Importare date"
       ],
       "Import your contacts or messages": [
         "Importați contactele sau mesajele personale"
       ],
+      "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
+        "Utilizați în continuare ${ MAIL_APP_NAME } pentru a descoperi mai multe moduri în care ${ BRAND_NAME } vă protejează confidențialitatea și vă simplifică mesageria."
+      ],
+      "Learn more": [
+        "Detalii"
+      ],
+      "Make ${ BRAND_NAME } your go-to inbox": [
+        "Faceți din ${ BRAND_NAME } mesageria de zi cu zi"
+      ],
+      "Maybe later": [
+        "Poate mai târziu"
+      ],
+      "Nice! You've updated all services in this category.": [
+        "Minunat! Ați actualizat toate serviciile din această categorie."
+      ],
+      "Open checklist": [
+        "Deschidere listă de sarcini"
+      ],
+      "Popular online services": [
+        "Servicii populare online"
+      ],
+      "privacy features": [
+        "funcțiile de confidențialitate"
+      ],
+      "Protect and simplify your email": [
+        "Protejați-vă și simplificați-vă contul de e-mail"
+      ],
+      "Protection from trackers": [
+        "Protecție împotriva monitorizării"
+      ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
         "Transferați-vă rapid contactele sau e-mailurile de la orice furnizor cu ajutorul asistentului de importare Easy Switch."
       ],
-      "Sign into the mobile app to complete the action": [
-        "Conectați-vă la aplicația mobilă pentru a finaliza acțiunea"
-      ],
-      "Using your mobile device, scan this QR code or visit": [
-        "Folosind un dispozitiv mobil, scanați codul QR sau vizitați"
-      ]
-    },
-    "Get started checklist item": {
-      "Get mobile app": [
-        "Obțineți aplicația mobilă"
-      ],
-      "Import contacts or emails": [
-        "Importați contacte sau e-mailuri"
-      ],
       "Send a message": [
-        "Trimiteți un mesaj"
+        "Trimitere mesaj"
       ],
-      "Set up a recovery method": [
-        "Configurați o metodă de recuperare"
-      ]
-    },
-    "Get started checklist spotlight": {
-      "You can access the checklist anytime from here": [
-        "Puteți accesa oricând lista de opțiuni de aici"
-      ]
-    },
-    "Get started checklist title": {
-      "Get started": [
-        "Să începem"
+      "Set recovery method": [
+        "Setare metodă de recuperare"
+      ],
+      "Set up ${ strongText } from Gmail": [
+        "Setați ${ strongText } de la Gmail"
+      ],
+      "Sign in to the mobile app to complete this step": [
+        "Conectați-vă la aplicația mobilă pentru a finaliza acest pas"
+      ],
+      "Update your logins": [
+        "Actualizați-vă autentificarea"
+      ],
+      "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
+        "Folosind dispozitivul mobil, scanați acest cod QR sau vizitați magazinul iOS sau Android."
+      ],
+      "We stop advertisers and data collectors from profiling you.": [
+        "Oprim agenții de publicitate și colectorii de date să vă urmărească activitatea."
+      ],
+      "You've unlocked 1 GB": [
+        "Ați deblocat 1 GB de spațiu"
       ]
     },
     "Gmail forwarding": {
@@ -4664,6 +4732,11 @@
         "${ count } mesaje necitite",
         "${ count } de mesaje necitite"
       ],
+      "${ currentProgress } out of ${ totalProgress }": [
+        "${ currentProgress } din ${ totalProgress }",
+        "${ currentProgress } din ${ totalProgress }",
+        "${ currentProgress } din ${ totalProgress }"
+      ],
       "${ embeddedAttachmentsCount } embedded image": [
         "O imagine inclusă.",
         "${ embeddedAttachmentsCount } imagini incluse.",
@@ -4688,10 +4761,20 @@
         "Nu au putut fi mutate ${ messagesNotAuthorizedToMove } mesaje.",
         "Nu au putut fi mutate ${ messagesNotAuthorizedToMove } de mesaje."
       ],
-      "${ numberOfTrackers } email tracker blocked": [
-        "S-a blocat o funcție de monitorizare prin e-mail",
-        "S-au blocat ${ numberOfTrackers } funcții de monitorizare prin e-mail",
-        "S-au blocat ${ numberOfTrackers } de funcții de monitorizare prin e-mail"
+      "${ numberOfImageTrackers } email tracker blocked": [
+        "A fost blocată ${ numberOfImageTrackers } funcție de urmărire din e-mail.",
+        "S-au blocat ${ numberOfImageTrackers } funcții de urmărire din e-mail.",
+        "S-au blocat ${ numberOfImageTrackers } de funcții de monitorizare din e-mail."
+      ],
+      "${ numberOfImageTrackers } tracker blocked": [
+        "S-a blocat ${ numberOfImageTrackers } funcție de urmărire.",
+        "S-au blocat ${ numberOfImageTrackers } funcții de urmărire.",
+        "S-au blocat ${ numberOfImageTrackers } de funcții de urmărire."
+      ],
+      "${ numberOfUTMTrackers } link cleaned": [
+        "S-a curățat ${ numberOfUTMTrackers } legătură.",
+        "S-au curățat ${ numberOfUTMTrackers } legături.",
+        "S-au curățat ${ numberOfUTMTrackers } de legături."
       ],
       "${ numContact } contact": [
         "Un contact",
@@ -4812,6 +4895,11 @@
       "(No Recipient)": [
         "(Fără destinatar)"
       ],
+      "**${ elementsFoundCount }** result found in ${ labelName }": [
+        "S-a găsit **${ elementsFoundCount }** în ${ labelName }",
+        "S-au găsit **${ elementsFoundCount }** în ${ labelName }",
+        "S-au găsit **${ elementsFoundCount }** în ${ labelName }"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un număr de telefon poate fi folosit doar pentru verificarea unui cont ${ BRAND_NAME }."
       ],
@@ -4910,7 +4998,7 @@
         "Sigur doriți să ștergeți definitiv această ciornă?"
       ],
       "Are you sure you want to permanently delete this message?": [
-        "Sigur doriți să ștergeți permanent acest mesaj?"
+        "Sigur doriți să ștergeți definitiv acest mesaj?"
       ],
       "Attach public key": [
         "Atașare cheie publică"
@@ -5084,17 +5172,6 @@
       "Email tracker protection is disabled": [
         "Protecția de urmărire a e-mailurilor este dezactivată"
       ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } did not find any trackers in this message.": [
-        "Monitorizarea mesajelor vă poate încălca intimitatea. ${ BRAND_NAME } nu a găsit monitorizări în acest mesaj."
-      ],
-      "Email trackers can violate your privacy. ${ BRAND_NAME } found and blocked ${ numberOfTrackers } tracker.": [
-        "Monitorizarea mesajelor vă poate încălca intimitatea. ${ BRAND_NAME } a găsit și a blocat o monitorizare.",
-        "Monitorizarea mesajelor vă poate încălca intimitatea. ${ BRAND_NAME } a găsit și a blocat ${ numberOfTrackers } monitorizări.",
-        "Monitorizarea mesajelor vă poate încălca intimitatea. ${ BRAND_NAME } a găsit și a blocat ${ numberOfTrackers } de monitorizări."
-      ],
-      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
-        "Monitorizarea prin e-mail vă pot încălca intimitatea. Activați protecția împotriva urmăririi pentru a împiedica expeditorii să știe dacă și când ați deschis un mesaj."
-      ],
       "Emails are automatically signed": [
         "Mesajele sunt semnate automat"
       ],
@@ -5167,6 +5244,9 @@
       ],
       "For messages newer than ${ oldestDate }": [
         "Pentru mesaje mai noi de ${ oldestDate }"
+      ],
+      "For more search results, try searching for this keyword in the content of your email messages.": [
+        "Pentru mai multe rezultate, încercați să căutați în conținutul mesajelor."
       ],
       "Free up some space or add more storage space.": [
         "Eliberați ceva spațiu sau mai adăugați spațiu de stocare."
@@ -5280,6 +5360,9 @@
       "Link type": [
         "Tip legătură"
       ],
+      "Links cleaned:": [
+        "Legături curățate:"
+      ],
       "Loading": [
         "Se încarcă"
       ],
@@ -5310,10 +5393,8 @@
       "Merged": [
         "Îmbinat"
       ],
-      "Message downloaded: ${ currentProgress } out of ${ totalProgress }": [
-        "Mesaje descărcate: ${ currentProgress } din ${ totalProgress }",
-        "Mesaje descărcate: ${ currentProgress } din ${ totalProgress }",
-        "Mesaje descărcate: ${ currentProgress } din ${ totalProgress }"
+      "Message download status:": [
+        "Stare descărcare mesaje:"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
         "Expirarea mesajelor funcționează implicit atunci când trimiteți e-mailuri către alți utilizatori ${ MAIL_APP_NAME }. Pentru a trimite e-mailuri care expiră către alți utilizatori decât ai ${ BRAND_NAME }, anulați și adăugați protecția cu parolă la e-mail."
@@ -5363,9 +5444,6 @@
       "No email address": [
         "Lipsă adresă de e-mail"
       ],
-      "No email trackers found": [
-        "Nu s-au găsit funcții de monitorizare prin e-mail"
-      ],
       "No folder found": [
         "Nu există folder"
       ],
@@ -5381,14 +5459,17 @@
       "No label selected": [
         "Nicio etichetă selectată"
       ],
+      "No links cleaned": [
+        "Nu au fost curățate legături"
+      ],
       "No more results found": [
         "Nu s-au mai găsit rezultate"
       ],
       "No results found": [
         "Nu s-au găsit rezultate"
       ],
-      "No trackers found, but some images could not be loaded with tracking protection": [
-        "Nu s-au găsit funcții de monitorizare, dar unele imagini nu au putut fi încărcare cu protecția la monitorizare activată."
+      "No trackers found": [
+        "Nu s-au găsit funcții de urmărire"
       ],
       "non-${ MAIL_APP_NAME }": [
         "non-${ MAIL_APP_NAME }"
@@ -5440,6 +5521,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Rețineți că acest proces poate dura ceva timp, în funcție de dimensiunea agendei de contacte."
+      ],
+      "Please provide a name and an email address for creating a group.": [
+        "Furnizați un nume și o adresă de e-mail pentru a crea un grup."
       ],
       "Please select the folders you would like to import:": [
         "Selectați folderele pe care doriți să le importați:"
@@ -5788,8 +5872,11 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Prea multe mesaje așteaptă să fie trimise. Așteptați până când un alt mesaj va fi trimis pentru a-l programa pe acesta."
       ],
-      "Turn off to only search by date, name, or email address. To disable search message content and delete downloaded messages, go to settings.": [
-        "Dezactivați pentru a căuta numai după dată, nume sau adresă de e-mail. Pentru a dezactiva căutarea în conținutul mesajelor și a șterge mesajele descărcate, accesați setările."
+      "Trackers blocked:": [
+        "Urmăritori blocați:"
+      ],
+      "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
+        "Dezactivați opțiunea pentru a căuta numai după dată, nume, adresă de e-mail sau subiect. Pentru a dezactiva căutarea în conținutul mesajelor și a șterge mesajele descărcate, accesați setările."
       ],
       "Turn on to search the content of your messages": [
         "Activare căutarea în conținutul mesajelor."
@@ -5805,9 +5892,6 @@
       ],
       "Updating message content search...": [
         "Se actualizează căutarea în conținutul mesajelor..."
-      ],
-      "Updating your local messages, message content won't be searched during this update": [
-        "Se actualizează mesajele local. Căutarea în conținut nu este posibilă în această perioadă."
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Modernizați acum contul pentru a accesa funcții premium, produse și stocare la un preț special."
@@ -5872,8 +5956,14 @@
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Ne cerem scuze. S-ar putea să fi fost o greşeală din partea noastră. Puteți confirma că doriți să marcați acest e-mail ca fiind legitim?"
       ],
+      "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
+        "Au fost blocați următorii agenți de publicitate și organizații să vadă când deschideți acest e-mail, ce dispozitiv utilizați și unde vă aflați."
+      ],
       "We could not verify the sender's trusted keys.": [
         "Nu s-au putut verifica cheile de încredere ale expeditorului."
+      ],
+      "We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.": [
+        "S-au eliminat informațiile de urmărire din următoarele legături pentru a vă proteja de agenții de publicitate și de alții care încearcă să vă urmărească activitatea online."
       ],
       "We'll notify you when the import is done.": [
         "Veți primi o notificare la finalizarea importării."
@@ -5933,7 +6023,7 @@
         "Puteți să actualizați căutarea sau să ${ button }"
       ],
       "You can either update your search query or clear it": [
-        "Puteți actualiza interogarea de căutare sau să o goliți"
+        "Puteți actualiza interogarea de căutare sau să o goliți."
       ],
       "You can import one data type at a time.": [
         "Puteți importa un singur tip de date la un moment dat."
@@ -6046,9 +6136,6 @@
       ],
       "Your files will be encrypted and then saved": [
         "Fișierele vor fi criptate și apoi salvate."
-      ],
-      "Your import will not be processed.": [
-        "Importarea nu va fi procesată."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Informațiile de conectare nu vor fi salvate după terminarea importării."
@@ -6429,6 +6516,9 @@
       "City": [
         "Oraş"
       ],
+      "Cleaned": [
+        "Curățat"
+      ],
       "Code is 6 digits without spaces": [
         "Codul este format din 6 cifre fără spații"
       ],
@@ -6630,6 +6720,9 @@
       "OK": [
         "OK"
       ],
+      "Open in a new tab": [
+        "Deschidere într-o filă nouă"
+      ],
       "Operating system": [
         "Sistem de operare"
       ],
@@ -6644,6 +6737,9 @@
       ],
       "Or": [
         "Sau"
+      ],
+      "Original link": [
+        "Legătura originală"
       ],
       "Participants": [
         "Participanți"
@@ -7145,11 +7241,6 @@
         "O versiune nouă a ${ appName } este disponibilă. ${ reloadButton }."
       ]
     },
-    "Message has been sent to the user via a SimpleLogin alias": {
-      "Delivered via SimpleLogin by ${ BRAND_NAME }": [
-        "Livrat prin SimpleLogin de la ${ BRAND_NAME }"
-      ]
-    },
     "Message image": {
       "Image has not been loaded in order to protect your privacy.": [
         "Imaginea nu a fost încărcată pentru a vă proteja intimitatea."
@@ -7477,11 +7568,42 @@
       "Set up your organization": [
         "Setați organizația"
       ],
-      "Set up your organization testing": [
-        "Configurare testare organizație"
-      ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Folosiți meniul de selectare al aplicațiilor din stânga sus pentru a accesa toate serviciile ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } și ${ DRIVE_SHORT_APP_NAME }."
+      ]
+    },
+    "Online accounts": {
+      "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
+        "Aveți un cont cu unul dintre aceste servicii? Doar faceți clic pentru a schimba adresa de e-mail cu adresa ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Online Accounts Name": {
+      "Banking": [
+        "Bancar"
+      ],
+      "Crypto": [
+        "Criptomonede"
+      ],
+      "E-commerce and Retail": [
+        "Comerț electronic și vânzare cu amănuntul"
+      ],
+      "Entertainment": [
+        "Divertisment"
+      ],
+      "Food and beverage": [
+        "Mâncare și băutură"
+      ],
+      "Gaming": [
+        "Jocuri"
+      ],
+      "Most popular": [
+        "Cele mai populare"
+      ],
+      "Travel": [
+        "Turism"
+      ],
+      "Utilities": [
+        "Utilități"
       ]
     },
     "Option": {
@@ -7523,20 +7645,6 @@
     "Pagination": {
       "${ page } of ${ totalText }": [
         "${ page } din ${ totalText }"
-      ]
-    },
-    "Paid user checklist item": {
-      "Get mobile app": [
-        "Descărcați aplicația mobilă"
-      ],
-      "Import contacts or emails": [
-        "Importați contacte sau e-mailuri"
-      ],
-      "Send a message": [
-        "Trimiteți un mesaj"
-      ],
-      "Set up a recovery method": [
-        "Configurați o metodă de recuperare"
       ]
     },
     "Participant name": {
@@ -7603,7 +7711,7 @@
         "Nume"
       ],
       "Name or email address": [
-        "Numele de utilizator sau adresa de e-mail"
+        "Nume utilizator / adresa de e-mail"
       ],
       "Password": [
         "Parola"
@@ -7853,6 +7961,11 @@
         "S-au detectat unele avertismente. Este posibil ca următoarea adresă de e-mail să nu primească mesaje:",
         "S-au detectat unele avertismente. Este posibil ca următoarele adrese de e-mail să nu primească mesaje:",
         "S-au detectat unele avertismente. Este posibil ca următoarele adrese de e-mail să nu primească mesaje:"
+      ]
+    },
+    "Sender verification details": {
+      "Sender verification": [
+        "Verificare expeditor"
       ]
     },
     "Sent email icon": {
@@ -8240,9 +8353,6 @@
       ]
     },
     "Storage": {
-      "Get extra storage for free": [
-        "Obțineți gratuit spațiu de stocare"
-      ],
       "Release notes": [
         "Note de lansare"
       ],
@@ -8533,6 +8643,70 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Mesajul a fost trimis"
+      ]
+    },
+    "summer2023: Billing cycle option": {
+      "1 year": [
+        "Un an"
+      ],
+      "2 years": [
+        "2 ani"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium Drive": [
+        "Drive premium"
+      ],
+      "Premium Mail and Calendar": [
+        "Mail Premium și Calendar"
+      ],
+      "Premium Password Manager": [
+        "Gestionare parole premium"
+      ]
+    },
+    "summer2023: Describe Proton Pass": {
+      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
+        "Stocați-vă parolele și completați-le automat pe paginile web. Include parole nelimitate, completare automată, generator de parole și multe altele."
+      ]
+    },
+    "summer2023: Short tool name to present Proton Pass": {
+      "Password manager": [
+        "Manager de parole"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Creați detalii de conectare sigure pe toate dispozitivele. Include aliasuri nelimitate, 20 de seifuri, integrare autentificare cu doi factori, autocompletare date card de credit și multe altele."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Include 2950+ servere în peste 65 de țări, conectați până la 10 dispozitive, accesați servicii de transmisii în flux la nivel mondial, programe malițioase, blocare de reclame și multe altele."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Include suport pentru un domeniu de e-mail personal, 10 adrese de e-mail, 10 aliasuri hide-my-email, partajare calendar și altele."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Protejați-vă fișierele cu stocarea criptată în cloud. Include sincronizare automată, partajare criptată a fișierelor și multe altele."
+      ]
+    },
+    "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "* Abonamentul se va reînnoi automat la aceeași sumă la sfârșitul ciclului de facturare."
+      ],
+      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
+        "Reducerile se bazează pe prețurile lunare standard. Această ofertă este disponibilă doar pentru abonații pentru prima dată."
+      ]
+    },
+    "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Pentru o perioadă limitată de timp, obțineți cel mai bun ${ BRAND_NAME } disponibil cu o reducere exclusivă."
+      ],
+      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
+        "Sărbătorim aniversarea de nouă ani a finanțării noastre de la public!"
+      ]
+    },
+    "summer2023:Offer title": {
+      "${ BRAND_NAME } Anniversary Sale": [
+        "Reducere aniversară ${ BRAND_NAME }"
       ]
     },
     "Table header": {
@@ -9013,6 +9187,9 @@
       "No attachment found": [
         "Nu s-a găsit niciun atașament"
       ],
+      "No trackers found": [
+        "Nu s-au găsit funcții de urmărire"
+      ],
       "Open actions dropdown": [
         "Deschidere meniu acțiuni"
       ],
@@ -9039,6 +9216,9 @@
       ],
       "Previous message": [
         "Mesajul anterior"
+      ],
+      "Protect yourself from trackers": [
+        "Protejați-vă de monitorizare"
       ],
       "Re-sign all contacts": [
         "Resemnare toate contactele"
@@ -9189,6 +9369,11 @@
       "Warning: suspected fake website": [
         "Avertisment: suspectare site fals"
       ],
+      "We protected you from ${ trackersCount } tracker": [
+        "S-a blocat ${ trackersCount } funcție de monitorizare.",
+        "S-au blocat ${ trackersCount } funcții de monitorizare.",
+        "S-au blocat ${ trackersCount } de funcții de monitorizare."
+      ],
       "Welcome": [
         "Bun venit"
       ],
@@ -9333,11 +9518,8 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } va transfera cât mai multe date posibil, începând cu cele mai recente mesaje."
       ],
-      "Are you sure you want to discard your import?": [
-        "Sigur doriți să anulați importarea?"
-      ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
-        "Sigur doriți să ștergeți definitiv un grup de contacte?",
+        "Sigur doriți să ștergeți definitiv ${ count } grup de contacte?",
         "Sigur doriți să ștergeți definitiv ${ count } grupuri de contacte?",
         "Sigur doriți să ștergeți definitiv ${ count } de grupuri de contacte?"
       ],

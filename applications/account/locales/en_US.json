@@ -4,10 +4,82 @@
     "language": "en_US"
   },
   "contexts": {
+    "Description": {
+      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
+        "Automatically clear out messages that have been in Trash or Spam for over 30 days. Enjoy this and other benefits when you upgrade."
+      ]
+    },
+    "Error": {
+      "Require at least one action": [
+        "Add at least one action"
+      ],
+      "Require at least one condition": [
+        "Add at least one condition"
+      ]
+    },
+    "familyOffer_2023:Action": {
+      "Invite member to your family": [
+        "Invite a user"
+      ]
+    },
+    "familyOffer_2023:Family plan": {
+      "Accounts with custom domains cannot join a Visionary or family plan.": [
+        "Accounts with custom domains cannot join a Visionary or family plan."
+      ],
+      "Manage addresses.": [
+        "Manage addresses"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Paramètres par défaut du système"
+      ]
+    },
     "Info": {
       "Invite successfully sent": [
         "Invite sent",
         "Invites sent"
+      ],
+      "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
+        "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue."
+      ],
+      "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
+        "You can enable authentication logs to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts."
+      ]
+    },
+    "Label": {
+      "Synchronize with system": [
+        "Sync with system"
+      ]
+    },
+    "Link": {
+      "Paypal without credit card": [
+        "PayPal without credit card"
+      ]
+    },
+    "Oauth instructions video alternative": {
+      "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
+        "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar."
+      ]
+    },
+    "Subscription change warning": {
+      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
+        "Just sign in to your Apple App Store account, then select ${ subscriptions }."
+      ]
+    },
+    "Success": {
+      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
+        "You will receive your username via SMS within a minute if you entered a valid recovery phone number."
+      ]
+    },
+    "Title": {
+      "Personalise your e-mail footer": [
+        "Personalize your e-mail footer"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
+        "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more."
       ]
     }
   }

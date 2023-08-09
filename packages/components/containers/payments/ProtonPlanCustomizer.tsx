@@ -8,17 +8,21 @@ import {
     GIGA,
     MAX_ADDRESS_ADDON,
     MAX_DOMAIN_PRO_ADDON,
+    MAX_IPS_ADDON,
     MAX_MEMBER_ADDON,
+    MAX_MEMBER_VPN_B2B_ADDON,
     MAX_SPACE_ADDON,
     MAX_VPN_ADDON,
 } from '@proton/shared/lib/constants';
 import { getSupportedAddons, setQuantity } from '@proton/shared/lib/helpers/planIDs';
-import { Currency, Cycle, Organization, Plan, PlanIDs } from '@proton/shared/lib/interfaces';
+import { Currency, Cycle, MaxKeys, Organization, Plan, PlanIDs, getPlanMaxIPs } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { Icon, Info, Price } from '../../components';
 
-const AddonKey = {
+const AddonKey: Readonly<{
+    [K in ADDON_NAMES]: MaxKeys;
+}> = {
     [ADDON_NAMES.ADDRESS]: 'MaxAddresses',
     [ADDON_NAMES.MEMBER]: 'MaxMembers',
     [ADDON_NAMES.DOMAIN]: 'MaxDomains',
@@ -30,6 +34,9 @@ const AddonKey = {
     [ADDON_NAMES.MEMBER_DRIVE_PRO]: 'MaxMembers',
     [ADDON_NAMES.MEMBER_BUNDLE_PRO]: 'MaxMembers',
     [ADDON_NAMES.MEMBER_ENTERPRISE]: 'MaxMembers',
+    [ADDON_NAMES.MEMBER_VPN_PRO]: 'MaxMembers',
+    [ADDON_NAMES.MEMBER_VPN_BUSINESS]: 'MaxMembers',
+    [ADDON_NAMES.IP_VPN_BUSINESS]: 'MaxIPs',
 } as const;
 
 export type CustomiserMode = 'signup' | undefined;
@@ -44,6 +51,8 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
     organization?: Organization;
     loading?: boolean;
     mode?: CustomiserMode;
+    forceHideDescriptions?: boolean;
+    showUsersTooltip?: boolean;
 }
 
 const ButtonNumberInput = ({
@@ -151,7 +160,18 @@ const addonLimit = {
     [ADDON_NAMES.MEMBER_DRIVE_PRO]: MAX_MEMBER_ADDON,
     [ADDON_NAMES.MEMBER_BUNDLE_PRO]: MAX_MEMBER_ADDON,
     [ADDON_NAMES.MEMBER_ENTERPRISE]: MAX_MEMBER_ADDON,
+    [ADDON_NAMES.MEMBER_VPN_PRO]: MAX_MEMBER_VPN_B2B_ADDON,
+    [ADDON_NAMES.MEMBER_VPN_BUSINESS]: MAX_MEMBER_VPN_B2B_ADDON,
+    [ADDON_NAMES.IP_VPN_BUSINESS]: MAX_IPS_ADDON,
 } as const;
+
+// translator: This string is a part of a larger string asking the user to "contact" our sales team => full sentence: Should you need more than ${maxUsers} user accounts, please <contact> our Sales team
+const contactString = c('plan customizer, users').t`contact`;
+const contactHref = (
+    <a key={1} href="mailto:enterprise@proton.me">
+        {contactString}
+    </a>
+);
 
 // Since ttag doesn't support ngettext with jt, we manually replace the string with a react node...
 const getAccountSizeString = (maxUsers: number, price: ReactNode) => {
@@ -160,13 +180,7 @@ const getAccountSizeString = (maxUsers: number, price: ReactNode) => {
         .jt`Select the number of users to include in your plan. Each additional user costs ${price}.`;
 
     const contact = '_TMPL_';
-    // translator: This string is a part of a larger string asking the user to "contact" our sales team => full sentence: Should you need more than ${maxUsers} user accounts, please <contact> our Sales team
-    const contactString = c('plan customizer, users').t`contact`;
-    const contactHref = (
-        <a key={1} href="mailto:enterprise@proton.me">
-            {contactString}
-        </a>
-    );
+
     const second = c('plan customizer, users').ngettext(
         msgid`Should you need more than ${maxUsers} user account, please ${contact} our Sales team.`,
         `Should you need more than ${maxUsers} user accounts, please ${contact} our Sales team.`,
@@ -186,17 +200,19 @@ const AccountSizeCustomiser = ({
     maxUsers,
     price,
     input,
-    mode,
+    showDescription = true,
+    showTooltip = true,
 }: {
     addon: Plan;
     maxUsers: number;
     price: ReactElement;
     input: ReactElement;
-    mode?: CustomiserMode;
+    showDescription?: boolean;
+    showTooltip?: boolean;
 }) => {
     return (
-        <div className="mb-8">
-            {mode !== 'signup' && (
+        <div className={clsx(showDescription ? 'mb-8' : 'mb-4')}>
+            {showDescription && (
                 <>
                     <h2 className="text-2xl text-bold mb-4">{c('Info').t`Account size`}</h2>
                     <div className="mb-4">{getAccountSizeString(maxUsers, price)}</div>
@@ -208,10 +224,13 @@ const AccountSizeCustomiser = ({
                     className="min-w14e flex-item-fluid plan-customiser-addon-label text-bold pr-2 on-mobile-w100"
                 >
                     {c('Info').t`Number of users`}
-                    <Info
-                        buttonClass="ml-2"
-                        title={c('Info').t`A user is an account associated with a single username, mailbox, and person`}
-                    />
+                    {showTooltip && (
+                        <Info
+                            buttonClass="ml-2"
+                            title={c('Info')
+                                .t`A user is an account associated with a single username, mailbox, and person`}
+                        />
+                    )}
                 </label>
                 {input}
             </div>
@@ -222,16 +241,16 @@ const AdditionalOptionsCustomiser = ({
     addon,
     price,
     input,
-    mode,
+    showDescription = true,
 }: {
     addon: Plan;
     price: ReactElement;
     input: ReactElement;
-    mode: CustomiserMode;
+    showDescription?: boolean;
 }) => {
     return (
         <>
-            {mode !== 'signup' && (
+            {showDescription && (
                 <>
                     <h2 className="text-2xl text-bold mb-4">{c('Info').t`Additional options`}</h2>
                     <div className="mb-4">
@@ -258,6 +277,47 @@ const AdditionalOptionsCustomiser = ({
     );
 };
 
+const IPsNumberCustomiser = ({
+    addon,
+    maxIPs,
+    price,
+    input,
+    showDescription = true,
+}: {
+    addon: Plan;
+    maxIPs: number;
+    price: ReactElement;
+    input: ReactElement;
+    showDescription?: boolean;
+}) => {
+    const ipsString = c('plan customizer, ips')
+        .jt`Select the number of IPs to include in your plan. Each additional IP costs ${price}. Should you need more than ${maxIPs} IPs, please ${contactHref} our Sales team.`;
+
+    return (
+        <div className={clsx(showDescription ? 'mb-8' : 'mb-4')}>
+            {showDescription && (
+                <>
+                    <h2 className="text-2xl text-bold mb-4">{c('Info').t`Dedicated IP addresses `}</h2>
+                    <div className="mb-4">{ipsString}</div>
+                </>
+            )}
+            <div className="flex-no-min-children flex-nowrap flex-align-items-center mb-4 on-mobile-flex-wrap">
+                <label
+                    htmlFor={addon.Name}
+                    className="min-w14e flex-item-fluid plan-customiser-addon-label text-bold pr-2 on-mobile-w100"
+                >
+                    {c('Info').t`Number of IP addresses`}
+                    <Info
+                        buttonClass="ml-2"
+                        title={c('Info').t`Number of dedicated IP addresses in the organization`}
+                    />
+                </label>
+                {input}
+            </div>
+        </div>
+    );
+};
+
 const ProtonPlanCustomizer = ({
     cycle,
     mode,
@@ -269,9 +329,12 @@ const ProtonPlanCustomizer = ({
     organization,
     loading,
     className,
+    forceHideDescriptions,
+    showUsersTooltip,
     ...rest
 }: Props) => {
     const supportedAddons = getSupportedAddons(planIDs);
+    const showAddonDescriptions = mode !== 'signup' && !forceHideDescriptions;
 
     return (
         <div className={clsx(['plan-customiser', className])} {...rest}>
@@ -287,16 +350,45 @@ const ProtonPlanCustomizer = ({
 
                 const isSupported = !!supportedAddons[addonNameKey];
                 const addonMaxKey = AddonKey[addonNameKey];
-                const addonMultiplier = addon[addonMaxKey] ?? 1;
-                const min = currentPlan[addonMaxKey] ?? 0;
+                /**
+                 * Workaround specifically for MaxIPs property. There is an upcoming mirgation in payments API v5
+                 * That will sctructure all these Max* properties in a different way.
+                 * For now, we need to handle MaxIPs separately.
+                 * See {@link MaxKeys} and {@link Plan}. Note that all properties from MaxKeys must be present in Plan
+                 * with the exception of MaxIPs.
+                 */
+                let addonMultiplier: number;
+                if (addonMaxKey === 'MaxIPs') {
+                    addonMultiplier = getPlanMaxIPs(addon);
+                    if (addonMultiplier === 0) {
+                        addonMultiplier = 1;
+                    }
+                } else {
+                    addonMultiplier = addon[addonMaxKey] ?? 1;
+                }
+
+                // The same workaround as above
+                let min: number;
+                if (addonMaxKey === 'MaxIPs') {
+                    min = getPlanMaxIPs(currentPlan);
+                } else {
+                    min = currentPlan[addonMaxKey] ?? 0;
+                }
                 const max = addonLimit[addonNameKey] * addonMultiplier;
                 // Member addon comes with MaxSpace + MaxAddresses
                 const value = isSupported
                     ? min + quantity * addonMultiplier
-                    : Object.entries(planIDs).reduce(
-                          (acc, [planName, quantity]) => acc + plansMap[planName][addonMaxKey] * quantity,
-                          0
-                      );
+                    : Object.entries(planIDs).reduce((acc, [planName, quantity]) => {
+                          // and the same workaround as above
+                          let multiplier: number;
+                          if (addonMaxKey === 'MaxIPs') {
+                              multiplier = getPlanMaxIPs(plansMap[planName]);
+                          } else {
+                              multiplier = plansMap[planName][addonMaxKey];
+                          }
+
+                          return acc + quantity * multiplier;
+                      }, 0);
                 const divider = addonNameKey === ADDON_NAMES.SPACE ? GIGA : 1;
                 const maxTotal = max / divider;
 
@@ -330,6 +422,8 @@ const ProtonPlanCustomizer = ({
                         ADDON_NAMES.MEMBER_DRIVE_PRO,
                         ADDON_NAMES.MEMBER_MAIL_PRO,
                         ADDON_NAMES.MEMBER_ENTERPRISE,
+                        ADDON_NAMES.MEMBER_VPN_PRO,
+                        ADDON_NAMES.MEMBER_VPN_BUSINESS,
                     ].includes(addonNameKey)
                 ) {
                     return (
@@ -339,7 +433,8 @@ const ProtonPlanCustomizer = ({
                             price={addonPriceInline}
                             input={input}
                             maxUsers={maxTotal}
-                            mode={mode}
+                            showDescription={showAddonDescriptions}
+                            showTooltip={showUsersTooltip}
                         />
                     );
                 }
@@ -356,7 +451,20 @@ const ProtonPlanCustomizer = ({
                             addon={addon}
                             price={addonPriceInline}
                             input={input}
-                            mode={mode}
+                            showDescription={showAddonDescriptions}
+                        />
+                    );
+                }
+
+                if (addonNameKey === ADDON_NAMES.IP_VPN_BUSINESS) {
+                    return (
+                        <IPsNumberCustomiser
+                            key={`${addon.Name}-ips`}
+                            addon={addon}
+                            price={addonPriceInline}
+                            input={input}
+                            showDescription={showAddonDescriptions}
+                            maxIPs={maxTotal}
                         />
                     );
                 }

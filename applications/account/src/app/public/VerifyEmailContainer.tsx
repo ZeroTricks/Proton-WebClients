@@ -4,10 +4,12 @@ import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button, ButtonLike, CircleLoader } from '@proton/atoms';
-import { GenericError, useApi, useErrorHandler, useLoading } from '@proton/components';
+import { GenericError, useApi, useErrorHandler } from '@proton/components';
+import { useLoading } from '@proton/hooks';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { postVerifyValidate } from '@proton/shared/lib/api/verify';
+import { SSO_PATHS } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import PublicFooter from '../components/PublicFooter';
@@ -67,7 +69,7 @@ const VerifyEmailContainer = ({ onSubscribe }: Props) => {
                         );
                     }
                     const signIn = (
-                        <a key="1" href="/switch" target="_self">
+                        <a key="1" href={SSO_PATHS.SWITCH} target="_self">
                             {c('Error message, recovery').t`sign in`}
                         </a>
                     );
@@ -106,7 +108,7 @@ const VerifyEmailContainer = ({ onSubscribe }: Props) => {
                                     {c('Action').t`Manage communication preferences`}
                                 </Button>
                             ) : (
-                                <ButtonLike fullWidth as="a" href="/switch" target="_self">
+                                <ButtonLike fullWidth as="a" href={SSO_PATHS.SWITCH} target="_self">
                                     {c('Action').t`Sign in`}
                                 </ButtonLike>
                             )

@@ -1,10 +1,12 @@
 import { useState } from 'react';
 
-import { PAYMENT_METHOD_TYPES, process } from '@proton/components/payments/core';
+import { ensureTokenChargeable } from '@proton/components/payments/client-extensions';
+import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
+import { useLoading } from '@proton/hooks';
 import { createToken } from '@proton/shared/lib/api/payments';
 import { Api, Currency } from '@proton/shared/lib/interfaces';
 
-import { useLoading, useModals } from '../../hooks';
+import { useModals } from '../../hooks';
 import { AmountAndCurrency, TokenPaymentMethod } from '../../payments/core/interface';
 import PaymentVerificationModal from './PaymentVerificationModal';
 
@@ -40,7 +42,7 @@ interface Props {
     type: PAYPAL_PAYMENT_METHOD;
     onPay: (data: OnPayResult) => void;
     onValidate?: () => boolean;
-    onError?: () => void;
+    onError?: (error: any) => void;
     /**
      * This lifecycle hook is called before the payment token is fetched.
      * It can be convinient if you need to fullfill some codition before fetching the token.
@@ -91,7 +93,7 @@ const usePayPal = ({
             const onProcess = () => {
                 const abort = new AbortController();
                 return {
-                    promise: process({
+                    promise: ensureTokenChargeable({
                         Token,
                         api,
                         ReturnHost,
@@ -137,7 +139,7 @@ const usePayPal = ({
                 return;
             }
             return withLoadingVerification(onVerification(model)).catch((e) => {
-                onError?.();
+                onError?.(e);
                 throw e;
             });
         },

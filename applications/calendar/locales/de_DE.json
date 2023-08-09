@@ -141,6 +141,9 @@
       "Continue with Google": [
         "Mit Google anmelden"
       ],
+      "Copy email address": [
+        "E-Mail-Adresse kopieren"
+      ],
       "Copy email to clipboard": [
         "E-Mail in Zwischenablage kopieren"
       ],
@@ -158,6 +161,9 @@
       ],
       "Create event": [
         "Termin erstellen"
+      ],
+      "Create new contact": [
+        "Neuen Kontakt erstellen"
       ],
       "Customize": [
         "Anpassen"
@@ -580,6 +586,9 @@
       ],
       "View": [
         "Anzeigen"
+      ],
+      "View contact details": [
+        "Kontaktinformationen anzeigen"
       ],
       "View invoice": [
         "Rechnung anzeigen"
@@ -2156,6 +2165,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. Du kannst auch auf unserer ${ statusPageLink } nachsehen."
+      ],
       "${ list } doesn't have a valid email address": [
         "${ list } enthält keine gültige E-Mail-Adresse",
         "Einige Kontakte enthalten keine gültige E-Mail-Adresse: ${ list }"
@@ -2415,6 +2427,9 @@
       ],
       "Start time must be before end time": [
         "Startzeit muss vor der Endzeit liegen"
+      ],
+      "status page": [
+        "Statusseite"
       ],
       "The address might be misspelled": [
         "Die E-Mail-Adresse könnte falsch geschrieben sein."
@@ -3005,8 +3020,8 @@
       "System default": [
         "Systemstandard"
       ],
-      "Theme default": [
-        "Standard-Farbschema"
+      "Theme font": [
+        "Design-Schriftart"
       ]
     },
     "Font size option": {
@@ -3473,6 +3488,9 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Jeder mit diesem Link kann in deinem Kalender sehen, ob du „Verfügbar“ oder „Beschäftigt“ bist. Es können jedoch keine Details zum Termin wie z. B. Titel, Ort oder Teilnehmer eingesehen werden."
       ],
+      "Are you sure you want to discard your import?": [
+        "Möchtest du deinen Import wirklich verwerfen?"
+      ],
       "Attention required": [
         "Aufmerksamkeit erforderlich"
       ],
@@ -3747,6 +3765,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Bitte beachte, dass dieser Vorgang (je nach Größe deines Adressbuchs) einige Zeit dauern kann."
+      ],
+      "Please provide a name and an email address for creating a group.": [
+        "Bitte gib einen Namen und eine E-Mail-Adresse an, um eine Gruppe zu erstellen."
       ],
       "Please remove the duplicates and try again.": [
         "Bitte entferne die Duplikate und versuche es erneut."
@@ -4031,9 +4052,6 @@
       "Your files will be encrypted and then saved": [
         "Deine Dateien werden verschlüsselt und anschließend gespeichert"
       ],
-      "Your import will not be processed.": [
-        "Dein Import wird nicht verarbeitet."
-      ],
       "Your login information will not be saved after the import is completed.": [
         "Deine Anmeldeinformationen werden nach Abschluss des Importvorgangs nicht gespeichert."
       ],
@@ -4127,11 +4145,6 @@
       ],
       "Trusted": [
         "Vertrauenswürdig"
-      ]
-    },
-    "Key transparency details button": {
-      "Click here for more details.": [
-        "Klicke hier für weitere Details."
       ]
     },
     "Knowledge base link label": {
@@ -4620,8 +4633,8 @@
       ]
     },
     "Modal action": {
-      "Close": [
-        "Schließen"
+      "Cancel": [
+        "Abbrechen"
       ],
       "Manage calendars": [
         "Kalender verwalten"
@@ -4904,6 +4917,9 @@
       ],
       "Calendar added": [
         "Kalender hinzugefügt"
+      ],
+      "Calendar updated": [
+        "Kalender aktualisiert"
       ]
     },
     "Notification in share calendar modal": {
@@ -5083,9 +5099,6 @@
       ],
       "Set up your organization": [
         "Organisation einrichten"
-      ],
-      "Set up your organization testing": [
-        "Richte deine Organisation ein"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "Verwende die App-Auswahl oben links, um auf alle ${ BRAND_NAME }-Dienste zuzugreifen: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } und ${ DRIVE_SHORT_APP_NAME }."
@@ -5382,8 +5395,8 @@
       ]
     },
     "Shared calendar; Info about calendar owner": {
-      "Created by ${ ownerName }": [
-        "Erstellt von ${ ownerName }"
+      "Shared by ${ ownerName }": [
+        "Geteilt von ${ ownerName }"
       ]
     },
     "Side panel spotlight": {
@@ -5683,19 +5696,6 @@
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
         "Erfahre, wie du einen privaten Kalenderlink abrufen kannst."
-      ]
-    },
-    "Subscribed calendar extension warning": {
-      "By using this link, Google will make the calendar you are subscribing to public": [
-        "Wenn du diesen Link verwendest, wird der abonnierte Kalender durch Google öffentlich zugänglich"
-      ],
-      "This link might be wrong": [
-        "Dieser Link könnte ungültig sein"
-      ]
-    },
-    "Subscribed calendar URL length warning": {
-      "URL is too long": [
-        "URL ist zu lang"
       ]
     },
     "Success": {
@@ -6518,9 +6518,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } wird so viele Daten wie möglich übertragen, beginnend mit deinen aktuellsten Nachrichten."
-      ],
-      "Are you sure you want to discard your import?": [
-        "Möchtest du deinen Import wirklich verwerfen?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Möchtest du wirklich ${ count } Kontaktgruppe dauerhaft löschen?",

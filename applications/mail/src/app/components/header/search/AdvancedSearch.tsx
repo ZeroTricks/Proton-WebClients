@@ -1,13 +1,13 @@
 import { FormEvent, useMemo, useRef, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { add, fromUnixTime, getUnixTime, isAfter, isBefore, sub } from 'date-fns';
+import { add, fromUnixTime, getUnixTime, isAfter, isBefore, isEqual, sub } from 'date-fns';
 import { History } from 'history';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { DateInput, Label, Option, PrimaryButton, SelectTwo, useAddresses, useUser } from '@proton/components';
-import { ESIndexingState, isContentIndexingDone } from '@proton/encrypted-search';
+import { ESIndexingState, contentIndexingProgress } from '@proton/encrypted-search';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
@@ -105,7 +105,7 @@ const AdvancedSearch = ({
     const [model, updateModel] = useState<SearchModel>(initializeModel(history, labelID, searchInputValue));
     const [user] = useUser();
     const { getESDBStatus } = useEncryptedSearchContext();
-    const { isDBLimited, lastContentTime } = getESDBStatus();
+    const { isDBLimited, lastContentTime, esEnabled } = getESDBStatus();
 
     const senderListAnchorRef = useRef<HTMLDivElement>(null);
     const toListAnchorRef = useRef<HTMLDivElement>(null);
@@ -186,6 +186,7 @@ const AdvancedSearch = ({
                             </Button>
                         ) : null
                     }
+                    esEnabled={esEnabled}
                 />
             </div>
             <div className={clsx(['pt-4 px-5 pb-0'])}>
@@ -221,7 +222,9 @@ const AdvancedSearch = ({
                                     onChange={async (begin) => {
                                         if (begin) {
                                             let oldestTime = -1;
-                                            const wasIndexingDone = await isContentIndexingDone(user.ID);
+                                            const wasIndexingDone = await contentIndexingProgress.isIndexingDone(
+                                                user.ID
+                                            );
                                             if (wasIndexingDone && isDBLimited) {
                                                 oldestTime = lastContentTime;
                                             }
@@ -243,10 +246,15 @@ const AdvancedSearch = ({
                                     id="end-date"
                                     data-testid="advanced-search:end-date"
                                     value={model.end}
-                                    onChange={(end) =>
-                                        (!model.begin || isAfter(end || Infinity, model.begin)) &&
-                                        updateModel({ ...model, end })
-                                    }
+                                    onChange={(end) => {
+                                        if (
+                                            !model.begin ||
+                                            isEqual(model.begin, end || Infinity) ||
+                                            isAfter(end || Infinity, model.begin)
+                                        ) {
+                                            updateModel({ ...model, end });
+                                        }
+                                    }}
                                 />
                             </div>
                         </div>

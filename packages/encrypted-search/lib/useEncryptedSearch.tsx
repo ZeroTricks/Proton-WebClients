@@ -47,25 +47,19 @@ import {
     uncachedSearch,
 } from './esHelpers';
 import {
-    addTimestamp,
     checkVersionedESDB,
+    contentIndexingProgress,
     deleteESDB,
-    incrementNumPauses,
+    metadataIndexingProgress,
     openESDB,
     readAllLastEvents,
-    readContentProgress,
     readEnabled,
     readLimited,
-    readMetadataProgress,
     readNumContent,
     readNumMetadata,
-    setContentActiveProgressStatus,
     setLimited,
-    setMetadataActiveProgressStatus,
-    setProgressStatus,
     toggleEnabled,
     writeAllEvents,
-    writeContentProgress,
 } from './esIDB';
 import {
     ESCache,
@@ -414,7 +408,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         // In case many items were removed from cache, or from IDB, fill the remaining space
         let isDBLimited: boolean | undefined;
         if (!!indexKey) {
-            const contentProgress = await readContentProgress(userID);
+            const contentProgress = await contentIndexingProgress.read(userID);
             if (!!contentProgress && contentProgress.status === INDEXING_STATUS.ACTIVE) {
                 abortIndexingRef.current = new AbortController();
                 await retryContentIndexing(userID, indexKey, esHelpers, abortIndexingRef);
@@ -497,6 +491,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
     const enableEncryptedSearch: EnableEncryptedSearch = async ({
         isRefreshed = false,
         isBackgroundIndexing = false,
+        showErrorNotification = true,
     } = {}) => {
         // If indexing instance is already in progress, don't start a new one
         const { isEnablingEncryptedSearch } = esStatus;
@@ -510,13 +505,15 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         }));
 
         const handleError = async (esSupported = true) => {
-            createNotification({
-                text: esSupported
-                    ? c('Error').t`A problem occurred, please try again.`
-                    : c('Error')
-                          .t`Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.`,
-                type: 'error',
-            });
+            if (showErrorNotification) {
+                createNotification({
+                    text: esSupported
+                        ? c('Error').t`A problem occurred, please try again.`
+                        : c('Error')
+                              .t`Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.`,
+                    type: 'error',
+                });
+            }
             await esDelete();
             return false;
         };
@@ -541,7 +538,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         let indexKey: CryptoKey | undefined;
         let esSupported = true;
         if (esdbExists) {
-            const esProgress = await readMetadataProgress(userID);
+            const esProgress = await metadataIndexingProgress.read(userID);
             // If indexing was already completed, don't start a new one
             if (esProgress && esProgress.status === INDEXING_STATUS.ACTIVE) {
                 return true;
@@ -676,7 +673,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
                 return handleError();
             }
 
-            await setMetadataActiveProgressStatus(userID);
+            await metadataIndexingProgress.setActiveStatus(userID);
             await toggleEnabled(userID);
         }
 
@@ -709,9 +706,9 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             isPaused: true,
         }));
 
-        await setProgressStatus(userID, INDEXING_STATUS.PAUSED);
-        await incrementNumPauses(userID);
-        await addTimestamp(userID, TIMESTAMP_TYPE.STOP);
+        await contentIndexingProgress.setStatus(userID, INDEXING_STATUS.PAUSED);
+        await contentIndexingProgress.incrementNumPauses(userID);
+        await contentIndexingProgress.addTimestamp(userID, TIMESTAMP_TYPE.STOP);
     };
 
     /**
@@ -761,7 +758,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             esEnabled: false,
         }));
 
-        const previousProgress = await readContentProgress(userID);
+        const previousProgress = await contentIndexingProgress.read(userID);
 
         const currentItems = (await readNumContent(userID)) || 0;
         let totalItems = 0;
@@ -779,9 +776,9 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
                 isRefreshed,
                 status: INDEXING_STATUS.INDEXING,
             };
-            await writeContentProgress(userID, initialProgress);
+            await contentIndexingProgress.write(userID, initialProgress);
         } else {
-            await setProgressStatus(userID, INDEXING_STATUS.INDEXING);
+            await contentIndexingProgress.setStatus(userID, INDEXING_STATUS.INDEXING);
             ({ totalItems, recoveryPoint } = previousProgress);
         }
 
@@ -868,7 +865,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             return dbCorruptError();
         }
 
-        await setContentActiveProgressStatus(userID);
+        await contentIndexingProgress.setActiveStatus(userID);
         setESStatus((esStatus) => ({
             ...esStatus,
             isEnablingContentSearch: false,
@@ -880,7 +877,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         void addSyncing(() => catchUpPromise);
         await catchUpPromise;
 
-        await addTimestamp(userID, TIMESTAMP_TYPE.STOP);
+        await contentIndexingProgress.addTimestamp(userID, TIMESTAMP_TYPE.STOP);
         void sendIndexingMetrics(api, userID);
 
         if (notify) {
@@ -1177,7 +1174,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
      */
     const restartIndexing = async () => {
         // Retrieve whether content was already being indexed and reindex it too
-        const contentProgress = await readContentProgress(userID);
+        const contentProgress = await contentIndexingProgress.read(userID);
         const wasContentIndexed = contentProgress && contentProgress.status !== INDEXING_STATUS.INACTIVE;
         await esDelete();
         return enableEncryptedSearch({ isRefreshed: true }).then(() => {
@@ -1243,7 +1240,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         // check for the INDEXING status because metadata indexing cannot be
         // PAUSED. Note that if IDB exists and metadata progress doesn't,
         // something is wrong
-        const metadataProgress = await readMetadataProgress(userID);
+        const metadataProgress = await metadataIndexingProgress.read(userID);
         if (!metadataProgress) {
             return dbCorruptError();
         }
@@ -1267,7 +1264,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         }));
 
         // Check whether content indexing was ongoing
-        const contentProgress = await readContentProgress(userID);
+        const contentProgress = await contentIndexingProgress.read(userID);
 
         const isIndexingContent = !!contentProgress && contentProgress.status === INDEXING_STATUS.INDEXING;
         const isPaused = !!contentProgress && contentProgress.status === INDEXING_STATUS.PAUSED;

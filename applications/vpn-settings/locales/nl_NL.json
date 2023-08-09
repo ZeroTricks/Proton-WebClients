@@ -41,6 +41,9 @@
       "Cancel": [
         "Annuleren"
       ],
+      "Cancel subscription": [
+        "Abonnement opzeggen"
+      ],
       "Change mailbox password": [
         "Mailboxwachtwoord wijzigen"
       ],
@@ -82,9 +85,6 @@
       ],
       "Create": [
         "Aanmaken"
-      ],
-      "Create account": [
-        "Account aanmaken"
       ],
       "Current plan": [
         "Huidig abonnement"
@@ -167,14 +167,8 @@
       "Fit to window": [
         "Passend in venster"
       ],
-      "Get ${ discountPercentage } off with 24 months": [
-        "Krijg ${ discountPercentage } korting met 24 maanden"
-      ],
       "Get ${ vpnPlus }": [
         "Krijg ${ vpnPlus }"
-      ],
-      "Get a new encrypted email address": [
-        "Verkrijg een nieuw versleuteld e-mailadres"
       ],
       "Get the deal": [
         "Pak deze deal"
@@ -185,11 +179,17 @@
       "Hide": [
         "Verbergen"
       ],
+      "Hide plan features": [
+        "Verberg abonnementsfuncties"
+      ],
       "I have a question": [
         "Ik heb een vraag"
       ],
       "Increase": [
         "Verhogen"
+      ],
+      "Keep my ${ vpnPlanNameShort } subscription": [
+        "Behoud mijn ${ vpnPlanNameShort }-abonnement"
       ],
       "Load more": [
         "Laad meer"
@@ -199,9 +199,6 @@
       ],
       "Mark as default": [
         "Markeren als standaard"
-      ],
-      "Maybe later": [
-        "Misschien later"
       ],
       "More info: ${ safeTitle }": [
         "Meer informatie: ${ safeTitle }"
@@ -283,9 +280,6 @@
       ],
       "Save": [
         "Opslaan"
-      ],
-      "Save selected": [
-        "Geselecteerde bewaren"
       ],
       "Search countries": [
         "Zoek landen"
@@ -386,9 +380,6 @@
       "Use recovery code": [
         "Herstelcode gebruiken"
       ],
-      "Use your current email instead": [
-        "Gebruik in plaats daarvan uw huidige e-mailadres"
-      ],
       "User": [
         "Gebruiker"
       ],
@@ -423,18 +414,22 @@
         "Zoom uit"
       ]
     },
-    "Action in trial plan": {
-      "No, thanks": [
-        "Nee, bedankt"
+    "Action subscription": {
+      "Manage": [
+        "Beheren"
       ],
-      "Try free for 30 days": [
-        "Probeer 30 dagen gratis"
+      "Reactivate": [
+        "Opnieuw activeren"
       ]
     },
     "Addon": {
       "+ ${ domains } custom domain": [
         "+ ${ domains } eigen domein",
         "+ ${ domains } eigen domeinen"
+      ],
+      "+ ${ ips } IP address": [
+        "+ ${ ips } IP-adres",
+        "+ ${ ips } IP-adressen"
       ],
       "+ ${ users } user": [
         "+ ${ users } gebruiker",
@@ -444,11 +439,6 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Dit zal alle routers en clients die dit certificaat gebruiken loskoppelen."
-      ]
-    },
-    "Baseline in trial plan": {
-      "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        "${ mailPlus }: de e-mail- en agendaoplossing met privacy voorop voor uw dagelijkse communicatiebehoeften."
       ]
     },
     "Billing cycle": {
@@ -1467,6 +1457,9 @@
       ]
     },
     "Error": {
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. U kunt ook onze ${ statusPageLink } bekijken"
+      ],
       "Amount above the maximum.": [
         "Bedrag boven het maximum."
       ],
@@ -1566,6 +1559,9 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Er ging iets mis, gelieve ${ refresh } om door te gaan. Als u dit foutbericht nog steeds ziet, neem dan contact op met onze ${ supportTeam }."
       ],
+      "status page": [
+        "status pagina"
+      ],
       "Tab closed": [
         "Tab gesloten"
       ],
@@ -1592,6 +1588,9 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Dit veld vereist een minimum van ${ minimumLength } tekens."
+      ],
+      "Try again later": [
+        "Probeer het later opnieuw"
       ],
       "Try using only letters, numerals, and _.-": [
         "Probeer enkel letters, nummers en _.- te gebruiken"
@@ -1975,8 +1974,8 @@
       "System default": [
         "Systeem standaard"
       ],
-      "Theme default": [
-        "Thema standaard"
+      "Theme font": [
+        "Thema lettertype"
       ]
     },
     "Font size option": {
@@ -2005,6 +2004,12 @@
       ],
       "(1-2 emails per month)": [
         "(1-2 e-mails per maand)"
+      ],
+      "(2-4 emails per year)": [
+        "(2-4 e-mails per jaar)"
+      ],
+      "(4-6 emails per year)": [
+        "(4-6 e-mails per jaar)"
       ],
       "(during your first month)": [
         "(gedurende uw eerste maand)"
@@ -2041,22 +2046,17 @@
       "Best deal": [
         "Beste deal"
       ],
-      "Enter your email address": [
-        "Voer uw e-mailadres in"
+      "Checkout": [
+        "Afrekenen"
+      ],
+      "Create your account": [
+        "Maak uw account aan"
       ],
       "Get help": [
         "Krijg hulp"
       ],
-      "Select your preferred method of payment": [
-        "Selecteer uw gewenste betaalmethode"
-      ],
       "Select your pricing plan": [
         "Selecteer uw abonnement"
-      ]
-    },
-    "Heading in trial plan": {
-      "Try the best of ${ MAIL_APP_NAME } for free": [
-        "Probeer gratis het beste van ${ MAIL_APP_NAME }"
       ]
     },
     "Human verification method": {
@@ -2074,11 +2074,17 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
       ],
+      "${ autoRenewal } your subscription will renew automatically on ${ renewalTime }.": [
+        "${ autoRenewal } uw abonnement wordt automatisch verlengd op ${ renewalTime }."
+      ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } U verliest de toegang tot alle huidige versleutelde gegevens in uw account als u doorgaat."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }'s versleutelingstechnologie betekent dat niemand toegang heeft tot uw wachten - zelfs wij niet."
+      ],
+      "${ discountPercentage } forever": [
+        "${ discountPercentage } voor altijd"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: afbeelding op volledige grootte"
@@ -2100,17 +2106,11 @@
       "${ storage } storage": [
         "${ storage } opslag"
       ],
-      "${ storageSize } storage": [
-        "${ storageSize } opslagruimte"
-      ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } vereist voor verbindingen op landniveau."
       ],
       "${ vpnPlus } required for Secure Core feature.": [
         "${ vpnPlus } vereist voor Secure Core functies."
-      ],
-      "* No credit card required.": [
-        "* Green kredietkaart vereist."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus opslag"
@@ -2118,9 +2118,6 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } verbinding voor ${ VPN_APP_NAME } (stelt u in staat meer apparaten aan VPN te verbinden)",
         "+${ organization.BonusVPN } verbindingen voor ${ VPN_APP_NAME } (stelt u in staat meer apparaten aan VPN te verbinden)"
-      ],
-      "10 email addresses": [
-        "10 e-mailadressen"
       ],
       "30-day money-back guarantee": [
         "30 dagen geld-terug-garantie"
@@ -2164,6 +2161,9 @@
       "American Express SafeKey logo": [
         "American Express SafeKey logo"
       ],
+      "Amount above maximum (${ amount }).": [
+        "Bedrag boven maximum (${ amount })."
+      ],
       "Amount below minimum (${ amount }).": [
         "Bedrag onder minimum (${ amount })."
       ],
@@ -2178,6 +2178,9 @@
       ],
       "Attention required": [
         "Aandacht vereist"
+      ],
+      "Auto-renewal: ": [
+        "Automatische verlenging: "
       ],
       "Balance from your previous subscription": [
         "Balans van uw vorige abonnement"
@@ -2323,6 +2326,9 @@
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Voor Visa, MasterCard en Discover zijn dit de 3 cijfers op de achterkant van uw kaart. Voor American Express de 4 cijfers op de voorkant van uw kaart."
       ],
+      "Free forever": [
+        "Altijd gratis"
+      ],
       "Free up some space or add more storage space.": [
         "Maak ruimte vrij of voeg meer opslagruimte toe."
       ],
@@ -2350,6 +2356,9 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Als u denkt dat dit een fout is, neem dan contact met ons op via ${ contactLink }."
       ],
+      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
+        "Wanneer je opzegt, zal je ${ vpnPlanName } abonnement niet meer vernieuwd worden wanneer het verloopt op ${ expiryDate }."
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Als u de e-mail niet in de inbox kan vinden, check dan uw map met spam."
       ],
@@ -2376,6 +2385,9 @@
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Belangrijk: Zorg ervoor dat u de herstelcodes opslaat. Anders kunt u permanent toegang tot uw account verliezen als u uw tweestapsverificatieapparaat kwijtraakt."
+      ],
+      "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
+        "In de volgende stap kunt u een storting doen met een Bitcoin-adres."
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Installeer een Land configuratiebestand om te verbinden met een willekeurige server in het land van uw keuze."
@@ -2431,9 +2443,6 @@
       "MM/YY": [
         "MM/JJ"
       ],
-      "No credit card required": [
-        "Green kredietkaart vereist"
-      ],
       "No payment is required at this time.": [
         "Er is op dit moment geen betaling vereist."
       ],
@@ -2455,11 +2464,8 @@
       "Once you reset your password:": [
         "Zodra u uw wachtwoord herstelt:"
       ],
-      "One account. All ${ BRAND_NAME } services.": [
-        "Eén account. Alle ${ BRAND_NAME }-diensten."
-      ],
       "Open source": [
-        "Open-source"
+        "Open source"
       ],
       "Or select a particular server:": [
         "Of selecteer een specifieke server:"
@@ -2512,9 +2518,6 @@
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "De prijs is inclusief alle toepasselijke cyclusgebonden kortingen en geldige coupons die in uw account zijn opgeslagen."
       ],
-      "Priority support": [
-        "Prioriteitsondersteuning"
-      ],
       "Protected by Swiss privacy laws": [
         "Beschermd door Zwitserse privacywetten"
       ],
@@ -2535,9 +2538,6 @@
       ],
       "Revoke certificate ${ name }": [
         "Certificaat ${ name } intrekken"
-      ],
-      "Saving your password": [
-        "Bewaar uw wachtwoord"
       ],
       "Scan QR code instead": [
         "Scan QR-code in plaats daarvan"
@@ -2573,14 +2573,14 @@
         "Stap ${ step }",
         "Stap ${ step }"
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }."
+      "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
+        "Dien een storting in via het volgende adres of scan de QR-code. Uw aanbetaling wordt na bevestiging weerspiegeld in uw account."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Het abonnement loopt af: Heractiveer het voor ${ byDate } om de voordelen van uw ${ planName } te behouden. ${ reactivateLink }"
       ],
-      "Support for 1 custom email domain": [
-        "Ondersteuning voor 1 aangepast e-maildomein"
+      "Summary": [
+        "Overzicht"
       ],
       "support team": [
         "ondersteuningsteam"
@@ -2590,9 +2590,6 @@
       ],
       "Thank you": [
         "Bedankt"
-      ],
-      "The ${ planName } plan includes:": [
-        "Het ${ planName }-abonnement omvat:"
       ],
       "The securest way to browse, stream, and be online.": [
         "De veiligste manier om te browsen, streamen en online te zijn."
@@ -2615,6 +2612,9 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Afhankelijk van uw apparaat kan dit enkele seconden tot enkele minuten duren"
       ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "Dit zal uw huidig betalend abonnement annuleren en u zult al uw opgebouwde loyaliteitsvoordelen verliezen."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Dit zal uw huidige betaalde abonnement annuleren en u verliest alle voordelen van loyaliteit die u heeft verzameld. Het resterende saldo van uw abonnement zal worden teruggestuurd als accountcredits."
       ],
@@ -2633,8 +2633,8 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Deze wizard zal Tweestapsverificatie (2FA) inschakelen voor uw ${ BRAND_NAME }-account. Tweestapsverificatie zal uw ${ BRAND_NAME_TWO }-account veiliger maken en daarom raden we aan om het in te schakelen."
       ],
-      "To ${ planName }": [
-        "Naar ${ planName }"
+      "To complete your payment, please send ${ btcAmountBold } to the address below.": [
+        "Stuur ${ btcAmountBold } naar het onderstaande adres om uw betaling te voltooien."
       ],
       "to continue to ${ toAppName }": [
         "om door te gaan naar ${ toAppName }"
@@ -2642,17 +2642,14 @@
       "To fight spam and abuse, please verify you are human.": [
         "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
       ],
-      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "Om de laatste ontwikkeling bij ${ BRAND_NAME }-producten te kunnen bijhouden, kunt u zich abonneren op onze verschillende e-mails en onze blog van tijd tot tijd bezoeken."
+      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
+        "Om de laatste ontwikkeling bij ${ BRAND_NAME }-producten te kunnen bijhouden, kunt u zich abonneren op onze verschillende e-mails en van tijd tot tijd ${ blogLink }."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Om verder te gaan, selecteer een herstelmethode voor uw account zodat we het verzoek kunnen verifiëren."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Download en installeer de ${ VPN_APP_NAME }-applicatie en maak verbinding met een server om uw verbinding te beveiligen."
-      ],
-      "to use ${ toAppName } and all ${ BRAND_NAME } services": [
-        "om ${ toAppName } en alle ${ BRAND_NAME }-diensten"
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Vul uw account op met credits die u kunt gebruiken om zich aan te melden bij een nieuw plan of uw huidige abonnement te vernieuwen. U krijgt één krediet voor elke ${ i18nCurrency } die u gebruikt."
@@ -2668,9 +2665,6 @@
       ],
       "Total VPN connections": [
         "Totale VPN-verbindingen"
-      ],
-      "Try ${ upsellPlanName } risk free": [
-        "Probeer ${ upsellPlanName } zonder risico"
       ],
       "two-factor authentication (2FA)": [
         "tweestapsverificatie (2FA)"
@@ -2689,12 +2683,6 @@
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Helaas is er geen herstelmethode opgeslagen voor dit account."
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Onbeperkt aantal mappen, labels en filters"
-      ],
-      "Unlimited messages": [
-        "Onbeperkt aantal berichten"
       ],
       "Unsaved changes": [
         "Niet-opgeslagen wijzigingen"
@@ -2756,17 +2744,14 @@
       "We recommend using your recovery phrase instead.": [
         "Wij raden u aan in plaats daarvan uw herstelzin te gebruiken."
       ],
-      "We use 3-D Secure to protect your payments.": [
-        "We gebruiken 3-D Secure om uw betalingen te beschermen."
+      "We use 3-D Secure to protect your payments": [
+        "We gebruiken 3-D Secure om je betalingen te beschermen"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "We verwijzen u naar PayPal in een nieuw browsertabblad om de transactie te voltooien. Als u een pop-up blocker gebruikt, schakel deze dan uit alvorens door te gaan."
       ],
       "We'll send a new verification code to ${ strong }": [
         "We verzenden een nieuwe verificatiecode naar ${ strong }"
-      ],
-      "Welcome": [
-        "Welkom"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "We sturen een resetcode naar het e-mailadres dat u hebt opgegeven voor het herstel van uw account."
@@ -2785,9 +2770,6 @@
       ],
       "Why?": [
         "Waarom?"
-      ],
-      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
-        "Met een versleuteld ${ BRAND_NAME }-adres, kunt u gebruik maken van alle ${ BRAND_NAME_TWO }-diensten"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Wilt u een nieuwe verificatiecode ontvangen of een alternatieve verificatiemethode kiezen?"
@@ -2829,9 +2811,6 @@
       "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Gebruik de OpenVPN / IKEv2 inloggegevens niet in de ${ VPN_APP_NAME }-applicaties of op het ${ VPN_APP_NAME }-dashboard. ${ learnMore }"
       ],
-      "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
-        "U heeft geen herstelmethode ingesteld dus accountherstel is niet mogelijk als u uw wachtwoord vergeet. Doorgaan zonder herstelmethode?"
-      ],
       "You have no saved payment methods.": [
         "U heeft geen opgeslagen betalingsmethoden."
       ],
@@ -2853,11 +2832,8 @@
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "U heeft 100% van uw opslagruimte bereikt. U kunt geen nieuwe e-mails verzenden of ontvangen. ${ freeUpMessage } ${ upgradeLink }"
       ],
-      "You will be redirected to the VPN download page": [
-        "U wordt doorgestuurd naar de VPN-downloadpagina"
-      ],
-      "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
-        "U heeft een ${ BRAND_NAME }-adres nodig om ${ MAIL_APP_NAME } en ${ CALENDAR_APP_NAME } te gebruiken"
+      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
+        "U verliest toegang tot ${ vpnPlanNameShort }-servers en functies op deze datum."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Binnenkort wordt u doorverwezen naar PayPal om uw betaling te verifiëren."
@@ -2898,6 +2874,9 @@
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
         "Uw bestaande berichten, agenda's of contacten worden vergrendeld. Om deze gegevens te herstellen, heeft u uw herstelzin of uw ${ oldPassword } nodig."
       ],
+      "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
+        "Uw gegevens zijn veilig bij ons. We nemen alleen contact met u op wanneer dit nodig is om onze diensten te leveren."
+      ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Uw betalingsgegevens zijn beschermd met TLS encryptie en Zwitserse privacywetten."
       ],
@@ -2921,6 +2900,11 @@
     "Info message for custom invoice modal": {
       "Add your name (or company name) and address to your invoices.": [
         "Voeg uw naam (of bedrijfsnaam) en adres toe aan uw facturen."
+      ]
+    },
+    "Info subscription": {
+      "You can prevent expiry by reactivating the subscription": [
+        "U kunt het vervallen voorkomen door uw abonnement opnieuw te activeren"
       ]
     },
     "Info when deleting payment method": {
@@ -2983,9 +2967,6 @@
       ]
     },
     "Label": {
-      "${ BRAND_NAME } email or username": [
-        "${ BRAND_NAME } e-mail of gebruikersnaam"
-      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } gebruikersnaam"
       ],
@@ -3017,6 +2998,9 @@
       "Authenticator app": [
         "Authenticator-app"
       ],
+      "Billing address": [
+        "Facturatie adres"
+      ],
       "Billing cycle": [
         "Facturatieperiode"
       ],
@@ -3032,11 +3016,17 @@
       "Browser version": [
         "Browserversie"
       ],
+      "BTC address": [
+        "BTC adres"
+      ],
+      "BTC amount": [
+        "BTC bedrag"
+      ],
+      "Card details": [
+        "Kaart details"
+      ],
       "Card holder": [
         "Kaarthouder"
-      ],
-      "Card information": [
-        "Kaartinformatie"
       ],
       "Card number": [
         "Kaartnummer"
@@ -3124,6 +3114,9 @@
       ],
       "Enter the code displayed on your TV": [
         "Voer de op uw TV weergegeven code in"
+      ],
+      "Expiration (${ patternExpiration })": [
+        "Verloopdatum (${ patternExpiration })"
       ],
       "Expiration date": [
         "Vervaldatum"
@@ -3236,14 +3229,14 @@
       "Recovery phrase": [
         "Herstelzin"
       ],
-      "Repeat password": [
-        "Wachtwoord herhalen"
-      ],
       "Reveal password": [
         "Wachtwoord tonen"
       ],
       "Security code": [
         "Beveiligingscode"
+      ],
+      "Security code (${ codeName })": [
+        "Beveiligingscode (${ codeName })"
       ],
       "Select your country": [
         "Selecteer uw land"
@@ -3262,12 +3255,6 @@
       ],
       "Two-password mode": [
         "Twee-wachtwoord modus"
-      ],
-      "Use a recovery email address": [
-        "Gebruik een herstel-e-mailadres"
-      ],
-      "Use a recovery phone number": [
-        "Hersteltelefoonnummer gebruiken"
       ],
       "User's new password": [
         "Nieuw wachtwoord van gebruiker"
@@ -3306,11 +3293,11 @@
       "${ BRAND_NAME } beta announcements": [
         "${ BRAND_NAME }-bèta-aankondigingen"
       ],
-      "${ BRAND_NAME } company announcements": [
-        "${ BRAND_NAME } bedrijfsaankondigingen"
-      ],
       "${ BRAND_NAME } for Business newsletter": [
         "${ BRAND_NAME } voor Bedrijven-nieuwsbrief"
+      ],
+      "${ BRAND_NAME } important announcements": [
+        "${ BRAND_NAME } belangrijke aankondigingen"
       ],
       "${ BRAND_NAME } newsletter": [
         "${ BRAND_NAME }-nieuwsbrief"
@@ -3360,6 +3347,12 @@
       "Forgot username?": [
         "Gebruikersnaam vergeten?"
       ],
+      "Help translate": [
+        "Help met vertalen"
+      ],
+      "How to pay with Bitcoin?": [
+        "Hoe betalen met Bitcoin?"
+      ],
       "Learn more": [
         "Meer informatie"
       ],
@@ -3371,6 +3364,9 @@
       ],
       "Pay invoice": [
         "Factuur betalen"
+      ],
+      "Paypal without credit card": [
+        "PayPal zonder creditcard"
       ],
       "Privacy policy": [
         "Privacybeleid"
@@ -3398,6 +3394,9 @@
       ],
       "View guide": [
         "Bekijk gids"
+      ],
+      "visit our blog": [
+        "onze blog bezoeken"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Wat is het verschil tussen UDP en TCP-protocollen?"
@@ -3430,6 +3429,32 @@
         "Er is een nieuwe versie van ${ appName } beschikbaar. ${ reloadButton }."
       ]
     },
+    "Metadata title": {
+      "${ appName }: Sign-in": [
+        "${ appName }: Log in"
+      ],
+      "${ appName }: Sign-up": [
+        "${ appName }: Inschrijven"
+      ],
+      "Create a new ${ appName } account": [
+        "Maak een nieuwe ${ appName }-account aan"
+      ],
+      "Find ${ BRAND_NAME } Account username": [
+        "Vind ${ BRAND_NAME } Account gebruikersnaam"
+      ],
+      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "${ BRAND_NAME } wachtwoord vergeten? Reset het door uw recovery code, email of SMS te gebruiken en krijg toegang tot uw ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, en meer."
+      ],
+      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "${ BRAND_NAME } Account gebruikersnaam vergeten? Reset het door uw recovery code, email of SMS te gebruiken en krijg toegang tot uw ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, en meer."
+      ],
+      "Reset your ${ BRAND_NAME } Account password": [
+        "Reset uw ${ BRAND_NAME } Account wachtwoord"
+      ],
+      "Sign in to access your ${ appName } account": [
+        "Log in om toegang te krijgen tot uw ${ appName } account"
+      ]
+    },
     "Monetary unit": {
       "Dollar": [
         "Dollar"
@@ -3452,12 +3477,23 @@
         "Gemiddelde VPN-snelheid"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade naar ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Bekijk alle ${ BRAND_NAME }-abonnementen"
+      ],
+      "From ${ price }": [
+        "Vanaf ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Behoud mijn ${ currentPlanName }-account"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Doorgaan naar controle"
-      ],
-      "Continue with Free": [
-        "Doorgaan met gratis"
       ],
       "Delete account": [
         "Account verwijderen"
@@ -3468,14 +3504,8 @@
       "Get ${ BRAND_NAME } for free": [
         "Gebruik ${ BRAND_NAME } gratis"
       ],
-      "Get ${ mostPopularShortPlan.title }": [
-        "Kies ${ mostPopularShortPlan.title }"
-      ],
       "Get ${ planName }": [
         "Kies ${ planName }"
-      ],
-      "Get ${ upsellShortPlan.title }": [
-        "Kies ${ upsellShortPlan.title }"
       ],
       "Got it": [
         "Begrepen"
@@ -3491,39 +3521,6 @@
       ],
       "Switch plan": [
         "Van abonnement wisselen"
-      ],
-      "Upgrade to ${ upsellPlanHumanSize }": [
-        "Upgraden naar ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade naar ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Bekijk alle ${ BRAND_NAME }-abonnementen"
-      ],
-      "From ${ price }": [
-        "Vanaf ${ price }"
-      ],
-      "From ${ price } per user": [
-        "Vanaf ${ price } per gebruiker"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Behoud mijn ${ currentPlanName }-account"
-      ],
-      "Upgrade now": [
-        "Upgrade nu"
-      ]
-    },
-    "new_plans: attribute": {
-      "Get ${ connections } high-speed VPN connection": [
-        "Gebruik ${ connections } supersnelle VPN-verbinding",
-        "Gebruik ${ connections } supersnelle VPN-verbindingen"
-      ],
-      "Get ${ connections } high-speed VPN connection per user": [
-        "Gebruik ${ connections } supersnelle VPN-verbinding per gebruiker",
-        "Gebruik ${ connections } supersnelle VPN-verbindingen per gebruiker"
       ]
     },
     "new_plans: feature": {
@@ -3559,6 +3556,10 @@
         "${ n } map en label",
         "${ n } mappen en labels"
       ],
+      "${ n } hide-my-email alias": [
+        "${ n } hide-my-email-alias",
+        "${ n } hide-my-email-aliassen"
+      ],
       "${ n } label": [
         "${ n } label",
         "${ n } labels"
@@ -3578,6 +3579,13 @@
       "${ n } VPN connection per user": [
         "${ n } VPN-verbinding per gebruiker",
         "${ n } VPN-verbindingen per gebruiker"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } met ${ n } hide-my-email-aliassen",
+        "${ PASS_APP_NAME } met ${ n } hide-my-email aliassen"
+      ],
+      "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME } met onbeperkte hide-my-email-aliassen"
       ],
       "${ size } attachment size": [
         "${ size } bijlagegrootte"
@@ -3715,6 +3723,9 @@
       "No-logs policy": [
         "Beleid zonder logboeken"
       ],
+      "Organize items with multiple vaults": [
+        "Organiseer items met meerdere kluizen"
+      ],
       "Password-protected Emails": [
         "E-mails met wachtwoordbeveiliging"
       ],
@@ -3754,6 +3765,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android en Windows)"
+      ],
+      "Start protecting yourself online in 2 easy steps": [
+        "Begin jezelf online te beschermen in 2 eenvoudige stappen"
       ],
       "Strict no-logs policy": [
         "Strikt geen-logboekbeleid"
@@ -3828,21 +3842,6 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand } eindigend met ${ last4 }"
       ],
-      "* With 1-month subscription. Other subscription options available at checkout.": [
-        "* Bij een abonnement van 1 maand. Andere abonnementsopties beschikbaar bij afrekenen."
-      ],
-      "* With 12-month subscription. Other subscription options available at checkout.": [
-        "* Bij een abonnement van 12 maanden. Andere abonnementsopties beschikbaar bij afrekenen."
-      ],
-      "* With 15-month subscription. Other subscription options available at checkout.": [
-        "* Bij een abonnement van 15 maanden. Andere abonnementsopties beschikbaar bij afrekenen."
-      ],
-      "* With 24-month subscription. Other subscription options available at checkout.": [
-        "* Bij een abonnement van 24 maanden. Andere abonnementsopties beschikbaar bij afrekenen."
-      ],
-      "* With 30-month subscription. Other subscription options available at checkout.": [
-        "* Bij een abonnement van 30 maanden. Andere abonnementsopties beschikbaar bij afrekenen."
-      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Toepasselijke tegoeden, aftrek en kortingscodes worden toegepast in de volgende stap"
       ],
@@ -3860,9 +3859,6 @@
       ],
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "Als u overstapt op een ander abonnement, raakt u alle voordelen van het ${ visionary }-abonnement kwijt en kunt u niet meer terug naar ${ visionary }."
-      ],
-      "Most popular": [
-        "Populairste keuze"
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Ons ${ visionary }-abonnement is niet meer beschikbaar voor nieuwe gebruikers; dit is een speciaal abonnement voor originele ${ BRAND_NAME }-gebruikers met speciale functies en voordelen."
@@ -3899,23 +3895,14 @@
       ]
     },
     "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Maak privacy uw standaard voor back-ups, opslag, delen en herstel van bestanden."
-      ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
       ],
-      "Upgrade to the business pack with access to all premium ${ BRAND_NAME } services.": [
-        "Upgrade naar het zakelijke pakket met toegang tot alle premium ${ BRAND_NAME }-services."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium ${ BRAND_NAME } services.": [
-        "Upgrade naar het ultieme privacypakket met toegang tot alle premium ${ BRAND_NAME }-services."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Uw proefperiode eindigt op ${ formattedTrialExpirationDate }"
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Uw proefperiode eindigt op ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -3935,32 +3922,19 @@
       ]
     },
     "new_plans: signup": {
-      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
-        "Door een ${ BRAND_NAME }-account aan te maken, gaat u akkoord met u onze ${ terms }"
-      ],
       "By paying, you agree to our ${ termsAndConditions }": [
         "Door te betalen gaat u akkoord met onze ${ termsAndConditions }"
       ],
-      "Payment details": [
-        "Betalingsgegevens"
-      ],
-      "Save your email address or phone number to use for verification if you need to reset your account.": [
-        "Sla uw e-mailadres of telefoonnummer op voor verificatiedoeleinden als u uw account moet resetten."
-      ],
-      "Subscription": [
-        "Abonnement"
-      ],
       "terms and conditions": [
         "algemene voorwaarden"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } Proefversie"
       ],
-      "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
-        "Kies eerst een weergavenaam. Dit is de naam die mensen zien als u een e-mail verzendt, ze uitnodigt voor een gebeurtenis of een bestand deelt."
-      ],
-      "Your ${ planName } subscription is now active.": [
-        "Uw ${ planName }-abonnement is nu actief."
-      ],
-      "Your selected plan: ${ planName }": [
-        "Uw geselecteerde abonnement: ${ planName }"
+      "Your account's usage": [
+        "Verbruik van uw account"
       ]
     },
     "new_plans: title": {
@@ -3976,25 +3950,23 @@
       "Review subscription and pay": [
         "Abonnement controleren en betalen"
       ],
-      "Start exploring the ${ BRAND_NAME } universe": [
-        "Ontdek het ${ BRAND_NAME }-universum"
-      ],
       "Switch plans?": [
         "Van abonnement wisselen?"
       ]
     },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "Proefversie van ${ mailPlanName }"
-      ],
-      "Upgrade to ${ planName }": [
-        "Upgraden naar ${ planName }"
-      ],
-      "Your account's usage": [
-        "Verbruik van uw account"
-      ]
-    },
     "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
+        "${ CALENDAR_APP_NAME }: end-to-end versleutelde agenda"
+      ],
+      "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
+        "${ DRIVE_APP_NAME }: end-to-end versleutelde cloudopslag"
+      ],
+      "${ MAIL_APP_NAME }: end-to-end encrypted email": [
+        "${ MAIL_APP_NAME }: end-to-end versleutelde e-mail"
+      ],
+      "${ VPN_APP_NAME }: unblock content, browse privately": [
+        "${ VPN_APP_NAME }: inhoud deblokkeren, privé browsen"
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Bekijk content van streamingdiensten, waaronder Netflix, Disney+ en Prime Video, waar u maar wilt"
       ],
@@ -4020,8 +3992,8 @@
         "Maak tot ${ n } agenda of voeg agenda's van vrienden, familie, collega's of andere organisaties toe",
         "Maak tot ${ n } agenda's of voeg agenda's van vrienden, familie, collega's of andere organisaties toe"
       ],
-      "Create up to ${ n } email addresses/aliases for the whole family. Use them for your online identities, e.g., MyFamilySubs@${ domain } for online subscriptions.": [
-        "Maak maximaal ${ n } e-mailadressen/aliassen aan voor het hele gezin. Gebruik ze voor uw online-identiteiten, bijvoorbeeld MijnFamilie@${ domain } voor online-abonnementen."
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "Maak maximaal ${ n } e-mailadressen/aliassen aan die u aan gezinsleden kunt toewijzen. Gebruik ze voor online identiteiten, bijvoorbeeld JohnShopper@${ domain } voor shopping-accounts."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Beschermt tegen bedreigingen van de VPN-privacy door uw internetverkeer door meerdere servers te leiden"
@@ -4076,6 +4048,9 @@
       ],
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "De harde schijven van onze servers zijn volledig versleuteld met meerdere wachtwoordlagen, zodat uw gegevens ook beveiligd zijn als onze hardware in gevaar komt"
+      ],
+      "Password management and identity protection": [
+        "Wachtwoordbeheer en identiteitsbescherming"
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personaliseer uw e-mailhandtekening met een logo, afbeelding, pictogram van social media, koppeling naar uw contactgegevens en meer"
@@ -4163,48 +4138,24 @@
       ]
     },
     "new_plans: Upsell attribute": {
-      "${ storageSize } total storage": [
-        "${ storageSize } opslagruimte"
-      ],
-      "10 email addresses/aliases": [
-        "10 e-mailadressen/aliassen"
-      ],
       "Access advanced VPN features": [
         "Gebruik geavanceerde VPN-functies"
       ],
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "Voeg meer personalisatie toe met 15 e-mailadressen en ondersteuning voor 3 aangepaste e-maildomeinen"
       ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "Boost uw opslagruimte uit naar ${ bundleStorage } per gebruiker"
+      ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Verhoog uw opslagruimte tot ${ bundleStorage }"
-      ],
-      "Boost your storage space to ${ businessStorage } per user": [
-        "Breid uw opslagruimte uit naar ${ businessStorage } per gebruiker"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Doe meer met ondersteuning voor 10 aangepaste e-maildomeinen"
       ],
-      "Create up to ${ MAX_CALENDARS_PAID } calendar": [
-        "Maak tot ${ MAX_CALENDARS_PAID } agenda",
-        "Maak tot ${ MAX_CALENDARS_PAID } agenda's"
-      ],
-      "Everything in ${ vpnPlanName }": [
-        "Alles van ${ vpnPlanName }"
-      ],
-      "Get 5 additional email addresses per user": [
-        "Gebruik 5 aanvullende e-mailadressen per gebruiker"
-      ],
-      "Priority support": [
-        "Prioriteitsondersteuning"
-      ],
-      "Support for 1 custom email domain": [
-        "Ondersteuning voor 1 aangepast e-maildomein"
-      ],
-      "Unlimited folders, labels, and filters": [
-        "Onbeperkt aantal mappen, labels en filters"
-      ],
-      "Unlimited messages": [
-        "Onbeperkt aantal berichten"
+      "Create up to ${ n } calendar": [
+        "Maak tot ${ n } kalender",
+        "Maak tot ${ n } kalenders"
       ]
     },
     "Notification": {
@@ -4247,6 +4198,30 @@
       ],
       "Standard server configs": [
         "Standaard server configuraties"
+      ]
+    },
+    "pass_signup_2023: Action": {
+      "Start using ${ appName }": [
+        "Begin met ${ appName }"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "Creating your account": [
+        "Account aan het aanmaken"
+      ],
+      "Preparing your Recovery Kit": [
+        "Uw herstelkit voorbereiden"
+      ],
+      "Updating your account": [
+        "Uw account wordt bijgewerkt"
+      ],
+      "Verifying your payment": [
+        "Verifiëren van uw betaling"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
+        "Alle ${ BRAND_NAME } Plus-diensten.${ br }Eén eenvoudig abonnement."
       ]
     },
     "Payment method option": {
@@ -4381,36 +4356,22 @@
       ]
     },
     "Shared calendar; Info about calendar owner": {
-      "Created by ${ ownerName }": [
-        "Aangemaakt door ${ ownerName }"
+      "Shared by ${ ownerName }": [
+        "Gedeeld door ${ ownerName }"
       ]
     },
     "Signup label": {
       "Confirm email address": [
         "Bevestig e-mailadres"
       ],
-      "Display name": [
-        "Weergavenaam"
-      ],
-      "Email": [
-        "E-mailadres"
+      "Confirm password": [
+        "Wachtwoord bevestigen"
       ],
       "Email address": [
         "E-mailadres"
       ],
-      "Username": [
-        "Gebruikersnaam"
-      ]
-    },
-    "Signup step": {
-      "Account setup": [
-        "Account instelling"
-      ],
-      "Payment": [
-        "Betaling"
-      ],
-      "Verification": [
-        "Verificatie"
+      "Password": [
+        "Wachtwoord"
       ]
     },
     "specialoffer: Action": {
@@ -4798,14 +4759,14 @@
     "Subscription saving": {
       "Save": [
         "Bespaar"
-      ],
-      "Save ${ discountPercentage }%": [
-        "Bespaar ${ discountPercentage }%"
       ]
     },
     "Subscription status": {
       "Active": [
         "Actief"
+      ],
+      "Expiring": [
+        "Verlopen"
       ],
       "Upcoming": [
         "Binnenkort"
@@ -4875,6 +4836,9 @@
       "Verification successful": [
         "Verificatie gelukt"
       ],
+      "You have successfully cancelled your subscription.": [
+        "U hebt met succes uw abonnement opgezegd."
+      ],
       "You have successfully unsubscribed": [
         "U bent succesvol afgemeld"
       ]
@@ -4915,6 +4879,9 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium Drive": [
+        "Premium Drive"
+      ],
       "Premium Mail and Calendar": [
         "Premium Mail en Calendar"
       ],
@@ -5001,6 +4968,9 @@
       ]
     },
     "Title": {
+      "${ appName } Free": [
+        "${ appName } Gratis"
+      ],
       "${ VPN_APP_NAME } clients": [
         "${ VPN_APP_NAME }-clients"
       ],
@@ -5070,6 +5040,12 @@
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME }-abonnement annuleren"
       ],
+      "Cancel subscription": [
+        "Abonnement opzeggen"
+      ],
+      "Cancel subscription?": [
+        "Abonnement opzeggen?"
+      ],
       "Card verification": [
         "Kaartverificatie"
       ],
@@ -5093,12 +5069,6 @@
       ],
       "Confirm phone number": [
         "Telefoonnummer bevestigen"
-      ],
-      "Congratulations on choosing privacy!": [
-        "Gefeliciteerd om voor privacy te kiezen!"
-      ],
-      "Create your ${ BRAND_NAME } Account": [
-        "Maak uw ${ BRAND_NAME }-account"
       ],
       "Credits": [
         "Tegoed"
@@ -5274,12 +5244,6 @@
       "Revoke certificate": [
         "Certificaat intrekken"
       ],
-      "Save contact details": [
-        "Bewaar contactgegevens"
-      ],
-      "Secure email based in Switzerland": [
-        "Veilige e-maildienst gevestigd in Zwitserland"
-      ],
       "Select a plan": [
         "Selecteer een abonnement"
       ],
@@ -5328,23 +5292,14 @@
       "Unsupported browser": [
         "Niet-ondersteunde browser"
       ],
-      "Verification": [
-        "Verificatie"
-      ],
       "Verification failed": [
         "Verificatie mislukt"
-      ],
-      "Verify email address": [
-        "Verifieer e-mailadres"
       ],
       "Verifying your card...": [
         "Uw kaart wordt geverifieerd..."
       ],
       "Verifying your payment...": [
         "Uw betaling wordt geverifieerd..."
-      ],
-      "Warning": [
-        "Waarschuwing"
       ],
       "What's new": [
         "Wat is er nieuw"
@@ -5369,9 +5324,6 @@
       ],
       "Your subscriptions": [
         "Uw abonnementen"
-      ],
-      "You’ve been invited to try ${ MAIL_APP_NAME }": [
-        "U bent uitgenodigd om ${ MAIL_APP_NAME } te proberen"
       ]
     },
     "Title for payment methods table": {
@@ -5388,6 +5340,35 @@
     "Title for PDF file": {
       "${ MAIL_APP_NAME } invoice": [
         "${ MAIL_APP_NAME } factuur"
+      ]
+    },
+    "Title subscription": {
+      "Actions": [
+        "Acties"
+      ],
+      "Duration": [
+        "Duur"
+      ],
+      "End date": [
+        "Einddatum"
+      ],
+      "Plan": [
+        "Abonnement"
+      ],
+      "Start date": [
+        "Begindatum"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Total": [
+        "Totaal"
+      ],
+      "Total paid": [
+        "Totaal betaald"
+      ],
+      "Users": [
+        "Gebruikers"
       ]
     },
     "Tooltip": {
@@ -5407,12 +5388,22 @@
         "Het geselecteerde thema is actief wanneer uw systeem is ingesteld op \"lichte modus\""
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
+        "${ PASS_APP_NAME }: end-to-end gecodeerde wachtwoordbeheerder"
+      ]
+    },
     "Tor out of date": {
       "stable release": [
         "stabiele release"
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Deze versie van Tor Browser wordt niet ondersteund. Werk de browser bij tot de meest recente versie ${ stableRelease }"
+      ]
+    },
+    "upsell panel": {
+      "Recommended": [
+        "Aanbevolen"
       ]
     },
     "Validation": {
@@ -5446,6 +5437,69 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } in ${ numberOfCountries } land",
         "${ numberOfServers } in ${ numberOfCountries } landen"
+      ]
+    },
+    "vpn_2step: billing": {
+      "${ billedText }, renews on ${ formattedEndTime }": [
+        "${ billedText }, verlengt op ${ formattedEndTime }"
+      ],
+      "Billed every 15 months": [
+        "Wordt om de 15 maanden gefactureerd"
+      ],
+      "Billed every 2 years": [
+        "Wordt om de 2 jaar gefactureerd"
+      ],
+      "Billed every 30 months": [
+        "Wordt om de 30 maanden gefactureerd"
+      ],
+      "Billed monthly": [
+        "Maandelijks gefactureerd"
+      ],
+      "Billed yearly": [
+        "Jaarlijks gefactureerd"
+      ]
+    },
+    "vpn_2step: discount": {
+      "1-year": [
+        "1-jarig"
+      ],
+      "2-year": [
+        "2-jarig"
+      ],
+      "Get ${ discount } off with a ${ billingCycle } subscription": [
+        "Krijg ${ discount } korting met een ${ billingCycle } abonnement"
+      ],
+      "monthly": [
+        "maandelijks"
+      ]
+    },
+    "vpn_2step: feature": {
+      "Advanced VPN customizations": [
+        "Geavanceerde VPN-aanpassingen"
+      ],
+      "No ads": [
+        "Geen advertenties"
+      ]
+    },
+    "vpn_2step: info": {
+      "${ n } month": [
+        "${ n } maand",
+        "${ n } maanden"
+      ],
+      "${ n } year": [
+        "${ n } jaar",
+        "${ n } jaren"
+      ],
+      "Try ${ upsellPlanName } risk-free": [
+        "Probeer risicoloos ${ upsellPlanName }"
+      ],
+      "Your ${ selected } plan": [
+        "Je ${ selected }-abonnement"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
+        "Toegang tot Secure Core-servers, snelle P2P/BitTorrent-downloads, Tor over VPN, en meer."
       ]
     },
     "Warning": {

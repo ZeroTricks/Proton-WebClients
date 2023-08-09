@@ -1765,11 +1765,6 @@
         "Otkazali ste pretplatu na ${ categoriesJsx } e-poruka."
       ]
     },
-    "Email Unsubscribe Categories": {
-      "${ allCategoriesExceptTheLastOne } and ${ lastCategory }": [
-        "${ allCategoriesExceptTheLastOne } i ${ lastCategory }"
-      ]
-    },
     "Error": {
       "A group with this name already exists": [
         "Grupa s ovim nazivom već postoji"
@@ -3215,9 +3210,6 @@
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Upozorenje: Brisanje je trajno. Ovo također uklanja pristup svim povezanim uslugama i briše sve vaše kontakte."
       ],
-      "We use 3-D Secure to protect your payments.": [
-        "Za zaštitu vaših plaćanja koristimo 3-D Secure."
-      ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Preusmjerit ćemo vas na PayPal u novoj kartici preglednika da biste dovršili ovu transakciju. Ako koristite bilo koje blokade skočnih prozora, onemogućite ih kako bi mogli nastaviti."
       ],
@@ -3295,9 +3287,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Vaša adresa e-pošte koristit će se samo za ovu jednokratnu provjeru."
-      ],
-      "Your import will not be processed.": [
-        "Vaš uvoz nije moguće obraditi."
       ],
       "Your login information will not be saved after the import is completed.": [
         "Vaši podaci za prijavi neće biti spremljeni nakon što se uvoz završi."
@@ -4284,6 +4273,9 @@
       "General": [
         "Općenito"
       ],
+      "Help translate": [
+        "Pomozite prevesti"
+      ],
       "Learn more": [
         "Saznajte više"
       ],
@@ -4550,22 +4542,9 @@
         "Pretplata"
       ]
     },
-    "new_plans: Title": {
-      "Upgrade to ${ planName }": [
-        "Nadogradite za ${ planName }"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Izbriši račun?"
-      ]
-    },
-    "new_plans: Upsell attribute": {
-      "Priority support": [
-        "Prioritetna podrška"
-      ],
-      "Unlimited messages": [
-        "Neograničene poruke"
       ]
     },
     "Notification": {
@@ -5960,9 +5939,6 @@
       ],
       "Are you sure you want to delete the phone number?": [
         "Jeste li sigurni da želite izbrisati broj telefona?"
-      ],
-      "Are you sure you want to discard your import?": [
-        "Jeste li sigurni da želite odbaciti vaš uvoz?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Brisanjem ove adrese više nećete moći primati svakodnevne obavijesti putem e-pošte."

@@ -37,10 +37,6 @@ const UnAuthenticatedApiProvider = ({ children, loader }: Props) => {
         return <StandardLoadErrorPage errorMessage={error.message} />;
     }
 
-    if (loading) {
-        return <>{loader}</>;
-    }
-
     return (
         <ApiContext.Provider value={apiCallback}>
             <Challenge
@@ -52,15 +48,13 @@ const UnAuthenticatedApiProvider = ({ children, loader }: Props) => {
                 type={0}
                 onSuccess={async () => {
                     const challenge = await challengeRefLogin.current?.getChallenge().catch(noop);
-                    if (!challenge) {
-                        return;
-                    }
-                    // Challenge is set dynamically for a faster loading experience
-                    await setChallenge(challenge);
+                    setChallenge(challenge);
                 }}
-                onError={noop}
+                onError={() => {
+                    setChallenge(undefined);
+                }}
             />
-            {children}
+            {loading ? loader : children}
         </ApiContext.Provider>
     );
 };

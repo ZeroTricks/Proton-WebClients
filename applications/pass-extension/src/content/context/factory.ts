@@ -3,7 +3,8 @@ import { WorkerStatus } from '@proton/pass/types';
 
 import { INITIAL_SETTINGS } from '../../shared/constants';
 import { ExtensionContext } from '../../shared/extension';
-import { createCSAutofillService } from '../services/form/autofill';
+import { createAutofillService } from '../services/form/autofill';
+import { createAutosaveService } from '../services/form/autosave';
 import { createDetectorService } from '../services/form/detector';
 import { createFormManager } from '../services/form/manager';
 import { createIFrameService } from '../services/iframes/service';
@@ -13,7 +14,7 @@ import type { CSContextState, ContentScriptContext } from './types';
 export const createContentScriptContext = (options: {
     scriptId: string;
     mainFrame: boolean;
-    destroy: (options: { reason: string; recycle?: boolean }) => void;
+    destroy: (options: { reason: string }) => void;
 }): ContentScriptContext => {
     const state: CSContextState = { active: true, loggedIn: false, status: WorkerStatus.IDLE, UID: undefined };
     const settings: ProxiedSettings = INITIAL_SETTINGS;
@@ -29,10 +30,10 @@ export const createContentScriptContext = (options: {
                 onDetection: (forms) => {
                     const didDetect = forms.length > 0;
                     context.service.iframe[didDetect ? 'attachDropdown' : 'detachDropdown']();
-                    void (didDetect && context.service.autofill.queryItems());
                 },
             }),
-            autofill: createCSAutofillService(),
+            autofill: createAutofillService(),
+            autosave: createAutosaveService(),
             iframe: createIFrameService(),
             detector: createDetectorService(),
         },

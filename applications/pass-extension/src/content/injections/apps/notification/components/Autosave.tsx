@@ -1,4 +1,4 @@
-import { type VFC, useState } from 'react';
+import { type VFC, useEffect, useState } from 'react';
 
 import type { FormikErrors } from 'formik';
 import { Form, FormikProvider, useFormik } from 'formik';
@@ -10,7 +10,7 @@ import { contentScriptMessage, sendMessage } from '@proton/pass/extension/messag
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { createTelemetryEvent } from '@proton/pass/telemetry/events';
 import type { Item } from '@proton/pass/types';
-import { AutoSaveType, type PromptedFormEntry, WorkerMessageType } from '@proton/pass/types';
+import { AutoSaveType, type FormEntryPrompt, WorkerMessageType } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { partialMerge } from '@proton/pass/utils/object';
 import { uniqueId } from '@proton/pass/utils/string';
@@ -23,17 +23,36 @@ import { TextField } from '../../../../../popup/components/Field/TextField';
 import { TitleField } from '../../../../../popup/components/Field/TitleField';
 import { BaseItemIcon } from '../../../../../shared/components/icon/ItemIcon';
 import { MAX_ITEM_NAME_LENGTH, validateItemName } from '../../../../../shared/form/validator/validate-item';
+import type { IFrameCloseOptions } from '../../../../types';
 import { NotificationHeader } from './NotificationHeader';
 
 import './Autosave.scss';
 
-type Props = { submission: PromptedFormEntry; onClose?: () => void; settings: ProxiedSettings };
+type Props = {
+    visible?: boolean;
+    submission: FormEntryPrompt;
+    onClose?: (options?: IFrameCloseOptions) => void;
+    settings: ProxiedSettings;
+};
 type AutosaveFormValues = { name: string; username: string; password: string };
 
-export const Autosave: VFC<Props> = ({ submission, settings, onClose }) => {
+export const Autosave: VFC<Props> = ({ visible, submission, settings, onClose }) => {
     const { createNotification } = useNotifications();
     const [busy, setBusy] = useState(false);
     const submissionURL = submission.subdomain ?? submission.domain;
+
+    useEffect(() => {
+        if (visible) {
+            void sendMessage(
+                contentScriptMessage({
+                    type: WorkerMessageType.TELEMETRY_EVENT,
+                    payload: {
+                        event: createTelemetryEvent(TelemetryEventName.AutosaveDisplay, {}, {}),
+                    },
+                })
+            );
+        }
+    }, [visible]);
 
     const form = useFormik<AutosaveFormValues>({
         initialValues: {
@@ -100,7 +119,7 @@ export const Autosave: VFC<Props> = ({ submission, settings, onClose }) => {
                         })
                     ).catch(noop);
 
-                    return onClose?.();
+                    return onClose?.({ discard: true });
                 }
 
                 return createNotification({ text: c('Warning').t`Unable to save`, type: 'error' });
@@ -113,7 +132,7 @@ export const Autosave: VFC<Props> = ({ submission, settings, onClose }) => {
 
     return (
         <FormikProvider value={form}>
-            <Form className="ui-login flex flex-column h100 flex-justify-space-between">
+            <Form className="ui-violet flex flex-column h100 flex-justify-space-between">
                 <NotificationHeader
                     title={(() => {
                         switch (submission.autosave.data.action) {
@@ -137,6 +156,7 @@ export const Autosave: VFC<Props> = ({ submission, settings, onClose }) => {
                         />
                         <div className="flex-item-fluid-auto">
                             <Field
+                                lengthLimiters
                                 name="name"
                                 component={TitleField}
                                 spellCheck={false}
@@ -151,11 +171,12 @@ export const Autosave: VFC<Props> = ({ submission, settings, onClose }) => {
 
                     <FieldsetCluster>
                         <Field name="username" component={TextField} label={c('Label').t`Username`} />
-                        <Field name="password" component={TextField} label={c('Label').t`Password`} masked />
+                        <Field hidden name="password" component={TextField} label={c('Label').t`Password`} />
                     </FieldsetCluster>
                 </div>
                 <div className="flex flex-justify-space-between gap-3">
-                    <Button pill color="norm" shape="outline" onClick={onClose}>{c('Action').t`Not now`}</Button>
+                    <Button pill color="norm" shape="outline" onClick={() => onClose?.({ discard: true })}>{c('Action')
+                        .t`Not now`}</Button>
                     <Button
                         pill
                         color="norm"

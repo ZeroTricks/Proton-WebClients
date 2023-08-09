@@ -11,8 +11,6 @@ import {
     useApi,
     useConfig,
     useErrorHandler,
-    useForceRefresh,
-    useLoading,
     useModalState,
     useVPNServersCount,
 } from '@proton/components';
@@ -21,6 +19,7 @@ import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticat
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import { AuthSession } from '@proton/components/containers/login/interface';
 import { PAYMENT_METHOD_TYPES, PaymentMethodStatus } from '@proton/components/payments/core';
+import { useLoading } from '@proton/hooks';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { updateFeatureValue } from '@proton/shared/lib/api/features';
 import { getSilentApi, getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -50,10 +49,6 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
-import { languageCode } from '@proton/shared/lib/i18n';
-import { getBrowserLocale, getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
-import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
-import { locales } from '@proton/shared/lib/i18n/locales';
 import { Audience, Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import type { User } from '@proton/shared/lib/interfaces/User';
 import { FREE_PLAN, getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
@@ -61,11 +56,14 @@ import { hasPaidPass } from '@proton/shared/lib/user/helpers';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
+import { Paths } from '../content/helper';
 import { getPlanFromPlanIDs } from '../signup/helper';
 import { SessionData, SignupCacheResult, SubscriptionData, UserCacheResult } from '../signup/interfaces';
 import { getPlanIDsFromParams, getSignupSearchParams } from '../signup/searchParams';
 import { handleDone, handleSetupMnemonic, handleSetupUser, handleSubscribeUser } from '../signup/signupActions';
 import { handleCreateUser } from '../signup/signupActions/handleCreateUser';
+import useLocationWithoutLocale from '../useLocationWithoutLocale';
+import { MetaTags, useMetaTags } from '../useMetaTags';
 import LoginModal from './LoginModal';
 import Step1, { Step1Rref } from './Step1';
 import Step2 from './Step2';
@@ -144,14 +142,27 @@ interface Props {
     clientType: CLIENT_TYPES;
     activeSessions?: LocalSessionPersisted[];
     fork: boolean;
+    metaTags: MetaTags;
+    paths: Paths;
 }
 
 let ranPreload = false;
 
-const SingleSignupContainerV2 = ({ fork, activeSessions, loader, onLogin, productParam, clientType }: Props) => {
+const SingleSignupContainerV2 = ({
+    paths,
+    metaTags,
+    fork,
+    activeSessions,
+    loader,
+    onLogin,
+    productParam,
+    clientType,
+}: Props) => {
+    const location = useLocationWithoutLocale();
     const ktActivation = useKTActivation();
     const { APP_NAME } = useConfig();
-    const forceRefresh = useForceRefresh();
+
+    useMetaTags(metaTags);
 
     const [model, setModel] = useState<SignupModelV2>(defaultSignupModel);
     const step1Ref = useRef<Step1Rref | undefined>(undefined);
@@ -163,35 +174,7 @@ const SingleSignupContainerV2 = ({ fork, activeSessions, loader, onLogin, produc
         }));
     }, []);
 
-    useEffect(() => {
-        if (languageCode === 'fr') {
-            return;
-        }
-        // Force english until more languages are translated
-        const newLocale = 'en';
-        const localeCode = getClosestLocaleCode(newLocale, locales);
-        const run = async () => {
-            await Promise.all([loadLocale(localeCode, locales), loadDateLocale(localeCode, getBrowserLocale())]);
-            forceRefresh();
-        };
-        run();
-    }, []);
-
     const unauthApi = useApi();
-
-    const measure = (data: TelemetryMeasurementData) => {
-        const values = 'values' in data ? data.values : {};
-        return sendTelemetryReport({
-            api: unauthApi,
-            measurementGroup: TelemetryMeasurementGroups.accountSignup,
-            event: data.event,
-            dimensions: {
-                ...data.dimensions,
-                flow: 'pass_signup_launch',
-            },
-            values,
-        }).catch(noop);
-    };
 
     const UID = model.session?.UID;
     const normalApi = UID ? getUIDApi(UID, unauthApi) : unauthApi;
@@ -269,7 +252,7 @@ const SingleSignupContainerV2 = ({ fork, activeSessions, loader, onLogin, produc
 
     const [signupParameters] = useState(() => {
         const searchParams = new URLSearchParams(location.search);
-        const result = getSignupSearchParams(searchParams, {
+        const result = getSignupSearchParams(location.pathname, searchParams, {
             cycle: defaults.cycle,
             preSelectedPlan: defaults.plan,
         });
@@ -288,6 +271,20 @@ const SingleSignupContainerV2 = ({ fork, activeSessions, loader, onLogin, produc
             mode,
         };
     });
+
+    const measure = (data: TelemetryMeasurementData) => {
+        const values = 'values' in data ? data.values : {};
+        return sendTelemetryReport({
+            api: unauthApi,
+            measurementGroup: TelemetryMeasurementGroups.accountSignup,
+            event: data.event,
+            dimensions: {
+                ...data.dimensions,
+                flow: signupParameters.mode === SignupMode.Onboarding ? 'pass_web_first_onboard' : 'pass_signup',
+            },
+            values,
+        }).catch(noop);
+    };
 
     const selectedPlan = getPlanFromPlanIDs(model.plans, model.subscriptionData.planIDs) || FREE_PLAN;
     const upsellPlanCard = planCards.find((planCard) => planCard.type === 'best');
@@ -489,6 +486,8 @@ const SingleSignupContainerV2 = ({ fork, activeSessions, loader, onLogin, produc
                 upsellPlanCard,
             });
 
+            measure({ event: TelemetryAccountSignupEvents.beSignOutSuccess, dimensions: {} });
+
             setModelDiff({
                 optimistic: {},
                 session: undefined,
@@ -548,7 +547,7 @@ const SingleSignupContainerV2 = ({ fork, activeSessions, loader, onLogin, produc
 
         triggerModals(session);
         measure({
-            event: TelemetryAccountSignupEvents.userSignInSuccess,
+            event: TelemetryAccountSignupEvents.beSignInSuccess,
             dimensions: { plan: getPlanNameFromSession(session) },
         });
     };
@@ -669,6 +668,7 @@ const SingleSignupContainerV2 = ({ fork, activeSessions, loader, onLogin, produc
             {preload}
             {renderLoginModal && (
                 <LoginModal
+                    paths={paths}
                     {...loginModalProps}
                     defaultUsername={tmpLoginEmail}
                     onLogin={async (props) => {

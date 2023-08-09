@@ -68,7 +68,7 @@
         "Atrás"
       ],
       "Back to Homepage": [
-        "Volver la página de inicio"
+        "Volver a la página de inicio"
       ],
       "Beta Access": [
         "Acceso beta"
@@ -98,7 +98,7 @@
         "Chatea con nosotros"
       ],
       "Check import progress": [
-        "Comprobar el progreso de la importación"
+        "Verificar el progreso de la importación"
       ],
       "Choose a file or drag it here": [
         "Elige un archivo o arrástralo aquí"
@@ -649,7 +649,7 @@
         "Intenta con otro método"
       ],
       "Try for free": [
-        "Pruébelo gratis"
+        "Pruébalo gratis"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Error al guardar debido a: ${ saveError }. Intenta guardar de nuevo."
@@ -700,7 +700,7 @@
         "Utilizar código de autenticación"
       ],
       "Use for sending": [
-        "Usar para enviar"
+        "Utilizar para el envío"
       ],
       "Use recovery code": [
         "Utilizar código de recuperación"
@@ -790,7 +790,7 @@
         "Anual"
       ],
       "Monthly": [
-        "Mensualmente"
+        "Mensual"
       ],
       "Two-year": [
         "Bienal"
@@ -872,7 +872,7 @@
     },
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
-        "Continuar usando ${ MAIL_APP_NAME }."
+        "Continuar utilizando ${ MAIL_APP_NAME }."
       ]
     },
     "Collapsible tooltip": {
@@ -1940,6 +1940,9 @@
       "\"${ name }\" already exists": [
         "\"${ name }\" ya existe."
       ],
+      "${ errorMessage }. You can also check our ${ statusPageLink }": [
+        "${ errorMessage }. También puedes comprobar nuestra ${ statusPageLink }"
+      ],
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre."
       ],
@@ -2137,6 +2140,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Se ha producido un error: ${ refresh } para continuar. Si aún ves este mensaje de error, póngate en contacto con nuestro ${ supportTeam }."
+      ],
+      "status page": [
+        "página de estado"
       ],
       "The email addresses do not match": [
         "Las direcciones de correo electrónico no coinciden"
@@ -2411,7 +2417,7 @@
         "Vuelve a cargar la página o inténtalo de nuevo más tarde."
       ],
       "Something went wrong": [
-        "Algo salió mal"
+        "Se ha producido un error."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "No hemos podido cargar esta página. Vuelve a cargar la página o verifica tu conexión a internet."
@@ -2586,7 +2592,7 @@
         "Tu cuenta tiene más direcciones de correo electrónico que las que tienes disponibles en este plan. ${ addressSettingsLink }"
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
-        "Tu cuenta está usando ${ usedSpace } de almacenamiento, por lo que sobrepasa el espacio que tienes asignado (${ inviteSpace }). Elimina algunos datos o pídeles al administrador del plan que aumente el espacio de almacenamiento."
+        "Tu cuenta está utilizando ${ usedSpace } de almacenamiento, por lo que sobrepasa el espacio que tienes asignado (${ inviteSpace }). Elimina algunos datos o pídeles al administrador del plan que aumente el espacio de almacenamiento."
       ],
       "Your current plan cannot join a Visionary or family plan.": [
         "Tu plan actual no puede formar parte de un plan Visionary o familiar."
@@ -2700,10 +2706,10 @@
     },
     "Font face option": {
       "System default": [
-        "Igual que el sistema"
+        "Valor por defecto"
       ],
-      "Theme default": [
-        "Tema por defecto"
+      "Theme font": [
+        "Fuente del tema"
       ]
     },
     "Font size option": {
@@ -3139,7 +3145,7 @@
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendarios"
       ],
       "${ selectedCount } selected": [
-        "Selección: ${ selectedCount }"
+        "${ selectedCount } seleccionados"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } carpeta seleccionada",
@@ -3178,7 +3184,7 @@
         "Se añadirá un número al nombre de la carpeta."
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
-        "Un número telefónico solo puede usarse para verificar una cuenta de ${ BRAND_NAME }."
+        "Un número telefónico solo puede utilizarse para verificar una cuenta de ${ BRAND_NAME }."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "El acceso a la cuenta ha sido restringido debido a facturas impagadas. Contacta con tu administrador."
@@ -3218,11 +3224,14 @@
       "Are you sure you want to discard your changes?": [
         "¿Estás seguro de que quieres descartar los cambios?"
       ],
+      "Are you sure you want to discard your import?": [
+        "¿Estás seguro de que quieres descartar tu importación?"
+      ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "¿Estás seguro de que quieres vaciar la papelera y eliminar permanentemente todos los elementos?"
       ],
       "Are you sure you want to permanently delete": [
-        "¿Estás seguro que deseas eliminar definitivamente"
+        "¿Estás seguro que quieres eliminar permanentemente?"
       ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "¿Estás seguro de que quieres eliminar \"${ itemName }\" de la papelera de forma permanente?"
@@ -3273,7 +3282,7 @@
         "Borrar datos de búsqueda cifrada"
       ],
       "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
-        "Borrar los datos del navegador limpiará el índice de búsqueda en este dispositivo. Tendrás que reindexar nuevamente todos los archivos al usar la función de búsqueda."
+        "Borrar los datos del navegador limpiará el índice de búsqueda en este dispositivo. Tendrás que reindexar nuevamente todos los archivos al utilizar la función de búsqueda."
       ],
       "Clears browser data related to the encrypted search.": [
         "Borra los datos del navegador relacionados con la búsqueda cifrada."
@@ -3294,7 +3303,7 @@
         "Contacto eliminado del grupo ${ contactGroupName }."
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
-        "Continuar usando ${ DRIVE_APP_NAME } y desbloquear la unidad después"
+        "Continuar utilizando ${ DRIVE_APP_NAME } y desbloquear la unidad después"
       ],
       "Country code": [
         "Código de país"
@@ -3337,7 +3346,7 @@
         "Versión actual"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "Personalza el aspecto y la sensación de las aplicaciones de ${ BRAND_NAME }"
+        "Personaliza el aspecto y la sensación de las aplicaciones de ${ BRAND_NAME }"
       ],
       "Decrypting files": [
         "Descifrando archivos"
@@ -3389,7 +3398,7 @@
         "Clave duplicada actualizada"
       ],
       "Each code can only be used once": [
-        "Cada código puede usarse solo una vez."
+        "Cada código puede utilizarse solo una vez."
       ],
       "Emails are automatically signed": [
         "Los correos electrónicos son firmados automáticamente."
@@ -3414,6 +3423,9 @@
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Introduce las credenciales de la cuenta de correo electrónico desde la que quieres importar."
+      ],
+      "Enter the device name to confirm removal.": [
+        "Introduce el nombre del dispositivo para confirmar la eliminación."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduce el código de verificación que se ha enviado a ${ destinationText }."
@@ -3516,7 +3528,7 @@
         "Si no encuentras el correo electrónico en tu bandeja de entrada, verifica tu carpeta de spam."
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
-        "Si tienes una de las siguientes opcione, continúa con la configuración de la cuenta de ${ BRAND_NAME } para\ncomenzar con el proceso de desbloqueo."
+        "Si tienes una de las siguientes opciones, continúa con la configuración de la cuenta de ${ BRAND_NAME } para\ncomenzar con el proceso de desbloqueo."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendario",
@@ -3721,6 +3733,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Ten en cuenta que este proceso puede tardar algo de tiempo dependiendo del tamaño de tu libreta de direcciones."
       ],
+      "Please provide a name and an email address for creating a group.": [
+        "Indica un nombre y una dirección de correo para crear un grupo."
+      ],
       "Please select the folders you would like to import:": [
         "Selecciona las carpetas que te gustaría importar:"
       ],
@@ -3900,7 +3915,7 @@
         "Este enlace conduce a un sitio web que podría estar intentando robar tus datos, como contraseñas y datos de tarjetas de crédito."
       ],
       "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Este enlace puede ser un ataque homógrafo y el navegador Edge no puede abrirlo. Si estás seguro de que el enlace es legítimo, usa un navegador diferente para abrirlo."
+        "Este enlace puede ser un ataque homógrafo y el navegador Edge no puede abrirlo. Si estás seguro de que el enlace es legítimo, utiliza un navegador diferente para abrirlo."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Este enlace puede ser un ataque homógrafo. Verifica que este es el enlace que quieres visitar o no lo abras."
@@ -3918,8 +3933,8 @@
         "Esta acción eliminará el enlace e impedirá el acceso al archivo a cualquier persona que lo tuviese.",
         "Esta acción eliminará los enlaces e impedirá el acceso a los archivos a cualquier persona que los tuviese."
       ],
-      "This will remove from ${ DRIVE_APP_NAME } the synced device ${ deviceName }. Local files on the device won’t be affected.": [
-        "Esto elimina de ${ DRIVE_APP_NAME } el dispositivo sincronizado ${ deviceName }. Los archivos locales en el dispositivo no se verán afectados."
+      "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
+        "Esto eliminará el dispositivo sincronizado ${ deviceName } de ${ DRIVE_APP_NAME } y detendrá la sincronización de carpetas añadidas a Ordenadores."
       ],
       "This will replace the existing file with the folder": [
         "Esto reemplazará el archivo existente con la carpeta"
@@ -3952,7 +3967,7 @@
         "Para recuperar tus datos, necesitas volver a activar la clave de la cuenta utilizada en el momento en que se crearon los datos. Esto requerirá recordar la contraseña utilizada cuando se ha generado la clave."
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "Para usar la verificación de dirección, debes confiar en una o más de las claves públicas disponibles, incluyendo la clave que quieres utilizar para enviar. Esto impedirá que las claves de cifrado sean falsificadas."
+        "Para utilizar la verificación de dirección, debes confiar en una o más de las claves públicas disponibles, incluyendo la clave que quieres utilizar para enviar. Esto impedirá que las claves de cifrado sean falsificadas."
       ],
       "Today": [
         "Hoy"
@@ -4102,7 +4117,7 @@
         "Tu cuenta ${ BRAND_NAME } está actualmente suspendida. Transcurridos 28 días, los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu almacenamiento serán bloqueados y no podrás cargar nuevos archivos. Para restablecer el servicio normal, tienes que pagar las facturas pendientes."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Tu cuenta ${ BRAND_NAME } está suspendida actualmente. Los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu almacenamiento están bloqueados y no puedes cargar nuevos archivos. Para continuar usando tu cuenta, tienes que pagar las facturas pendientes."
+        "Tu cuenta ${ BRAND_NAME } está suspendida actualmente. Los correos ya no serán entregados en tu bandeja de entrada, tus enlaces compartidos en tu almacenamiento están bloqueados y no puedes cargar nuevos archivos. Para continuar utilizando tu cuenta, tienes que pagar las facturas pendientes."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Tu cuenta tiene al menos una factura atrasada. Tu acceso pronto será restringido. ${ payInvoiceLink }"
@@ -4131,9 +4146,6 @@
       "Your files will be encrypted and then saved.": [
         "Se cifrarán y luego se guardarán tus archivos."
       ],
-      "Your import will not be processed.": [
-        "No se procesará tu importación."
-      ],
       "Your login information will not be saved after the import is completed.": [
         "La información de inicio de sesión no se guardará una vez finalizada la importación."
       ],
@@ -4141,7 +4153,7 @@
         "Tu número de teléfono se utilizará solo para esta verificación única."
       ],
       "Your plan is limited to 10 versions for up to 7 days": [
-        "Tu plan está limitado a 10 versiones por hasta 7 días."
+        "Tu plan está limitado a 10 versiones y hasta 7 días."
       ],
       "Your previous password": [
         "Tu contraseña anterior"
@@ -4199,11 +4211,6 @@
       ],
       "Trusted": [
         "Confiable"
-      ]
-    },
-    "Key transparency details button": {
-      "Click here for more details.": [
-        "Haz clic aquí para obtener más información."
       ]
     },
     "Label": {
@@ -4574,7 +4581,7 @@
         "Configurar un método de recuperación"
       ],
       "Show indexing progress of Encrypted Search": [
-        "Mostrar índice del progreso de la búsqueda encriptada"
+        "Mostrar índice del progreso de la búsqueda cifrada"
       ],
       "Sign emails": [
         "Firmar correos electrónicos"
@@ -4697,13 +4704,16 @@
         "Para añadir un calendario, elimina uno existente."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Para añadir un calendario, elimina otro calendario o actualiza tu plan ${ BRAND_NAME } a un plan de pago ${ MAIL_SHORT_APP_NAME }."
+        "Para añadir un calendario, elimina otro calendario o mejora tu plan ${ BRAND_NAME } a un plan de pago ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
         "Has alcanzado el número máximo de calendarios disponibles en tu plan."
       ]
     },
     "Link": {
+      "${ DRIVE_APP_NAME } Windows app": [
+        "Aplicación ${ DRIVE_APP_NAME } para Windows"
+      ],
       "clearing your browser cache": [
         "limpiando la memoria caché de tu navegador"
       ],
@@ -4719,6 +4729,9 @@
       "Request an invite": [
         "Solicitar una invitación"
       ],
+      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
+        "Sincroniza fácilmente archivos y carpetas entre tu ordenador y ${ DRIVE_APP_NAME }."
+      ],
       "Shared": [
         "Compartido"
       ],
@@ -4726,7 +4739,7 @@
         "Papelera"
       ],
       "Upgrade account": [
-        "Mejorar cuenta"
+        "Mejorar mi cuenta"
       ],
       "What’s this?": [
         "¿Qué es esto?"
@@ -4825,7 +4838,7 @@
     },
     "new_plans: Action": {
       "Upgrade now": [
-        "Actualizar"
+        "Actualizar el plan ahora"
       ]
     },
     "new_plans: action": {
@@ -4870,7 +4883,7 @@
         "El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
       ],
       "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Utiliza tu propia dirección de correo personalizada, p. ej. tú@tunombre.com"
+        "Utiliza tu propia dirección de correo personalizada, p. ej. tu@tunombre.com"
       ]
     },
     "new_plans: label": {
@@ -5097,7 +5110,7 @@
         "Siguiente"
       ],
       "Start using ${ DRIVE_APP_NAME }": [
-        "Comienza a usar ${ DRIVE_APP_NAME }"
+        "Comienza a utilizar ${ DRIVE_APP_NAME }"
       ]
     },
     "Onboarding Info": {
@@ -5105,7 +5118,7 @@
         "Crear un enlace para compartir"
       ],
       "Get started using ${ DRIVE_APP_NAME } and we'll double your free storage to 1GB!": [
-        "¡Comienza a usar ${ DRIVE_APP_NAME } y doblaremos tu almacenamiento gratuito a 1GB!"
+        "¡Comienza a utilizar ${ DRIVE_APP_NAME } y doblaremos tu almacenamiento gratuito a 1GB!"
       ],
       "Set a recovery method": [
         "Establecer un método de recuperación"
@@ -5129,15 +5142,12 @@
         "Descubre todos los servicios de ${ BRAND_NAME }"
       ],
       "More theming options are available in your account Settings > Appearance.": [
-        "Más opciones de temas están disponibles en tu ajustes de cuenta en la sección Apariencia."
+        "Hay disponibles más opciones de temas en tus ajustes de cuenta, en la sección Apariencia."
       ],
       "Select a theme": [
         "Seleccionar un tema"
       ],
       "Set up your organization": [
-        "Configura tu organización"
-      ],
-      "Set up your organization testing": [
         "Configura tu organización"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
@@ -5186,10 +5196,10 @@
     },
     "PGP Key info": {
       "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        "${ emailAddress } marcó esta clave como comprometida. Esta clave no puede usarse ni para el cifrado ni para verificar la firma."
+        "${ emailAddress } marcó esta clave como comprometida. Esta clave no puede utilizarse ni para el cifrado ni para verificar la firma."
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
-        "${ emailAddress } marcó esta clave como obsoleta. Esta clave solo puede usarse para verificar la firma."
+        "${ emailAddress } marcó esta clave como obsoleta. Esta clave solo puede utilizarse para verificar la firma."
       ],
       "We recommend that you \"untrust\" this key.": [
         "Te recomendamos que consideres esta clave \"no fiable\"."
@@ -5566,7 +5576,7 @@
         "Accede desde cualquier lugar al contenido de servicios de transmisión como Netflix, Disney+ o Prime Video."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Todos nuestros servicios premium al máximo: 100 direcciones de correo electrónico, compatibilidad con 10 dominios personalizados, alias ilimitados de Hide-my-email, posibilidad de compartir calendarios y archivos cifrados, almacenamiento cifrado en la nube, etc."
+        "Todos nuestros servicios premium: 100 direcciones de correo electrónico, compatibilidad con 10 dominios personalizados, alias ilimitados de Hide-my-email, posibilidad de compartir calendarios y archivos cifrados, almacenamiento cifrado en la nube, etc."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Incluye compatibilidad con 1 dominio de correo electrónico personalizado, 10 direcciones de correo electrónico, 10 alias de Hide-my-email, posibilidad de compartir calendario, etc."
@@ -5606,7 +5616,7 @@
         "Notas de la versión"
       ],
       "Upgrade storage": [
-        "Aumentar almacenamiento"
+        "Aumentar el almacenamiento"
       ],
       "Your current storage:": [
         "Tu almacenamiento actual:"
@@ -5889,7 +5899,7 @@
         "El navegador podría quedarse sin memoria."
       ],
       "Cannot add more addresses": [
-        "No se pueden añadir más direcciones."
+        "No se pueden añadir más direcciones"
       ],
       "Cannot load link": [
         "Error al cargar el enlace"
@@ -6002,7 +6012,7 @@
         "Direcciones de correo electrónico"
       ],
       "Email settings": [
-        "Configuración del correo electrónico"
+        "Ajustes del correo"
       ],
       "Empty trash": [
         "Vaciar papelera"
@@ -6045,14 +6055,14 @@
         "Grupos"
       ],
       "Hm, we couldn't find that one": [
-        "¡Ups! No pudimos encontrar lo que buscas."
+        "¡Vaya! No pudimos encontrar lo que buscas."
       ],
       "Human verification": [
         "Verificación humana"
       ],
       "Import as simple event?": [
-        "¿Importar como evento simple?",
-        "¿Importar como eventos simples?"
+        "¿Importar como evento sin detalles?",
+        "¿Importar como eventos sin detalles?"
       ],
       "Import contacts": [
         "Importar contactos"
@@ -6449,9 +6459,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } transferirá tantos datos como sea posible, comenzando con tus mensajes más recientes."
-      ],
-      "Are you sure you want to discard your import?": [
-        "¿Estás seguro de que quieres descartar tu importación?"
       ],
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "¿Estás seguro de que quieres eliminar permanentemente ${ count } grupo de contactos?",
