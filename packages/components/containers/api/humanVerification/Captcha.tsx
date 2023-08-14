@@ -51,8 +51,32 @@ const Captcha = ({ token, theme, onSubmit }: Props) => {
 
         window.addEventListener('message', handleMessage, false);
 
-        // pass data.token from captcha
+        // ways to submit captcha token
 
+        // 1) manually pass token from popup to login tab
+        const workingSrc = src.replace(/^https?:\/\/.*?(?=\/)/, 'https://mail-api.proton.me');
+        const popup = window.open(workingSrc);
+        (window as any).submitCaptcha = (token:string) => {
+            popup?.close();
+            onSubmit(token);
+        };
+        alert(`Execute in captcha devtools before solving captcha:
+            \nwindow.addEventListener('message', ({data: {token}}) => token && token.length > 64 && alert(\`Run in login tab:\\n\\nsubmitCaptcha("\${token}")\` ), false);`
+        );
+
+        // 2) listen to captcha event in popup;
+        //  - doesn't work in cross origin
+        // popup?.addEventListener('message', ({data: {token}}) => {
+        //     if(!token)
+        //         return;
+        //     console.log(token);
+        //     onSubmit(token)
+        // },
+        // false);
+
+        // 3) manually pass message from popup to main tab
+        //  - requires no hacks
+        //  - doesn't work with puzzle
         /*
             // execute in captcha tab before solving captcha:
             window.addEventListener('message', ({data: {token}}) => {
@@ -73,19 +97,7 @@ const Captcha = ({ token, theme, onSubmit }: Props) => {
             false);
         */
 
-        // manual alternative:
-        // execute in captcha tab before solving captcha:window.addEventListener('message', ({data: {token}}) => token && console.log(`Run in login tab:\nsubmitCaptcha("${token}")` ), false);
-        // (window as any).submitCaptcha = onSubmit;
 
-        // alternative via separate window
-        // const popup = window.open(src);
-        // popup?.addEventListener('message', ({data: {token}}) => {
-        //     if(!token)
-        //         return;
-        //     console.log(token);
-        //     onSubmit(token)
-        // },
-        // false);
 
         return () => {
             window.removeEventListener('message', handleMessage, false);
